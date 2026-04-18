@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "fabrication": "Fabricación",
+    "automation": "Automatización",
+    "solutions": "Soluciones",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "requestQuote": "Solicitar Cotización",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "footer": {
+    "fabrication": "Fabricación",
+    "automation": "Automatización",
+    "company": "Empresa",
+    "support": "Soporte",
+    "fiberLaser": "Corte Láser de Fibra",
+    "laserWelding": "Soldadura Láser",
+    "laserCleaning": "Limpieza Láser",
+    "pressBreak": "Prensa Dobladora CNC",
+    "shearing": "Cizalla",
+    "ironworker": "Punzonadora",
+    "cobotWelding": "Brazo de Soldadura Colaborativo",
+    "industrialWelding": "Brazo de Soldadura Industrial",
+    "aboutUs": "Quiénes Somos",
+    "blog": "Blog",
+    "careers": "Empleos",
+    "supportPage": "Soporte",
+    "contact": "Contacto",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "copyright": "© {year} VTM Tech Solutions. Todos los derechos reservados.",
+    "tagline": "Donde la fabricación de precisión se une a la automatización inteligente."
+  },
+  "common": {
+    "requestQuote": "Solicitar Cotización",
+    "downloadSpec": "Descargar Ficha Técnica",
+    "requestDemo": "Solicitar Demo",
+    "learnMore": "Saber Más",
+    "viewAll": "Ver Todo",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctanos",
+    "imperial": "Imperial",
+    "metric": "Métrico",
+    "newBadge": "NUEVO EN EL MERCADO DE EE.UU."
+  },
+  "product": {
+    "technicalSpecs": "Especificaciones Técnicas",
+    "features": "Características",
+    "applications": "Aplicaciones",
+    "faq": "Preguntas Frecuentes",
+    "relatedProducts": "Productos Relacionados",
+    "configOptions": "Opciones de Configuración",
+    "compareModels": "Comparar Modelos",
+    "watchVideo": "Ver Video"
+  },
+  "productPage": {
+    "specsLabel": "Especificaciones Técnicas",
+    "specsHeading": "Con Números",
+    "configureLabel": "Configurar",
+    "configureHeading": "Configure su Máquina",
+    "configureNote": "Todas las configuraciones disponibles para pedido. Contáctese con su asesor de ventas VTM para precios y plazos de entrega.",
+    "relatedLabel": "Seguir Explorando",
+    "relatedHeading": "Máquinas Relacionadas",
+    "faqLabel": "Preguntas",
+    "faqHeading": "Preguntas Frecuentes",
+    "quoteLabel": "Obtener Precio",
+    "quoteHeading": "Solicitar Cotización",
+    "quoteBody": "Cuéntenos sobre su taller y el trabajo que realiza. Responderemos con precio, plazo de entrega y configuración recomendada dentro de un día hábil.",
+    "quoteNote1": "Sin compromiso",
+    "quoteNote2": "Respuesta en 1 día hábil",
+    "quoteNote3": "Hable directamente con un especialista en maquinaria"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "VTM Tech Solutions — Maquinaria Industrial para EE.UU.",
+      "headline": "Máquinas de precisión láser. Resultados comprobados.",
+      "subheadline": "Maquinaria de fabricación de precisión y automatización robótica inteligente — diseñadas para talleres en EE.UU. que no aceptan lo mediocre.",
+      "scroll": "Desplazar",
+      "cta1": "Explorar Nuestras Máquinas",
+      "cta2": "Hablar con un Especialista"
+    },
+    "fabrication": {
+      "label": "Maquinaria de Fabricación",
+      "heading": "Máquinas de formado y corte de metal para talleres de producción.",
+      "viewAll": "Ver Toda la Maquinaria de Fabricación",
+      "products": {
+        "fiberLaser": { "name": "Máquina de Corte Láser de Fibra", "description": "1.5–30 kW. ±0.05mm. Mesas de 4′×4′ a 8′×20′." },
+        "fiberLaserTube": { "name": "Corte Láser de Tubos", "description": "Perfiles redondos, cuadrados y estructurales. Longitudes hasta 9 m." },
+        "sheetTubeCombo": { "name": "Láser Combinado Chapa y Tubo", "description": "Corte de chapa plana y tubo en una sola máquina. 3–6 kW." },
+        "fourInOne": { "name": "Máquina de Soldadura Láser", "description": "Soldadura, corte, limpieza y alimentación de hilo. 1.5–3 kW." },
+        "laserCleaning": { "name": "Máquina de Limpieza Láser", "description": "Eliminación de óxido y recubrimientos sin químicos." },
+        "pressBreake": { "name": "Prensa Dobladora CNC", "description": "Repetibilidad ±0.01mm. 40–400 toneladas." },
+        "shearing": { "name": "Guillotinas y Viga Oscilante", "description": "Guillotina hasta 16 mm. Viga oscilante hasta 12 mm." },
+        "ironworker": { "name": "Punzonadora Hidráulica", "description": "Punzonar, entallar, cizallar y doblar en una máquina." }
+      }
+    },
+    "automation": {
+      "label": "Automatización Robótica",
+      "heading": "Automatización de soldadura que se paga en meses, no en años.",
+      "explore": "Explorar Soluciones de Automatización",
+      "badge": "Nuevo en el Mercado de EE.UU.",
+      "products": {
+        "cobot": { "name": "Brazo de Soldadura Colaborativo", "description": "Implementación en 6 semanas. Trabaja junto a personas de forma segura." },
+        "industrial": { "name": "Brazo de Soldadura Industrial", "description": "Soldadura de producción de alta velocidad. 20 kg de carga útil." }
+      }
+    },
+    "features": {
+      "precision": {
+        "label": "Precisión",
+        "title": "Precisión Sin Compromisos",
+        "body": "Tolerancias de hasta ±0.05mm en cada corte, doblez y soldadura. Nuestras máquinas se calibran antes del envío y se reconfiguran en sitio durante la instalación. El rendimiento de su taller depende directamente de las máquinas que lo respaldan — nos aseguramos de que nunca le fallen."
+      },
+      "partnership": {
+        "label": "Asociación",
+        "title": "De la Fabricación a la Automatización — Un Solo Socio",
+        "body": "Ya sea que esté cortando su primera plancha de metal o implementando su quinta celda de soldadura colaborativa, VTM Tech Solutions gestiona toda la evolución de su producción. No necesita coordinar cinco proveedores. Suministramos, instalamos, capacitamos y damos soporte — todo bajo un mismo techo."
+      },
+      "support": {
+        "label": "Soporte",
+        "title": "Soporte Que No Desaparece Después de la Entrega",
+        "body": "Instalación, calibración, capacitación de operadores y diagnóstico remoto — todo incluido. Nuestro equipo de soporte con base en EE.UU. está disponible por teléfono, correo electrónico y videollamada. Las piezas de repuesto se envían el mismo día. Medimos nuestro éxito por su tiempo de actividad, no por su orden de compra."
+      },
+      "consultation": {
+        "label": "Consultoría",
+        "title": "Soporte Que Comienza Antes de Comprar",
+        "body": "Desde su primera pregunta hasta la instalación final, nuestros especialistas trabajan junto a usted para especificar la máquina adecuada para su volumen de producción, tipos de materiales y espacio disponible. No hacemos ventas exageradas — ajustamos el tamaño correcto. Porque la máquina que se adapta perfectamente a su taller es la única que vale la pena comprar."
+      }
+    },
+    "industries": {
+      "label": "Industrias que Servimos",
+      "heading": "Diseñadas para cada sector de la manufactura metálica en EE.UU.",
+      "allSolutions": "Todas las Soluciones"
+    },
+    "testimonials": {
+      "label": "Historias de Clientes",
+      "heading": "Talleres en EE.UU. ya operando con VTM.",
+      "t1": {
+        "quote": "Reemplazamos tres máquinas distintas con un solo láser de fibra VTM. El retorno de inversión fue en menos de 18 meses.",
+        "author": "Mike Castellano",
+        "company": "Castellano Metalworks",
+        "location": "Texas"
+      },
+      "t2": {
+        "quote": "El equipo de instalación se quedó 3 días para asegurarse de que estuviéramos cortando piezas perfectas. Eso es muy poco común.",
+        "author": "Sarah Okonkwo",
+        "company": "Precision Fab LLC",
+        "location": "Florida"
+      },
+      "t3": {
+        "quote": "Nuestra producción de soldadura se duplicó en el primer mes con el brazo colaborativo.",
+        "author": "Carlos Restrepo",
+        "company": "CR Metal Solutions",
+        "location": "California"
+      }
+    },
+    "blog": {
+      "label": "Del Blog",
+      "heading": "Conocimiento para dueños de talleres y gerentes de producción.",
+      "allArticles": "Todos los Artículos",
+      "readMore": "Leer Más",
+      "p1": {
+        "title": "Láser de Fibra vs CO₂: ¿Cuál es el Indicado para Su Taller en 2026?",
+        "excerpt": "Potencia, velocidad y costo — una comparación práctica para talleres de fabricación metálica en EE.UU. que hacen su primera inversión láser.",
+        "date": "15 de marzo de 2026"
+      },
+      "p2": {
+        "title": "ROI de Soldadura con Cobot: Lista de Verificación para Dueños de Talleres",
+        "excerpt": "Antes de comprar un brazo de soldadura colaborativo, revise esta lista para calcular con precisión su retorno de inversión.",
+        "date": "28 de febrero de 2026"
+      },
+      "p3": {
+        "title": "5 Señales de que Su Prensa Dobladora Está Limitando la Producción de Su Taller",
+        "excerpt": "Si su departamento de doblez es el cuello de botella, el problema puede no ser sus operadores — puede ser su equipo.",
+        "date": "10 de febrero de 2026"
+      }
+    },
+    "cta": {
+      "label": "Comenzar",
+      "heading": "¿Listo para ver en qué puede convertirse su taller?",
+      "body": "Obtenga una consulta gratuita. Sin compromiso. Respuesta en 1 día hábil."
+    }
+  }
+}

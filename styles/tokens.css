@@ -1,0 +1,10 @@
+:root {
+  --color-red: #CB1C1D;
+  --color-dark: #171717;
+  --color-white: #FFFFFF;
+  --color-gray-light: #F2F2F2;
+  --color-gray-mid: #6B6B6B;
+  --color-gray-border: #DEDEDE;
+  --font-headline: var(--font-inter);
+  --font-body: var(--font-lora);
+}

@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "fabrication": "Fabrication",
+    "automation": "Automation",
+    "solutions": "Solutions",
+    "about": "About",
+    "contact": "Contact",
+    "requestQuote": "Request Quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "fabrication": "Fabrication",
+    "automation": "Automation",
+    "company": "Company",
+    "support": "Support",
+    "fiberLaser": "Fiber Laser Cutting",
+    "laserWelding": "Laser Welding",
+    "laserCleaning": "Laser Cleaning",
+    "pressBreak": "CNC Press Brake",
+    "shearing": "Shearing Machine",
+    "ironworker": "Ironworker",
+    "cobotWelding": "Collaborative Welding Arm",
+    "industrialWelding": "Industrial Welding Arm",
+    "aboutUs": "About Us",
+    "blog": "Blog",
+    "careers": "Careers",
+    "supportPage": "Support",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© {year} VTM Tech Solutions. All rights reserved.",
+    "tagline": "Where precision fabrication meets intelligent automation."
+  },
+  "common": {
+    "requestQuote": "Request a Quote",
+    "downloadSpec": "Download Spec Sheet",
+    "requestDemo": "Request a Demo",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "imperial": "Imperial",
+    "metric": "Metric",
+    "newBadge": "NEW TO THE US MARKET"
+  },
+  "product": {
+    "technicalSpecs": "Technical Specifications",
+    "features": "Features",
+    "applications": "Applications",
+    "faq": "Frequently Asked Questions",
+    "relatedProducts": "Related Products",
+    "configOptions": "Configuration Options",
+    "compareModels": "Compare Models",
+    "watchVideo": "Watch Video"
+  },
+  "productPage": {
+    "specsLabel": "Technical Specifications",
+    "specsHeading": "By the Numbers",
+    "configureLabel": "Configure",
+    "configureHeading": "Build Your Machine",
+    "configureNote": "All configurations available to order. Contact your VTM sales engineer for pricing and lead time on your specific build.",
+    "relatedLabel": "Continue Exploring",
+    "relatedHeading": "Related Machines",
+    "faqLabel": "Questions",
+    "faqHeading": "Frequently Asked",
+    "quoteLabel": "Get Pricing",
+    "quoteHeading": "Request a Quote",
+    "quoteBody": "Tell us about your shop and the work you're doing. We'll respond with pricing, lead time, and recommended configuration within one business day.",
+    "quoteNote1": "No obligation",
+    "quoteNote2": "Response within 1 business day",
+    "quoteNote3": "Speak directly with a machine specialist"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "VTM Tech Solutions — US Industrial Machinery",
+      "headline": "Laser-sharp machines. Shop-proven results.",
+      "subheadline": "Precision fabrication machinery and intelligent robotic automation — engineered for US shops that refuse to settle.",
+      "scroll": "Scroll",
+      "cta1": "Explore Our Machines",
+      "cta2": "Talk to a Specialist"
+    },
+    "fabrication": {
+      "label": "Fabrication Machinery",
+      "heading": "Metal forming & cutting machines built for production shops.",
+      "viewAll": "View All Fabrication Machines",
+      "products": {
+        "fiberLaser": { "name": "Fiber Laser Cutting Machine", "description": "1.5–30 kW. ±0.05mm. Beds 4′×4′ to 8′×20′." },
+        "fiberLaserTube": { "name": "Fiber Laser Tube Cutting", "description": "Round/square/structural profiles. Lengths to 9 m." },
+        "sheetTubeCombo": { "name": "Sheet & Tube Combo Laser", "description": "Flat sheet and tube on one machine. 3–6 kW." },
+        "fourInOne": { "name": "Laser Welding Machine", "description": "Handheld weld, cut, clean, wire-feed. 1.5–3 kW." },
+        "laserCleaning": { "name": "Laser Cleaning Machine", "description": "Chemical-free rust and oxide removal." },
+        "pressBreake": { "name": "CNC Press Brake", "description": "±0.01mm repeatability. 40–400 ton." },
+        "shearing": { "name": "Guillotine & Swing Beam Shearing", "description": "Guillotine up to 16 mm. Swing beam up to 12 mm." },
+        "ironworker": { "name": "Ironworker", "description": "Punch, notch, shear, and bend in one machine." }
+      }
+    },
+    "automation": {
+      "label": "Robotic Automation",
+      "heading": "Welding automation that pays for itself in months, not years.",
+      "explore": "Explore Automation Solutions",
+      "badge": "New to the US Market",
+      "products": {
+        "cobot": { "name": "Collaborative Welding Arm", "description": "Deploy in 6 weeks. Works alongside humans safely." },
+        "industrial": { "name": "Industrial Welding Arm", "description": "High-speed production welding. 20kg payload." }
+      }
+    },
+    "features": {
+      "precision": {
+        "label": "Precision",
+        "title": "Uncompromising Precision",
+        "body": "Tolerances down to ±0.05mm across every cut, bend, and weld. Our machines are calibrated before shipping and recalibrated on-site during installation. Your shop's output is only as good as the machines behind it — we make sure those machines never let you down."
+      },
+      "partnership": {
+        "label": "Partnership",
+        "title": "Fabrication to Automation — One Partner",
+        "body": "Whether you're cutting your first sheet of metal or deploying your fifth cobot welding cell, VTM Tech Solutions handles the full arc of your production evolution. No need to juggle five vendors. We supply, install, train, and support — everything under one roof."
+      },
+      "support": {
+        "label": "Support",
+        "title": "Support That Doesn't Disappear After Delivery",
+        "body": "Installation, calibration, operator training, and remote diagnostics — all included. Our US-based support team is reachable by phone, email, and video call. Spare parts ship same day. We measure our success by your uptime, not by your purchase order."
+      },
+      "consultation": {
+        "label": "Consultation",
+        "title": "Support That Starts Before You Buy",
+        "body": "From your first question to final installation, our specialists work alongside you to spec the right machine for your production volume, material types, and floor space. We don't upsell — we right-size. Because a machine that fits your shop perfectly is the only one worth buying."
+      }
+    },
+    "industries": {
+      "label": "Industries We Serve",
+      "heading": "Built for every corner of US metal manufacturing.",
+      "allSolutions": "All Solutions"
+    },
+    "testimonials": {
+      "label": "Customer Stories",
+      "heading": "US shops already running on VTM.",
+      "t1": {
+        "quote": "We replaced three separate machines with one VTM fiber laser. The ROI was under 18 months.",
+        "author": "Mike Castellano",
+        "company": "Castellano Metalworks",
+        "location": "Texas"
+      },
+      "t2": {
+        "quote": "The installation team stayed 3 days to make sure we were cutting perfect parts. That's rare.",
+        "author": "Sarah Okonkwo",
+        "company": "Precision Fab LLC",
+        "location": "Florida"
+      },
+      "t3": {
+        "quote": "Our welding output doubled in the first month with the cobot arm.",
+        "author": "Carlos Restrepo",
+        "company": "CR Metal Solutions",
+        "location": "California"
+      }
+    },
+    "blog": {
+      "label": "From the Blog",
+      "heading": "Knowledge for shop owners and production managers.",
+      "allArticles": "All Articles",
+      "readMore": "Read More",
+      "p1": {
+        "title": "Fiber Laser vs CO₂: Which Is Right for Your Shop in 2026?",
+        "excerpt": "Power, speed, and cost — a practical comparison for US metal fabrication shops making their first laser investment.",
+        "date": "March 15, 2026"
+      },
+      "p2": {
+        "title": "Understanding Cobot Welding ROI: A Shop Owner's Checklist",
+        "excerpt": "Before you buy a collaborative welding arm, run through this checklist to accurately forecast your return on investment.",
+        "date": "February 28, 2026"
+      },
+      "p3": {
+        "title": "5 Signs Your Press Brake Is Limiting Your Shop's Throughput",
+        "excerpt": "If your bending department is the bottleneck, the problem might not be your operators — it might be your equipment.",
+        "date": "February 10, 2026"
+      }
+    },
+    "cta": {
+      "label": "Get Started",
+      "heading": "Ready to see what your shop can become?",
+      "body": "Get a free consultation. No obligation. Response within 1 business day."
+    }
+  }
+}

@@ -1,0 +1,351 @@
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/lib/navigation";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { StaggerChildren } from "@/components/ui/StaggerChildren";
+import { IndustriesCarousel } from "@/components/home/IndustriesCarousel";
+import { ContactMiniForm } from "@/components/home/ContactMiniForm";
+import { HomepageHeroCTA } from "@/components/home/HomepageHeroCTA";
+import { TrustBarStats } from "@/components/home/TrustBarStats";
+import { HeroHeadline } from "@/components/home/HeroHeadline";
+import { AnimatedDivider } from "@/components/home/AnimatedDivider";
+import { PinnedFeatureSection } from "@/components/home/PinnedFeatureSection";
+
+const FABRICATION_HREFS = [
+  "/fabrication/fiber-laser-cutting-machine",
+  "/fabrication/fiber-laser-tube-cutting-machine",
+  "/fabrication/sheet-tube-laser-cutting-machine",
+  "/fabrication/4-in-1-laser-machine",
+  "/fabrication/laser-cleaning-machine",
+  "/fabrication/cnc-press-brake",
+  "/fabrication/shearing-machine",
+  "/fabrication/ironworker",
+] as const;
+
+const FABRICATION_KEYS = [
+  "fiberLaser",
+  "fiberLaserTube",
+  "sheetTubeCombo",
+  "fourInOne",
+  "laserCleaning",
+  "pressBreake",
+  "shearing",
+  "ironworker",
+] as const;
+
+const AUTOMATION_PRODUCTS = [
+  {
+    key: "cobot" as const,
+    href: "/automation/collaborative-welding-arm",
+    image: "/images/cobot-welding-hero-2.png",
+  },
+  {
+    key: "industrial" as const,
+    href: "/automation/industrial-welding-arm",
+    image: "/images/industrial-welding-arm-hero.png",
+  },
+];
+
+const FEATURE_IMAGES = [
+  { key: "precision" as const, image: "/images/homepage-feature-precision.jpg.png", imageAlt: "Laser cutting machine creating precise sparks on metal" },
+  { key: "partnership" as const, image: "/images/homepage-feature-partnership.jpg.png", imageAlt: "Modern CNC factory floor with machinery", reverse: true },
+  { key: "support" as const, image: "/images/homepage-feature-support.jpg.png", imageAlt: "Industrial worker operating machinery" },
+  { key: "consultation" as const, image: "/images/homepage-feature-consultation.jpg.png", imageAlt: "Industrial lighting and laser technology", reverse: true },
+];
+
+const BLOG_SLUGS = [
+  "fiber-laser-vs-co2-2026",
+  "cobot-welding-roi-checklist",
+  "press-brake-throughput-signs",
+] as const;
+
+const BLOG_KEYS = ["p1", "p2", "p3"] as const;
+
+const TESTIMONIAL_KEYS = ["t1", "t2", "t3"] as const;
+
+export default function HomePage() {
+  const t = useTranslations("home");
+
+  const featureBlocks = FEATURE_IMAGES.map(({ key, image, imageAlt, reverse }) => ({
+    label: t(`features.${key}.label`),
+    title: t(`features.${key}.title`),
+    body: t(`features.${key}.body`),
+    image,
+    imageAlt,
+    reverse,
+  }));
+
+  return (
+    <>
+      {/* ── Section 1: Hero ── */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/homepage-hero.jpg.png"
+          alt="Laser cutting machine with bright sparks on metal"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-vtm-dark/65 via-vtm-dark/55 to-vtm-dark/90" />
+
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-white/50 mb-6">
+            {t("hero.eyebrow")}
+          </p>
+          <HeroHeadline text={t("hero.headline")} />
+          <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body">
+            {t("hero.subheadline")}
+          </p>
+          <HomepageHeroCTA />
+        </div>
+
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+          <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase">{t("hero.scroll")}</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent vtm-scroll-line" />
+        </div>
+      </section>
+
+      {/* ── Section 2: Trust Bar ── */}
+      <TrustBarStats />
+
+      {/* ── Section 3: Product Split ── */}
+      <section id="products" className="flex flex-col lg:flex-row min-h-screen">
+        {/* Left: Fabrication */}
+        <div className="lg:w-1/2 bg-vtm-dark px-8 lg:px-12 py-16">
+          <FadeIn>
+            <SectionLabel light className="mb-4">{t("fabrication.label")}</SectionLabel>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-10 leading-tight">
+              {t("fabrication.heading")}
+            </h2>
+          </FadeIn>
+          <StaggerChildren className="space-y-1">
+            {FABRICATION_KEYS.map((key, i) => (
+              <Link
+                key={FABRICATION_HREFS[i]}
+                href={FABRICATION_HREFS[i]}
+                className="group flex items-start justify-between gap-4 py-5 border-b border-white/10 hover:border-white/30 transition-colors"
+              >
+                <div>
+                  <h3 className="font-headline font-semibold text-white group-hover:text-vtm-red transition-colors text-base">
+                    {t(`fabrication.products.${key}.name`)}
+                  </h3>
+                  <p className="text-white/50 text-sm mt-0.5 font-body">
+                    {t(`fabrication.products.${key}.description`)}
+                  </p>
+                </div>
+                <svg
+                  className="flex-shrink-0 mt-1 text-white/20 group-hover:text-vtm-red group-hover:translate-x-1 transition-all duration-200"
+                  width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"
+                >
+                  <path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            ))}
+          </StaggerChildren>
+          <div className="mt-8">
+            <Button href="/fabrication" variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 hover:border-white/60">
+              {t("fabrication.viewAll")}
+            </Button>
+          </div>
+        </div>
+
+        <AnimatedDivider />
+
+        {/* Right: Automation */}
+        <div className="lg:w-1/2 bg-vtm-gray-light px-8 lg:px-12 py-16">
+          <FadeIn>
+            <SectionLabel className="mb-4">{t("automation.label")}</SectionLabel>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark mb-10 leading-tight">
+              {t("automation.heading")}
+            </h2>
+          </FadeIn>
+          <StaggerChildren className="space-y-6">
+            {AUTOMATION_PRODUCTS.map((product) => (
+              <Link
+                key={product.href}
+                href={product.href}
+                className="product-card group block bg-white border border-vtm-gray-border hover:border-vtm-red/50 transition-colors overflow-hidden"
+              >
+                <div className="relative h-48">
+                  <Image
+                    src={product.image.startsWith("/") ? product.image : `https://images.unsplash.com/photo-${product.image}?w=1200&q=80&fit=crop`}
+                    alt={t(`automation.products.${product.key}.name`)}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <Badge>{t("automation.badge")}</Badge>
+                  </div>
+                </div>
+                <div className="p-6 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-headline font-semibold text-vtm-dark group-hover:text-vtm-red transition-colors text-lg">
+                      {t(`automation.products.${product.key}.name`)}
+                    </h3>
+                    <p className="text-vtm-gray-mid text-sm mt-1 font-body">
+                      {t(`automation.products.${product.key}.description`)}
+                    </p>
+                  </div>
+                  <svg
+                    className="flex-shrink-0 mt-1 text-vtm-gray-mid group-hover:text-vtm-red group-hover:translate-x-1 transition-all duration-200"
+                    width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"
+                  >
+                    <path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </Link>
+            ))}
+          </StaggerChildren>
+          <div className="mt-8">
+            <Button href="/automation" variant="primary" size="md">
+              {t("automation.explore")}
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 4: Feature Highlights ── */}
+      <PinnedFeatureSection blocks={featureBlocks} />
+
+      {/* ── Section 5: Industry Solutions Carousel ── */}
+      <section className="bg-white py-20 overflow-hidden">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 mb-10">
+          <FadeIn>
+            <SectionLabel className="mb-3">{t("industries.label")}</SectionLabel>
+            <div className="flex items-end justify-between gap-4">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark max-w-xl leading-tight">
+                {t("industries.heading")}
+              </h2>
+              <Button href="/solutions" variant="ghost" size="md" arrow className="hidden md:inline-flex flex-shrink-0">
+                {t("industries.allSolutions")}
+              </Button>
+            </div>
+          </FadeIn>
+        </div>
+        <IndustriesCarousel />
+      </section>
+
+      {/* ── Section 6: Social Proof ── */}
+      <section className="bg-vtm-gray-light py-20">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
+          <FadeIn>
+            <SectionLabel className="mb-3 text-center">{t("testimonials.label")}</SectionLabel>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark text-center mb-14 max-w-2xl mx-auto leading-tight">
+              {t("testimonials.heading")}
+            </h2>
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {TESTIMONIAL_KEYS.map((key) => (
+              <div key={key} className="bg-white border border-vtm-gray-border p-8 flex flex-col">
+                <svg width="28" height="22" viewBox="0 0 28 22" fill="none" className="mb-6 flex-shrink-0" aria-hidden="true">
+                  <path d="M0 22V12.5C0 5.167 3.833 1.167 11.5 0l1.5 2.5C9.5 3.5 7.5 5.5 7 9h5V22H0zm15.5 0V12.5C15.5 5.167 19.333 1.167 27 0l1 2.5c-3.5 1-5.5 3-6 6.5h5V22h-11.5z" fill="#CB1C1D" opacity="0.15"/>
+                </svg>
+                <p className="font-body text-vtm-dark text-lg leading-relaxed flex-1 mb-6 italic">
+                  &ldquo;{t(`testimonials.${key}.quote`)}&rdquo;
+                </p>
+                <div className="border-t border-vtm-gray-border pt-5">
+                  <p className="font-headline font-semibold text-vtm-dark text-sm">{t(`testimonials.${key}.author`)}</p>
+                  <p className="text-vtm-gray-mid text-xs mt-0.5">{t(`testimonials.${key}.company`)} — {t(`testimonials.${key}.location`)}</p>
+                </div>
+              </div>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* ── Section 7: Blog Preview ── */}
+      <section className="bg-white py-20">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
+          <FadeIn>
+            <div className="flex items-end justify-between gap-4 mb-12">
+              <div>
+                <SectionLabel className="mb-3">{t("blog.label")}</SectionLabel>
+                <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark max-w-xl leading-tight">
+                  {t("blog.heading")}
+                </h2>
+              </div>
+              <Button href="/blog" variant="ghost" size="md" arrow className="hidden md:inline-flex flex-shrink-0">
+                {t("blog.allArticles")}
+              </Button>
+            </div>
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {BLOG_KEYS.map((key, i) => (
+              <Link
+                key={BLOG_SLUGS[i]}
+                href={`/blog/${BLOG_SLUGS[i]}`}
+                className="group border border-vtm-gray-border hover:border-vtm-red/50 transition-colors p-6 flex flex-col"
+              >
+                <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-4 font-body">
+                  {t(`blog.${key}.date`)}
+                </p>
+                <h3 className="font-headline font-bold text-vtm-dark group-hover:text-vtm-red transition-colors text-lg leading-snug mb-3 flex-1">
+                  {t(`blog.${key}.title`)}
+                </h3>
+                <p className="text-vtm-gray-mid text-sm font-body leading-relaxed mb-6">
+                  {t(`blog.${key}.excerpt`)}
+                </p>
+                <span className="text-vtm-red text-sm font-semibold group-hover:underline inline-flex items-center gap-1">
+                  {t("blog.readMore")}
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* ── Section 8: Final CTA ── */}
+      <section className="bg-vtm-dark py-24">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <FadeIn>
+              <SectionLabel light className="mb-4">{t("cta.label")}</SectionLabel>
+              <h2 className="font-headline text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                {t("cta.heading")}
+              </h2>
+              <p className="text-white/60 font-body text-lg leading-relaxed">
+                {t("cta.body")}
+              </p>
+            </FadeIn>
+            <div>
+              <ContactMiniForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* JSON-LD Organization */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "VTM Tech Solutions",
+            url: "https://vtmtechsolutions.com",
+            logo: "https://vtmtechsolutions.com/logo.png",
+            description:
+              "Industrial fiber laser cutting machines, CNC press brakes, collaborative welding robots, and automation systems for US metal fabrication shops.",
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "sales",
+              availableLanguage: ["English", "Spanish"],
+            },
+            sameAs: [
+              "https://www.linkedin.com/company/vtm-tech-solutions",
+            ],
+          }),
+        }}
+      />
+    </>
+  );
+}
