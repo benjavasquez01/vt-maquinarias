@@ -13,14 +13,14 @@ const en: ProductPageData = {
       headline: "Hydraulic Hold-Down — No Sheet Movement at the Cut",
       body: "A bank of hydraulic hold-down clamps activates automatically before the blade descends, gripping the sheet across its full width. The material cannot shift, bow, or creep during the cut — eliminating the angled cuts and edge burr that plague mechanical-hold-down machines on thin gauge material.",
       spec: { label: "Hold-Down", value: "Full hydraulic" },
-      imageId: "1558618666-fcd25c85cd64",
+      imageId: "/images/shearing-guillotine-hero.png",
     },
     {
       number: "02",
       headline: "Adjustable Rake Angle — Match the Cut to the Material",
       body: "Rake angle (the tilt of the moving blade relative to the fixed blade) directly controls cut quality. At 1°, the blade shears thin gauge sheet with minimal bow. At 2.5°, the blade cuts heavy plate with reduced required tonnage. The E21S controller stores rake angle per job — no manual adjustment between material changes.",
       spec: { label: "Rake Angle", value: "1°–2.5°" },
-      imageId: "1565793248595-fad6d33f2f41",
+      imageId: "/images/ironworker-hero.png",
     },
     {
       number: "03",
@@ -34,7 +34,7 @@ const en: ProductPageData = {
       headline: "E21S Controller — Simple, Reliable, Industrial",
       body: "The ESA E21S is a proven industrial CNC controller designed for shearing machine environments — tolerates vibration, dust, and temperature variation. Large numeric keypad for gloved operators. Programs are retained through power cycles without a battery. Parts count and blade stroke count displayed for maintenance scheduling.",
       spec: { label: "Controller", value: "E21S CNC" },
-      imageId: "1504917595217-d4dc5ebe6122",
+      imageId: "/images/cnc-press-brake-hero.png",
     },
     {
       number: "05",
@@ -93,9 +93,9 @@ const en: ProductPageData = {
     { feature: "Price", ours: "Comparable", theirs: "Comparable" },
   ],
   relatedProducts: [
-    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "1558618666-fcd25c85cd64" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "1504917595217-d4dc5ebe6122" },
-    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "1565793248595-fad6d33f2f41" },
+    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "/images/shearing-guillotine-hero.png" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/ironworker-hero.png" },
     { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
   ],
   faqs: [
@@ -135,14 +135,14 @@ const es: ProductPageData = {
       headline: "Sujeción Hidráulica — Sin Movimiento de la Lámina en el Corte",
       body: "Un banco de prensas de sujeción hidráulicas se activa automáticamente antes de que la cuchilla descienda, sujetando la lámina en todo su ancho. El material no puede desplazarse, arquearse ni deslizarse durante el corte — eliminando los cortes angulados y las rebabas en el borde que afectan a las máquinas de sujeción mecánica en material de calibre delgado.",
       spec: { label: "Sujeción", value: "Hidráulica completa" },
-      imageId: "1558618666-fcd25c85cd64",
+      imageId: "/images/shearing-guillotine-hero.png",
     },
     {
       number: "02",
       headline: "Ángulo de Inclinación Ajustable — Adapte el Corte al Material",
       body: "El ángulo de inclinación (la inclinación de la cuchilla móvil en relación con la cuchilla fija) controla directamente la calidad del corte. A 1°, la cuchilla corta la lámina de calibre delgado con mínimo arqueado. A 2.5°, la cuchilla corta la placa pesada con menor tonelaje requerido. El controlador E21S almacena el ángulo de inclinación por trabajo.",
       spec: { label: "Ángulo de Inclinación", value: "1°–2.5°" },
-      imageId: "1565793248595-fad6d33f2f41",
+      imageId: "/images/ironworker-hero.png",
     },
     {
       number: "03",
@@ -156,7 +156,7 @@ const es: ProductPageData = {
       headline: "Controlador E21S — Simple, Confiable, Industrial",
       body: "El ESA E21S es un controlador CNC industrial probado diseñado para entornos de cizallas — tolera vibración, polvo y variación de temperatura. Teclado numérico grande para operadores con guantes. Los programas se retienen durante los ciclos de energía sin batería. El contador de piezas y el contador de golpes de cuchilla se muestran para programar el mantenimiento.",
       spec: { label: "Controlador", value: "CNC E21S" },
-      imageId: "1504917595217-d4dc5ebe6122",
+      imageId: "/images/cnc-press-brake-hero.png",
     },
     {
       number: "05",
@@ -215,9 +215,9 @@ const es: ProductPageData = {
     { feature: "Precio", ours: "Comparable", theirs: "Comparable" },
   ],
   relatedProducts: [
-    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "1558618666-fcd25c85cd64" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "1504917595217-d4dc5ebe6122" },
-    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "1565793248595-fad6d33f2f41" },
+    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "/images/shearing-guillotine-hero.png" },
+    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/ironworker-hero.png" },
     { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
   ],
   faqs: [

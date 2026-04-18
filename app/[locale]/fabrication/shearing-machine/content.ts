@@ -144,8 +144,8 @@ const en: ProductPageData = {
   ],
 
   relatedProducts: [
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "1504917595217-d4dc5ebe6122" },
-    { name: "Hydraulic Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "1565793248595-fad6d33f2f41" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Hydraulic Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/ironworker-hero.png" },
     { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.png" },
   ],
@@ -306,8 +306,8 @@ const es: ProductPageData = {
   ],
 
   relatedProducts: [
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "1504917595217-d4dc5ebe6122" },
-    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "1565793248595-fad6d33f2f41" },
+    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/ironworker-hero.png" },
     { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinado", imageId: "/images/sheet-tube-combo-hero.png" },
   ],

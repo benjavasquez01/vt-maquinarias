@@ -60,7 +60,7 @@ const en: ProductPageData = {
   relatedProducts: [
     { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Fiber Laser Tube Cutting Machine", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Tube Cutting", imageId: "/images/fiber-laser-tube-hero.png" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "1504917595217-d4dc5ebe6122" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [
@@ -132,7 +132,7 @@ const es: ProductPageData = {
   relatedProducts: [
     { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser de Tubo de Fibra", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Corte de Tubo", imageId: "/images/fiber-laser-tube-hero.png" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "1504917595217-d4dc5ebe6122" },
+    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [

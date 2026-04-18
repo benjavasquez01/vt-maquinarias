@@ -13,14 +13,14 @@ const en: ProductPageData = {
       headline: "Swinging Upper Beam — The Lower Blade Never Moves",
       body: "In a swing beam design, the upper blade pivots on a fixed arc while the lower blade is stationary. The cut material drops straight down after shearing — it never drags across a moving lower blade. This eliminates the scratching and marking that guillotine shears can produce on soft materials like aluminum and polished stainless.",
       spec: { label: "Lower Blade", value: "Fixed — never moves" },
-      imageId: "1558618666-fcd25c85cd64",
+      imageId: "/images/shearing-guillotine-hero.png",
     },
     {
       number: "02",
       headline: "No Distortion in the Cut Blank",
       body: "Because the cut blank drops away cleanly without lateral blade contact, swing beam shears produce flatter, straighter blanks than guillotine shears on thin gauge material. For sheet metal shops producing blanks that go directly to a press brake or stamping press, flatness out of the shear directly affects downstream yield.",
       spec: { label: "Blank Flatness", value: "Superior" },
-      imageId: "1565793248595-fad6d33f2f41",
+      imageId: "/images/ironworker-hero.png",
     },
     {
       number: "03",
@@ -34,7 +34,7 @@ const en: ProductPageData = {
       headline: "Simpler Maintenance — Fewer Moving Components",
       body: "Swing beam machines have fewer hydraulic circuits and mechanical assemblies than equivalent guillotine shears. The blade gap is fixed by design rather than requiring powered adjustment. Pivot pin and blade fastener inspections cover the majority of scheduled maintenance. Total annual maintenance time is typically 30–40% lower than a comparable guillotine.",
       spec: { label: "Maintenance", value: "↓ 30–40%" },
-      imageId: "1504917595217-d4dc5ebe6122",
+      imageId: "/images/cnc-press-brake-hero.png",
     },
     {
       number: "05",
@@ -92,9 +92,9 @@ const en: ProductPageData = {
     { feature: "Cost", ours: "Comparable", theirs: "Comparable" },
   ],
   relatedProducts: [
-    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "1558618666-fcd25c85cd64" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "1504917595217-d4dc5ebe6122" },
-    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "1565793248595-fad6d33f2f41" },
+    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "/images/shearing-guillotine-hero.png" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/ironworker-hero.png" },
     { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
   ],
   faqs: [
@@ -134,14 +134,14 @@ const es: ProductPageData = {
       headline: "Viga Superior Oscilante — La Cuchilla Inferior Nunca Se Mueve",
       body: "En un diseño de viga oscilante, la cuchilla superior pivota sobre un arco fijo mientras la cuchilla inferior es estacionaria. El material cortado cae directamente hacia abajo después del cizallado — nunca arrastra sobre una cuchilla inferior en movimiento. Esto elimina el rayado y marcado que las guillotinas pueden producir en materiales blandos como el aluminio y el inoxidable pulido.",
       spec: { label: "Cuchilla Inferior", value: "Fija — nunca se mueve" },
-      imageId: "1558618666-fcd25c85cd64",
+      imageId: "/images/shearing-guillotine-hero.png",
     },
     {
       number: "02",
       headline: "Sin Distorsión en la Pieza en Blanco",
       body: "Debido a que la pieza en blanco cortada cae limpiamente sin contacto lateral con la cuchilla, las cizallas de viga oscilante producen piezas en blanco más planas y rectas que las guillotinas en material de calibre delgado. Para talleres de chapa metálica que producen piezas en blanco que van directamente a una prensa dobladora o prensa troqueladora, la planitud de la cizalla afecta directamente el rendimiento.",
       spec: { label: "Planitud de la Pieza", value: "Superior" },
-      imageId: "1565793248595-fad6d33f2f41",
+      imageId: "/images/ironworker-hero.png",
     },
     {
       number: "03",
@@ -155,7 +155,7 @@ const es: ProductPageData = {
       headline: "Mantenimiento Más Simple — Menos Componentes Móviles",
       body: "Las máquinas de viga oscilante tienen menos circuitos hidráulicos y conjuntos mecánicos que las guillotinas equivalentes. El espacio de la cuchilla es fijo por diseño en lugar de requerir ajuste con energía. Las inspecciones del pasador pivote y los sujetadores de cuchilla cubren la mayoría del mantenimiento programado. El tiempo total de mantenimiento anual es típicamente 30–40% menor.",
       spec: { label: "Mantenimiento", value: "↓ 30–40%" },
-      imageId: "1504917595217-d4dc5ebe6122",
+      imageId: "/images/cnc-press-brake-hero.png",
     },
     {
       number: "05",
@@ -213,9 +213,9 @@ const es: ProductPageData = {
     { feature: "Costo", ours: "Comparable", theirs: "Comparable" },
   ],
   relatedProducts: [
-    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "1558618666-fcd25c85cd64" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "1504917595217-d4dc5ebe6122" },
-    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "1565793248595-fad6d33f2f41" },
+    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "/images/shearing-guillotine-hero.png" },
+    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/ironworker-hero.png" },
     { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
   ],
   faqs: [

@@ -47,8 +47,8 @@ const POSTS: Record<string, {
       { type: "p", content: "If you answered yes to questions 1, 3, 4, and 5, you're likely a good cobot candidate. If you answered no to fixture quality or can't name your high-volume parts, fix those problems first — they'll improve your manual welding operation too, and they're prerequisites for cobot success. We'd rather tell you that now than after installation." },
     ],
     related: [
-      { title: "Cobot Welding ROI: Real Numbers from 3 US Shops", slug: "cobot-welding-roi-real-numbers", imageId: "1485827404703-89b55fcc595e", category: "Case Study" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "1565793248595-fad6d33f2f41", category: "Technical Guide" },
+      { title: "Cobot Welding ROI: Real Numbers from 3 US Shops", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.png", category: "Case Study" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
     ],
   },
   "press-brake-throughput-signs": {
@@ -76,8 +76,8 @@ const POSTS: Record<string, {
       { type: "p", content: "Start by measuring actual setup time and run time for your 10 most common jobs over two weeks. The data will tell you whether you have a capacity problem or a setup problem. A capacity problem requires investment. A setup problem requires process changes — and sometimes a machine upgrade to a controller and tooling system that makes those process changes possible. We're happy to walk through your production data with you and give you an honest assessment." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "1581092918056-0c4c3acd3789", category: "Technical Guide" },
-      { title: "Guillotine vs. Swing Beam Shear", slug: "shearing-machine-guillotine-vs-swing-beam", imageId: "1518770660439-4636190af475", category: "Buying Guide" },
+      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
+      { title: "Guillotine vs. Swing Beam Shear", slug: "shearing-machine-guillotine-vs-swing-beam", imageId: "/images/blog-shear-comparison.png", category: "Buying Guide" },
     ],
   },
   "fiber-laser-vs-co2-2026": {
@@ -109,8 +109,8 @@ const POSTS: Record<string, {
       { type: "p", content: "For a US metal fabrication shop cutting steel, stainless, aluminum, and occasional non-ferrous material under 25mm, fiber laser is the clear choice in 2026. Lower operating cost, higher speed on thin sheet, and zero mirror maintenance. The only cases where CO₂ remains competitive are thick plate specialists and shops cutting non-metallic materials." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "1581092918056-0c4c3acd3789", category: "Technical Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "1504328345606-18bbc8c9d7d1", category: "Technical Guide" },
+      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
     ],
   },
   "fiber-laser-vs-co2-laser-cutting": {
@@ -142,8 +142,8 @@ const POSTS: Record<string, {
       { type: "p", content: "For a US metal fabrication shop cutting steel, stainless, aluminum, and occasional non-ferrous material under 25mm, fiber laser is the clear choice in 2026. Lower operating cost, higher speed on thin sheet, and zero mirror maintenance. The only cases where CO₂ remains competitive are thick plate specialists and shops cutting non-metallic materials." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "1581092918056-0c4c3acd3789", category: "Technical Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "1504328345606-18bbc8c9d7d1", category: "Technical Guide" },
+      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
     ],
   },
   "cobot-welding-roi-real-numbers": {
@@ -174,8 +174,8 @@ const POSTS: Record<string, {
       ]},
     ],
     related: [
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "1565514020179-026b92b84bb6", category: "Buying Guide" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "1565793248595-fad6d33f2f41", category: "Technical Guide" },
+      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
     ],
   },
   "press-brake-tonnage-calculator": {
@@ -208,8 +208,8 @@ const POSTS: Record<string, {
       { type: "p", content: "Our CNC hydraulic press brakes range from 40 ton/4' to 400 ton/14'. All come with the Delem DA-66T controller, 4-axis back gauge, and ±0.01mm repeatability. We'll help you spec the right machine for your material mix before you commit to a purchase." },
     ],
     related: [
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "1565514020179-026b92b84bb6", category: "Buying Guide" },
-      { title: "Shearing Machine: Guillotine vs. Swing Beam", slug: "shearing-machine-guillotine-vs-swing-beam", imageId: "1518770660439-4636190af475", category: "Buying Guide" },
+      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
+      { title: "Shearing Machine: Guillotine vs. Swing Beam", slug: "shearing-machine-guillotine-vs-swing-beam", imageId: "/images/blog-shear-comparison.png", category: "Buying Guide" },
     ],
   },
   "laser-cleaning-vs-sandblasting": {
@@ -240,8 +240,8 @@ const POSTS: Record<string, {
       { type: "p", content: "A sandblasting operation consuming 500 lbs of media per day at $0.20/lb costs $100/day in media alone — $25,000/year before disposal, labor, and equipment maintenance. A laser cleaning system's primary operating cost is electricity. For most fabrication shops, the laser cleaning ROI is 18–36 months." },
     ],
     related: [
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "1565793248595-fad6d33f2f41", category: "Technical Guide" },
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "1565514020179-026b92b84bb6", category: "Buying Guide" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
+      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
     ],
   },
   "shearing-machine-guillotine-vs-swing-beam": {
@@ -276,8 +276,8 @@ const POSTS: Record<string, {
       { type: "p", content: "We offer both configurations: guillotine shears from 4mm to 20mm capacity with beds from 8' to 13', and swing beam shears from 1mm to 6mm capacity. Both come with CNC backstop, programmable stroke counter, and sheet support arms. Contact us to discuss which configuration matches your material mix." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "1581092918056-0c4c3acd3789", category: "Technical Guide" },
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "1565514020179-026b92b84bb6", category: "Buying Guide" },
+      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
+      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
     ],
   },
   "laser-welding-vs-tig-welding-comparison": {
@@ -306,8 +306,8 @@ const POSTS: Record<string, {
       { type: "p", content: "Most fabrication shops don't replace their TIG capability — they add laser welding for the production work that benefits from it, and keep TIG for complex, exotic, or thick-section work. The two technologies are complementary, not competitive." },
     ],
     related: [
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "1504328345606-18bbc8c9d7d1", category: "Technical Guide" },
-      { title: "Cobot Welding ROI: Real Numbers", slug: "cobot-welding-roi-real-numbers", imageId: "1485827404703-89b55fcc595e", category: "Case Study" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
+      { title: "Cobot Welding ROI: Real Numbers", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.png", category: "Case Study" },
     ],
   },
 };
@@ -319,7 +319,7 @@ const DEFAULT_POST = {
   category: "General",
   date: "",
   readTime: "",
-  imageId: "1565514020179-026b92b84bb6",
+  imageId: "/images/blog-fiber-vs-co2.png",
   author: "VTM Tech Solutions",
   body: [{ type: "p" as const, content: "This article has not been published yet. Please check back soon or browse our other articles." }],
   related: [],

@@ -16,12 +16,12 @@ const en: MetalFabContent = {
   },
   grid: { sectionLabel: "The Full Line", headline: "Equipment for Every Stage of Fabrication" },
   machines: [
-    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Cutting", imageId: "1565514020179-026b92b84bb6" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Bending", imageId: "1581092918056-0c4c3acd3789" },
-    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", spec: "6–20mm capacity", tag: "Shearing", imageId: "1518770660439-4636190af475" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · no consumables", tag: "Welding", imageId: "1504328345606-18bbc8c9d7d1" },
-    { name: "Laser Cleaning Machine", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · chemical-free", tag: "Cleaning", imageId: "1565793248595-fad6d33f2f41" },
-    { name: "Ironworker", href: "/fabrication/ironworker", spec: "55–165 ton · 4-in-1", tag: "Multi-Process", imageId: "1504917595217-d4dc5ebe6122" },
+    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", spec: "6–20mm capacity", tag: "Shearing", imageId: "/images/shearing-guillotine-hero.png" },
+    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · no consumables", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Laser Cleaning Machine", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · chemical-free", tag: "Cleaning", imageId: "/images/laser-cleaning-hero.png" },
+    { name: "Ironworker", href: "/fabrication/ironworker", spec: "55–165 ton · 4-in-1", tag: "Multi-Process", imageId: "/images/ironworker-hero.png" },
   ],
   advantages: {
     items: [
@@ -48,12 +48,12 @@ const es: MetalFabContent = {
   },
   grid: { sectionLabel: "La Línea Completa", headline: "Equipos para Cada Etapa de la Fabricación" },
   machines: [
-    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "1565514020179-026b92b84bb6" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Doblado", imageId: "1581092918056-0c4c3acd3789" },
-    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", spec: "Capacidad 6–20mm", tag: "Cizallado", imageId: "1518770660439-4636190af475" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · sin consumibles", tag: "Soldadura", imageId: "1504328345606-18bbc8c9d7d1" },
-    { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · sin químicos", tag: "Limpieza", imageId: "1565793248595-fad6d33f2f41" },
-    { name: "Punzonadora", href: "/fabrication/ironworker", spec: "55–165 ton · 4 en 1", tag: "Multiproceso", imageId: "1504917595217-d4dc5ebe6122" },
+    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", spec: "Capacidad 6–20mm", tag: "Cizallado", imageId: "/images/shearing-guillotine-hero.png" },
+    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · sin consumibles", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · sin químicos", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.png" },
+    { name: "Punzonadora", href: "/fabrication/ironworker", spec: "55–165 ton · 4 en 1", tag: "Multiproceso", imageId: "/images/ironworker-hero.png" },
   ],
   advantages: {
     items: [

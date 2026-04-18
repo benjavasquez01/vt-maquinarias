@@ -100,7 +100,7 @@ const es: AutomationPageContent = {
         name: "Brazo de Soldadura Colaborativo",
         subtitle: "Cobot de 6 ejes, carga útil 7 kg, ±0.02 mm — listo para IIoT",
         description: "Un cobot seguro para humanos y conectado a la Industria 4.0 que trabaja junto a sus operadores sin vallado de seguridad. Los datos de soldadura en tiempo real se envían a su MES o panel de control desde el primer día. Se integra con su antorcha MIG o TIG existente en días, no en meses.",
-        imageId: "1485827404703-89b55fcc595e",
+        imageId: "/images/cobot-welding-hero-2.png",
         badge: "NUEVO EN EL MERCADO DE EE.UU.",
         specs: ["Carga útil 7 kg", "Alcance 900 mm", "Precisión ±0.02 mm", "Salida de datos IIoT", "Implementación en 6 semanas"],
         cta: "Explorar sistema",

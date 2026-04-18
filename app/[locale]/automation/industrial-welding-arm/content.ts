@@ -184,7 +184,7 @@ const en: IndustrialArmContent = {
     items: [
       { name: "Collaborative Welding Arm", href: "/automation/collaborative-welding-arm", tag: "Automation", imageId: "/images/cobot-welding-hero-2.png" },
       { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabrication", imageId: "/images/fiber-laser-hero.png" },
-      { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "1581092918056-0c4c3acd3789" },
+      { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
     ],
   },
 };
@@ -312,7 +312,7 @@ const es: IndustrialArmContent = {
     items: [
       { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.png" },
       { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabricación", imageId: "/images/fiber-laser-hero.png" },
-      { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "1581092918056-0c4c3acd3789" },
+      { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
     ],
   },
 };

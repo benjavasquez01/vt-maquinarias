@@ -61,7 +61,7 @@ const en: ProductPageData = {
     { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "1504917595217-d4dc5ebe6122" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
   ],
   faqs: [
     { question: "What profile types can the tube laser cut?", answer: "Round tube, square tube, rectangular tube, angle iron (L-section), C-channel, I-beam, H-beam, and custom profiles. The CypTube controller includes profile templates for all standard sections." },
@@ -134,7 +134,7 @@ const es: ProductPageData = {
     { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "1504917595217-d4dc5ebe6122" },
+    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
   ],
   faqs: [
     { question: "¿Qué tipos de perfil puede cortar el láser de tubos?", answer: "Tubo redondo, tubo cuadrado, tubo rectangular, ángulo (perfil L), canal C, viga I, viga H y perfiles personalizados. El controlador CypTube incluye plantillas de perfil para todas las secciones estándar." },
