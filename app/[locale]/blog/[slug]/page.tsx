@@ -77,7 +77,7 @@ const POSTS: Record<string, {
     ],
     related: [
       { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
-      { title: "Guillotine vs. Swing Beam Shear", slug: "shearing-machine-guillotine-vs-swing-beam", imageId: "/images/blog-shear-comparison.png", category: "Buying Guide" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
     ],
   },
   "fiber-laser-vs-co2-2026": {
@@ -209,7 +209,7 @@ const POSTS: Record<string, {
     ],
     related: [
       { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
-      { title: "Shearing Machine: Guillotine vs. Swing Beam", slug: "shearing-machine-guillotine-vs-swing-beam", imageId: "/images/blog-shear-comparison.png", category: "Buying Guide" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
     ],
   },
   "laser-cleaning-vs-sandblasting": {
@@ -241,42 +241,6 @@ const POSTS: Record<string, {
     ],
     related: [
       { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
-    ],
-  },
-  "shearing-machine-guillotine-vs-swing-beam": {
-    title: "Guillotine vs. Swing Beam Shear: Which Is Right for Your Shop?",
-    excerpt: "Both cut sheet metal. The blade geometry, material capacity, and cut quality are different enough to matter. Here's how to choose.",
-    category: "Buying Guide",
-    date: "January 30, 2026",
-    readTime: "6 min read",
-    imageId: "/images/blog-shear-comparison.png",
-    author: "VTM Tech Solutions",
-    body: [
-      { type: "p", content: "Shearing machines all do the same basic thing — cut sheet metal with a linear blade stroke. The difference between guillotine (straight blade) and swing beam (arc blade) shears is in how the blade moves, and that difference has real consequences for material capacity, cut quality, and operating cost." },
-      { type: "h2", content: "Guillotine shear: straight down, maximum capacity" },
-      { type: "p", content: "In a guillotine shear, the upper blade travels straight down parallel to the lower blade. This is the more traditional design and remains preferred for heavy-gauge material. Guillotine shears can cut material up to 20mm thick at full bed width. The straight blade path creates minimal horizontal force on the sheet — important for distortion-sensitive material." },
-      { type: "ul", content: [
-        "Ideal for: thick plate (6–20mm), structural steel, heavy production environments",
-        "Material capacity: up to 20mm mild steel at full width",
-        "Cut quality: excellent on heavy gauge; slight blade deflection on very thin material",
-        "Maintenance: more complex blade and hold-down system",
-      ]},
-      { type: "h2", content: "Swing beam shear: arc motion, better thin sheet quality" },
-      { type: "p", content: "The swing beam shear's upper blade moves in an arc rather than straight down. The blade contacts the material at the edge first and progresses inward — similar to scissors. This rolling shear action produces a cleaner cut edge on thin sheet (0.5–6mm) with significantly less distortion than a guillotine shear on the same material." },
-      { type: "ul", content: [
-        "Ideal for: thin sheet (0.5–6mm), precision cut edge quality, sheet metal fabrication",
-        "Material capacity: typically limited to 6mm at full width",
-        "Cut quality: superior on thin sheet; lower edge burr than guillotine on same material",
-        "Maintenance: simpler blade geometry, easier blade changes",
-      ]},
-      { type: "h2", content: "How to choose" },
-      { type: "p", content: "If most of your work is structural steel, plate, or anything consistently over 6mm, guillotine is your answer. If you're primarily cutting sheet metal for fabricated enclosures, HVAC components, or stamped parts, swing beam will give you better edge quality with less rework. If you do both, the guillotine handles the full range — at the cost of slightly more rework on thin sheet." },
-      { type: "h2", content: "VTM shearing machines" },
-      { type: "p", content: "We offer both configurations: guillotine shears from 4mm to 20mm capacity with beds from 8' to 13', and swing beam shears from 1mm to 6mm capacity. Both come with CNC backstop, programmable stroke counter, and sheet support arms. Contact us to discuss which configuration matches your material mix." },
-    ],
-    related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
       { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
     ],
   },

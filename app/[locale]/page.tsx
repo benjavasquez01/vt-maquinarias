@@ -21,7 +21,6 @@ const FABRICATION_HREFS = [
   "/fabrication/4-in-1-laser-machine",
   "/fabrication/laser-cleaning-machine",
   "/fabrication/cnc-press-brake",
-  "/fabrication/shearing-machine",
   "/fabrication/ironworker",
 ] as const;
 
@@ -32,7 +31,6 @@ const FABRICATION_KEYS = [
   "fourInOne",
   "laserCleaning",
   "pressBreake",
-  "shearing",
   "ironworker",
 ] as const;
 

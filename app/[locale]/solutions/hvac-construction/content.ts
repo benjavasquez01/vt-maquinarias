@@ -23,7 +23,7 @@ const en: HvacContent = {
     sectionLabel: "Common Applications",
     headline: "What HVAC & construction shops process",
     items: [
-      { title: "Rectangular duct components", body: "High-speed shearing and laser cutting for galvanized and stainless duct sections. Consistent width and squareness critical for leak-free assembly." },
+      { title: "Rectangular duct components", body: "High-speed laser cutting for galvanized and stainless duct sections. Consistent width and squareness critical for leak-free assembly." },
       { title: "Equipment enclosures and panels", body: "Laser cut and press brake bent panels for AHUs, chillers, and rooftop equipment. Tight corner radii and clean edges without deburring." },
       { title: "Structural steel brackets and supports", body: "Ironworker punching, notching, and shearing for structural connection hardware. One machine handles what used to require three setups." },
       { title: "Cobot welding for bracket production", body: "High-volume bracket and fitting welding — perfect repetitive work for a collaborative welding arm. Run 120–150 parts per shift with one operator supervising." },
@@ -34,7 +34,6 @@ const en: HvacContent = {
     headline: "The HVAC fabrication stack",
     learnMore: "Learn more →",
     items: [
-      { name: "Shearing Machine", href: "/fabrication/shearing-machine", desc: "Fast, clean sheet metal cuts. Guillotine or swing-beam configuration." },
       { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "Complex duct profiles and panel cutouts at production speed." },
       { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", desc: "Consistent bends for enclosures, panels, and flanges." },
       { name: "Collaborative Welding Arm", href: "/automation/collaborative-welding-arm", desc: "Automate your highest-volume bracket and fitting welds." },
@@ -62,7 +61,7 @@ const es: HvacContent = {
     sectionLabel: "Aplicaciones Comunes",
     headline: "Lo que procesan los talleres de HVAC y construcción",
     items: [
-      { title: "Componentes de ductos rectangulares", body: "Cizallado y corte láser de alta velocidad para secciones de ductos galvanizados e inoxidables. Anchura y escuadría consistentes, fundamentales para un montaje sin fugas." },
+      { title: "Componentes de ductos rectangulares", body: "Corte láser de alta velocidad para secciones de ductos galvanizados e inoxidables. Anchura y escuadría consistentes, fundamentales para un montaje sin fugas." },
       { title: "Carcasas y paneles de equipos", body: "Paneles cortados a láser y doblados en prensa para manejadoras de aire, enfriadoras y equipos de techo. Radios de esquina ajustados y bordes limpios sin desbarbado." },
       { title: "Soportes y refuerzos de acero estructural", body: "Punzonado, entallado y cizallado con punzonadora para herrajes de conexión estructural. Una máquina realiza lo que antes requería tres operaciones." },
       { title: "Soldadura con cobot para producción de soportes", body: "Soldadura de soportes y accesorios de alto volumen — trabajo repetitivo ideal para un brazo de soldadura colaborativo. Produzca 120–150 piezas por turno con un solo operador supervisando." },
@@ -73,7 +72,6 @@ const es: HvacContent = {
     headline: "La solución completa para fabricación HVAC",
     learnMore: "Más información →",
     items: [
-      { name: "Cizalla", href: "/fabrication/shearing-machine", desc: "Cortes rápidos y limpios en chapa metálica. Configuración de guillotina o viga oscilante." },
       { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", desc: "Perfiles complejos de ductos y recortes de paneles a velocidad de producción." },
       { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", desc: "Doblados consistentes para carcasas, paneles y bridas." },
       { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", desc: "Automatice sus soldaduras de mayor volumen de soportes y accesorios." },

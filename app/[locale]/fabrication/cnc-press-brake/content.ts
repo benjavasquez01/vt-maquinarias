@@ -93,8 +93,7 @@ const en: ProductPageData = {
     { feature: "Initial cost", ours: "Higher", theirs: "Lower" },
   ],
   relatedProducts: [
-    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "/images/cnc-press-brake-feature-03-crowning.png" },
-    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/cnc-press-brake-feature-04-backgauge.png" },
+    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/ironworker-hero.png" },
     { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
   ],
@@ -215,8 +214,7 @@ const es: ProductPageData = {
     { feature: "Costo inicial", ours: "Mayor", theirs: "Menor" },
   ],
   relatedProducts: [
-    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "/images/cnc-press-brake-feature-03-crowning.png" },
-    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/cnc-press-brake-feature-04-backgauge.png" },
+    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/ironworker-hero.png" },
     { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
   ],

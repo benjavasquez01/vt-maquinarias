@@ -13,7 +13,7 @@ const en: FabricationPageContent = {
   hero: {
     sectionLabel: "Product Line",
     headline: "Fabrication\nMachinery",
-    subheadline: "Laser cutting, laser welding, laser cleaning, CNC press brakes, hydraulic shearing, and ironworkers — every machine configured for US voltage, backed by US-based installation and support.",
+    subheadline: "Laser cutting, laser welding, laser cleaning, CNC press brakes, and ironworkers — every machine configured for US voltage, backed by US-based installation and support.",
     cta1: "Request a Quote",
     cta2: "View Automation",
   },
@@ -25,7 +25,6 @@ const en: FabricationPageContent = {
     { slug: "4-in-1-laser-machine", name: "Laser Welding Machine", tag: "Welding", description: "VTM-4W. Handheld welding, cutting, cleaning, wire-feed. 1.5–3 kW, all common metals.", imageId: "/images/4in1-laser-hero-2.png" },
     { slug: "laser-cleaning-machine", name: "Laser Cleaning Machine", tag: "Cleaning", description: "50–500W pulsed fiber. Removes rust, coatings, and oxides with no chemicals.", imageId: "/images/laser-cleaning-hero.png" },
     { slug: "cnc-press-brake", name: "CNC Press Brake", tag: "Bending", description: "40–400 ton, graphic CNC controller, ±0.01 mm repeatability.", imageId: "/images/cnc-press-brake-hero.png" },
-    { slug: "shearing-machine", name: "Guillotine & Swing Beam Shearing", tag: "Shearing", description: "Guillotine up to 16 mm with adjustable rake angle. Swing beam up to 12 mm — ideal for stainless and aluminum.", imageId: "/images/shearing-guillotine-hero.png" },
     { slug: "ironworker", name: "Hydraulic Ironworker", tag: "Multi-Function", description: "55–110 ton, 5 work stations: punch, notch, shear, angle, tube.", imageId: "/images/ironworker-hero.png" },
   ],
   banner: {
@@ -49,7 +48,7 @@ const es: FabricationPageContent = {
   hero: {
     sectionLabel: "Línea de Productos",
     headline: "Maquinaria de\nFabricación",
-    subheadline: "Corte láser, soldadura láser, limpieza láser, prensas dobladoras CNC, cizallas hidráulicas y punzonadoras — cada máquina configurada para voltaje estadounidense, respaldada por instalación y soporte en EE.UU.",
+    subheadline: "Corte láser, soldadura láser, limpieza láser, prensas dobladoras CNC y punzonadoras — cada máquina configurada para voltaje estadounidense, respaldada por instalación y soporte en EE.UU.",
     cta1: "Solicitar Cotización",
     cta2: "Ver Automatización",
   },
@@ -61,7 +60,6 @@ const es: FabricationPageContent = {
     { slug: "4-in-1-laser-machine", name: "Máquina de Soldadura Láser", tag: "Soldadura", description: "VTM-4W. Soldadura, corte, limpieza y alimentación de hilo portátiles. 1.5–3 kW, todos los metales comunes.", imageId: "/images/4in1-laser-hero-2.png" },
     { slug: "laser-cleaning-machine", name: "Máquina de Limpieza Láser", tag: "Limpieza", description: "50–500W fibra pulsada. Elimina óxido, recubrimientos y capas de óxido sin químicos.", imageId: "/images/laser-cleaning-hero.png" },
     { slug: "cnc-press-brake", name: "CNC Press Brake", tag: "Bending", description: "40–400 ton, graphic CNC controller, ±0.01 mm repeatability.", imageId: "/images/cnc-press-brake-hero.png" },
-    { slug: "shearing-machine", name: "Guillotinas y Viga Oscilante", tag: "Cizallado", description: "Guillotina hasta 16 mm con ángulo de corte ajustable. Viga oscilante hasta 12 mm — ideal para inoxidable y aluminio.", imageId: "/images/shearing-guillotine-hero.png" },
     { slug: "ironworker", name: "Hydraulic Ironworker", tag: "Multi-Function", description: "55–110 ton, 5 work stations: punch, notch, shear, angle, tube.", imageId: "/images/ironworker-hero.png" },
   ],
   banner: {

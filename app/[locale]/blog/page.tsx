@@ -53,16 +53,6 @@ const POSTS = [
     imageId: "/images/blog-laser-cleaning-compariso.png",
   },
   {
-    slug: "shearing-machine-guillotine-vs-swing-beam",
-    title: "Guillotine vs. Swing-Beam Shear: Which Configuration Fits Your Work?",
-    excerpt:
-      "Both shear plate steel — but how they move, what they cost to maintain, and what work they do best differs significantly. Here's the complete breakdown.",
-    category: "Buying Guide",
-    date: "January 30, 2026",
-    readTime: "5 min read",
-    imageId: "/images/blog-shear-comparison.png",
-  },
-  {
     slug: "laser-welding-vs-tig-welding-comparison",
     title: "Laser Welding vs. TIG Welding: When to Switch and When to Stay",
     excerpt:

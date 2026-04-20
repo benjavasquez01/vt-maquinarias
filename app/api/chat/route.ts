@@ -9,8 +9,7 @@ FABRICATION:
 2. Laser Welding Machine — 1.5–3 kW handheld/robotic, no consumables, 5× faster than TIG, minimal heat distortion.
 3. Laser Cleaning Machine — 100–3000W, chemical-free rust/oxide/paint removal. No media waste.
 4. CNC Press Brake — 40–400 ton, ±0.01mm repeatability, auto back gauge, multi-axis CNC.
-5. Shearing Machine — Guillotine and swing-beam configurations, 6–20mm capacity.
-6. Ironworker — 55–165 ton, punch/notch/shear/bend in one machine.
+5. Ironworker — 55–165 ton, punch/notch/shear/bend in one machine.
 
 AUTOMATION (NEW TO US MARKET):
 7. Collaborative Welding Arm (Cobot) — 15kg payload, 6-week deployment, no safety cage, 2.5× manual welding speed, ISO/TS 15066.
