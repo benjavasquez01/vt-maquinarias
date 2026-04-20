@@ -8,6 +8,7 @@ import { SpecsTable } from "./SpecsTable";
 import { FaqAccordion } from "./FaqAccordion";
 import { StickyQuoteBar } from "./StickyQuoteBar";
 import { QuoteForm } from "./QuoteForm";
+import { ModelBrowser } from "./ModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
@@ -61,84 +62,8 @@ export default async function FiberLaserPage({
         </div>
       </section>
 
-      {/* ── Block 2: Feature Scroll ────────────────────────────────── */}
-      <section className="bg-white">
-        {c.features.map((feature, i) => (
-          <div
-            key={feature.number}
-            className={`max-w-screen-xl mx-auto px-6 lg:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-center border-b border-vtm-gray-border last:border-0 ${
-              i % 2 === 1 ? "md:flex-row-reverse" : ""
-            }`}
-          >
-            <div className={i % 2 === 1 ? "md:order-2" : ""}>
-              <p className="font-headline text-[80px] md:text-[120px] font-bold text-vtm-gray-light leading-none select-none -ml-1 mb-4">
-                {feature.number}
-              </p>
-              <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark tracking-tight mb-4">
-                {feature.headline}
-              </h2>
-              <p className="text-vtm-gray-mid leading-relaxed mb-6">{feature.body}</p>
-              <div className="inline-flex items-baseline gap-2 bg-vtm-gray-light px-4 py-2">
-                <span className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid">
-                  {feature.spec.label}
-                </span>
-                <span className="font-headline font-bold text-vtm-red text-xl">
-                  {feature.spec.value}
-                </span>
-              </div>
-            </div>
-            <div
-              className={`relative aspect-[4/3] bg-vtm-gray-light overflow-hidden ${
-                i % 2 === 1 ? "md:order-1" : ""
-              }`}
-            >
-              <Image
-                src={[
-                    "/images/fiber-laser-feature-01-speed.png",
-                    "/images/fiber-laser-feature-02-accuracy.png",
-                    "/images/fiber-laser-feature-05-controller.png",
-                    "/images/fiber-laser-feature-03-power.png",
-                    "/images/fiber-laser-feature-04-exchange-table.png",
-                  ][i]}
-                alt={feature.headline}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-        ))}
-      </section>
-
-      {/* ── Block 2.5: Enclosed Option ────────────────────────────── */}
-      <section className="bg-vtm-gray-light py-20 md:py-28" id="enclosed">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <SectionLabel className="mb-4">{c.enclosed.sectionLabel}</SectionLabel>
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-4">
-            {c.enclosed.headline}
-          </h2>
-          <p className="text-vtm-gray-mid text-lg max-w-2xl mb-14 leading-relaxed">
-            {c.enclosed.subheadline}
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {c.enclosed.features.map((f) => (
-              <div key={f.number} className="bg-white border border-vtm-gray-border p-8">
-                <p className="font-headline text-[60px] font-bold text-vtm-gray-light leading-none select-none -ml-1 mb-4">
-                  {f.number}
-                </p>
-                <h3 className="font-headline text-xl font-bold text-vtm-dark tracking-tight mb-3">
-                  {f.headline}
-                </h3>
-                <p className="text-vtm-gray-mid text-sm leading-relaxed mb-6">{f.body}</p>
-                <div className="inline-flex items-baseline gap-2 bg-vtm-gray-light px-3 py-1.5">
-                  <span className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid">{f.spec.label}</span>
-                  <span className="font-headline font-bold text-vtm-red">{f.spec.value}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Block 2: Model Browser ────────────────────────────────── */}
+      <ModelBrowser locale={locale} />
 
       {/* ── Block 3: Technical Specs Table ────────────────────────── */}
       <section className="bg-vtm-gray-light py-20 md:py-28" id="specs">
@@ -176,34 +101,7 @@ export default async function FiberLaserPage({
         </div>
       </section>
 
-      {/* ── Block 5: Configuration Options ───────────────────────── */}
-      <section className="bg-white py-20 md:py-28" id="configure">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <SectionLabel className="mb-4">{c.configure.sectionLabel}</SectionLabel>
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-10">
-            {c.configure.headline}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {c.configure.options.map(({ label, options, note }) => (
-              <div key={label} className="border border-vtm-gray-border p-6">
-                <h3 className="font-headline font-semibold text-vtm-dark mb-3">{label}</h3>
-                <ul className="space-y-2 mb-4">
-                  {options.map((opt) => (
-                    <li key={opt} className="flex items-center gap-2 text-sm text-vtm-gray-mid">
-                      <span className="w-1.5 h-1.5 rounded-full bg-vtm-gray-border flex-shrink-0" />
-                      {opt}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-vtm-gray-mid border-t border-vtm-gray-border pt-4">{note}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-vtm-gray-mid text-sm mt-6">{c.configure.note}</p>
-        </div>
-      </section>
-
-      {/* ── Block 6: Comparison Table vs CO₂ ────────────────────── */}
+      {/* ── Block 5: Comparison Table vs CO₂ ────────────────────── */}
       <section className="bg-vtm-gray-light py-20 md:py-28" id="compare">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <SectionLabel className="mb-4">{c.compare.sectionLabel}</SectionLabel>
@@ -239,7 +137,7 @@ export default async function FiberLaserPage({
         </div>
       </section>
 
-      {/* ── Block 7: Related Products ─────────────────────────────── */}
+      {/* ── Block 6: Related Products ─────────────────────────────── */}
       <section className="bg-white py-20 md:py-24" id="related">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <SectionLabel className="mb-4">{c.related.sectionLabel}</SectionLabel>
@@ -276,7 +174,7 @@ export default async function FiberLaserPage({
         </div>
       </section>
 
-      {/* ── Block 8: FAQ ──────────────────────────────────────────── */}
+      {/* ── Block 7: FAQ ──────────────────────────────────────────── */}
       <section className="bg-vtm-gray-light py-20 md:py-28" id="faq">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 max-w-3xl">
           <SectionLabel className="mb-4">{c.faq.sectionLabel}</SectionLabel>
@@ -287,7 +185,7 @@ export default async function FiberLaserPage({
         </div>
       </section>
 
-      {/* ── Block 9: Quote CTA ────────────────────────────────────── */}
+      {/* ── Block 8: Quote CTA ────────────────────────────────────── */}
       <section className="bg-vtm-dark py-20 md:py-28" id="quote">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <div className="md:grid md:grid-cols-2 gap-16 items-start">
