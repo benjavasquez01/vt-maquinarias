@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Tag } from "@/components/ui/Tag";
 import { Link } from "@/lib/navigation";
@@ -9,6 +8,7 @@ import { FaqAccordion } from "./FaqAccordion";
 import { StickyQuoteBar } from "./StickyQuoteBar";
 import { QuoteForm } from "./QuoteForm";
 import { ModelBrowser } from "./ModelBrowser";
+import { HeroScroll } from "./HeroScroll";
 import { content } from "./content";
 
 export const metadata: Metadata = {
@@ -27,40 +27,8 @@ export default async function FiberLaserPage({
 
   return (
     <>
-      {/* ── Block 1: Hero ─────────────────────────────────────────── */}
-      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-24 overflow-hidden">
-        <Image
-          src="/images/fiber-laser-hero.png"
-          alt="Fiber laser cutting machine"
-          fill
-          priority
-          className="object-cover opacity-70"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-vtm-dark/40 to-vtm-dark/90" aria-hidden="true" />
-
-        <div className="relative z-10 w-full px-6 lg:px-16 flex justify-end">
-          <div className="max-w-2xl text-right mr-8 lg:mr-24">
-            <SectionLabel light className="mb-4">{c.hero.sectionLabel}</SectionLabel>
-            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6">
-              {c.hero.headline.split("\n").map((line, i) => (
-                <span key={i}>{line}{i === 0 && <br />}</span>
-              ))}
-            </h1>
-            <p className="text-white/60 text-lg md:text-xl mb-10 leading-relaxed">
-              {c.hero.subheadline}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-end">
-              <Button href="/quote?machine=fiber-laser-cutting-machine" variant="primary" size="lg">
-                {c.hero.cta1}
-              </Button>
-              <Button href="#" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:border-white/60">
-                {c.hero.cta2}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── Block 1: Hero (scroll-animated) ──────────────────────── */}
+      <HeroScroll c={c.hero} locale={locale} />
 
       {/* ── Block 2: Model Browser ────────────────────────────────── */}
       <ModelBrowser locale={locale} />
