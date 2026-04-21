@@ -3,6 +3,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { SpinViewer360 } from "@/components/ui/SpinViewer360";
+
+const EA_FRAMES = [
+  "/images/SHEET/EA series/main 3015  (1).png",
+  "/images/SHEET/EA series/3015  (2).png",
+  "/images/SHEET/EA series/3015  (3).png",
+  "/images/SHEET/EA series/3015  (4).png",
+  "/images/SHEET/EA series/3015  (6).png",
+  "/images/SHEET/EA series/3015  (7).png",
+  "/images/SHEET/EA series/3015  (8).png",
+];
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -182,7 +193,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
       id: "ea", series: "EA Series", tagline: "Entry Production", power: "1.5–3 kW", badge: "Most Accessible",
-      image: "/images/fiber-laser-feature-01-speed.png",
+      image: "/images/SHEET/EA series/main 3015  (1).png",
       description: "The VTM-EA is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW.",
       bestFor: ["Job shops entering fiber laser", "Light to medium sheet metal", "Stainless and aluminum under ¼\"", "First fiber laser investment"],
       specs: SPECS.ea,
@@ -226,7 +237,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
   es: [
     {
       id: "ea", series: "Serie EA", tagline: "Producción de Entrada", power: "1.5–3 kW", badge: "Más Accesible",
-      image: "/images/fiber-laser-feature-01-speed.png",
+      image: "/images/SHEET/EA series/main 3015  (1).png",
       description: "La VTM-EA es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW.",
       bestFor: ["Talleres que inician con láser de fibra", "Chapa ligera a media", "Inoxidable y aluminio bajo 6 mm", "Primera inversión en láser de fibra"],
       specs: SPECS.ea,
@@ -457,16 +468,36 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
             })}
           </div>
 
-          {/* Compact detail strip */}
-          <div key={selected.id} className="border-t border-vtm-gray-border pt-8 grid md:grid-cols-2 gap-8">
+          {/* Detail strip */}
+          <div key={selected.id} className="border-t border-vtm-gray-border pt-8 grid md:grid-cols-2 gap-8 items-start">
+            {/* Left: 360 viewer for EA, description for others */}
+            {selected.id === "ea" ? (
+              <SpinViewer360
+                frames={EA_FRAMES}
+                alt="VTM-EA Series Fiber Laser Cutting Machine"
+                className="aspect-square"
+              />
+            ) : (
+              <div>
+                <p className="font-headline text-2xl font-bold text-vtm-dark mb-1">{selected.series}</p>
+                <p className="text-vtm-gray-mid text-sm mb-4 leading-relaxed">{selected.description}</p>
+                <Button href={`/quote?machine=fiber-laser-${selected.id}`} variant="primary" size="sm">
+                  {labels.quote}
+                </Button>
+              </div>
+            )}
+
+            {/* Right: for EA show text + bestFor, for others just bestFor */}
             <div>
-              <p className="font-headline text-2xl font-bold text-vtm-dark mb-1">{selected.series}</p>
-              <p className="text-vtm-gray-mid text-sm mb-4 leading-relaxed">{selected.description}</p>
-              <Button href={`/quote?machine=fiber-laser-${selected.id}`} variant="primary" size="sm">
-                {labels.quote}
-              </Button>
-            </div>
-            <div>
+              {selected.id === "ea" && (
+                <div className="mb-6">
+                  <p className="font-headline text-2xl font-bold text-vtm-dark mb-1">{selected.series}</p>
+                  <p className="text-vtm-gray-mid text-sm mb-4 leading-relaxed">{selected.description}</p>
+                  <Button href={`/quote?machine=fiber-laser-${selected.id}`} variant="primary" size="sm">
+                    {labels.quote}
+                  </Button>
+                </div>
+              )}
               <p className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid mb-3">
                 {labels.bestFor}
               </p>
