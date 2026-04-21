@@ -14,6 +14,22 @@ const EA_FRAMES = [
   "/images/SHEET/EA series/3015  (8).png",
 ];
 
+const B_FRAMES = [
+  "/images/SHEET/B series/0 main.png",
+  "/images/SHEET/B series/1.png",
+  "/images/SHEET/B series/2 (2).png",
+  "/images/SHEET/B series/3 (2).png",
+  "/images/SHEET/B series/4 (2).png",
+  "/images/SHEET/B series/5.png",
+  "/images/SHEET/B series/6.png",
+  "/images/SHEET/B series/7].png",
+];
+
+const SERIES_FRAMES: Record<string, string[]> = {
+  ea: EA_FRAMES,
+  b: B_FRAMES,
+};
+
 // ─── Types ─────────────────────────────────────────────────────────────────
 
 type SpecRow =
@@ -61,23 +77,21 @@ const SPECS: Record<string, ModelSpecs> = {
     upgrades: ["Independent Control Cabinet", "Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   b: {
-    headers: ["3 kW", "6 kW", "12 kW"],
+    headers: ["F-3015B", "F-6015B", "F-4020B", "F-6020B", "F-6025B"],
     rows: [
-      { type: "group", label: "Dimensions" },
-      { type: "spec", label: "Available Beds", values: ["3015 / 4015", "3015 / 4015 / 4020", "3015 / 4015 / 4020 / 6020"] },
-      { type: "group", label: "Performance" },
-      { type: "spec", label: "Controller", values: ["CypCut 2000E", "CypCut 4000E", "CypCut 8000C"] },
-      { type: "spec", label: "Positioning Accuracy", values: ["±0.05 mm", "±0.05 mm", "±0.05 mm"] },
-      { type: "spec", label: "Max Speed", values: ["up to 20 m/min", "up to 20 m/min", "up to 20 m/min"] },
-      { type: "spec", label: "Voltage", values: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
-      { type: "group", label: "Cutting Ability" },
-      { type: "spec", label: "Carbon Steel", values: ["up to 16 mm", "up to 20 mm", "up to 30 mm"] },
-      { type: "spec", label: "Stainless Steel", values: ["up to 6 mm", "up to 12 mm", "up to 20 mm"] },
-      { type: "spec", label: "Aluminum", values: ["up to 6 mm", "up to 10 mm", "up to 16 mm"] },
-      { type: "spec", label: "Brass / Copper", values: ["up to 4 mm", "up to 6 mm", "up to 10 mm"] },
+      { type: "spec", label: "Working Area", values: ["3000 × 1500 mm", "6000 × 1500 mm", "4000 × 2000 mm", "6000 × 2000 mm", "6000 × 2500 mm"] },
+      { type: "spec", label: "X / Y / Z Stroke", values: ["1540 × 3050 × 50 mm", "1540 × 6050 × 50 mm", "2040 × 4050 × 50 mm", "2040 × 6050 × 50 mm", "2510 × 6150 × 50 mm"] },
+      { type: "spec", label: "Laser Power", values: ["2 / 3 / 6 / 12 kW", "2 / 3 / 6 / 12 kW", "2 / 3 / 6 / 12 kW", "2 / 3 / 6 / 12 kW", "2 / 3 / 6 / 12 kW"] },
+      { type: "spec", label: "Max Acceleration", values: ["1.5 G", "1.5 G", "1.5 G", "1.5 G", "1.5 G"] },
+      { type: "spec", label: "Positioning Accuracy", values: ["±0.05 mm", "±0.05 mm", "±0.05 mm", "±0.05 mm", "±0.05 mm"] },
+      { type: "spec", label: "Voltage", values: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
+      { type: "spec", label: "Carbon Steel", values: ["1 – 35 mm", "1 – 35 mm", "1 – 35 mm", "1 – 35 mm", "1 – 35 mm"] },
+      { type: "spec", label: "Stainless Steel", values: ["1 – 35 mm", "1 – 35 mm", "1 – 35 mm", "1 – 35 mm", "1 – 35 mm"] },
+      { type: "spec", label: "Aluminum", values: ["1 – 30 mm", "1 – 30 mm", "1 – 30 mm", "1 – 30 mm", "1 – 30 mm"] },
+      { type: "spec", label: "Brass", values: ["1 – 16 mm", "1 – 16 mm", "1 – 16 mm", "1 – 16 mm", "1 – 16 mm"] },
     ],
     features: [],
-    upgrades: ["Dual-Pallet Exchange Table", "Enclosed Safety Cabinet", "Auto-Loading System", "Fume Purifier", "Air Compressor"],
+    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   fe: {
     headers: ["FE-3015", "FE-4020"],
@@ -167,8 +181,8 @@ const MODELS: Record<"en" | "es", Model[]> = {
       specs: SPECS.ea,
     },
     {
-      id: "b", series: "B Series", tagline: "Production Workhorse", power: "3–12 kW", badge: "Most Popular",
-      image: "/images/fiber-laser-feature-03-power.png",
+      id: "b", series: "B Series", tagline: "Production Workhorse", power: "2–12 kW", badge: "Most Popular",
+      image: "/images/SHEET/B series/0 main.png",
       description: "The VTM-B is built for continuous production at the widest range of material thicknesses and sizes. From 3 kW for thin sheet to 12 kW for 1\"+ mild steel and ¾\" stainless, in beds up to 6′×20′.",
       bestFor: ["High-throughput fabrication", "Broad thickness range", "Contract manufacturers", "Multi-shift operations"],
       specs: SPECS.b,
@@ -211,8 +225,8 @@ const MODELS: Record<"en" | "es", Model[]> = {
       specs: SPECS.ea,
     },
     {
-      id: "b", series: "Serie B", tagline: "Caballo de Batalla", power: "3–12 kW", badge: "Más Popular",
-      image: "/images/fiber-laser-feature-03-power.png",
+      id: "b", series: "Serie B", tagline: "Caballo de Batalla", power: "2–12 kW", badge: "Más Popular",
+      image: "/images/SHEET/B series/0 main.png",
       description: "La VTM-B está diseñada para producción continua en la mayor gama de espesores y tamaños. De 3 kW para chapa fina a 12 kW para acero dulce de 25 mm+ e inoxidable de 20 mm, en mesas de hasta 6′×20′.",
       bestFor: ["Fabricación de alto rendimiento", "Amplio rango de espesores", "Fabricantes por contrato", "Operaciones de múltiples turnos"],
       specs: SPECS.b,
@@ -291,15 +305,19 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
   }
   if (current.rows.length > 0) sections.push(current);
 
-  const gridClass =
-    colCount === 1 ? "grid-cols-1 max-w-xs mx-auto" :
-    colCount === 2 ? "grid-cols-2 max-w-2xl mx-auto" :
-    "grid-cols-3";
+  const minColWidth = colCount >= 4 ? "160px" : "200px";
 
   return (
     <div>
-      {/* Model cards */}
-      <div className={`grid gap-6 ${gridClass}`}>
+      {/* Model cards — scrollable on small screens when many columns */}
+      <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+      <div
+        className="grid gap-6"
+        style={{
+          gridTemplateColumns: `repeat(${colCount}, minmax(${minColWidth}, 1fr))`,
+          minWidth: colCount >= 4 ? `${colCount * 160}px` : undefined,
+        }}
+      >
         {specs.headers.map((header, colIdx) => (
           <div key={header} className="flex flex-col">
             {/* Model name */}
@@ -327,6 +345,8 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
           </div>
         ))}
       </div>
+
+      </div>{/* end scroll wrapper */}
 
       {/* Standard features */}
       {specs.features.length > 0 && (
@@ -428,11 +448,11 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
 
           {/* Detail strip */}
           <div key={selected.id} className="border-t border-vtm-gray-border pt-8 grid md:grid-cols-2 gap-8 items-start">
-            {/* Left: 360 viewer for EA, description for others */}
-            {selected.id === "ea" ? (
+            {/* Left: gallery if images exist for this series, else description */}
+            {SERIES_FRAMES[selected.id] ? (
               <ImageGallery
-                images={EA_FRAMES}
-                alt="VTM-EA Series Fiber Laser Cutting Machine"
+                images={SERIES_FRAMES[selected.id]}
+                alt={`VTM-${selected.series} Fiber Laser Cutting Machine`}
               />
             ) : (
               <div>
@@ -446,7 +466,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
 
             {/* Right: for EA show text + bestFor, for others just bestFor */}
             <div>
-              {selected.id === "ea" && (
+              {SERIES_FRAMES[selected.id] && (
                 <div className="mb-6">
                   <p className="font-headline text-2xl font-bold text-vtm-dark mb-1">{selected.series}</p>
                   <p className="text-vtm-gray-mid text-sm mb-4 leading-relaxed">{selected.description}</p>
