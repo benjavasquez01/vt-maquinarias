@@ -3,11 +3,10 @@ import Image from "next/image";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Tag } from "@/components/ui/Tag";
 import { Link } from "@/lib/navigation";
-import { SpecsTable } from "./SpecsTable";
 import { FaqAccordion } from "./FaqAccordion";
 import { StickyQuoteBar } from "./StickyQuoteBar";
 import { QuoteForm } from "./QuoteForm";
-import { ModelBrowser } from "./ModelBrowser";
+import { ModelBrowserWithSpecs } from "./ModelBrowserWithSpecs";
 import { HeroScroll } from "./HeroScroll";
 import { content } from "./content";
 
@@ -30,24 +29,8 @@ export default async function FiberLaserPage({
       {/* ── Block 1: Hero (scroll-animated) ──────────────────────── */}
       <HeroScroll c={c.hero} locale={locale} />
 
-      {/* ── Block 2: Model Browser ────────────────────────────────── */}
-      <ModelBrowser locale={locale} />
-
-      {/* ── Block 3: Technical Specs Table ────────────────────────── */}
-      <section className="bg-vtm-gray-light py-20 md:py-28" id="specs">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <SectionLabel className="mb-4">{c.specs.sectionLabel}</SectionLabel>
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-10">
-            {c.specs.headline}
-          </h2>
-          <SpecsTable
-            specLabel={c.specs.specLabel}
-            valueLabel={c.specs.valueLabel}
-            imperialLabel={c.specs.imperialLabel}
-            metricLabel={c.specs.metricLabel}
-          />
-        </div>
-      </section>
+      {/* ── Block 2+3: Model Browser + Apple Specs ───────────────── */}
+      <ModelBrowserWithSpecs locale={locale} />
 
       {/* ── Block 4: Video Embed ───────────────────────────────────── */}
       <section className="bg-vtm-dark py-20 md:py-28" id="video">
