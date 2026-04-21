@@ -309,27 +309,20 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
               </p>
             </div>
 
-            {/* Sections */}
-            <div className="flex flex-col gap-8">
-              {sections.map((section) => (
-                <div key={section.group} className="flex flex-col gap-6">
-                  {section.group && (
-                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-vtm-gray-mid/60">
-                      {section.group}
+            {/* Specs */}
+            <div className="flex flex-col gap-10">
+              {sections.map((section) =>
+                section.rows.map((row) => (
+                  <div key={row.label} className="text-center">
+                    <p className="font-headline font-bold text-2xl md:text-3xl text-vtm-dark leading-tight mb-1 break-words">
+                      {row.values[colIdx]}
                     </p>
-                  )}
-                  {section.rows.map((row) => (
-                    <div key={row.label} className="text-center">
-                      <p className="font-headline font-bold text-2xl md:text-3xl text-vtm-dark leading-tight mb-1 break-words">
-                        {row.values[colIdx]}
-                      </p>
-                      <p className="text-xs text-vtm-gray-mid tracking-wide">
-                        {row.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              ))}
+                    <p className="text-xs text-vtm-gray-mid tracking-wide">
+                      {row.label}
+                    </p>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         ))}
