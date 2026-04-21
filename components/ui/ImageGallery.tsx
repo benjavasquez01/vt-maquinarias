@@ -14,12 +14,12 @@ export function ImageGallery({ images, alt, className = "" }: Props) {
   return (
     <div className={`flex flex-col gap-3 ${className}`}>
       {/* Main image */}
-      <div className="relative aspect-square bg-vtm-gray-light overflow-hidden">
+      <div className="bg-vtm-gray-light overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={images[active]}
           alt={alt}
-          className="w-full h-full object-contain"
+          className="w-full h-auto block"
         />
       </div>
 
@@ -41,7 +41,7 @@ export function ImageGallery({ images, alt, className = "" }: Props) {
               <img
                 src={src}
                 alt=""
-                className="w-full h-full object-contain bg-vtm-gray-light"
+                className="w-full h-full object-cover"
               />
             </button>
           ))}
