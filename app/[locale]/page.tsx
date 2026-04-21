@@ -8,11 +8,10 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { StaggerChildren } from "@/components/ui/StaggerChildren";
 import { IndustriesCarousel } from "@/components/home/IndustriesCarousel";
 import { ContactMiniForm } from "@/components/home/ContactMiniForm";
-import { HomepageHeroCTA } from "@/components/home/HomepageHeroCTA";
 import { TrustBarStats } from "@/components/home/TrustBarStats";
-import { HeroHeadline } from "@/components/home/HeroHeadline";
 import { AnimatedDivider } from "@/components/home/AnimatedDivider";
 import { PinnedFeatureSection } from "@/components/home/PinnedFeatureSection";
+import { HomepageHeroScroll } from "@/components/home/HomepageHeroScroll";
 
 const FABRICATION_HREFS = [
   "/fabrication/fiber-laser-cutting-machine",
@@ -79,33 +78,12 @@ export default function HomePage() {
   return (
     <>
       {/* ── Section 1: Hero ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/homepage-hero-2.jpg.png"
-          alt="Laser cutting machine with bright sparks on metal"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-vtm-dark/65 via-vtm-dark/55 to-vtm-dark/90" />
-
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-white/50 mb-6">
-            {t("hero.eyebrow")}
-          </p>
-          <HeroHeadline text={t("hero.headline")} />
-          <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body">
-            {t("hero.subheadline")}
-          </p>
-          <HomepageHeroCTA />
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
-          <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase">{t("hero.scroll")}</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent vtm-scroll-line" />
-        </div>
-      </section>
+      <HomepageHeroScroll
+        eyebrow={t("hero.eyebrow")}
+        headline={t("hero.headline")}
+        subheadline={t("hero.subheadline")}
+        scroll={t("hero.scroll")}
+      />
 
       {/* ── Section 2: Trust Bar ── */}
       <TrustBarStats />
