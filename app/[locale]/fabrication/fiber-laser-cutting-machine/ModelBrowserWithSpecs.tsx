@@ -7,7 +7,6 @@ import { ImageGallery } from "@/components/ui/ImageGallery";
 
 const EA_FRAMES = [
   "/images/SHEET/EA series/main 3015  (1).png",
-  "/images/SHEET/EA series/3015  (2).png",
   "/images/SHEET/EA series/3015  (3).png",
   "/images/SHEET/EA series/3015  (4).png",
   "/images/SHEET/EA series/3015  (6).png",
@@ -19,12 +18,12 @@ const EA_FRAMES = [
 
 type SpecRow =
   | { type: "group"; label: string }
-  | { type: "spec"; label: string; values: string[] }
-  | { type: "check"; label: string };
+  | { type: "spec"; label: string; values: string[] };
 
 type ModelSpecs = {
   headers: string[];
   rows: SpecRow[];
+  features: string[];
   upgrades: string[];
 };
 
@@ -57,13 +56,8 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "group", label: "Cutting Ability" },
       { type: "spec", label: "Carbon Steel", values: ["0.8 – 16 mm", "0.8 – 16 mm", "0.8 – 16 mm"] },
       { type: "spec", label: "Stainless Steel", values: ["0.8 – 6 mm", "0.8 – 6 mm", "0.8 – 6 mm"] },
-      { type: "group", label: "Standard Features" },
-      { type: "check", label: "Raycus Fiber Laser Source" },
-      { type: "check", label: "HIWIN Linear Rails" },
-      { type: "check", label: "CypCut CNC Controller" },
-      { type: "check", label: "Fuji Bus Servo Drives" },
-      { type: "check", label: "Tongfei Water Chiller" },
     ],
+    features: ["Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives", "Tongfei Water Chiller"],
     upgrades: ["Independent Control Cabinet", "Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   b: {
@@ -81,13 +75,8 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Stainless Steel", values: ["up to 6 mm", "up to 12 mm", "up to 20 mm"] },
       { type: "spec", label: "Aluminum", values: ["up to 6 mm", "up to 10 mm", "up to 16 mm"] },
       { type: "spec", label: "Brass / Copper", values: ["up to 4 mm", "up to 6 mm", "up to 10 mm"] },
-      { type: "group", label: "Standard Features" },
-      { type: "check", label: "Raycus Fiber Laser Source" },
-      { type: "check", label: "HIWIN Linear Rails" },
-      { type: "check", label: "CypCut CNC Controller" },
-      { type: "check", label: "Fuji Bus Servo Drives" },
-      { type: "check", label: "Tongfei Water Chiller" },
     ],
+    features: ["Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives", "Tongfei Water Chiller"],
     upgrades: ["Dual-Pallet Exchange Table", "Enclosed Safety Cabinet", "Auto-Loading System", "Fume Purifier", "Air Compressor"],
   },
   fe: {
@@ -104,13 +93,8 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Carbon Steel", values: ["up to 30 mm", "up to 30 mm"] },
       { type: "spec", label: "Stainless Steel", values: ["up to 20 mm", "up to 20 mm"] },
       { type: "spec", label: "Aluminum", values: ["up to 16 mm", "up to 16 mm"] },
-      { type: "group", label: "Standard Features" },
-      { type: "check", label: "Dual-Pallet Exchange Table" },
-      { type: "check", label: "Raycus Fiber Laser Source" },
-      { type: "check", label: "HIWIN Linear Rails" },
-      { type: "check", label: "CypCut CNC Controller" },
-      { type: "check", label: "Fuji Bus Servo Drives" },
     ],
+    features: ["Dual-Pallet Exchange Table (Standard)", "Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives"],
     upgrades: ["Auto-Loading System", "Fume Purifier", "Enclosed Safety Cabinet", "Air Compressor"],
   },
   g: {
@@ -127,13 +111,8 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Stainless Steel", values: ["up to 40 mm", "up to 50 mm"] },
       { type: "spec", label: "Aluminum", values: ["up to 25 mm", "up to 30 mm"] },
       { type: "spec", label: "Brass / Copper", values: ["up to 12 mm", "up to 16 mm"] },
-      { type: "group", label: "Standard Features" },
-      { type: "check", label: "Raycus Fiber Laser Source" },
-      { type: "check", label: "HIWIN Linear Rails" },
-      { type: "check", label: "CypCut CNC Controller" },
-      { type: "check", label: "Fuji Bus Servo Drives" },
-      { type: "check", label: "Tongfei Water Chiller" },
     ],
+    features: ["Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives", "Tongfei Water Chiller"],
     upgrades: ["Dual-Pallet Exchange Table", "Auto-Loading System", "Auto-Focus Cutting Head", "Fume Purifier"],
   },
   pe: {
@@ -146,18 +125,13 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Laser Power", values: ["1.5 / 3 kW", "1.5 / 3 kW"] },
       { type: "spec", label: "Positioning Accuracy", values: ["±0.05 mm", "±0.05 mm"] },
       { type: "spec", label: "Laser Safety Class", values: ["Class 1", "Class 1"] },
+      { type: "spec", label: "Laser Eyewear Required", values: ["Not Required", "Not Required"] },
       { type: "spec", label: "Voltage", values: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
       { type: "group", label: "Cutting Ability" },
       { type: "spec", label: "Carbon Steel", values: ["up to 16 mm", "up to 16 mm"] },
       { type: "spec", label: "Stainless Steel", values: ["up to 6 mm", "up to 6 mm"] },
-      { type: "group", label: "Safety Features" },
-      { type: "check", label: "Full Laser Safety Enclosure" },
-      { type: "check", label: "Hardware-Interlocked Safety Doors" },
-      { type: "spec", label: "Laser Eyewear Required", values: ["Not Required", "Not Required"] },
-      { type: "check", label: "Raycus Fiber Laser Source" },
-      { type: "check", label: "HIWIN Linear Rails" },
-      { type: "check", label: "CypCut CNC Controller" },
     ],
+    features: ["Full Laser Safety Enclosure", "Hardware-Interlocked Safety Doors", "Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller"],
     upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   se: {
@@ -175,14 +149,8 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Carbon Steel", values: ["up to 16 mm", "up to 20 mm"] },
       { type: "spec", label: "Stainless Steel", values: ["up to 6 mm", "up to 12 mm"] },
       { type: "spec", label: "Aluminum", values: ["up to 6 mm", "up to 10 mm"] },
-      { type: "group", label: "Safety Features" },
-      { type: "check", label: "Full Laser Safety Enclosure" },
-      { type: "check", label: "Hardware-Redundant Door Interlocks" },
-      { type: "check", label: "Integrated Fume Extraction Port" },
-      { type: "check", label: "Raycus Fiber Laser Source" },
-      { type: "check", label: "HIWIN Linear Rails" },
-      { type: "check", label: "CypCut CNC Controller" },
     ],
+    features: ["Full Laser Safety Enclosure", "Hardware-Redundant Door Interlocks", "Integrated Fume Extraction Port", "Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller"],
     upgrades: ["Auto-Loading System", "Independent Control Cabinet", "Air Conditioner", "Smoke Purifier"],
   },
 };
@@ -311,13 +279,13 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
   const gridCols = `2fr repeat(${colCount}, 1fr)`;
 
   return (
-    <div>
+    <div className="max-w-3xl mx-auto">
       {/* Column headers */}
       <div
         className="grid border-b border-vtm-gray-border pb-6 mb-2"
         style={{ gridTemplateColumns: gridCols }}
       >
-        <div /> {/* label column spacer */}
+        <div />
         {specs.headers.map((h) => (
           <div key={h} className="px-4 text-center">
             <p className="font-headline font-bold text-vtm-dark text-lg md:text-xl">{h}</p>
@@ -325,15 +293,12 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
         ))}
       </div>
 
-      {/* Rows */}
+      {/* Spec rows */}
       <div>
         {specs.rows.map((row, i) => {
           if (row.type === "group") {
             return (
-              <div
-                key={`${row.label}-${i}`}
-                className="py-3 px-0 mt-4 mb-1"
-              >
+              <div key={`${row.label}-${i}`} className="py-3 mt-4 mb-1">
                 <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-vtm-gray-mid">
                   {row.label}
                 </p>
@@ -341,27 +306,6 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
             );
           }
 
-          if (row.type === "check") {
-            return (
-              <div
-                key={`${row.label}-${i}`}
-                className="grid border-b border-vtm-gray-border/60 py-3"
-                style={{ gridTemplateColumns: gridCols }}
-              >
-                <p className="text-sm text-vtm-gray-mid pr-4">{row.label}</p>
-                {Array.from({ length: colCount }).map((_, j) => (
-                  <div key={j} className="flex justify-center items-center">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-label="Included">
-                      <circle cx="9" cy="9" r="8.5" stroke="#e11d2b" strokeOpacity="0.2" />
-                      <path d="M5 9l3 3 5-5" stroke="#e11d2b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                ))}
-              </div>
-            );
-          }
-
-          // type === "spec"
           return (
             <div
               key={`${row.label}-${i}`}
@@ -369,7 +313,7 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
               style={{ gridTemplateColumns: gridCols }}
             >
               <p className="text-sm text-vtm-gray-mid pr-4">{row.label}</p>
-              {(row.values ?? []).map((v, j) => (
+              {row.values.map((v, j) => (
                 <p key={j} className="text-sm font-semibold text-vtm-dark text-center px-2">
                   {v}
                 </p>
@@ -378,6 +322,17 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
           );
         })}
       </div>
+
+      {/* Standard features — small text below specs */}
+      {specs.features.length > 0 && (
+        <div className="mt-6 pt-4 border-t border-vtm-gray-border/40 flex flex-wrap gap-x-4 gap-y-1 justify-center">
+          {specs.features.map((f) => (
+            <span key={f} className="text-xs text-vtm-gray-mid">
+              {f}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Upgrades */}
       {specs.upgrades.length > 0 && (
@@ -524,8 +479,10 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
               {selected.series} — {labels.specsHeadline}
             </h2>
           </div>
-          <div className="bg-white p-6 md:p-10">
-            <AppleSpecs specs={selected.specs} locale={locale} />
+          <div className="bg-white p-6 md:p-10 flex justify-center">
+            <div className="w-full max-w-3xl">
+              <AppleSpecs specs={selected.specs} locale={locale} />
+            </div>
           </div>
         </div>
       </section>
