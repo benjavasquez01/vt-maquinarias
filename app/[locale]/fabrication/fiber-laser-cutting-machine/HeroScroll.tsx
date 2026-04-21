@@ -42,7 +42,7 @@ export function HeroScroll({
   const overlayOpacity = Math.max(0, 0.72 * (1 - progress));
 
   return (
-    <div ref={wrapperRef} style={{ height: "150vh" }}>
+    <div ref={wrapperRef} style={{ height: "120vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Background image */}
         <Image
