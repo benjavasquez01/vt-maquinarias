@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { SpinViewer360 } from "@/components/ui/SpinViewer360";
+import { ImageGallery } from "@/components/ui/ImageGallery";
 
 const EA_FRAMES = [
   "/images/SHEET/EA series/main 3015  (1).png",
@@ -472,10 +472,9 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
           <div key={selected.id} className="border-t border-vtm-gray-border pt-8 grid md:grid-cols-2 gap-8 items-start">
             {/* Left: 360 viewer for EA, description for others */}
             {selected.id === "ea" ? (
-              <SpinViewer360
-                frames={EA_FRAMES}
+              <ImageGallery
+                images={EA_FRAMES}
                 alt="VTM-EA Series Fiber Laser Cutting Machine"
-                className="aspect-square"
               />
             ) : (
               <div>
