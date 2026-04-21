@@ -81,7 +81,7 @@ export default function HomePage() {
       {/* ── Section 1: Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/homepage-hero.jpg.png"
+          src="/images/homepage-hero-2.jpg.png"
           alt="Laser cutting machine with bright sparks on metal"
           fill
           priority
