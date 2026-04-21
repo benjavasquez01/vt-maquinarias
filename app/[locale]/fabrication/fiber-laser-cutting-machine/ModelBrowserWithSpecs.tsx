@@ -57,7 +57,7 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Carbon Steel", values: ["0.8 – 16 mm", "0.8 – 16 mm", "0.8 – 16 mm"] },
       { type: "spec", label: "Stainless Steel", values: ["0.8 – 6 mm", "0.8 – 6 mm", "0.8 – 6 mm"] },
     ],
-    features: ["Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives", "Tongfei Water Chiller"],
+    features: [],
     upgrades: ["Independent Control Cabinet", "Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   b: {
@@ -76,7 +76,7 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Aluminum", values: ["up to 6 mm", "up to 10 mm", "up to 16 mm"] },
       { type: "spec", label: "Brass / Copper", values: ["up to 4 mm", "up to 6 mm", "up to 10 mm"] },
     ],
-    features: ["Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives", "Tongfei Water Chiller"],
+    features: [],
     upgrades: ["Dual-Pallet Exchange Table", "Enclosed Safety Cabinet", "Auto-Loading System", "Fume Purifier", "Air Compressor"],
   },
   fe: {
@@ -94,7 +94,7 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Stainless Steel", values: ["up to 20 mm", "up to 20 mm"] },
       { type: "spec", label: "Aluminum", values: ["up to 16 mm", "up to 16 mm"] },
     ],
-    features: ["Dual-Pallet Exchange Table (Standard)", "Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives"],
+    features: [],
     upgrades: ["Auto-Loading System", "Fume Purifier", "Enclosed Safety Cabinet", "Air Compressor"],
   },
   g: {
@@ -112,7 +112,7 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Aluminum", values: ["up to 25 mm", "up to 30 mm"] },
       { type: "spec", label: "Brass / Copper", values: ["up to 12 mm", "up to 16 mm"] },
     ],
-    features: ["Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller", "Fuji Bus Servo Drives", "Tongfei Water Chiller"],
+    features: [],
     upgrades: ["Dual-Pallet Exchange Table", "Auto-Loading System", "Auto-Focus Cutting Head", "Fume Purifier"],
   },
   pe: {
@@ -131,7 +131,7 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Carbon Steel", values: ["up to 16 mm", "up to 16 mm"] },
       { type: "spec", label: "Stainless Steel", values: ["up to 6 mm", "up to 6 mm"] },
     ],
-    features: ["Full Laser Safety Enclosure", "Hardware-Interlocked Safety Doors", "Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller"],
+    features: [],
     upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   se: {
@@ -150,7 +150,7 @@ const SPECS: Record<string, ModelSpecs> = {
       { type: "spec", label: "Stainless Steel", values: ["up to 6 mm", "up to 12 mm"] },
       { type: "spec", label: "Aluminum", values: ["up to 6 mm", "up to 10 mm"] },
     ],
-    features: ["Full Laser Safety Enclosure", "Hardware-Redundant Door Interlocks", "Integrated Fume Extraction Port", "Raycus Fiber Laser Source", "HIWIN Linear Rails", "CypCut CNC Controller"],
+    features: [],
     upgrades: ["Auto-Loading System", "Independent Control Cabinet", "Air Conditioner", "Smoke Purifier"],
   },
 };
@@ -310,11 +310,11 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
             </div>
 
             {/* Specs */}
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-14">
               {sections.map((section) =>
                 section.rows.map((row) => (
                   <div key={row.label} className="text-center">
-                    <p className="font-headline font-bold text-2xl md:text-3xl text-vtm-dark leading-tight mb-1 break-words">
+                    <p className="font-headline font-bold text-lg md:text-xl text-vtm-dark leading-tight mb-1 break-words">
                       {row.values[colIdx]}
                     </p>
                     <p className="text-xs text-vtm-gray-mid tracking-wide">
