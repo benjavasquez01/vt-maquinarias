@@ -271,65 +271,75 @@ const LABELS = {
   },
 };
 
-// ─── Apple-style specs renderer ────────────────────────────────────────────
+// ─── Specs card renderer ───────────────────────────────────────────────────
 
 function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" }) {
   const labels = LABELS[locale];
   const colCount = specs.headers.length;
-  const gridCols = `2fr repeat(${colCount}, 1fr)`;
+
+  // Build sections: [{groupLabel, rows[]}]
+  type Section = { group: string; rows: Extract<SpecRow, { type: "spec" }>[] };
+  const sections: Section[] = [];
+  let current: Section = { group: "", rows: [] };
+  for (const row of specs.rows) {
+    if (row.type === "group") {
+      if (current.rows.length > 0) sections.push(current);
+      current = { group: row.label, rows: [] };
+    } else {
+      current.rows.push(row);
+    }
+  }
+  if (current.rows.length > 0) sections.push(current);
+
+  const gridClass =
+    colCount === 1 ? "grid-cols-1 max-w-xs mx-auto" :
+    colCount === 2 ? "grid-cols-2 max-w-2xl mx-auto" :
+    "grid-cols-3";
 
   return (
-    <div className="max-w-3xl mx-auto">
-      {/* Column headers */}
-      <div
-        className="grid border-b border-vtm-gray-border pb-6 mb-2"
-        style={{ gridTemplateColumns: gridCols }}
-      >
-        <div />
-        {specs.headers.map((h) => (
-          <div key={h} className="px-4 text-center">
-            <p className="font-headline font-bold text-vtm-dark text-lg md:text-xl">{h}</p>
+    <div>
+      {/* Model cards */}
+      <div className={`grid gap-6 ${gridClass}`}>
+        {specs.headers.map((header, colIdx) => (
+          <div key={header} className="flex flex-col">
+            {/* Model name */}
+            <div className="text-center pb-6 mb-6 border-b border-vtm-gray-border">
+              <p className="font-headline font-bold text-xl text-vtm-dark tracking-tight">
+                {header}
+              </p>
+            </div>
+
+            {/* Sections */}
+            <div className="flex flex-col gap-8">
+              {sections.map((section) => (
+                <div key={section.group} className="flex flex-col gap-6">
+                  {section.group && (
+                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-vtm-gray-mid/60">
+                      {section.group}
+                    </p>
+                  )}
+                  {section.rows.map((row) => (
+                    <div key={row.label} className="text-center">
+                      <p className="font-headline font-bold text-2xl md:text-3xl text-vtm-dark leading-tight mb-1 break-words">
+                        {row.values[colIdx]}
+                      </p>
+                      <p className="text-xs text-vtm-gray-mid tracking-wide">
+                        {row.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Spec rows */}
-      <div>
-        {specs.rows.map((row, i) => {
-          if (row.type === "group") {
-            return (
-              <div key={`${row.label}-${i}`} className="py-3 mt-4 mb-1">
-                <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-vtm-gray-mid">
-                  {row.label}
-                </p>
-              </div>
-            );
-          }
-
-          return (
-            <div
-              key={`${row.label}-${i}`}
-              className="grid border-b border-vtm-gray-border/60 py-3"
-              style={{ gridTemplateColumns: gridCols }}
-            >
-              <p className="text-sm text-vtm-gray-mid pr-4">{row.label}</p>
-              {row.values.map((v, j) => (
-                <p key={j} className="text-sm font-semibold text-vtm-dark text-center px-2">
-                  {v}
-                </p>
-              ))}
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Standard features — small text below specs */}
+      {/* Standard features */}
       {specs.features.length > 0 && (
-        <div className="mt-6 pt-4 border-t border-vtm-gray-border/40 flex flex-wrap gap-x-4 gap-y-1 justify-center">
+        <div className="mt-10 pt-6 border-t border-vtm-gray-border/40 flex flex-wrap gap-x-5 gap-y-1 justify-center">
           {specs.features.map((f) => (
-            <span key={f} className="text-xs text-vtm-gray-mid">
-              {f}
-            </span>
+            <span key={f} className="text-xs text-vtm-gray-mid">{f}</span>
           ))}
         </div>
       )}
@@ -337,10 +347,10 @@ function AppleSpecs({ specs, locale }: { specs: ModelSpecs; locale: "en" | "es" 
       {/* Upgrades */}
       {specs.upgrades.length > 0 && (
         <div className="mt-8 pt-6 border-t border-vtm-gray-border">
-          <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-vtm-gray-mid mb-3">
+          <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-vtm-gray-mid mb-3 text-center">
             {labels.upgrades}
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 justify-center">
             {specs.upgrades.map((u) => (
               <span key={u} className="text-xs border border-vtm-gray-border px-3 py-1.5 text-vtm-dark">
                 {u}
@@ -479,10 +489,8 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
               {selected.series} — {labels.specsHeadline}
             </h2>
           </div>
-          <div className="bg-white p-6 md:p-10 flex justify-center">
-            <div className="w-full max-w-3xl">
-              <AppleSpecs specs={selected.specs} locale={locale} />
-            </div>
+          <div className="bg-white p-6 md:p-10">
+            <AppleSpecs specs={selected.specs} locale={locale} />
           </div>
         </div>
       </section>
