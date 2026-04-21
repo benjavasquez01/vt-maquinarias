@@ -4,6 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
+type SpecsTable = {
+  headers: string[];
+  rows: { spec: string; values: string[] }[];
+  upgrades: string[];
+};
+
 type Model = {
   id: string;
   series: string;
@@ -15,6 +21,7 @@ type Model = {
   bestFor: string[];
   beds: string[];
   powers: string[];
+  specsTable?: SpecsTable;
 };
 
 const MODELS: Record<"en" | "es", Model[]> = {
@@ -35,7 +42,21 @@ const MODELS: Record<"en" | "es", Model[]> = {
         "First fiber laser investment",
       ],
       beds: ["4′×4′ (1313)", "4′×8′ (1325)", "5′×10′ (3015)"],
-      powers: ["1.5 kW", "3 kW"],
+      powers: ["1.5 kW", "2 kW", "3 kW"],
+      specsTable: {
+        headers: ["F-3015EA", "F-1325EA", "F-1313EA"],
+        rows: [
+          { spec: "Working Area", values: ["3000 × 1500 mm", "1300 × 2500 mm", "1300 × 1300 mm"] },
+          { spec: "X / Y / Z Stroke", values: ["3050 × 1500 × 50 mm", "1310 × 2550 × 50 mm", "1350 × 1320 × 50 mm"] },
+          { spec: "Laser Power", values: ["1500 / 2000 / 3000 W", "1500 / 2000 / 3000 W", "1500 / 2000 / 3000 W"] },
+          { spec: "Max Acceleration", values: ["0.8 G", "0.8 G", "0.8 G"] },
+          { spec: "Positioning Accuracy", values: ["±0.05 mm", "±0.05 mm", "±0.05 mm"] },
+          { spec: "Voltage", values: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
+          { spec: "Carbon Steel", values: ["0.8 – 16 mm", "0.8 – 16 mm", "0.8 – 16 mm"] },
+          { spec: "Stainless Steel", values: ["0.8 – 6 mm", "0.8 – 6 mm", "0.8 – 6 mm"] },
+        ],
+        upgrades: ["Independent Control Cabinet", "Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
+      },
     },
     {
       id: "b",
@@ -145,7 +166,21 @@ const MODELS: Record<"en" | "es", Model[]> = {
         "Primera inversión en láser de fibra",
       ],
       beds: ["4′×4′ (1313)", "4′×8′ (1325)", "5′×10′ (3015)"],
-      powers: ["1.5 kW", "3 kW"],
+      powers: ["1.5 kW", "2 kW", "3 kW"],
+      specsTable: {
+        headers: ["F-3015EA", "F-1325EA", "F-1313EA"],
+        rows: [
+          { spec: "Área de Trabajo", values: ["3000 × 1500 mm", "1300 × 2500 mm", "1300 × 1300 mm"] },
+          { spec: "Recorrido X / Y / Z", values: ["3050 × 1500 × 50 mm", "1310 × 2550 × 50 mm", "1350 × 1320 × 50 mm"] },
+          { spec: "Potencia Láser", values: ["1500 / 2000 / 3000 W", "1500 / 2000 / 3000 W", "1500 / 2000 / 3000 W"] },
+          { spec: "Aceleración Máx.", values: ["0.8 G", "0.8 G", "0.8 G"] },
+          { spec: "Precisión de Posición", values: ["±0.05 mm", "±0.05 mm", "±0.05 mm"] },
+          { spec: "Voltaje", values: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
+          { spec: "Acero al Carbono", values: ["0.8 – 16 mm", "0.8 – 16 mm", "0.8 – 16 mm"] },
+          { spec: "Acero Inoxidable", values: ["0.8 – 6 mm", "0.8 – 6 mm", "0.8 – 6 mm"] },
+        ],
+        upgrades: ["Gabinete de Control Independiente", "Aire Acondicionado", "Purificador de Humo", "Compresor de Aire", "Regulador de Voltaje"],
+      },
     },
     {
       id: "b",
@@ -250,6 +285,8 @@ const LABELS = {
     powerOptions: "Power Options",
     quote: "Request a Quote",
     selected: "Selected",
+    upgrades: "Available Upgrades",
+    model: "Model",
   },
   es: {
     sectionLabel: "Línea de Productos",
@@ -260,6 +297,8 @@ const LABELS = {
     powerOptions: "Opciones de Potencia",
     quote: "Solicitar Cotización",
     selected: "Seleccionado",
+    upgrades: "Mejoras Disponibles",
+    model: "Modelo",
   },
 };
 
@@ -366,66 +405,106 @@ export function ModelBrowser({ locale }: { locale: "en" | "es" }) {
 
           {/* Right: Details */}
           <div className="p-8 md:p-10 bg-white flex flex-col justify-between gap-8">
-            <div>
-              <p className="text-vtm-gray-mid leading-relaxed mb-8">
-                {selected.description}
-              </p>
-
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                {/* Power options */}
+            {selected.specsTable ? (
+              <div>
+                <p className="text-vtm-gray-mid leading-relaxed mb-6">{selected.description}</p>
+                {/* Specs table */}
+                <div className="overflow-x-auto mb-6">
+                  <table className="w-full text-sm border border-vtm-gray-border">
+                    <thead>
+                      <tr className="bg-vtm-dark">
+                        <th className="text-left px-3 py-2 text-xs font-semibold tracking-wider uppercase text-white/60 border-r border-white/10">
+                          {labels.model}
+                        </th>
+                        {selected.specsTable.headers.map((h) => (
+                          <th key={h} className="text-left px-3 py-2 text-xs font-semibold tracking-wider uppercase text-white border-r border-white/10 last:border-0">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {selected.specsTable.rows.map((row, i) => (
+                        <tr key={row.spec} className={`border-t border-vtm-gray-border ${i % 2 === 0 ? "bg-white" : "bg-vtm-gray-light/40"}`}>
+                          <td className="px-3 py-2 text-xs font-semibold text-vtm-gray-mid border-r border-vtm-gray-border whitespace-nowrap">
+                            {row.spec}
+                          </td>
+                          {row.values.map((v, j) => (
+                            <td key={j} className="px-3 py-2 text-xs text-vtm-dark border-r border-vtm-gray-border last:border-0">
+                              {v}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {/* Upgrades */}
                 <div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid mb-3">
-                    {labels.powerOptions}
+                  <p className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid mb-2">
+                    {labels.upgrades}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {selected.powers.map((p) => (
-                      <span
-                        key={p}
-                        className="text-xs font-semibold border border-vtm-gray-border px-3 py-1 text-vtm-dark"
-                      >
-                        {p}
+                    {selected.specsTable.upgrades.map((u) => (
+                      <span key={u} className="text-xs border border-vtm-gray-border px-2 py-1 text-vtm-dark">
+                        {u}
                       </span>
                     ))}
                   </div>
                 </div>
-                {/* Bed sizes */}
+              </div>
+            ) : (
+              <div>
+                <p className="text-vtm-gray-mid leading-relaxed mb-8">
+                  {selected.description}
+                </p>
+
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <p className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid mb-3">
+                      {labels.powerOptions}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {selected.powers.map((p) => (
+                        <span key={p} className="text-xs font-semibold border border-vtm-gray-border px-3 py-1 text-vtm-dark">
+                          {p}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid mb-3">
+                      {labels.bedSizes}
+                    </p>
+                    <ul className="space-y-1">
+                      {selected.beds.map((b) => (
+                        <li key={b} className="text-xs text-vtm-dark flex items-center gap-2">
+                          <span className="w-1 h-1 bg-vtm-red flex-shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
                 <div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid mb-3">
-                    {labels.bedSizes}
+                    {labels.bestFor}
                   </p>
-                  <ul className="space-y-1">
-                    {selected.beds.map((b) => (
-                      <li key={b} className="text-xs text-vtm-dark flex items-center gap-2">
-                        <span className="w-1 h-1 bg-vtm-red flex-shrink-0" />
-                        {b}
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                    {selected.bestFor.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-vtm-dark">
+                        <span className="text-vtm-red mt-0.5 flex-shrink-0" aria-hidden="true">—</span>
+                        {item}
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-
-              {/* Best for */}
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid mb-3">
-                  {labels.bestFor}
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
-                  {selected.bestFor.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-vtm-dark">
-                      <span className="text-vtm-red mt-0.5 flex-shrink-0" aria-hidden="true">—</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            )}
 
             <div className="flex gap-3 flex-wrap">
-              <Button
-                href={`/quote?machine=fiber-laser-${selected.id}`}
-                variant="primary"
-                size="sm"
-              >
+              <Button href={`/quote?machine=fiber-laser-${selected.id}`} variant="primary" size="sm">
                 {labels.quote}
               </Button>
             </div>
