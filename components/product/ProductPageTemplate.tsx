@@ -1,3 +1,6 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -10,9 +13,10 @@ import { GenericFaqAccordion, type FaqItem } from "./GenericFaqAccordion";
 import { GenericStickyBar } from "./GenericStickyBar";
 import { GenericQuoteForm } from "./GenericQuoteForm";
 import { ProductHeroCTA } from "./ProductHeroCTA";
+import { ProductModesBrowser, type ProductMode } from "./ProductModesBrowser";
 
 export interface ProductFeature {
-  number: string;
+  number?: string;
   headline: string;
   body: string;
   spec: { label: string; value: string };
@@ -46,18 +50,29 @@ export interface VariantSection {
   features: ProductFeature[];
 }
 
+export type { ProductMode };
+
 export interface ProductPageData {
   category: string;
   categoryHref?: string;
   slug: string;
   machineName: string;
+  heroSubtitle?: string;
   heroSubheadline: string;
   heroImageId: string;
   heroAlign?: "left" | "right";
   heroGradient?: "bottom" | "left-to-right";
+  heroImageFit?: "cover" | "contain";
+  modes?: ProductMode[];
+  modesBrowserLabel?: string;
+  modesBrowserHeadline?: string;
+  modesBrowserQuoteLabel?: string;
+  modesBrowserSpecsLabel?: string;
+  modesBrowserBestForLabel?: string;
   features: ProductFeature[];
   variantSection?: VariantSection;
   specs: SpecRow[];
+  specImage?: string;
   videoSectionLabel?: string;
   videoHeadline?: string;
   configOptions: ConfigOption[];
@@ -72,21 +87,38 @@ export interface ProductPageData {
 
 interface ProductPageTemplateProps {
   data: ProductPageData;
+  children?: React.ReactNode;
+  afterSpecs?: React.ReactNode;
+  featureSlots?: { [afterIndex: number]: React.ReactNode };
+  hideHero?: boolean;
+  hideModes?: boolean;
+  hideFeatures?: boolean;
+  hideSpecs?: boolean;
+  hideConfigure?: boolean;
 }
 
-export function ProductPageTemplate({ data }: ProductPageTemplateProps) {
+export function ProductPageTemplate({ data, children, afterSpecs, featureSlots, hideHero = false, hideModes = false, hideFeatures = false, hideSpecs = false, hideConfigure = false }: ProductPageTemplateProps) {
   const ui = useTranslations("productPage");
   const {
     category,
     slug,
     machineName,
+    heroSubtitle,
     heroSubheadline,
     heroImageId,
     heroAlign = "left",
     heroGradient = "bottom",
+    heroImageFit = "cover",
+    modes,
+    modesBrowserLabel,
+    modesBrowserHeadline,
+    modesBrowserQuoteLabel,
+    modesBrowserSpecsLabel,
+    modesBrowserBestForLabel,
     features,
     variantSection,
     specs,
+    specImage,
     videoSectionLabel = "See It Work",
     videoHeadline = "In Action",
     configOptions,
@@ -102,81 +134,108 @@ export function ProductPageTemplate({ data }: ProductPageTemplateProps) {
   return (
     <>
       {/* ── Block 1: Hero ─────────────────────────────────────────── */}
-      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-24 overflow-hidden">
-        <div className="absolute inset-0" aria-hidden="true">
-          <Image
-            src={heroImageId.startsWith("/") ? heroImageId : `https://images.unsplash.com/photo-${heroImageId}?w=1600&q=80&fit=crop`}
-            alt=""
-            fill
-            className="object-cover opacity-70"
-            priority
-            sizes="100vw"
-          />
-          {heroAlign === "right" ? (
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent from-40% to-vtm-dark/85" />
-          ) : heroGradient === "left-to-right" ? (
-            <div className="absolute inset-0 bg-gradient-to-r from-vtm-dark/95 via-vtm-dark/60 to-transparent" />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-b from-vtm-dark/10 via-vtm-dark/30 to-vtm-dark/80" />
-          )}
-        </div>
-
-        <div className={`relative z-10 w-full px-6 lg:px-10 ${heroAlign === "right" ? "flex justify-end" : "max-w-screen-xl mx-auto"}`}>
-          <div className={heroAlign === "right" ? "max-w-2xl text-right mr-8 lg:mr-24" : ""}>
-            <SectionLabel light className="mb-4">{category}</SectionLabel>
-            <h1 className={`font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6 ${heroAlign === "right" ? "" : "max-w-4xl"}`}>
-              {machineName}
-            </h1>
-            <p className={`text-white/60 text-lg md:text-xl mb-10 leading-relaxed ${heroAlign === "right" ? "" : "max-w-2xl"}`}>
-              {heroSubheadline}
-            </p>
-            <ProductHeroCTA slug={slug} align={heroAlign} />
+      {!hideHero && (
+        <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-24 overflow-hidden">
+          <div className="absolute inset-0" aria-hidden="true">
+            <Image
+              src={heroImageId.startsWith("/") ? heroImageId : `https://images.unsplash.com/photo-${heroImageId}?w=1600&q=80&fit=crop`}
+              alt=""
+              fill
+              className={`${heroImageFit === "contain" ? "object-contain" : "object-cover"} opacity-70`}
+              priority
+              sizes="100vw"
+            />
+            {heroAlign === "right" ? (
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent from-40% to-vtm-dark/85" />
+            ) : heroGradient === "left-to-right" ? (
+              <div className="absolute inset-0 bg-gradient-to-r from-vtm-dark/95 via-vtm-dark/60 to-transparent" />
+            ) : (
+              <div className="absolute inset-0 bg-gradient-to-b from-vtm-dark/10 via-vtm-dark/30 to-vtm-dark/80" />
+            )}
           </div>
-        </div>
-      </section>
 
-      {/* ── Block 2: Feature Scroll ────────────────────────────────── */}
-      <section className="bg-white">
-        {features.map((feature, i) => (
-          <div
-            key={feature.number}
-            className={`max-w-screen-xl mx-auto px-6 lg:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-center border-b border-vtm-gray-border last:border-0`}
-          >
-            <FadeIn className={i % 2 === 1 ? "md:order-2" : ""}>
-              <p className="font-headline text-[80px] md:text-[120px] font-bold text-vtm-gray-light leading-none select-none -ml-1 mb-4">
-                {feature.number}
-              </p>
-              <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark tracking-tight mb-4">
-                {feature.headline}
-              </h2>
-              <p className="text-vtm-gray-mid leading-relaxed mb-6">{feature.body}</p>
-              <div className="inline-flex items-baseline gap-2 bg-vtm-gray-light px-4 py-2">
-                <span className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid">
-                  {feature.spec.label}
-                </span>
-                <span className="font-headline font-bold text-vtm-red text-xl">
-                  {feature.spec.value}
-                </span>
-              </div>
-            </FadeIn>
-            <div className={`relative aspect-[4/3] overflow-hidden ${i % 2 === 1 ? "md:order-1" : ""}`}>
-              {feature.imageId ? (
-                <Image
-                  src={feature.imageId.startsWith("/") ? feature.imageId : `https://images.unsplash.com/photo-${feature.imageId}?w=900&q=80&fit=crop`}
-                  alt={feature.headline}
-                  fill
-                  className={feature.imageFit === "contain" ? "object-contain" : "object-cover"}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              ) : (
-                <div className="w-full h-full bg-vtm-gray-light flex items-center justify-center" aria-hidden="true">
-                  <span className="text-vtm-gray-border text-xs font-mono">Feature image — {feature.number}</span>
-                </div>
+          <div className={`relative z-10 w-full px-6 lg:px-10 ${heroAlign === "right" ? "flex justify-end" : "max-w-screen-xl mx-auto"}`}>
+            <div className={heroAlign === "right" ? "max-w-2xl text-right mr-8 lg:mr-24" : ""}>
+              <SectionLabel light className="mb-4">{category}</SectionLabel>
+              <h1 className={`font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-3 ${heroAlign === "right" ? "" : "max-w-4xl"}`}>
+                {machineName}
+              </h1>
+              {heroSubtitle && (
+                <p className="font-headline text-2xl md:text-3xl font-semibold text-vtm-red tracking-tight mb-5">{heroSubtitle}</p>
               )}
+              <p className={`text-white/60 text-lg md:text-xl mb-10 leading-relaxed ${heroAlign === "right" ? "" : "max-w-2xl"}`}>
+                {heroSubheadline}
+              </p>
+              <ProductHeroCTA slug={slug} align={heroAlign} />
             </div>
           </div>
-        ))}
-      </section>
+        </section>
+      )}
+
+      {/* ── Block 1.5: Modes Browser (optional) ──────────────────── */}
+      {!hideModes && modes && modes.length > 0 && (
+        <ProductModesBrowser
+          modes={modes}
+          slug={slug}
+          sectionLabel={modesBrowserLabel ?? "Operating Modes"}
+          headline={modesBrowserHeadline ?? "Choose Your Mode"}
+          quoteLabel={modesBrowserQuoteLabel ?? "Request a Quote"}
+          viewSpecsLabel={modesBrowserSpecsLabel ?? "View Specs"}
+          bestForLabel={modesBrowserBestForLabel ?? "Best for"}
+        />
+      )}
+
+      {/* ── Block 1.6: Custom slot (optional, e.g. model browser) ───── */}
+      {children}
+
+      {/* ── Block 2: Feature Scroll ────────────────────────────────── */}
+      {!hideFeatures && (
+        <section className="bg-white">
+          {features.map((feature, i) => (
+            <React.Fragment key={feature.number}>
+            <div
+              className={`max-w-screen-xl mx-auto px-6 lg:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-center border-b border-vtm-gray-border last:border-0`}
+            >
+              <FadeIn className={i % 2 === 1 ? "md:order-2" : ""}>
+                {feature.number && (
+                  <p className="font-headline text-[80px] md:text-[120px] font-bold text-vtm-gray-light leading-none select-none -ml-1 mb-4">
+                    {feature.number}
+                  </p>
+                )}
+                <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark tracking-tight mb-4">
+                  {feature.headline}
+                </h2>
+                <p className="text-vtm-gray-mid leading-relaxed mb-6">{feature.body}</p>
+                <div className="inline-flex items-baseline gap-2 bg-vtm-gray-light px-4 py-2">
+                  <span className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid">
+                    {feature.spec.label}
+                  </span>
+                  <span className="font-headline font-bold text-vtm-red text-xl">
+                    {feature.spec.value}
+                  </span>
+                </div>
+              </FadeIn>
+              <div className={`relative aspect-[4/3] overflow-hidden ${i % 2 === 1 ? "md:order-1" : ""}`}>
+                {feature.imageId ? (
+                  <Image
+                    src={feature.imageId.startsWith("/") ? feature.imageId : `https://images.unsplash.com/photo-${feature.imageId}?w=900&q=80&fit=crop`}
+                    alt={feature.headline}
+                    fill
+                    className={feature.imageFit === "contain" ? "object-contain" : "object-cover"}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-vtm-gray-light flex items-center justify-center" aria-hidden="true">
+                    <span className="text-vtm-gray-border text-xs font-mono">Feature image — {feature.number}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+            {featureSlots?.[i]}
+            </React.Fragment>
+          ))}
+        </section>
+      )}
 
       {/* ── Block 2.5: Variant Section (optional) ─────────────────── */}
       {variantSection && (
@@ -211,17 +270,27 @@ export function ProductPageTemplate({ data }: ProductPageTemplateProps) {
       )}
 
       {/* ── Block 3: Technical Specs Table ────────────────────────── */}
-      <section className="bg-vtm-gray-light py-20 md:py-28" id="specs">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <FadeIn>
-            <SectionLabel className="mb-4">{ui("specsLabel")}</SectionLabel>
-            <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-10">
-              {ui("specsHeading")}
-            </h2>
-          </FadeIn>
-          <GenericSpecsTable specs={specs} />
-        </div>
-      </section>
+      {!hideSpecs && (
+        <section className="bg-vtm-gray-light py-20 md:py-28" id="specs">
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
+            <FadeIn>
+              <SectionLabel className="mb-4">{ui("specsLabel")}</SectionLabel>
+              <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-10">
+                {ui("specsHeading")}
+              </h2>
+            </FadeIn>
+            {specImage && (
+              <div className="relative w-full max-w-xl mx-auto mb-12 aspect-[4/3] bg-white rounded-lg overflow-hidden shadow-md">
+                <Image src={specImage} alt={machineName} fill className="object-contain p-6" />
+              </div>
+            )}
+            <GenericSpecsTable specs={specs} />
+          </div>
+        </section>
+      )}
+
+      {/* ── Block 3.5: After-specs slot (optional) ────────────────── */}
+      {afterSpecs}
 
       {/* ── Block 4: Video Embed ───────────────────────────────────── */}
       <section className="bg-vtm-dark py-20 md:py-28" id="video">
@@ -244,31 +313,33 @@ export function ProductPageTemplate({ data }: ProductPageTemplateProps) {
       </section>
 
       {/* ── Block 5: Configuration Options ───────────────────────── */}
-      <section className="bg-white py-20 md:py-28" id="configure">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <SectionLabel className="mb-4">{ui("configureLabel")}</SectionLabel>
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-10">
-            {ui("configureHeading")}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {configOptions.map(({ label, options, note }) => (
-              <div key={label} className="border border-vtm-gray-border p-6">
-                <h3 className="font-headline font-semibold text-vtm-dark mb-3">{label}</h3>
-                <ul className="space-y-2 mb-4">
-                  {options.map((opt) => (
-                    <li key={opt} className="flex items-center gap-2 text-sm text-vtm-gray-mid">
-                      <span className="w-1.5 h-1.5 rounded-full bg-vtm-gray-border flex-shrink-0" />
-                      {opt}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-vtm-gray-mid border-t border-vtm-gray-border pt-4">{note}</p>
-              </div>
-            ))}
+      {!hideConfigure && (
+        <section className="bg-white py-20 md:py-28" id="configure">
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
+            <SectionLabel className="mb-4">{ui("configureLabel")}</SectionLabel>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-10">
+              {ui("configureHeading")}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {configOptions.map(({ label, options, note }) => (
+                <div key={label} className="border border-vtm-gray-border p-6">
+                  <h3 className="font-headline font-semibold text-vtm-dark mb-3">{label}</h3>
+                  <ul className="space-y-2 mb-4">
+                    {options.map((opt) => (
+                      <li key={opt} className="flex items-center gap-2 text-sm text-vtm-gray-mid">
+                        <span className="w-1.5 h-1.5 rounded-full bg-vtm-gray-border flex-shrink-0" />
+                        {opt}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-vtm-gray-mid border-t border-vtm-gray-border pt-4">{note}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-vtm-gray-mid text-sm mt-6">{ui("configureNote")}</p>
           </div>
-          <p className="text-vtm-gray-mid text-sm mt-6">{ui("configureNote")}</p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── Block 6: Comparison Table ────────────────────────────── */}
       <section className="bg-vtm-gray-light py-20 md:py-28" id="compare">
@@ -309,7 +380,37 @@ export function ProductPageTemplate({ data }: ProductPageTemplateProps) {
         </div>
       </section>
 
-      {/* ── Block 7: Related Products ─────────────────────────────── */}
+      {/* ── Block 7: Quote CTA ────────────────────────────────────── */}
+      <section className="bg-vtm-dark py-20 md:py-28" id="quote">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
+          <div className="md:grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <SectionLabel light className="mb-4">{ui("quoteLabel")}</SectionLabel>
+              <h2 className="font-headline text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+                {ui("quoteHeading")}
+              </h2>
+              <p className="text-white/60 leading-relaxed mb-6">{ui("quoteBody")}</p>
+              <ul className="space-y-2 text-white/50 text-sm">
+                <li className="flex gap-2 items-center">
+                  <span className="text-vtm-red" aria-hidden="true">—</span>
+                  {ui("quoteNote1")}
+                </li>
+                <li className="flex gap-2 items-center">
+                  <span className="text-vtm-red" aria-hidden="true">—</span>
+                  {ui("quoteNote2")}
+                </li>
+                <li className="flex gap-2 items-center">
+                  <span className="text-vtm-red" aria-hidden="true">—</span>
+                  {ui("quoteNote3")}
+                </li>
+              </ul>
+            </div>
+            <GenericQuoteForm machineName={machineName} />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Block 8: Related Products ─────────────────────────────── */}
       <section className="bg-white py-20 md:py-24" id="related">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <SectionLabel className="mb-4">{ui("relatedLabel")}</SectionLabel>
@@ -346,7 +447,7 @@ export function ProductPageTemplate({ data }: ProductPageTemplateProps) {
         </div>
       </section>
 
-      {/* ── Block 8: FAQ ──────────────────────────────────────────── */}
+      {/* ── Block 9: FAQ ──────────────────────────────────────────── */}
       <section className="bg-vtm-gray-light py-20 md:py-28" id="faq">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
@@ -355,36 +456,6 @@ export function ProductPageTemplate({ data }: ProductPageTemplateProps) {
               {ui("faqHeading")}
             </h2>
             <GenericFaqAccordion faqs={faqs} />
-          </div>
-        </div>
-      </section>
-
-      {/* ── Block 9: Quote CTA ────────────────────────────────────── */}
-      <section className="bg-vtm-dark py-20 md:py-28" id="quote">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <div className="md:grid md:grid-cols-2 gap-16 items-start">
-            <div>
-              <SectionLabel light className="mb-4">{ui("quoteLabel")}</SectionLabel>
-              <h2 className="font-headline text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-                {ui("quoteHeading")}
-              </h2>
-              <p className="text-white/60 leading-relaxed mb-6">{ui("quoteBody")}</p>
-              <ul className="space-y-2 text-white/50 text-sm">
-                <li className="flex gap-2 items-center">
-                  <span className="text-vtm-red" aria-hidden="true">—</span>
-                  {ui("quoteNote1")}
-                </li>
-                <li className="flex gap-2 items-center">
-                  <span className="text-vtm-red" aria-hidden="true">—</span>
-                  {ui("quoteNote2")}
-                </li>
-                <li className="flex gap-2 items-center">
-                  <span className="text-vtm-red" aria-hidden="true">—</span>
-                  {ui("quoteNote3")}
-                </li>
-              </ul>
-            </div>
-            <GenericQuoteForm machineName={machineName} />
           </div>
         </div>
       </section>
