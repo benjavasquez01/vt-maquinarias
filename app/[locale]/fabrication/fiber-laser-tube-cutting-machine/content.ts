@@ -58,7 +58,7 @@ const en: ProductPageData = {
     { feature: "Labor per part (structural run)", ours: "Low — machine runs unattended", theirs: "High — operator at machine each piece" },
   ],
   relatedProducts: [
-    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
     { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
@@ -131,10 +131,10 @@ const es: ProductPageData = {
     { feature: "Mano de obra por pieza (producción estructural)", ours: "Baja — la máquina funciona desatendida", theirs: "Alta — operador presente en cada pieza" },
   ],
   relatedProducts: [
-    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
   ],
   faqs: [
     { question: "¿Qué tipos de perfil puede cortar el láser de tubos?", answer: "Tubo redondo, tubo cuadrado, tubo rectangular, ángulo (perfil L), canal C, viga I, viga H y perfiles personalizados. El controlador CypTube incluye plantillas de perfil para todas las secciones estándar." },

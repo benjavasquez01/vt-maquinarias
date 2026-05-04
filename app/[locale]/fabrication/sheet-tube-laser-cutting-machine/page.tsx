@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ProductPageTemplate } from "@/components/product/ProductPageTemplate";
+import { SheetTubeModelBrowser } from "./SheetTubeModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
@@ -15,5 +16,9 @@ export default async function SheetTubeLaserPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = (await params) as { locale: "en" | "es" };
-  return <ProductPageTemplate data={content[locale]} />;
+  return (
+    <ProductPageTemplate data={content[locale]} hideSpecs hideConfigure>
+      <SheetTubeModelBrowser locale={locale} />
+    </ProductPageTemplate>
+  );
 }

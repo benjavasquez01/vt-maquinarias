@@ -408,7 +408,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                       />
                     </div>
                     <div>
-                      <p className="font-semibold text-vtm-dark text-sm group-hover:text-vtm-red transition-colors">Fiber Laser Cutting Machine</p>
+                      <p className="font-semibold text-vtm-dark text-sm group-hover:text-vtm-red transition-colors">Fiber Laser Sheet Cutting Machine</p>
                       <p className="text-vtm-gray-mid text-xs mt-1">3–20 kW · ±0.05mm accuracy</p>
                     </div>
                   </Link>

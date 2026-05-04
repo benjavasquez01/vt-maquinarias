@@ -59,7 +59,7 @@ const en: AboutContent = {
     headline: "Certified quality. Verified performance.",
     items: [
       { name: "ISO 9001:2015", description: "Quality Management System certified for design, manufacture, and supply of industrial machinery." },
-      { name: "CE Mark", description: "European Conformity certification ensuring our machinery meets EU safety, health, and environmental requirements." },
+      { name: "OSHA Compliant", description: "Our machines and installation procedures comply with OSHA standards for workplace safety in US manufacturing environments." },
       { name: "UL Listed Components", description: "Critical electrical components in our machines carry UL listing for the US and Canadian markets." },
     ],
   },
@@ -111,7 +111,7 @@ const es: AboutContent = {
     headline: "Calidad certificada. Rendimiento verificado.",
     items: [
       { name: "ISO 9001:2015", description: "Sistema de Gestión de Calidad certificado para el diseño, fabricación y suministro de maquinaria industrial." },
-      { name: "Marca CE", description: "Certificación de Conformidad Europea que garantiza que nuestra maquinaria cumple los requisitos de seguridad, salud y medioambiente de la UE." },
+      { name: "Cumplimiento OSHA", description: "Nuestras máquinas y procedimientos de instalación cumplen con los estándares OSHA de seguridad laboral en entornos de fabricación en EE.UU." },
       { name: "Componentes Certificados UL", description: "Los componentes eléctricos críticos de nuestras máquinas cuentan con certificación UL para los mercados de EE.UU. y Canadá." },
     ],
   },

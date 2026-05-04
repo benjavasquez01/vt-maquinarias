@@ -34,7 +34,7 @@ const en: AutomotiveContent = {
     headline: "Built for automotive",
     learnMore: "Learn more →",
     items: [
-      { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "HSLA, aluminum, and stainless — at automotive tolerances." },
+      { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "HSLA, aluminum, and stainless — at automotive tolerances." },
       { name: "Industrial Welding Arm", href: "/automation/industrial-welding-arm", desc: "Consistent weld quality across high-volume production runs." },
       { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", desc: "Tight-radius bending with ±0.01mm repeatability." },
     ],
@@ -59,7 +59,7 @@ const es: AutomotiveContent = {
     sectionLabel: "Cómo lo Resolvemos",
     headline: "Requisitos automotrices — respondidos",
     items: [
-      { req: "Procesamiento de acero HSLA y de alta resistencia avanzada", how: "El corte láser de fibra maneja HSLA hasta 1 pulgada. Las prensas dobladoras con topes traseros CNC manejan curvaturas de radio ajustado sin problemas de retorno elástico." },
+      { req: "Procesamiento de acero HSLA y de alta resistencia avanzada", how: "El corte láser de fibra maneja HSLA hasta 1 pulgada. Las prensas plegadoras con topes traseros CNC manejan curvaturas de radio ajustado sin problemas de retorno elástico." },
       { req: "Consistencia en la calidad de soldadura en miles de piezas", how: "Los brazos de soldadura industrial mantienen una repetibilidad de trayectoria de antorcha ±0.05mm en cada pieza — la calidad de soldadura en la pieza #5,000 es idéntica a la pieza #1." },
       { req: "Producción mixta de aluminio y acero en una sola línea", how: "El láser de fibra destaca en ambos. Cambio rápido mediante parámetros de corte guardados — cambio de acero a aluminio 6061 en menos de 5 minutos." },
       { req: "Trazabilidad y documentación", how: "Los controladores CNC registran parámetros de corte, potencia y velocidad para cada pieza. Datos disponibles para auditorías de calidad y requisitos de documentación del cliente." },
@@ -70,9 +70,9 @@ const es: AutomotiveContent = {
     headline: "Fabricados para la industria automotriz",
     learnMore: "Más información →",
     items: [
-      { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", desc: "HSLA, aluminio e inoxidable — con tolerancias automotrices." },
+      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "HSLA, aluminio e inoxidable — con tolerancias automotrices." },
       { name: "Brazo de Soldadura Industrial", href: "/automation/industrial-welding-arm", desc: "Calidad de soldadura consistente en producciones de alto volumen." },
-      { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", desc: "Doblado de radio ajustado con repetibilidad de ±0.01mm." },
+      { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Plegado de radio ajustado con repetibilidad de ±0.01mm." },
     ],
   },
   cta: {

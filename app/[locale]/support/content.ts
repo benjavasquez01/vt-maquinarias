@@ -78,7 +78,7 @@ const en: SupportContent = {
     headline: "Manuals, guides, and templates.",
     body: "Download operator manuals, maintenance guides, and useful templates. Enter your email to unlock the download.",
     items: [
-      { title: "Fiber Laser Cutting Machine — Operator Manual", type: "PDF", size: "4.2 MB" },
+      { title: "Fiber Laser Sheet Cutting Machine — Operator Manual", type: "PDF", size: "4.2 MB" },
       { title: "CNC Press Brake Safety & Maintenance Guide", type: "PDF", size: "2.8 MB" },
       { title: "Collaborative Welding Arm Quick-Start Guide", type: "PDF", size: "1.9 MB" },
       { title: "Machine Installation Checklist (All Models)", type: "PDF", size: "0.8 MB" },
@@ -154,8 +154,8 @@ const es: SupportContent = {
     headline: "Manuales, guías y plantillas.",
     body: "Descargue manuales de operador, guías de mantenimiento y plantillas útiles. Ingrese su correo electrónico para desbloquear la descarga.",
     items: [
-      { title: "Máquina de Corte Láser de Fibra — Manual del Operador", type: "PDF", size: "4.2 MB" },
-      { title: "Guía de Seguridad y Mantenimiento de Prensa Dobladora CNC", type: "PDF", size: "2.8 MB" },
+      { title: "Máquina de Corte Láser de Fibra para Chapa — Manual del Operador", type: "PDF", size: "4.2 MB" },
+      { title: "Guía de Seguridad y Mantenimiento de Prensa Plegadora CNC", type: "PDF", size: "2.8 MB" },
       { title: "Guía de Inicio Rápido del Brazo de Soldadura Colaborativo", type: "PDF", size: "1.9 MB" },
       { title: "Lista de Verificación de Instalación de Máquina (Todos los Modelos)", type: "PDF", size: "0.8 MB" },
       { title: "Plantilla de Programa de Mantenimiento Preventivo", type: "XLSX", size: "0.4 MB" },

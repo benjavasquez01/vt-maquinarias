@@ -12,6 +12,7 @@ import { TrustBarStats } from "@/components/home/TrustBarStats";
 import { AnimatedDivider } from "@/components/home/AnimatedDivider";
 import { PinnedFeatureSection } from "@/components/home/PinnedFeatureSection";
 import { HomepageHeroScroll } from "@/components/home/HomepageHeroScroll";
+import { ProductShowcase } from "@/components/home/ProductShowcase";
 
 const FABRICATION_HREFS = [
   "/fabrication/fiber-laser-cutting-machine",
@@ -88,103 +89,8 @@ export default function HomePage() {
       {/* ── Section 2: Trust Bar ── */}
       <TrustBarStats />
 
-      {/* ── Section 3: Product Split ── */}
-      <section id="products" className="flex flex-col lg:flex-row min-h-screen">
-        {/* Left: Fabrication */}
-        <div className="lg:w-1/2 bg-vtm-dark px-8 lg:px-12 py-16">
-          <FadeIn>
-            <SectionLabel light className="mb-4">{t("fabrication.label")}</SectionLabel>
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-10 leading-tight">
-              {t("fabrication.heading")}
-            </h2>
-          </FadeIn>
-          <StaggerChildren className="space-y-1">
-            {FABRICATION_KEYS.map((key, i) => (
-              <Link
-                key={FABRICATION_HREFS[i]}
-                href={FABRICATION_HREFS[i]}
-                className="group flex items-start justify-between gap-4 py-5 border-b border-white/10 hover:border-white/30 transition-colors"
-              >
-                <div>
-                  <h3 className="font-headline font-semibold text-white group-hover:text-vtm-red transition-colors text-base">
-                    {t(`fabrication.products.${key}.name`)}
-                  </h3>
-                  <p className="text-white/50 text-sm mt-0.5 font-body">
-                    {t(`fabrication.products.${key}.description`)}
-                  </p>
-                </div>
-                <svg
-                  className="flex-shrink-0 mt-1 text-white/20 group-hover:text-vtm-red group-hover:translate-x-1 transition-all duration-200"
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"
-                >
-                  <path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-            ))}
-          </StaggerChildren>
-          <div className="mt-8">
-            <Button href="/fabrication" variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 hover:border-white/60">
-              {t("fabrication.viewAll")}
-            </Button>
-          </div>
-        </div>
-
-        <AnimatedDivider />
-
-        {/* Right: Automation */}
-        <div className="lg:w-1/2 bg-vtm-gray-light px-8 lg:px-12 py-16">
-          <FadeIn>
-            <SectionLabel className="mb-4">{t("automation.label")}</SectionLabel>
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark mb-10 leading-tight">
-              {t("automation.heading")}
-            </h2>
-          </FadeIn>
-          <StaggerChildren className="space-y-6">
-            {AUTOMATION_PRODUCTS.map((product) => (
-              <Link
-                key={product.href}
-                href={product.href}
-                className="product-card group block bg-white border border-vtm-gray-border hover:border-vtm-red/50 transition-colors overflow-hidden"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src={product.image.startsWith("/") ? product.image : `https://images.unsplash.com/photo-${product.image}?w=1200&q=80&fit=crop`}
-                    alt={t(`automation.products.${product.key}.name`)}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className="absolute top-3 left-3">
-                    <Badge>{t("automation.badge")}</Badge>
-                  </div>
-                </div>
-                <div className="p-6 flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-headline font-semibold text-vtm-dark group-hover:text-vtm-red transition-colors text-lg">
-                      {t(`automation.products.${product.key}.name`)}
-                    </h3>
-                    <p className="text-vtm-gray-mid text-sm mt-1 font-body">
-                      {t(`automation.products.${product.key}.description`)}
-                    </p>
-                  </div>
-                  <svg
-                    className="flex-shrink-0 mt-1 text-vtm-gray-mid group-hover:text-vtm-red group-hover:translate-x-1 transition-all duration-200"
-                    width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"
-                  >
-                    <path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </Link>
-            ))}
-          </StaggerChildren>
-          <div className="mt-8">
-            <Button href="/automation" variant="primary" size="md">
-              {t("automation.explore")}
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* ── Section 3: Product Showcase ── */}
+      <ProductShowcase />
 
       {/* ── Section 4: Feature Highlights ── */}
       <PinnedFeatureSection blocks={featureBlocks} />

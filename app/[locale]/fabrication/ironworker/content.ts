@@ -95,7 +95,7 @@ const en: ProductPageData = {
   relatedProducts: [
     { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "/images/shearing-guillotine-hero.png" },
-    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [
@@ -160,8 +160,8 @@ const es: ProductPageData = {
     },
     {
       number: "05",
-      headline: "Accesorio de Doblado con Troquel en V — Dobleces Cortos Sin Prensa Dobladora",
-      body: "Un accesorio opcional de troquel en V se monta directamente en la estación de punzonado, convirtiendo la punzonadora en una prensa dobladora compacta para dobleces cortos. Ideal para soportes, grapas y piezas formadas pequeñas que no justifican mover el material a una prensa dobladora completa. Se vende por separado — consulte a su asesor de ventas VTM para los troqueles compatibles y la capacidad de su modelo.",
+      headline: "Accesorio de Plegado con Troquel en V — Dobleces Cortos Sin Prensa Plegadora",
+      body: "Un accesorio opcional de troquel en V se monta directamente en la estación de punzonado, convirtiendo la punzonadora en una prensa plegadora compacta para dobleces cortos. Ideal para soportes, grapas y piezas formadas pequeñas que no justifican mover el material a una prensa plegadora completa. Se vende por separado — consulte a su asesor de ventas VTM para los troqueles compatibles y la capacidad de su modelo.",
       spec: { label: "Disponibilidad", value: "Accesorio opcional" },
       imageId: "/images/ironworker-feature-05-vdie.jpg",
     },
@@ -215,9 +215,9 @@ const es: ProductPageData = {
     { feature: "Punzonado CNC / anidamiento", ours: "No disponible", theirs: "Disponible en prensas de torreta" },
   ],
   relatedProducts: [
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "/images/shearing-guillotine-hero.png" },
-    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [

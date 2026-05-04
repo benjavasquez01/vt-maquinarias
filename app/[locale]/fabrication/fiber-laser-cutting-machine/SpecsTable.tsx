@@ -43,7 +43,7 @@ interface Props {
 }
 
 export function SpecsTable({ specLabel, valueLabel, imperialLabel, metricLabel }: Props) {
-  const [unit, setUnit] = useState<Unit>("imperial");
+  const [unit, setUnit] = useState<Unit>("metric");
 
   return (
     <div>

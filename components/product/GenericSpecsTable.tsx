@@ -7,7 +7,7 @@ export type SpecRow = Spec;
 type Unit = "imperial" | "metric";
 
 export function GenericSpecsTable({ specs }: { specs: Spec[] }) {
-  const [unit, setUnit] = useState<Unit>("imperial");
+  const [unit, setUnit] = useState<Unit>("metric");
   const tbodyRef = useRef<HTMLTableSectionElement>(null);
 
   useEffect(() => {

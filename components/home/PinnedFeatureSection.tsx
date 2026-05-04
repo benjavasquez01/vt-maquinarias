@@ -69,7 +69,6 @@ function FeatureRow({ block, index }: { block: FeatureBlock; index: number }) {
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
-        <div className="absolute inset-0 bg-vtm-dark/40" />
       </div>
 
       {/* Text side */}

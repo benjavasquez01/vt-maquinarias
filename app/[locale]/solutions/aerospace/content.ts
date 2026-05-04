@@ -34,7 +34,7 @@ const en: AerospaceContent = {
     headline: "Equipment for aerospace work",
     learnMore: "Learn more →",
     items: [
-      { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "±0.05mm accuracy, nitrogen-assist capability for clean non-ferrous edges." },
+      { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "±0.05mm accuracy, nitrogen-assist capability for clean non-ferrous edges." },
       { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", desc: "±0.01mm bending repeatability. Automatic springback compensation by material and gauge." },
     ],
   },
@@ -60,7 +60,7 @@ const es: AerospaceContent = {
     items: [
       { material: "Titanio (Ti-6Al-4V)", cap: "Corte láser de fibra con gas de asistencia de nitrógeno elimina la oxidación. Zona afectada por el calor minimizada para preservar las propiedades del material." },
       { material: "Aleaciones de Aluminio (6061, 7075)", cap: "Corte láser de fibra de alta velocidad con bordes limpios. Sin formación de rebabas con los parámetros correctos — reduce el tiempo de desbarbado en post-procesamiento." },
-      { material: "Acero Inoxidable (304, 316, 17-4 PH)", cap: "Corte con asistencia de nitrógeno para bordes sin óxido. Doblado en prensa con compensación de retorno elástico programada para cada grado." },
+      { material: "Acero Inoxidable (304, 316, 17-4 PH)", cap: "Corte con asistencia de nitrógeno para bordes sin óxido. Plegado en prensa con compensación de retorno elástico programada para cada grado." },
       { material: "Inconel y aleaciones de alta temperatura", cap: "Contáctenos — los parámetros láser para estos materiales requieren configuración personalizada. Tenemos experiencia con Inconel 625 y 718." },
     ],
   },
@@ -69,8 +69,8 @@ const es: AerospaceContent = {
     headline: "Equipos para trabajo aeroespacial",
     learnMore: "Más información →",
     items: [
-      { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", desc: "Precisión ±0.05mm, capacidad de asistencia con nitrógeno para bordes limpios en metales no ferrosos." },
-      { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", desc: "Repetibilidad de doblado ±0.01mm. Compensación automática de retorno elástico por material y calibre." },
+      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "Precisión ±0.05mm, capacidad de asistencia con nitrógeno para bordes limpios en metales no ferrosos." },
+      { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Repetibilidad de plegado ±0.01mm. Compensación automática de retorno elástico por material y calibre." },
     ],
   },
   cta: {

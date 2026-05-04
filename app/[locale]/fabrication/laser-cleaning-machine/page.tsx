@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ProductPageTemplate } from "@/components/product/ProductPageTemplate";
+import { CleaningModelBrowser } from "./CleaningModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
@@ -15,5 +16,9 @@ export default async function LaserCleaningPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = (await params) as { locale: "en" | "es" };
-  return <ProductPageTemplate data={content[locale]} />;
+  return (
+    <ProductPageTemplate data={content[locale]} hideSpecs hideConfigure>
+      <CleaningModelBrowser locale={locale} />
+    </ProductPageTemplate>
+  );
 }

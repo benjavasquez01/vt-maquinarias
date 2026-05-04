@@ -17,7 +17,7 @@
     "fiberLaser": "Corte Láser de Fibra",
     "laserWelding": "Soldadura Láser",
     "laserCleaning": "Limpieza Láser",
-    "pressBreak": "Prensa Dobladora CNC",
+    "pressBreak": "Prensa Plegadora CNC",
     "shearing": "Cizalla",
     "ironworker": "Punzonadora",
     "cobotWelding": "Brazo de Soldadura Colaborativo",
@@ -82,15 +82,15 @@
     },
     "fabrication": {
       "label": "Maquinaria de Fabricación",
-      "heading": "Máquinas de formado y corte de metal para talleres de producción.",
+      "heading": "Maquinas de corte y conformado de metales",
       "viewAll": "Ver Toda la Maquinaria de Fabricación",
       "products": {
-        "fiberLaser": { "name": "Máquina de Corte Láser de Fibra", "description": "1.5–30 kW. ±0.05mm. Mesas de 4′×4′ a 8′×20′." },
+        "fiberLaser": { "name": "Máquina de Corte Láser de Fibra para Chapa para Chapa", "description": "1.5–30 kW. ±0.05mm. Mesas de 4′×4′ a 8′×20′." },
         "fiberLaserTube": { "name": "Corte Láser de Tubos", "description": "Perfiles redondos, cuadrados y estructurales. Longitudes hasta 9 m." },
         "sheetTubeCombo": { "name": "Láser Combinado Chapa y Tubo", "description": "Corte de chapa plana y tubo en una sola máquina. 3–6 kW." },
         "fourInOne": { "name": "Máquina de Soldadura Láser", "description": "Soldadura, corte, limpieza y alimentación de hilo. 1.5–3 kW." },
         "laserCleaning": { "name": "Máquina de Limpieza Láser", "description": "Eliminación de óxido y recubrimientos sin químicos." },
-        "pressBreake": { "name": "Prensa Dobladora CNC", "description": "Repetibilidad ±0.01mm. 40–400 toneladas." },
+        "pressBreake": { "name": "Prensa Plegadora CNC", "description": "Repetibilidad ±0.01mm. 40–400 toneladas." },
         "shearing": { "name": "Guillotinas y Viga Oscilante", "description": "Guillotina hasta 16 mm. Viga oscilante hasta 12 mm." },
         "ironworker": { "name": "Punzonadora Hidráulica", "description": "Punzonar, entallar, cizallar y doblar en una máquina." }
       }
@@ -170,7 +170,7 @@
         "date": "28 de febrero de 2026"
       },
       "p3": {
-        "title": "5 Señales de que Su Prensa Dobladora Está Limitando la Producción de Su Taller",
+        "title": "5 Señales de que Su Prensa Plegadora Está Limitando la Producción de Su Taller",
         "excerpt": "Si su departamento de doblez es el cuello de botella, el problema puede no ser sus operadores — puede ser su equipo.",
         "date": "10 de febrero de 2026"
       }

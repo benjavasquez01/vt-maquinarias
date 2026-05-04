@@ -5,39 +5,23 @@ const en: ProductPageData = {
   slug: "cnc-press-brake",
   machineName: "CNC Press Brake",
   heroSubheadline:
-    "40 to 400 ton CNC hydraulic press brake. Graphic CNC touchscreen controller with 3D bending simulation, 4+1 to 8+1 axis back gauge, automatic crowning compensation, and ±0.01 mm repeatability across every part.",
-  heroImageId: "/images/cnc-press-brake-hero.png",
+    "Two drive platforms — hydraulic single machines from 63 to 1600 tons for heavy plate, and servo electric tandem pairs from 160 to 800 tons per machine for synchronized bending up to 16 m. Graphic CNC touchscreen controller with 3D bend simulation, 4+1 to 8+1 axis back gauge, and automatic crowning compensation.",
+  heroImageId: "/images/cnc-press-brake-hero.jpg",
+  heroImageFit: "contain",
   features: [
     {
-      number: "01",
-      headline: "±0.01 mm Repeatability — Part After Part",
-      body: "Dual-cylinder synchronization via electrohydraulic servo valves maintains ram position accuracy to ±0.01 mm throughout the stroke. Closed-loop linear encoders on both cylinders catch any deviation before it affects the bend. First-article accuracy holds through the entire production run.",
-      spec: { label: "Repeatability", value: "±0.01 mm" },
-      imageId: "/images/cnc-press-brake-feature-01-repeatability.jpeg",
-    },
-    {
-      number: "02",
-      headline: "Graphic CNC Controller — Bend Simulation Before You Press",
-      body: "The touchscreen controller can render a graphical simulation of your entire bend sequence before the machine moves a millimeter. Collision detection runs automatically — the controller flags tooling conflicts and resequences the program to avoid them. Tonnage is auto-calculated per bend. Import DXF files directly from your CAD system and store unlimited tooling profiles in the library. Operators spend less time at the control and more time running parts.",
-      spec: { label: "Controller", value: "Graphical" },
-      imageId: "/images/cnc-press-brake-feature-02-controller.jpeg",
-    },
-    {
-      number: "03",
       headline: "Automatic Crowning Compensation",
       body: "Long beams deflect under load — producing a slight camber in the center of the bend that wrecks angular consistency across a 10-foot part. VTM press brakes use a hydraulic crowning system that actively compensates for ram deflection based on real-time tonnage, maintaining uniform angle from end to end.",
       spec: { label: "Crowning", value: "Automatic" },
       imageId: "/images/cnc-press-brake-feature-03-crowning.png",
     },
     {
-      number: "04",
       headline: "4+1 to 8+1 Axis Back Gauge — Complex Parts, Simple Setup",
       body: "X, R, Z1, and Z2 axes on the back gauge allow independent positioning of each finger — critical for flanges at multiple depths, offset bends, and parts that taper. Every back gauge position is stored in the part program and recalled automatically when you run the same job again.",
       spec: { label: "Back Gauge", value: "4+1 to 8+1 axis" },
       imageId: "/images/cnc-press-brake-feature-04-backgauge.png",
     },
     {
-      number: "05",
       headline: "Auto Tool Change — Zero Setup Time on Mixed Jobs",
       body: "The optional hydraulic tool change system repositions the punch and die within the programmed sequence — no manual tooling movement between bends. On a job with four tool setups, auto tool change eliminates 10–15 minutes of down time. On high-mix lines running dozens of SKUs, the payback is immediate.",
       spec: { label: "Tool Change", value: "Auto (optional)" },
@@ -94,7 +78,7 @@ const en: ProductPageData = {
   ],
   relatedProducts: [
     { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/ironworker-hero.png" },
-    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [
@@ -124,41 +108,25 @@ const en: ProductPageData = {
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "cnc-press-brake",
-  machineName: "Prensa Dobladora CNC",
+  machineName: "Prensa Plegadora CNC",
   heroSubheadline:
-    "Prensa dobladora hidráulica CNC de 40 a 400 toneladas. Controlador táctil CNC gráfico con simulación de doblado 3D, tope trasero de 4+1 a 8+1 ejes, compensación automática de arqueado y repetibilidad de ±0.01 mm en cada pieza.",
-  heroImageId: "/images/cnc-press-brake-hero.png",
+    "Dos plataformas de accionamiento — máquinas hidráulicas individuales de 63 a 1600 toneladas para placa pesada, y pares servo eléctricos en tándem de 160 a 800 toneladas por máquina para plegado sincronizado hasta 16 m. Controlador táctil CNC gráfico con simulación de plegado 3D, tope trasero de 4+1 a 8+1 ejes y compensación automática de arqueado.",
+  heroImageId: "/images/cnc-press-brake-hero.jpg",
+  heroImageFit: "contain",
   features: [
     {
-      number: "01",
-      headline: "Repetibilidad de ±0.01 mm — Pieza Tras Pieza",
-      body: "La sincronización de doble cilindro mediante válvulas servo electrohidráulicas mantiene la precisión de posición del carnero en ±0.01 mm durante todo el recorrido. Los encoders lineales de bucle cerrado en ambos cilindros detectan cualquier desviación antes de que afecte el doblez. La precisión de la primera pieza se mantiene durante toda la producción.",
-      spec: { label: "Repetibilidad", value: "±0.01 mm" },
-      imageId: "/images/cnc-press-brake-feature-01-repeatability.jpeg",
-    },
-    {
-      number: "02",
-      headline: "Controlador CNC Gráfico — Simulación de Doblado Antes de Presionar",
-      body: "El controlador táctil puede renderizar una simulación gráfica completa de toda la secuencia de doblado antes de que la máquina mueva un milímetro. La detección de colisiones se ejecuta automáticamente — el controlador señala conflictos de herramientas y reordena el programa para evitarlos. El tonelaje se calcula automáticamente por doblez. Importe archivos DXF directamente desde su sistema CAD y almacene perfiles de herramientas ilimitados en la biblioteca. Los operadores pasan menos tiempo en el control y más tiempo produciendo piezas.",
-      spec: { label: "Controlador", value: "Gráfico" },
-      imageId: "/images/cnc-press-brake-feature-02-controller.jpeg",
-    },
-    {
-      number: "03",
       headline: "Compensación Automática de Arqueado",
-      body: "Las vigas largas se flexionan bajo carga — produciendo una ligera curvatura en el centro del doblez que arruina la consistencia angular en toda una pieza de 10 pies. Las prensas dobladoras VTM usan un sistema de arqueado hidráulico que compensa activamente la deflexión del carnero basándose en el tonelaje en tiempo real.",
+      body: "Las vigas largas se flexionan bajo carga — produciendo una ligera curvatura en el centro del doblez que arruina la consistencia angular en toda una pieza de 10 pies. Las prensas plegadoras VTM usan un sistema de arqueado hidráulico que compensa activamente la deflexión del carnero basándose en el tonelaje en tiempo real.",
       spec: { label: "Arqueado", value: "Automático" },
       imageId: "/images/cnc-press-brake-feature-03-crowning.png",
     },
     {
-      number: "04",
       headline: "Tope Trasero de 4+1 a 8+1 Ejes — Piezas Complejas, Configuración Simple",
       body: "Los ejes X, R, Z1 y Z2 en el tope trasero permiten el posicionamiento independiente de cada dedo — crítico para bridas a múltiples profundidades, dobleces desplazados y piezas que se afinan. Cada posición del tope trasero se almacena en el programa de la pieza y se recuerda automáticamente cuando se ejecuta el mismo trabajo nuevamente.",
       spec: { label: "Tope Trasero", value: "4+1 a 8+1 ejes" },
       imageId: "/images/cnc-press-brake-feature-04-backgauge.png",
     },
     {
-      number: "05",
       headline: "Cambio Automático de Herramientas — Cero Tiempo de Configuración",
       body: "El sistema opcional de cambio hidráulico de herramientas reposiciona el punzón y la matriz dentro de la secuencia programada — sin movimiento manual de herramientas entre dobleces. En un trabajo con cuatro configuraciones de herramientas, el cambio automático elimina 10–15 minutos de tiempo de inactividad.",
       spec: { label: "Cambio de Herramientas", value: "Automático (opcional)" },
@@ -167,10 +135,10 @@ const es: ProductPageData = {
   ],
   specs: [
     { label: "Opciones de Tonelaje", imperial: "40T / 80T / 110T / 160T / 220T / 400T", metric: "40T / 80T / 110T / 160T / 220T / 400T" },
-    { label: "Longitud de Doblado", imperial: "98\"–236\" (8'–20')", metric: "2500–6000 mm" },
+    { label: "Longitud de Plegado", imperial: "98\"–236\" (8'–20')", metric: "2500–6000 mm" },
     { label: "Recorrido del Carnero", imperial: "6\"–8\"", metric: "150–200 mm" },
     { label: "Velocidad de Aproximación", imperial: "394 pulg/min", metric: "100 mm/s" },
-    { label: "Velocidad de Doblado", imperial: "0.4\"–0.8\"/s (ajustable)", metric: "10–20 mm/s (ajustable)" },
+    { label: "Velocidad de Plegado", imperial: "0.4\"–0.8\"/s (ajustable)", metric: "10–20 mm/s (ajustable)" },
     { label: "Velocidad de Retorno", imperial: "315 pulg/min", metric: "80 mm/s" },
     { label: "Ejes del Tope Trasero", imperial: "4+1 a 8+1 ejes", metric: "4+1 a 8+1 ejes" },
     { label: "Recorrido X del Tope Trasero", imperial: "0–23.6\"", metric: "0–600 mm" },
@@ -189,7 +157,7 @@ const es: ProductPageData = {
       note: "La selección de tonelaje depende de su material más grueso, doblez más ancho y resistencia a la tracción del material. Los ingenieros VTM dimensionarán correctamente para su trabajo.",
     },
     {
-      label: "Longitud de Doblado",
+      label: "Longitud de Plegado",
       options: ["98\" (2500 mm)", "118\" (3000 mm)", "157\" (4000 mm)", "197\" (5000 mm)", "236\" (6000 mm)"],
       note: "Corresponde a su lámina o perfil estándar más largo. Las camas más largas requieren un tonelaje proporcionalmente mayor para mantener la precisión.",
     },
@@ -200,13 +168,13 @@ const es: ProductPageData = {
     },
   ],
   comparisonLabel: "Tecnología",
-  comparisonHeadline: "Prensa Dobladora CNC vs. Manual",
-  comparisonOursLabel: "Prensa Dobladora CNC",
-  comparisonTheirsLabel: "Prensa Dobladora Manual",
+  comparisonHeadline: "Prensa Plegadora CNC vs. Manual",
+  comparisonOursLabel: "Prensa Plegadora CNC",
+  comparisonTheirsLabel: "Prensa Plegadora Manual",
   comparison: [
     { feature: "Repetibilidad", ours: "±0.01 mm", theirs: "±0.5 mm o peor" },
     { feature: "Tiempo de configuración por trabajo", ours: "5–15 min (programa recordado)", theirs: "30–60 min (prueba y error manual)" },
-    { feature: "Simulación 3D de doblado", ours: "Sí — detección de colisiones incluida", theirs: "Ninguna" },
+    { feature: "Simulación 3D de plegado", ours: "Sí — detección de colisiones incluida", theirs: "Ninguna" },
     { feature: "Tope trasero", ours: "CNC de 4+1 a 8+1 ejes", theirs: "Manual de un solo eje" },
     { feature: "Compensación de arqueado", ours: "Automática", theirs: "Calzas manuales (si disponibles)" },
     { feature: "Habilidad del operador requerida", ours: "Baja — el controlador guía al operador", theirs: "Alta — operador experimentado esencial" },
@@ -215,17 +183,17 @@ const es: ProductPageData = {
   ],
   relatedProducts: [
     { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/ironworker-hero.png" },
-    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [
     {
       question: "¿Las herramientas son compatibles con mis juegos de punzón y troquel existentes?",
-      answer: "Las prensas dobladoras VTM se envían configuradas para herramientas estilo europeo estándar (Wila/Wilson), que son compatibles con la mayoría de las herramientas de repuesto disponibles en los EE.UU. Los portaherramientas estilo Amada están disponibles como opción de configuración. Si tiene herramientas existentes que desea seguir usando, comparta el perfil de herramientas con su ingeniero de ventas VTM antes de ordenar.",
+      answer: "Las prensas plegadoras VTM se envían configuradas para herramientas estilo europeo estándar (Wila/Wilson), que son compatibles con la mayoría de las herramientas de repuesto disponibles en los EE.UU. Los portaherramientas estilo Amada están disponibles como opción de configuración. Si tiene herramientas existentes que desea seguir usando, comparta el perfil de herramientas con su ingeniero de ventas VTM antes de ordenar.",
     },
     {
       question: "¿Qué tan difícil es la programación en el controlador CNC?",
-      answer: "El controlador CNC gráfico usa una interfaz de pantalla táctil con visualización de piezas en 3D. La mayoría de los operadores alcanzan plena competencia de programación en 2–3 días de entrenamiento. Los archivos DXF de su sistema CAD se pueden importar directamente — el controlador genera automáticamente la secuencia de doblado y calcula el tonelaje. VTM incluye 2 días de entrenamiento de programación en sitio con cada máquina.",
+      answer: "El controlador CNC gráfico usa una interfaz de pantalla táctil con visualización de piezas en 3D. La mayoría de los operadores alcanzan plena competencia de programación en 2–3 días de entrenamiento. Los archivos DXF de su sistema CAD se pueden importar directamente — el controlador genera automáticamente la secuencia de plegado y calcula el tonelaje. VTM incluye 2 días de entrenamiento de programación en sitio con cada máquina.",
     },
     {
       question: "¿Cómo selecciono el tonelaje correcto para mi trabajo?",

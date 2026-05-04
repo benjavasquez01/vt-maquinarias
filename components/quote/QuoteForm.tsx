@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const machines = [
-  "Fiber Laser Cutting Machine",
+  "Fiber Laser Sheet Cutting Machine",
   "Laser Welding Machine",
   "Laser Cleaning Machine",
   "CNC Press Brake",

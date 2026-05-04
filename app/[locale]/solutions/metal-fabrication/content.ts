@@ -16,7 +16,7 @@ const en: MetalFabContent = {
   },
   grid: { sectionLabel: "The Full Line", headline: "Equipment for Every Stage of Fabrication" },
   machines: [
-    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · no consumables", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
     { name: "Laser Cleaning Machine", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · chemical-free", tag: "Cleaning", imageId: "/images/laser-cleaning-hero.png" },
@@ -41,14 +41,14 @@ const es: MetalFabContent = {
   hero: {
     sectionLabel: "Soluciones por Industria",
     headline: "Fabricación Metálica",
-    subheadline: "De la placa en bruto a la pieza terminada — equipos de corte láser, doblado, soldadura y limpieza para talleres que trabajan con tolerancias ajustadas y alto rendimiento.",
+    subheadline: "De la placa en bruto a la pieza terminada — equipos de corte láser, plegado, soldadura y limpieza para talleres que trabajan con tolerancias ajustadas y alto rendimiento.",
     cta1: "Solicitar Cotización",
     cta2: "Hablar con un Especialista",
   },
   grid: { sectionLabel: "La Línea Completa", headline: "Equipos para Cada Etapa de la Fabricación" },
   machines: [
-    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · sin consumibles", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
     { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · sin químicos", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.png" },
     { name: "Punzonadora", href: "/fabrication/ironworker", spec: "55–165 ton · 4 en 1", tag: "Multiproceso", imageId: "/images/ironworker-hero.png" },
@@ -57,13 +57,13 @@ const es: MetalFabContent = {
     items: [
       { title: "Un proveedor, línea completa", body: "Todo el equipamiento desde un solo punto de contacto. Sin gestionar múltiples proveedores con diferentes estructuras de soporte, inventarios de repuestos y equipos de servicio." },
       { title: "Soporte en EE.UU.", body: "Instalación, calibración, capacitación y servicio continuo de un equipo en EE.UU. Las piezas se envían el mismo día. El soporte está a una llamada de distancia — no en un ticket que tarda tres días en responderse." },
-      { title: "Tolerancias comprobadas", body: "±0.05mm de corte, ±0.01mm de repetibilidad en doblado. No son números de marketing — son las especificaciones a las que calibramos antes de cada envío y verificamos en sitio durante la instalación." },
+      { title: "Tolerancias comprobadas", body: "±0.05mm de corte, ±0.01mm de repetibilidad en plegado. No son números de marketing — son las especificaciones a las que calibramos antes de cada envío y verificamos en sitio durante la instalación." },
     ],
   },
   cta: {
     sectionLabel: "Comenzar",
     headline: "¿Listo para construir su línea de fabricación?",
-    body: "Cuéntenos qué corta, dobla y suelda — elaboraremos una recomendación completa de equipos con precios y plazos de entrega.",
+    body: "Cuéntenos qué corta, plega y suelda — elaboraremos una recomendación completa de equipos con precios y plazos de entrega.",
     cta: "Solicitar Cotización",
   },
 };

@@ -3,7 +3,7 @@ import type { ProductPageData } from "@/components/product/ProductPageTemplate";
 const en: ProductPageData = {
   category: "Fabrication",
   slug: "enclosed-fiber-laser-cutting-machine",
-  machineName: "Enclosed Fiber Laser Cutting Machine",
+  machineName: "Enclosed Fiber Laser Sheet Cutting Machine",
   heroSubheadline: "VTM-PE and VTM-SE. Laser Safety Class 1 — the full enclosure eliminates laser hazard exposure for everyone outside the machine. Same Raycus source, HIWIN rails, and CypCut CNC as the open-frame line, in a fully enclosed safety-rated housing.",
   heroImageId: "1518770660439-4636190af475",
   features: [
@@ -56,7 +56,7 @@ const en: ProductPageData = {
     { feature: "Best for", ours: "Mixed-use, offices nearby, training, R&D", theirs: "Dedicated fabrication shop, high-volume production" },
   ],
   relatedProducts: [
-    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Open Frame", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Open Frame", imageId: "/images/fiber-laser-hero.png" },
     { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "4-in-1 Laser Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Handheld", imageId: "/images/4in1-laser-hero-2.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
@@ -74,7 +74,7 @@ const en: ProductPageData = {
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "enclosed-fiber-laser-cutting-machine",
-  machineName: "Máquina de Corte Láser de Fibra Encapsulada",
+  machineName: "Máquina de Corte Láser de Fibra para Chapa Encapsulada",
   heroSubheadline: "VTM-PE y VTM-SE. Clase de Seguridad Láser 1 — el encapsulado completo elimina la exposición al peligro láser para todos los que están fuera de la máquina. Misma fuente Raycus, guías HIWIN y CNC CypCut que la línea de bastidor abierto, en una carcasa con clasificación de seguridad.",
   heroImageId: "1518770660439-4636190af475",
   features: [
@@ -127,7 +127,7 @@ const es: ProductPageData = {
     { feature: "Ideal para", ours: "Uso mixto, oficinas cercanas, capacitación, I+D", theirs: "Taller de fabricación dedicado, producción de alto volumen" },
   ],
   relatedProducts: [
-    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "Máquina Láser 4 en 1", href: "/fabrication/4-in-1-laser-machine", tag: "Manual", imageId: "/images/4in1-laser-hero-2.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },

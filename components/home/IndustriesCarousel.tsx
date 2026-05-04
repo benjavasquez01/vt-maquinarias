@@ -3,39 +3,76 @@
 import { useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { Link } from "@/lib/navigation";
+import { useLocale } from "next-intl";
 
-const industries = [
-  {
-    name: "Metal Fabrication",
-    slug: "metal-fabrication",
-    description:
-      "From job shops to contract manufacturers — laser cutting, press brakes, and welding automation that scale with your workload.",
-    image: "/images/solution-metal-fabrication.png",
-  },
-  {
-    name: "Automotive",
-    slug: "automotive",
-    description:
-      "High-repeatability stamping supports, precision laser cutting of brackets and structural components, and cobot welding for high-volume production lines.",
-    image: "/images/solution-automotive.png",
-  },
-  {
-    name: "Aerospace",
-    slug: "aerospace",
-    description:
-      "Tight-tolerance fabrication for aerospace-grade aluminum, titanium, and stainless steel. Our machines meet the precision demands of the industry.",
-    image: "/images/solution-aerospace.png",
-  },
-  {
-    name: "HVAC & Construction",
-    slug: "hvac-construction",
-    description:
-      "Sheet metal ductwork, structural components, and framing fabricated faster and more accurately with our laser and press brake solutions.",
-    image: "/images/solution-hvac-construction.png",
-  },
-];
+const industries = {
+  en: [
+    {
+      name: "Metal Fabrication",
+      slug: "metal-fabrication",
+      description:
+        "From job shops to contract manufacturers — laser cutting, press brakes, and welding automation that scale with your workload.",
+      image: "/images/solution-metal-fabrication.png",
+    },
+    {
+      name: "Automotive",
+      slug: "automotive",
+      description:
+        "High-repeatability stamping supports, precision laser cutting of brackets and structural components, and cobot welding for high-volume production lines.",
+      image: "/images/solution-automotive.png",
+    },
+    {
+      name: "Aerospace",
+      slug: "aerospace",
+      description:
+        "Tight-tolerance fabrication for aerospace-grade aluminum, titanium, and stainless steel. Our machines meet the precision demands of the industry.",
+      image: "/images/solution-aerospace.png",
+    },
+    {
+      name: "HVAC & Construction",
+      slug: "hvac-construction",
+      description:
+        "Sheet metal ductwork, structural components, and framing fabricated faster and more accurately with our laser and press brake solutions.",
+      image: "/images/solution-hvac-construction.png",
+    },
+  ],
+  es: [
+    {
+      name: "Fabricación Metálica",
+      slug: "metal-fabrication",
+      description:
+        "Desde talleres de trabajo hasta fabricantes por contrato — corte láser, prensas plegadoras y automatización de soldadura que escalan con su carga de trabajo.",
+      image: "/images/solution-metal-fabrication.png",
+    },
+    {
+      name: "Automotriz",
+      slug: "automotive",
+      description:
+        "Soportes de estampado de alta repetibilidad, corte láser de precisión de soportes y componentes estructurales, y soldadura con cobot para líneas de producción de alto volumen.",
+      image: "/images/solution-automotive.png",
+    },
+    {
+      name: "Aeroespacial",
+      slug: "aerospace",
+      description:
+        "Fabricación de tolerancias precisas para aluminio, titanio e inoxidable grado aeroespacial. Nuestras máquinas cumplen las exigencias de precisión de la industria.",
+      image: "/images/solution-aerospace.png",
+    },
+    {
+      name: "HVAC y Construcción",
+      slug: "hvac-construction",
+      description:
+        "Conductos de chapa metálica, componentes estructurales y marcos fabricados más rápido y con mayor precisión con nuestras soluciones láser y de prensas plegadoras.",
+      image: "/images/solution-hvac-construction.png",
+    },
+  ],
+};
 
 export function IndustriesCarousel() {
+  const locale = useLocale();
+  const items = locale === "es" ? industries.es : industries.en;
+  const learnMoreLabel = locale === "es" ? "Saber Más" : "Learn More";
+
   const trackRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -84,7 +121,7 @@ export function IndustriesCarousel() {
         onMouseUp={stopDragging}
         onMouseLeave={stopDragging}
       >
-        {industries.map((industry, i) => (
+        {items.map((industry, i) => (
           <div
             key={industry.slug}
             className="flex-shrink-0 w-[80vw] md:w-[45vw] lg:w-[30vw] bg-vtm-dark border border-vtm-gray-border/20 flex flex-col"
@@ -109,7 +146,7 @@ export function IndustriesCarousel() {
                 href={`/solutions/${industry.slug}`}
                 className="text-vtm-red text-sm font-semibold hover:underline inline-flex items-center gap-1 group"
               >
-                Learn More
+                {learnMoreLabel}
                 <svg className="group-hover:translate-x-1 transition-transform" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -132,8 +169,8 @@ export function IndustriesCarousel() {
           </svg>
         </button>
         <button
-          onClick={() => scrollTo(Math.min(industries.length - 1, activeIndex + 1))}
-          disabled={activeIndex === industries.length - 1}
+          onClick={() => scrollTo(Math.min(items.length - 1, activeIndex + 1))}
+          disabled={activeIndex === items.length - 1}
           className="w-10 h-10 border border-vtm-gray-border flex items-center justify-center hover:border-vtm-dark transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           aria-label="Next industry"
         >
@@ -142,7 +179,7 @@ export function IndustriesCarousel() {
           </svg>
         </button>
         <div className="flex gap-2 ml-2">
-          {industries.map((_, i) => (
+          {items.map((_, i) => (
             <button
               key={i}
               onClick={() => scrollTo(i)}

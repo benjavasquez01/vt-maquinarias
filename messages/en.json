@@ -85,7 +85,7 @@
       "heading": "Metal forming & cutting machines built for production shops.",
       "viewAll": "View All Fabrication Machines",
       "products": {
-        "fiberLaser": { "name": "Fiber Laser Cutting Machine", "description": "1.5–30 kW. ±0.05mm. Beds 4′×4′ to 8′×20′." },
+        "fiberLaser": { "name": "Fiber Laser Sheet Cutting Machine", "description": "1.5–30 kW. ±0.05mm. Beds 4′×4′ to 8′×20′." },
         "fiberLaserTube": { "name": "Fiber Laser Tube Cutting", "description": "Round/square/structural profiles. Lengths to 9 m." },
         "sheetTubeCombo": { "name": "Sheet & Tube Combo Laser", "description": "Flat sheet and tube on one machine. 3–6 kW." },
         "fourInOne": { "name": "Laser Welding Machine", "description": "Handheld weld, cut, clean, wire-feed. 1.5–3 kW." },

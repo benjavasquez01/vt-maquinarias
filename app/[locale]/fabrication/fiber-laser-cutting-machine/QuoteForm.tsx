@@ -44,7 +44,7 @@ export function QuoteForm({
           metalworkingType: "",
           materials: "",
           timeline: "",
-          machinesOfInterest: "Fiber Laser Cutting Machine",
+          machinesOfInterest: "Fiber Laser Sheet Cutting Machine",
           language,
           transcript: `Fiber Laser product page quote form. Message: ${fd.get("message") ?? ""}`,
         }),
@@ -52,7 +52,7 @@ export function QuoteForm({
       if (typeof window !== "undefined" && (window as unknown as { gtag?: Function }).gtag) {
         (window as unknown as { gtag: Function }).gtag("event", "generate_lead", {
           method: "product_form",
-          machines: "Fiber Laser Cutting Machine",
+          machines: "Fiber Laser Sheet Cutting Machine",
         });
       }
     } catch { /* non-critical */ }
@@ -152,7 +152,7 @@ export function QuoteForm({
           rows={4}
           className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors resize-none"
           placeholder={messagePlaceholder}
-          defaultValue="Machine of interest: Fiber Laser Cutting Machine"
+          defaultValue="Machine of interest: Fiber Laser Sheet Cutting Machine"
         />
       </div>
       <Button type="submit" variant="primary" size="lg" className="w-full justify-center" disabled={loading}>

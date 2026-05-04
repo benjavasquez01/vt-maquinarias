@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ProductPageTemplate } from "@/components/product/ProductPageTemplate";
+import { WeldingModelBrowser } from "./WeldingModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
@@ -15,5 +16,9 @@ export default async function FourInOneLaserPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = (await params) as { locale: "en" | "es" };
-  return <ProductPageTemplate data={content[locale]} />;
+  return (
+    <ProductPageTemplate data={content[locale]} hideHero hideModes hideSpecs hideConfigure>
+      <WeldingModelBrowser locale={locale} />
+    </ProductPageTemplate>
+  );
 }

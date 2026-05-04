@@ -207,7 +207,7 @@ const en: CollaborativeArmContent = {
     headline: "Related Machines",
     items: [
       { name: "Industrial Welding Arm", href: "/automation/industrial-welding-arm", tag: "Automation", imageId: "/images/industrial-welding-arm-hero.png" },
-      { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabrication", imageId: "/images/fiber-laser-hero.png" },
+      { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabrication", imageId: "/images/fiber-laser-hero.png" },
       { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
     ],
   },
@@ -355,7 +355,7 @@ const es: CollaborativeArmContent = {
     headline: "Máquinas Relacionadas",
     items: [
       { name: "Brazo de Soldadura Industrial", href: "/automation/industrial-welding-arm", tag: "Automatización", imageId: "/images/industrial-welding-arm-hero.png" },
-      { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabricación", imageId: "/images/fiber-laser-hero.png" },
+      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabricación", imageId: "/images/fiber-laser-hero.png" },
       { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
     ],
   },

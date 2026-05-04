@@ -6,50 +6,65 @@ import { Button } from "@/components/ui/Button";
 import { ImageGallery } from "@/components/ui/ImageGallery";
 
 const EA_FRAMES = [
-  "/images/SHEET/EA series/main 3015  (1).png",
-  "/images/SHEET/EA series/3015  (3).png",
-  "/images/SHEET/EA series/3015  (4).png",
-  "/images/SHEET/EA series/3015  (6).png",
-  "/images/SHEET/EA series/3015  (7).png",
-  "/images/SHEET/EA series/3015  (8).png",
+  "/images/SHEET/EA series/main 3015  (1).jpg",
+  "/images/SHEET/EA series/3015  (3).jpg",
+  "/images/SHEET/EA series/3015  (4).jpg",
+  "/images/SHEET/EA series/3015  (6).jpg",
+  "/images/SHEET/EA series/3015  (7).jpg",
+  "/images/SHEET/EA series/3015  (8).jpg",
 ];
 
 const B_FRAMES = [
-  "/images/SHEET/B Series/0 main.png",
-  "/images/SHEET/B Series/1.png",
-  "/images/SHEET/B Series/2 (2).png",
-  "/images/SHEET/B Series/3 (2).png",
-  "/images/SHEET/B Series/4 (2).png",
-  "/images/SHEET/B Series/5.png",
-  "/images/SHEET/B Series/6.png",
-  "/images/SHEET/B Series/7.png",
+  "/images/SHEET/B Series/0 main.jpg",
+  "/images/SHEET/B Series/1.jpg",
+  "/images/SHEET/B Series/2 (2).jpg",
+  "/images/SHEET/B Series/3 (2).jpg",
+  "/images/SHEET/B Series/4 (2).jpg",
+  "/images/SHEET/B Series/5.jpg",
+  "/images/SHEET/B Series/6.jpg",
+  "/images/SHEET/B Series/7.jpg",
 ];
 
 const PE_FRAMES = [
-  "/images/SHEET/PE Series/1.png",
-  "/images/SHEET/PE Series/2.png",
-  "/images/SHEET/PE Series/3.png",
-  "/images/SHEET/PE Series/4.png",
-  "/images/SHEET/PE Series/5.png",
-  "/images/SHEET/PE Series/6.png",
-  "/images/SHEET/PE Series/7.png",
-  "/images/SHEET/PE Series/8.png",
+  "/images/SHEET/PE Series/1.jpg",
+  "/images/SHEET/PE Series/2.jpg",
+  "/images/SHEET/PE Series/3.jpg",
+  "/images/SHEET/PE Series/4.jpg",
+  "/images/SHEET/PE Series/5.jpg",
+  "/images/SHEET/PE Series/6.jpg",
+  "/images/SHEET/PE Series/7.jpg",
+  "/images/SHEET/PE Series/8.jpg",
 ];
 
 const SE_FRAMES = [
-  "/images/SHEET/SE Series/1.png",
-  "/images/SHEET/SE Series/2.png",
-  "/images/SHEET/SE Series/3.png",
-  "/images/SHEET/SE Series/4.png",
+  "/images/SHEET/SE Series/1.jpg",
+  "/images/SHEET/SE Series/2.jpg",
+  "/images/SHEET/SE Series/3.jpg",
+  "/images/SHEET/SE Series/4.jpg",
 ];
 
 const L_FRAMES = [
-  "/images/SHEET/L Series/1.png",
-  "/images/SHEET/L Series/2.png",
-  "/images/SHEET/L Series/3.png",
-  "/images/SHEET/L Series/4.png",
-  "/images/SHEET/L Series/5.png",
-  "/images/SHEET/L Series/6.png",
+  "/images/SHEET/L Series/1.jpg",
+  "/images/SHEET/L Series/2.jpg",
+  "/images/SHEET/L Series/3.jpg",
+  "/images/SHEET/L Series/4.jpg",
+  "/images/SHEET/L Series/5.jpg",
+  "/images/SHEET/L Series/6.jpg",
+];
+
+const TT_FRAMES = [
+  "/images/SHEET/TT Series/1.jpg",
+  "/images/SHEET/TT Series/2.jpg",
+  "/images/SHEET/TT Series/3.jpg",
+  "/images/SHEET/TT Series/4.jpg",
+  "/images/SHEET/TT Series/5.jpg",
+];
+
+const MI_FRAMES = [
+  "/images/SHEET/Mi Series/mini.107.jpg",
+  "/images/SHEET/Mi Series/mini.108.jpg",
+  "/images/SHEET/Mi Series/mini.109.jpg",
+  "/images/SHEET/Mi Series/mini.110.jpg",
 ];
 
 const SERIES_FRAMES: Record<string, string[]> = {
@@ -58,6 +73,8 @@ const SERIES_FRAMES: Record<string, string[]> = {
   pe: PE_FRAMES,
   se: SE_FRAMES,
   l: L_FRAMES,
+  tt: TT_FRAMES,
+  mi: MI_FRAMES,
 };
 
 // ─── Types ─────────────────────────────────────────────────────────────────
@@ -92,16 +109,69 @@ type Model = {
 
 const SPECS: Record<string, ModelSpecs> = {
   tt: {
-    headers: ["VTM-TT"],
-    rows: [],
+    headers: ["VTM-3015TT", "VTM-4020TT"],
+    rows: [
+      { type: "spec", label: "Working Area",
+        metric:   ["3000 × 1500 mm",  "4000 × 2000 mm"],
+        imperial: ["5' × 10'",        "6.6' × 13.1'"] },
+      { type: "spec", label: "X / Y / Z Stroke",
+        metric:   ["1520 × 3100 × 100 mm",  "2040 × 4050 × 100 mm"],
+        imperial: ["60\" × 122\" × 4\"",    "80\" × 159\" × 4\""] },
+      { type: "spec", label: "Laser Power",
+        metric:   ["2–50 kW options","2–50 kW options"],
+        imperial: ["2–50 kW options","2–50 kW options"] },
+      { type: "spec", label: "Max Acceleration",
+        metric:   ["2 G","2 G"],
+        imperial: ["2 G","2 G"] },
+      { type: "spec", label: "Positioning Accuracy",
+        metric:   ["±0.03 mm","±0.03 mm"],
+        imperial: ["±0.001\"","±0.001\""] },
+      { type: "spec", label: "Voltage",
+        metric:   ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"],
+        imperial: ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"] },
+      { type: "spec", label: "Carbon Steel",
+        metric:   ["1 – 80 mm",        "1 – 80 mm"],
+        imperial: ["0.04\" – 3-1/8\"", "0.04\" – 3-1/8\""] },
+      { type: "spec", label: "Stainless Steel",
+        metric:   ["1 – 70 mm",        "1 – 70 mm"],
+        imperial: ["0.04\" – 2-3/4\"", "0.04\" – 2-3/4\""] },
+      { type: "spec", label: "Aluminum",
+        metric:   ["1 – 60 mm",        "1 – 60 mm"],
+        imperial: ["0.04\" – 2-3/8\"", "0.04\" – 2-3/8\""] },
+      { type: "spec", label: "Brass",
+        metric:   ["1 – 20 mm",       "1 – 20 mm"],
+        imperial: ["0.04\" – 0.79\"", "0.04\" – 0.79\""] },
+    ],
     features: [],
-    upgrades: ["Auto-Loading System", "Multi-Shelf Tower Storage", "Fume Purifier", "Air Compressor"],
+    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain", "Door Protection Switch"],
   },
   mi: {
-    headers: ["VTM-Mi"],
-    rows: [],
+    headers: ["VTM-6060Mi"],
+    rows: [
+      { type: "spec", label: "Working Area",
+        metric:   ["600 × 600 mm"],
+        imperial: ["2' × 2'"] },
+      { type: "spec", label: "X / Y / Z Stroke",
+        metric:   ["600 × 600 × 100 mm"],
+        imperial: ["24\" × 24\" × 4\""] },
+      { type: "spec", label: "Laser Power",
+        metric:   ["1 / 1.5 / 2 / 3 / 6 kW"],
+        imperial: ["1 / 1.5 / 2 / 3 / 6 kW"] },
+      { type: "spec", label: "Max Acceleration",
+        metric:   ["1.5 G"],
+        imperial: ["1.5 G"] },
+      { type: "spec", label: "Positioning Accuracy",
+        metric:   ["±0.008 mm"],
+        imperial: ["±0.0003\""] },
+      { type: "spec", label: "Machine Dimensions",
+        metric:   ["1480 × 1480 × 2050 mm"],
+        imperial: ["58.3\" × 58.3\" × 80.7\""] },
+      { type: "spec", label: "Voltage",
+        metric:   ["380V 3PH 50/60Hz"],
+        imperial: ["380V 3PH 50/60Hz"] },
+    ],
     features: [],
-    upgrades: ["Fume Purifier", "Air Compressor", "Voltage Regulator"],
+    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   ea: {
     headers: ["VTM-1313EA", "VTM-1325EA", "VTM-3015EA"],
@@ -320,57 +390,57 @@ const SPECS: Record<string, ModelSpecs> = {
 const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
-      id: "ea", series: "EA Series", subtitle: "Economic Fiber Laser Cutting Machine", tagline: "Entry Production", power: "1.5–3 kW", badge: "Most Accessible",
-      image: "/images/SHEET/EA series/main 3015  (1).png",
+      id: "ea", series: "EA Series", subtitle: "Economic Fiber Laser Sheet Cutting Machine", tagline: "Entry Production", power: "1.5–3 kW", badge: "Most Accessible",
+      image: "/images/SHEET/EA series/main 3015  (1).jpg",
       description: "The VTM-EA is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW.",
       bestFor: ["Job shops entering fiber laser", "Light to medium sheet metal", "Stainless and aluminum under ¼\"", "First fiber laser investment"],
       specs: SPECS.ea,
     },
     {
       id: "b", series: "B Series", tagline: "Production Workhorse", power: "2–12 kW", badge: "Most Popular",
-      image: "/images/SHEET/B Series/0 main.png",
+      image: "/images/SHEET/B Series/0 main.jpg",
       description: "The VTM-B is built for continuous production at the widest range of material thicknesses and sizes. From 3 kW for thin sheet to 12 kW for 1\"+ mild steel and ¾\" stainless, in beds up to 6′×20′.",
       bestFor: ["High-throughput fabrication", "Broad thickness range", "Contract manufacturers", "Multi-shift operations"],
       specs: SPECS.b,
     },
     {
       id: "fe", series: "FE Series", tagline: "Exchange Table", power: "3–12 kW", badge: "Highest Throughput",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      image: "/images/fiber-laser-feature-04-exchange-table.jpg",
       description: "The VTM-FE pairs the B-series cutting platform with a dual-pallet exchange table as standard. Load the next blank while the machine cuts the current sheet. Sub-15-second pallet changeover.",
       bestFor: ["High-volume production runs", "Lights-out / unattended operation", "Minimizing cost-per-part", "Shops that can't afford idle time"],
       specs: SPECS.fe,
     },
     {
       id: "se", series: "SE Series", tagline: "Enclosed Industrial", power: "1–3 kW", badge: "Class 1 Industrial",
-      image: "/images/SHEET/SE Series/1.png",
+      image: "/images/SHEET/SE Series/1.jpg",
       description: "The VTM-SE is the full industrial enclosed format — Laser Safety Class 1, integrated 6″ fume extraction port, and hardware-redundant door interlocks on a production-scale bed.",
       bestFor: ["Class 1 required by facility code", "Medical device and aerospace", "ISO-certified production", "Strict safety regulations"],
       specs: SPECS.se,
     },
     {
       id: "pe", series: "PE Series", tagline: "Enclosed Compact", power: "1.5–3 kW", badge: "Class 1 Safety",
-      image: "/images/SHEET/PE Series/1.png",
+      image: "/images/SHEET/PE Series/1.jpg",
       description: "The VTM-PE adds a full safety enclosure to the EA-series platform — achieving Laser Safety Class 1 with hardware-interlocked doors. No laser eyewear required for operators or bystanders.",
       bestFor: ["Mixed-use facilities and R&D labs", "Training and prototyping", "Adjacent office areas", "Strict visitor access policies"],
       specs: SPECS.pe,
     },
     {
       id: "l", series: "L Series", tagline: "Heavy Plate", power: "12–50 kW+", badge: "Thickest Cuts",
-      image: "/images/SHEET/L Series/1.png",
+      image: "/images/SHEET/L Series/1.jpg",
       description: "The VTM-L is designed for structural fabricators and heavy plate shops. 20 and 30 kW Raycus sources cut mild steel to 2\"+, stainless to 1.5\", at speeds that make plasma cutting obsolete.",
       bestFor: ["Structural steel fabrication", "Heavy plate over 1\"", "Replacing plasma cutting", "High-power copper and brass"],
       specs: SPECS.l,
     },
     {
-      id: "tt", series: "TT Series", subtitle: "Auto Loading & Unloading TransTower Laser Cutting Machine", tagline: "Tower Automation", power: "3–30 kW", badge: "Auto Loading",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      id: "tt", series: "TT Series", subtitle: "Auto Loading & Unloading TransTower Laser Cutting Machine", tagline: "Tower Automation", power: "2–50 kW", badge: "Auto Loading",
+      image: "/images/SHEET/TT Series/1.jpg",
       description: "The VTM-TT integrates a multi-shelf tower storage system with automated loading and unloading directly to the cutting table. Unattended production, maximum material utilization, and zero idle time between jobs.",
       bestFor: ["High-volume automated production", "Unattended / lights-out operation", "Tower storage material management", "Minimizing operator intervention"],
       specs: SPECS.tt,
     },
     {
-      id: "mi", series: "Mi Series", subtitle: "Mini High Precision Fiber Laser Cutting Machine", tagline: "Compact Precision", power: "1–6 kW", badge: "High Precision",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      id: "mi", series: "Mi Series", subtitle: "Mini High Precision Fiber Laser Sheet Cutting Machine", tagline: "Compact Precision", power: "1–6 kW · ±0.008 mm", badge: "High Precision",
+      image: "/images/SHEET/Mi Series/mini.107.jpg",
       description: "The VTM-Mi is a compact, high-precision fiber laser designed for intricate parts and tight tolerances. Small footprint, rigid frame, and fine-motion control deliver accuracy where full-size machines cannot.",
       bestFor: ["Intricate and small-format parts", "Tight-tolerance prototyping", "Limited floor space", "R&D and specialty fabrication"],
       specs: SPECS.mi,
@@ -378,57 +448,57 @@ const MODELS: Record<"en" | "es", Model[]> = {
   ],
   es: [
     {
-      id: "ea", series: "Serie EA", subtitle: "Cortadora Láser de Fibra Económica", tagline: "Producción de Entrada", power: "1.5–3 kW", badge: "Más Accesible",
-      image: "/images/SHEET/EA series/main 3015  (1).png",
+      id: "ea", series: "Serie EA", subtitle: "Cortadora Láser de Fibra para Chapa Económica", tagline: "Producción de Entrada", power: "1.5–3 kW", badge: "Más Accesible",
+      image: "/images/SHEET/EA series/main 3015  (1).jpg",
       description: "La VTM-EA es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW.",
       bestFor: ["Talleres que inician con láser de fibra", "Chapa ligera a media", "Inoxidable y aluminio bajo 6 mm", "Primera inversión en láser de fibra"],
       specs: SPECS.ea,
     },
     {
       id: "b", series: "Serie B", tagline: "Caballo de Batalla", power: "2–12 kW", badge: "Más Popular",
-      image: "/images/SHEET/B Series/0 main.png",
+      image: "/images/SHEET/B Series/0 main.jpg",
       description: "La VTM-B está diseñada para producción continua en la mayor gama de espesores y tamaños. De 3 kW para chapa fina a 12 kW para acero dulce de 25 mm+ e inoxidable de 20 mm, en mesas de hasta 6′×20′.",
       bestFor: ["Fabricación de alto rendimiento", "Amplio rango de espesores", "Fabricantes por contrato", "Operaciones de múltiples turnos"],
       specs: SPECS.b,
     },
     {
       id: "fe", series: "Serie FE", tagline: "Mesa de Intercambio", power: "3–12 kW", badge: "Mayor Rendimiento",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      image: "/images/fiber-laser-feature-04-exchange-table.jpg",
       description: "La VTM-FE combina la plataforma de la serie B con una mesa de intercambio de doble paleta de serie. Cargue la siguiente chapa mientras la máquina corta la actual. Cambio en menos de 15 segundos.",
       bestFor: ["Producciones de alto volumen", "Operación desatendida", "Minimizar costo por pieza", "Talleres que no toleran tiempo muerto"],
       specs: SPECS.fe,
     },
     {
       id: "se", series: "Serie SE", tagline: "Encapsulado Industrial", power: "1–3 kW", badge: "Industrial Clase 1",
-      image: "/images/SHEET/SE Series/1.png",
+      image: "/images/SHEET/SE Series/1.jpg",
       description: "La VTM-SE es el formato encapsulado industrial completo — Clase 1, puerto de extracción de 6″ integrado y enclavamientos de puerta con redundancia hardware en mesa de escala productiva.",
       bestFor: ["Clase 1 exigida por código o seguro", "Dispositivos médicos y aeroespacial", "Producción con certificación ISO", "Normativa de seguridad estricta"],
       specs: SPECS.se,
     },
     {
       id: "pe", series: "Serie PE", tagline: "Encapsulado Compacto", power: "1.5–3 kW", badge: "Seguridad Clase 1",
-      image: "/images/SHEET/PE Series/1.png",
+      image: "/images/SHEET/PE Series/1.jpg",
       description: "La VTM-PE añade un encapsulado de seguridad completo a la plataforma EA — alcanzando Clase 1 con puertas de enclavamiento de hardware. No se requieren gafas láser para operadores.",
       bestFor: ["Instalaciones de uso mixto y I+D", "Capacitación y prototipado", "Áreas de oficina adyacentes", "Políticas estrictas de acceso"],
       specs: SPECS.pe,
     },
     {
       id: "l", series: "Serie L", tagline: "Placa Gruesa", power: "12–50 kW+", badge: "Cortes más Gruesos",
-      image: "/images/SHEET/L Series/1.png",
+      image: "/images/SHEET/L Series/1.jpg",
       description: "La VTM-L está diseñada para fabricantes de acero estructural y talleres de placa gruesa. Fuentes Raycus de 20 y 30 kW cortan acero dulce a 50 mm+ e inoxidable a 40 mm.",
       bestFor: ["Fabricación de acero estructural", "Placa gruesa superior a 25 mm", "Sustitución del corte por plasma", "Cobre y latón de alta potencia"],
       specs: SPECS.l,
     },
     {
       id: "tt", series: "Serie TT", subtitle: "Cortadora Láser con Torre de Carga y Descarga Automática", tagline: "Automatización Torre", power: "3–30 kW", badge: "Carga Automática",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      image: "/images/fiber-laser-feature-04-exchange-table.jpg",
       description: "La VTM-TT integra un sistema de almacenamiento en torre con carga y descarga automática directa a la mesa de corte. Producción desatendida, máximo aprovechamiento de material y cero tiempo muerto entre trabajos.",
       bestFor: ["Producción automatizada de alto volumen", "Operación desatendida", "Gestión de material en torre", "Mínima intervención del operador"],
       specs: SPECS.tt,
     },
     {
-      id: "mi", series: "Serie Mi", subtitle: "Cortadora Láser de Fibra Mini de Alta Precisión", tagline: "Precisión Compacta", power: "1–6 kW", badge: "Alta Precisión",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      id: "mi", series: "Serie Mi", subtitle: "Cortadora Láser de Fibra para Chapa Mini de Alta Precisión", tagline: "Precisión Compacta", power: "1–6 kW", badge: "Alta Precisión",
+      image: "/images/fiber-laser-feature-04-exchange-table.jpg",
       description: "La VTM-Mi es una cortadora láser de fibra compacta y de alta precisión diseñada para piezas intrincadas y tolerancias ajustadas. Huella pequeña, bastidor rígido y control de movimiento fino para resultados donde las máquinas de tamaño completo no pueden llegar.",
       bestFor: ["Piezas pequeñas e intrincadas", "Prototipado de alta tolerancia", "Espacio limitado en planta", "I+D y fabricación especializada"],
       specs: SPECS.mi,
@@ -503,12 +573,20 @@ function AppleSpecs({
   const trackXForPos = (p: number) => -((clonesBefore + p) * colWidthPct);
 
   const [pos, setPos] = useState(0);
+  const posRef = useRef(0);
   const [animating, setAnimating] = useState(false);
+  const animatingRef = useRef(false);
   const trackRef = useRef<HTMLDivElement>(null);
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Set initial transform without animation on mount and when specs change
   useLayoutEffect(() => {
+    posRef.current = 0;
     setPos(0);
+    if (autoScrollRef.current !== null) {
+      clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
+    }
     if (trackRef.current) {
       trackRef.current.style.transition = "none";
       trackRef.current.style.transform = `translateX(${trackXForPos(0)}%)`;
@@ -517,31 +595,41 @@ function AppleSpecs({
   }, [specs]);
 
   const navigate = (direction: "left" | "right") => {
-    if (animating || !hasCarousel) return;
+    if (animatingRef.current || !hasCarousel) return;
     const track = trackRef.current;
     if (!track) return;
-
+    animatingRef.current = true;
     setAnimating(true);
-
-    // The track index we're sliding TO (may be a clone zone)
-    const rawNext = direction === "right"
-      ? clonesBefore + pos + 1   // one step right in track
-      : clonesBefore + pos - 1;  // one step left in track
-    const nextPos = mod(direction === "right" ? pos + 1 : pos - 1);
-
+    const cur = posRef.current;
+    const rawNext = direction === "right" ? clonesBefore + cur + 1 : clonesBefore + cur - 1;
+    const nextPos = mod(direction === "right" ? cur + 1 : cur - 1);
     track.style.transition = "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
     track.style.transform = `translateX(${-(rawNext * colWidthPct)}%)`;
-
     const onEnd = () => {
-      // Snap to the real position (same visual, no animation)
       track.style.transition = "none";
       track.style.transform = `translateX(${trackXForPos(nextPos)}%)`;
+      posRef.current = nextPos;
       setPos(nextPos);
+      animatingRef.current = false;
       setAnimating(false);
     };
-
     track.addEventListener("transitionend", onEnd, { once: true });
   };
+
+  const startAutoScroll = (direction: "left" | "right") => {
+    if (autoScrollRef.current !== null) clearInterval(autoScrollRef.current);
+    navigate(direction);
+    autoScrollRef.current = setInterval(() => navigate(direction), 500);
+  };
+
+  const stopAutoScroll = () => {
+    if (autoScrollRef.current !== null) {
+      clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
+    }
+  };
+
+  useEffect(() => () => stopAutoScroll(), []);
 
   const specRows = specs.rows.filter((r): r is Extract<SpecRow, { type: "spec" }> => r.type === "spec");
 
@@ -598,6 +686,8 @@ function AppleSpecs({
         <div className="flex-shrink-0 self-stretch">
           <button
             onClick={() => navigate("left")}
+            onMouseEnter={() => startAutoScroll("left")}
+            onMouseLeave={stopAutoScroll}
             aria-label="Previous model"
             className="sticky top-[calc(50vh-20px)] w-10 h-10 flex items-center justify-center bg-vtm-red text-white hover:bg-[#a81718] transition-colors"
           >
@@ -645,6 +735,8 @@ function AppleSpecs({
         <div className="flex-shrink-0 self-stretch">
           <button
             onClick={() => navigate("right")}
+            onMouseEnter={() => startAutoScroll("right")}
+            onMouseLeave={stopAutoScroll}
             aria-label="Next model"
             className="sticky top-[calc(50vh-20px)] w-10 h-10 flex items-center justify-center bg-vtm-red text-white hover:bg-[#a81718] transition-colors"
           >
@@ -701,7 +793,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
   const models = MODELS[locale];
   const labels = LABELS[locale];
   const [selectedId, setSelectedId] = useState("b");
-  const [unit, setUnit] = useState<Unit>("imperial");
+  const [unit, setUnit] = useState<Unit>("metric");
   const selected = models.find((m) => m.id === selectedId)!;
   const detailRef = useRef<HTMLDivElement>(null);
 
@@ -782,7 +874,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
             {SERIES_FRAMES[selected.id] ? (
               <ImageGallery
                 images={SERIES_FRAMES[selected.id]}
-                alt={`VTM-${selected.series} Fiber Laser Cutting Machine`}
+                alt={`VTM-${selected.series} Fiber Laser Sheet Cutting Machine`}
               />
             ) : (
               <div>

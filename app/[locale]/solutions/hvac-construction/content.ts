@@ -34,7 +34,7 @@ const en: HvacContent = {
     headline: "The HVAC fabrication stack",
     learnMore: "Learn more →",
     items: [
-      { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "Complex duct profiles and panel cutouts at production speed." },
+      { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "Complex duct profiles and panel cutouts at production speed." },
       { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", desc: "Consistent bends for enclosures, panels, and flanges." },
       { name: "Collaborative Welding Arm", href: "/automation/collaborative-welding-arm", desc: "Automate your highest-volume bracket and fitting welds." },
       { name: "Ironworker", href: "/fabrication/ironworker", desc: "Punch, notch, and shear structural angles and flat bar." },
@@ -62,7 +62,7 @@ const es: HvacContent = {
     headline: "Lo que procesan los talleres de HVAC y construcción",
     items: [
       { title: "Componentes de ductos rectangulares", body: "Corte láser de alta velocidad para secciones de ductos galvanizados e inoxidables. Anchura y escuadría consistentes, fundamentales para un montaje sin fugas." },
-      { title: "Carcasas y paneles de equipos", body: "Paneles cortados a láser y doblados en prensa para manejadoras de aire, enfriadoras y equipos de techo. Radios de esquina ajustados y bordes limpios sin desbarbado." },
+      { title: "Carcasas y paneles de equipos", body: "Paneles cortados a láser y plegados en prensa para manejadoras de aire, enfriadoras y equipos de techo. Radios de esquina ajustados y bordes limpios sin desbarbado." },
       { title: "Soportes y refuerzos de acero estructural", body: "Punzonado, entallado y cizallado con punzonadora para herrajes de conexión estructural. Una máquina realiza lo que antes requería tres operaciones." },
       { title: "Soldadura con cobot para producción de soportes", body: "Soldadura de soportes y accesorios de alto volumen — trabajo repetitivo ideal para un brazo de soldadura colaborativo. Produzca 120–150 piezas por turno con un solo operador supervisando." },
     ],
@@ -72,8 +72,8 @@ const es: HvacContent = {
     headline: "La solución completa para fabricación HVAC",
     learnMore: "Más información →",
     items: [
-      { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", desc: "Perfiles complejos de ductos y recortes de paneles a velocidad de producción." },
-      { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", desc: "Doblados consistentes para carcasas, paneles y bridas." },
+      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "Perfiles complejos de ductos y recortes de paneles a velocidad de producción." },
+      { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Plegados consistentes para carcasas, paneles y bridas." },
       { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", desc: "Automatice sus soldaduras de mayor volumen de soportes y accesorios." },
       { name: "Punzonadora", href: "/fabrication/ironworker", desc: "Punzone, enralle y cizalle ángulos estructurales y pletinas." },
       { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", desc: "Elimine cascarilla, óxido y pintura antes de soldar — sin medios abrasivos ni residuos." },

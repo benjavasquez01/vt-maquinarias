@@ -58,7 +58,7 @@ const en: ProductPageData = {
     { feature: "Best for", ours: "Mixed-product shops, limited floor space", theirs: "High-volume dedicated tube or sheet runs" },
   ],
   relatedProducts: [
-    { name: "Fiber Laser Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.png" },
     { name: "Fiber Laser Tube Cutting Machine", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Tube Cutting", imageId: "/images/fiber-laser-tube-hero.png" },
     { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
@@ -130,9 +130,9 @@ const es: ProductPageData = {
     { feature: "Ideal para", ours: "Talleres de producción mixta, espacio limitado", theirs: "Producción de alto volumen dedicada a tubo o chapa" },
   ],
   relatedProducts: [
-    { name: "Máquina de Corte Láser de Fibra", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser de Tubo de Fibra", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Corte de Tubo", imageId: "/images/fiber-laser-tube-hero.png" },
-    { name: "Prensa Dobladora CNC", href: "/fabrication/cnc-press-brake", tag: "Doblado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [
