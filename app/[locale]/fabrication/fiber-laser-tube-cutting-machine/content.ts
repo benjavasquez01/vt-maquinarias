@@ -131,10 +131,10 @@ const es: ProductPageData = {
     { feature: "Mano de obra por pieza (producción estructural)", ours: "Baja — la máquina funciona desatendida", theirs: "Alta — operador presente en cada pieza" },
   ],
   relatedProducts: [
-    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
   ],
   faqs: [
     { question: "¿Qué tipos de perfil puede cortar el láser de tubos?", answer: "Tubo redondo, tubo cuadrado, tubo rectangular, ángulo (perfil L), canal C, viga I, viga H y perfiles personalizados. El controlador CypTube incluye plantillas de perfil para todas las secciones estándar." },

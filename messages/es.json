@@ -85,7 +85,7 @@
       "heading": "Maquinas de corte y conformado de metales",
       "viewAll": "Ver Toda la Maquinaria de Fabricación",
       "products": {
-        "fiberLaser": { "name": "Máquina de Corte Láser de Fibra para Chapa para Chapa", "description": "1.5–30 kW. ±0.05mm. Mesas de 4′×4′ a 8′×20′." },
+        "fiberLaser": { "name": "Cortadora Láser de Chapa", "description": "1.5–30 kW. ±0.05mm. Mesas de 4′×4′ a 8′×20′." },
         "fiberLaserTube": { "name": "Corte Láser de Tubos", "description": "Perfiles redondos, cuadrados y estructurales. Longitudes hasta 9 m." },
         "sheetTubeCombo": { "name": "Láser Combinado Chapa y Tubo", "description": "Corte de chapa plana y tubo en una sola máquina. 3–6 kW." },
         "fourInOne": { "name": "Máquina de Soldadura Láser", "description": "Soldadura, corte, limpieza y alimentación de hilo. 1.5–3 kW." },

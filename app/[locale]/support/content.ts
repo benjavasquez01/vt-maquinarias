@@ -154,8 +154,8 @@ const es: SupportContent = {
     headline: "Manuales, guías y plantillas.",
     body: "Descargue manuales de operador, guías de mantenimiento y plantillas útiles. Ingrese su correo electrónico para desbloquear la descarga.",
     items: [
-      { title: "Máquina de Corte Láser de Fibra para Chapa — Manual del Operador", type: "PDF", size: "4.2 MB" },
-      { title: "Guía de Seguridad y Mantenimiento de Prensa Plegadora CNC", type: "PDF", size: "2.8 MB" },
+      { title: "Cortadora Láser de Chapa — Manual del Operador", type: "PDF", size: "4.2 MB" },
+      { title: "Guía de Seguridad y Mantenimiento de Plegadora CNC", type: "PDF", size: "2.8 MB" },
       { title: "Guía de Inicio Rápido del Brazo de Soldadura Colaborativo", type: "PDF", size: "1.9 MB" },
       { title: "Lista de Verificación de Instalación de Máquina (Todos los Modelos)", type: "PDF", size: "0.8 MB" },
       { title: "Plantilla de Programa de Mantenimiento Preventivo", type: "XLSX", size: "0.4 MB" },

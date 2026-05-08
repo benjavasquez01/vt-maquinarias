@@ -355,7 +355,7 @@ const es: CollaborativeArmContent = {
     headline: "Máquinas Relacionadas",
     items: [
       { name: "Brazo de Soldadura Industrial", href: "/automation/industrial-welding-arm", tag: "Automatización", imageId: "/images/industrial-welding-arm-hero.png" },
-      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabricación", imageId: "/images/fiber-laser-hero.png" },
+      { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabricación", imageId: "/images/fiber-laser-hero.png" },
       { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
     ],
   },

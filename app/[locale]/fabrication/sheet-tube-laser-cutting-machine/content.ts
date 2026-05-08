@@ -7,13 +7,7 @@ const en: ProductPageData = {
   heroSubheadline: "VTM-ST series. One machine that cuts flat sheet and tube/structural profiles. 3–6 kW, flat bed up to 4020 (4′×20′), round tube up to 180 mm, lengths to 6 m — without buying two machines or doubling your footprint.",
   heroImageId: "/images/sheet-tube-combo-hero.png",
   heroAlign: "right",
-  features: [
-    { number: "01", headline: "Flat Sheet and Tube on the Same Frame", body: "The VTM-ST mounts a rotary tube chuck at the end of the flat-bed cutting table. Switch from sheet cutting to tube cutting in minutes — no machine relocation, no second power supply, no separate controller. The same Bochu CypCut/CypTube system manages both modes.", spec: { label: "Modes", value: "Sheet + Tube" }, imageId: "/images/sheet-tube-combo-feature-01-dualmode.png" },
-    { number: "02", headline: "Bed Sizes Up to 4020 — Standard Sheet Coverage", body: "Available in 3015 (5′×10′) and 4020 (4′×20′) bed configurations. Both sizes match common North American sheet stock sizes and handle full 4×8, 4×10, and 4×20 plates without repositioning. Standard exchange table available on FE variant.", spec: { label: "Max Bed", value: "4020 (4′×20′)" }, imageId: "/images/sheet-tube-combo-feature-02-bed.png" },
-    { number: "03", headline: "Round Tube Up to 180 mm — Most Structural Profiles", body: "The rotary chuck attachment handles round tube up to 180 mm diameter, square tube up to 130×130 mm, rectangular, angle, and C-channel profiles. Tube lengths up to 6 m (20 ft) feed through the chuck end of the machine using the standard roller support system.", spec: { label: "Max Round Tube", value: "180 mm (7.1\")" }, imageId: "/images/sheet-tube-combo-feature-03-tube.png" },
-    { number: "04", headline: "One Controller — Two Programming Environments", body: "Bochu CypCut handles flat sheet nesting, DXF import, and parameter management. Switch the same touchscreen to CypTube mode for tube profile programming. No separate PC, no separate software license.", spec: { label: "Controller", value: "Bochu CypCut + CypTube" }, imageId: "/images/sheet-tube-combo-feature-04-controller.png" },
-    { number: "05", headline: "Half the Footprint of Two Machines", body: "A standalone fiber laser cutting machine plus a standalone tube laser typically occupies 800–1,200 sq ft. The VTM-ST occupies roughly the same space as the flatbed alone — the tube chuck adds length without adding a second machine's width, electrical drop, chiller, or service access zone.", spec: { label: "Space Saving", value: "~50% vs. two machines" }, imageId: "/images/sheet-tube-combo-feature-05-footprint.png", imageFit: "contain" },
-  ],
+  features: [],
   specs: [
     { label: "Model", imperial: "VTM-ST (Sheet & Tube Combo)", metric: "VTM-ST" },
     { label: "Laser Power Options", imperial: "3 kW / 6 kW", metric: "3 kW / 6 kW" },
@@ -79,13 +73,7 @@ const es: ProductPageData = {
   heroSubheadline: "Serie VTM-ST. Una sola máquina que corta chapa plana y perfiles de tubo/estructurales. 3–6 kW, mesa plana hasta 4020 (4′×20′), tubo redondo hasta 180 mm, longitudes hasta 6 m — sin comprar dos máquinas ni duplicar el espacio.",
   heroImageId: "/images/sheet-tube-combo-hero.png",
   heroAlign: "right",
-  features: [
-    { number: "01", headline: "Chapa Plana y Tubo en el Mismo Bastidor", body: "El VTM-ST monta un mandril rotativo para tubos en el extremo de la mesa de corte plana. Cambie de corte de chapa a corte de tubo en minutos — sin relocalizar la máquina, sin segunda fuente de energía, sin controlador separado. El mismo sistema Bochu CypCut/CypTube gestiona ambos modos.", spec: { label: "Modos", value: "Chapa + Tubo" }, imageId: "/images/sheet-tube-combo-feature-01-dualmode.png" },
-    { number: "02", headline: "Mesas Hasta 4020 — Cobertura Estándar de Chapa", body: "Disponible en configuraciones de mesa 3015 (5′×10′) y 4020 (4′×20′). Ambos tamaños coinciden con las medidas comunes de chapa en Norteamérica y manejan placas completas 4×8, 4×10 y 4×20 sin reposicionamiento.", spec: { label: "Mesa Máx.", value: "4020 (4′×20′)" }, imageId: "/images/sheet-tube-combo-feature-02-bed.png" },
-    { number: "03", headline: "Tubo Redondo Hasta 180 mm — La Mayoría de Perfiles Estructurales", body: "El accesorio de mandril rotativo maneja tubo redondo hasta 180 mm de diámetro, tubo cuadrado hasta 130×130 mm, rectangular, ángulo y perfil C. Las longitudes de tubo hasta 6 m (20 ft) se alimentan por el extremo del mandril de la máquina.", spec: { label: "Tubo Redondo Máx.", value: "180 mm (7.1\")" }, imageId: "/images/sheet-tube-combo-feature-03-tube.png" },
-    { number: "04", headline: "Un Solo Controlador — Dos Entornos de Programación", body: "Bochu CypCut gestiona el anidado de chapa plana, la importación DXF y la gestión de parámetros. Cambie la misma pantalla táctil al modo CypTube para programar perfiles de tubo. Sin PC separado, sin licencia de software adicional.", spec: { label: "Controlador", value: "Bochu CypCut + CypTube" }, imageId: "/images/sheet-tube-combo-feature-04-controller.png" },
-    { number: "05", headline: "La Mitad del Espacio de Dos Máquinas", body: "Una máquina de corte de chapa más una máquina de corte de tubo independiente ocupa típicamente 70–110 m². El VTM-ST ocupa aproximadamente el mismo espacio que la mesa plana sola — el mandril de tubo añade longitud sin añadir el ancho de una segunda máquina.", spec: { label: "Ahorro de Espacio", value: "~50% vs. dos máquinas" }, imageId: "/images/sheet-tube-combo-feature-05-footprint.png", imageFit: "contain" },
-  ],
+  features: [],
   specs: [
     { label: "Modelo", imperial: "VTM-ST (Combinado Chapa y Tubo)", metric: "VTM-ST" },
     { label: "Opciones de Potencia Láser", imperial: "3 kW / 6 kW", metric: "3 kW / 6 kW" },
@@ -130,9 +118,9 @@ const es: ProductPageData = {
     { feature: "Ideal para", ours: "Talleres de producción mixta, espacio limitado", theirs: "Producción de alto volumen dedicada a tubo o chapa" },
   ],
   relatedProducts: [
-    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser de Tubo de Fibra", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Corte de Tubo", imageId: "/images/fiber-laser-tube-hero.png" },
-    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
   ],
   faqs: [

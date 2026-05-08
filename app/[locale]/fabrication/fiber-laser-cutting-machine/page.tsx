@@ -11,7 +11,7 @@ import { HeroScroll } from "./HeroScroll";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Fiber Laser Sheet Cutting Machine — VTM-EA / VTM-B Series",
+  title: "Fiber Laser Sheet Cutting Machine — VTM-A / VTM-Pro Series",
   description:
     "Industrial fiber laser cutting machines, 1.5–30 kW. Raycus source, HIWIN rails, CypCut CNC. Bed sizes from 4'×4' to 8'×20'. ±0.05mm accuracy. Full US installation included.",
 };

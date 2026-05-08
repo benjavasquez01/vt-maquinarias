@@ -5,6 +5,11 @@ import Image from "next/image";
 import { HeroHeadline } from "./HeroHeadline";
 import { HomepageHeroCTA } from "./HomepageHeroCTA";
 
+const HERO_IMAGES = [
+  { src: "/images/homepage-hero-2.jpg.png", alt: "Laser cutting machine with bright sparks on metal" },
+  { src: "/images/home-hero-2.png", alt: "VTM CNC press brake in factory" },
+];
+
 type Props = {
   eyebrow: string;
   headline: string;
@@ -15,6 +20,7 @@ type Props = {
 export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: Props) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,20 +35,31 @@ export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: P
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % HERO_IMAGES.length);
+    }, 3000);
+    return () => clearInterval(id);
+  }, []);
+
   const textOpacity = Math.max(0, 1 - progress / 0.45);
   const overlayOpacity = Math.max(0, 0.72 * (1 - progress));
 
   return (
     <div ref={wrapperRef} style={{ height: "120vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        <Image
-          src="/images/homepage-hero-2.jpg.png"
-          alt="Laser cutting machine with bright sparks on metal"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        {HERO_IMAGES.map((img, i) => (
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            fill
+            priority={i === 0}
+            className="object-cover transition-opacity duration-1000"
+            style={{ opacity: i === activeIndex ? 1 : 0 }}
+            sizes="100vw"
+          />
+        ))}
 
         <div
           className="absolute inset-0 bg-vtm-dark"

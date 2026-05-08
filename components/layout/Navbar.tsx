@@ -11,12 +11,12 @@ import { useAgent } from "@/components/ai/AgentProvider";
 
 const DROPDOWN: Record<string, { en: string; es: string; href: string }[]> = {
   fabrication: [
-    { en: "Fiber Laser Sheet Cutting Machine",      es: "Cortadora Láser de Fibra para Chapa para Chapa",         href: "/fabrication/fiber-laser-cutting-machine" },
+    { en: "Fiber Laser Sheet Cutting Machine",      es: "Cortadora Láser de Chapa",         href: "/fabrication/fiber-laser-cutting-machine" },
     { en: "Fiber Laser Tube Cutting",         es: "Corte Láser de Tubo",              href: "/fabrication/fiber-laser-tube-cutting-machine" },
     { en: "Sheet & Tube Combo",               es: "Combo Chapa y Tubo",               href: "/fabrication/sheet-tube-laser-cutting-machine" },
     { en: "Laser Welding Machine",             es: "Máquina de Soldadura Láser",        href: "/fabrication/4-in-1-laser-machine" },
     { en: "Laser Cleaning Machine",           es: "Máquina de Limpieza Láser",        href: "/fabrication/laser-cleaning-machine" },
-    { en: "CNC Press Brake",                  es: "Prensa Plegadora CNC",             href: "/fabrication/cnc-press-brake" },
+    { en: "CNC Press Brake",                  es: "Plegadora CNC",             href: "/fabrication/cnc-press-brake" },
     { en: "Ironworker",                       es: "Punzonadora / Cizalla",            href: "/fabrication/ironworker" },
   ],
   automation: [

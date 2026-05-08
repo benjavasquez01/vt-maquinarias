@@ -36,12 +36,43 @@ interface AISalesAgentProps {
   mode?: "quote" | "demo";
 }
 
-const OPENING_MESSAGES: Record<string, string> = {
-  quote: "Hi! I'm the VTM Tech Solutions AI assistant. I'm here to help you find the right machine for your shop and get you accurate pricing. What kind of metalworking are you doing — cutting, bending, welding, or something else?",
-  demo: "Hi! I'm the VTM Tech Solutions AI assistant. I see you're interested in our welding automation systems. Tell me about your current welding operation — what are you welding, and what's driving you to look at a cobot or industrial arm?",
+const OPENING_MESSAGES: Record<"en" | "es", Record<string, string>> = {
+  en: {
+    quote: "Hi! I'm the VTM Tech Solutions AI assistant. I'm here to help you find the right machine for your shop and get you accurate pricing. What kind of metalworking are you doing — cutting, bending, welding, or something else?",
+    demo: "Hi! I'm the VTM Tech Solutions AI assistant. I see you're interested in our welding automation systems. Tell me about your current welding operation — what are you welding, and what's driving you to look at a cobot or industrial arm?",
+  },
+  es: {
+    quote: "¡Hola! Soy el asistente de IA de VTM Tech Solutions. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, doblado, soldadura u otra cosa?",
+    demo: "¡Hola! Soy el asistente de IA de VTM Tech Solutions. Veo que te interesa nuestros sistemas de automatización de soldadura. Cuéntame sobre tu operación actual — ¿qué estás soldando y qué te llevó a considerar un cobot o un brazo industrial?",
+  },
 };
 
 const LEAD_COMPLETE_MARKER = "LEAD_COMPLETE:";
+
+const OPENING_SUGGESTIONS: Record<"en" | "es", string[]> = {
+  en: ["Laser cutting", "Welding", "Bending / Press brake", "Automation"],
+  es: ["Corte láser", "Soldadura", "Plegado / Prensa", "Automatización"],
+};
+
+// Split a response into separate bubbles at each question boundary
+function splitQuestions(text: string): string[] {
+  const parts = text.split(/(?<=\?)\s+/);
+  return parts.map((p) => p.trim()).filter(Boolean);
+}
+
+// Merge consecutive assistant messages before sending to API
+function mergeForApi(msgs: Message[]): Message[] {
+  const merged: Message[] = [];
+  for (const msg of msgs) {
+    const last = merged[merged.length - 1];
+    if (last?.role === "assistant" && msg.role === "assistant") {
+      merged[merged.length - 1] = { ...last, content: last.content + " " + msg.content };
+    } else {
+      merged.push(msg);
+    }
+  }
+  return merged;
+}
 
 export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentProps) {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -51,6 +82,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [language, setLanguage] = useState<"en" | "es">("en");
   const [leadComplete, setLeadComplete] = useState(false);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
@@ -59,11 +91,22 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
   // Initialize on open
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      const opening = OPENING_MESSAGES[mode];
+      const opening = OPENING_MESSAGES[language][mode];
       setMessages([{ role: "assistant", content: opening }]);
+      setSuggestions(OPENING_SUGGESTIONS[language]);
       if (voiceEnabled) speakText(opening, language);
     }
   }, [isOpen, mode]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Reset conversation when language changes
+  useEffect(() => {
+    if (messages.length > 0) {
+      setLeadComplete(false);
+      const opening = OPENING_MESSAGES[language][mode];
+      setMessages([{ role: "assistant", content: opening }]);
+      setSuggestions(OPENING_SUGGESTIONS[language]);
+    }
+  }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Focus input when opened
   useEffect(() => {
@@ -138,6 +181,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;
+    setSuggestions([]);
 
     const userMessage: Message = { role: "user", content: text };
     const newMessages = [...messages, userMessage];
@@ -150,8 +194,9 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: newMessages.map((m) => ({ role: m.role, content: m.content })),
+          messages: mergeForApi(newMessages).map((m) => ({ role: m.role, content: m.content })),
           mode,
+          language,
         }),
       });
 
@@ -198,6 +243,41 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
         }
       }
 
+      // Parse and strip SUGGESTIONS block
+      let parsedSuggestions: string[] = [];
+      const suggestionsMatch = assistantText.match(/\nSUGGESTIONS:(\[.*?\])/s);
+      if (suggestionsMatch) {
+        try { parsedSuggestions = JSON.parse(suggestionsMatch[1]); } catch { /* ignore */ }
+      }
+      const cleanText = assistantText.replace(/\nSUGGESTIONS:\[.*?\]/s, "").trim();
+
+      // Update last message to clean text (no SUGGESTIONS line)
+      if (cleanText !== assistantText) {
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = { role: "assistant", content: cleanText };
+          return updated;
+        });
+      }
+
+      // Split multiple questions into separate bubbles
+      if (!cleanText.includes(LEAD_COMPLETE_MARKER)) {
+        const parts = splitQuestions(cleanText);
+        if (parts.length > 1) {
+          setMessages((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = { role: "assistant", content: parts[0] };
+            return updated;
+          });
+          for (let i = 1; i < parts.length; i++) {
+            await new Promise((resolve) => setTimeout(resolve, 700));
+            setMessages((prev) => [...prev, { role: "assistant", content: parts[i] }]);
+          }
+        }
+      }
+
+      setSuggestions(parsedSuggestions);
+
       // Check for lead completion marker
       if (assistantText.includes(LEAD_COMPLETE_MARKER)) {
         const markerIdx = assistantText.indexOf(LEAD_COMPLETE_MARKER);
@@ -213,7 +293,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
       }
 
       // Speak the response (minus any JSON)
-      const textToSpeak = assistantText.replace(/LEAD_COMPLETE:\{.*?\}/s, "").trim();
+      const textToSpeak = cleanText.replace(/LEAD_COMPLETE:\{.*?\}/s, "").trim();
       if (voiceEnabled && textToSpeak) speakText(textToSpeak, language);
 
     } catch {
@@ -395,6 +475,21 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
                   ))}
                 </div>
               </div>
+            </div>
+          )}
+
+          {/* Suggestion chips */}
+          {suggestions.length > 0 && !isLoading && (
+            <div className="flex flex-wrap gap-2 pl-10">
+              {suggestions.map((s, i) => (
+                <button
+                  key={i}
+                  onClick={() => sendMessage(s)}
+                  className="px-3 py-1.5 text-xs bg-vtm-red text-white rounded-full hover:bg-vtm-red/80 transition-colors"
+                >
+                  {s}
+                </button>
+              ))}
             </div>
           )}
 

@@ -28,13 +28,13 @@ const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
       id: "ea",
-      series: "EA Series",
+      series: "A Series",
       tagline: "Entry Production",
       power: "1.5–3 kW",
       badge: "Most Accessible",
       image: "/images/fiber-laser-feature-01-speed.png",
       description:
-        "The VTM-EA is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW. Cuts mild steel to ½\", stainless to ¼\", and aluminum to 5/16\" at production speeds.",
+        "The VTM-A is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW. Cuts mild steel to ½\", stainless to ¼\", and aluminum to 5/16\" at production speeds.",
       bestFor: [
         "Job shops entering fiber laser",
         "Light to medium sheet metal",
@@ -60,7 +60,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
     },
     {
       id: "b",
-      series: "B Series",
+      series: "Pro Series",
       tagline: "Production Workhorse",
       power: "3–12 kW",
       badge: "Most Popular",
@@ -152,13 +152,13 @@ const MODELS: Record<"en" | "es", Model[]> = {
   es: [
     {
       id: "ea",
-      series: "Serie EA",
+      series: "Serie A",
       tagline: "Producción de Entrada",
       power: "1.5–3 kW",
       badge: "Más Accesible",
       image: "/images/fiber-laser-feature-01-speed.png",
       description:
-        "La VTM-EA es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW. Corta acero dulce hasta 12 mm, inoxidable hasta 6 mm y aluminio hasta 8 mm a velocidades de producción.",
+        "La VTM-A es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW. Corta acero dulce hasta 12 mm, inoxidable hasta 6 mm y aluminio hasta 8 mm a velocidades de producción.",
       bestFor: [
         "Talleres que inician con láser de fibra",
         "Chapa ligera a media",
@@ -184,7 +184,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
     },
     {
       id: "b",
-      series: "Serie B",
+      series: "Serie Pro",
       tagline: "Caballo de Batalla",
       power: "3–12 kW",
       badge: "Más Popular",
@@ -305,7 +305,7 @@ const LABELS = {
 export function ModelBrowser({ locale }: { locale: "en" | "es" }) {
   const models = MODELS[locale];
   const labels = LABELS[locale];
-  const [selectedId, setSelectedId] = useState(models[1].id); // B Series default
+  const [selectedId, setSelectedId] = useState(models[1].id); // Pro Series default
   const selected = models.find((m) => m.id === selectedId)!;
 
   return (

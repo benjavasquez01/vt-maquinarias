@@ -25,7 +25,7 @@ const FABRICATION: FabProduct[] = [
     key: "fiberLaser",
     href: "/fabrication/fiber-laser-cutting-machine",
     models: [
-      { name: "EA Series", image: "/images/SHEET/EA series/main 3015  (1).png", badge: "Most Accessible",    subtitle: "1.5–3 kW entry-level sheet laser with solid accuracy and a compact footprint." },
+      { name: "A Series", image: "/images/SHEET/EA series/main 3015  (1).png", badge: "Most Accessible",    subtitle: "1.5–3 kW entry-level sheet laser with solid accuracy and a compact footprint." },
       { name: "B Series",  image: "/images/SHEET/B Series/0 main.png",           badge: "Most Popular",       subtitle: "2–12 kW workhorse for mid-volume shops cutting carbon steel, stainless and aluminum." },
       { name: "FE Series", image: "/images/fiber-laser-feature-04-exchange-table.png", badge: "Highest Throughput", subtitle: "3–12 kW dual exchange-table design for near-zero downtime production." },
       { name: "SE Series", image: "/images/SHEET/SE Series/1.png",               badge: "Class 1 Enclosed",   subtitle: "1–3 kW fully enclosed Class 1 laser — ideal for shop-floor safety compliance." },
@@ -97,7 +97,7 @@ const FABRICATION_ES: FabProduct[] = [
     key: "fiberLaser",
     href: "/fabrication/fiber-laser-cutting-machine",
     models: [
-      { name: "Serie EA", image: "/images/SHEET/EA series/main 3015  (1).png", badge: "Más Accesible",       subtitle: "Láser de chapa de entrada 1.5–3 kW con precisión sólida y huella compacta." },
+      { name: "Serie A", image: "/images/SHEET/EA series/main 3015  (1).png", badge: "Más Accesible",       subtitle: "Láser de chapa de entrada 1.5–3 kW con precisión sólida y huella compacta." },
       { name: "Serie B",  image: "/images/SHEET/B Series/0 main.png",           badge: "Más Popular",         subtitle: "Potencia de 2–12 kW para talleres de volumen medio que cortan acero, inoxidable y aluminio." },
       { name: "Serie FE", image: "/images/fiber-laser-feature-04-exchange-table.png", badge: "Mayor Rendimiento", subtitle: "Mesa de intercambio dual de 3–12 kW para producción con tiempo de inactividad casi nulo." },
       { name: "Serie SE", image: "/images/SHEET/SE Series/1.png",               badge: "Clase 1 Cerrada",     subtitle: "Láser Clase 1 totalmente cerrado de 1–3 kW, ideal para cumplimiento de seguridad en planta." },
@@ -147,7 +147,7 @@ const FABRICATION_ES: FabProduct[] = [
     key: "pressBreake",
     href: "/fabrication/cnc-press-brake",
     models: [
-      { name: "Prensa Plegadora CNC", image: "/images/cnc-press-brake-hero.jpg",                badge: "Control CNC",         subtitle: "Prensas plegadoras CNC de 40 a 300+ toneladas con retroceso y coronamiento automático." },
+      { name: "Plegadora CNC", image: "/images/cnc-press-brake-hero.jpg",                badge: "Control CNC",         subtitle: "Prensas plegadoras CNC de 40 a 300+ toneladas con retroceso y coronamiento automático." },
       { name: "Coronamiento Auto",    image: "/images/cnc-press-brake-feature-03-crowning.png", badge: "Coronamiento Auto",    subtitle: "El coronamiento hidráulico compensa la deflexión de la viga para un ángulo uniforme a lo largo." },
       { name: "Retroceso CNC",        image: "/images/cnc-press-brake-feature-04-backgauge.png",badge: "Retroceso",            subtitle: "Retroceso CNC multi-eje para reposicionamiento rápido y secuencias de plegado complejas." },
     ],

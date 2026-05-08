@@ -16,9 +16,13 @@ type HeroContent = {
 export function HeroScroll({
   c,
   locale,
+  image = "/images/fiber-laser-hero-2.png",
+  quoteHref = "/quote?machine=fiber-laser-cutting-machine",
 }: {
   c: HeroContent;
   locale: string;
+  image?: string;
+  quoteHref?: string;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -46,8 +50,8 @@ export function HeroScroll({
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/fiber-laser-hero-2.png"
-          alt="Fiber laser cutting machine"
+          src={image}
+          alt={c.headline.replace("\n", " ")}
           fill
           priority
           className="object-cover"
@@ -82,7 +86,7 @@ export function HeroScroll({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              href="/quote?machine=fiber-laser-cutting-machine"
+              href={quoteHref}
               variant="primary"
               size="lg"
             >

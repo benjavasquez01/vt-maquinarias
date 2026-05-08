@@ -54,7 +54,7 @@ const es: FabricationPageContent = {
   },
   grid: { sectionLabel: "Todas las Máquinas", headline: "La Línea Completa", viewMachine: "Ver máquina" },
   products: [
-    { slug: "fiber-laser-cutting-machine", name: "Máquina de Corte Láser de Fibra para Chapa", tag: "Corte", description: "1.5–30 kW, precisión ±0.05 mm. Mesas de 4′×4′ a 8′×20′. Mesa de intercambio en serie FE.", imageId: "/images/fiber-laser-hero.png" },
+    { slug: "fiber-laser-cutting-machine", name: "Cortadora Láser de Chapa", tag: "Corte", description: "1.5–30 kW, precisión ±0.05 mm. Mesas de 4′×4′ a 8′×20′. Mesa de intercambio en serie FE.", imageId: "/images/fiber-laser-hero.png" },
     { slug: "fiber-laser-tube-cutting-machine", name: "Máquina de Corte Láser de Tubos", tag: "Corte de Tubos", description: "VTM-T / VTM-MT. 1.5–6 kW. Tubo redondo hasta 220 mm, longitudes hasta 9 m. Perfiles redondos, cuadrados y estructurales.", imageId: "/images/fiber-laser-tube-hero.png" },
     { slug: "sheet-tube-laser-cutting-machine", name: "Láser Combinado Chapa y Tubo", tag: "Combinado", description: "VTM-ST. Chapa plana y tubo en una sola máquina. 3–6 kW, mesa hasta 4020, tubo hasta 180 mm.", imageId: "/images/sheet-tube-combo-hero.png" },
     { slug: "4-in-1-laser-machine", name: "Máquina de Soldadura Láser", tag: "Soldadura", description: "VTM-4W. Soldadura, corte, limpieza y alimentación de hilo portátiles. 1.5–3 kW, todos los metales comunes.", imageId: "/images/4in1-laser-hero-2.png" },

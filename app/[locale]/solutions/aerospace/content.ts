@@ -69,8 +69,8 @@ const es: AerospaceContent = {
     headline: "Equipos para trabajo aeroespacial",
     learnMore: "Más información →",
     items: [
-      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "Precisión ±0.05mm, capacidad de asistencia con nitrógeno para bordes limpios en metales no ferrosos." },
-      { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Repetibilidad de plegado ±0.01mm. Compensación automática de retorno elástico por material y calibre." },
+      { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "Precisión ±0.05mm, capacidad de asistencia con nitrógeno para bordes limpios en metales no ferrosos." },
+      { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Repetibilidad de plegado ±0.01mm. Compensación automática de retorno elástico por material y calibre." },
     ],
   },
   cta: {

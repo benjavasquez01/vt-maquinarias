@@ -74,7 +74,7 @@ const en: ProductPageData = {
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "enclosed-fiber-laser-cutting-machine",
-  machineName: "Máquina de Corte Láser de Fibra para Chapa Encapsulada",
+  machineName: "Cortadora Láser de Chapa Encapsulada",
   heroSubheadline: "VTM-PE y VTM-SE. Clase de Seguridad Láser 1 — el encapsulado completo elimina la exposición al peligro láser para todos los que están fuera de la máquina. Misma fuente Raycus, guías HIWIN y CNC CypCut que la línea de bastidor abierto, en una carcasa con clasificación de seguridad.",
   heroImageId: "1518770660439-4636190af475",
   features: [
@@ -127,7 +127,7 @@ const es: ProductPageData = {
     { feature: "Ideal para", ours: "Uso mixto, oficinas cercanas, capacitación, I+D", theirs: "Taller de fabricación dedicado, producción de alto volumen" },
   ],
   relatedProducts: [
-    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.png" },
     { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.png" },
     { name: "Máquina Láser 4 en 1", href: "/fabrication/4-in-1-laser-machine", tag: "Manual", imageId: "/images/4in1-laser-hero-2.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },

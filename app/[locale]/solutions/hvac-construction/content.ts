@@ -72,8 +72,8 @@ const es: HvacContent = {
     headline: "La solución completa para fabricación HVAC",
     learnMore: "Más información →",
     items: [
-      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "Perfiles complejos de ductos y recortes de paneles a velocidad de producción." },
-      { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Plegados consistentes para carcasas, paneles y bridas." },
+      { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "Perfiles complejos de ductos y recortes de paneles a velocidad de producción." },
+      { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Plegados consistentes para carcasas, paneles y bridas." },
       { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", desc: "Automatice sus soldaduras de mayor volumen de soportes y accesorios." },
       { name: "Punzonadora", href: "/fabrication/ironworker", desc: "Punzone, enralle y cizalle ángulos estructurales y pletinas." },
       { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", desc: "Elimine cascarilla, óxido y pintura antes de soldar — sin medios abrasivos ni residuos." },

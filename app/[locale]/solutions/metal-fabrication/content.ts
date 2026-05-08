@@ -47,8 +47,8 @@ const es: MetalFabContent = {
   },
   grid: { sectionLabel: "La Línea Completa", headline: "Equipos para Cada Etapa de la Fabricación" },
   machines: [
-    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · sin consumibles", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
     { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · sin químicos", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.png" },
     { name: "Punzonadora", href: "/fabrication/ironworker", spec: "55–165 ton · 4 en 1", tag: "Multiproceso", imageId: "/images/ironworker-hero.png" },

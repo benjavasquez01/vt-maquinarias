@@ -100,6 +100,7 @@ type Model = {
   power: string;
   badge: string;
   image: string;
+  imageFit?: "cover" | "contain";
   description: string;
   bestFor: string[];
   specs: ModelSpecs;
@@ -174,7 +175,7 @@ const SPECS: Record<string, ModelSpecs> = {
     upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   ea: {
-    headers: ["VTM-1313EA", "VTM-1325EA", "VTM-3015EA"],
+    headers: ["VTM-1313A", "VTM-1325A", "VTM-3015A"],
     rows: [
       { type: "spec", label: "Working Area",
         metric:   ["1300 × 1300 mm",    "1300 × 2500 mm",    "3000 × 1500 mm"],
@@ -205,7 +206,7 @@ const SPECS: Record<string, ModelSpecs> = {
     upgrades: ["Independent Control Cabinet", "Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
   },
   b: {
-    headers: ["VTM-3015B", "VTM-6015B", "VTM-4020B", "VTM-6020B", "VTM-6025B"],
+    headers: ["VTM-3015Pro", "VTM-6015Pro", "VTM-4020Pro", "VTM-6020Pro", "VTM-6025Pro"],
     rows: [
       { type: "spec", label: "Working Area",
         metric:   ["3000 × 1500 mm",  "6000 × 1500 mm",  "4000 × 2000 mm",    "6000 × 2000 mm",    "6000 × 2500 mm"],
@@ -359,14 +360,14 @@ const SPECS: Record<string, ModelSpecs> = {
 const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
-      id: "ea", series: "EA Series", subtitle: "Economic Fiber Laser Sheet Cutting Machine", tagline: "Entry Production", power: "1.5–3 kW", badge: "Most Accessible",
+      id: "ea", series: "A Series", subtitle: "Economic Fiber Laser Sheet Cutting Machine", tagline: "Entry Production", power: "1.5–3 kW", badge: "Most Accessible",
       image: "/images/SHEET/EA series/main 3015  (1).jpg",
-      description: "The VTM-EA is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW.",
+      description: "The VTM-A is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW.",
       bestFor: ["Job shops entering fiber laser", "Light to medium sheet metal", "Stainless and aluminum under ¼\"", "First fiber laser investment"],
       specs: SPECS.ea,
     },
     {
-      id: "b", series: "B Series", tagline: "Production Workhorse", power: "2–12 kW", badge: "Most Popular",
+      id: "b", series: "Pro Series", tagline: "Production Workhorse", power: "2–12 kW", badge: "Most Popular",
       image: "/images/SHEET/B Series/0 main.jpg",
       description: "The VTM-B is built for continuous production at the widest range of material thicknesses and sizes. From 3 kW for thin sheet to 12 kW for 1\"+ mild steel and ¾\" stainless, in beds up to 6′×20′.",
       bestFor: ["High-throughput fabrication", "Broad thickness range", "Contract manufacturers", "Multi-shift operations"],
@@ -382,7 +383,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
     {
       id: "pe", series: "PE Series", tagline: "Enclosed Compact", power: "1.5–3 kW", badge: "Class 1 Safety",
       image: "/images/SHEET/PE Series/1.jpg",
-      description: "The VTM-PE adds a full safety enclosure to the EA-series platform — achieving Laser Safety Class 1 with hardware-interlocked doors. No laser eyewear required for operators or bystanders.",
+      description: "The VTM-PE adds a full safety enclosure to the A-series platform — achieving Laser Safety Class 1 with hardware-interlocked doors. No laser eyewear required for operators or bystanders.",
       bestFor: ["Mixed-use facilities and R&D labs", "Training and prototyping", "Adjacent office areas", "Strict visitor access policies"],
       specs: SPECS.pe,
     },
@@ -395,14 +396,14 @@ const MODELS: Record<"en" | "es", Model[]> = {
     },
     {
       id: "tt", series: "TT Series", subtitle: "Auto Loading & Unloading TransTower Laser Cutting Machine", tagline: "Tower Automation", power: "2–50 kW", badge: "Auto Loading",
-      image: "/images/SHEET/TT Series/1.jpg",
+      image: "/images/SHEET/TT Series/1.jpg", imageFit: "contain",
       description: "The VTM-TT integrates a multi-shelf tower storage system with automated loading and unloading directly to the cutting table. Unattended production, maximum material utilization, and zero idle time between jobs.",
       bestFor: ["High-volume automated production", "Unattended / lights-out operation", "Tower storage material management", "Minimizing operator intervention"],
       specs: SPECS.tt,
     },
     {
       id: "mi", series: "Mi Series", subtitle: "Mini High Precision Fiber Laser Sheet Cutting Machine", tagline: "Compact Precision", power: "1–6 kW · ±0.008 mm", badge: "High Precision",
-      image: "/images/SHEET/Mi Series/mini.107.jpg",
+      image: "/images/SHEET/Mi Series/8.jpg",
       description: "The VTM-Mi is a compact, high-precision fiber laser designed for intricate parts and tight tolerances. Small footprint, rigid frame, and fine-motion control deliver accuracy where full-size machines cannot.",
       bestFor: ["Intricate and small-format parts", "Tight-tolerance prototyping", "Limited floor space", "R&D and specialty fabrication"],
       specs: SPECS.mi,
@@ -410,14 +411,14 @@ const MODELS: Record<"en" | "es", Model[]> = {
   ],
   es: [
     {
-      id: "ea", series: "Serie EA", subtitle: "Cortadora Láser de Fibra para Chapa Económica", tagline: "Producción de Entrada", power: "1.5–3 kW", badge: "Más Accesible",
+      id: "ea", series: "Serie A", subtitle: "Cortadora Láser de Chapa Económica", tagline: "Producción de Entrada", power: "1.5–3 kW", badge: "Más Accesible",
       image: "/images/SHEET/EA series/main 3015  (1).jpg",
-      description: "La VTM-EA es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW.",
+      description: "La VTM-A es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW.",
       bestFor: ["Talleres que inician con láser de fibra", "Chapa ligera a media", "Inoxidable y aluminio bajo 6 mm", "Primera inversión en láser de fibra"],
       specs: SPECS.ea,
     },
     {
-      id: "b", series: "Serie B", tagline: "Caballo de Batalla", power: "2–12 kW", badge: "Más Popular",
+      id: "b", series: "Serie Pro", tagline: "Caballo de Batalla", power: "2–12 kW", badge: "Más Popular",
       image: "/images/SHEET/B Series/0 main.jpg",
       description: "La VTM-B está diseñada para producción continua en la mayor gama de espesores y tamaños. De 3 kW para chapa fina a 12 kW para acero dulce de 25 mm+ e inoxidable de 20 mm, en mesas de hasta 6′×20′.",
       bestFor: ["Fabricación de alto rendimiento", "Amplio rango de espesores", "Fabricantes por contrato", "Operaciones de múltiples turnos"],
@@ -433,7 +434,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
     {
       id: "pe", series: "Serie PE", tagline: "Encapsulado Compacto", power: "1.5–3 kW", badge: "Seguridad Clase 1",
       image: "/images/SHEET/PE Series/1.jpg",
-      description: "La VTM-PE añade un encapsulado de seguridad completo a la plataforma EA — alcanzando Clase 1 con puertas de enclavamiento de hardware. No se requieren gafas láser para operadores.",
+      description: "La VTM-PE añade un encapsulado de seguridad completo a la plataforma A — alcanzando Clase 1 con puertas de enclavamiento de hardware. No se requieren gafas láser para operadores.",
       bestFor: ["Instalaciones de uso mixto y I+D", "Capacitación y prototipado", "Áreas de oficina adyacentes", "Políticas estrictas de acceso"],
       specs: SPECS.pe,
     },
@@ -446,14 +447,14 @@ const MODELS: Record<"en" | "es", Model[]> = {
     },
     {
       id: "tt", series: "Serie TT", subtitle: "Cortadora Láser con Torre de Carga y Descarga Automática", tagline: "Automatización Torre", power: "3–30 kW", badge: "Carga Automática",
-      image: "/images/fiber-laser-feature-04-exchange-table.jpg",
+      image: "/images/SHEET/TT Series/1.jpg", imageFit: "contain",
       description: "La VTM-TT integra un sistema de almacenamiento en torre con carga y descarga automática directa a la mesa de corte. Producción desatendida, máximo aprovechamiento de material y cero tiempo muerto entre trabajos.",
       bestFor: ["Producción automatizada de alto volumen", "Operación desatendida", "Gestión de material en torre", "Mínima intervención del operador"],
       specs: SPECS.tt,
     },
     {
-      id: "mi", series: "Serie Mi", subtitle: "Cortadora Láser de Fibra para Chapa Mini de Alta Precisión", tagline: "Precisión Compacta", power: "1–6 kW", badge: "Alta Precisión",
-      image: "/images/fiber-laser-feature-04-exchange-table.jpg",
+      id: "mi", series: "Serie Mi", subtitle: "Cortadora Láser de Chapa Mini de Alta Precisión", tagline: "Precisión Compacta", power: "1–6 kW", badge: "Alta Precisión",
+      image: "/images/SHEET/Mi Series/8.jpg",
       description: "La VTM-Mi es una cortadora láser de fibra compacta y de alta precisión diseñada para piezas intrincadas y tolerancias ajustadas. Huella pequeña, bastidor rígido y control de movimiento fino para resultados donde las máquinas de tamaño completo no pueden llegar.",
       bestFor: ["Piezas pequeñas e intrincadas", "Prototipado de alta tolerancia", "Espacio limitado en planta", "I+D y fabricación especializada"],
       specs: SPECS.mi,
@@ -795,7 +796,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
                       src={model.image}
                       alt={model.series}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`${model.imageFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
                       sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 17vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

@@ -129,6 +129,50 @@ async function addHubSpotNote(contactId: string, transcript: string) {
   }
 }
 
+async function sendEmailNotification(lead: LeadData) {
+  if (!process.env.RESEND_API_KEY || !process.env.NOTIFY_EMAIL) return;
+
+  const subject = `New lead: ${lead.name} — ${lead.company}`;
+  const html = `
+    <h2 style="color:#c0392b">New VTM Lead from vtmtechsolutions.com</h2>
+    <table style="border-collapse:collapse;width:100%;max-width:600px">
+      <tr><td style="padding:8px;font-weight:bold;width:180px">Name</td><td style="padding:8px">${lead.name}</td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Company</td><td style="padding:8px">${lead.company}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px"><a href="mailto:${lead.email}">${lead.email}</a></td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Phone</td><td style="padding:8px">${lead.phone}</td></tr>
+      ${lead.whatsapp ? `<tr><td style="padding:8px;font-weight:bold">WhatsApp</td><td style="padding:8px">${lead.whatsapp}</td></tr>` : ""}
+      <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Machines of Interest</td><td style="padding:8px">${lead.machinesOfInterest}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold">Materials</td><td style="padding:8px">${lead.materials}</td></tr>
+      ${lead.thickness ? `<tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Thickness</td><td style="padding:8px">${lead.thickness}</td></tr>` : ""}
+      ${lead.volume ? `<tr><td style="padding:8px;font-weight:bold">Volume</td><td style="padding:8px">${lead.volume}</td></tr>` : ""}
+      <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Timeline</td><td style="padding:8px">${lead.timeline}</td></tr>
+      ${lead.currentEquipment ? `<tr><td style="padding:8px;font-weight:bold">Current Equipment</td><td style="padding:8px">${lead.currentEquipment}</td></tr>` : ""}
+      <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Language</td><td style="padding:8px">${lead.language === "es" ? "Spanish" : "English"}</td></tr>
+    </table>
+    <h3 style="margin-top:32px">Conversation Transcript</h3>
+    <pre style="background:#f5f5f5;padding:16px;white-space:pre-wrap;font-size:13px">${lead.transcript}</pre>
+  `;
+
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "VTM Leads <leads@vtmtechsolutions.com>",
+        to: [process.env.NOTIFY_EMAIL],
+        subject,
+        html,
+      }),
+    });
+    if (!res.ok) console.error("Resend email failed:", await res.text());
+  } catch (err) {
+    console.error("Email notification error:", err);
+  }
+}
+
 async function sendWhatsAppNotification(lead: LeadData) {
   if (!process.env.WHATSAPP_NOTIFY_NUMBER || !process.env.TWILIO_ACCOUNT_SID) return;
 
@@ -168,6 +212,7 @@ export async function POST(req: NextRequest) {
     await Promise.allSettled([
       contactId ? addHubSpotNote(contactId, lead.transcript) : Promise.resolve(),
       sendWhatsAppNotification(lead),
+      sendEmailNotification(lead),
     ]);
 
     return new Response(JSON.stringify({ success: true, contactId }), {

@@ -356,7 +356,7 @@ const es: ProductPageData = {
       imageId: "/images/laser-cleaning-hero.png",
     },
     {
-      name: "Máquina de Corte Láser de Fibra para Chapa",
+      name: "Cortadora Láser de Chapa",
       href: "/fabrication/fiber-laser-cutting-machine",
       tag: "Corte de Lámina",
       imageId: "/images/fiber-laser-hero.png",

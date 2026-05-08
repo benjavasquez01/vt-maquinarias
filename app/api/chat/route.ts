@@ -1,4 +1,4 @@
-﻿import { NextRequest } from "next/server";
+import { NextRequest } from "next/server";
 
 const SYSTEM_PROMPT = `You are the VTM Tech Solutions AI Sales Assistant — a knowledgeable, warm, and direct sales engineer for a US industrial machinery company.
 
@@ -36,7 +36,8 @@ RULES:
 - Respond in the same language the user writes in (English or Spanish)
 - Never make up specifications — only use the specs listed above
 - Be warm, direct, and conversational — not scripted
-- Ask one or two questions per turn — don't overwhelm
+- Ask ONLY ONE question per message. Never ask two questions in the same response. If you need to gather multiple pieces of information, ask them in separate turns.
+- After your question, on a new line append: SUGGESTIONS:["option 1","option 2","option 3"] with 2–4 short likely answers the user might give (under 5 words each). Match the conversation language. Only include SUGGESTIONS when answers are predictable and enumerable (e.g. material type, machine type, timeline, production volume, yes/no). Omit SUGGESTIONS entirely when asking for unique unpredictable information such as name, company name, email, phone number, dimensions, or equipment brand. Omit SUGGESTIONS when outputting LEAD_COMPLETE.
 - If they ask a product question, answer it accurately and concisely, then continue qualifying
 - When ALL required fields are collected (name, company, email, phone, metalworking type, materials, machine interest, timeline), output a JSON block like this:
   LEAD_COMPLETE:{"name":"...","company":"...","email":"...","phone":"...","whatsapp":"...","metalworkingType":"...","materials":"...","thickness":"...","dimensions":"...","volume":"...","currentEquipment":"...","timeline":"...","machinesOfInterest":"...","language":"en"}
@@ -50,44 +51,92 @@ CONTEXT: This user clicked "Request a Demo" on the automation page. Focus on aut
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages, mode } = await req.json();
+    const { messages, mode, language } = await req.json();
 
-    if (!process.env.ANTHROPIC_API_KEY) {
+    if (!process.env.GROQ_API_KEY) {
       return new Response(
         JSON.stringify({ error: "API key not configured" }),
         { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
 
-    const systemPrompt = mode === "demo" ? SYSTEM_PROMPT_DEMO : SYSTEM_PROMPT;
+    const base = mode === "demo" ? SYSTEM_PROMPT_DEMO : SYSTEM_PROMPT;
+    const langInstruction =
+      language === "es"
+        ? "\n\nIMPORTANTE: El usuario ha seleccionado español. Responde SIEMPRE en español, sin excepción, independientemente del idioma en que escriba el usuario."
+        : "\n\nIMPORTANT: The user has selected English. Always respond in English.";
+    const systemPrompt = base + langInstruction;
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": process.env.ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
-      },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-6",
-        max_tokens: 1024,
-        system: systemPrompt,
-        messages,
-        stream: true,
-      }),
-    });
+    const groqResponse = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: "llama-3.3-70b-versatile",
+          max_tokens: 1024,
+          stream: true,
+          messages: [{ role: "system", content: systemPrompt }, ...messages],
+        }),
+      }
+    );
 
-    if (!response.ok) {
-      const error = await response.text();
-      console.error("Anthropic API error:", error);
+    if (!groqResponse.ok) {
+      const error = await groqResponse.text();
+      console.error("Groq API error:", error);
       return new Response(
         JSON.stringify({ error: "AI service unavailable" }),
         { status: 502, headers: { "Content-Type": "application/json" } }
       );
     }
 
-    // Stream the response back
-    return new Response(response.body, {
+    // Transform Groq SSE (OpenAI format) → Anthropic-compatible SSE
+    // Groq:   data: {"choices":[{"delta":{"content":"..."}}]}
+    // Output: data: {"delta":{"text":"..."}}\n\n
+    const { readable, writable } = new TransformStream<Uint8Array, Uint8Array>();
+    const writer = writable.getWriter();
+    const encoder = new TextEncoder();
+    const decoder = new TextDecoder();
+
+    (async () => {
+      try {
+        const reader = groqResponse.body!.getReader();
+        let buffer = "";
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          buffer = lines.pop() ?? "";
+
+          for (const line of lines) {
+            if (!line.startsWith("data: ")) continue;
+            const raw = line.slice(6).trim();
+            if (!raw || raw === "[DONE]") continue;
+
+            try {
+              const parsed = JSON.parse(raw);
+              const text = parsed?.choices?.[0]?.delta?.content ?? "";
+              if (text) {
+                const chunk = `data: ${JSON.stringify({ delta: { text } })}\n\n`;
+                await writer.write(encoder.encode(chunk));
+              }
+            } catch {
+              // skip malformed chunks
+            }
+          }
+        }
+      } finally {
+        await writer.close();
+      }
+    })();
+
+    return new Response(readable, {
       headers: {
         "Content-Type": "text/event-stream",
         "Cache-Control": "no-cache",

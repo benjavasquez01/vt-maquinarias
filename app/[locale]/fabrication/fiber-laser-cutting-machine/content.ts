@@ -72,7 +72,7 @@ const en: FiberLaserContent = {
     headline: "Build Your Machine",
     note: "All configurations are available to order. Contact your VTM sales engineer for pricing and lead time on your specific build.",
     options: [
-      { label: "Model Series", options: ["EA Series — 1.5–3 kW", "B Series — 3–12 kW", "G Series — 20–30 kW", "FE Series — Exchange Table"], note: "EA and B series for standard production; G series for heavy plate; FE adds dual-pallet exchange table." },
+      { label: "Model Series", options: ["A Series — 1.5–3 kW", "Pro Series — 3–12 kW", "G Series — 20–30 kW", "FE Series — Exchange Table"], note: "EA and B series for standard production; G series for heavy plate; FE adds dual-pallet exchange table." },
       { label: "Laser Power", options: ["1.5 kW", "3 kW", "6 kW", "12 kW", "20 kW", "30 kW"], note: "Higher power cuts thicker plate faster and unlocks reflective metals at higher thicknesses." },
       { label: "Bed Size", options: ["4′×4′ (1313)", "4′×8′ (1325)", "5′×10′ (3015)", "4′×15′ (4015)", "4′×20′ (4020)", "6′×15′ (6015)", "6′×20′ (6020)", "6′×25′ (6025)", "8′×25′ (8025)"], note: "Match your standard sheet size to minimize offcuts and handling time." },
       { label: "Table Type", options: ["Single Fixed (EA / B series)", "Dual-Pallet Exchange (FE series)"], note: "Exchange table eliminates load/unload downtime — standard on FE series, not an add-on." },
@@ -170,7 +170,7 @@ const es: FiberLaserContent = {
     headline: "Configure su Máquina",
     note: "Todas las configuraciones están disponibles para pedido. Contacte a su asesor de ventas VTM para precios y plazos de entrega de su configuración específica.",
     options: [
-      { label: "Serie del Modelo", options: ["Serie EA — 1.5–3 kW", "Serie B — 3–12 kW", "Serie G — 20–30 kW", "Serie FE — Mesa de Intercambio"], note: "Series EA y B para producción estándar; serie G para placa gruesa; FE añade mesa de intercambio de doble paleta." },
+      { label: "Serie del Modelo", options: ["Serie A — 1.5–3 kW", "Serie Pro — 3–12 kW", "Serie G — 20–30 kW", "Serie FE — Mesa de Intercambio"], note: "Series EA y B para producción estándar; serie G para placa gruesa; FE añade mesa de intercambio de doble paleta." },
       { label: "Potencia del Láser", options: ["1.5 kW", "3 kW", "6 kW", "12 kW", "20 kW", "30 kW"], note: "Mayor potencia corta placa más gruesa más rápido y permite trabajar metales reflectivos en mayores espesores." },
       { label: "Tamaño de Mesa", options: ["4′×4′ (1313)", "4′×8′ (1325)", "5′×10′ (3015)", "4′×15′ (4015)", "4′×20′ (4020)", "6′×15′ (6015)", "6′×20′ (6020)", "6′×25′ (6025)", "8′×25′ (8025)"], note: "Haga coincidir el tamaño de chapa estándar para minimizar recortes y tiempo de manipulación." },
       { label: "Tipo de Mesa", options: ["Mesa Fija Individual (series EA / B)", "Mesa de Intercambio Doble Paleta (serie FE)"], note: "La mesa de intercambio elimina el tiempo de inactividad por carga/descarga — estándar en serie FE, no es un accesorio adicional." },
@@ -211,7 +211,7 @@ const es: FiberLaserContent = {
       { question: "¿Cuál es la diferencia entre VTM-PE y VTM-SE?", answer: "VTM-PE (Encapsulado Protector) está diseñado para formatos más pequeños (mesa 1313 y 3015) a 1.5–3 kW — adecuado para capacitación, laboratorios de I+D y producción ligera. VTM-SE (Encapsulado de Seguridad) es la versión industrial completa para mesas 3015–4020 a hasta 6 kW." },
     ],
   },
-  stickyBar: { machineName: "Máquina de Corte Láser de Fibra para Chapa", cta: "Solicitar Cotización" },
+  stickyBar: { machineName: "Cortadora Láser de Chapa", cta: "Solicitar Cotización" },
   form: {
     nameLabel: "Nombre", emailLabel: "Correo Electrónico", phoneLabel: "Teléfono", companyLabel: "Empresa",
     messageLabel: "Cuéntenos sobre su trabajo",
@@ -228,7 +228,7 @@ const es: FiberLaserContent = {
   },
   relatedProducts: [
     { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.png" },
     { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.png" },
   ],

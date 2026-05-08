@@ -45,7 +45,7 @@ const en: ProductPageData = {
     },
   ],
   specs: [
-    { label: "Laser Power Supply", imperial: "1000 W / 1500 W / 2000 W / 3000 W", metric: "1000 W / 1500 W / 2000 W / 3000 W" },
+    { label: "Laser Power Supply", imperial: "1500 W / 2000 W / 3000 W", metric: "1500 W / 2000 W / 3000 W" },
     { label: "Power Adjustment Range", imperial: "10% – 100%", metric: "10% – 100%" },
     { label: "Output Central Wavelength", imperial: "1070 ± 20 nm", metric: "1070 ± 20 nm" },
     { label: "Cooling Method", imperial: "Water cooling", metric: "Water cooling" },
@@ -167,7 +167,7 @@ const es: ProductPageData = {
     },
   ],
   specs: [
-    { label: "Potencia Láser", imperial: "1000 W / 1500 W / 2000 W / 3000 W", metric: "1000 W / 1500 W / 2000 W / 3000 W" },
+    { label: "Potencia Láser", imperial: "1500 W / 2000 W / 3000 W", metric: "1500 W / 2000 W / 3000 W" },
     { label: "Rango de Ajuste de Potencia", imperial: "10% – 100%", metric: "10% – 100%" },
     { label: "Longitud de Onda Central", imperial: "1070 ± 20 nm", metric: "1070 ± 20 nm" },
     { label: "Método de Refrigeración", imperial: "Refrigeración por agua", metric: "Refrigeración por agua" },
@@ -211,9 +211,9 @@ const es: ProductPageData = {
     { feature: "Placa muy gruesa (>12 mm)", ours: "Limitado", theirs: "MIG/FCAW preferido" },
   ],
   relatedProducts: [
-    { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
     { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.png" },
-    { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
     { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.png" },
   ],
   faqs: [

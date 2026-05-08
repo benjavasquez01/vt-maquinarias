@@ -70,9 +70,9 @@ const es: AutomotiveContent = {
     headline: "Fabricados para la industria automotriz",
     learnMore: "Más información →",
     items: [
-      { name: "Máquina de Corte Láser de Fibra para Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "HSLA, aluminio e inoxidable — con tolerancias automotrices." },
+      { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", desc: "HSLA, aluminio e inoxidable — con tolerancias automotrices." },
       { name: "Brazo de Soldadura Industrial", href: "/automation/industrial-welding-arm", desc: "Calidad de soldadura consistente en producciones de alto volumen." },
-      { name: "Prensa Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Plegado de radio ajustado con repetibilidad de ±0.01mm." },
+      { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", desc: "Plegado de radio ajustado con repetibilidad de ±0.01mm." },
     ],
   },
   cta: {

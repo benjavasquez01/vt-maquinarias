@@ -33,10 +33,10 @@ const copy = {
   },
   es: {
     machines: [
-      "Máquina de Corte Láser de Fibra para Chapa para Chapa",
+      "Cortadora Láser de Chapa",
       "Máquina de Soldadura Láser",
       "Máquina de Limpieza Láser",
-      "Prensa Plegadora CNC",
+      "Plegadora CNC",
       "Guillotina",
       "Punzonadora Hidráulica",
       "Brazo de Soldadura Colaborativo",

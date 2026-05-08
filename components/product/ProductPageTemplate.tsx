@@ -192,7 +192,7 @@ export function ProductPageTemplate({ data, children, afterSpecs, featureSlots, 
       {!hideFeatures && (
         <section className="bg-white">
           {features.map((feature, i) => (
-            <React.Fragment key={feature.number}>
+            <React.Fragment key={i}>
             <div
               className={`max-w-screen-xl mx-auto px-6 lg:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-center border-b border-vtm-gray-border last:border-0`}
             >
