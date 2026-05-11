@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 
 // Web Speech API type declarations (not universally in lib.dom.d.ts)
 interface SpeechRecognitionEvent extends Event {
@@ -38,26 +38,35 @@ interface AISalesAgentProps {
 
 const OPENING_MESSAGES: Record<"en" | "es", Record<string, string>> = {
   en: {
-    quote: "Hi! I'm the VTM Tech Solutions AI assistant. I'm here to help you find the right machine for your shop and get you accurate pricing. What kind of metalworking are you doing — cutting, bending, welding, or something else?",
-    demo: "Hi! I'm the VTM Tech Solutions AI assistant. I see you're interested in our welding automation systems. Tell me about your current welding operation — what are you welding, and what's driving you to look at a cobot or industrial arm?",
+    quote: "Hi! I'm Benjamin, your VTM Tech Solutions sales representative. I'm here to help you find the right machine for your shop and get you accurate pricing. What kind of metalworking are you doing — cutting, bending, welding, or something else?",
+    demo: "Hi! I'm Benjamin, your VTM Tech Solutions sales representative. I see you're interested in our welding automation systems. What are you currently welding, and what's driving your interest in automation?",
   },
   es: {
-    quote: "¡Hola! Soy el asistente de IA de VTM Tech Solutions. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, doblado, soldadura u otra cosa?",
-    demo: "¡Hola! Soy el asistente de IA de VTM Tech Solutions. Veo que te interesa nuestros sistemas de automatización de soldadura. Cuéntame sobre tu operación actual — ¿qué estás soldando y qué te llevó a considerar un cobot o un brazo industrial?",
+    quote: "¡Hola! Soy Benjamin, tu representante de ventas de VTM Tech Solutions. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, doblado, soldadura u otra cosa?",
+    demo: "¡Hola! Soy Benjamin, tu representante de ventas de VTM Tech Solutions. Veo que te interesa nuestros sistemas de automatización de soldadura. ¿Qué estás soldando actualmente y qué te llevó a considerar la automatización?",
   },
 };
 
 const LEAD_COMPLETE_MARKER = "LEAD_COMPLETE:";
-
-const OPENING_SUGGESTIONS: Record<"en" | "es", string[]> = {
-  en: ["Laser cutting", "Welding", "Bending / Press brake", "Automation"],
-  es: ["Corte láser", "Soldadura", "Plegado / Prensa", "Automatización"],
-};
+const LEAD_PARTIAL_MARKER = "LEAD_PARTIAL:";
 
 // Split a response into separate bubbles at each question boundary
 function splitQuestions(text: string): string[] {
   const parts = text.split(/(?<=\?)\s+/);
   return parts.map((p) => p.trim()).filter(Boolean);
+}
+
+// Render text with question sentences highlighted in red
+function renderHighlighted(text: string): React.ReactNode {
+  const sentences = text.split(/(?<=[.!?])\s+/);
+  return sentences.map((sentence, i) => (
+    <span key={i}>
+      {i > 0 ? " " : ""}
+      <span className={sentence.trimEnd().endsWith("?") ? "text-vtm-red font-medium" : ""}>
+        {sentence}
+      </span>
+    </span>
+  ));
 }
 
 // Merge consecutive assistant messages before sending to API
@@ -82,18 +91,24 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [language, setLanguage] = useState<"en" | "es">("en");
   const [leadComplete, setLeadComplete] = useState(false);
-  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const leadSentRef = useRef<"none" | "partial" | "complete">("none");
+  const messagesRef = useRef<Message[]>([]);
+  const languageRef = useRef<"en" | "es">("en");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Keep refs in sync for use in close handlers
+  useEffect(() => { messagesRef.current = messages; }, [messages]);
+  useEffect(() => { languageRef.current = language; }, [language]);
 
   // Initialize on open
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       const opening = OPENING_MESSAGES[language][mode];
       setMessages([{ role: "assistant", content: opening }]);
-      setSuggestions(OPENING_SUGGESTIONS[language]);
+      leadSentRef.current = "none";
       if (voiceEnabled) speakText(opening, language);
     }
   }, [isOpen, mode]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -102,9 +117,9 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
   useEffect(() => {
     if (messages.length > 0) {
       setLeadComplete(false);
+      leadSentRef.current = "none";
       const opening = OPENING_MESSAGES[language][mode];
       setMessages([{ role: "assistant", content: opening }]);
-      setSuggestions(OPENING_SUGGESTIONS[language]);
     }
   }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -165,23 +180,90 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     }
   };
 
-  const submitLead = useCallback(async (leadJson: string, transcript: string) => {
+  const submitLead = useCallback(async (leadJson: string, transcript: string, partial = false) => {
+    // Don't downgrade: skip partials once complete has been sent or another partial already sent
+    if (leadSentRef.current === "complete") return;
+    if (leadSentRef.current === "partial" && partial) return;
     try {
       const lead = JSON.parse(leadJson);
       await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...lead, transcript }),
+        body: JSON.stringify({ ...lead, transcript, partial }),
       });
-      setLeadComplete(true);
+      leadSentRef.current = partial ? "partial" : "complete";
+      if (!partial) setLeadComplete(true);
     } catch {
       // Non-critical
     }
   }, []);
 
+  // Fallback: when the chat closes without a lead being sent, salvage any
+  // contact info from the user's messages and send a partial lead so the
+  // team can still follow up. Only fires if no lead (partial or complete) was sent.
+  useEffect(() => {
+    if (isOpen) return;
+    if (leadSentRef.current !== "none") return;
+    const msgs = messagesRef.current;
+    if (msgs.length < 2) return;
+
+    const userText = msgs
+      .filter((m) => m.role === "user")
+      .map((m) => m.content)
+      .join("\n");
+    if (!userText.trim()) return;
+
+    const emailMatch = userText.match(/[\w.+-]+@[\w-]+\.[\w.-]+/);
+    const phoneMatch = userText.match(/(\+?\d[\d\s().-]{7,}\d)/);
+    if (!emailMatch && !phoneMatch) return;
+
+    const lang = languageRef.current;
+    const transcript = msgs
+      .map((m) => `${m.role === "user" ? "Customer" : "VTM AI"}: ${m.content}`)
+      .join("\n\n");
+    const salvaged = {
+      name: "",
+      company: "",
+      email: emailMatch ? emailMatch[0] : "",
+      phone: phoneMatch ? phoneMatch[0].trim() : "",
+      metalworkingType: "",
+      materials: "",
+      thickness: "",
+      dimensions: "",
+      volume: "",
+      currentEquipment: "",
+      timeline: "",
+      machinesOfInterest: "",
+      language: lang,
+    };
+    submitLead(JSON.stringify(salvaged), transcript, true);
+  }, [isOpen, submitLead]);
+
+  // Extract a JSON object that follows a marker in a stream of text
+  const extractMarkerJson = (text: string, marker: string): string | null => {
+    const idx = text.indexOf(marker);
+    if (idx === -1) return null;
+    const start = idx + marker.length;
+    let depth = 0;
+    let inString = false;
+    let escape = false;
+    for (let i = start; i < text.length; i++) {
+      const ch = text[i];
+      if (escape) { escape = false; continue; }
+      if (ch === "\\") { escape = true; continue; }
+      if (ch === '"') { inString = !inString; continue; }
+      if (inString) continue;
+      if (ch === "{") depth++;
+      else if (ch === "}") {
+        depth--;
+        if (depth === 0) return text.slice(start, i + 1);
+      }
+    }
+    return null;
+  };
+
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;
-    setSuggestions([]);
 
     const userMessage: Message = { role: "user", content: text };
     const newMessages = [...messages, userMessage];
@@ -243,16 +325,16 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
         }
       }
 
-      // Parse and strip SUGGESTIONS block
-      let parsedSuggestions: string[] = [];
-      const suggestionsMatch = assistantText.match(/\nSUGGESTIONS:(\[.*?\])/s);
-      if (suggestionsMatch) {
-        try { parsedSuggestions = JSON.parse(suggestionsMatch[1]); } catch { /* ignore */ }
-      }
-      const cleanText = assistantText.replace(/\nSUGGESTIONS:\[.*?\]/s, "").trim();
+      // Extract and strip both markers from the visible bubble
+      const partialJson = extractMarkerJson(assistantText, LEAD_PARTIAL_MARKER);
+      const completeJson = extractMarkerJson(assistantText, LEAD_COMPLETE_MARKER);
+      const cleanText = assistantText
+        .replace(/LEAD_PARTIAL:\{[\s\S]*?\}/g, "")
+        .replace(/LEAD_COMPLETE:\{[\s\S]*?\}/g, "")
+        .trim();
 
-      // Update last message to clean text (no SUGGESTIONS line)
-      if (cleanText !== assistantText) {
+      // If we stripped markers, update the bubble to the clean version
+      if (cleanText !== assistantText.trim()) {
         setMessages((prev) => {
           const updated = [...prev];
           updated[updated.length - 1] = { role: "assistant", content: cleanText };
@@ -261,7 +343,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
       }
 
       // Split multiple questions into separate bubbles
-      if (!cleanText.includes(LEAD_COMPLETE_MARKER)) {
+      if (!completeJson) {
         const parts = splitQuestions(cleanText);
         if (parts.length > 1) {
           setMessages((prev) => {
@@ -276,25 +358,18 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
         }
       }
 
-      setSuggestions(parsedSuggestions);
+      const transcript = newMessages
+        .map((m) => `${m.role === "user" ? "Customer" : "VTM AI"}: ${m.content}`)
+        .join("\n\n");
 
-      // Check for lead completion marker
-      if (assistantText.includes(LEAD_COMPLETE_MARKER)) {
-        const markerIdx = assistantText.indexOf(LEAD_COMPLETE_MARKER);
-        const jsonStart = markerIdx + LEAD_COMPLETE_MARKER.length;
-        const jsonEnd = assistantText.indexOf("}", jsonStart) + 1;
-        if (jsonEnd > jsonStart) {
-          const leadJson = assistantText.slice(jsonStart, jsonEnd);
-          const transcript = newMessages
-            .map((m) => `${m.role === "user" ? "Customer" : "VTM AI"}: ${m.content}`)
-            .join("\n\n");
-          submitLead(leadJson, transcript);
-        }
+      if (completeJson) {
+        submitLead(completeJson, transcript, false);
+      } else if (partialJson) {
+        submitLead(partialJson, transcript, true);
       }
 
-      // Speak the response (minus any JSON)
-      const textToSpeak = cleanText.replace(/LEAD_COMPLETE:\{.*?\}/s, "").trim();
-      if (voiceEnabled && textToSpeak) speakText(textToSpeak, language);
+      // Speak the response (clean text, no markers)
+      if (voiceEnabled && cleanText) speakText(cleanText, language);
 
     } catch {
       setMessages((prev) => [
@@ -345,9 +420,14 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     recognitionRef.current = recognition;
   };
 
-  const displayMessages = messages.filter(
-    (m) => !(m.role === "assistant" && m.content.includes(LEAD_COMPLETE_MARKER) && m.content.trim().startsWith("LEAD_COMPLETE:"))
-  );
+  const displayMessages = messages.filter((m) => {
+    if (m.role !== "assistant") return true;
+    const stripped = m.content
+      .replace(/LEAD_PARTIAL:\{[\s\S]*?\}/g, "")
+      .replace(/LEAD_COMPLETE:\{[\s\S]*?\}/g, "")
+      .trim();
+    return stripped.length > 0;
+  });
 
   if (!isOpen) return null;
 
@@ -376,8 +456,8 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
               </svg>
             </div>
             <div>
-              <p className="text-white font-semibold text-sm">VTM AI Assistant</p>
-              <p className="text-white/40 text-xs">Sales &amp; Product Specialist</p>
+              <p className="text-white font-semibold text-sm">Benjamin</p>
+              <p className="text-white/40 text-xs">VTM Tech Solutions — Sales Representative</p>
             </div>
           </div>
 
@@ -429,7 +509,8 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
           {displayMessages.map((msg, i) => {
             const isAssistant = msg.role === "assistant";
             const displayContent = msg.content
-              .replace(/LEAD_COMPLETE:\{.*?\}/s, "")
+              .replace(/LEAD_PARTIAL:\{[\s\S]*?\}/g, "")
+              .replace(/LEAD_COMPLETE:\{[\s\S]*?\}/g, "")
               .trim();
             if (!displayContent) return null;
 
@@ -449,7 +530,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
                       : "bg-vtm-red text-white rounded-tl-2xl rounded-bl-2xl rounded-br-2xl ml-auto"
                   }`}
                 >
-                  {displayContent}
+                  {isAssistant ? renderHighlighted(displayContent) : displayContent}
                 </div>
               </div>
             );
@@ -475,21 +556,6 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
                   ))}
                 </div>
               </div>
-            </div>
-          )}
-
-          {/* Suggestion chips */}
-          {suggestions.length > 0 && !isLoading && (
-            <div className="flex flex-wrap gap-2 pl-10">
-              {suggestions.map((s, i) => (
-                <button
-                  key={i}
-                  onClick={() => sendMessage(s)}
-                  className="px-3 py-1.5 text-xs bg-vtm-red text-white rounded-full hover:bg-vtm-red/80 transition-colors"
-                >
-                  {s}
-                </button>
-              ))}
             </div>
           )}
 

@@ -53,7 +53,6 @@ export const metadata: Metadata = {
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
-const CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID;
 
 export default async function LocaleLayout({
   children,
@@ -104,23 +103,6 @@ export default async function LocaleLayout({
             src={`//js.hs-scripts.com/${HUBSPOT_PORTAL_ID}.js`}
             strategy="afterInteractive"
           />
-        )}
-
-        {/* ── Crisp Live Chat ─────────────────────────────────────────── */}
-        {CRISP_WEBSITE_ID && (
-          <Script id="crisp-init" strategy="afterInteractive">
-            {`
-              window.$crisp=[];
-              window.CRISP_WEBSITE_ID="${CRISP_WEBSITE_ID}";
-              (function(){
-                var d=document;
-                var s=d.createElement("script");
-                s.src="https://client.crisp.chat/l.js";
-                s.async=1;
-                d.getElementsByTagName("head")[0].appendChild(s);
-              })();
-            `}
-          </Script>
         )}
 
         {/* ── Microsoft Clarity ───────────────────────────────────────── */}
