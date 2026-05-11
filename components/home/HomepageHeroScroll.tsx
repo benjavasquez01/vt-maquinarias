@@ -6,8 +6,8 @@ import { HeroHeadline } from "./HeroHeadline";
 import { HomepageHeroCTA } from "./HomepageHeroCTA";
 
 const HERO_IMAGES = [
-  { src: "/images/homepage-hero-2.jpg.png", alt: "Laser cutting machine with bright sparks on metal" },
-  { src: "/images/home-hero-2.png", alt: "VTM CNC press brake in factory" },
+  { src: "/images/homepage-hero-2.jpg.webp", alt: "Laser cutting machine with bright sparks on metal" },
+  { src: "/images/home-hero-2.webp", alt: "VTM CNC press brake in factory" },
 ];
 
 type Props = {

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ImageGallery } from "@/components/ui/ImageGallery";
 
-const GALLERY = ["/images/laser-cleaning-c-1.png", "/images/laser-cleaning-c-2.png"];
+const GALLERY = ["/images/laser-cleaning-c-1.webp", "/images/laser-cleaning-c-2.webp"];
 
 type SpecRow = { label: string; continuous: string; pulsed: string };
 

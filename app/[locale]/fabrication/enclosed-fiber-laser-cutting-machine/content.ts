@@ -56,10 +56,10 @@ const en: ProductPageData = {
     { feature: "Best for", ours: "Mixed-use, offices nearby, training, R&D", theirs: "Dedicated fabrication shop, high-volume production" },
   ],
   relatedProducts: [
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Open Frame", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.png" },
-    { name: "4-in-1 Laser Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Handheld", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Open Frame", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.webp" },
+    { name: "4-in-1 Laser Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Handheld", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     { question: "What does Laser Safety Class 1 actually mean?", answer: "Class 1 means the accessible emission level is safe under all reasonably foreseeable conditions — when the machine is operating normally with the enclosure closed, no one outside the machine is exposed to hazardous laser radiation. No laser safety eyewear is required for operators or bystanders. This is the same class as a CD player or laser printer." },
@@ -127,10 +127,10 @@ const es: ProductPageData = {
     { feature: "Ideal para", ours: "Uso mixto, oficinas cercanas, capacitación, I+D", theirs: "Taller de fabricación dedicado, producción de alto volumen" },
   ],
   relatedProducts: [
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.png" },
-    { name: "Máquina Láser 4 en 1", href: "/fabrication/4-in-1-laser-machine", tag: "Manual", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.webp" },
+    { name: "Máquina Láser 4 en 1", href: "/fabrication/4-in-1-laser-machine", tag: "Manual", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     { question: "¿Qué significa realmente la Clase de Seguridad Láser 1?", answer: "La Clase 1 significa que el nivel de emisión accesible es seguro en todas las condiciones razonablemente previsibles — cuando la máquina opera normalmente con el encapsulado cerrado, nadie fuera de la máquina está expuesto a radiación láser peligrosa. No se requieren gafas de seguridad láser para operadores ni personas cercanas. Es la misma clase que un reproductor de CD o una impresora láser." },

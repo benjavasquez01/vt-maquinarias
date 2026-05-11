@@ -42,7 +42,7 @@ export default async function CncPrakeePage({
       <HeroScroll
         c={HERO_CONTENT[locale]}
         locale={locale}
-        image="/images/cnc-press-brake-hero-2.png"
+        image="/images/cnc-press-brake-hero-2.webp"
         quoteHref="/quote?machine=cnc-press-brake"
       />
       <ProductPageTemplate

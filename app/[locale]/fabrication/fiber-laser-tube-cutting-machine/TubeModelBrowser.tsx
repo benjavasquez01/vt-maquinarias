@@ -8,9 +8,9 @@ import { ImageGallery } from "@/components/ui/ImageGallery";
 // ─── Image frames ───────────────────────────────────────────────────────────
 
 const SERIES_FRAMES: Record<string, string[]> = {
-  mt: ["/images/tube-mt-1.png", "/images/tube-mt-2.png", "/images/tube-mt-3.png", "/images/tube-mt-4.png"],
-  t: ["/images/tube-t-1.png", "/images/tube-t-2.png", "/images/tube-t-3.png", "/images/tube-t-4.png", "/images/tube-t-5.png", "/images/tube-t-6.png", "/images/tube-t-7.png"],
-  at: ["/images/tube-at-1.png", "/images/tube-at-2.png", "/images/tube-at-3.png", "/images/tube-at-4.png"],
+  mt: ["/images/tube-mt-1.webp", "/images/tube-mt-2.webp", "/images/tube-mt-3.webp", "/images/tube-mt-4.webp"],
+  t: ["/images/tube-t-1.webp", "/images/tube-t-2.webp", "/images/tube-t-3.webp", "/images/tube-t-4.webp", "/images/tube-t-5.webp", "/images/tube-t-6.webp", "/images/tube-t-7.webp"],
+  at: ["/images/tube-at-1.webp", "/images/tube-at-2.webp", "/images/tube-at-3.webp", "/images/tube-at-4.webp"],
 };
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -94,21 +94,21 @@ const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
       id: "mt", series: "MT Series", tagline: "Tube Cutting", power: "1.5 – 2 kW", badge: "Available",
-      image: "/images/tube-mt-1.png",
+      image: "/images/tube-mt-1.webp",
       description: "The MT series handles round and square tube profiles up to 160 mm diameter. Two models — VTM-6011MT and VTM-6016MT — cover light structural to medium-duty tube with 4-chuck pneumatic clamping and CypTube CNC control.",
       bestFor: ["Round & square tube up to 160 mm", "Structural profiles and angle iron", "High-accuracy miter and cope cuts", "Light to medium wall thickness"],
       specs: SPECS.mt,
     },
     {
       id: "t", series: "T Series", tagline: "Tube Cutting", power: "1.5 – 6 kW", badge: "Available",
-      image: "/images/tube-t-1.png",
+      image: "/images/tube-t-1.webp",
       description: "The T series handles round tube up to 350 mm diameter. Two models — VTM-6024T and VTM-6035T — cover medium to heavy structural tube with higher acceleration and a full power range from 1.5 to 6 kW.",
       bestFor: ["Round tube up to 350 mm diameter", "Heavy structural sections", "High-speed production runs", "Full power range 1.5–6 kW"],
       specs: SPECS.t,
     },
     {
       id: "at", series: "AT Series", tagline: "Auto Bundle Loading", power: "1.5 – 6 kW", badge: "Available",
-      image: "/images/tube-at-1.png",
+      image: "/images/tube-at-1.webp",
       description: "The AT series adds automated bundle loading to the VTM-6024AT platform. Handles up to 4 t of tube stock with auto-following support and a 15-second cycle load time — designed for unattended production runs.",
       bestFor: ["Automated bundle infeed up to 4 t", "Unattended production runs", "Round tube up to 200 mm diameter", "High-volume repetitive jobs"],
       specs: SPECS.at,
@@ -117,21 +117,21 @@ const MODELS: Record<"en" | "es", Model[]> = {
   es: [
     {
       id: "mt", series: "Serie MT", tagline: "Corte de Tubo", power: "1.5 – 2 kW", badge: "Disponible",
-      image: "/images/tube-mt-1.png",
+      image: "/images/tube-mt-1.webp",
       description: "La serie MT maneja perfiles de tubo redondo y cuadrado hasta 160 mm de diámetro. Dos modelos — VTM-6011MT y VTM-6016MT — cubren desde estructura liviana hasta tubo de uso mediano con sujeción neumática de 4 mordazas y control CNC CypTube.",
       bestFor: ["Tubo redondo y cuadrado hasta 160 mm", "Perfiles estructurales y ángulo", "Cortes en inglete y entalle de alta precisión", "Pared delgada a espesor medio"],
       specs: SPECS.mt,
     },
     {
       id: "t", series: "Serie T", tagline: "Corte de Tubo", power: "1.5 – 6 kW", badge: "Disponible",
-      image: "/images/tube-t-1.png",
+      image: "/images/tube-t-1.webp",
       description: "La serie T maneja tubo redondo hasta 350 mm de diámetro. Dos modelos — VTM-6024T y VTM-6035T — cubren tubo estructural mediano a pesado con mayor aceleración y una gama de potencia completa de 1.5 a 6 kW.",
       bestFor: ["Tubo redondo hasta 350 mm de diámetro", "Secciones estructurales pesadas", "Producción de alta velocidad", "Gama completa de potencia 1.5–6 kW"],
       specs: SPECS.t,
     },
     {
       id: "at", series: "Serie AT", tagline: "Carga Automática", power: "1.5 – 6 kW", badge: "Disponible",
-      image: "/images/tube-at-1.png",
+      image: "/images/tube-at-1.webp",
       description: "La serie AT agrega carga automática de paquetes a la plataforma VTM-6024AT. Maneja hasta 4 t de stock de tubos con soporte de seguimiento automático y un tiempo de ciclo de carga de 15 segundos — diseñada para producción desatendida.",
       bestFor: ["Alimentación automática de paquetes hasta 4 t", "Producción desatendida", "Tubo redondo hasta 200 mm de diámetro", "Trabajos repetitivos de alto volumen"],
       specs: SPECS.at,

@@ -6,42 +6,42 @@ const en: ProductPageData = {
   machineName: "Hydraulic Ironworker",
   heroSubheadline:
     "55 to 110 ton hydraulic ironworker. Five work stations — punching, notching, flat bar shear, angle iron shear, and profile shearing — in a single machine. Replace five separate machines with one compact, low-maintenance workhorse.",
-  heroImageId: "/images/ironworker-hero.png",
+  heroImageId: "/images/ironworker-hero.webp",
   features: [
     {
       number: "01",
       headline: "Five Work Stations — One Machine, One Footprint",
       body: "The hydraulic ironworker combines punching, notching, flat bar shearing, angle iron shearing, and profile shearing in a single machine body. No separate hydraulic power units, no additional footprint. Operators move between stations in seconds rather than minutes — or run two different operations simultaneously with the dual-operator option.",
       spec: { label: "Work Stations", value: "5" },
-      imageId: "/images/ironworker-feature-01-stations.png",
+      imageId: "/images/ironworker-feature-01-stations.webp",
     },
     {
       number: "02",
       headline: "Punch Holes to 38mm Diameter in 12mm Plate",
       body: "The punching station develops full tonnage across its range — from small pilot holes through 38mm (1.5\") diameter in 12mm (0.5\") mild steel plate. Standard tooling accepts round, square, oblong, and custom punch profiles. The punch holder accepts standard US and European punch-and-die sets, protecting your existing tooling investment.",
       spec: { label: "Max Punch Dia.", value: "38 mm (1.5\")" },
-      imageId: "/images/ironworker-feature-02-punching.png",
+      imageId: "/images/ironworker-feature-02-punching.webp",
     },
     {
       number: "03",
       headline: "Angle Iron Notching — Clean, Square Corners",
       body: "The notching station shears angle iron at 90°, 60°, and 45° in a single stroke — producing clean corner joints ready for welding without grinding or secondary cutting. Notch mild steel angle to 5\" × 5\" × 0.5\" in a single hydraulic stroke. No blade setup — the hardened steel notching blades last tens of thousands of cycles.",
       spec: { label: "Max Angle Notch", value: "5\" × 5\" × 0.5\"" },
-      imageId: "/images/ironworker-feature-03-notching.png",
+      imageId: "/images/ironworker-feature-03-notching.webp",
     },
     {
       number: "04",
       headline: "Flat Bar Shear — 6\" Width at 0.625\" Thickness",
       body: "The flat bar shearing station cuts structural flat bar to 6\" (150mm) wide at 0.625\" (16mm) thickness in mild steel. Drop-cut design — the scrap piece drops clear without manual handling. Adjustable backstop with memory marks for production runs. Length marks on the work table for measuring cuts without a separate layout step.",
       spec: { label: "Flat Bar Shear", value: "6\" × 0.625\"" },
-      imageId: "/images/ironworker-feature-04-flatbar.png",
+      imageId: "/images/ironworker-feature-04-flatbar.webp",
     },
     {
       number: "05",
       headline: "V-Die Bending Attachment — Short Bends Without a Press Brake",
       body: "An optional V-die bending attachment mounts directly into the punching station, turning the ironworker into a compact press brake for short bends. Ideal for brackets, clips, and small formed parts that don't justify moving material to a full press brake. Sold separately — ask your VTM sales engineer for compatible die sets and capacity for your tonnage model.",
       spec: { label: "Availability", value: "Optional add-on" },
-      imageId: "/images/ironworker-feature-05-vdie.jpg",
+      imageId: "/images/ironworker-feature-05-vdie.webp",
     },
   ],
   specs: [
@@ -93,10 +93,10 @@ const en: ProductPageData = {
     { feature: "CNC punching / nesting", ours: "Not available", theirs: "Available in turret punches" },
   ],
   relatedProducts: [
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "/images/shearing-guillotine-hero.png" },
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Guillotine & Swing Beam Shearing", href: "/fabrication/shearing-machine", tag: "Shearing", imageId: "/images/shearing-guillotine-hero.webp" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     {
@@ -128,42 +128,42 @@ const es: ProductPageData = {
   machineName: "Punzonadora Hidráulica",
   heroSubheadline:
     "Punzonadora hidráulica de 55 a 110 toneladas. Cinco estaciones de trabajo — punzonado, muescado, cizallado de pletina, cizallado de ángulo y cizallado de perfiles — en una sola máquina. Reemplace cinco máquinas separadas con una sola estación de trabajo compacta y de bajo mantenimiento.",
-  heroImageId: "/images/ironworker-hero.png",
+  heroImageId: "/images/ironworker-hero.webp",
   features: [
     {
       number: "01",
       headline: "Cinco Estaciones de Trabajo — Una Máquina, Una Huella",
       body: "La punzonadora hidráulica combina punzonado, muescado, cizallado de pletina, cizallado de ángulo y cizallado de perfiles en un solo cuerpo de máquina. Sin unidades de potencia hidráulica separadas, sin huella adicional. Los operadores se mueven entre estaciones en segundos en lugar de minutos — o ejecutan dos operaciones diferentes simultáneamente con la opción de doble operador.",
       spec: { label: "Estaciones de Trabajo", value: "5" },
-      imageId: "/images/ironworker-feature-01-stations.png",
+      imageId: "/images/ironworker-feature-01-stations.webp",
     },
     {
       number: "02",
       headline: "Punzonado hasta 38 mm de Diámetro en Placa de 12 mm",
       body: "La estación de punzonado desarrolla tonelaje completo en todo su rango — desde pequeños agujeros piloto hasta 38 mm (1.5\") de diámetro en placa de acero dulce de 12 mm (0.5\"). Las herramientas estándar aceptan perfiles de punzón redondos, cuadrados, oblongos y personalizados. El portapunzones acepta juegos de punzón y troquel estilo americano y europeo.",
       spec: { label: "Diám. Máx. de Punzón", value: "38 mm (1.5\")" },
-      imageId: "/images/ironworker-feature-02-punching.png",
+      imageId: "/images/ironworker-feature-02-punching.webp",
     },
     {
       number: "03",
       headline: "Muescado de Ángulo — Esquinas Limpias y Cuadradas",
       body: "La estación de muescado cizalla el ángulo de hierro a 90°, 60° y 45° en un solo golpe — produciendo juntas de esquina limpias listas para soldar sin esmerilado o corte secundario. Muesca el ángulo de acero dulce hasta 5\" × 5\" × 0.5\" en un solo golpe hidráulico. Sin configuración de cuchilla.",
       spec: { label: "Muesca Máx. de Ángulo", value: "5\" × 5\" × 0.5\"" },
-      imageId: "/images/ironworker-feature-03-notching.png",
+      imageId: "/images/ironworker-feature-03-notching.webp",
     },
     {
       number: "04",
       headline: "Cizalla de Pletina — 6\" de Ancho a 0.625\" de Espesor",
       body: "La estación de cizallado de pletina corta pletina estructural hasta 6\" (150 mm) de ancho a 0.625\" (16 mm) de espesor en acero dulce. Diseño de corte por gravedad — la pieza de desperdicio cae sin manipulación manual. Tope trasero ajustable con marcas de memoria para producciones en serie.",
       spec: { label: "Cizalla de Pletina", value: "6\" × 0.625\"" },
-      imageId: "/images/ironworker-feature-04-flatbar.png",
+      imageId: "/images/ironworker-feature-04-flatbar.webp",
     },
     {
       number: "05",
       headline: "Accesorio de Plegado con Troquel en V — Dobleces Cortos Sin Plegadora",
       body: "Un accesorio opcional de troquel en V se monta directamente en la estación de punzonado, convirtiendo la punzonadora en una prensa plegadora compacta para dobleces cortos. Ideal para soportes, grapas y piezas formadas pequeñas que no justifican mover el material a una prensa plegadora completa. Se vende por separado — consulte a su asesor de ventas VTM para los troqueles compatibles y la capacidad de su modelo.",
       spec: { label: "Disponibilidad", value: "Accesorio opcional" },
-      imageId: "/images/ironworker-feature-05-vdie.jpg",
+      imageId: "/images/ironworker-feature-05-vdie.webp",
     },
   ],
   specs: [
@@ -215,10 +215,10 @@ const es: ProductPageData = {
     { feature: "Punzonado CNC / anidamiento", ours: "No disponible", theirs: "Disponible en prensas de torreta" },
   ],
   relatedProducts: [
-    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "/images/shearing-guillotine-hero.png" },
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Guillotinas y Viga Oscilante", href: "/fabrication/shearing-machine", tag: "Cizallado", imageId: "/images/shearing-guillotine-hero.webp" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     {

@@ -12,7 +12,7 @@ export function Footer() {
         {/* Top: Logo + tagline */}
         <div className="mb-12">
           <Image
-            src="/images/logo-dark.png"
+            src="/images/logo-dark.webp"
             alt="VTM Tech Solutions"
             width={1568}
             height={745}

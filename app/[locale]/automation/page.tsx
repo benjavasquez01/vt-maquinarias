@@ -26,7 +26,7 @@ export default async function AutomationPage({
       <section className="relative bg-vtm-dark min-h-screen flex items-end pb-20 pt-32 overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
           <Image
-            src="/images/automation-category-hero.png"
+            src="/images/automation-category-hero.webp"
             alt=""
             fill
             className="object-cover opacity-70"

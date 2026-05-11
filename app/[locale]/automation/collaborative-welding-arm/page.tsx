@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Collaborative Welding Arm — VTM Tech Solutions",
     description: "Deploy in 6 weeks. Works alongside humans safely. No cages required.",
-    images: [{ url: "/images/cobot-welding-hero.png" }],
+    images: [{ url: "/images/cobot-welding-hero.webp" }],
   },
 };
 
@@ -39,7 +39,7 @@ export default async function CollaborativeWeldingArmPage({
       <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-24 overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
           <Image
-            src="/images/cobot-welding-hero-2.png"
+            src="/images/cobot-welding-hero-2.webp"
             alt=""
             fill
             className="object-cover opacity-70"
@@ -100,7 +100,7 @@ export default async function CollaborativeWeldingArmPage({
             </FadeIn>
             <div className="relative aspect-[4/3] overflow-hidden hidden md:block">
               <Image
-                src="/images/cobot-welding-operation-2.png"
+                src="/images/cobot-welding-operation-2.webp"
                 alt=""
                 fill
                 className="object-cover"
@@ -219,7 +219,7 @@ export default async function CollaborativeWeldingArmPage({
             </div>
             <div className="relative aspect-[4/3] overflow-hidden hidden md:block">
               <Image
-                src="/images/cobot-welding-roi.png"
+                src="/images/cobot-welding-roi.webp"
                 alt=""
                 fill
                 className="object-cover"

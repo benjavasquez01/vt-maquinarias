@@ -6,28 +6,28 @@ const en: ProductPageData = {
   machineName: "Laser Cleaning Machine",
   heroSubheadline:
     "50W to 500W pulsed fiber laser cleaning. Remove rust, paint, mill scale, and oxide layers with no chemicals, no abrasive media, and no surface damage to the base material. Portable handheld option available.",
-  heroImageId: "/images/laser-cleaning-hero.png",
+  heroImageId: "/images/laser-cleaning-hero.webp",
   features: [
     {
       number: "01",
       headline: "No Chemicals — Compliant by Design",
       body: "Eliminate chemical stripping solvents, neutralizers, and disposal costs entirely. Laser cleaning vaporizes contaminants with photon energy — the only byproduct is airborne particulate, handled by a standard fume extractor. No EPA waste disposal permits required for the cleaning process itself.",
       spec: { label: "Chemicals", value: "None" },
-      imageId: "/images/laser-cleaning-feature-01-no-chemicals.png",
+      imageId: "/images/laser-cleaning-feature-01-no-chemicals.webp",
     },
     {
       number: "02",
       headline: "No Media Blasting — No Embedded Abrasive",
       body: "Sand and grit blasting embed abrasive particles into the metal surface — a contamination problem for precision welding and coating adhesion. Laser cleaning leaves a chemically clean surface, ideal for pre-weld prep, thermal spray adhesion, or paint primer bonding.",
       spec: { label: "Media Used", value: "None" },
-      imageId: "/images/laser-cleaning-feature-02-no-media.png",
+      imageId: "/images/laser-cleaning-feature-02-no-media.webp",
     },
     {
       number: "03",
       headline: "Precisely Targeted — Cleans Only the Contamination",
       body: "Pulse parameters are tuned to ablate the contaminant layer while reflecting off the substrate beneath. Remove rust from a chrome-moly tube without etching the base metal. Clean weld spatter from a machined surface without changing surface finish. No masking required.",
       spec: { label: "Selectivity", value: "Layer-precise" },
-      imageId: "/images/laser-cleaning-feature-03-precision.png",
+      imageId: "/images/laser-cleaning-feature-03-precision.webp",
     },
     {
       number: "04",
@@ -86,10 +86,10 @@ const en: ProductPageData = {
     { feature: "Initial equipment cost", ours: "Higher", theirs: "Lower" },
   ],
   relatedProducts: [
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Collaborative Welding Arm", href: "/automation/collaborative-welding-arm", tag: "Automation", imageId: "/images/cobot-welding-hero-2.png" },
+    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Collaborative Welding Arm", href: "/automation/collaborative-welding-arm", tag: "Automation", imageId: "/images/cobot-welding-hero-2.webp" },
   ],
   faqs: [
     {
@@ -125,28 +125,28 @@ const es: ProductPageData = {
   machineName: "Máquina de Limpieza Láser",
   heroSubheadline:
     "Limpieza láser de fibra pulsada de 50W a 500W. Elimine óxido, pintura, escamas de laminación y capas de óxido sin productos químicos, sin medios abrasivos y sin daño a la superficie del material base. Opción portátil disponible.",
-  heroImageId: "/images/laser-cleaning-hero.png",
+  heroImageId: "/images/laser-cleaning-hero.webp",
   features: [
     {
       number: "01",
       headline: "Sin Productos Químicos — Cumplimiento por Diseño",
       body: "Elimine completamente los disolventes de decapado químico, neutralizadores y costos de eliminación. La limpieza láser vaporiza los contaminantes con energía fotónica — el único subproducto es partículas en el aire, manejadas por un extractor de humos estándar. No se requieren permisos de eliminación de residuos de la EPA para el proceso de limpieza en sí.",
       spec: { label: "Productos Químicos", value: "Ninguno" },
-      imageId: "/images/laser-cleaning-feature-01-no-chemicals.png",
+      imageId: "/images/laser-cleaning-feature-01-no-chemicals.webp",
     },
     {
       number: "02",
       headline: "Sin Granallado — Sin Abrasivo Incrustado",
       body: "El granallado con arena y grano incrusta partículas abrasivas en la superficie metálica — un problema de contaminación para soldadura de precisión y adhesión de recubrimientos. La limpieza láser deja una superficie químicamente limpia, ideal para preparación previa a la soldadura, adhesión de proyección térmica o unión de imprimación de pintura.",
       spec: { label: "Medios Utilizados", value: "Ninguno" },
-      imageId: "/images/laser-cleaning-feature-02-no-media.png",
+      imageId: "/images/laser-cleaning-feature-02-no-media.webp",
     },
     {
       number: "03",
       headline: "Precisamente Dirigida — Limpia Solo la Contaminación",
       body: "Los parámetros de pulso se ajustan para eliminar por ablación la capa contaminante mientras refleja el sustrato subyacente. Elimine el óxido de un tubo de cromo-molibdeno sin grabar el metal base. Limpie salpicaduras de soldadura de una superficie mecanizada sin cambiar el acabado superficial. No se requiere enmascaramiento.",
       spec: { label: "Selectividad", value: "Precisión por capas" },
-      imageId: "/images/laser-cleaning-feature-03-precision.png",
+      imageId: "/images/laser-cleaning-feature-03-precision.webp",
     },
     {
       number: "04",
@@ -205,10 +205,10 @@ const es: ProductPageData = {
     { feature: "Costo inicial del equipo", ours: "Mayor", theirs: "Menor" },
   ],
   relatedProducts: [
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.png" },
+    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.webp" },
   ],
   faqs: [
     {

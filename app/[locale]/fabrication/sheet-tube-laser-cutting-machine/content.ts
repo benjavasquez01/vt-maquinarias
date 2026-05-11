@@ -5,7 +5,7 @@ const en: ProductPageData = {
   slug: "sheet-tube-laser-cutting-machine",
   machineName: "Sheet & Tube Combo Laser",
   heroSubheadline: "VTM-ST series. One machine that cuts flat sheet and tube/structural profiles. 3–6 kW, flat bed up to 4020 (4′×20′), round tube up to 180 mm, lengths to 6 m — without buying two machines or doubling your footprint.",
-  heroImageId: "/images/sheet-tube-combo-hero.png",
+  heroImageId: "/images/sheet-tube-combo-hero.webp",
   heroAlign: "right",
   features: [],
   specs: [
@@ -52,10 +52,10 @@ const en: ProductPageData = {
     { feature: "Best for", ours: "Mixed-product shops, limited floor space", theirs: "High-volume dedicated tube or sheet runs" },
   ],
   relatedProducts: [
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Fiber Laser Tube Cutting Machine", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Tube Cutting", imageId: "/images/fiber-laser-tube-hero.png" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Fiber Laser Tube Cutting Machine", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Tube Cutting", imageId: "/images/fiber-laser-tube-hero.webp" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     { question: "How long does it take to switch from sheet mode to tube mode?", answer: "Switching from flat sheet to tube cutting takes approximately 10–15 minutes — attach the rotary chuck assembly to the machine end, load tube support rollers, switch the CNC to CypTube mode, and feed the first tube. No tools required for the chuck attachment." },
@@ -71,7 +71,7 @@ const es: ProductPageData = {
   slug: "sheet-tube-laser-cutting-machine",
   machineName: "Láser Combinado Chapa y Tubo",
   heroSubheadline: "Serie VTM-ST. Una sola máquina que corta chapa plana y perfiles de tubo/estructurales. 3–6 kW, mesa plana hasta 4020 (4′×20′), tubo redondo hasta 180 mm, longitudes hasta 6 m — sin comprar dos máquinas ni duplicar el espacio.",
-  heroImageId: "/images/sheet-tube-combo-hero.png",
+  heroImageId: "/images/sheet-tube-combo-hero.webp",
   heroAlign: "right",
   features: [],
   specs: [
@@ -118,10 +118,10 @@ const es: ProductPageData = {
     { feature: "Ideal para", ours: "Talleres de producción mixta, espacio limitado", theirs: "Producción de alto volumen dedicada a tubo o chapa" },
   ],
   relatedProducts: [
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Láser de Tubo de Fibra", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Corte de Tubo", imageId: "/images/fiber-laser-tube-hero.png" },
-    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Láser de Tubo de Fibra", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Corte de Tubo", imageId: "/images/fiber-laser-tube-hero.webp" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     { question: "¿Cuánto tiempo lleva cambiar del modo chapa al modo tubo?", answer: "Cambiar de corte de chapa plana a corte de tubo toma aproximadamente 10–15 minutos — conecte el ensamble del mandril rotativo al extremo de la máquina, cargue los rodillos de soporte de tubo, cambie el CNC al modo CypTube y alimente el primer tubo. No se requieren herramientas para la conexión del mandril." },

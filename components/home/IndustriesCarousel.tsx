@@ -12,28 +12,28 @@ const industries = {
       slug: "metal-fabrication",
       description:
         "From job shops to contract manufacturers — laser cutting, press brakes, and welding automation that scale with your workload.",
-      image: "/images/solution-metal-fabrication.png",
+      image: "/images/solution-metal-fabrication.webp",
     },
     {
       name: "Automotive",
       slug: "automotive",
       description:
         "High-repeatability stamping supports, precision laser cutting of brackets and structural components, and cobot welding for high-volume production lines.",
-      image: "/images/solution-automotive.png",
+      image: "/images/solution-automotive.webp",
     },
     {
       name: "Aerospace",
       slug: "aerospace",
       description:
         "Tight-tolerance fabrication for aerospace-grade aluminum, titanium, and stainless steel. Our machines meet the precision demands of the industry.",
-      image: "/images/solution-aerospace.png",
+      image: "/images/solution-aerospace.webp",
     },
     {
       name: "HVAC & Construction",
       slug: "hvac-construction",
       description:
         "Sheet metal ductwork, structural components, and framing fabricated faster and more accurately with our laser and press brake solutions.",
-      image: "/images/solution-hvac-construction.png",
+      image: "/images/solution-hvac-construction.webp",
     },
   ],
   es: [
@@ -42,28 +42,28 @@ const industries = {
       slug: "metal-fabrication",
       description:
         "Desde talleres de trabajo hasta fabricantes por contrato — corte láser, prensas plegadoras y automatización de soldadura que escalan con su carga de trabajo.",
-      image: "/images/solution-metal-fabrication.png",
+      image: "/images/solution-metal-fabrication.webp",
     },
     {
       name: "Automotriz",
       slug: "automotive",
       description:
         "Soportes de estampado de alta repetibilidad, corte láser de precisión de soportes y componentes estructurales, y soldadura con cobot para líneas de producción de alto volumen.",
-      image: "/images/solution-automotive.png",
+      image: "/images/solution-automotive.webp",
     },
     {
       name: "Aeroespacial",
       slug: "aerospace",
       description:
         "Fabricación de tolerancias precisas para aluminio, titanio e inoxidable grado aeroespacial. Nuestras máquinas cumplen las exigencias de precisión de la industria.",
-      image: "/images/solution-aerospace.png",
+      image: "/images/solution-aerospace.webp",
     },
     {
       name: "HVAC y Construcción",
       slug: "hvac-construction",
       description:
         "Conductos de chapa metálica, componentes estructurales y marcos fabricados más rápido y con mayor precisión con nuestras soluciones láser y de prensas plegadoras.",
-      image: "/images/solution-hvac-construction.png",
+      image: "/images/solution-hvac-construction.webp",
     },
   ],
 };

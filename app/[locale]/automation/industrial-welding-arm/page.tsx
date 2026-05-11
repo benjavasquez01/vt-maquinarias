@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Industrial Welding Arm — VTM Tech Solutions",
     description: "High-speed production welding. 20kg payload. Full US installation included.",
-    images: [{ url: "/images/industrial-welding-arm-hero.png" }],
+    images: [{ url: "/images/industrial-welding-arm-hero.webp" }],
   },
 };
 
@@ -36,7 +36,7 @@ export default async function IndustrialWeldingArmPage({
       <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-24 overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
           <Image
-            src="/images/industrial-welding-arm-hero.png"
+            src="/images/industrial-welding-arm-hero.webp"
             alt=""
             fill
             className="object-cover opacity-70"
@@ -94,7 +94,7 @@ export default async function IndustrialWeldingArmPage({
               <p className="text-white/60 leading-relaxed mb-8">{c.value.body2}</p>
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/industrial-welding-arm-cell-2.png"
+                  src="/images/industrial-welding-arm-cell-2.webp"
                   alt=""
                   fill
                   className="object-cover"

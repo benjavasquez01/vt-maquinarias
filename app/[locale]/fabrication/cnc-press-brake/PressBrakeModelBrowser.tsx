@@ -9,13 +9,13 @@ import { ImageGallery } from "@/components/ui/ImageGallery";
 
 const SERIES_FRAMES: Record<string, string[]> = {
   hydraulic: [
-    "/images/press-brake-hydraulic-1.jpg",
-    "/images/press-brake-hydraulic-2.jpg",
-    "/images/press-brake-hydraulic-3.jpg",
+    "/images/press-brake-hydraulic-1.webp",
+    "/images/press-brake-hydraulic-2.webp",
+    "/images/press-brake-hydraulic-3.webp",
   ],
   electric: [
-    "/images/press-brake-electric-1.jpg",
-    "/images/press-brake-electric-2.jpg",
+    "/images/press-brake-electric-1.webp",
+    "/images/press-brake-electric-2.webp",
   ],
 };
 
@@ -179,7 +179,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Heavy-Duty Bending",
       power: "63 – 1600 T",
       badge: "Available",
-      image: "/images/press-brake-hydraulic-1.jpg",
+      image: "/images/press-brake-hydraulic-1.webp",
       description:
         "26 hydraulic press brake configurations from 63 T up to 1600 T, with bending lengths from 2.5 m to 8 m. Dual-cylinder electrohydraulic synchronization, dual-motor drive on heavy frames (≥ 800 T), and hydraulic auto-crowning compensate for ram deflection in real time.",
       bestFor: [
@@ -196,7 +196,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Tandem High-Tonnage Bending",
       power: "160 – 800 T (tandem)",
       badge: "Available",
-      image: "/images/press-brake-electric-1.jpg",
+      image: "/images/press-brake-electric-1.webp",
       description:
         "Tandem servo-controlled press brakes pairing two synchronized machines for combined bending lengths up to 16 m and per-machine tonnage from 160 T to 800 T. Servo-driven precision and synchronization between both rams holds angle consistency across long, heavy parts that exceed the capacity of a single machine.",
       bestFor: [
@@ -215,7 +215,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Plegado de Alto Rendimiento",
       power: "63 – 1600 T",
       badge: "Disponible",
-      image: "/images/press-brake-hydraulic-1.jpg",
+      image: "/images/press-brake-hydraulic-1.webp",
       description:
         "26 configuraciones de prensa plegadora hidráulica de 63 T hasta 1600 T, con longitudes de plegado de 2.5 m a 8 m. Sincronización electrohidráulica de doble cilindro, accionamiento de doble motor en bastidores pesados (≥ 800 T) y arqueado automático hidráulico compensan la deflexión del carnero en tiempo real.",
       bestFor: [
@@ -232,7 +232,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Plegado en Tándem de Alto Tonelaje",
       power: "160 – 800 T (tándem)",
       badge: "Disponible",
-      image: "/images/press-brake-electric-1.jpg",
+      image: "/images/press-brake-electric-1.webp",
       description:
         "Prensas plegadoras servo-controladas en tándem que combinan dos máquinas sincronizadas para longitudes de plegado combinadas de hasta 16 m y tonelaje por máquina de 160 T a 800 T. Precisión servo-controlada y sincronización entre ambos carneros mantienen la consistencia angular en piezas largas y pesadas que superan la capacidad de una sola máquina.",
       bestFor: [

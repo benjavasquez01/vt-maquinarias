@@ -6,20 +6,20 @@ const en: ProductPageData = {
   machineName: "CNC Press Brake",
   heroSubheadline:
     "Two drive platforms — hydraulic single machines from 63 to 1600 tons for heavy plate, and servo electric tandem pairs from 160 to 800 tons per machine for synchronized bending up to 16 m. Graphic CNC touchscreen controller with 3D bend simulation, 4+1 to 8+1 axis back gauge, and automatic crowning compensation.",
-  heroImageId: "/images/cnc-press-brake-hero-2.png",
+  heroImageId: "/images/cnc-press-brake-hero-2.webp",
   heroImageFit: "cover",
   features: [
     {
       headline: "Automatic Crowning Compensation",
       body: "When pressing long parts, both the bed and ram flex under load, causing the center of the bend to angle differently than the ends. VTM press brakes include a hydraulic crowning system that pre-compensates the bed — raising it slightly at the center — so the bend angle stays consistent from end to end.",
       spec: { label: "Crowning", value: "Automatic" },
-      imageId: "/images/cnc-press-brake-feature-03-crowning.png",
+      imageId: "/images/cnc-press-brake-feature-03-crowning.webp",
     },
     {
       headline: "4+1 to 8+1 Axis Back Gauge — Complex Parts, Simple Setup",
       body: "X, R, Z1, and Z2 axes on the back gauge allow independent positioning of each finger — critical for flanges at multiple depths, offset bends, and parts that taper. Every back gauge position is stored in the part program and recalled automatically when you run the same job again.",
       spec: { label: "Back Gauge", value: "4+1 to 8+1 axis" },
-      imageId: "/images/cnc-press-brake-feature-04-backgauge.png",
+      imageId: "/images/cnc-press-brake-feature-04-backgauge.webp",
     },
   ],
   specs: [
@@ -71,9 +71,9 @@ const en: ProductPageData = {
     { feature: "Initial cost", ours: "Higher", theirs: "Lower" },
   ],
   relatedProducts: [
-    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/ironworker-hero.png" },
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Ironworker", href: "/fabrication/ironworker", tag: "Multi-Function", imageId: "/images/ironworker-hero.webp" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Cutting", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     {
@@ -105,20 +105,20 @@ const es: ProductPageData = {
   machineName: "Plegadora CNC",
   heroSubheadline:
     "Dos plataformas de accionamiento — máquinas hidráulicas individuales de 63 a 1600 toneladas para placa pesada, y pares servo eléctricos en tándem de 160 a 800 toneladas por máquina para plegado sincronizado hasta 16 m. Controlador táctil CNC gráfico con simulación de plegado 3D, tope trasero de 4+1 a 8+1 ejes y compensación automática de arqueado.",
-  heroImageId: "/images/cnc-press-brake-hero-2.png",
+  heroImageId: "/images/cnc-press-brake-hero-2.webp",
   heroImageFit: "cover",
   features: [
     {
       headline: "Compensación Automática de Arqueado",
       body: "Al plegar piezas largas, la viga inferior y el carnero se flexionan bajo la carga, haciendo que el ángulo de doblez en el centro difiera del de los extremos. Las plegadoras VTM incluyen un sistema de coronamiento hidráulico que pre-compensa la viga inferior — elevándola ligeramente en el centro — para mantener un ángulo uniforme de extremo a extremo.",
       spec: { label: "Arqueado", value: "Automático" },
-      imageId: "/images/cnc-press-brake-feature-03-crowning.png",
+      imageId: "/images/cnc-press-brake-feature-03-crowning.webp",
     },
     {
       headline: "Tope Trasero de 4+1 a 8+1 Ejes — Piezas Complejas, Configuración Simple",
       body: "Los ejes X, R, Z1 y Z2 en el tope trasero permiten el posicionamiento independiente de cada dedo — crítico para bridas a múltiples profundidades, dobleces desplazados y piezas que se afinan. Cada posición del tope trasero se almacena en el programa de la pieza y se recuerda automáticamente cuando se ejecuta el mismo trabajo nuevamente.",
       spec: { label: "Tope Trasero", value: "4+1 a 8+1 ejes" },
-      imageId: "/images/cnc-press-brake-feature-04-backgauge.png",
+      imageId: "/images/cnc-press-brake-feature-04-backgauge.webp",
     },
   ],
   specs: [
@@ -170,9 +170,9 @@ const es: ProductPageData = {
     { feature: "Costo inicial", ours: "Mayor", theirs: "Menor" },
   ],
   relatedProducts: [
-    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/ironworker-hero.png" },
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
+    { name: "Punzonadora Hidráulica", href: "/fabrication/ironworker", tag: "Multifunción", imageId: "/images/ironworker-hero.webp" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     {

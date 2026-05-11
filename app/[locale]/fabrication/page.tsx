@@ -25,7 +25,7 @@ export default async function FabricationPage({
       {/* Hero */}
       <section className="relative bg-vtm-dark pt-32 pb-20 px-6 lg:px-10 overflow-hidden">
         <Image
-          src="/images/fabrication-category-hero.png"
+          src="/images/fabrication-category-hero.webp"
           alt=""
           fill
           priority

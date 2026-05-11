@@ -23,7 +23,7 @@ export default async function AboutPage({
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-vtm-dark pt-16">
         <Image
-          src="/images/about-hero.png"
+          src="/images/about-hero.webp"
           alt="Manufacturing facility"
           fill
           priority
@@ -58,7 +58,7 @@ export default async function AboutPage({
             </div>
             <div className="relative h-96 lg:h-auto lg:min-h-[480px]">
               <Image
-                src="/images/about-company-story-2.png"
+                src="/images/about-company-story-2.webp"
                 alt="Dark factory interior with industrial machinery"
                 fill
                 className="object-cover"

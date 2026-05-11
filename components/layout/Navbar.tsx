@@ -217,7 +217,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/images/logo-light.png"
+              src="/images/logo-light.webp"
               alt="VTM Tech Solutions"
               width={1006}
               height={513}

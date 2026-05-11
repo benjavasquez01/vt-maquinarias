@@ -39,7 +39,7 @@ export function TubeHeroScroll({
     <div ref={wrapperRef} style={{ height: "120vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <Image
-          src="/images/fiber-laser-tube-hero.png"
+          src="/images/fiber-laser-tube-hero.webp"
           alt="Fiber laser tube cutting machine"
           fill
           priority

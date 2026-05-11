@@ -16,11 +16,11 @@ const en: MetalFabContent = {
   },
   grid: { sectionLabel: "The Full Line", headline: "Equipment for Every Stage of Fabrication" },
   machines: [
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Cutting", imageId: "/images/fiber-laser-hero.png" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Bending", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · no consumables", tag: "Welding", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Laser Cleaning Machine", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · chemical-free", tag: "Cleaning", imageId: "/images/laser-cleaning-hero.png" },
-    { name: "Ironworker", href: "/fabrication/ironworker", spec: "55–165 ton · 4-in-1", tag: "Multi-Process", imageId: "/images/ironworker-hero.png" },
+    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Cutting", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Bending", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · no consumables", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Laser Cleaning Machine", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · chemical-free", tag: "Cleaning", imageId: "/images/laser-cleaning-hero.webp" },
+    { name: "Ironworker", href: "/fabrication/ironworker", spec: "55–165 ton · 4-in-1", tag: "Multi-Process", imageId: "/images/ironworker-hero.webp" },
   ],
   advantages: {
     items: [
@@ -47,11 +47,11 @@ const es: MetalFabContent = {
   },
   grid: { sectionLabel: "La Línea Completa", headline: "Equipos para Cada Etapa de la Fabricación" },
   machines: [
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "/images/fiber-laser-hero.png" },
-    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.png" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · sin consumibles", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.png" },
-    { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · sin químicos", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.png" },
-    { name: "Punzonadora", href: "/fabrication/ironworker", spec: "55–165 ton · 4 en 1", tag: "Multiproceso", imageId: "/images/ironworker-hero.png" },
+    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", spec: "3–20 kW · ±0.05mm", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", spec: "40–400 ton · ±0.01mm", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
+    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", spec: "1.5–3 kW · sin consumibles", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", spec: "100–3000W · sin químicos", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.webp" },
+    { name: "Punzonadora", href: "/fabrication/ironworker", spec: "55–165 ton · 4 en 1", tag: "Multiproceso", imageId: "/images/ironworker-hero.webp" },
   ],
   advantages: {
     items: [

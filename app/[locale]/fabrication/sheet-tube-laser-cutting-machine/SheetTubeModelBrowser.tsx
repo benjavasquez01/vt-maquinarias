@@ -20,11 +20,11 @@ type ModelSpecs = {
 // ─── Image frames ────────────────────────────────────────────────────────────
 
 const SERIES_FRAMES: string[] = [
-  "/images/sheet-tube-st-1.png",
-  "/images/sheet-tube-st-2.png",
-  "/images/sheet-tube-st-3.png",
-  "/images/sheet-tube-st-4.png",
-  "/images/sheet-tube-st-5.png",
+  "/images/sheet-tube-st-1.webp",
+  "/images/sheet-tube-st-2.webp",
+  "/images/sheet-tube-st-3.webp",
+  "/images/sheet-tube-st-4.webp",
+  "/images/sheet-tube-st-5.webp",
 ];
 
 // ─── Specs ───────────────────────────────────────────────────────────────────
@@ -57,7 +57,7 @@ const SERIES_CONTENT = {
     tagline: "Sheet & Tube",
     power: "2–6 kW",
     badge: "Available",
-    image: "/images/sheet-tube-combo-hero.png",
+    image: "/images/sheet-tube-combo-hero.webp",
     description: "One machine, two capabilities. The VTM-ST cuts flat sheet up to 6000 × 2500 mm and round/square tube profiles up to Φ230 mm — four bed sizes to match your production volume.",
     bestFor: ["Mixed sheet and tube production", "Bed sizes from 3015 to 6025", "Round and square tube up to Φ230 mm", "2 kW to 6 kW laser power"],
   },
@@ -66,7 +66,7 @@ const SERIES_CONTENT = {
     tagline: "Chapa y Tubo",
     power: "2–6 kW",
     badge: "Disponible",
-    image: "/images/sheet-tube-combo-hero.png",
+    image: "/images/sheet-tube-combo-hero.webp",
     description: "Una máquina, dos capacidades. La VTM-ST corta chapa plana hasta 6000 × 2500 mm y perfiles de tubo redondos/cuadrados hasta Φ230 mm — cuatro tamaños de mesa para adaptarse a su volumen de producción.",
     bestFor: ["Producción mixta de chapa y tubo", "Mesas desde 3015 hasta 6025", "Tubo redondo y cuadrado hasta Φ230 mm", "Potencia láser de 2 kW a 6 kW"],
   },

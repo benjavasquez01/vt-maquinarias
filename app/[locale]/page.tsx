@@ -38,20 +38,20 @@ const AUTOMATION_PRODUCTS = [
   {
     key: "cobot" as const,
     href: "/automation/collaborative-welding-arm",
-    image: "/images/cobot-welding-hero-2.png",
+    image: "/images/cobot-welding-hero-2.webp",
   },
   {
     key: "industrial" as const,
     href: "/automation/industrial-welding-arm",
-    image: "/images/industrial-welding-arm-hero.png",
+    image: "/images/industrial-welding-arm-hero.webp",
   },
 ];
 
 const FEATURE_IMAGES = [
-  { key: "precision" as const, image: "/images/homepage-feature-precision.jpg.png", imageAlt: "Laser cutting machine creating precise sparks on metal" },
-  { key: "partnership" as const, image: "/images/homepage-feature-partnership.jpg.png", imageAlt: "Modern CNC factory floor with machinery", reverse: true },
-  { key: "support" as const, image: "/images/homepage-feature-support.jpg.png", imageAlt: "Industrial worker operating machinery" },
-  { key: "consultation" as const, image: "/images/homepage-feature-consultation.jpg.png", imageAlt: "Industrial lighting and laser technology", reverse: true },
+  { key: "precision" as const, image: "/images/homepage-feature-precision.jpg.webp", imageAlt: "Laser cutting machine creating precise sparks on metal" },
+  { key: "partnership" as const, image: "/images/homepage-feature-partnership.jpg.webp", imageAlt: "Modern CNC factory floor with machinery", reverse: true },
+  { key: "support" as const, image: "/images/homepage-feature-support.jpg.webp", imageAlt: "Industrial worker operating machinery" },
+  { key: "consultation" as const, image: "/images/homepage-feature-consultation.jpg.webp", imageAlt: "Industrial lighting and laser technology", reverse: true },
 ];
 
 const BLOG_SLUGS = [

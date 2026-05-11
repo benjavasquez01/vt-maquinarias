@@ -85,7 +85,7 @@ export function ControllerComparison({ locale }: { locale: "en" | "es" }) {
                 <th className="text-left px-5 py-6 w-[35%] align-bottom">
                   <div className="relative w-full aspect-[4/3] mb-4 bg-white">
                     <Image
-                      src="/images/DA-53T.png"
+                      src="/images/DA-53T.webp"
                       alt="DELEM DA-53T CNC Controller"
                       fill
                       className="object-contain"
@@ -98,7 +98,7 @@ export function ControllerComparison({ locale }: { locale: "en" | "es" }) {
                 <th className="text-left px-5 py-6 bg-vtm-dark/[0.03] border-l border-vtm-gray-border w-[35%] align-bottom">
                   <div className="relative w-full aspect-[4/3] mb-4 bg-white">
                     <Image
-                      src="/images/DA-69S.png"
+                      src="/images/DA-69S.webp"
                       alt="DELEM DA-69S CNC Controller"
                       fill
                       className="object-contain"

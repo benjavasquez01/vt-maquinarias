@@ -32,7 +32,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Entry Production",
       power: "1.5–3 kW",
       badge: "Most Accessible",
-      image: "/images/fiber-laser-feature-01-speed.png",
+      image: "/images/fiber-laser-feature-01-speed.webp",
       description:
         "The VTM-A is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW. Cuts mild steel to ½\", stainless to ¼\", and aluminum to 5/16\" at production speeds.",
       bestFor: [
@@ -64,7 +64,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Production Workhorse",
       power: "3–12 kW",
       badge: "Most Popular",
-      image: "/images/fiber-laser-feature-03-power.png",
+      image: "/images/fiber-laser-feature-03-power.webp",
       description:
         "The VTM-B is built for continuous production at the widest range of material thicknesses and sizes. From 3 kW for thin sheet to 12 kW for 1\"+ mild steel and ¾\" stainless, in beds up to 6′×20′. The standard choice for contract manufacturers and high-throughput fab shops.",
       bestFor: [
@@ -82,7 +82,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Exchange Table",
       power: "3–12 kW",
       badge: "Highest Throughput",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      image: "/images/fiber-laser-feature-04-exchange-table.webp",
       description:
         "The VTM-FE pairs the B-series cutting platform with a dual-pallet exchange table included as standard — not an option. Load the next blank while the machine cuts the current sheet. Sub-15-second pallet changeover eliminates the largest source of idle time in sheet metal production.",
       bestFor: [
@@ -100,7 +100,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Heavy Plate",
       power: "20–30 kW",
       badge: "Thickest Cuts",
-      image: "/images/fiber-laser-feature-03-power.png",
+      image: "/images/fiber-laser-feature-03-power.webp",
       description:
         "The VTM-G is designed for structural fabricators and heavy plate shops. 20 and 30 kW Raycus sources cut mild steel to 2\"+, stainless to 1.5\", and aluminum to 1\" at speeds that make plasma cutting obsolete. Large-format beds handle oversized structural plate.",
       bestFor: [
@@ -118,7 +118,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Enclosed Compact",
       power: "1.5–3 kW",
       badge: "Class 1 Safety",
-      image: "/images/fiber-laser-feature-02-accuracy.png",
+      image: "/images/fiber-laser-feature-02-accuracy.webp",
       description:
         "The VTM-PE adds a full safety enclosure to the EA-series platform — achieving Laser Safety Class 1 with hardware-interlocked doors. No laser eyewear required for operators or bystanders. Ideal for training rooms, R&D labs, and production environments shared with other teams.",
       bestFor: [
@@ -136,7 +136,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Enclosed Industrial",
       power: "3–6 kW",
       badge: "Class 1 Industrial",
-      image: "/images/fiber-laser-feature-05-controller.png",
+      image: "/images/fiber-laser-feature-05-controller.webp",
       description:
         "The VTM-SE is the full industrial enclosed format — Laser Safety Class 1, integrated 6″ fume extraction port, and hardware-redundant door interlocks on a production-scale bed. Built for high-production shops where Class 1 compliance is required by facility code or insurance.",
       bestFor: [
@@ -156,7 +156,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Producción de Entrada",
       power: "1.5–3 kW",
       badge: "Más Accesible",
-      image: "/images/fiber-laser-feature-01-speed.png",
+      image: "/images/fiber-laser-feature-01-speed.webp",
       description:
         "La VTM-A es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW. Corta acero dulce hasta 12 mm, inoxidable hasta 6 mm y aluminio hasta 8 mm a velocidades de producción.",
       bestFor: [
@@ -188,7 +188,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Caballo de Batalla",
       power: "3–12 kW",
       badge: "Más Popular",
-      image: "/images/fiber-laser-feature-03-power.png",
+      image: "/images/fiber-laser-feature-03-power.webp",
       description:
         "La VTM-B está diseñada para producción continua en la mayor gama de espesores y tamaños de material. De 3 kW para chapa fina a 12 kW para acero dulce de 25 mm+ e inoxidable de 20 mm, en mesas de hasta 6′×20′. La opción estándar para fabricantes por contrato y talleres de alta producción.",
       bestFor: [
@@ -206,7 +206,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Mesa de Intercambio",
       power: "3–12 kW",
       badge: "Mayor Rendimiento",
-      image: "/images/fiber-laser-feature-04-exchange-table.png",
+      image: "/images/fiber-laser-feature-04-exchange-table.webp",
       description:
         "La VTM-FE combina la plataforma de corte de la serie B con una mesa de intercambio de doble paleta incluida de serie — no como accesorio. Cargue la siguiente chapa mientras la máquina corta la actual. Cambio de paleta en menos de 15 segundos, eliminando la mayor fuente de tiempo muerto en producción.",
       bestFor: [
@@ -224,7 +224,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Placa Gruesa",
       power: "20–30 kW",
       badge: "Cortes más Gruesos",
-      image: "/images/fiber-laser-feature-03-power.png",
+      image: "/images/fiber-laser-feature-03-power.webp",
       description:
         "La VTM-G está diseñada para fabricantes de acero estructural y talleres de placa gruesa. Fuentes Raycus de 20 y 30 kW cortan acero dulce a 50 mm+, inoxidable a 40 mm y aluminio a 25 mm a velocidades que hacen obsoleto el corte por plasma. Mesas de gran formato para placa estructural sobredimensionada.",
       bestFor: [
@@ -242,7 +242,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Encapsulado Compacto",
       power: "1.5–3 kW",
       badge: "Seguridad Clase 1",
-      image: "/images/fiber-laser-feature-02-accuracy.png",
+      image: "/images/fiber-laser-feature-02-accuracy.webp",
       description:
         "La VTM-PE añade un encapsulado de seguridad completo a la plataforma de la serie EA — alcanzando la Clase de Seguridad Láser 1 con puertas de enclavamiento de hardware. No se requieren gafas láser para operadores ni personas cercanas. Ideal para salas de capacitación, laboratorios de I+D y entornos compartidos.",
       bestFor: [
@@ -260,7 +260,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       tagline: "Encapsulado Industrial",
       power: "3–6 kW",
       badge: "Industrial Clase 1",
-      image: "/images/fiber-laser-feature-05-controller.png",
+      image: "/images/fiber-laser-feature-05-controller.webp",
       description:
         "La VTM-SE es el formato encapsulado industrial completo — Clase de Seguridad Láser 1, puerto de extracción de 6″ integrado y enclavamientos de puerta con redundancia hardware en mesa de escala productiva. Para talleres de alta producción donde el cumplimiento de Clase 1 es exigido por código o seguro.",
       bestFor: [

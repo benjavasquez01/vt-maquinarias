@@ -20,7 +20,7 @@ const POSTS = [
     category: "Buying Guide",
     date: "March 28, 2026",
     readTime: "8 min read",
-    imageId: "/images/blog-fiber-vs-co2.png",
+    imageId: "/images/blog-fiber-vs-co2.webp",
   },
   {
     slug: "cobot-welding-roi-real-numbers",
@@ -30,7 +30,7 @@ const POSTS = [
     category: "Case Study",
     date: "March 14, 2026",
     readTime: "11 min read",
-    imageId: "/images/blog-cobot-roi.png",
+    imageId: "/images/blog-cobot-roi.webp",
   },
   {
     slug: "press-brake-tonnage-calculator",
@@ -40,7 +40,7 @@ const POSTS = [
     category: "Technical Guide",
     date: "February 26, 2026",
     readTime: "6 min read",
-    imageId: "/images/blog-press-brake-tonnage.png",
+    imageId: "/images/blog-press-brake-tonnage.webp",
   },
   {
     slug: "laser-cleaning-vs-sandblasting",
@@ -50,7 +50,7 @@ const POSTS = [
     category: "Technical Guide",
     date: "February 12, 2026",
     readTime: "7 min read",
-    imageId: "/images/blog-laser-cleaning-compariso.png",
+    imageId: "/images/blog-laser-cleaning-compariso.webp",
   },
   {
     slug: "laser-welding-vs-tig-welding-comparison",
@@ -60,7 +60,7 @@ const POSTS = [
     category: "Technical Guide",
     date: "January 15, 2026",
     readTime: "9 min read",
-    imageId: "/images/blog-laser-vs-tig.png",
+    imageId: "/images/blog-laser-vs-tig.webp",
   },
 ];
 

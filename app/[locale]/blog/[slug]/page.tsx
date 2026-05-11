@@ -23,7 +23,7 @@ const POSTS: Record<string, {
     category: "Buying Guide",
     date: "April 10, 2026",
     readTime: "7 min read",
-    imageId: "/images/blog-cobot-roi.png",
+    imageId: "/images/blog-cobot-roi.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "The cobot welding market is growing fast, and so is the number of shops that bought one and didn't get the ROI they expected. Usually, it's not because the machine failed — it's because the shop wasn't set up to use it effectively. This checklist exists to help you find out before you spend $85,000–$120,000." },
@@ -47,8 +47,8 @@ const POSTS: Record<string, {
       { type: "p", content: "If you answered yes to questions 1, 3, 4, and 5, you're likely a good cobot candidate. If you answered no to fixture quality or can't name your high-volume parts, fix those problems first — they'll improve your manual welding operation too, and they're prerequisites for cobot success. We'd rather tell you that now than after installation." },
     ],
     related: [
-      { title: "Cobot Welding ROI: Real Numbers from 3 US Shops", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.png", category: "Case Study" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
+      { title: "Cobot Welding ROI: Real Numbers from 3 US Shops", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.webp", category: "Case Study" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
     ],
   },
   "press-brake-throughput-signs": {
@@ -57,7 +57,7 @@ const POSTS: Record<string, {
     category: "Technical Guide",
     date: "April 3, 2026",
     readTime: "6 min read",
-    imageId: "/images/blog-press-brake-tonnage.png",
+    imageId: "/images/blog-press-brake-tonnage.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "In most fabrication shops, the press brake isn't the flashiest machine. The fiber laser gets the attention. The cobot gets the demos. The press brake just sits there bending parts — until it can't keep up, and suddenly every downstream operation is waiting on it." },
@@ -76,8 +76,8 @@ const POSTS: Record<string, {
       { type: "p", content: "Start by measuring actual setup time and run time for your 10 most common jobs over two weeks. The data will tell you whether you have a capacity problem or a setup problem. A capacity problem requires investment. A setup problem requires process changes — and sometimes a machine upgrade to a controller and tooling system that makes those process changes possible. We're happy to walk through your production data with you and give you an honest assessment." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
+      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Technical Guide" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
     ],
   },
   "fiber-laser-vs-co2-2026": {
@@ -86,7 +86,7 @@ const POSTS: Record<string, {
     category: "Buying Guide",
     date: "March 28, 2026",
     readTime: "8 min read",
-    imageId: "/images/blog-fiber-vs-co2.png",
+    imageId: "/images/blog-fiber-vs-co2.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "If you're looking at laser cutting equipment, you'll encounter both fiber and CO₂ options from nearly every manufacturer. The specifications look similar on paper. The operating realities are not." },
@@ -109,8 +109,8 @@ const POSTS: Record<string, {
       { type: "p", content: "For a US metal fabrication shop cutting steel, stainless, aluminum, and occasional non-ferrous material under 25mm, fiber laser is the clear choice in 2026. Lower operating cost, higher speed on thin sheet, and zero mirror maintenance. The only cases where CO₂ remains competitive are thick plate specialists and shops cutting non-metallic materials." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
+      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Technical Guide" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
     ],
   },
   "fiber-laser-vs-co2-laser-cutting": {
@@ -119,7 +119,7 @@ const POSTS: Record<string, {
     category: "Buying Guide",
     date: "March 28, 2026",
     readTime: "8 min read",
-    imageId: "/images/blog-fiber-vs-co2.png",
+    imageId: "/images/blog-fiber-vs-co2.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "If you're looking at laser cutting equipment, you'll encounter both fiber and CO₂ options from nearly every manufacturer. The specifications look similar on paper. The operating realities are not." },
@@ -142,8 +142,8 @@ const POSTS: Record<string, {
       { type: "p", content: "For a US metal fabrication shop cutting steel, stainless, aluminum, and occasional non-ferrous material under 25mm, fiber laser is the clear choice in 2026. Lower operating cost, higher speed on thin sheet, and zero mirror maintenance. The only cases where CO₂ remains competitive are thick plate specialists and shops cutting non-metallic materials." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.png", category: "Technical Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
+      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Technical Guide" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
     ],
   },
   "cobot-welding-roi-real-numbers": {
@@ -152,7 +152,7 @@ const POSTS: Record<string, {
     category: "Case Study",
     date: "March 14, 2026",
     readTime: "11 min read",
-    imageId: "/images/blog-cobot-roi.png",
+    imageId: "/images/blog-cobot-roi.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "Before a shop invests $85,000–$120,000 in a cobot welding cell, they need real numbers — not manufacturer projections. We followed three VTM customers through their first 18 months of cobot operation and documented the actual results." },
@@ -174,8 +174,8 @@ const POSTS: Record<string, {
       ]},
     ],
     related: [
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
+      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Buying Guide" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
     ],
   },
   "press-brake-tonnage-calculator": {
@@ -184,7 +184,7 @@ const POSTS: Record<string, {
     category: "Technical Guide",
     date: "February 28, 2026",
     readTime: "7 min read",
-    imageId: "/images/blog-press-brake-tonnage.png",
+    imageId: "/images/blog-press-brake-tonnage.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "Buying a press brake without calculating required tonnage is one of the most common — and costly — mistakes in fabrication equipment purchasing. Too little tonnage and the machine can't form your material. Too much and you've spent $40,000–$80,000 extra on capacity you'll never use." },
@@ -208,8 +208,8 @@ const POSTS: Record<string, {
       { type: "p", content: "Our CNC hydraulic press brakes range from 40 ton/4' to 400 ton/14'. All come with the Delem DA-66T controller, 4-axis back gauge, and ±0.01mm repeatability. We'll help you spec the right machine for your material mix before you commit to a purchase." },
     ],
     related: [
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
+      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Buying Guide" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
     ],
   },
   "laser-cleaning-vs-sandblasting": {
@@ -218,7 +218,7 @@ const POSTS: Record<string, {
     category: "Technical Guide",
     date: "February 12, 2026",
     readTime: "6 min read",
-    imageId: "/images/blog-laser-cleaning-compariso.png",
+    imageId: "/images/blog-laser-cleaning-compariso.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "Sandblasting and shot blasting have dominated surface preparation for over a century. Laser cleaning entered fabrication shops in the last decade — and it's displacing media blasting in specific applications where cleanliness, precision, and operating cost matter." },
@@ -240,8 +240,8 @@ const POSTS: Record<string, {
       { type: "p", content: "A sandblasting operation consuming 500 lbs of media per day at $0.20/lb costs $100/day in media alone — $25,000/year before disposal, labor, and equipment maintenance. A laser cleaning system's primary operating cost is electricity. For most fabrication shops, the laser cleaning ROI is 18–36 months." },
     ],
     related: [
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.png", category: "Technical Guide" },
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.png", category: "Buying Guide" },
+      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
+      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Buying Guide" },
     ],
   },
   "laser-welding-vs-tig-welding-comparison": {
@@ -250,7 +250,7 @@ const POSTS: Record<string, {
     category: "Technical Guide",
     date: "January 15, 2026",
     readTime: "9 min read",
-    imageId: "/images/blog-laser-vs-tig.png",
+    imageId: "/images/blog-laser-vs-tig.webp",
     author: "VTM Tech Solutions",
     body: [
       { type: "p", content: "TIG welding dominated precision fabrication for good reason: low heat input, clean bead appearance, and the ability to weld virtually any metal. Laser welding is not trying to replace TIG everywhere — but it is replacing it in specific applications where speed, heat input, and consumable cost matter." },
@@ -270,8 +270,8 @@ const POSTS: Record<string, {
       { type: "p", content: "Most fabrication shops don't replace their TIG capability — they add laser welding for the production work that benefits from it, and keep TIG for complex, exotic, or thick-section work. The two technologies are complementary, not competitive." },
     ],
     related: [
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.png", category: "Technical Guide" },
-      { title: "Cobot Welding ROI: Real Numbers", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.png", category: "Case Study" },
+      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
+      { title: "Cobot Welding ROI: Real Numbers", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.webp", category: "Case Study" },
     ],
   },
 };
@@ -283,7 +283,7 @@ const DEFAULT_POST = {
   category: "General",
   date: "",
   readTime: "",
-  imageId: "/images/blog-fiber-vs-co2.png",
+  imageId: "/images/blog-fiber-vs-co2.webp",
   author: "VTM Tech Solutions",
   body: [{ type: "p" as const, content: "This article has not been published yet. Please check back soon or browse our other articles." }],
   related: [],
@@ -400,7 +400,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                   <Link href="/fabrication/fiber-laser-cutting-machine" className="group flex gap-4 items-start">
                     <div className="relative w-16 h-16 flex-shrink-0 overflow-hidden bg-vtm-gray-border">
                       <Image
-                        src="/images/fiber-laser-hero.png"
+                        src="/images/fiber-laser-hero.webp"
                         alt="Fiber Laser"
                         fill
                         className="object-cover"
@@ -415,7 +415,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                   <Link href="/automation/collaborative-welding-arm" className="group flex gap-4 items-start">
                     <div className="relative w-16 h-16 flex-shrink-0 overflow-hidden bg-vtm-gray-border">
                       <Image
-                        src="/images/cobot-welding-hero-2.png"
+                        src="/images/cobot-welding-hero-2.webp"
                         alt="Cobot"
                         fill
                         className="object-cover"

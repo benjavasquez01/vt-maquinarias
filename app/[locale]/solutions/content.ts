@@ -12,10 +12,10 @@ const en: SolutionsPageContent = {
     subheadline: "The same machines. Configured and applied differently for each industry's specific requirements.",
   },
   solutions: [
-    { title: "Metal Fabrication", href: "/solutions/metal-fabrication", description: "Fiber laser cutting, press brakes, shearing, welding, and cleaning — the complete fabrication line.", imageId: "/images/solution-metal-fabrication.png" },
-    { title: "Automotive", href: "/solutions/automotive", description: "Precision cutting and welding for Tier 1–3 automotive component manufacturers.", imageId: "/images/solution-automotive.png" },
-    { title: "Aerospace", href: "/solutions/aerospace", description: "Titanium, aluminum alloy, and stainless processing at aerospace tolerances.", imageId: "/images/solution-aerospace.png" },
-    { title: "HVAC & Construction", href: "/solutions/hvac-construction", description: "High-throughput sheet metal processing for duct fabricators and construction component shops.", imageId: "/images/solution-hvac-construction.png" },
+    { title: "Metal Fabrication", href: "/solutions/metal-fabrication", description: "Fiber laser cutting, press brakes, shearing, welding, and cleaning — the complete fabrication line.", imageId: "/images/solution-metal-fabrication.webp" },
+    { title: "Automotive", href: "/solutions/automotive", description: "Precision cutting and welding for Tier 1–3 automotive component manufacturers.", imageId: "/images/solution-automotive.webp" },
+    { title: "Aerospace", href: "/solutions/aerospace", description: "Titanium, aluminum alloy, and stainless processing at aerospace tolerances.", imageId: "/images/solution-aerospace.webp" },
+    { title: "HVAC & Construction", href: "/solutions/hvac-construction", description: "High-throughput sheet metal processing for duct fabricators and construction component shops.", imageId: "/images/solution-hvac-construction.webp" },
   ],
   explore: "Explore",
   cta: {
@@ -34,10 +34,10 @@ const es: SolutionsPageContent = {
     subheadline: "Las mismas máquinas. Configuradas y aplicadas de forma diferente según los requisitos específicos de cada industria.",
   },
   solutions: [
-    { title: "Fabricación Metálica", href: "/solutions/metal-fabrication", description: "Corte láser de fibra, prensas plegadoras, cizallas, soldadura y limpieza — la línea completa de fabricación.", imageId: "/images/solution-metal-fabrication.png" },
-    { title: "Automotriz", href: "/solutions/automotive", description: "Corte y soldadura de precisión para fabricantes de componentes automotrices Tier 1–3.", imageId: "/images/solution-automotive.png" },
-    { title: "Aeroespacial", href: "/solutions/aerospace", description: "Procesamiento de titanio, aleaciones de aluminio e inoxidable con tolerancias aeroespaciales.", imageId: "/images/solution-aerospace.png" },
-    { title: "HVAC y Construcción", href: "/solutions/hvac-construction", description: "Procesamiento de chapa metálica de alto rendimiento para fabricantes de ductos y talleres de componentes para construcción.", imageId: "/images/solution-hvac-construction.png" },
+    { title: "Fabricación Metálica", href: "/solutions/metal-fabrication", description: "Corte láser de fibra, prensas plegadoras, cizallas, soldadura y limpieza — la línea completa de fabricación.", imageId: "/images/solution-metal-fabrication.webp" },
+    { title: "Automotriz", href: "/solutions/automotive", description: "Corte y soldadura de precisión para fabricantes de componentes automotrices Tier 1–3.", imageId: "/images/solution-automotive.webp" },
+    { title: "Aeroespacial", href: "/solutions/aerospace", description: "Procesamiento de titanio, aleaciones de aluminio e inoxidable con tolerancias aeroespaciales.", imageId: "/images/solution-aerospace.webp" },
+    { title: "HVAC y Construcción", href: "/solutions/hvac-construction", description: "Procesamiento de chapa metálica de alto rendimiento para fabricantes de ductos y talleres de componentes para construcción.", imageId: "/images/solution-hvac-construction.webp" },
   ],
   explore: "Explorar",
   cta: {

@@ -16,7 +16,7 @@ type HeroContent = {
 export function HeroScroll({
   c,
   locale,
-  image = "/images/fiber-laser-hero-2.png",
+  image = "/images/fiber-laser-hero-2.webp",
   quoteHref = "/quote?machine=fiber-laser-cutting-machine",
 }: {
   c: HeroContent;

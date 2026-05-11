@@ -24,7 +24,7 @@ export default async function QuotePage({
       <header className="border-b border-white/10 px-6 lg:px-10 h-16 flex items-center justify-between max-w-screen-xl mx-auto">
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/images/logo-dark.png"
+            src="/images/logo-dark.webp"
             alt="VTM Tech Solutions"
             width={1568}
             height={745}
