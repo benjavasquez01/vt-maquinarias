@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "Nosotros",
   description:
-    "VTM Tech Solutions is the US arm of VT Maquinarias, bringing 15+ years of Chilean industrial machinery expertise to American metal fabrication shops.",
+    "VT Maquinarias es una empresa chilena de maquinaria industrial con más de 15 años de experiencia al servicio de los talleres de fabricación metálica de Chile.",
 };
 
 export default async function AboutPage({

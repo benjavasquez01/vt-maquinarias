@@ -6,9 +6,9 @@ import type { Metadata } from "next";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Support",
+  title: "Soporte",
   description:
-    "VTM Tech Solutions support: installation, training, spare parts, and remote diagnostics for the life of your machine.",
+    "Soporte VT Maquinarias: instalación, capacitación, repuestos y diagnóstico remoto durante toda la vida útil de su máquina.",
 };
 
 const serviceIcons = [
@@ -158,7 +158,7 @@ export default async function SupportPage({
             <Button href="/contact" variant="primary" size="lg">
               {c.cta.cta1}
             </Button>
-            <Button href="tel:+15550000000" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+            <Button href="tel:+56900000000" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
               {c.cta.cta2}
             </Button>
           </div>

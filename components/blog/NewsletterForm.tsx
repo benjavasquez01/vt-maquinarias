@@ -22,8 +22,8 @@ export function NewsletterForm() {
           materials: "",
           timeline: "",
           machinesOfInterest: "",
-          language: "en",
-          transcript: "Blog newsletter subscription",
+          language: "es",
+          transcript: "Suscripción al boletín del blog",
           source: "newsletter",
         }),
       });
@@ -33,7 +33,7 @@ export function NewsletterForm() {
   };
 
   if (submitted) {
-    return <p className="text-vtm-dark font-semibold">You&apos;re subscribed. Watch your inbox.</p>;
+    return <p className="text-vtm-dark font-semibold">¡Suscrito! Revise su bandeja de entrada.</p>;
   }
 
   return (
@@ -44,10 +44,10 @@ export function NewsletterForm() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="your@email.com"
         className="flex-1 border border-vtm-gray-border px-4 py-3 text-sm focus:outline-none focus:border-vtm-dark"
-        aria-label="Email address"
+        aria-label="Correo electrónico"
         required
       />
-      <Button type="submit" variant="primary">Subscribe</Button>
+      <Button type="submit" variant="primary">Suscribirse</Button>
     </form>
   );
 }

@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Automation — Industry 4.0 Welding Robots for US Fab Shops",
+  title: "Automatización — Robots de Soldadura Industria 4.0",
   description:
-    "VTM Automation brings Industry 4.0 smart welding robots to US fabrication shops. IIoT-connected cobots and industrial arms. 6-week deployment. ROI-positive within 18 months.",
+    "VT Maquinarias lleva robots de soldadura inteligentes Industria 4.0 a los talleres de Chile. Cobots y brazos industriales conectados (IIoT). Implementación en 6 semanas. Retorno de inversión dentro de 18 meses.",
 };
 
 export default async function AutomationPage({

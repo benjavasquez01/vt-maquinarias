@@ -17,7 +17,7 @@ const labels = {
     iso: "Certificado ISO 9001",
     isoSub: "Gestión de Calidad de Equipos",
     ce: "Certificado UL",
-    ceSub: "Estándar de Seguridad Eléctrica de EE.UU.",
+    ceSub: "Seguridad Eléctrica Certificada",
   },
 };
 

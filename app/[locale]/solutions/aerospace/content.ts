@@ -11,41 +11,6 @@ export type AerospaceContent = {
   cta: { sectionLabel: string; headline: string; body: string; cta: string };
 };
 
-const en: AerospaceContent = {
-  hero: {
-    sectionLabel: "Industry Solutions",
-    headline: "Aerospace",
-    subheadline: "Aerospace demands tolerances that most fabrication equipment can't hold. Ours can. ±0.05mm on titanium, aluminum alloy, and stainless — cut to print, every time.",
-    cta1: "Request a Quote",
-    cta2: "Talk to a Specialist",
-  },
-  materials: {
-    sectionLabel: "Material Capabilities",
-    headline: "Aerospace materials, processed correctly",
-    items: [
-      { material: "Titanium (Ti-6Al-4V)", cap: "Fiber laser cutting with nitrogen assist gas eliminates oxidation. Heat-affected zone minimized to preserve material properties." },
-      { material: "Aluminum Alloys (6061, 7075)", cap: "High-speed fiber laser cutting with clean edges. No burr formation at correct parameters — reduced deburring time in post-processing." },
-      { material: "Stainless Steel (304, 316, 17-4 PH)", cap: "Nitrogen-assist cutting for oxide-free edges. Press brake bending with springback compensation programmed for each grade." },
-      { material: "Inconel and high-temperature alloys", cap: "Contact us — fiber laser parameters for these materials require custom configuration. We have experience with Inconel 625 and 718." },
-    ],
-  },
-  equipment: {
-    sectionLabel: "Recommended Equipment",
-    headline: "Equipment for aerospace work",
-    learnMore: "Learn more →",
-    items: [
-      { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "±0.05mm accuracy, nitrogen-assist capability for clean non-ferrous edges." },
-      { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", desc: "±0.01mm bending repeatability. Automatic springback compensation by material and gauge." },
-    ],
-  },
-  cta: {
-    sectionLabel: "Get Started",
-    headline: "Discuss your aerospace application",
-    body: "Send us your part drawings, material specs, and tolerance requirements. We'll confirm capability and recommend the right configuration.",
-    cta: "Request a Quote",
-  },
-};
-
 const es: AerospaceContent = {
   hero: {
     sectionLabel: "Soluciones por Industria",
@@ -81,4 +46,4 @@ const es: AerospaceContent = {
   },
 };
 
-export const content: Record<"en" | "es", AerospaceContent> = { en, es };
+export const content: Record<string, AerospaceContent> = { es };

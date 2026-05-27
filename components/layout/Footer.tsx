@@ -11,13 +11,15 @@ export function Footer() {
       <div className="max-w-screen-xl mx-auto px-6 lg:px-10 py-16">
         {/* Top: Logo + tagline */}
         <div className="mb-12">
-          <Image
-            src="/images/logo-dark.webp"
-            alt="VTM Tech Solutions"
-            width={1568}
-            height={745}
-            className="h-16 w-auto mb-3"
-          />
+          <div className="inline-block bg-white rounded-md px-4 py-3 mb-3">
+            <Image
+              src="/images/logo-vtmaquinarias.webp"
+              alt="VT Maquinarias"
+              width={1591}
+              height={511}
+              className="h-12 w-auto"
+            />
+          </div>
           <p className="text-white/50 text-sm max-w-xs">{t("tagline")}</p>
         </div>
 
@@ -63,9 +65,9 @@ export function Footer() {
               <li><Link href="/support" className="hover:text-white transition-colors">{t("supportPage")}</Link></li>
             </ul>
             <div className="mt-8 space-y-2 text-sm text-white/70">
-              <p>+1 (555) 000-0000</p>
-              <p>info@vtmtechsolutions.com</p>
-              <p>United States</p>
+              <p>+56 9 0000 0000</p>
+              <p>info@vtmaquinarias.cl</p>
+              <p>Chile</p>
             </div>
           </div>
         </div>

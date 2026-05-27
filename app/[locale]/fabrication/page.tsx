@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Fabrication Machinery",
+  title: "Maquinaria de Fabricación",
   description:
-    "Industrial fabrication machinery for US metal shops — fiber laser cutting (sheet, tube, combo, enclosed), 4-in-1 handheld laser, laser welding, laser cleaning, CNC press brakes, hydraulic shears, and ironworkers. Full installation and US support.",
+    "Maquinaria industrial de fabricación para talleres metálicos en Chile — corte láser de fibra (chapa, tubo, combo), láser portátil 4 en 1, soldadura láser, limpieza láser, plegadoras CNC, cizallas hidráulicas y punzonadoras. Instalación y soporte en Chile incluidos.",
 };
 
 export default async function FabricationPage({

@@ -212,18 +212,18 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "VTM Tech Solutions",
-            url: "https://vtmtechsolutions.com",
-            logo: "https://vtmtechsolutions.com/logo.png",
+            name: "VT Maquinarias",
+            url: "https://vtmaquinarias.cl",
+            logo: "https://vtmaquinarias.cl/images/logo-vtmaquinarias.webp",
             description:
-              "Industrial fiber laser cutting machines, CNC press brakes, collaborative welding robots, and automation systems for US metal fabrication shops.",
+              "Máquinas industriales de corte láser de fibra, plegadoras CNC, robots de soldadura colaborativa y sistemas de automatización para talleres de fabricación metálica en Chile.",
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "sales",
-              availableLanguage: ["English", "Spanish"],
+              availableLanguage: ["Spanish"],
             },
             sameAs: [
-              "https://www.linkedin.com/company/vtm-tech-solutions",
+              "https://www.linkedin.com/company/vt-maquinarias",
             ],
           }),
         }}

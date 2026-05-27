@@ -2,26 +2,26 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/lib/navigation";
 import { Button } from "@/components/ui/Button";
 import { useAgent } from "@/components/ai/AgentProvider";
 
 // ─── Dropdown content ────────────────────────────────────────────────────────
 
-const DROPDOWN: Record<string, { en: string; es: string; href: string }[]> = {
+const DROPDOWN: Record<string, { label: string; href: string }[]> = {
   fabrication: [
-    { en: "Fiber Laser Sheet Cutting Machine",      es: "Cortadora Láser de Chapa",         href: "/fabrication/fiber-laser-cutting-machine" },
-    { en: "Fiber Laser Tube Cutting",         es: "Corte Láser de Tubo",              href: "/fabrication/fiber-laser-tube-cutting-machine" },
-    { en: "Sheet & Tube Combo",               es: "Combo Chapa y Tubo",               href: "/fabrication/sheet-tube-laser-cutting-machine" },
-    { en: "Laser Welding Machine",             es: "Máquina de Soldadura Láser",        href: "/fabrication/4-in-1-laser-machine" },
-    { en: "Laser Cleaning Machine",           es: "Máquina de Limpieza Láser",        href: "/fabrication/laser-cleaning-machine" },
-    { en: "CNC Press Brake",                  es: "Plegadora CNC",             href: "/fabrication/cnc-press-brake" },
-    { en: "Ironworker",                       es: "Punzonadora / Cizalla",            href: "/fabrication/ironworker" },
+    { label: "Cortadora Láser de Chapa",      href: "/fabrication/fiber-laser-cutting-machine" },
+    { label: "Corte Láser de Tubo",           href: "/fabrication/fiber-laser-tube-cutting-machine" },
+    { label: "Combo Chapa y Tubo",            href: "/fabrication/sheet-tube-laser-cutting-machine" },
+    { label: "Máquina de Soldadura Láser",    href: "/fabrication/4-in-1-laser-machine" },
+    { label: "Máquina de Limpieza Láser",     href: "/fabrication/laser-cleaning-machine" },
+    { label: "Plegadora CNC",                 href: "/fabrication/cnc-press-brake" },
+    { label: "Punzonadora / Cizalla",         href: "/fabrication/ironworker" },
   ],
   automation: [
-    { en: "Collaborative Welding Arm",        es: "Brazo Soldador Colaborativo",      href: "/automation/collaborative-welding-arm" },
-    { en: "Industrial Welding Arm",           es: "Brazo Soldador Industrial",        href: "/automation/industrial-welding-arm" },
+    { label: "Brazo Soldador Colaborativo",   href: "/automation/collaborative-welding-arm" },
+    { label: "Brazo Soldador Industrial",     href: "/automation/industrial-welding-arm" },
   ],
 };
 
@@ -39,13 +39,11 @@ function NavDropdown({
   navKey,
   href,
   label,
-  locale,
   isActive,
 }: {
   navKey: string;
   href: string;
   label: string;
-  locale: string;
   isActive: boolean;
 }) {
   const items = DROPDOWN[navKey];
@@ -115,7 +113,7 @@ function NavDropdown({
                 className="block px-5 py-2.5 text-sm text-vtm-dark hover:bg-vtm-gray-light hover:text-vtm-red transition-colors"
                 onClick={() => setOpen(false)}
               >
-                {locale === "es" ? item.es : item.en}
+                {item.label}
               </Link>
             </li>
           ))}
@@ -131,13 +129,11 @@ function MobileNavItem({
   navKey,
   href,
   label,
-  locale,
   onNavigate,
 }: {
   navKey: string;
   href: string;
   label: string;
-  locale: string;
   onNavigate: () => void;
 }) {
   const items = DROPDOWN[navKey];
@@ -180,7 +176,7 @@ function MobileNavItem({
                 onClick={onNavigate}
                 className="block py-2 text-base text-vtm-gray-mid hover:text-vtm-red transition-colors"
               >
-                {locale === "es" ? item.es : item.en}
+                {item.label}
               </Link>
             </li>
           ))}
@@ -194,7 +190,6 @@ function MobileNavItem({
 
 export function Navbar() {
   const t = useTranslations("nav");
-  const locale = useLocale();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { openAgent } = useAgent();
@@ -208,8 +203,6 @@ export function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const otherLocale = locale === "en" ? "es" : "en";
-
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-vtm-gray-border">
@@ -217,24 +210,23 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/images/logo-light.webp"
-              alt="VTM Tech Solutions"
-              width={1006}
-              height={513}
-              className="h-16 w-auto"
+              src="/images/logo-vtmaquinarias.webp"
+              alt="VT Maquinarias"
+              width={1591}
+              height={511}
+              className="h-14 w-auto"
               priority
             />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Navegación principal">
             {NAV_ITEMS.map(({ key, href }) => (
               <NavDropdown
                 key={key}
                 navKey={key}
                 href={href}
                 label={t(key)}
-                locale={locale}
                 isActive={pathname.startsWith(href)}
               />
             ))}
@@ -242,15 +234,6 @@ export function Navbar() {
 
           {/* Right controls */}
           <div className="flex items-center gap-4">
-            <Link
-              href={pathname}
-              locale={otherLocale}
-              className="hidden sm:block text-xs font-semibold tracking-widest text-vtm-gray-mid hover:text-vtm-dark transition-colors uppercase"
-              aria-label={`Switch to ${otherLocale === "en" ? "English" : "Español"}`}
-            >
-              {locale === "en" ? "ES" : "EN"}
-            </Link>
-
             <Button
               onClick={() => openAgent("quote")}
               variant="primary"
@@ -289,7 +272,6 @@ export function Navbar() {
               navKey={key}
               href={href}
               label={t(key)}
-              locale={locale}
               onNavigate={() => setMenuOpen(false)}
             />
           ))}
@@ -303,13 +285,6 @@ export function Navbar() {
           >
             {t("requestQuote")}
           </Button>
-          <Link
-            href={pathname}
-            locale={otherLocale}
-            className="text-center text-sm font-semibold tracking-widest text-vtm-gray-mid hover:text-vtm-dark uppercase"
-          >
-            {locale === "en" ? "Ver en Español" : "View in English"}
-          </Link>
         </div>
       </div>
     </>

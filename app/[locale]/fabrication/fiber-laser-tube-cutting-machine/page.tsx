@@ -5,8 +5,8 @@ import { TubeHeroScroll } from "./TubeHeroScroll";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Fiber Laser Tube Cutting Machine — VTM Tube Series",
-  description: "CNC fiber laser tube cutting machines. Round tube, square, rectangular, angle iron, channel, H-beam. Full US installation.",
+  title: "Máquina de Corte Láser de Fibra para Tubo — Serie VTM Tube",
+  description: "Máquinas CNC de corte láser de fibra para tubo. Tubo redondo, cuadrado, rectangular, ángulo, canal y viga H. Instalación en Chile incluida.",
 };
 
 export default async function FiberLaserTubePage({

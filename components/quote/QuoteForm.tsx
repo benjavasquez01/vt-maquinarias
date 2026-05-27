@@ -4,33 +4,29 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const machines = [
-  "Fiber Laser Sheet Cutting Machine",
-  "Laser Welding Machine",
-  "Laser Cleaning Machine",
-  "CNC Press Brake",
-  "Shearing Machine",
-  "Ironworker",
-  "Collaborative Welding Arm",
-  "Industrial Welding Arm",
-  "Not sure — I need guidance",
+  "Cortadora Láser de Chapa",
+  "Máquina de Soldadura Láser",
+  "Máquina de Limpieza Láser",
+  "Plegadora CNC",
+  "Cizalla",
+  "Punzonadora",
+  "Brazo Soldador Colaborativo",
+  "Brazo Soldador Industrial",
+  "No estoy seguro — necesito asesoría",
 ];
 
-const usStates = [
-  "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
-  "Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa",
-  "Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan",
-  "Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire",
-  "New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio",
-  "Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota",
-  "Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia",
-  "Wisconsin","Wyoming",
+const regionesChile = [
+  "Arica y Parinacota","Tarapacá","Antofagasta","Atacama","Coquimbo",
+  "Valparaíso","Metropolitana de Santiago","Libertador General Bernardo O'Higgins",
+  "Maule","Ñuble","Biobío","La Araucanía","Los Ríos","Los Lagos",
+  "Aysén del General Carlos Ibáñez del Campo","Magallanes y de la Antártica Chilena",
 ];
 
 const contactTimes = [
-  "Morning (8 AM – 12 PM)",
-  "Afternoon (12 PM – 5 PM)",
-  "Evening (5 PM – 8 PM)",
-  "Anytime",
+  "Mañana (8 AM – 12 PM)",
+  "Tarde (12 PM – 5 PM)",
+  "Tarde-noche (5 PM – 8 PM)",
+  "Cualquier momento",
 ];
 
 interface FormData {
@@ -120,8 +116,8 @@ export function QuoteForm() {
           currentEquipment: data.currentEquipment,
           timeline: data.targetDate,
           machinesOfInterest: data.machines.join(", "),
-          language: "en",
-          transcript: `Quote form submission — State: ${data.state}, Employees: ${data.employees}, Preferred time: ${data.preferredTime}, Message: ${data.message}`,
+          language: "es",
+          transcript: `Solicitud de cotización — Región: ${data.state}, Empleados: ${data.employees}, Horario preferido: ${data.preferredTime}, Mensaje: ${data.message}`,
           source: "quote-form",
         }),
       });
@@ -136,7 +132,7 @@ export function QuoteForm() {
 
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try again or contact us directly.");
+      setError("Algo salió mal. Inténtelo nuevamente o contáctenos directamente.");
     } finally {
       setLoading(false);
     }
@@ -151,14 +147,14 @@ export function QuoteForm() {
           </svg>
         </div>
         <h2 className="font-headline text-2xl font-bold text-white mb-3">
-          Your request has been submitted.
+          Su solicitud ha sido enviada.
         </h2>
         <p className="text-white/60 font-body mb-2 max-w-sm mx-auto">
-          A VTM Tech Solutions specialist will review your shop&apos;s needs and reach out within 1 business day.
+          Un especialista de VT Maquinarias revisará las necesidades de su taller y se pondrá en contacto dentro de 1 día hábil.
         </p>
-        <p className="text-white/40 text-sm mb-8">Check your inbox — a confirmation email is on its way.</p>
+        <p className="text-white/40 text-sm mb-8">Revise su bandeja de entrada — un correo de confirmación está en camino.</p>
         <Button href="/" variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10">
-          Return to Homepage
+          Volver al Inicio
         </Button>
       </div>
     );
@@ -169,9 +165,9 @@ export function QuoteForm() {
       {/* Progress bar */}
       <div className="mb-8">
         <div className="flex justify-between text-xs text-white/40 font-semibold tracking-wide uppercase mb-3">
-          <span>Step {step} of {totalSteps}</span>
+          <span>Paso {step} de {totalSteps}</span>
           <span>
-            {step === 1 ? "Machine Selection" : step === 2 ? "Shop Info" : "Contact Details"}
+            {step === 1 ? "Selección de Máquinas" : step === 2 ? "Datos del Taller" : "Datos de Contacto"}
           </span>
         </div>
         <div className="w-full h-0.5 bg-white/10">
@@ -191,9 +187,9 @@ export function QuoteForm() {
         {step === 1 && (
           <div>
             <h2 className="font-headline text-xl font-bold text-white mb-2">
-              Which machines are you interested in?
+              ¿Qué máquinas le interesan?
             </h2>
-            <p className="text-white/50 text-sm font-body mb-6">Select all that apply.</p>
+            <p className="text-white/50 text-sm font-body mb-6">Seleccione todas las que correspondan.</p>
             <div className="space-y-2">
               {machines.map((machine) => {
                 const checked = data.machines.includes(machine);
@@ -235,34 +231,34 @@ export function QuoteForm() {
         {step === 2 && (
           <div className="space-y-5">
             <div>
-              <h2 className="font-headline text-xl font-bold text-white mb-2">Tell us about your shop.</h2>
-              <p className="text-white/50 text-sm font-body mb-6">Helps us make the right recommendation.</p>
+              <h2 className="font-headline text-xl font-bold text-white mb-2">Cuéntenos sobre su taller.</h2>
+              <p className="text-white/50 text-sm font-body mb-6">Nos ayuda a darle la recomendación correcta.</p>
             </div>
             <div>
-              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Company Name *</label>
-              <input type="text" required value={data.companyName} onChange={(e) => updateField("companyName", e.target.value)} placeholder="Your company name" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
+              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Nombre de la Empresa *</label>
+              <input type="text" required value={data.companyName} onChange={(e) => updateField("companyName", e.target.value)} placeholder="Nombre de su empresa" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
             </div>
             <div>
-              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">State *</label>
+              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Región *</label>
               <select required value={data.state} onChange={(e) => updateField("state", e.target.value)} className="w-full bg-vtm-dark border border-white/20 text-white px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors">
-                <option value="">Select your state...</option>
-                {usStates.map((s) => <option key={s} value={s}>{s}</option>)}
+                <option value="">Seleccione su región...</option>
+                {regionesChile.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Number of Employees</label>
+              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Número de Empleados</label>
               <select value={data.employees} onChange={(e) => updateField("employees", e.target.value)} className="w-full bg-vtm-dark border border-white/20 text-white px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors">
-                <option value="">Select range...</option>
-                <option value="1-10">1–10 employees</option>
-                <option value="11-25">11–25 employees</option>
-                <option value="26-50">26–50 employees</option>
-                <option value="51-100">51–100 employees</option>
-                <option value="100+">100+ employees</option>
+                <option value="">Seleccione un rango...</option>
+                <option value="1-10">1–10 empleados</option>
+                <option value="11-25">11–25 empleados</option>
+                <option value="26-50">26–50 empleados</option>
+                <option value="51-100">51–100 empleados</option>
+                <option value="100+">100+ empleados</option>
               </select>
             </div>
             <div>
-              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Current Equipment</label>
-              <textarea value={data.currentEquipment} onChange={(e) => updateField("currentEquipment", e.target.value)} rows={3} placeholder="Machines you currently operate (brand, type, age)..." className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors resize-none" />
+              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Equipos Actuales</label>
+              <textarea value={data.currentEquipment} onChange={(e) => updateField("currentEquipment", e.target.value)} rows={3} placeholder="Máquinas que opera actualmente (marca, tipo, antigüedad)..." className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors resize-none" />
             </div>
           </div>
         )}
@@ -271,39 +267,39 @@ export function QuoteForm() {
         {step === 3 && (
           <div className="space-y-5">
             <div>
-              <h2 className="font-headline text-xl font-bold text-white mb-2">How do we reach you?</h2>
-              <p className="text-white/50 text-sm font-body mb-6">We&apos;ll respond within 1 business day.</p>
+              <h2 className="font-headline text-xl font-bold text-white mb-2">¿Cómo lo contactamos?</h2>
+              <p className="text-white/50 text-sm font-body mb-6">Responderemos dentro de 1 día hábil.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Full Name *</label>
-                <input type="text" required value={data.name} onChange={(e) => updateField("name", e.target.value)} placeholder="Your full name" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
+                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Nombre Completo *</label>
+                <input type="text" required value={data.name} onChange={(e) => updateField("name", e.target.value)} placeholder="Su nombre completo" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
               </div>
               <div>
-                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Email *</label>
-                <input type="email" required value={data.email} onChange={(e) => updateField("email", e.target.value)} placeholder="your@email.com" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
+                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Correo Electrónico *</label>
+                <input type="email" required value={data.email} onChange={(e) => updateField("email", e.target.value)} placeholder="su@correo.com" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Phone</label>
-                <input type="tel" value={data.phone} onChange={(e) => updateField("phone", e.target.value)} placeholder="+1 (555) 000-0000" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
+                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Teléfono</label>
+                <input type="tel" value={data.phone} onChange={(e) => updateField("phone", e.target.value)} placeholder="+56 9 0000 0000" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
               </div>
               <div>
-                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Target Delivery Date</label>
+                <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Fecha de Entrega Deseada</label>
                 <input type="month" value={data.targetDate} onChange={(e) => updateField("targetDate", e.target.value)} className="w-full bg-vtm-dark border border-white/20 text-white px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
               </div>
             </div>
             <div>
-              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Best Time to Contact</label>
+              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Mejor Horario para Contactarlo</label>
               <select value={data.preferredTime} onChange={(e) => updateField("preferredTime", e.target.value)} className="w-full bg-vtm-dark border border-white/20 text-white px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors">
-                <option value="">Select a time...</option>
+                <option value="">Seleccione un horario...</option>
                 {contactTimes.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Additional Notes</label>
-              <textarea value={data.message} onChange={(e) => updateField("message", e.target.value)} rows={4} placeholder="Any specific requirements, materials, dimensions, or questions..." className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors resize-none" />
+              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Notas Adicionales</label>
+              <textarea value={data.message} onChange={(e) => updateField("message", e.target.value)} rows={4} placeholder="Cualquier requerimiento específico, materiales, dimensiones o preguntas..." className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors resize-none" />
             </div>
             {error && <p className="text-vtm-red text-sm">{error}</p>}
           </div>
@@ -316,14 +312,14 @@ export function QuoteForm() {
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M10 7H2M5 3L1 7l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Back
+              Atrás
             </button>
           ) : <div />}
           {step < totalSteps ? (
-            <Button type="button" variant="primary" size="md" onClick={handleNext}>Next Step</Button>
+            <Button type="button" variant="primary" size="md" onClick={handleNext}>Siguiente</Button>
           ) : (
             <Button type="submit" variant="primary" size="md" disabled={loading}>
-              {loading ? "Submitting..." : "Submit Request"}
+              {loading ? "Enviando..." : "Enviar Solicitud"}
             </Button>
           )}
         </div>

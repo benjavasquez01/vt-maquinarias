@@ -12,12 +12,12 @@ import { AnimatedComparisonTable } from "@/components/product/AnimatedComparison
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Industrial Welding Arm",
+  title: "Brazo Soldador Industrial",
   description:
-    "High-throughput industrial welding robot for dedicated production cells. 20 kg payload, 4–5× manual welding speed. Full US integration and support.",
+    "Robot de soldadura industrial de alto rendimiento para celdas de producción dedicadas. Capacidad de 20 kg, 4–5× la velocidad de soldadura manual. Integración y soporte en Chile.",
   openGraph: {
-    title: "Industrial Welding Arm — VTM Tech Solutions",
-    description: "High-speed production welding. 20kg payload. Full US installation included.",
+    title: "Brazo Soldador Industrial — VT Maquinarias",
+    description: "Soldadura de producción de alta velocidad. Capacidad de 20 kg. Instalación en Chile incluida.",
     images: [{ url: "/images/industrial-welding-arm-hero.webp" }],
   },
 };
@@ -252,8 +252,8 @@ export default async function IndustrialWeldingArmPage({
             "@context": "https://schema.org",
             "@type": "Product",
             name: "Industrial Welding Arm",
-            description: "High-throughput industrial welding robot. 20kg payload, 4-5x manual welding speed.",
-            brand: { "@type": "Brand", name: "VTM Tech Solutions" },
+            description: "Robot de soldadura industrial de alto rendimiento. Capacidad de 20 kg, 4-5x la velocidad de soldadura manual.",
+            brand: { "@type": "Brand", name: "VT Maquinarias" },
             offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "USD" },
           }),
         }}

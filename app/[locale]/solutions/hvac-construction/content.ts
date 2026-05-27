@@ -11,49 +11,11 @@ export type HvacContent = {
   cta: { sectionLabel: string; headline: string; body: string; cta: string };
 };
 
-const en: HvacContent = {
-  hero: {
-    sectionLabel: "Industry Solutions",
-    headline: "HVAC & Construction",
-    subheadline: "High-throughput sheet metal processing for HVAC duct fabricators and construction component shops. Fast changeover, consistent results, US support included.",
-    cta1: "Request a Quote",
-    cta2: "Talk to a Specialist",
-  },
-  applications: {
-    sectionLabel: "Common Applications",
-    headline: "What HVAC & construction shops process",
-    items: [
-      { title: "Rectangular duct components", body: "High-speed laser cutting for galvanized and stainless duct sections. Consistent width and squareness critical for leak-free assembly." },
-      { title: "Equipment enclosures and panels", body: "Laser cut and press brake bent panels for AHUs, chillers, and rooftop equipment. Tight corner radii and clean edges without deburring." },
-      { title: "Structural steel brackets and supports", body: "Ironworker punching, notching, and shearing for structural connection hardware. One machine handles what used to require three setups." },
-      { title: "Cobot welding for bracket production", body: "High-volume bracket and fitting welding — perfect repetitive work for a collaborative welding arm. Run 120–150 parts per shift with one operator supervising." },
-    ],
-  },
-  equipment: {
-    sectionLabel: "Recommended Equipment",
-    headline: "The HVAC fabrication stack",
-    learnMore: "Learn more →",
-    items: [
-      { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "Complex duct profiles and panel cutouts at production speed." },
-      { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", desc: "Consistent bends for enclosures, panels, and flanges." },
-      { name: "Collaborative Welding Arm", href: "/automation/collaborative-welding-arm", desc: "Automate your highest-volume bracket and fitting welds." },
-      { name: "Ironworker", href: "/fabrication/ironworker", desc: "Punch, notch, and shear structural angles and flat bar." },
-      { name: "Laser Cleaning Machine", href: "/fabrication/laser-cleaning-machine", desc: "Remove mill scale, rust, and paint before welding — no media, no disposal." },
-    ],
-  },
-  cta: {
-    sectionLabel: "Get Started",
-    headline: "Tell us about your shop",
-    body: "We'll recommend the right combination of equipment for your production volume, material mix, and floor space — with pricing and lead times.",
-    cta: "Request a Quote",
-  },
-};
-
 const es: HvacContent = {
   hero: {
     sectionLabel: "Soluciones por Industria",
     headline: "HVAC y Construcción",
-    subheadline: "Procesamiento de chapa metálica de alto rendimiento para fabricantes de ductos HVAC y talleres de componentes para construcción. Cambio rápido, resultados consistentes, soporte en EE.UU. incluido.",
+    subheadline: "Procesamiento de chapa metálica de alto rendimiento para fabricantes de ductos HVAC y talleres de componentes para construcción. Cambio rápido, resultados consistentes, soporte en Chile incluido.",
     cta1: "Solicitar Cotización",
     cta2: "Hablar con un Especialista",
   },
@@ -87,4 +49,4 @@ const es: HvacContent = {
   },
 };
 
-export const content: Record<"en" | "es", HvacContent> = { en, es };
+export const content: Record<string, HvacContent> = { es };

@@ -7,9 +7,9 @@ import { PressBrakeModelBrowser } from "./PressBrakeModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "CNC Press Brake",
+  title: "Plegadora CNC",
   description:
-    "CNC press brakes — hydraulic 63–1600T single-machine and servo electric 160–800T tandem pairs. Graphic CNC controller with 3D bend simulation, 4-axis back gauge, and ±0.01mm repeatability. Full US installation and support.",
+    "Plegadoras CNC — hidráulicas de 63–1600T en máquina individual y pares servo eléctricos en tándem de 160–800T. Controlador CNC gráfico con simulación de plegado 3D, tope trasero de 4 ejes y repetibilidad de ±0.01mm. Instalación y soporte en Chile incluidos.",
 };
 
 const HERO_CONTENT = {

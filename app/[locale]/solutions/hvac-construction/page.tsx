@@ -6,8 +6,8 @@ import { Link } from "@/lib/navigation";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "HVAC & Construction Manufacturing Solutions",
-  description: "Shearing, laser cutting, press brakes, and cobot welding for HVAC duct fabricators and construction component manufacturers.",
+  title: "Soluciones para HVAC y Construcción",
+  description: "Cizallado, corte láser, plegadoras y soldadura con cobots para fabricantes de ductos HVAC y componentes para construcción.",
 };
 
 export default async function HvacConstructionPage({

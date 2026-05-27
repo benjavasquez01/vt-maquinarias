@@ -1,76 +1,5 @@
 import type { ProductPageData } from "@/components/product/ProductPageTemplate";
 
-const en: ProductPageData = {
-  category: "Fabrication",
-  slug: "enclosed-fiber-laser-cutting-machine",
-  machineName: "Enclosed Fiber Laser Sheet Cutting Machine",
-  heroSubheadline: "VTM-PE and VTM-SE. Laser Safety Class 1 — the full enclosure eliminates laser hazard exposure for everyone outside the machine. Same Raycus source, HIWIN rails, and CypCut CNC as the open-frame line, in a fully enclosed safety-rated housing.",
-  heroImageId: "1518770660439-4636190af475",
-  features: [
-    { number: "01", headline: "Laser Safety Class 1 — No PPE for Bystanders", body: "The full-perimeter enclosure and automatic interlocked doors bring the VTM-PE and VTM-SE to Laser Safety Class 1. Operators and anyone in the building do not need laser safety eyewear while the machine is running. Required for facilities with mixed operations, adjacent office areas, or frequent visitor access.", spec: { label: "Laser Safety", value: "Class 1" } },
-    { number: "02", headline: "Automatic Door Interlocks — Can't Cut With Door Open", body: "Front loading doors and any service access panels are interlocked with the laser enable circuit. If a door is opened mid-cycle, the laser shuts off immediately. OSHA-compliant safety circuit with independent redundant monitoring — not a software interlock.", spec: { label: "Interlock", value: "Hardware-redundant" } },
-    { number: "03", headline: "Integrated Fume Extraction Port", body: "Every enclosed VTM machine ships with a dedicated fume extraction port sized for a 6\" duct connection. No external plenum required — connect your shop extraction system directly. For facilities without central extraction, VTM sources compatible cartridge filter units that attach directly to the machine.", spec: { label: "Duct Port", value: "6\" (152 mm)" } },
-    { number: "04", headline: "Same Cutting Performance as the Open-Frame Line", body: "The enclosure adds safety without affecting cut performance. Same Raycus fiber source, same HIWIN guide rails, same Fuji servo drives, same Bochu CypCut CNC as the open-frame EA and B series machines. ±0.05 mm accuracy, same max speeds, same material range — just in a rated housing.", spec: { label: "Accuracy", value: "±0.05 mm" } },
-    { number: "05", headline: "VTM-PE vs. VTM-SE — Two Enclosure Formats", body: "VTM-PE (Protective Enclosure) is a lighter-duty format suited for smaller bed sizes (1313, 3015) and lower-power configurations (1.5–3 kW) — ideal for training rooms, research facilities, and mixed-use light industrial spaces. VTM-SE (Safety Enclosure) is the full industrial format for production shops with 3015–4020 beds and up to 6 kW.", spec: { label: "Variants", value: "VTM-PE / VTM-SE" } },
-  ],
-  specs: [
-    { label: "Models", imperial: "VTM-PE (protective) / VTM-SE (safety industrial)", metric: "VTM-PE / VTM-SE" },
-    { label: "Laser Safety Class", imperial: "Class 1 (EN/IEC 60825-1)", metric: "Class 1 (EN/IEC 60825-1)" },
-    { label: "Laser Power Options", imperial: "1.5 kW / 3 kW / 6 kW", metric: "1.5 kW / 3 kW / 6 kW" },
-    { label: "Laser Source", imperial: "Raycus Fiber Laser", metric: "Raycus Fiber Laser" },
-    { label: "Available Bed Sizes", imperial: "4′×4′ (1313) / 5′×10′ (3015) / 4′×20′ (4020)", metric: "1313 / 3015 / 4020 mm" },
-    { label: "Cutting Head", imperial: "BOCI BLT Series (standard)", metric: "BOCI BLT Series (standard)" },
-    { label: "CNC Controller", imperial: "Bochu CypCut 2000E / 4000E", metric: "Bochu CypCut 2000E / 4000E" },
-    { label: "Servo Drive", imperial: "Fuji Bus servo", metric: "Fuji Bus servo" },
-    { label: "Linear Guide Rails", imperial: "HIWIN 20–30 series", metric: "HIWIN 20–30 series" },
-    { label: "Positioning Accuracy", imperial: "±0.002\"", metric: "±0.05 mm" },
-    { label: "Max Cutting Speed", imperial: "up to 787 in/min (thin sheet)", metric: "up to 20 m/min (thin sheet)" },
-    { label: "Max Thickness — Carbon Steel (3 kW)", imperial: "0.5\"", metric: "12 mm" },
-    { label: "Max Thickness — Carbon Steel (6 kW)", imperial: "0.75\"", metric: "20 mm" },
-    { label: "Max Thickness — Stainless Steel (3 kW)", imperial: "0.25\"", metric: "6 mm" },
-    { label: "Door Interlock", imperial: "Hardware-redundant, laser enable circuit", metric: "Hardware-redundant, laser enable circuit" },
-    { label: "Fume Extraction Port", imperial: "6\" diameter duct connection", metric: "152 mm diameter duct connection" },
-    { label: "Water Chiller", imperial: "Tongfei (standard)", metric: "Tongfei (standard)" },
-    { label: "Power Supply (US)", imperial: "480V, 3-phase, 60 Hz", metric: "380V, 3-phase, 50 Hz" },
-  ],
-  videoSectionLabel: "See It Work",
-  videoHeadline: "In Action",
-  configOptions: [
-    { label: "Enclosure Model", options: ["VTM-PE — Protective Enclosure", "VTM-SE — Safety Industrial Enclosure"], note: "VTM-PE for smaller formats and lower power. VTM-SE for full production scale with larger beds and higher power." },
-    { label: "Laser Power", options: ["1.5 kW", "3 kW", "6 kW"], note: "1.5–3 kW covers thin sheet and light structural. 6 kW expands material range and increases throughput." },
-    { label: "Bed Size", options: ["4′×4′ (1313)", "5′×10′ (3015)", "4′×20′ (4020)"], note: "1313 is the standard small-format for precision parts. 3015 is the most common production size." },
-    { label: "Fume Extraction", options: ["6\" duct port (standard — connect shop extraction)", "Integrated cartridge filter unit (optional)"], note: "If your facility doesn't have central fume extraction, the integrated cartridge filter unit handles it locally." },
-  ],
-  comparisonLabel: "Safety",
-  comparisonHeadline: "Enclosed vs. Open-Frame Fiber Laser",
-  comparisonOursLabel: "Enclosed (VTM-PE/SE)",
-  comparisonTheirsLabel: "Open-Frame (VTM-EA/B)",
-  comparison: [
-    { feature: "Laser safety class", ours: "Class 1 — no PPE for bystanders", theirs: "Class 4 — PPE required in hazard zone" },
-    { feature: "Operator eyewear required", ours: "No (Class 1)", theirs: "Yes (laser safety glasses)" },
-    { feature: "Suitable for mixed-use facility", ours: "Yes — no exclusion zone", theirs: "Requires laser safety barrier" },
-    { feature: "Fume management", ours: "Integrated extraction port, contained fumes", theirs: "Open — separate extraction plenum required" },
-    { feature: "Noise level", ours: "Reduced (enclosed cabinet)", theirs: "Standard" },
-    { feature: "Max bed size available", ours: "Up to 4020", theirs: "Up to 8025" },
-    { feature: "Max power available", ours: "Up to 6 kW", theirs: "Up to 30 kW" },
-    { feature: "Best for", ours: "Mixed-use, offices nearby, training, R&D", theirs: "Dedicated fabrication shop, high-volume production" },
-  ],
-  relatedProducts: [
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Open Frame", imageId: "/images/fiber-laser-hero.webp" },
-    { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.webp" },
-    { name: "4-in-1 Laser Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Handheld", imageId: "/images/4in1-laser-hero-2.webp" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
-  ],
-  faqs: [
-    { question: "What does Laser Safety Class 1 actually mean?", answer: "Class 1 means the accessible emission level is safe under all reasonably foreseeable conditions — when the machine is operating normally with the enclosure closed, no one outside the machine is exposed to hazardous laser radiation. No laser safety eyewear is required for operators or bystanders. This is the same class as a CD player or laser printer." },
-    { question: "Is the Class 1 rating certified or just claimed?", answer: "The VTM-PE and VTM-SE are designed and tested to EN/IEC 60825-1 Class 1 requirements. Documentation is available upon request for safety officer review and OSHA compliance records." },
-    { question: "Can it be installed in an office building or mixed-use facility?", answer: "Yes. The Class 1 rating eliminates the laser exclusion zone requirement. You do need adequate fume extraction — connect the 6\" duct port to a suitable extraction system or add the optional cartridge filter unit." },
-    { question: "What happens if the door is opened while the laser is firing?", answer: "The hardware interlock cuts laser power before the door opens far enough to expose anyone to the beam. This is a hardware-level safety circuit — not software — with redundant monitoring channels to prevent single-point failure." },
-    { question: "Is the cutting performance the same as the open-frame machines?", answer: "Yes. The enclosure does not affect laser power, beam path, cutting speed, or accuracy. You get the same ±0.05 mm positioning, same HIWIN rails and Fuji servos, same Raycus source and CypCut CNC — just in a Class 1 housing." },
-    { question: "What's the difference between VTM-PE and VTM-SE?", answer: "VTM-PE (Protective Enclosure) is designed for smaller formats (1313 and 3015 bed) at 1.5–3 kW — suited for training facilities, R&D labs, and light production. VTM-SE (Safety Enclosure) is the full industrial version for 3015–4020 beds at up to 6 kW, suitable for production shops that need Class 1 compliance." },
-  ],
-};
-
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "enclosed-fiber-laser-cutting-machine",
@@ -102,7 +31,7 @@ const es: ProductPageData = {
     { label: "Enclavamiento de Puerta", imperial: "Redundancia de hardware, circuito de habilitación láser", metric: "Redundancia de hardware, circuito de habilitación láser" },
     { label: "Puerto de Extracción de Humos", imperial: "Conexión de ducto de 6\" de diámetro", metric: "Conexión de ducto de 152 mm de diámetro" },
     { label: "Enfriador de Agua", imperial: "Tongfei (estándar)", metric: "Tongfei (estándar)" },
-    { label: "Suministro Eléctrico (EE.UU.)", imperial: "480V, trifásico, 60 Hz", metric: "380V, trifásico, 50 Hz" },
+    { label: "Suministro Eléctrico (Chile)", imperial: "480V, trifásico, 60 Hz", metric: "380V, trifásico, 50 Hz" },
   ],
   videoSectionLabel: "Véalo Funcionar",
   videoHeadline: "En Acción",
@@ -142,4 +71,4 @@ const es: ProductPageData = {
   ],
 };
 
-export const content: Record<"en" | "es", ProductPageData> = { en, es };
+export const content: Record<string, ProductPageData> = { es };

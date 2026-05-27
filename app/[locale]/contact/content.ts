@@ -12,28 +12,6 @@ export type ContactContent = {
   form: { headline: string };
 };
 
-const en: ContactContent = {
-  hero: {
-    sectionLabel: "Get in Touch",
-    headline: "Let's talk about your shop.",
-    subheadline: "Whether you have a specific machine in mind or just need guidance on where to start, we're ready to help.",
-  },
-  info: {
-    headline: "Contact Information",
-    email: { label: "Email", responseTime: "Response within 1 business day" },
-    phone: { label: "Phone", hours: "Mon–Fri, 8 AM – 6 PM ET" },
-    address: { label: "US Address" },
-    hoursLabel: "Hours",
-    hours: [
-      { day: "Monday – Friday", time: "8 AM – 6 PM ET" },
-      { day: "Saturday", time: "9 AM – 1 PM ET" },
-      { day: "Sunday", time: "Closed" },
-    ],
-    mapPlaceholder: "Interactive map coming soon",
-  },
-  form: { headline: "Send Us a Message" },
-};
-
 const es: ContactContent = {
   hero: {
     sectionLabel: "Contáctenos",
@@ -44,7 +22,7 @@ const es: ContactContent = {
     headline: "Información de Contacto",
     email: { label: "Correo Electrónico", responseTime: "Respuesta en 1 día hábil" },
     phone: { label: "Teléfono", hours: "Lun–Vie, 8 AM – 6 PM ET" },
-    address: { label: "Dirección en EE.UU." },
+    address: { label: "Dirección en Chile" },
     hoursLabel: "Horario",
     hours: [
       { day: "Lunes – Viernes", time: "8 AM – 6 PM ET" },
@@ -56,4 +34,4 @@ const es: ContactContent = {
   form: { headline: "Envíenos un Mensaje" },
 };
 
-export const content: Record<"en" | "es", ContactContent> = { en, es };
+export const content: Record<string, ContactContent> = { es };

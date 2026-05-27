@@ -29,7 +29,7 @@
     "contact": "Contacto",
     "privacyPolicy": "Política de Privacidad",
     "termsOfService": "Términos de Servicio",
-    "copyright": "© {year} VTM Tech Solutions. Todos los derechos reservados.",
+    "copyright": "© {year} VT Maquinarias. Todos los derechos reservados.",
     "tagline": "Donde la fabricación de precisión se une a la automatización inteligente."
   },
   "common": {
@@ -42,7 +42,7 @@
     "contactUs": "Contáctanos",
     "imperial": "Imperial",
     "metric": "Métrico",
-    "newBadge": "NUEVO EN EL MERCADO DE EE.UU."
+    "newBadge": "NUEVO EN EL MERCADO"
   },
   "product": {
     "technicalSpecs": "Especificaciones Técnicas",
@@ -73,9 +73,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "VTM Tech Solutions — Maquinaria Industrial para EE.UU.",
+      "eyebrow": "VT Maquinarias — Maquinaria Industrial para Chile",
       "headline": "Máquinas de precisión láser. Resultados comprobados.",
-      "subheadline": "Maquinaria de fabricación de precisión y automatización robótica inteligente — diseñadas para talleres en EE.UU. que no aceptan lo mediocre.",
+      "subheadline": "Maquinaria de fabricación de precisión y automatización robótica inteligente — diseñadas para talleres en Chile que no aceptan lo mediocre.",
       "scroll": "Desplazar",
       "cta1": "Explorar Nuestras Máquinas",
       "cta2": "Hablar con un Especialista"
@@ -99,7 +99,7 @@
       "label": "Automatización Robótica",
       "heading": "Automatización de soldadura que se paga en meses, no en años.",
       "explore": "Explorar Soluciones de Automatización",
-      "badge": "Nuevo en el Mercado de EE.UU.",
+      "badge": "Nuevo en el Mercado",
       "products": {
         "cobot": { "name": "Brazo de Soldadura Colaborativo", "description": "Implementación en 6 semanas. Trabaja junto a personas de forma segura." },
         "industrial": { "name": "Brazo de Soldadura Industrial", "description": "Soldadura de producción de alta velocidad. 20 kg de carga útil." }
@@ -114,12 +114,12 @@
       "partnership": {
         "label": "Asociación",
         "title": "De la Fabricación a la Automatización — Un Solo Socio",
-        "body": "Ya sea que esté cortando su primera plancha de metal o implementando su quinta celda de soldadura colaborativa, VTM Tech Solutions gestiona toda la evolución de su producción. No necesita coordinar cinco proveedores. Suministramos, instalamos, capacitamos y damos soporte — todo bajo un mismo techo."
+        "body": "Ya sea que esté cortando su primera plancha de metal o implementando su quinta celda de soldadura colaborativa, VT Maquinarias gestiona toda la evolución de su producción. No necesita coordinar cinco proveedores. Suministramos, instalamos, capacitamos y damos soporte — todo bajo un mismo techo."
       },
       "support": {
         "label": "Soporte",
         "title": "Soporte Que No Desaparece Después de la Entrega",
-        "body": "Instalación, calibración, capacitación de operadores y diagnóstico remoto — todo incluido. Nuestro equipo de soporte con base en EE.UU. está disponible por teléfono, correo electrónico y videollamada. Las piezas de repuesto se envían el mismo día. Medimos nuestro éxito por su tiempo de actividad, no por su orden de compra."
+        "body": "Instalación, calibración, capacitación de operadores y diagnóstico remoto — todo incluido. Nuestro equipo de soporte local en Chile está disponible por teléfono, correo electrónico y videollamada. Las piezas de repuesto se envían el mismo día. Medimos nuestro éxito por su tiempo de actividad, no por su orden de compra."
       },
       "consultation": {
         "label": "Consultoría",
@@ -129,12 +129,12 @@
     },
     "industries": {
       "label": "Industrias que Servimos",
-      "heading": "Diseñadas para cada sector de la manufactura metálica en EE.UU.",
+      "heading": "Diseñadas para cada sector de la manufactura metálica en Chile",
       "allSolutions": "Todas las Soluciones"
     },
     "testimonials": {
       "label": "Historias de Clientes",
-      "heading": "Talleres en EE.UU. ya operando con VTM.",
+      "heading": "Talleres en Chile ya operando con VTM.",
       "t1": {
         "quote": "Reemplazamos tres máquinas distintas con un solo láser de fibra VTM. El retorno de inversión fue en menos de 18 meses.",
         "author": "Mike Castellano",
@@ -161,7 +161,7 @@
       "readMore": "Leer Más",
       "p1": {
         "title": "Láser de Fibra vs CO₂: ¿Cuál es el Indicado para Su Taller en 2026?",
-        "excerpt": "Potencia, velocidad y costo — una comparación práctica para talleres de fabricación metálica en EE.UU. que hacen su primera inversión láser.",
+        "excerpt": "Potencia, velocidad y costo — una comparación práctica para talleres de fabricación metálica en Chile que hacen su primera inversión láser.",
         "date": "15 de marzo de 2026"
       },
       "p2": {

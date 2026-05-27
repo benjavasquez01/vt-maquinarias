@@ -5,28 +5,6 @@ export type SolutionsPageContent = {
   cta: { sectionLabel: string; headline: string; body: string; cta1: string; cta2: string };
 };
 
-const en: SolutionsPageContent = {
-  hero: {
-    sectionLabel: "By Industry",
-    headline: "Industry Solutions",
-    subheadline: "The same machines. Configured and applied differently for each industry's specific requirements.",
-  },
-  solutions: [
-    { title: "Metal Fabrication", href: "/solutions/metal-fabrication", description: "Fiber laser cutting, press brakes, shearing, welding, and cleaning — the complete fabrication line.", imageId: "/images/solution-metal-fabrication.webp" },
-    { title: "Automotive", href: "/solutions/automotive", description: "Precision cutting and welding for Tier 1–3 automotive component manufacturers.", imageId: "/images/solution-automotive.webp" },
-    { title: "Aerospace", href: "/solutions/aerospace", description: "Titanium, aluminum alloy, and stainless processing at aerospace tolerances.", imageId: "/images/solution-aerospace.webp" },
-    { title: "HVAC & Construction", href: "/solutions/hvac-construction", description: "High-throughput sheet metal processing for duct fabricators and construction component shops.", imageId: "/images/solution-hvac-construction.webp" },
-  ],
-  explore: "Explore",
-  cta: {
-    sectionLabel: "Not Sure Where to Start?",
-    headline: "Tell us about your shop",
-    body: "Our AI specialist will ask a few questions and recommend the right machines for your production, materials, and budget.",
-    cta1: "Get a Recommendation",
-    cta2: "Talk to a Specialist",
-  },
-};
-
 const es: SolutionsPageContent = {
   hero: {
     sectionLabel: "Por Industria",
@@ -49,4 +27,4 @@ const es: SolutionsPageContent = {
   },
 };
 
-export const content: Record<"en" | "es", SolutionsPageContent> = { en, es };
+export const content: Record<string, SolutionsPageContent> = { es };

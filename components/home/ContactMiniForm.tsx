@@ -147,7 +147,7 @@ export function ContactMiniForm() {
           id="mini-phone"
           name="phone"
           type="tel"
-          placeholder="+1 (555) 000-0000"
+          placeholder="+56 9 0000 0000"
           className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors"
         />
       </div>

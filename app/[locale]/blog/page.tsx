@@ -6,65 +6,65 @@ import { Tag } from "@/components/ui/Tag";
 import { NewsletterForm } from "@/components/blog/NewsletterForm";
 
 export const metadata: Metadata = {
-  title: "Blog — Metal Fabrication & Automation Insights",
+  title: "Blog — Conocimiento sobre Fabricación Metálica y Automatización",
   description:
-    "Technical articles, buying guides, and industry insights for US metal fabrication shops. Fiber laser, CNC press brake, cobot welding, and more.",
+    "Artículos técnicos, guías de compra e información del sector para talleres de fabricación metálica en Chile. Láser de fibra, plegadora CNC, soldadura con cobots y más.",
 };
 
 const POSTS = [
   {
     slug: "fiber-laser-vs-co2-laser-cutting",
-    title: "Fiber Laser vs. CO₂ Laser: Which Is Right for Your Shop in 2026?",
+    title: "Láser de Fibra vs. Láser CO₂: ¿Cuál Conviene a Su Taller en 2026?",
     excerpt:
-      "Wall-plug efficiency, cutting speed on thin sheet, and operating cost — we break down every meaningful difference so you can make the right choice for your material mix.",
-    category: "Buying Guide",
-    date: "March 28, 2026",
-    readTime: "8 min read",
+      "Eficiencia energética, velocidad de corte en chapa delgada y costo operativo — desglosamos cada diferencia relevante para que elija correctamente según su mezcla de materiales.",
+    category: "Guía de Compra",
+    date: "28 de marzo de 2026",
+    readTime: "8 min de lectura",
     imageId: "/images/blog-fiber-vs-co2.webp",
   },
   {
     slug: "cobot-welding-roi-real-numbers",
-    title: "Cobot Welding ROI: Real Numbers from 3 US Fabrication Shops",
+    title: "ROI de Soldadura con Cobots: Números Reales de 3 Talleres",
     excerpt:
-      "We tracked payback period, quality reject rates, and welder retention at three shops that deployed collaborative welding arms in the past 18 months. Here's what actually happened.",
-    category: "Case Study",
-    date: "March 14, 2026",
-    readTime: "11 min read",
+      "Medimos el período de recuperación, las tasas de rechazo por calidad y la retención de soldadores en tres talleres que implementaron brazos de soldadura colaborativos en los últimos 18 meses. Esto fue lo que realmente pasó.",
+    category: "Caso de Estudio",
+    date: "14 de marzo de 2026",
+    readTime: "11 min de lectura",
     imageId: "/images/blog-cobot-roi.webp",
   },
   {
     slug: "press-brake-tonnage-calculator",
-    title: "Press Brake Tonnage Calculator: How to Size Your Machine Without Guessing",
+    title: "Cálculo de Tonelaje de Plegadora: Cómo Dimensionar Su Máquina Sin Adivinar",
     excerpt:
-      "The formula, the safety factors, and the material variables that matter. Plus a free downloadable tonnage chart for the 20 most common mild steel and stainless gauges.",
-    category: "Technical Guide",
-    date: "February 26, 2026",
-    readTime: "6 min read",
+      "La fórmula, los factores de seguridad y las variables de material que importan. Además, una tabla de tonelaje descargable gratis para los 20 espesores más comunes de acero al carbono e inoxidable.",
+    category: "Guía Técnica",
+    date: "26 de febrero de 2026",
+    readTime: "6 min de lectura",
     imageId: "/images/blog-press-brake-tonnage.webp",
   },
   {
     slug: "laser-cleaning-vs-sandblasting",
-    title: "Laser Cleaning vs. Sandblasting: The Full Cost Comparison",
+    title: "Limpieza Láser vs. Arenado: La Comparación Completa de Costos",
     excerpt:
-      "Media cost, disposal, surface damage, and setup time. We ran both processes side-by-side on the same batch of rusted mild steel and documented every variable.",
-    category: "Technical Guide",
-    date: "February 12, 2026",
-    readTime: "7 min read",
+      "Costo del abrasivo, disposición de residuos, daño superficial y tiempo de preparación. Realizamos ambos procesos lado a lado sobre el mismo lote de acero al carbono oxidado y documentamos cada variable.",
+    category: "Guía Técnica",
+    date: "12 de febrero de 2026",
+    readTime: "7 min de lectura",
     imageId: "/images/blog-laser-cleaning-compariso.webp",
   },
   {
     slug: "laser-welding-vs-tig-welding-comparison",
-    title: "Laser Welding vs. TIG Welding: When to Switch and When to Stay",
+    title: "Soldadura Láser vs. Soldadura TIG: Cuándo Cambiar y Cuándo Quedarse",
     excerpt:
-      "Speed, bead appearance, heat distortion, and application range. TIG isn't going away — but for specific work, laser welding is dramatically better. We explain exactly which.",
-    category: "Technical Guide",
-    date: "January 15, 2026",
-    readTime: "9 min read",
+      "Velocidad, apariencia del cordón, distorsión por calor y rango de aplicación. El TIG no va a desaparecer — pero para ciertos trabajos, la soldadura láser es dramáticamente mejor. Explicamos exactamente cuáles.",
+    category: "Guía Técnica",
+    date: "15 de enero de 2026",
+    readTime: "9 min de lectura",
     imageId: "/images/blog-laser-vs-tig.webp",
   },
 ];
 
-const CATEGORIES = ["All", "Buying Guide", "Technical Guide", "Case Study", "Industry News"];
+const CATEGORIES = ["Todos", "Guía de Compra", "Guía Técnica", "Caso de Estudio", "Noticias del Sector"];
 
 export default function BlogPage() {
   return (
@@ -72,9 +72,9 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="bg-vtm-dark pt-32 pb-20 px-6 lg:px-10">
         <div className="max-w-screen-xl mx-auto">
-          <SectionLabel light className="mb-4">Insights</SectionLabel>
+          <SectionLabel light className="mb-4">Conocimiento</SectionLabel>
           <h1 className="font-headline text-5xl md:text-6xl font-bold text-white tracking-tight max-w-3xl">
-            Metal fabrication knowledge, without the sales pitch.
+            Conocimiento sobre fabricación metálica, sin el discurso de venta.
           </h1>
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function BlogPage() {
                 {POSTS[0].title}
               </h2>
               <p className="text-vtm-gray-mid leading-relaxed mb-6">{POSTS[0].excerpt}</p>
-              <span className="text-vtm-red text-sm font-semibold">Read article →</span>
+              <span className="text-vtm-red text-sm font-semibold">Leer artículo →</span>
             </div>
           </Link>
 
@@ -170,12 +170,12 @@ export default function BlogPage() {
       <section className="bg-vtm-gray-light py-20">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <div className="max-w-xl">
-            <SectionLabel className="mb-4">Stay Current</SectionLabel>
+            <SectionLabel className="mb-4">Manténgase al Día</SectionLabel>
             <h2 className="font-headline text-3xl font-bold text-vtm-dark tracking-tight mb-4">
-              New articles, every two weeks.
+              Nuevos artículos, cada dos semanas.
             </h2>
             <p className="text-vtm-gray-mid mb-6">
-              Technical guides, machine comparisons, and industry news for US metal fabricators. No sales emails — just useful content.
+              Guías técnicas, comparaciones de máquinas y noticias del sector para fabricantes metálicos en Chile. Sin correos de venta — solo contenido útil.
             </p>
             <NewsletterForm />
           </div>

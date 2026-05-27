@@ -5,9 +5,9 @@ import { SheetTubeModelBrowser } from "./SheetTubeModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Sheet & Tube Combo Laser Cutting Machine — VTM-ST Series",
+  title: "Máquina de Corte Láser Combinada Chapa y Tubo — Serie VTM-ST",
   description:
-    "VTM-ST combo fiber laser — cuts flat sheet and tube/structural profiles on one machine. 3–6 kW, bed sizes to 4020, round tube to 180 mm, lengths to 6 m. One machine, two capabilities.",
+    "Láser de fibra combinado VTM-ST — corta chapa plana y tubo/perfiles estructurales en una sola máquina. 3–6 kW, mesas hasta 4020, tubo redondo hasta 180 mm, largos hasta 6 m. Una máquina, dos capacidades.",
 };
 
 export default async function SheetTubeLaserPage({

@@ -30,8 +30,8 @@ export function DownloadGate({ resource }: { resource: Resource }) {
           materials: "",
           timeline: "",
           machinesOfInterest: resource.title,
-          language: "en",
-          transcript: `Spec sheet download: ${resource.title}`,
+          language: "es",
+          transcript: `Descarga de ficha técnica: ${resource.title}`,
           source: "spec-sheet-download",
         }),
       });
@@ -62,13 +62,13 @@ export function DownloadGate({ resource }: { resource: Resource }) {
           </div>
         </div>
         {submitted ? (
-          <span className="text-vtm-red text-sm font-semibold flex-shrink-0">Download started ✓</span>
+          <span className="text-vtm-red text-sm font-semibold flex-shrink-0">Descarga iniciada ✓</span>
         ) : (
           <button
             onClick={() => setShowForm(!showForm)}
             className="flex-shrink-0 text-sm font-semibold text-vtm-dark hover:text-vtm-red transition-colors border border-vtm-gray-border hover:border-vtm-red px-4 py-2"
           >
-            {showForm ? "Cancel" : "Download"}
+            {showForm ? "Cancelar" : "Descargar"}
           </button>
         )}
       </div>
@@ -81,7 +81,7 @@ export function DownloadGate({ resource }: { resource: Resource }) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your work email to download"
+              placeholder="Ingrese su correo corporativo para descargar"
               className="flex-1 border border-vtm-gray-border bg-white px-4 py-2 text-sm text-vtm-dark placeholder-vtm-gray-mid focus:outline-none focus:border-vtm-dark"
             />
             <button
@@ -89,11 +89,11 @@ export function DownloadGate({ resource }: { resource: Resource }) {
               disabled={loading}
               className="bg-vtm-red text-white px-5 py-2 text-sm font-semibold hover:bg-[#a81718] transition-colors disabled:opacity-70"
             >
-              {loading ? "..." : "Get File"}
+              {loading ? "..." : "Obtener Archivo"}
             </button>
           </form>
           <p className="text-vtm-gray-mid text-xs mt-2">
-            We'll send you the download link. No spam — unsubscribe anytime.
+            Le enviaremos el enlace de descarga. Sin spam — puede darse de baja en cualquier momento.
           </p>
         </div>
       )}

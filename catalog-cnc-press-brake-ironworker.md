@@ -4,15 +4,15 @@
 
 ## CNC Press Brake
 
-Electric-hydraulic servo high precision CNC press brake driven by a servo motor, used to bend steel sheet into various shapes with outstanding precision and efficiency. The machine structure is integrally welded and processed, with main parts analyzed by ANSYS finite element analysis software for optimal reliability and precision.
+Hydraulic CNC press brake with servo-motor controlled hydraulic drive. Integrally welded structure, ANSYS-analyzed for rigidity. Bends steel sheet with outstanding precision and efficiency.
 
-Nominal Force: 630–16,000 KN (63T–1600T) | Bending Length: 2500–8000 mm
+**Range:** 630–16,000 KN (63T–1600T) | Bending Length: 2500–8000 mm
 
 ---
 
 ### Technical Specifications
 
-| Model | Nominal Force (KN) | Bending Length (mm) | Poles Distance (mm) | Throat Depth (mm) | Slider Travel (mm) | Worktable Height (mm) | Die Loading Height (mm) | Main Motor (kW) | Back Gauge X Travel (mm) | Back Gauge X Speed (mm/s) |
+| Model | Force (KN) | Length (mm) | Poles Dist. (mm) | Throat (mm) | Slider Travel (mm) | Table Height (mm) | Die Height (mm) | Motor (kW) | BG Travel (mm) | BG Speed (mm/s) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 63T/2500 | 630 | 2500 | 1900 | 350 | 150 | 800 | 380 | 7.5 | 600 | 100 |
 | 80T/3200 | 800 | 3200 | 2600 | 350 | 200 | 800 | 380 | 7.5 | 600 | 100 |
@@ -45,210 +45,203 @@ Nominal Force: 630–16,000 KN (63T–1600T) | Bending Length: 2500–8000 mm
 
 ### Key Features
 
-#### Automatic Crowning Compensation
-The V-axis in the bed's compensation device is a numerical control axis that controls the crowning. Based on bending pressure applied to the workpiece, the numerical control system calculates the required compensation and automatically controls the relative displacement of the crowning wedge block — effectively compensating for slider and upper ram deflection to achieve an ideal, consistent bend angle from end to end.
+**Automatic Crowning Compensation** — CNC-controlled V-axis wedge block corrects for slider and ram deflection automatically, producing a consistent bend angle end to end.
 
-#### Up to 6+1 Axis Back Gauge — Complex Parts, Simple Setup
-The back gauge can be extended to 6+1 axis. X, R, Z1, and Z2 axes allow independent positioning of each finger — critical for flanges at multiple depths, offset bends, and tapered parts. Every position is stored in the part program and recalled automatically when running the same job again.
+**Up to 6+1 Axis Back Gauge** — X, R, Z1, Z2 axes allow independent finger positioning for flanges at multiple depths, offset bends, and tapered parts. All positions stored in the part program.
 
-#### DELEM / ESA / CYBELEC CNC Controller
-The press brake uses a numerical control system from Dutch DELEM, Italian ESA, or Swiss CYBELEC. Functions include: bending angle graphics programming, angle correction compensation, automatic bending pressure calculation and adjustment, automatic worktable deformation compensation, back gauge automatic return, and 3D bend simulation. Optional controllers: DELEM DA53TX, DA66S, DA69S.
+**DELEM / ESA / CYBELEC CNC Controller** — Touchscreen with 3D bend simulation, DXF import, automatic tonnage calculation, angle correction, and worktable deformation compensation. Options: DELEM DA53TX, DA66S, DA69S.
 
-#### Electric-Hydraulic Servo Drive
-Driven by a servo motor paired with a Bosch Rexroth hydraulic system, Siemens motor, and high-accuracy linear encoder with linear guide rail and precision ball screw — delivering higher positioning accuracy and energy efficiency compared to conventional hydraulic systems.
+**Servo-Controlled Hydraulic Drive** — Bosch Rexroth hydraulic system with Siemens servo motor. Higher positioning accuracy, faster response, lower energy use vs. fixed-speed hydraulic. High-accuracy linear encoder on every axis.
 
-#### Sheet Follower Support System (Optional)
-Provides material support for large or heavy sheets during bending, reducing operator fatigue and improving part quality on long workpieces.
+**Sheet Follower Support (Optional)** — Material support for large or heavy sheets during bending; reduces fatigue and improves quality on long workpieces.
 
 ---
 
 ### Configuration Options
 
-**Tonnage**
-- 63T — light gauge sheet metal
-- 80T–100T — general fabrication
-- 160T–250T — heavy plate and structural profiles
-- 320T–400T — heavy structural fabrication
-- 500T–800T — industrial heavy plate
-- 1000T–1600T — extra-heavy structural fabrication
-
-**Bending Length**
-- 2500 mm | 3200 mm | 4000 mm | 5000 mm | 6000 mm | 7000 mm | 8000 mm
-
-**CNC Controller**
-- DELEM DA53TX
-- DELEM DA66S
-- DELEM DA69S
-- Italian ESA
-- Swiss CYBELEC
-
-**Tooling Clamping**
-- Single-sided quick clamp (standard)
-- Double-sided quick clamp (optional)
-
-**Other Options**
-- Sheet follower support system
-- Wila precision tooling upgrade
+| Parameter | Options |
+|---|---|
+| Tonnage | 63T · 80T–100T · 160T–250T · 320T–400T · 500T–800T · 1000T–1600T |
+| Bending Length | 2500 · 3200 · 4000 · 5000 · 6000 · 7000 · 8000 mm |
+| CNC Controller | DELEM DA53TX · DA66S · DA69S · ESA (Italian) · CYBELEC (Swiss) |
+| Tooling Clamp | Single-sided quick clamp (std) · Double-sided quick clamp (opt) |
+| Other | Sheet follower support · Wila precision tooling upgrade |
 
 ---
 
-### CNC Press Brake vs. Manual Press Brake
+### CNC vs. Manual Press Brake
 
-| Feature | CNC Press Brake | Manual Press Brake |
+| Feature | CNC | Manual |
 |---|---|---|
 | Repeatability | ±0.01 mm | ±0.5 mm or worse |
-| Setup time per job | 5–15 min (program recalled) | 30–60 min (manual trial and error) |
-| 3D bend simulation | Yes — collision detection included | None |
+| Setup time | 5–15 min (program recalled) | 30–60 min (trial and error) |
+| 3D simulation | Yes, with collision detection | None |
 | Back gauge | Up to 6+1 axis CNC | Manual single-axis |
-| Crowning compensation | Automatic (CNC-controlled V-axis) | Manual shims (if available) |
-| Operator skill required | Low — controller guides operator | High — experienced operator essential |
-| Part-to-part consistency | Identical | Operator-dependent variation |
+| Crowning | Automatic CNC V-axis | Manual shims (if available) |
+| Operator skill | Low — controller-guided | High — experienced required |
+| Part consistency | Identical | Operator-dependent |
 | Initial cost | Higher | Lower |
 
 ---
 
 ### FAQ
 
-**Is the tooling compatible with my existing punch and die sets?**
-VTM press brakes ship configured for standard European-style (Wila/Wilson) tooling, compatible with the majority of aftermarket tooling in the US. Amada-style tool holders are available as a configuration option.
+**Tooling compatibility?** Ships for standard European-style (Wila/Wilson) tooling. Amada-style holders available as an option.
 
-**How difficult is programming on the CNC controller?**
-The DELEM/ESA/CYBELEC controller uses a touchscreen interface with 3D part visualization. Most operators reach full programming proficiency within 2–3 days. DXF files from your CAD system can be imported directly — the controller auto-generates the bend sequence and calculates tonnage. VTM includes 2 days of on-site programming training with every machine.
+**How hard is CNC programming?** Touchscreen with 3D visualization; most operators are proficient in 2–3 days. DXF import auto-generates bend sequence and tonnage. Includes 2 days on-site training.
 
-**How do I select the right tonnage?**
-Tonnage is determined by material type, thickness, tensile strength, and bend length. Your VTM sales engineer will calculate the required tonnage for your specific jobs before recommending a model.
+**How do I select tonnage?** Your VTM sales engineer calculates required tonnage from material type, thickness, tensile strength, and bend length.
 
-**What is the lead time and installation process?**
-Standard lead time is 10–14 weeks from confirmed order. VTM's installation team handles rigging, leveling, hydraulic and electrical commissioning, and first-article verification bends. Installation typically takes 1–2 days.
+**Lead time and installation?** 10–14 weeks from confirmed order. VTM team handles rigging, leveling, commissioning, and first-article bends (1–2 days).
 
-**Can I add automatic tool change later?**
-The auto tool change system must be specified at time of order — it requires specific hydraulic provisions and ram geometry that cannot be retrofitted after manufacture.
+**Can auto tool change be added later?** No — requires specific hydraulic provisions and ram geometry specified at order; cannot be retrofitted.
+
+---
+---
+
+## Electric Press Brake
+
+Full electric servo CNC press brake — no hydraulic oil, no hydraulic pump. Power draw is proportional to load; approximately 80% more energy-efficient than an equivalent hydraulic machine. FEA-optimized bed and slider for consistent accuracy across the bending length.
+
+**Range:** 30–600 kN | Bending Length: 200–2500 mm | Bending Stroke: 120–150 mm
+
+---
+
+### Technical Specifications
+
+| Model | Capacity (kN) | Length (mm) | Stroke (mm) | BG Stroke (mm) | Power (kW) | Fast Speed (mm/s) | Feed Speed (mm/s) | Open Height (mm) | Throat (mm) | Col. Dist. (mm) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| EP03-02 | 30 | 200 | 120 | 150 | 2 | 200 | <30 | 420 | — | 250 |
+| EP06-04 | 60 | 400 | 120 | 150 | 3 | 200 | <30 | 420 | 150 | 370 |
+| EP12-06 | 120 | 600 | 120 | 150 | 5.6 | 200 | <30 | 420 | 150 | 520 |
+| EP18-08 | 180 | 800 | 120 | 300 | 7.5 | 200 | <30 | 420 | 150 | 770 |
+| EP12-06R | 120 | 600 | 120 | 150 | 2×3 | 200 | <30 | 420 | 150 | 520 |
+| EP20-10 | 200 | 1050 | 120 | 300 | 11 | 200 | <30 | 430 | 250 | 930 |
+| EP30-12 | 300 | 1250 | 150 | 500 | 13 | 200 | <30 | 470 | 250 | 1150 |
+| EP35-12 | 350 | 1250 | 150 | 500 | 13 | 200 | <20 | 470 | 250 | 1150 |
+| EP40-13 | 400 | 1300 | 150 | 500 | 15 | 200 | <20 | 470 | 300 | 1200 |
+| EP50-20 | 500 | 1600 | 150 | 500 | 30 | 200 | <20 | 530 | 350 | 1400 |
+| EP60-25 | 600 | 2500 | 150 | 500 | 30 | 200 | <20 | 530 | 350 | 2300 |
+
+---
+
+### Key Advantages Over Hydraulic
+
+**No Hydraulic Oil** — Zero leak risk, no waste oil disposal, no pump/valve/seal maintenance cycle.
+
+**~80% Energy Savings** — Mechanical efficiency >95% vs. <80% hydraulic. Power consumed only during active bending. ~12 kWh/day vs. ~60 kWh/day (100-kN class).
+
+**High-Speed Operation** — Fast fall/return at 200 mm/s; working speed 0–20 mm/s adjustable. No warm-up time — production-ready from cold start.
+
+**Superior Accuracy** — Bending angle error ±0.5° (vs. ±1° hydraulic). VILA deflection compensation axis active across full bending length.
+
+**Lower Maintenance** — Periodic lubrication only. No fluid management, no pump rebuilds, no valve servicing.
+
+---
+
+### Electric vs. Hydraulic Press Brake
+
+| Feature | Electric | Hydraulic |
+|---|---|---|
+| Drive | Servo electric (ball screw) | Hydraulic cylinders + pump |
+| Energy (100-kN) | ~12 kWh/day | ~60 kWh/day |
+| Efficiency | >95% | <80% |
+| Ram speed (fast) | 200 mm/s | 100–150 mm/s |
+| Angle error | ±0.5° | ±1° |
+| Hydraulic oil | No | Yes |
+| Maintenance | Lubrication only | Oil + pumps + valves + seals |
+| Capacity range | 30–600 kN | 630–16,000 kN |
+| Best fit | Precision light-gauge, clean environments | Heavy plate, structural, high-tonnage |
+
+---
+
+### Configuration Options
+
+| Parameter | Options |
+|---|---|
+| Capacity | EP03-02 (30 kN) · EP06-04–EP12-06 (60–120 kN) · EP18-08–EP20-10 (180–200 kN) · EP30-12–EP40-13 (300–400 kN) · EP50-20–EP60-25 (500–600 kN) |
+| Back Gauge Stroke | 150 mm (EP03–EP12-06R) · 300 mm (EP18-08, EP20-10) · 500 mm (EP30-12–EP60-25) |
+
+---
+
+### FAQ
+
+**Electric vs. hydraulic — who should choose electric?** Shops prioritizing energy costs, oil-free environments, or high-mix light-gauge work. For >600 kN, hydraulic is the only option.
+
+**Bending angle repeatability?** ±0.5° with VILA compensation active. Working speed is adjustable per material for tighter results.
+
+**Tooling compatibility?** Standard European-style (Wila/Wilson) tooling — same as VTM hydraulic line.
+
+**Power and installation?** 3-phase (specify voltage at order). No hydraulic power unit or oil reservoir; smaller footprint and faster commissioning than hydraulic.
+
+**Lead time?** 10–14 weeks from confirmed order.
 
 ---
 ---
 
 ## Hydraulic Ironworker
 
-Hydraulic ironworker using hydraulic transmission to shear, punch, and notch a variety of materials: plate steel, square steel, round steel, angle steel, channel steel (U-steel), and I-beam steel. Equipped with a shearing gauge. Available in models Q35Y-16 through Q35Y-50.
+Hydraulic ironworker combining punching, notching, flat bar shearing, angle iron shearing, and multi-profile shearing in a single machine body. Handles plate, square, round, angle, T-steel, I-beam, and channel (U-steel) steel. One hydraulic power unit, one footprint.
 
-Punching Pressure: 60–250 tons | Max Plate Shearing Thickness: 16–50 mm | Max Punch Diameter: 25–40 mm
+**Range:** 60–250 tons | Max Plate Shear: 16–50 mm | Max Punch Diameter: 25–40 mm
 
 ---
 
-### Technical Specifications by Model
+### Technical Specifications
 
-| Specification | Q35Y-16 | Q35Y-20 | Q35Y-25 | Q35Y-30 | Q35Y-40 | Q35Y-50 |
+| Specification | VTM16IW | VTM20IW | VTM25IW | VTM30IW | VTM40IW | VTM50IW |
 |---|---|---|---|---|---|---|
 | Punching Pressure (ton) | 60 | 90 | 120 | 160 | 200 | 250 |
-| Max Plate Shearing Thickness (mm) | 16 | 20 | 25 | 30 | 40 | 50 |
-| Steel Plate Strength | ≤450 MPa | ≤450 MPa | ≤450 MPa | ≤450 MPa | ≤450 MPa | ≤450 MPa |
-| Shearing Angle | 7° | 8° | 8° | 8° | 8° | 8° |
-| Shearing Size per Stroke T×W (mm) | 16×25 / 8×400 | 20×330 / 10×480 | 25×330 / 16×600 | 30×355 / 20×600 | 40×335 / 30×600 | 30×600 |
+| Max Plate Shear (mm) | 16 | 20 | 25 | 30 | 40 | 50 |
 | Slider Stroke (mm) | 80 | 80 | 80 | 80 | 100 | 80 |
-| Strokes per Minute | 11–20 | 12–20 | 8–18 | 6–16 | 6–16 | 8–12 |
+| Strokes/min | 11–20 | 12–20 | 8–18 | 6–16 | 6–16 | 8–12 |
 | Throat Depth (mm) | 300 | 355 | 400 | 600 | 600 | 600 |
-| Max Punching Thickness (mm) | 18 | 22 | 28 | 30 | 38 | 50 |
 | Max Punch Diameter (mm) | 25 | 30 | 35 | 38 | 40 | 35 |
 | Main Motor (kW) | 5.5 | 5.5 | 7.5 | 11 | 18.5 | 32 |
-| Overall Dimensions L×W×H (mm) | 1730×820×1900 | 1900×900×1950 | 2355×960×2200 | 2800×1100×2500 | 2800×1100×2500 | 3000×1150×2600 |
 | Net Weight (kg) | 1800 | 2400 | 4000 | 6500 | 8000 | 12500 |
-
----
-
-### Process Capability by Material
-
-| Material | Q35Y-16 | Q35Y-20 | Q35Y-30 | Q35Y-50 |
-|---|---|---|---|---|
-| Round Steel (mm) | 45 | 50 | 65 | 80 |
-| Square Steel (mm) | 40×40 | 50×50 | 55×55 | 70×70 |
-| Angle Steel 90° Shear (mm) | 120×120×12 | 140×140×12 | 180×180×16 | 200×200×20 |
-| Angle Steel 45° Shear (mm) | 50×50×5 | 50×50×5 | 80×80×8 | 100×100×20 |
-| T-Steel 90° Shear (mm) | 125×125×12 | 140×140×12 | 180×180×16 | 200×200×20 |
-| T-Steel 45° Shear (mm) | 60×60×8 | 70×70×10 | 80×80×10 | 100×100×20 |
-| I-Steel (mm) | 120×74×5 | 160×86×6 | 280×124×10.5 | 400×200×16 |
-| U-Steel / Channel (mm) | 120×53×5.5 | 160×60×6.5 | 280×86×11.5 | 400×200×16 |
 
 ---
 
 ### Key Features
 
-#### Five Work Stations — One Machine, One Footprint
-The hydraulic ironworker combines punching, notching, flat bar shearing, angle iron shearing, and profile shearing in a single machine body. No separate hydraulic power units, no additional footprint. Operators move between stations in seconds — or run two different operations simultaneously with the dual-operator option.
+**Five Stations, One Footprint** — Punch, notch, shear flat bar, shear angle iron, and shear profiles without moving to another machine. Dual-operator option lets two operators run different stations at the same time.
 
-#### Punching Station
-Develops full tonnage across its range — up to 40 mm diameter in steel plate. Standard tooling accepts round, square, oblong, and custom punch profiles. Compatible with US standard and European-style punch-and-die sets.
+**Punching** — Full rated tonnage across the range, up to 40 mm punch diameter. Accepts round, square, oblong, and custom profiles. Compatible with US-style (Wilson, Piranha, Scotchman) and European tooling.
 
-#### Angle Iron Notching — Clean, Square Corners
-The notching station shears angle iron at 90°, 60°, and 45° in a single stroke — producing clean corner joints ready for welding without grinding or secondary cutting.
+**Angle Iron Notching** — 90°, 60°, and 45° cuts in a single stroke. Corners come out weld-ready with no grinding.
 
-#### Flat Bar & Plate Shearing
-Cuts structural flat bar and plate in a single hydraulic stroke. Drop-cut design — scrap drops clear without manual handling. Adjustable backstop with memory marks for production runs.
+**Multi-Profile Shearing** — Flat bar, round steel, square steel, T-steel, I-beam (to 400×200×16 mm on VTM50IW), and U-steel/channel.
 
-#### Multi-Profile Shearing
-Beyond flat bar and angle iron, the ironworker shears round steel, square steel, T-steel, I-beam (up to 400×200×16 mm on Q35Y-50), and U-steel/channel — replacing multiple dedicated machines.
-
-#### V-Die Bending Attachment (Optional)
-Mounts directly into the punching station, turning the ironworker into a compact press brake for short bends. Ideal for brackets, clips, and small formed parts.
+**V-Die Bending (Optional)** — Mounts in the punching station for short bends on brackets and clips.
 
 ---
 
-### Configuration Options
+### Model Selection Guide
 
-**Model / Tonnage**
-- Q35Y-16 (60T) — light structural, plate to 16 mm
-- Q35Y-20 (90T) — general fabrication, plate to 20 mm
-- Q35Y-25 (120T) — plate to 25 mm, angle to 140×140×12 mm
-- Q35Y-30 (160T) — heavy structural, plate to 30 mm
-- Q35Y-40 (200T) — heavy plate to 40 mm, large profiles
-- Q35Y-50 (250T) — maximum capacity, plate to 50 mm, I-beam to 400×200×16 mm
+| Model | Tonnage | Max Plate | Best For |
+|---|---|---|---|
+| VTM16IW | 60T | 16 mm | Light structural, thin plate |
+| VTM20IW | 90T | 20 mm | General fabrication |
+| VTM25IW | 120T | 25 mm | Medium structural |
+| VTM30IW | 160T | 30 mm | Heavy plate, large angle iron |
+| VTM40IW | 200T | 40 mm | Heavy structural fabrication |
+| VTM50IW | 250T | 50 mm | Maximum capacity, large I-beam |
 
-**Operation Mode**
-- Single operator (one station at a time)
-- Dual operator (two stations simultaneously)
-- Foot pedal control (standard)
-- Hand lever control (optional)
-
-**Tooling Package**
-- Standard round punch set (8 sizes)
-- Extended punch set (16 sizes)
-- Oblong and square punch set
-- Quick-change tooling holders (reduce changeover from 5 min to under 60 sec)
-
----
-
-### Ironworker vs. Separate Individual Machines
-
-| Feature | Ironworker | Separate Machines |
-|---|---|---|
-| Footprint | One machine | 5× separate footprints |
-| Capital cost | Lower total | Higher (5 separate purchases) |
-| Power connections required | One | Up to 5 |
-| Maintenance overhead | One hydraulic system | 5 separate systems |
-| Operator mobility between tasks | Steps, not walks | Walk across the shop |
-| Punching speed (single hole) | Equivalent | Equivalent |
-| High-volume punching throughput | Good | Punch press may be faster |
-| CNC punching / nesting | Not available | Available in turret punches |
+**Operation:** Single operator (std) · Dual operator (opt)
+**Control:** Foot pedal (std) · Hand lever (opt)
+**Tooling:** Standard round set (8 sizes) · Extended set (16 sizes) · Quick-change holders
 
 ---
 
 ### FAQ
 
-**What tooling is compatible with the punching station?**
-The VTM ironworker accepts standard US-style punch-and-die sets (Wilson, Piranha, Scotchman compatible) as well as European-style tooling. Custom punch profiles (oblong, D-shaped, square) drop directly into the machine without adapters.
+**What tooling fits?** US-style (Wilson, Piranha, Scotchman compatible) and European tooling. Custom profiles drop in without adapters.
 
-**Can two operators use the machine simultaneously?**
-Yes — the larger models support a dual-operator configuration where independent hydraulic circuits serve different station groups. One operator can punch while another shears. A central interlock prevents station conflicts.
+**Can two operators work at the same time?** Yes on VTM25IW and larger — independent hydraulic circuits with a central conflict interlock.
 
-**How does maintenance compare to five separate machines?**
-Significantly simpler. One hydraulic power unit, one motor, and one set of hydraulic seals to service. Most shops report spending 60–70% less time on ironworker maintenance than an equivalent multi-machine setup.
-
-**What is the typical punching throughput?**
-Depending on the model, the machine performs 6–20 strokes per minute. On a simple pattern of 10 holes in a standard plate, experienced operators achieve 20–25 parts per hour.
-
-**What floor and power requirements are needed?**
-Standard concrete floor — no special foundation pad needed for lighter models. The Q35Y-40 and Q35Y-50 benefit from a reinforced floor. Power is 3-phase (specify voltage at order). Compressed air is not required.
+**Power and floor requirements?** 3-phase (specify voltage at order); no compressed air. Standard concrete floor for VTM16IW–VTM30IW; reinforced slab recommended for VTM40IW and VTM50IW.
 
 ---
 
-*VTM Tech Solutions — US installation included, US-based support team, 12-month warranty.*
+*VTM Tech Solutions — US installation included, US-based support, 12-month warranty.*
 *vtmtechsolutions.com*

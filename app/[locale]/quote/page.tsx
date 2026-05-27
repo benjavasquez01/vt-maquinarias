@@ -23,14 +23,16 @@ export default async function QuotePage({
       {/* Minimal header */}
       <header className="border-b border-white/10 px-6 lg:px-10 h-16 flex items-center justify-between max-w-screen-xl mx-auto">
         <Link href="/" className="flex-shrink-0">
-          <Image
-            src="/images/logo-dark.webp"
-            alt="VTM Tech Solutions"
-            width={1568}
-            height={745}
-            className="h-10 w-auto"
-            priority
-          />
+          <span className="inline-block bg-white rounded px-3 py-2">
+            <Image
+              src="/images/logo-vtmaquinarias.webp"
+              alt="VT Maquinarias"
+              width={1591}
+              height={511}
+              className="h-8 w-auto"
+              priority
+            />
+          </span>
         </Link>
         <Link
           href="/"

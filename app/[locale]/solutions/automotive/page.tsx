@@ -6,8 +6,8 @@ import { Link } from "@/lib/navigation";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Automotive Manufacturing Solutions",
-  description: "Precision laser cutting, robotic welding, and press brakes for automotive component manufacturers. Tolerances and throughput built for Tier 1–3 production.",
+  title: "Soluciones para Manufactura Automotriz",
+  description: "Corte láser de precisión, soldadura robótica y plegadoras para fabricantes de componentes automotrices. Tolerancias y productividad para producción Tier 1–3.",
 };
 
 export default async function AutomotivePage({

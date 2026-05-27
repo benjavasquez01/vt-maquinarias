@@ -11,9 +11,9 @@ import { HeroScroll } from "./HeroScroll";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Fiber Laser Sheet Cutting Machine — VTM-A / VTM-Pro Series",
+  title: "Máquina de Corte Láser de Fibra para Chapa — Serie VTM-A / VTM-Pro",
   description:
-    "Industrial fiber laser cutting machines, 1.5–30 kW. Raycus source, HIWIN rails, CypCut CNC. Bed sizes from 4'×4' to 8'×20'. ±0.05mm accuracy. Full US installation included.",
+    "Máquinas industriales de corte láser de fibra, 1.5–30 kW. Fuente Raycus, guías HIWIN, CNC CypCut. Mesas de 4'×4' a 8'×20'. Precisión de ±0.05mm. Instalación en Chile incluida.",
 };
 
 export default async function FiberLaserPage({

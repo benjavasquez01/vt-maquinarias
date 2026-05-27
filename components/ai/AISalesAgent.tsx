@@ -38,12 +38,12 @@ interface AISalesAgentProps {
 
 const OPENING_MESSAGES: Record<"en" | "es", Record<string, string>> = {
   en: {
-    quote: "Hi! I'm Benjamin, your VTM Tech Solutions sales representative. I'm here to help you find the right machine for your shop and get you accurate pricing. What kind of metalworking are you doing — cutting, bending, welding, or something else?",
-    demo: "Hi! I'm Benjamin, your VTM Tech Solutions sales representative. I see you're interested in our welding automation systems. What are you currently welding, and what's driving your interest in automation?",
+    quote: "Hi! I'm Benjamin, your VT Maquinarias sales representative. I'm here to help you find the right machine for your shop and get you accurate pricing. What kind of metalworking are you doing — cutting, bending, welding, or something else?",
+    demo: "Hi! I'm Benjamin, your VT Maquinarias sales representative. I see you're interested in our welding automation systems. What are you currently welding, and what's driving your interest in automation?",
   },
   es: {
-    quote: "¡Hola! Soy Benjamin, tu representante de ventas de VTM Tech Solutions. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, doblado, soldadura u otra cosa?",
-    demo: "¡Hola! Soy Benjamin, tu representante de ventas de VTM Tech Solutions. Veo que te interesa nuestros sistemas de automatización de soldadura. ¿Qué estás soldando actualmente y qué te llevó a considerar la automatización?",
+    quote: "¡Hola! Soy Benjamin, tu representante de ventas de VT Maquinarias. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, doblado, soldadura u otra cosa?",
+    demo: "¡Hola! Soy Benjamin, tu representante de ventas de VT Maquinarias. Veo que te interesa nuestros sistemas de automatización de soldadura. ¿Qué estás soldando actualmente y qué te llevó a considerar la automatización?",
   },
 };
 
@@ -89,11 +89,11 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
   const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
-  const [language, setLanguage] = useState<"en" | "es">("en");
+  const [language] = useState<"en" | "es">("es");
   const [leadComplete, setLeadComplete] = useState(false);
   const leadSentRef = useRef<"none" | "partial" | "complete">("none");
   const messagesRef = useRef<Message[]>([]);
-  const languageRef = useRef<"en" | "es">("en");
+  const languageRef = useRef<"en" | "es">("es");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
@@ -398,7 +398,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
       return;
     }
     const recognition = new SpeechRecognitionCtor();
-    recognition.lang = language === "es" ? "es-US" : "en-US";
+    recognition.lang = "es-CL";
     recognition.continuous = false;
     recognition.interimResults = true;
     recognition.onstart = () => setIsListening(true);
@@ -457,27 +457,11 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
             </div>
             <div>
               <p className="text-white font-semibold text-sm">Benjamin</p>
-              <p className="text-white/40 text-xs">VTM Tech Solutions — Sales Representative</p>
+              <p className="text-white/40 text-xs">VT Maquinarias — Representante de Ventas</p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Language toggle */}
-            <div className="flex items-center bg-white/5 rounded-full p-0.5">
-              {(["en", "es"] as const).map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => setLanguage(lang)}
-                  className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors ${
-                    language === lang ? "bg-vtm-red text-white" : "text-white/40 hover:text-white/70"
-                  }`}
-                  aria-pressed={language === lang}
-                >
-                  {lang.toUpperCase()}
-                </button>
-              ))}
-            </div>
-
             {/* Voice output toggle */}
             <button
               onClick={() => setVoiceEnabled((v) => !v)}

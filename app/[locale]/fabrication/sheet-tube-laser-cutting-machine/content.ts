@@ -1,71 +1,5 @@
 import type { ProductPageData } from "@/components/product/ProductPageTemplate";
 
-const en: ProductPageData = {
-  category: "Fabrication",
-  slug: "sheet-tube-laser-cutting-machine",
-  machineName: "Sheet & Tube Combo Laser",
-  heroSubheadline: "VTM-ST series. One machine that cuts flat sheet and tube/structural profiles. 3–6 kW, flat bed up to 4020 (4′×20′), round tube up to 180 mm, lengths to 6 m — without buying two machines or doubling your footprint.",
-  heroImageId: "/images/sheet-tube-combo-hero.webp",
-  heroAlign: "right",
-  features: [],
-  specs: [
-    { label: "Model", imperial: "VTM-ST (Sheet & Tube Combo)", metric: "VTM-ST" },
-    { label: "Laser Power Options", imperial: "3 kW / 6 kW", metric: "3 kW / 6 kW" },
-    { label: "Laser Source", imperial: "Raycus Fiber Laser", metric: "Raycus Fiber Laser" },
-    { label: "Flat Bed Sizes Available", imperial: "5′×10′ / 4′×20′", metric: "3000×1500 / 4000×2000 mm" },
-    { label: "Max Round Tube Diameter", imperial: "7.1\"", metric: "180 mm" },
-    { label: "Max Square Tube", imperial: "5.1\" × 5.1\"", metric: "130 × 130 mm" },
-    { label: "Profile Types", imperial: "Round, Square, Rectangular, Angle, Channel", metric: "Round, Square, Rectangular, Angle, Channel" },
-    { label: "Max Tube Length", imperial: "20 ft", metric: "6,000 mm" },
-    { label: "Cutting Head", imperial: "BOCI BLT Series (standard) / RayTools BS Series (optional)", metric: "BOCI BLT Series (standard) / RayTools BS Series (optional)" },
-    { label: "CNC Controller", imperial: "Bochu CypCut + CypTube (dual mode)", metric: "Bochu CypCut + CypTube (dual mode)" },
-    { label: "Servo Drive", imperial: "Fuji Bus servo", metric: "Fuji Bus servo" },
-    { label: "Linear Guide Rails", imperial: "HIWIN 20–30 series", metric: "HIWIN 20–30 series" },
-    { label: "Positioning Accuracy", imperial: "±0.002\"", metric: "±0.05 mm" },
-    { label: "Max Sheet Cutting Speed", imperial: "up to 787 in/min (thin sheet)", metric: "up to 20 m/min (thin sheet)" },
-    { label: "Max Thickness — Carbon Steel (3 kW)", imperial: "0.5\"", metric: "12 mm" },
-    { label: "Max Thickness — Carbon Steel (6 kW)", imperial: "0.75\"", metric: "20 mm" },
-    { label: "Max Thickness — Stainless Steel (3 kW)", imperial: "0.25\"", metric: "6 mm" },
-    { label: "Max Thickness — Stainless Steel (6 kW)", imperial: "0.5\"", metric: "12 mm" },
-    { label: "Water Chiller", imperial: "Tongfei (standard)", metric: "Tongfei (standard)" },
-    { label: "Power Supply (US)", imperial: "480V, 3-phase, 60 Hz", metric: "380V, 3-phase, 50 Hz" },
-  ],
-  videoSectionLabel: "See It Work",
-  videoHeadline: "Sheet and Tube, One Machine",
-  configOptions: [
-    { label: "Laser Power", options: ["3 kW", "6 kW"], note: "3 kW handles most carbon steel and stainless to 12 mm. 6 kW for heavier plate and faster sheet throughput." },
-    { label: "Flat Bed Size", options: ["5′×10′ (3015)", "4′×20′ (4020)"], note: "3015 is the most common format — matches 4×10 sheet stock. 4020 suits long-format parts and full-length structural." },
-    { label: "Table Type", options: ["Single fixed table", "Dual-pallet exchange table (FE variant)"], note: "Exchange table is available on the VTM-ST FE variant — load sheet while machine cuts previous sheet." },
-    { label: "Tube Capacity", options: ["Standard: round to 180 mm, 6 m length", "Optional: extended chuck for 220 mm diameter"], note: "Standard chuck covers the majority of structural profiles encountered in fabrication shops." },
-  ],
-  comparisonLabel: "Technology",
-  comparisonHeadline: "Combo Machine vs. Two Separate Machines",
-  comparisonOursLabel: "VTM-ST Combo",
-  comparisonTheirsLabel: "Flatbed + Tube Laser",
-  comparison: [
-    { feature: "Initial capital cost", ours: "One purchase", theirs: "Two machine purchases" },
-    { feature: "Floor space required", ours: "~600–800 sq ft", theirs: "~1,000–1,500 sq ft" },
-    { feature: "Electrical drops required", ours: "One 480V 3-phase service", theirs: "Two separate services" },
-    { feature: "Chillers required", ours: "One", theirs: "Two" },
-    { feature: "Tube cutting capability", ours: "Up to 180 mm round, 6 m length", theirs: "Full range (separate tube laser)" },
-    { feature: "Sheet throughput", ours: "Same as standalone flatbed", theirs: "Same as standalone flatbed" },
-    { feature: "Best for", ours: "Mixed-product shops, limited floor space", theirs: "High-volume dedicated tube or sheet runs" },
-  ],
-  relatedProducts: [
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.webp" },
-    { name: "Fiber Laser Tube Cutting Machine", href: "/fabrication/fiber-laser-tube-cutting-machine", tag: "Tube Cutting", imageId: "/images/fiber-laser-tube-hero.webp" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.webp" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
-  ],
-  faqs: [
-    { question: "How long does it take to switch from sheet mode to tube mode?", answer: "Switching from flat sheet to tube cutting takes approximately 10–15 minutes — attach the rotary chuck assembly to the machine end, load tube support rollers, switch the CNC to CypTube mode, and feed the first tube. No tools required for the chuck attachment." },
-    { question: "Can it cut tube and sheet in the same job without switching?", answer: "Not simultaneously — the machine operates in one mode at a time. However, you can cut all the sheet parts for a job, switch to tube mode, cut all the tube parts, and have everything ready for fit-up and weld in a single session." },
-    { question: "Is the tube capability as good as a dedicated tube laser?", answer: "For most fabrication work, yes. The VTM-ST handles round tube to 180 mm, all common structural profiles, and tube lengths to 6 m. Shops running exclusively high-volume tube with diameters above 180 mm or lengths above 6 m should consider the dedicated VTM-T or VTM-MT tube laser instead." },
-    { question: "What is the maximum flat sheet thickness on the 6 kW version?", answer: "On carbon steel: 20 mm (0.75\"). On stainless steel: 12 mm (0.5\"). On aluminum: 10 mm (0.4\"). For heavier plate work above these thicknesses, the higher-power standalone flatbed (12–20 kW) is the right tool." },
-    { question: "Is the dual-pallet exchange table available on the combo machine?", answer: "Yes — the VTM-ST FE variant includes the dual-pallet exchange table on the flat sheet side. The tube chuck attaches to the same machine regardless of table type." },
-  ],
-};
-
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "sheet-tube-laser-cutting-machine",
@@ -94,7 +28,7 @@ const es: ProductPageData = {
     { label: "Espesor Máx. — Acero Inoxidable (3 kW)", imperial: "0.25\"", metric: "6 mm" },
     { label: "Espesor Máx. — Acero Inoxidable (6 kW)", imperial: "0.5\"", metric: "12 mm" },
     { label: "Enfriador de Agua", imperial: "Tongfei (estándar)", metric: "Tongfei (estándar)" },
-    { label: "Suministro Eléctrico (EE.UU.)", imperial: "480V, trifásico, 60 Hz", metric: "380V, trifásico, 50 Hz" },
+    { label: "Suministro Eléctrico (Chile)", imperial: "480V, trifásico, 60 Hz", metric: "380V, trifásico, 50 Hz" },
   ],
   videoSectionLabel: "Véalo Funcionar",
   videoHeadline: "Chapa y Tubo, Una Sola Máquina",
@@ -132,4 +66,4 @@ const es: ProductPageData = {
   ],
 };
 
-export const content: Record<"en" | "es", ProductPageData> = { en, es };
+export const content: Record<string, ProductPageData> = { es };

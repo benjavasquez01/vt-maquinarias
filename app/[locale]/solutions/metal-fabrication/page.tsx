@@ -7,9 +7,9 @@ import { Link } from "@/lib/navigation";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Metal Fabrication Solutions",
+  title: "Soluciones para Metalmecánica",
   description:
-    "Complete metal fabrication equipment: fiber laser cutting, press brakes, shearing, laser welding, and cleaning machines. Full US installation and support.",
+    "Equipamiento completo de metalmecánica: corte láser de fibra, plegadoras, cizallas, soldadura láser y máquinas de limpieza. Instalación y soporte en Chile.",
 };
 
 export default async function MetalFabricationPage({

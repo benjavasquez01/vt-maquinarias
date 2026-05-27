@@ -87,7 +87,7 @@ export function QuoteForm({
             name="name"
             required
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors"
-            placeholder="John Smith"
+            placeholder="Juan Pérez"
           />
         </div>
         <div>
@@ -103,7 +103,7 @@ export function QuoteForm({
             name="email"
             required
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors"
-            placeholder="john@yourshop.com"
+            placeholder="juan@sutaller.cl"
           />
         </div>
       </div>
@@ -120,7 +120,7 @@ export function QuoteForm({
             type="tel"
             name="phone"
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors"
-            placeholder="+1 (555) 000-0000"
+            placeholder="+56 9 0000 0000"
           />
         </div>
         <div>
@@ -135,7 +135,7 @@ export function QuoteForm({
             type="text"
             name="company"
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors"
-            placeholder="Smith Fabrication LLC"
+            placeholder="Fabricaciones Pérez SpA"
           />
         </div>
       </div>
@@ -152,7 +152,7 @@ export function QuoteForm({
           rows={4}
           className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors resize-none"
           placeholder={messagePlaceholder}
-          defaultValue="Machine of interest: Fiber Laser Sheet Cutting Machine"
+          defaultValue="Máquina de interés: Cortadora Láser de Chapa"
         />
       </div>
       <Button type="submit" variant="primary" size="lg" className="w-full justify-center" disabled={loading}>

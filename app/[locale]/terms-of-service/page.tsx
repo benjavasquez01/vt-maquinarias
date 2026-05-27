@@ -1,60 +1,60 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "VTM Tech Solutions terms of service governing use of our website.",
+  title: "Términos de Servicio",
+  description: "Términos de servicio de VT Maquinarias que rigen el uso de nuestro sitio web.",
 };
 
 const SECTIONS = [
   {
-    title: "Use of This Website",
+    title: "Uso de Este Sitio Web",
     body: [
-      "This website is operated by VTM Tech Solutions for the purpose of providing information about our products and services and facilitating quote and contact requests.",
-      "You may use this website for lawful purposes only. You may not use this website to transmit spam, malicious content, or to attempt unauthorized access to our systems.",
-      "All content on this website — including text, images, product specifications, pricing information, and downloadable documents — is the property of VTM Tech Solutions and may not be reproduced without written permission.",
+      "Este sitio web es operado por VT Maquinarias con el propósito de proporcionar información sobre nuestros productos y servicios y facilitar solicitudes de cotización y contacto.",
+      "Usted puede usar este sitio web únicamente con fines lícitos. No puede usarlo para transmitir spam, contenido malicioso ni para intentar accesos no autorizados a nuestros sistemas.",
+      "Todo el contenido de este sitio web — incluyendo texto, imágenes, especificaciones de productos, información de precios y documentos descargables — es propiedad de VT Maquinarias y no puede reproducirse sin autorización por escrito.",
     ],
   },
   {
-    title: "Product Information and Accuracy",
+    title: "Información de Productos y Exactitud",
     body: [
-      "Product specifications on this website are for informational purposes. Actual product specifications, pricing, and availability are confirmed at time of formal quotation.",
-      "We make reasonable efforts to keep product information accurate and up to date. However, specifications may change without notice as products are updated.",
-      "Pricing information, where displayed, is indicative only. Formal quotes reflect current pricing, currency rates, and applicable taxes or duties.",
+      "Las especificaciones de productos en este sitio web tienen fines informativos. Las especificaciones, precios y disponibilidad reales se confirman al momento de la cotización formal.",
+      "Hacemos esfuerzos razonables para mantener la información de productos exacta y actualizada. Sin embargo, las especificaciones pueden cambiar sin previo aviso a medida que los productos se actualizan.",
+      "La información de precios, cuando se muestra, es solo indicativa. Las cotizaciones formales reflejan los precios vigentes, los tipos de cambio y los impuestos o aranceles aplicables.",
     ],
   },
   {
-    title: "AI Sales Agent",
+    title: "Asistente de Ventas con IA",
     body: [
-      "Our website includes an AI-powered sales assistant built on Anthropic's Claude language model. This agent is designed to help you explore our products and submit quote requests.",
-      "The AI agent provides general product information based on its training. For binding technical specifications and pricing, always refer to a formal written quote from VTM Tech Solutions.",
-      "Conversations with the AI agent may be reviewed by our sales team to ensure accuracy and quality. Conversation data is handled per our Privacy Policy.",
+      "Nuestro sitio web incluye un asistente de ventas impulsado por IA basado en el modelo de lenguaje Claude de Anthropic. Este asistente está diseñado para ayudarle a explorar nuestros productos y enviar solicitudes de cotización.",
+      "El asistente de IA proporciona información general de productos basada en su entrenamiento. Para especificaciones técnicas y precios vinculantes, consulte siempre una cotización formal por escrito de VT Maquinarias.",
+      "Las conversaciones con el asistente de IA pueden ser revisadas por nuestro equipo de ventas para asegurar exactitud y calidad. Los datos de las conversaciones se manejan según nuestra Política de Privacidad.",
     ],
   },
   {
-    title: "Limitation of Liability",
+    title: "Limitación de Responsabilidad",
     body: [
-      "VTM Tech Solutions provides this website and its content on an as-is basis. We make no warranties, express or implied, regarding the accuracy or completeness of information on this site.",
-      "VTM Tech Solutions shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website or reliance on information contained herein.",
+      "VT Maquinarias proporciona este sitio web y su contenido tal cual. No ofrecemos garantías, expresas o implícitas, respecto a la exactitud o integridad de la información de este sitio.",
+      "VT Maquinarias no será responsable de daños indirectos, incidentales o consecuentes que surjan del uso de este sitio web o de la confianza en la información aquí contenida.",
     ],
   },
   {
-    title: "Governing Law",
+    title: "Ley Aplicable",
     body: [
-      "These terms are governed by the laws of the State of [State], United States, without regard to conflict of law provisions.",
-      "Any disputes arising from these terms or your use of this website will be resolved in the courts of [State], United States.",
+      "Estos términos se rigen por las leyes de la República de Chile, sin atender a disposiciones sobre conflictos de leyes.",
+      "Cualquier controversia derivada de estos términos o de su uso de este sitio web se resolverá ante los tribunales competentes de Chile.",
     ],
   },
   {
-    title: "Changes to These Terms",
+    title: "Cambios a Estos Términos",
     body: [
-      "We may update these terms from time to time. The date at the top of this page indicates when these terms were last revised. Continued use of this website after a change constitutes acceptance of the revised terms.",
+      "Podemos actualizar estos términos periódicamente. La fecha en la parte superior de esta página indica cuándo se revisaron por última vez. El uso continuo de este sitio web tras un cambio constituye la aceptación de los términos revisados.",
     ],
   },
   {
-    title: "Contact",
+    title: "Contacto",
     body: [
-      "Questions about these terms: legal@vtmtechsolutions.com",
-      "VTM Tech Solutions — United States operations.",
+      "Consultas sobre estos términos: legal@vtmaquinarias.cl",
+      "VT Maquinarias — operaciones en Chile.",
     ],
   },
 ];
@@ -63,11 +63,11 @@ export default function TermsOfServicePage() {
   return (
     <div className="bg-white">
       <div className="max-w-screen-md mx-auto px-6 py-32">
-        <h1 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-4">Terms of Service</h1>
-        <p className="text-vtm-gray-mid mb-12">Last updated: April 1, 2026</p>
+        <h1 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-4">Términos de Servicio</h1>
+        <p className="text-vtm-gray-mid mb-12">Última actualización: 1 de abril de 2026</p>
 
         <p className="text-vtm-gray-mid leading-relaxed mb-12">
-          By using the VTM Tech Solutions website (vtmtechsolutions.com), you agree to these terms. If you do not agree, please do not use this website.
+          Al usar el sitio web de VT Maquinarias (vtmaquinarias.cl), usted acepta estos términos. Si no está de acuerdo, por favor no use este sitio web.
         </p>
 
         <div className="space-y-12">

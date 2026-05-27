@@ -20,34 +20,31 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | VTM Tech Solutions",
-    default: "VTM Tech Solutions — Industrial Machinery for the US Market",
+    template: "%s | VT Maquinarias",
+    default: "VT Maquinarias — Maquinaria Industrial para Chile",
   },
   description:
-    "Fiber laser cutting, laser welding, CNC press brakes, and collaborative welding robots for US metal fabrication shops.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://vtmtechsolutions.com"),
+    "Corte láser de fibra, soldadura láser, plegadoras CNC y robots de soldadura colaborativa para talleres de fabricación metálica en Chile.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://vtmaquinarias.cl"),
   openGraph: {
     type: "website",
-    siteName: "VTM Tech Solutions",
+    siteName: "VT Maquinarias",
+    locale: "es_CL",
     images: [
       {
         url: "/og-default.jpg",
         width: 1200,
         height: 630,
-        alt: "VTM Tech Solutions — Industrial Machinery for the US Market",
+        alt: "VT Maquinarias — Maquinaria Industrial para Chile",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@VTMTechSolutions",
+    site: "@VTMaquinarias",
   },
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/en",
-      "es-US": "/es",
-    },
   },
 };
 

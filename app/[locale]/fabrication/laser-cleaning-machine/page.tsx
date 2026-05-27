@@ -5,9 +5,9 @@ import { CleaningModelBrowser } from "./CleaningModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Laser Cleaning Machine",
+  title: "Máquina de Limpieza Láser",
   description:
-    "Pulsed fiber laser cleaning systems, 50W–500W. Remove rust, coatings, and oxides with no chemicals, no media blasting, and zero substrate damage. US support included.",
+    "Sistemas de limpieza láser de fibra pulsada, 50W–500W. Elimina óxido, recubrimientos y óxidos sin químicos, sin chorro abrasivo y sin daño al sustrato. Soporte en Chile incluido.",
 };
 
 export default async function LaserCleaningPage({

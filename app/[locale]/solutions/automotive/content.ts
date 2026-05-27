@@ -11,42 +11,6 @@ export type AutomotiveContent = {
   cta: { sectionLabel: string; headline: string; body: string; cta: string };
 };
 
-const en: AutomotiveContent = {
-  hero: {
-    sectionLabel: "Industry Solutions",
-    headline: "Automotive",
-    subheadline: "Tier 1–3 automotive component manufacturers need tolerance and throughput above everything else. Our equipment delivers both.",
-    cta1: "Request a Quote",
-    cta2: "Talk to a Specialist",
-  },
-  requirements: {
-    sectionLabel: "How We Solve It",
-    headline: "Automotive requirements — answered",
-    items: [
-      { req: "HSLA and advanced high-strength steel processing", how: "Fiber laser cutting handles HSLA up to 1 inch. Press brakes with CNC back gauges handle tight-radius bends without springback issues." },
-      { req: "Weld quality consistency across thousands of parts", how: "Industrial welding arms maintain ±0.05mm torch path repeatability on every part — weld quality on part #5,000 is identical to part #1." },
-      { req: "Mixed aluminum and steel production on one line", how: "Fiber laser excels on both. Quick changeover via saved cutting parameters — switch from steel to 6061 aluminum in under 5 minutes." },
-      { req: "Traceability and documentation", how: "CNC controllers log cutting parameters, power, and speed for every part. Data available for quality audit and customer documentation requirements." },
-    ],
-  },
-  equipment: {
-    sectionLabel: "Recommended Equipment",
-    headline: "Built for automotive",
-    learnMore: "Learn more →",
-    items: [
-      { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", desc: "HSLA, aluminum, and stainless — at automotive tolerances." },
-      { name: "Industrial Welding Arm", href: "/automation/industrial-welding-arm", desc: "Consistent weld quality across high-volume production runs." },
-      { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", desc: "Tight-radius bending with ±0.01mm repeatability." },
-    ],
-  },
-  cta: {
-    sectionLabel: "Get Started",
-    headline: "Ready to discuss your automotive application?",
-    body: "Share your part drawings and production targets — we'll recommend the right equipment and provide a preliminary ROI model.",
-    cta: "Request a Quote",
-  },
-};
-
 const es: AutomotiveContent = {
   hero: {
     sectionLabel: "Soluciones por Industria",
@@ -83,4 +47,4 @@ const es: AutomotiveContent = {
   },
 };
 
-export const content: Record<"en" | "es", AutomotiveContent> = { en, es };
+export const content: Record<string, AutomotiveContent> = { es };

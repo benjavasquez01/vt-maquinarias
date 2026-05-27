@@ -4,9 +4,9 @@ import { ProductPageTemplate } from "@/components/product/ProductPageTemplate";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Hydraulic Ironworker",
+  title: "Punzonadora Hidráulica",
   description:
-    "Hydraulic ironworker machines, 55–110 ton. Five work stations: punching, notching, flat bar shearing, angle iron shearing, and tube notching — all in one machine.",
+    "Punzonadoras hidráulicas de 55–110 toneladas. Cinco estaciones de trabajo: punzonado, muescado, corte de barra plana, corte de ángulo y muescado de tubo — todo en una sola máquina.",
 };
 
 export default async function IronworkerPage({

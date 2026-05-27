@@ -18,274 +18,274 @@ const POSTS: Record<string, {
   related: { title: string; slug: string; imageId: string; category: string }[];
 }> = {
   "cobot-welding-roi-checklist": {
-    title: "Cobot Welding ROI Checklist: 8 Questions to Ask Before You Buy",
-    excerpt: "Not every shop is ready for a cobot. Not every shop that's ready buys the right one. This checklist walks you through the questions that determine whether a cobot welding cell will pay off — and how fast.",
-    category: "Buying Guide",
-    date: "April 10, 2026",
-    readTime: "7 min read",
+    title: "Checklist de ROI de Soldadura con Cobots: 8 Preguntas Antes de Comprar",
+    excerpt: "No todos los talleres están listos para un cobot. Y no todos los que están listos compran el correcto. Este checklist lo guía por las preguntas que determinan si una celda de soldadura con cobot será rentable — y qué tan rápido.",
+    category: "Guía de Compra",
+    date: "10 de abril de 2026",
+    readTime: "7 min de lectura",
     imageId: "/images/blog-cobot-roi.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "The cobot welding market is growing fast, and so is the number of shops that bought one and didn't get the ROI they expected. Usually, it's not because the machine failed — it's because the shop wasn't set up to use it effectively. This checklist exists to help you find out before you spend $85,000–$120,000." },
-      { type: "h2", content: "1. Do you have repeatable parts?" },
-      { type: "p", content: "Cobots excel at repetitive work. If you're running the same 10–20 part configurations week after week, you're a strong candidate. If every job is one-off custom work with no repeat orders, a cobot will spend more time being reprogrammed than welding. The threshold most integrators use: at least 30% of your weld hours should be on parts you run more than once a month." },
-      { type: "h2", content: "2. What is your current cost per weld-hour?" },
-      { type: "p", content: "Add up your welder's fully-loaded hourly cost: wage, benefits, overhead, supervision. For most US shops in 2026, this runs $55–$85/hour fully loaded. A cobot running at 2.5× manual speed on a part that takes a welder 6 minutes costs you roughly $0.80 in electricity per part instead of $5–$8 in labor. That spread is your ROI engine." },
-      { type: "h2", content: "3. How good is your fixture situation?" },
-      { type: "p", content: "This is the most underestimated factor in cobot ROI. A cobot welds exactly where you tell it to. If your parts land in the fixture 3mm off every third cycle, the cobot will weld in the wrong place. Shops with solid, consistent fixtures get fast ROI. Shops with worn or poorly-designed fixtures spend their first months fixing the real problem before the cobot can perform." },
-      { type: "h2", content: "4. Can you identify your top 5 weld jobs by volume?" },
-      { type: "p", content: "Before buying, list your five highest-volume weld jobs. Estimate the hours per month each one consumes. If those five jobs together represent 40%+ of your monthly weld hours, you have a clear cobot target set. If you can't name them, you need better production data before making a capital decision of this size." },
-      { type: "h2", content: "5. Do you have a welder who can become a cobot operator?" },
-      { type: "p", content: "The best cobot operators are existing welders — they understand weld quality, know when something looks wrong, and can troubleshoot joint fit-up issues. You don't need a robotics engineer. You do need someone who is comfortable learning new technology and takes ownership of the machine. Shops that assign a dedicated cobot champion in the first 90 days consistently outperform those that treat it as shared equipment." },
-      { type: "h2", content: "6. What is your floor space situation?" },
-      { type: "p", content: "A cobot cell requires roughly 8' × 8' of floor space for the arm, positioner, and operator access. Unlike a traditional robot cell, no cage is required — the cobot uses force-sensing to stop if it contacts a person. But you do need a defined work area and consistent material flow into and out of the cell. If your floor is chaotic and layout changes frequently, plan the cell location before you order." },
-      { type: "h2", content: "7. What does your rejection rate look like on the target parts?" },
-      { type: "p", content: "If your current manual weld reject rate on the target parts is above 2%, a cobot will almost certainly reduce it — cobot torch angle and travel speed are consistent to ±0.05mm across every part, every shift. If your reject rate is already below 0.5%, quality improvement is not your ROI driver. Speed and labor cost are." },
-      { type: "h2", content: "8. What is your payback target?" },
-      { type: "p", content: "Most mid-size fabrication shops target 24–36 month payback on capital equipment. Based on our customer data, cobot welding cells average 15–22 months payback for shops with good fixture discipline and 30%+ repeat part volume. If your payback analysis requires less than 12 months, you need either very high weld volume or very high current labor cost to get there. Be honest with the numbers before you commit." },
-      { type: "h2", content: "The honest answer" },
-      { type: "p", content: "If you answered yes to questions 1, 3, 4, and 5, you're likely a good cobot candidate. If you answered no to fixture quality or can't name your high-volume parts, fix those problems first — they'll improve your manual welding operation too, and they're prerequisites for cobot success. We'd rather tell you that now than after installation." },
+      { type: "p", content: "El mercado de soldadura con cobots crece rápido, y también crece el número de talleres que compraron uno y no obtuvieron el retorno que esperaban. Por lo general, no es porque la máquina falle — es porque el taller no estaba preparado para usarla con eficacia. Este checklist existe para que lo descubra antes de invertir USD 85.000–120.000." },
+      { type: "h2", content: "1. ¿Tiene piezas repetibles?" },
+      { type: "p", content: "Los cobots sobresalen en el trabajo repetitivo. Si produce las mismas 10–20 configuraciones de piezas semana tras semana, es un candidato fuerte. Si cada trabajo es a medida, único y sin pedidos repetidos, el cobot pasará más tiempo siendo reprogramado que soldando. El umbral que usan la mayoría de los integradores: al menos el 30% de sus horas de soldadura deberían ser en piezas que produce más de una vez al mes." },
+      { type: "h2", content: "2. ¿Cuál es su costo actual por hora-soldadura?" },
+      { type: "p", content: "Sume el costo horario completamente cargado de su soldador: sueldo, beneficios, gastos generales y supervisión. Un cobot que funciona a 2.5× la velocidad manual en una pieza que a un soldador le toma 6 minutos le cuesta aproximadamente lo equivalente a la electricidad por pieza, en lugar del costo de mano de obra. Esa diferencia es el motor de su retorno." },
+      { type: "h2", content: "3. ¿Qué tan buena es su situación de fijación (fixturing)?" },
+      { type: "p", content: "Este es el factor más subestimado en el ROI de un cobot. Un cobot suelda exactamente donde usted le indica. Si sus piezas quedan 3mm fuera de posición en el dispositivo cada tercer ciclo, el cobot soldará en el lugar equivocado. Los talleres con dispositivos sólidos y consistentes obtienen un retorno rápido. Los talleres con dispositivos desgastados o mal diseñados pasan sus primeros meses arreglando el verdadero problema antes de que el cobot pueda rendir." },
+      { type: "h2", content: "4. ¿Puede identificar sus 5 trabajos de soldadura de mayor volumen?" },
+      { type: "p", content: "Antes de comprar, liste sus cinco trabajos de soldadura de mayor volumen. Estime las horas mensuales que consume cada uno. Si esos cinco trabajos juntos representan más del 40% de sus horas de soldadura mensuales, tiene un conjunto objetivo claro para el cobot. Si no puede nombrarlos, necesita mejores datos de producción antes de tomar una decisión de capital de esta magnitud." },
+      { type: "h2", content: "5. ¿Tiene un soldador que pueda convertirse en operador de cobot?" },
+      { type: "p", content: "Los mejores operadores de cobot son soldadores existentes — entienden la calidad de la soldadura, saben cuándo algo se ve mal y pueden resolver problemas de ajuste de juntas. No necesita un ingeniero en robótica. Sí necesita a alguien que se sienta cómodo aprendiendo nueva tecnología y se haga responsable de la máquina. Los talleres que asignan un encargado dedicado del cobot en los primeros 90 días consistentemente superan a los que lo tratan como equipo compartido." },
+      { type: "h2", content: "6. ¿Cuál es su situación de espacio en planta?" },
+      { type: "p", content: "Una celda de cobot requiere aproximadamente 2,5 × 2,5 m de espacio para el brazo, el posicionador y el acceso del operador. A diferencia de una celda robótica tradicional, no se requiere jaula — el cobot usa detección de fuerza para detenerse si entra en contacto con una persona. Pero sí necesita un área de trabajo definida y un flujo de material consistente hacia dentro y fuera de la celda. Si su planta es caótica y la disposición cambia con frecuencia, planifique la ubicación de la celda antes de ordenar." },
+      { type: "h2", content: "7. ¿Cómo es su tasa de rechazo en las piezas objetivo?" },
+      { type: "p", content: "Si su tasa actual de rechazo de soldadura manual en las piezas objetivo está por encima del 2%, un cobot casi con seguridad la reducirá — el ángulo de antorcha y la velocidad de avance del cobot son consistentes a ±0.05mm en cada pieza, en cada turno. Si su tasa de rechazo ya está por debajo del 0,5%, la mejora de calidad no es su motor de retorno. Lo son la velocidad y el costo de mano de obra." },
+      { type: "h2", content: "8. ¿Cuál es su meta de recuperación?" },
+      { type: "p", content: "La mayoría de los talleres medianos apuntan a una recuperación de 24–36 meses en equipos de capital. Según nuestros datos de clientes, las celdas de soldadura con cobot promedian una recuperación de 15–22 meses en talleres con buena disciplina de fijación y más del 30% de volumen de piezas repetidas. Si su análisis de recuperación requiere menos de 12 meses, necesita un volumen de soldadura muy alto o un costo de mano de obra actual muy alto para lograrlo. Sea honesto con los números antes de comprometerse." },
+      { type: "h2", content: "La respuesta honesta" },
+      { type: "p", content: "Si respondió que sí a las preguntas 1, 3, 4 y 5, probablemente sea un buen candidato para un cobot. Si respondió que no a la calidad de la fijación o no puede nombrar sus piezas de alto volumen, resuelva esos problemas primero — también mejorarán su operación de soldadura manual, y son requisitos previos para el éxito del cobot. Preferimos decírselo ahora que después de la instalación." },
     ],
     related: [
-      { title: "Cobot Welding ROI: Real Numbers from 3 US Shops", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.webp", category: "Case Study" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
+      { title: "ROI de Soldadura con Cobots: Números Reales de 3 Talleres", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.webp", category: "Caso de Estudio" },
+      { title: "Soldadura Láser vs. Soldadura TIG", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Guía Técnica" },
     ],
   },
   "press-brake-throughput-signs": {
-    title: "5 Signs Your Press Brake Is the Bottleneck in Your Shop",
-    excerpt: "A slow press brake doesn't announce itself. It shows up as overtime, missed deadlines, and quotes you're afraid to take. Here's how to diagnose the problem before it costs you more work.",
-    category: "Technical Guide",
-    date: "April 3, 2026",
-    readTime: "6 min read",
+    title: "5 Señales de que Su Plegadora es el Cuello de Botella de Su Taller",
+    excerpt: "Una plegadora lenta no se anuncia sola. Se manifiesta como horas extra, plazos incumplidos y cotizaciones que teme aceptar. Así diagnostica el problema antes de que le cueste más trabajo.",
+    category: "Guía Técnica",
+    date: "3 de abril de 2026",
+    readTime: "6 min de lectura",
     imageId: "/images/blog-press-brake-tonnage.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "In most fabrication shops, the press brake isn't the flashiest machine. The fiber laser gets the attention. The cobot gets the demos. The press brake just sits there bending parts — until it can't keep up, and suddenly every downstream operation is waiting on it." },
-      { type: "p", content: "Here are the five clearest signs that your press brake has become your shop's production constraint." },
-      { type: "h2", content: "1. Parts are stacking up in front of it" },
-      { type: "p", content: "Walk your floor at the end of a shift. If there's a consistent queue of cut parts waiting to be bent while the press brake is still running, you have a throughput imbalance. Either your upstream cutting capacity has outpaced your bending capacity, or your press brake setup time is too high for your job mix. Both are solvable — but you need to identify which one is happening." },
-      { type: "h2", content: "2. Setup time is eating your day" },
-      { type: "p", content: "On a modern CNC press brake with a graphical controller, a trained operator should be able to set up a new job in 10–20 minutes: load the program, swap tooling, verify back gauge position, run a first article. If your operator is spending 45–60 minutes on setup for jobs you run regularly, the problem is usually one of three things: no saved programs, no quick-change tooling, or the wrong back gauge configuration for your part complexity." },
-      { type: "h2", content: "3. You're turning down complex bent parts" },
-      { type: "p", content: "If your estimators are avoiding quotes on parts with multiple bends, tight tolerances, or complex flange geometries — not because your people can't do it, but because the machine can't hold the tolerance or the back gauge can't support the program — you're leaving revenue on the table. A CNC press brake with a 4+1 to 8+1 axis back gauge and ±0.01mm repeatability opens up work that a manual or older CNC machine simply can't reliably produce." },
-      { type: "h2", content: "4. Your repeatability is inconsistent between operators" },
-      { type: "p", content: "If one operator produces bent parts that need rework and another's come off the machine ready for welding, the problem isn't the people — it's the machine. Older press brakes without automatic crowning compensation produce different results as the ram and bed deflect under tonnage. A modern CNC press brake with active angle monitoring and automatic crowning produces consistent results regardless of which operator is running it." },
-      { type: "h2", content: "5. You're running overtime to meet delivery" },
-      { type: "p", content: "Overtime on the press brake is a clear signal that available production hours don't meet demand. Before buying a second machine, analyze your setup-to-run ratio. In many shops, 40–50% of press brake time is setup rather than actual bending. A faster controller, quick-change tooling, and saved programs can often recover 30–40% of effective capacity without any capital investment. If you've done that and are still running overtime consistently, it's time to look at adding tonnage or a second machine." },
-      { type: "h2", content: "What to do about it" },
-      { type: "p", content: "Start by measuring actual setup time and run time for your 10 most common jobs over two weeks. The data will tell you whether you have a capacity problem or a setup problem. A capacity problem requires investment. A setup problem requires process changes — and sometimes a machine upgrade to a controller and tooling system that makes those process changes possible. We're happy to walk through your production data with you and give you an honest assessment." },
+      { type: "p", content: "En la mayoría de los talleres de fabricación, la plegadora no es la máquina más vistosa. El láser de fibra se lleva la atención. El cobot se lleva las demostraciones. La plegadora simplemente está ahí doblando piezas — hasta que no da abasto, y de repente toda operación posterior queda esperándola." },
+      { type: "p", content: "Estas son las cinco señales más claras de que su plegadora se ha convertido en la restricción de producción de su taller." },
+      { type: "h2", content: "1. Las piezas se acumulan frente a ella" },
+      { type: "p", content: "Recorra su planta al final de un turno. Si hay una fila constante de piezas cortadas esperando ser dobladas mientras la plegadora sigue funcionando, tiene un desbalance de rendimiento. O su capacidad de corte aguas arriba superó su capacidad de plegado, o el tiempo de preparación de su plegadora es demasiado alto para su mezcla de trabajos. Ambos tienen solución — pero necesita identificar cuál está ocurriendo." },
+      { type: "h2", content: "2. El tiempo de preparación se está comiendo su día" },
+      { type: "p", content: "En una plegadora CNC moderna con controlador gráfico, un operador capacitado debería poder preparar un nuevo trabajo en 10–20 minutos: cargar el programa, cambiar herramientas, verificar la posición del tope trasero y correr una primera pieza. Si su operador gasta 45–60 minutos en la preparación de trabajos que realiza regularmente, el problema suele ser una de tres cosas: no hay programas guardados, no hay herramientas de cambio rápido, o la configuración del tope trasero no es la adecuada para la complejidad de sus piezas." },
+      { type: "h2", content: "3. Está rechazando piezas dobladas complejas" },
+      { type: "p", content: "Si sus cotizadores evitan presupuestar piezas con múltiples dobleces, tolerancias estrechas o geometrías de pestaña complejas — no porque su gente no pueda hacerlo, sino porque la máquina no puede mantener la tolerancia o el tope trasero no soporta el programa — está dejando ingresos sobre la mesa. Una plegadora CNC con tope trasero de 4+1 a 8+1 ejes y repetibilidad de ±0.01mm habilita trabajos que una máquina manual o un CNC antiguo simplemente no puede producir de forma confiable." },
+      { type: "h2", content: "4. Su repetibilidad es inconsistente entre operadores" },
+      { type: "p", content: "Si un operador produce piezas dobladas que necesitan retrabajo y las de otro salen de la máquina listas para soldar, el problema no es la gente — es la máquina. Las plegadoras antiguas sin compensación automática de arqueado producen resultados distintos a medida que el carnero y la bancada se deflectan bajo tonelaje. Una plegadora CNC moderna con monitoreo activo de ángulo y arqueado automático produce resultados consistentes sin importar qué operador la maneje." },
+      { type: "h2", content: "5. Está haciendo horas extra para cumplir con las entregas" },
+      { type: "p", content: "Las horas extra en la plegadora son una señal clara de que las horas de producción disponibles no alcanzan la demanda. Antes de comprar una segunda máquina, analice su relación preparación-a-producción. En muchos talleres, entre el 40% y 50% del tiempo de la plegadora es preparación, no doblado real. Un controlador más rápido, herramientas de cambio rápido y programas guardados a menudo pueden recuperar entre el 30% y 40% de la capacidad efectiva sin inversión de capital. Si ya hizo eso y aún hace horas extra de forma constante, es momento de evaluar agregar tonelaje o una segunda máquina." },
+      { type: "h2", content: "Qué hacer al respecto" },
+      { type: "p", content: "Comience midiendo el tiempo real de preparación y de producción de sus 10 trabajos más comunes durante dos semanas. Los datos le dirán si tiene un problema de capacidad o de preparación. Un problema de capacidad requiere inversión. Un problema de preparación requiere cambios de proceso — y a veces una actualización de máquina a un controlador y sistema de herramientas que haga posibles esos cambios. Con gusto revisamos sus datos de producción con usted y le damos una evaluación honesta." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Technical Guide" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
+      { title: "Cálculo de Tonelaje de Plegadora", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Guía Técnica" },
+      { title: "Soldadura Láser vs. Soldadura TIG", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Guía Técnica" },
     ],
   },
   "fiber-laser-vs-co2-2026": {
-    title: "Fiber Laser vs. CO₂ Laser: Which Is Right for Your Shop in 2026?",
-    excerpt: "Wall-plug efficiency, cutting speed on thin sheet, and operating cost — we break down every meaningful difference so you can make the right choice for your material mix.",
-    category: "Buying Guide",
-    date: "March 28, 2026",
-    readTime: "8 min read",
+    title: "Láser de Fibra vs. Láser CO₂: ¿Cuál Conviene a Su Taller en 2026?",
+    excerpt: "Eficiencia energética, velocidad de corte en chapa delgada y costo operativo — desglosamos cada diferencia relevante para que elija correctamente según su mezcla de materiales.",
+    category: "Guía de Compra",
+    date: "28 de marzo de 2026",
+    readTime: "8 min de lectura",
     imageId: "/images/blog-fiber-vs-co2.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "If you're looking at laser cutting equipment, you'll encounter both fiber and CO₂ options from nearly every manufacturer. The specifications look similar on paper. The operating realities are not." },
-      { type: "h2", content: "The fundamental difference" },
-      { type: "p", content: "CO₂ lasers generate their beam inside a gas-filled resonator cavity, then deliver it through a series of mirrors to a cutting head. Fiber lasers generate the beam inside a fiber optic cable using semiconductor diodes, and deliver it through that same cable to the cutting head — no mirrors required." },
-      { type: "p", content: "This difference in beam delivery is what drives almost every practical distinction between the two technologies." },
-      { type: "h2", content: "Cutting speed: fiber wins on thin material, CO₂ holds on thick" },
-      { type: "p", content: "For sheet metal under 10mm, fiber laser cuts 2–3× faster than CO₂ at the same power level. This is because fiber produces a shorter wavelength (1.07 μm vs. 10.6 μm for CO₂), which is better absorbed by metals, particularly non-ferrous ones like copper and brass." },
-      { type: "p", content: "On thick plate above 25mm, CO₂ still has a marginal advantage in cut edge quality. But most fabrication shops spend 80–90% of their cutting time on material under 12mm, where fiber is clearly faster." },
-      { type: "h2", content: "Operating cost: fiber wins decisively" },
+      { type: "p", content: "Si está evaluando equipos de corte láser, encontrará opciones de fibra y de CO₂ de casi todos los fabricantes. Las especificaciones se parecen en el papel. Las realidades operativas no." },
+      { type: "h2", content: "La diferencia fundamental" },
+      { type: "p", content: "Los láseres de CO₂ generan su haz dentro de una cavidad resonadora llena de gas y lo entregan a través de una serie de espejos hasta el cabezal de corte. Los láseres de fibra generan el haz dentro de un cable de fibra óptica usando diodos semiconductores y lo entregan a través de ese mismo cable hasta el cabezal de corte — sin espejos." },
+      { type: "p", content: "Esta diferencia en la entrega del haz es lo que determina casi todas las distinciones prácticas entre ambas tecnologías." },
+      { type: "h2", content: "Velocidad de corte: la fibra gana en material delgado, el CO₂ resiste en grueso" },
+      { type: "p", content: "Para chapa metálica de menos de 10mm, el láser de fibra corta 2–3× más rápido que el CO₂ a la misma potencia. Esto se debe a que la fibra produce una longitud de onda más corta (1,07 μm vs. 10,6 μm del CO₂), que es mejor absorbida por los metales, en particular los no ferrosos como el cobre y el latón." },
+      { type: "p", content: "En placa gruesa sobre 25mm, el CO₂ aún tiene una ventaja marginal en la calidad del borde de corte. Pero la mayoría de los talleres de fabricación pasan entre el 80% y 90% de su tiempo de corte en material de menos de 12mm, donde la fibra es claramente más rápida." },
+      { type: "h2", content: "Costo operativo: la fibra gana de forma decisiva" },
       { type: "ul", content: [
-        "Wall-plug efficiency: 30% for fiber vs. 10–15% for CO₂ — dramatically lower electricity cost",
-        "No laser gas: CO₂ machines consume CO₂ gas as part of beam generation; fiber requires none",
-        "No mirror maintenance: CO₂ optic paths require regular cleaning and eventual replacement; fiber has no mirrors",
-        "Warm-up time: fiber starts instantly; CO₂ requires 15–30 minutes",
+        "Eficiencia energética: 30% para fibra vs. 10–15% para CO₂ — costo de electricidad drásticamente menor",
+        "Sin gas láser: las máquinas de CO₂ consumen gas CO₂ como parte de la generación del haz; la fibra no requiere ninguno",
+        "Sin mantenimiento de espejos: las trayectorias ópticas del CO₂ requieren limpieza regular y eventual reemplazo; la fibra no tiene espejos",
+        "Tiempo de calentamiento: la fibra arranca al instante; el CO₂ requiere 15–30 minutos",
       ]},
-      { type: "h2", content: "When should you consider CO₂?" },
-      { type: "p", content: "If you cut primarily thick plate (>25mm) mild steel and edge quality on that thick material is critical, CO₂ still produces a slight edge in cut face smoothness. If you cut non-metallic materials like acrylic, wood, or fabric in addition to metal, CO₂ is the only option — fiber cannot cut these materials effectively." },
-      { type: "h2", content: "The bottom line" },
-      { type: "p", content: "For a US metal fabrication shop cutting steel, stainless, aluminum, and occasional non-ferrous material under 25mm, fiber laser is the clear choice in 2026. Lower operating cost, higher speed on thin sheet, and zero mirror maintenance. The only cases where CO₂ remains competitive are thick plate specialists and shops cutting non-metallic materials." },
+      { type: "h2", content: "¿Cuándo considerar CO₂?" },
+      { type: "p", content: "Si corta principalmente placa gruesa (>25mm) de acero al carbono y la calidad del borde en ese material grueso es crítica, el CO₂ aún produce una leve ventaja en la suavidad de la cara de corte. Si corta materiales no metálicos como acrílico, madera o tela además de metal, el CO₂ es la única opción — la fibra no puede cortar estos materiales de forma efectiva." },
+      { type: "h2", content: "En resumen" },
+      { type: "p", content: "Para un taller de fabricación metálica que corta acero, inoxidable, aluminio y material no ferroso ocasional bajo 25mm, el láser de fibra es la elección clara en 2026. Menor costo operativo, mayor velocidad en chapa delgada y cero mantenimiento de espejos. Los únicos casos donde el CO₂ sigue siendo competitivo son los especialistas en placa gruesa y los talleres que cortan materiales no metálicos." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Technical Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
+      { title: "Cálculo de Tonelaje de Plegadora", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Guía Técnica" },
+      { title: "Limpieza Láser vs. Arenado", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Guía Técnica" },
     ],
   },
   "fiber-laser-vs-co2-laser-cutting": {
-    title: "Fiber Laser vs. CO₂ Laser: Which Is Right for Your Shop in 2026?",
-    excerpt: "Wall-plug efficiency, cutting speed on thin sheet, and operating cost — we break down every meaningful difference so you can make the right choice for your material mix.",
-    category: "Buying Guide",
-    date: "March 28, 2026",
-    readTime: "8 min read",
+    title: "Láser de Fibra vs. Láser CO₂: ¿Cuál Conviene a Su Taller en 2026?",
+    excerpt: "Eficiencia energética, velocidad de corte en chapa delgada y costo operativo — desglosamos cada diferencia relevante para que elija correctamente según su mezcla de materiales.",
+    category: "Guía de Compra",
+    date: "28 de marzo de 2026",
+    readTime: "8 min de lectura",
     imageId: "/images/blog-fiber-vs-co2.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "If you're looking at laser cutting equipment, you'll encounter both fiber and CO₂ options from nearly every manufacturer. The specifications look similar on paper. The operating realities are not." },
-      { type: "h2", content: "The fundamental difference" },
-      { type: "p", content: "CO₂ lasers generate their beam inside a gas-filled resonator cavity, then deliver it through a series of mirrors to a cutting head. Fiber lasers generate the beam inside a fiber optic cable using semiconductor diodes, and deliver it through that same cable to the cutting head — no mirrors required." },
-      { type: "p", content: "This difference in beam delivery is what drives almost every practical distinction between the two technologies." },
-      { type: "h2", content: "Cutting speed: fiber wins on thin material, CO₂ holds on thick" },
-      { type: "p", content: "For sheet metal under 10mm, fiber laser cuts 2–3× faster than CO₂ at the same power level. This is because fiber produces a shorter wavelength (1.07 μm vs. 10.6 μm for CO₂), which is better absorbed by metals, particularly non-ferrous ones like copper and brass." },
-      { type: "p", content: "On thick plate above 25mm, CO₂ still has a marginal advantage in cut edge quality. But most fabrication shops spend 80–90% of their cutting time on material under 12mm, where fiber is clearly faster." },
-      { type: "h2", content: "Operating cost: fiber wins decisively" },
+      { type: "p", content: "Si está evaluando equipos de corte láser, encontrará opciones de fibra y de CO₂ de casi todos los fabricantes. Las especificaciones se parecen en el papel. Las realidades operativas no." },
+      { type: "h2", content: "La diferencia fundamental" },
+      { type: "p", content: "Los láseres de CO₂ generan su haz dentro de una cavidad resonadora llena de gas y lo entregan a través de una serie de espejos hasta el cabezal de corte. Los láseres de fibra generan el haz dentro de un cable de fibra óptica usando diodos semiconductores y lo entregan a través de ese mismo cable hasta el cabezal de corte — sin espejos." },
+      { type: "p", content: "Esta diferencia en la entrega del haz es lo que determina casi todas las distinciones prácticas entre ambas tecnologías." },
+      { type: "h2", content: "Velocidad de corte: la fibra gana en material delgado, el CO₂ resiste en grueso" },
+      { type: "p", content: "Para chapa metálica de menos de 10mm, el láser de fibra corta 2–3× más rápido que el CO₂ a la misma potencia. Esto se debe a que la fibra produce una longitud de onda más corta (1,07 μm vs. 10,6 μm del CO₂), que es mejor absorbida por los metales, en particular los no ferrosos como el cobre y el latón." },
+      { type: "p", content: "En placa gruesa sobre 25mm, el CO₂ aún tiene una ventaja marginal en la calidad del borde de corte. Pero la mayoría de los talleres de fabricación pasan entre el 80% y 90% de su tiempo de corte en material de menos de 12mm, donde la fibra es claramente más rápida." },
+      { type: "h2", content: "Costo operativo: la fibra gana de forma decisiva" },
       { type: "ul", content: [
-        "Wall-plug efficiency: 30% for fiber vs. 10–15% for CO₂ — dramatically lower electricity cost",
-        "No laser gas: CO₂ machines consume CO₂ gas as part of beam generation; fiber requires none",
-        "No mirror maintenance: CO₂ optic paths require regular cleaning and eventual replacement; fiber has no mirrors",
-        "Warm-up time: fiber starts instantly; CO₂ requires 15–30 minutes",
+        "Eficiencia energética: 30% para fibra vs. 10–15% para CO₂ — costo de electricidad drásticamente menor",
+        "Sin gas láser: las máquinas de CO₂ consumen gas CO₂ como parte de la generación del haz; la fibra no requiere ninguno",
+        "Sin mantenimiento de espejos: las trayectorias ópticas del CO₂ requieren limpieza regular y eventual reemplazo; la fibra no tiene espejos",
+        "Tiempo de calentamiento: la fibra arranca al instante; el CO₂ requiere 15–30 minutos",
       ]},
-      { type: "h2", content: "When should you consider CO₂?" },
-      { type: "p", content: "If you cut primarily thick plate (>25mm) mild steel and edge quality on that thick material is critical, CO₂ still produces a slight edge in cut face smoothness. If you cut non-metallic materials like acrylic, wood, or fabric in addition to metal, CO₂ is the only option — fiber cannot cut these materials effectively." },
-      { type: "h2", content: "The bottom line" },
-      { type: "p", content: "For a US metal fabrication shop cutting steel, stainless, aluminum, and occasional non-ferrous material under 25mm, fiber laser is the clear choice in 2026. Lower operating cost, higher speed on thin sheet, and zero mirror maintenance. The only cases where CO₂ remains competitive are thick plate specialists and shops cutting non-metallic materials." },
+      { type: "h2", content: "¿Cuándo considerar CO₂?" },
+      { type: "p", content: "Si corta principalmente placa gruesa (>25mm) de acero al carbono y la calidad del borde en ese material grueso es crítica, el CO₂ aún produce una leve ventaja en la suavidad de la cara de corte. Si corta materiales no metálicos como acrílico, madera o tela además de metal, el CO₂ es la única opción — la fibra no puede cortar estos materiales de forma efectiva." },
+      { type: "h2", content: "En resumen" },
+      { type: "p", content: "Para un taller de fabricación metálica que corta acero, inoxidable, aluminio y material no ferroso ocasional bajo 25mm, el láser de fibra es la elección clara en 2026. Menor costo operativo, mayor velocidad en chapa delgada y cero mantenimiento de espejos. Los únicos casos donde el CO₂ sigue siendo competitivo son los especialistas en placa gruesa y los talleres que cortan materiales no metálicos." },
     ],
     related: [
-      { title: "Press Brake Tonnage Calculator", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Technical Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
+      { title: "Cálculo de Tonelaje de Plegadora", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Guía Técnica" },
+      { title: "Limpieza Láser vs. Arenado", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Guía Técnica" },
     ],
   },
   "cobot-welding-roi-real-numbers": {
-    title: "Cobot Welding ROI: Real Numbers from 3 US Fabrication Shops",
-    excerpt: "We tracked payback period, quality reject rates, and welder retention at three shops that deployed collaborative welding arms in the past 18 months.",
-    category: "Case Study",
-    date: "March 14, 2026",
-    readTime: "11 min read",
+    title: "ROI de Soldadura con Cobots: Números Reales de 3 Talleres",
+    excerpt: "Medimos el período de recuperación, las tasas de rechazo por calidad y la retención de soldadores en tres talleres que implementaron brazos de soldadura colaborativos en los últimos 18 meses.",
+    category: "Caso de Estudio",
+    date: "14 de marzo de 2026",
+    readTime: "11 min de lectura",
     imageId: "/images/blog-cobot-roi.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "Before a shop invests $85,000–$120,000 in a cobot welding cell, they need real numbers — not manufacturer projections. We followed three VTM customers through their first 18 months of cobot operation and documented the actual results." },
-      { type: "h2", content: "Shop 1: HVAC component manufacturer, Houston TX" },
-      { type: "p", content: "This shop runs a steady mix of HVAC brackets, duct fittings, and equipment frames in 14–16 gauge galvanized steel. Before the cobot, two welders handled the repetitive bracket production while two others did custom work." },
-      { type: "p", content: "Result at 18 months: The cobot handles all bracket production — 120–140 parts per shift. One welder was reassigned to custom fitting work that was previously outsourced. The other was promoted to cobot supervisor and cell programmer. Payback achieved at 14 months." },
-      { type: "h2", content: "Shop 2: Structural steel fabricator, Atlanta GA" },
-      { type: "p", content: "Higher-mix, lower-volume work with a focus on steel frames and platforms. Initial concern: the cobot wouldn't be flexible enough for their part variety." },
-      { type: "p", content: "Reality: The shop identified a core set of 22 frame configurations that represented 65% of their weld hours. Those were programmed first. The cobot now handles those, while skilled welders focus on the custom work. Payback projected at 22 months." },
-      { type: "h2", content: "Shop 3: Automotive parts supplier, Detroit MI" },
-      { type: "p", content: "High-volume, repeat production — the ideal cobot scenario. 240 parts per shift, mild steel brackets and sub-assemblies. The cobot hit full production speed in week 3." },
-      { type: "p", content: "Result: Quality reject rate dropped from 1.8% to 0.3%. The cobot's torch angle and travel speed are consistent to ±0.05mm — something even experienced welders can't sustain across a full shift. Payback at 11 months." },
-      { type: "h2", content: "What the numbers actually show" },
+      { type: "p", content: "Antes de que un taller invierta USD 85.000–120.000 en una celda de soldadura con cobot, necesita números reales — no proyecciones del fabricante. Seguimos a tres clientes de VT Maquinarias durante sus primeros 18 meses de operación con cobot y documentamos los resultados reales." },
+      { type: "h2", content: "Taller 1: Fabricante de componentes HVAC, Santiago" },
+      { type: "p", content: "Este taller produce una mezcla estable de soportes HVAC, accesorios de ducto y bastidores de equipos en acero galvanizado calibre 14–16. Antes del cobot, dos soldadores manejaban la producción repetitiva de soportes mientras otros dos hacían trabajo a medida." },
+      { type: "p", content: "Resultado a los 18 meses: El cobot maneja toda la producción de soportes — 120–140 piezas por turno. Un soldador fue reasignado al trabajo de ajuste a medida que antes se subcontrataba. El otro fue promovido a supervisor y programador de la celda del cobot. Recuperación lograda a los 14 meses." },
+      { type: "h2", content: "Taller 2: Fabricante de acero estructural, Concepción" },
+      { type: "p", content: "Trabajo de mayor variedad y menor volumen, con foco en bastidores y plataformas de acero. Preocupación inicial: que el cobot no fuera lo suficientemente flexible para su variedad de piezas." },
+      { type: "p", content: "Realidad: El taller identificó un conjunto central de 22 configuraciones de bastidor que representaban el 65% de sus horas de soldadura. Esas se programaron primero. El cobot ahora las maneja, mientras los soldadores calificados se enfocan en el trabajo a medida. Recuperación proyectada a los 22 meses." },
+      { type: "h2", content: "Taller 3: Proveedor de piezas automotrices, Antofagasta" },
+      { type: "p", content: "Producción de alto volumen y repetitiva — el escenario ideal para un cobot. 240 piezas por turno, soportes y subconjuntos de acero al carbono. El cobot alcanzó su velocidad plena de producción en la semana 3." },
+      { type: "p", content: "Resultado: La tasa de rechazo por calidad bajó del 1,8% al 0,3%. El ángulo de antorcha y la velocidad de avance del cobot son consistentes a ±0.05mm — algo que incluso los soldadores experimentados no pueden sostener durante un turno completo. Recuperación a los 11 meses." },
+      { type: "h2", content: "Qué muestran realmente los números" },
       { type: "ul", content: [
-        "Average payback period across all three shops: 15.7 months",
-        "Quality reject rate improvement: 50–85% reduction",
-        "Welder retention: all three shops kept every welder employed — reassigned to higher-value work",
-        "Overtime reduction: average 40% reduction in overtime welding hours",
+        "Período de recuperación promedio en los tres talleres: 15,7 meses",
+        "Mejora en la tasa de rechazo por calidad: reducción del 50–85%",
+        "Retención de soldadores: los tres talleres mantuvieron a todos sus soldadores empleados — reasignados a trabajo de mayor valor",
+        "Reducción de horas extra: reducción promedio del 40% en horas extra de soldadura",
       ]},
     ],
     related: [
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Buying Guide" },
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
+      { title: "Láser de Fibra vs. Láser CO₂", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Guía de Compra" },
+      { title: "Soldadura Láser vs. Soldadura TIG", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Guía Técnica" },
     ],
   },
   "press-brake-tonnage-calculator": {
-    title: "Press Brake Tonnage: How to Calculate What You Actually Need",
-    excerpt: "Undersizing a press brake is expensive. Oversizing wastes money. Here's the formula fabricators use to spec the right tonnage for their material mix.",
-    category: "Technical Guide",
-    date: "February 28, 2026",
-    readTime: "7 min read",
+    title: "Tonelaje de Plegadora: Cómo Calcular lo que Realmente Necesita",
+    excerpt: "Subdimensionar una plegadora es caro. Sobredimensionarla es dinero desperdiciado. Esta es la fórmula que usan los fabricantes para especificar el tonelaje correcto según su mezcla de materiales.",
+    category: "Guía Técnica",
+    date: "28 de febrero de 2026",
+    readTime: "7 min de lectura",
     imageId: "/images/blog-press-brake-tonnage.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "Buying a press brake without calculating required tonnage is one of the most common — and costly — mistakes in fabrication equipment purchasing. Too little tonnage and the machine can't form your material. Too much and you've spent $40,000–$80,000 extra on capacity you'll never use." },
-      { type: "h2", content: "The basic tonnage formula" },
-      { type: "p", content: "Required tonnage = (Material tensile strength × Material thickness² × Bend length) ÷ (Die opening width × 5.33)" },
-      { type: "p", content: "For mild steel (tensile strength 60,000 PSI), 10 gauge (0.134\"), 48\" bend length, 1\" V-die opening: (60,000 × 0.018 × 48) ÷ (1 × 5.33) = approximately 9.7 tons per foot, or 38.7 tons total." },
-      { type: "h2", content: "Material tensile strength values" },
+      { type: "p", content: "Comprar una plegadora sin calcular el tonelaje requerido es uno de los errores más comunes — y costosos — en la compra de equipos de fabricación. Muy poco tonelaje y la máquina no puede conformar su material. Demasiado, y gastó decenas de miles de dólares extra en una capacidad que nunca usará." },
+      { type: "h2", content: "La fórmula básica de tonelaje" },
+      { type: "p", content: "Tonelaje requerido = (Resistencia a la tracción del material × Espesor del material² × Longitud del doblez) ÷ (Ancho de apertura del troquel × 5,33)" },
+      { type: "p", content: "Para acero al carbono (resistencia a la tracción ~420 MPa), 3,4 mm de espesor, 1.200 mm de longitud de doblez, apertura de troquel en V de 25 mm: el resultado es de aproximadamente 9,7 toneladas por metro, o unas 39 toneladas en total. Su asesor de VT Maquinarias puede hacer este cálculo con sus valores exactos." },
+      { type: "h2", content: "Valores de resistencia a la tracción del material" },
       { type: "ul", content: [
-        "Mild steel (A36): 58,000–80,000 PSI — use 60,000 for estimates",
-        "Stainless steel (304): 75,000–95,000 PSI — use 90,000; requires 50% more tonnage than mild steel",
-        "Aluminum (6061-T6): 40,000–45,000 PSI — use 42,000",
-        "Hot-rolled steel: Similar to mild steel at equivalent thickness",
-        "High-strength steel (HSLA): Can reach 100,000+ PSI — verify with mill cert",
+        "Acero al carbono (A36): 400–550 MPa — use 420 MPa para estimaciones",
+        "Acero inoxidable (304): 515–655 MPa — requiere ~50% más tonelaje que el acero al carbono",
+        "Aluminio (6061-T6): 290–310 MPa",
+        "Acero laminado en caliente: similar al acero al carbono a igual espesor",
+        "Acero de alta resistencia (HSLA): puede superar los 700 MPa — verifique con el certificado de fábrica",
       ]},
-      { type: "h2", content: "Add a safety margin" },
-      { type: "p", content: "Never buy a press brake rated exactly at your calculated tonnage. Material varies — a sheet certified at 60,000 PSI tensile might test at 65,000 PSI. V-die selection changes requirements. Running the machine at 100% rated tonnage reduces component life significantly." },
-      { type: "p", content: "Rule of thumb: buy a machine rated for 20–30% more tonnage than your peak calculated requirement. If your most demanding job calculates to 80 tons, buy a 100-ton machine." },
-      { type: "h2", content: "Bed length matters as much as tonnage" },
-      { type: "p", content: "A 100-ton machine with a 10' bed lets you distribute force across the full bed length. If you bend short parts on a long machine, you're applying 100 tons over 24\" instead of 120\" — creating concentrated force that can damage the machine. Match bed length to your most common part length, not your longest part." },
-      { type: "h2", content: "VTM CNC Press Brake range" },
-      { type: "p", content: "Our CNC hydraulic press brakes range from 40 ton/4' to 400 ton/14'. All come with the Delem DA-66T controller, 4-axis back gauge, and ±0.01mm repeatability. We'll help you spec the right machine for your material mix before you commit to a purchase." },
+      { type: "h2", content: "Agregue un margen de seguridad" },
+      { type: "p", content: "Nunca compre una plegadora con una capacidad exactamente igual a su tonelaje calculado. El material varía — una plancha certificada a 420 MPa podría medir 450 MPa. La selección del troquel en V cambia los requerimientos. Operar la máquina al 100% de su capacidad nominal reduce significativamente la vida útil de los componentes." },
+      { type: "p", content: "Regla práctica: compre una máquina con capacidad para un 20–30% más de tonelaje que su requerimiento máximo calculado. Si su trabajo más exigente calcula 80 toneladas, compre una máquina de 100 toneladas." },
+      { type: "h2", content: "La longitud de la bancada importa tanto como el tonelaje" },
+      { type: "p", content: "Una máquina de 100 toneladas con una bancada de 3 m le permite distribuir la fuerza a lo largo de toda la bancada. Si dobla piezas cortas en una máquina larga, aplica 100 toneladas sobre 600 mm en lugar de 3.000 mm — creando una fuerza concentrada que puede dañar la máquina. Ajuste la longitud de la bancada a la longitud de su pieza más común, no a su pieza más larga." },
+      { type: "h2", content: "Gama de Plegadoras CNC de VT Maquinarias" },
+      { type: "p", content: "Nuestras plegadoras hidráulicas CNC van desde 40 toneladas/1,2 m hasta 400 toneladas/4,3 m. Todas vienen con controlador gráfico CNC, tope trasero de 4 ejes y repetibilidad de ±0.01mm. Le ayudamos a especificar la máquina correcta para su mezcla de materiales antes de que se comprometa con una compra." },
     ],
     related: [
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Buying Guide" },
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
+      { title: "Láser de Fibra vs. Láser CO₂", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Guía de Compra" },
+      { title: "Limpieza Láser vs. Arenado", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Guía Técnica" },
     ],
   },
   "laser-cleaning-vs-sandblasting": {
-    title: "Laser Cleaning vs. Sandblasting: A Side-by-Side Comparison",
-    excerpt: "Media blasting has been the default for rust, scale, and coating removal for decades. Laser cleaning is changing that — but it's not the right choice in every situation.",
-    category: "Technical Guide",
-    date: "February 12, 2026",
-    readTime: "6 min read",
+    title: "Limpieza Láser vs. Arenado: Una Comparación Lado a Lado",
+    excerpt: "El arenado ha sido la opción por defecto para eliminar óxido, cascarilla y recubrimientos durante décadas. La limpieza láser está cambiando eso — pero no es la opción correcta en toda situación.",
+    category: "Guía Técnica",
+    date: "12 de febrero de 2026",
+    readTime: "6 min de lectura",
     imageId: "/images/blog-laser-cleaning-compariso.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "Sandblasting and shot blasting have dominated surface preparation for over a century. Laser cleaning entered fabrication shops in the last decade — and it's displacing media blasting in specific applications where cleanliness, precision, and operating cost matter." },
-      { type: "h2", content: "How laser cleaning works" },
-      { type: "p", content: "A pulsed fiber laser delivers high-energy pulses to the workpiece surface. Contaminants — rust, mill scale, paint, oxide layers — absorb the laser energy and are vaporized or expelled as fine particles. The base metal beneath reflects the laser (different wavelength absorption) and is unaffected. The result: clean base metal with no mechanical abrasion." },
-      { type: "h2", content: "Key differences" },
+      { type: "p", content: "El arenado y el granallado han dominado la preparación de superficies por más de un siglo. La limpieza láser entró a los talleres de fabricación en la última década — y está desplazando al arenado en aplicaciones específicas donde la limpieza, la precisión y el costo operativo importan." },
+      { type: "h2", content: "Cómo funciona la limpieza láser" },
+      { type: "p", content: "Un láser de fibra pulsado entrega pulsos de alta energía a la superficie de la pieza. Los contaminantes — óxido, cascarilla de laminación, pintura, capas de óxido — absorben la energía del láser y se vaporizan o expulsan como partículas finas. El metal base debajo refleja el láser (distinta absorción de longitud de onda) y no se ve afectado. El resultado: metal base limpio sin abrasión mecánica." },
+      { type: "h2", content: "Diferencias clave" },
       { type: "ul", content: [
-        "Media: sandblasting generates large volumes of spent abrasive that must be collected and disposed of; laser cleaning produces only fine particle extraction (handled by a small vacuum)",
-        "Surface profile: sandblasting creates a roughened surface profile useful for coating adhesion; laser cleaning leaves the base metal smooth — better for precision welding prep",
-        "Operator fatigue: sandblasting requires full PPE and is physically demanding; laser cleaning is handheld with a light gun",
-        "Selective cleaning: laser can clean within 0.5mm of a weld or part edge; sandblasting is not selective",
-        "Capital cost: sandblasting equipment is cheaper to purchase; laser cleaning ROI comes from eliminated media cost, disposal cost, and labor",
+        "Abrasivo: el arenado genera grandes volúmenes de abrasivo gastado que debe recolectarse y disponerse; la limpieza láser solo produce extracción de partículas finas (manejada por una pequeña aspiradora)",
+        "Perfil de superficie: el arenado crea un perfil rugoso útil para la adherencia de recubrimientos; la limpieza láser deja el metal base liso — mejor para preparación de soldadura de precisión",
+        "Fatiga del operador: el arenado requiere EPP completo y es físicamente exigente; la limpieza láser es manual con una pistola liviana",
+        "Limpieza selectiva: el láser puede limpiar a 0,5mm de una soldadura o borde de pieza; el arenado no es selectivo",
+        "Costo de capital: el equipo de arenado es más barato de adquirir; el retorno de la limpieza láser proviene del costo eliminado de abrasivo, disposición y mano de obra",
       ]},
-      { type: "h2", content: "Where laser cleaning wins" },
-      { type: "p", content: "Pre-weld oxide removal on aluminum and stainless steel, where cleanliness directly affects weld quality. Mold cleaning in precision tooling — no risk of dimensional change. Rust removal on painted or coated parts where you need to clean a specific area without affecting surroundings. Aerospace and automotive work with tight surface finish specifications." },
-      { type: "h2", content: "Where sandblasting remains competitive" },
-      { type: "p", content: "High-volume structural steel where surface profile for coating adhesion is the goal and per-part cost is the primary driver. Very large surface areas (entire ship hulls, bridge sections) where laser cleaning throughput is too slow. Applications where induced surface roughness is beneficial." },
-      { type: "h2", content: "Operating cost comparison" },
-      { type: "p", content: "A sandblasting operation consuming 500 lbs of media per day at $0.20/lb costs $100/day in media alone — $25,000/year before disposal, labor, and equipment maintenance. A laser cleaning system's primary operating cost is electricity. For most fabrication shops, the laser cleaning ROI is 18–36 months." },
+      { type: "h2", content: "Dónde gana la limpieza láser" },
+      { type: "p", content: "Eliminación de óxido pre-soldadura en aluminio y acero inoxidable, donde la limpieza afecta directamente la calidad de la soldadura. Limpieza de moldes en herramientas de precisión — sin riesgo de cambio dimensional. Eliminación de óxido en piezas pintadas o recubiertas donde necesita limpiar un área específica sin afectar el entorno. Trabajos aeroespaciales y automotrices con especificaciones estrictas de acabado superficial." },
+      { type: "h2", content: "Dónde el arenado sigue siendo competitivo" },
+      { type: "p", content: "Acero estructural de alto volumen donde el perfil superficial para adherencia de recubrimiento es el objetivo y el costo por pieza es el factor principal. Áreas de superficie muy grandes (cascos de barcos completos, secciones de puentes) donde el rendimiento de la limpieza láser es demasiado lento. Aplicaciones donde la rugosidad superficial inducida es beneficiosa." },
+      { type: "h2", content: "Comparación de costo operativo" },
+      { type: "p", content: "Una operación de arenado que consume cientos de kilos de abrasivo al día representa un costo significativo solo en abrasivo — antes de la disposición, la mano de obra y el mantenimiento del equipo. El costo operativo principal de un sistema de limpieza láser es la electricidad. Para la mayoría de los talleres de fabricación, el retorno de la limpieza láser es de 18–36 meses." },
     ],
     related: [
-      { title: "Laser Welding vs. TIG Welding", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Technical Guide" },
-      { title: "Fiber Laser vs. CO₂ Laser", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Buying Guide" },
+      { title: "Soldadura Láser vs. Soldadura TIG", slug: "laser-welding-vs-tig-welding-comparison", imageId: "/images/blog-laser-vs-tig.webp", category: "Guía Técnica" },
+      { title: "Láser de Fibra vs. Láser CO₂", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Guía de Compra" },
     ],
   },
   "laser-welding-vs-tig-welding-comparison": {
-    title: "Laser Welding vs. TIG Welding: An Honest Comparison",
-    excerpt: "TIG welding has been the gold standard for precision welding for 70 years. Laser welding is challenging that. Here's where each technology actually wins.",
-    category: "Technical Guide",
-    date: "January 15, 2026",
-    readTime: "9 min read",
+    title: "Soldadura Láser vs. Soldadura TIG: Una Comparación Honesta",
+    excerpt: "La soldadura TIG ha sido el estándar de oro para soldadura de precisión durante 70 años. La soldadura láser la está desafiando. Aquí explicamos dónde gana realmente cada tecnología.",
+    category: "Guía Técnica",
+    date: "15 de enero de 2026",
+    readTime: "9 min de lectura",
     imageId: "/images/blog-laser-vs-tig.webp",
-    author: "VTM Tech Solutions",
+    author: "VT Maquinarias",
     body: [
-      { type: "p", content: "TIG welding dominated precision fabrication for good reason: low heat input, clean bead appearance, and the ability to weld virtually any metal. Laser welding is not trying to replace TIG everywhere — but it is replacing it in specific applications where speed, heat input, and consumable cost matter." },
-      { type: "h2", content: "Speed: no contest" },
-      { type: "p", content: "Laser welding is 3–5× faster than TIG on the same joint. On a 1mm stainless tube with a 200mm seam, a skilled TIG welder takes roughly 4–5 minutes. A laser welder completes the same joint in under 1 minute. At production scale, this time difference becomes the primary economic case for laser." },
-      { type: "h2", content: "Heat input: laser wins" },
-      { type: "p", content: "The laser's focused spot delivers energy only where it's needed. Heat-affected zone (HAZ) width on 1.5mm stainless with laser is typically 0.3–0.5mm. TIG on the same material produces a HAZ of 1.5–3mm. For thin-wall parts, cosmetic assemblies, or anything where warping is a concern, this difference is significant." },
-      { type: "h2", content: "Post-weld work: laser wins on appearance welds" },
-      { type: "p", content: "A laser weld bead on stainless or aluminum is narrow, consistent, and nearly flush with the parent material. Many cosmetic parts can go directly to polish without grinding. TIG produces a wider bead with more variation between operators — most stainless cosmetic work requires grinding or linishing after welding. For shops doing high-end stainless enclosures or architectural metalwork, this is a major labor reduction." },
-      { type: "h2", content: "Material range: TIG is broader" },
-      { type: "p", content: "TIG can weld virtually every weldable metal including exotic alloys, dissimilar metals with the right filler selection, and even some non-ferrous materials that are challenging for laser. For shops with a wide material range including unusual alloys, TIG remains essential. Laser welding excels on the most common industrial metals — mild steel, stainless, aluminum, copper, brass." },
-      { type: "h2", content: "Operator skill: laser is much easier" },
-      { type: "p", content: "A skilled TIG welder takes 6–18 months to develop. The wobble-head handheld laser welder oscillates the beam automatically — the operator controls travel speed and direction. Most operators reach acceptable production quality in 1–2 days. This isn't about replacing skilled welders — it's about reducing your dependence on a labor pool that is increasingly scarce and expensive." },
-      { type: "h2", content: "When to keep TIG" },
-      { type: "p", content: "Root passes on thick pipe, very thick plate (>12mm single-pass), exotic alloys outside the laser's optimal range, and repair work on unknown base metals. TIG also remains superior when joint fit-up is poor — the larger molten pool can bridge larger gaps than a laser." },
-      { type: "h2", content: "The practical answer" },
-      { type: "p", content: "Most fabrication shops don't replace their TIG capability — they add laser welding for the production work that benefits from it, and keep TIG for complex, exotic, or thick-section work. The two technologies are complementary, not competitive." },
+      { type: "p", content: "El TIG dominó la fabricación de precisión por buenas razones: bajo aporte de calor, apariencia de cordón limpia y la capacidad de soldar prácticamente cualquier metal. La soldadura láser no intenta reemplazar al TIG en todas partes — pero lo está reemplazando en aplicaciones específicas donde la velocidad, el aporte de calor y el costo de consumibles importan." },
+      { type: "h2", content: "Velocidad: sin competencia" },
+      { type: "p", content: "La soldadura láser es 3–5× más rápida que el TIG en la misma junta. En un tubo de inoxidable de 1mm con una costura de 200mm, un soldador TIG hábil tarda aproximadamente 4–5 minutos. Un soldador láser completa la misma junta en menos de 1 minuto. A escala de producción, esta diferencia de tiempo se vuelve el principal argumento económico a favor del láser." },
+      { type: "h2", content: "Aporte de calor: gana el láser" },
+      { type: "p", content: "El punto focalizado del láser entrega energía solo donde se necesita. El ancho de la zona afectada por el calor (ZAC) en inoxidable de 1,5mm con láser es típicamente de 0,3–0,5mm. El TIG en el mismo material produce una ZAC de 1,5–3mm. Para piezas de pared delgada, conjuntos estéticos o cualquier cosa donde el alabeo sea una preocupación, esta diferencia es significativa." },
+      { type: "h2", content: "Trabajo posterior: el láser gana en soldaduras estéticas" },
+      { type: "p", content: "Un cordón de soldadura láser en inoxidable o aluminio es angosto, consistente y casi al ras del material base. Muchas piezas estéticas pueden ir directamente a pulido sin esmerilado. El TIG produce un cordón más ancho con más variación entre operadores — la mayoría del trabajo estético en inoxidable requiere esmerilado o lijado después de soldar. Para talleres que hacen gabinetes de inoxidable de gama alta o metalistería arquitectónica, esto representa una reducción importante de mano de obra." },
+      { type: "h2", content: "Rango de materiales: el TIG es más amplio" },
+      { type: "p", content: "El TIG puede soldar prácticamente todo metal soldable, incluyendo aleaciones exóticas, metales disímiles con la selección correcta de aporte e incluso algunos materiales no ferrosos que son difíciles para el láser. Para talleres con un amplio rango de materiales que incluye aleaciones inusuales, el TIG sigue siendo esencial. La soldadura láser sobresale en los metales industriales más comunes — acero al carbono, inoxidable, aluminio, cobre, latón." },
+      { type: "h2", content: "Habilidad del operador: el láser es mucho más fácil" },
+      { type: "p", content: "Un soldador TIG hábil tarda entre 6 y 18 meses en formarse. El soldador láser portátil con cabezal oscilante mueve el haz automáticamente — el operador controla la velocidad y dirección de avance. La mayoría de los operadores alcanzan una calidad de producción aceptable en 1–2 días. Esto no se trata de reemplazar a los soldadores calificados — se trata de reducir su dependencia de una fuerza laboral cada vez más escasa y costosa." },
+      { type: "h2", content: "Cuándo conservar el TIG" },
+      { type: "p", content: "Pasadas de raíz en tubería gruesa, placa muy gruesa (>12mm en una sola pasada), aleaciones exóticas fuera del rango óptimo del láser y trabajos de reparación en metales base desconocidos. El TIG también sigue siendo superior cuando el ajuste de la junta es deficiente — el baño fundido más grande puede salvar separaciones más amplias que un láser." },
+      { type: "h2", content: "La respuesta práctica" },
+      { type: "p", content: "La mayoría de los talleres de fabricación no reemplazan su capacidad TIG — agregan soldadura láser para el trabajo de producción que se beneficia de ella, y conservan el TIG para el trabajo complejo, exótico o de sección gruesa. Las dos tecnologías son complementarias, no competitivas." },
     ],
     related: [
-      { title: "Laser Cleaning vs. Sandblasting", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Technical Guide" },
-      { title: "Cobot Welding ROI: Real Numbers", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.webp", category: "Case Study" },
+      { title: "Limpieza Láser vs. Arenado", slug: "laser-cleaning-vs-sandblasting", imageId: "/images/blog-laser-cleaning-compariso.webp", category: "Guía Técnica" },
+      { title: "ROI de Soldadura con Cobots: Números Reales", slug: "cobot-welding-roi-real-numbers", imageId: "/images/blog-cobot-roi.webp", category: "Caso de Estudio" },
     ],
   },
 };
 
 // Fallback for slugs not in our static data
 const DEFAULT_POST = {
-  title: "Article Not Found",
-  excerpt: "This article is not available.",
+  title: "Artículo No Encontrado",
+  excerpt: "Este artículo no está disponible.",
   category: "General",
   date: "",
   readTime: "",
   imageId: "/images/blog-fiber-vs-co2.webp",
-  author: "VTM Tech Solutions",
-  body: [{ type: "p" as const, content: "This article has not been published yet. Please check back soon or browse our other articles." }],
+  author: "VT Maquinarias",
+  body: [{ type: "p" as const, content: "Este artículo aún no ha sido publicado. Vuelva pronto o explore nuestros otros artículos." }],
   related: [],
 };
 
@@ -296,7 +296,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.title,
     description: post.excerpt,
     openGraph: {
-      title: `${post.title} | VTM Tech Solutions Blog`,
+      title: `${post.title} | Blog VT Maquinarias`,
       description: post.excerpt,
       images: [{ url: `https://images.unsplash.com/photo-${post.imageId}?w=1200&q=80` }],
     },
@@ -377,16 +377,16 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
               {/* Article CTA */}
               <div className="mt-12 border-t border-vtm-gray-border pt-12">
-                <SectionLabel className="mb-4">Ready to Discuss Your Project?</SectionLabel>
+                <SectionLabel className="mb-4">¿Listo para Conversar sobre Su Proyecto?</SectionLabel>
                 <h3 className="font-headline text-2xl font-bold text-vtm-dark mb-4">
-                  Talk to a VTM machine specialist
+                  Hable con un especialista en máquinas de VT Maquinarias
                 </h3>
                 <p className="text-vtm-gray-mid mb-6">
-                  No sales script — just a direct conversation about your shop, your parts, and the right machine for your work.
+                  Sin guion de ventas — solo una conversación directa sobre su taller, sus piezas y la máquina correcta para su trabajo.
                 </p>
                 <div className="flex gap-4 flex-col sm:flex-row">
-                  <Button href="/quote" variant="primary">Request a Quote</Button>
-                  <Button href="/contact" variant="outline">Contact Us</Button>
+                  <Button href="/quote" variant="primary">Solicitar Cotización</Button>
+                  <Button href="/contact" variant="outline">Contáctenos</Button>
                 </div>
               </div>
             </article>
@@ -395,21 +395,21 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
             <aside className="space-y-8">
               {/* Related products */}
               <div className="bg-vtm-gray-light p-6">
-                <SectionLabel className="mb-4">Related Machines</SectionLabel>
+                <SectionLabel className="mb-4">Máquinas Relacionadas</SectionLabel>
                 <div className="space-y-4">
                   <Link href="/fabrication/fiber-laser-cutting-machine" className="group flex gap-4 items-start">
                     <div className="relative w-16 h-16 flex-shrink-0 overflow-hidden bg-vtm-gray-border">
                       <Image
                         src="/images/fiber-laser-hero.webp"
-                        alt="Fiber Laser"
+                        alt="Láser de Fibra"
                         fill
                         className="object-cover"
                         sizes="64px"
                       />
                     </div>
                     <div>
-                      <p className="font-semibold text-vtm-dark text-sm group-hover:text-vtm-red transition-colors">Fiber Laser Sheet Cutting Machine</p>
-                      <p className="text-vtm-gray-mid text-xs mt-1">3–20 kW · ±0.05mm accuracy</p>
+                      <p className="font-semibold text-vtm-dark text-sm group-hover:text-vtm-red transition-colors">Cortadora Láser de Chapa</p>
+                      <p className="text-vtm-gray-mid text-xs mt-1">3–20 kW · precisión ±0.05mm</p>
                     </div>
                   </Link>
                   <Link href="/automation/collaborative-welding-arm" className="group flex gap-4 items-start">
@@ -423,8 +423,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                       />
                     </div>
                     <div>
-                      <p className="font-semibold text-vtm-dark text-sm group-hover:text-vtm-red transition-colors">Collaborative Welding Arm</p>
-                      <p className="text-vtm-gray-mid text-xs mt-1">Deploy in 6 weeks · No cage required</p>
+                      <p className="font-semibold text-vtm-dark text-sm group-hover:text-vtm-red transition-colors">Brazo Soldador Colaborativo</p>
+                      <p className="text-vtm-gray-mid text-xs mt-1">Implementación en 6 semanas · Sin jaula</p>
                     </div>
                   </Link>
                 </div>
@@ -433,7 +433,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
               {/* Related articles */}
               {post.related.length > 0 && (
                 <div>
-                  <SectionLabel className="mb-4">Related Articles</SectionLabel>
+                  <SectionLabel className="mb-4">Artículos Relacionados</SectionLabel>
                   <div className="space-y-4">
                     {post.related.map((related) => (
                       <Link
@@ -464,10 +464,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
               {/* Quote CTA sidebar */}
               <div className="bg-vtm-dark p-6">
-                <h3 className="font-headline font-bold text-white mb-3">Request a Quote</h3>
-                <p className="text-white/50 text-sm mb-4">Get pricing, lead time, and expert advice from a VTM machine specialist.</p>
+                <h3 className="font-headline font-bold text-white mb-3">Solicitar Cotización</h3>
+                <p className="text-white/50 text-sm mb-4">Obtenga precios, plazos de entrega y asesoría experta de un especialista en máquinas de VT Maquinarias.</p>
                 <Button href="/quote" variant="primary" className="w-full text-center justify-center">
-                  Get a Quote
+                  Obtener Cotización
                 </Button>
               </div>
             </aside>
@@ -484,8 +484,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
             "@type": "BlogPosting",
             headline: post.title,
             description: post.excerpt,
-            author: { "@type": "Organization", name: "VTM Tech Solutions" },
-            publisher: { "@type": "Organization", name: "VTM Tech Solutions" },
+            author: { "@type": "Organization", name: "VT Maquinarias" },
+            publisher: { "@type": "Organization", name: "VT Maquinarias" },
             datePublished: post.date,
             image: `https://images.unsplash.com/photo-${post.imageId}?w=1200&q=80`,
           }),

@@ -6,8 +6,8 @@ import { Link } from "@/lib/navigation";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Aerospace Manufacturing Solutions",
-  description: "High-precision fiber laser cutting and bending for aerospace component manufacturers. Titanium, aluminum, and stainless processing at aerospace tolerances.",
+  title: "Soluciones para Manufactura Aeroespacial",
+  description: "Corte y plegado láser de fibra de alta precisión para fabricantes de componentes aeroespaciales. Procesamiento de titanio, aluminio e inoxidable con tolerancias aeroespaciales.",
 };
 
 export default async function AerospacePage({

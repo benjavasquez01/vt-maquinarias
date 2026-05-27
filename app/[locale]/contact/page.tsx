@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contacto",
   description:
-    "Reach VTM Tech Solutions by phone, email, or form. Our team responds within 1 business day.",
+    "Contacte a VT Maquinarias por teléfono, correo o formulario. Nuestro equipo responde dentro de 1 día hábil.",
 };
 
 export default async function ContactPage({
@@ -47,8 +47,8 @@ export default async function ContactPage({
                   </div>
                   <div>
                     <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1">{c.info.email.label}</p>
-                    <a href="mailto:info@vtmtechsolutions.com" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
-                      info@vtmtechsolutions.com
+                    <a href="mailto:info@vtmaquinarias.cl" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                      info@vtmaquinarias.cl
                     </a>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">{c.info.email.responseTime}</p>
                   </div>
@@ -61,8 +61,8 @@ export default async function ContactPage({
                   </div>
                   <div>
                     <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1">{c.info.phone.label}</p>
-                    <a href="tel:+15550000000" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
-                      +1 (555) 000-0000
+                    <a href="tel:+56900000000" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                      +56 9 0000 0000
                     </a>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">{c.info.phone.hours}</p>
                   </div>
@@ -77,12 +77,11 @@ export default async function ContactPage({
                   <div>
                     <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1">{c.info.address.label}</p>
                     <p className="font-headline font-semibold text-vtm-dark">
-                      VTM Tech Solutions LLC
+                      VT Maquinarias SpA
                     </p>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">
-                      1200 Industrial Blvd, Suite 400<br/>
-                      Houston, TX 77001<br/>
-                      United States
+                      Av. Industrial 1200<br/>
+                      Santiago, Chile
                     </p>
                   </div>
                 </div>
@@ -115,7 +114,7 @@ export default async function ContactPage({
                     <circle cx="16" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
                   </svg>
                   <p className="text-vtm-gray-mid text-sm font-body">{c.info.mapPlaceholder}</p>
-                  <p className="text-vtm-gray-mid text-xs mt-1">Houston, TX 77001</p>
+                  <p className="text-vtm-gray-mid text-xs mt-1">Santiago, Chile</p>
                 </div>
               </div>
             </div>

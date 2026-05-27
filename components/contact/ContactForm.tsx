@@ -24,8 +24,8 @@ export function ContactForm() {
           materials: "",
           timeline: "",
           machinesOfInterest: "",
-          language: "en",
-          transcript: `Contact page form. Message: ${fd.get("message") ?? ""}`,
+          language: "es",
+          transcript: `Formulario de página de contacto. Mensaje: ${fd.get("message") ?? ""}`,
         }),
       });
       if (typeof window !== "undefined" && (window as unknown as { gtag?: Function }).gtag) {
@@ -44,9 +44,9 @@ export function ContactForm() {
             <path d="M5 12l5 5L19 7" stroke="#CB1C1D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
-        <h3 className="font-headline font-bold text-vtm-dark text-xl mb-2">Message sent!</h3>
+        <h3 className="font-headline font-bold text-vtm-dark text-xl mb-2">¡Mensaje enviado!</h3>
         <p className="text-vtm-gray-mid font-body text-sm">
-          A member of our team will get back to you within 1 business day.
+          Un miembro de nuestro equipo le responderá dentro de 1 día hábil.
         </p>
       </div>
     );
@@ -57,20 +57,20 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="contact-name" className="block text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1.5">
-            Full Name *
+            Nombre Completo *
           </label>
           <input
             id="contact-name"
             name="name"
             type="text"
             required
-            placeholder="Your full name"
+            placeholder="Su nombre completo"
             className="w-full border border-vtm-gray-border px-4 py-3 text-sm text-vtm-dark placeholder-vtm-gray-mid focus:outline-none focus:border-vtm-dark transition-colors"
           />
         </div>
         <div>
           <label htmlFor="contact-email" className="block text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1.5">
-            Email *
+            Correo Electrónico *
           </label>
           <input
             id="contact-email"
@@ -84,26 +84,26 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="contact-phone" className="block text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1.5">
-          Phone
+          Teléfono
         </label>
         <input
           id="contact-phone"
           name="phone"
           type="tel"
-          placeholder="+1 (555) 000-0000"
+          placeholder="+56 9 0000 0000"
           className="w-full border border-vtm-gray-border px-4 py-3 text-sm text-vtm-dark placeholder-vtm-gray-mid focus:outline-none focus:border-vtm-dark transition-colors"
         />
       </div>
       <div>
         <label htmlFor="contact-message" className="block text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1.5">
-          Message *
+          Mensaje *
         </label>
         <textarea
           id="contact-message"
           name="message"
           required
           rows={5}
-          placeholder="Tell us what you're looking for, what machines you're interested in, or any questions you have..."
+          placeholder="Cuéntenos qué está buscando, qué máquinas le interesan o cualquier duda que tenga..."
           className="w-full border border-vtm-gray-border px-4 py-3 text-sm text-vtm-dark placeholder-vtm-gray-mid focus:outline-none focus:border-vtm-dark transition-colors resize-none"
         />
       </div>
@@ -114,11 +114,11 @@ export function ContactForm() {
         className="w-full justify-center"
         disabled={loading}
       >
-        {loading ? "Sending..." : "Send Message"}
+        {loading ? "Enviando..." : "Enviar Mensaje"}
       </Button>
       <p className="text-vtm-gray-mid text-xs text-center font-body">
-        By submitting this form you agree to our{" "}
-        <a href="/privacy-policy" className="underline hover:text-vtm-dark">Privacy Policy</a>.
+        Al enviar este formulario acepta nuestra{" "}
+        <a href="/privacy-policy" className="underline hover:text-vtm-dark">Política de Privacidad</a>.
       </p>
     </form>
   );

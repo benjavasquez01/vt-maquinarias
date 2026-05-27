@@ -1,78 +1,5 @@
 import type { ProductPageData } from "@/components/product/ProductPageTemplate";
 
-const en: ProductPageData = {
-  category: "Fabrication",
-  slug: "fiber-laser-tube-cutting-machine",
-  machineName: "Fiber Laser Tube Cutting Machine",
-  heroSubheadline: "VTM-T and VTM-MT series. 1.5–6 kW, tube lengths to 9 m, round profiles up to 220 mm. Cuts round, square, rectangular, angle iron, channel, H-beam — with ±0.05 mm accuracy on every cut.",
-  heroImageId: "/images/fiber-laser-tube-hero.webp",
-  features: [
-    { number: "01", headline: "Round, Square, Rectangular, Structural — One Machine", body: "VTM tube lasers handle the full range of structural profiles: round tube up to 220 mm diameter, square up to 160×160 mm, rectangular, angle iron, C-channel, I-beam, and H-beam. A single setup covers the geometry mix of a typical fabrication job without tool changes between profiles.", spec: { label: "Max Round", value: "220 mm (8.7\")" }, imageId: "/images/fiber-laser-tube-feature-01-profiles.webp" },
-    { number: "02", headline: "4-Chuck Pneumatic Clamping — No Slip, No Twist", body: "Front and rear pneumatic chucks grip the tube and rotate it in synchronized 360° steps while the cutting head tracks the programmed profile path. Self-centering jaws adapt automatically to each diameter — no manual changeover chuck sets required for switching between profiles.", spec: { label: "Rotation", value: "360° CNC" }, imageId: "/images/fiber-laser-tube-feature-02-chuck.webp" },
-    { number: "03", headline: "Z-Axis Auto-Follow Nozzle Control", body: "The cutting head maintains constant standoff distance from the tube surface throughout every rotation and along the full tube length. Capacitive height sensing adjusts in real time, compensating for tube straightness variation — critical for consistent cut quality on long, heavy structural sections.", spec: { label: "Height Control", value: "Capacitive Auto-Follow" }, imageId: "/images/03.webp" },
-    { number: "04", headline: "Bochu CypTube CNC — Tube-Specific Programming", body: "CypTube is the tube-laser-specific variant of the industry-standard CypCut controller. Import STEP or IGES files directly from SolidWorks, AutoCAD, or Tekla. Auto-generates cutting paths for compound miter cuts, copes, slots, and fish-mouth joints. Windows-based, touchscreen interface, on-board cutting parameter library.", spec: { label: "Controller", value: "Bochu CypTube" }, imageId: "/images/04.webp" },
-    { number: "05", headline: "Up to 9-Meter Tube Length — Full Stick Handling", body: "Standard VTM-T handles tube up to 6 m (20'). The extended VTM-MT platform handles lengths to 9 m (30') — full structural stick lengths without mid-job repositioning. Auto-feed support rolls keep long sections from sagging; the infeed bundle loader (AT series) automates handling of full production runs.", spec: { label: "Max Length", value: "9 m (30') extended" }, imageId: "/images/fiber-laser-tube-hero.webp" },
-  ],
-  specs: [
-    { label: "Model Series", imperial: "VTM-T (standard) / VTM-MT (extended) / VTM-AT (automated)", metric: "VTM-T / VTM-MT / VTM-AT" },
-    { label: "Laser Power Options", imperial: "1.5 kW / 3 kW / 6 kW", metric: "1.5 kW / 3 kW / 6 kW" },
-    { label: "Laser Source", imperial: "Raycus Fiber Laser", metric: "Raycus Fiber Laser" },
-    { label: "Max Round Tube Diameter", imperial: "8.7\" standard / 11.8\" optional", metric: "220 mm standard / 300 mm optional" },
-    { label: "Max Square Tube", imperial: "6.3\" × 6.3\"", metric: "160 × 160 mm" },
-    { label: "Profile Types", imperial: "Round, Square, Rectangular, Angle, Channel, I-beam, H-beam", metric: "Round, Square, Rectangular, Angle, Channel, I-beam, H-beam" },
-    { label: "Standard Max Tube Length", imperial: "20 ft (VTM-T)", metric: "6,000 mm (VTM-T)" },
-    { label: "Extended Max Tube Length", imperial: "30 ft (VTM-MT)", metric: "9,000 mm (VTM-MT)" },
-    { label: "Chuck System", imperial: "4-chuck pneumatic self-centering (front + rear)", metric: "4-chuck pneumatic self-centering (front + rear)" },
-    { label: "Rotation Axis", imperial: "360° CNC, full A-axis", metric: "360° CNC, full A-axis" },
-    { label: "Height Control", imperial: "Capacitive auto-follow Z-axis", metric: "Capacitive auto-follow Z-axis" },
-    { label: "CNC Controller", imperial: "Bochu CypTube (tube-specific)", metric: "Bochu CypTube (tube-specific)" },
-    { label: "Servo Drive", imperial: "Fuji Bus servo", metric: "Fuji Bus servo" },
-    { label: "Linear Guide Rails", imperial: "HIWIN 20–35 series", metric: "HIWIN 20–35 series" },
-    { label: "Positioning Accuracy", imperial: "±0.002\"", metric: "±0.05 mm" },
-    { label: "Max Cutting Speed", imperial: "up to 787 in/min (thin wall)", metric: "up to 20 m/min (thin wall)" },
-    { label: "Max Thickness — Carbon Steel (3 kW)", imperial: "0.5\"", metric: "12 mm" },
-    { label: "Max Thickness — Carbon Steel (6 kW)", imperial: "0.75\"", metric: "20 mm" },
-    { label: "Water Chiller", imperial: "Tongfei (standard)", metric: "Tongfei (standard)" },
-    { label: "Power Supply (US)", imperial: "480V, 3-phase, 60 Hz", metric: "380V, 3-phase, 50 Hz" },
-    { label: "Loading System", imperial: "Manual infeed / Auto bundle loader (AT series)", metric: "Manual infeed / Auto bundle loader (AT series)" },
-  ],
-  videoSectionLabel: "See It Cut",
-  videoHeadline: "In Action",
-  configOptions: [
-    { label: "Model", options: ["VTM-T — 6 m standard", "VTM-MT — 9 m extended", "VTM-AT — Auto bundle loader"], note: "AT series automates infeed of full tube bundles for unattended production runs." },
-    { label: "Laser Power", options: ["1.5 kW", "3 kW", "6 kW"], note: "3 kW handles most structural steel and stainless up to 12 mm wall. 6 kW for heavy-wall and faster throughput." },
-    { label: "Tube Diameter", options: ["Up to 220 mm (standard)", "Up to 300 mm (optional chuck upgrade)"], note: "300 mm diameter option accommodates large-diameter structural and mechanical tubing." },
-    { label: "Loading", options: ["Manual roller infeed support", "Semi-auto bundle loading", "Fully automatic bundle loader (AT)"], note: "For production environments, auto bundle loading reduces labor per part significantly on repetitive jobs." },
-  ],
-  comparisonLabel: "Technology",
-  comparisonHeadline: "Laser vs. Saw + Manual Layout",
-  comparisonOursLabel: "Fiber Laser Tube",
-  comparisonTheirsLabel: "Saw + Drill + Layout",
-  comparison: [
-    { feature: "Miter cuts and compound angles", ours: "Programmed, automatic", theirs: "Manual fixture, multiple setups" },
-    { feature: "Fish-mouth / cope joints", ours: "Auto-generated from CAD import", theirs: "Template + grinder, skilled labor" },
-    { feature: "Slot, hole, notch in tube wall", ours: "Single operation", theirs: "Drill press, separate step" },
-    { feature: "Part-to-part consistency", ours: "±0.05 mm, every part", theirs: "Operator-dependent" },
-    { feature: "Material waste", ours: "Minimal — nested programs optimize stock", theirs: "Offcut per cut, difficult to optimize" },
-    { feature: "Setup time on new part", ours: "Import DXF/STEP, run", theirs: "New fixture or template required" },
-    { feature: "Labor per part (structural run)", ours: "Low — machine runs unattended", theirs: "High — operator at machine each piece" },
-  ],
-  relatedProducts: [
-    { name: "Fiber Laser Sheet Cutting Machine", href: "/fabrication/fiber-laser-cutting-machine", tag: "Sheet Cutting", imageId: "/images/fiber-laser-hero.webp" },
-    { name: "Sheet & Tube Combo Laser", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combo", imageId: "/images/sheet-tube-combo-hero.webp" },
-    { name: "Laser Welding Machine", href: "/fabrication/4-in-1-laser-machine", tag: "Welding", imageId: "/images/4in1-laser-hero-2.webp" },
-    { name: "CNC Press Brake", href: "/fabrication/cnc-press-brake", tag: "Bending", imageId: "/images/cnc-press-brake-hero.webp" },
-  ],
-  faqs: [
-    { question: "What profile types can the tube laser cut?", answer: "Round tube, square tube, rectangular tube, angle iron (L-section), C-channel, I-beam, H-beam, and custom profiles. The CypTube controller includes profile templates for all standard sections." },
-    { question: "Can it cut copes and fish-mouth joints automatically?", answer: "Yes. Import your 3D model (STEP or IGES) and CypTube auto-generates the cutting path for cope joints, fish-mouths, miter cuts, and tube-to-tube connection geometry. No manual layout or grinding required." },
-    { question: "What is the minimum wall thickness it can cut?", answer: "The tube laser cuts thin-wall tubing down to approximately 1 mm (0.04\") wall. For HVAC ductwork and light structural, the 1.5 kW version handles thin-wall at high speed with clean edge quality." },
-    { question: "Can it handle full 20-foot or 24-foot structural sticks?", answer: "The VTM-MT extended platform handles up to 9 m (approximately 30 ft) without mid-job repositioning. For standard 20-ft (6 m) structural stock, the VTM-T is the right fit." },
-    { question: "Do I need to change chucks when switching between round and square tube?", answer: "No. The self-centering pneumatic chucks adapt to round, square, and rectangular profiles within their rated size range. Switching from round to square tube takes seconds — just load the next piece." },
-    { question: "Can it be combined with the flat sheet machine?", answer: "Yes — VTM also offers the VTM-ST Sheet & Tube Combo, which cuts both flat sheet and tube on a single machine. Ideal for shops that need both capabilities but can't justify the floor space or investment for two separate machines." },
-  ],
-};
-
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "fiber-laser-tube-cutting-machine",
@@ -106,7 +33,7 @@ const es: ProductPageData = {
     { label: "Espesor Máx. — Acero Carbono (3 kW)", imperial: "0.5\"", metric: "12 mm" },
     { label: "Espesor Máx. — Acero Carbono (6 kW)", imperial: "0.75\"", metric: "20 mm" },
     { label: "Enfriador de Agua", imperial: "Tongfei (estándar)", metric: "Tongfei (estándar)" },
-    { label: "Suministro Eléctrico (EE.UU.)", imperial: "480V, trifásico, 60 Hz", metric: "380V, trifásico, 50 Hz" },
+    { label: "Suministro Eléctrico (Chile)", imperial: "480V, trifásico, 60 Hz", metric: "380V, trifásico, 50 Hz" },
     { label: "Sistema de Carga", imperial: "Avance manual / Cargador automático de paquetes (serie AT)", metric: "Avance manual / Cargador automático (serie AT)" },
   ],
   videoSectionLabel: "Véalo Cortar",
@@ -146,4 +73,4 @@ const es: ProductPageData = {
   ],
 };
 
-export const content: Record<"en" | "es", ProductPageData> = { en, es };
+export const content: Record<string, ProductPageData> = { es };

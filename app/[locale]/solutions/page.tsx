@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/Button";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Industry Solutions",
+  title: "Soluciones por Industria",
   description:
-    "VTM Tech Solutions serves metal fabrication, automotive, aerospace, and HVAC manufacturers. Complete equipment and automation systems with full US support.",
+    "VT Maquinarias atiende a fabricantes de metalmecánica, automotriz, aeroespacial y HVAC. Equipos completos y sistemas de automatización con soporte en Chile.",
 };
 
 export default async function SolutionsPage({

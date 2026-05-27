@@ -15,12 +15,12 @@ import { StaggerChildren } from "@/components/ui/StaggerChildren";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Collaborative Welding Arm (Cobot)",
+  title: "Brazo Soldador Colaborativo (Cobot)",
   description:
-    "Deploy an AI-guided collaborative welding robot in 6 weeks. Safe for human collaboration, no cages required. Full US installation and training included.",
+    "Implemente un robot de soldadura colaborativo guiado por IA en 6 semanas. Seguro para trabajar junto a personas, sin jaulas. Instalación y capacitación en Chile incluidas.",
   openGraph: {
-    title: "Collaborative Welding Arm — VTM Tech Solutions",
-    description: "Deploy in 6 weeks. Works alongside humans safely. No cages required.",
+    title: "Brazo Soldador Colaborativo — VT Maquinarias",
+    description: "Implementación en 6 semanas. Trabaja junto a personas de forma segura. Sin jaulas.",
     images: [{ url: "/images/cobot-welding-hero.webp" }],
   },
 };
@@ -310,8 +310,8 @@ export default async function CollaborativeWeldingArmPage({
             "@context": "https://schema.org",
             "@type": "Product",
             name: "Collaborative Welding Arm",
-            description: "AI-guided collaborative welding robot. Deploy in 6 weeks. ISO/TS 15066 compliant.",
-            brand: { "@type": "Brand", name: "VTM Tech Solutions" },
+            description: "Robot de soldadura colaborativo guiado por IA. Implementación en 6 semanas. Conforme a ISO/TS 15066.",
+            brand: { "@type": "Brand", name: "VT Maquinarias" },
             offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "USD" },
           }),
         }}
