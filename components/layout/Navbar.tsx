@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -205,7 +205,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-vtm-gray-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-vtm-gray-border">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
