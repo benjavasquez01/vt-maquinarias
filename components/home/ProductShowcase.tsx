@@ -17,6 +17,27 @@ type FabProduct = {
   models: ModelCard[];
 };
 
+// Display order of the product tabs (by key). Change this to reorder the showcase.
+const PRODUCT_ORDER = [
+  "pressBreake",      // Plegadora
+  "fiberLaser",       // Corte láser plancha
+  "fiberLaserTube",   // Corte láser tubo
+  "fourInOne",        // Soldadora
+  "laserCleaning",    // Limpiadora
+  "airCompressor",    // Compresor
+  "panelBender",      // Paneladora
+  "ironworker",       // Punzonadora
+  "sheetTubeCombo",   // Láser combinado
+];
+
+function orderProducts(data: FabProduct[]): FabProduct[] {
+  const byKey = new Map(data.map((p) => [p.key, p]));
+  const ordered = PRODUCT_ORDER.map((k) => byKey.get(k)).filter(Boolean) as FabProduct[];
+  // Append any product not listed in PRODUCT_ORDER so nothing is ever dropped.
+  const extras = data.filter((p) => !PRODUCT_ORDER.includes(p.key));
+  return [...ordered, ...extras];
+}
+
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const FABRICATION: FabProduct[] = [
@@ -54,8 +75,8 @@ const FABRICATION: FabProduct[] = [
     key: "fourInOne",
     href: "/fabrication/4-in-1-laser-machine",
     models: [
-      { name: "Welding",   image: "/images/4in1-laser-feature-01-welding.webp",  badge: "Laser Welding",  subtitle: "High-speed handheld laser welding with minimal distortion and no filler wire needed." },
-      { name: "Cutting",   image: "/images/4in1-laser-feature-02-cutting.webp",  badge: "Laser Cutting",  subtitle: "Portable laser cutting head for on-site trimming and sheet processing." },
+      { name: "Welding",   image: "/images/4in1-laser-feature-01-welding.webp",  badge: "Laser Welding",  subtitle: "High-speed laser welding with minimal distortion and no filler wire needed." },
+      { name: "Cutting",   image: "/images/4in1-laser-feature-02-cutting.webp",  badge: "Laser Cutting",  subtitle: "Laser cutting head for on-site trimming and sheet processing." },
       { name: "Cleaning",  image: "/images/4in1-laser-feature-03-cleaning.webp", badge: "Laser Cleaning", subtitle: "Remove rust, paint and oxide layers without abrasives or chemicals." },
       { name: "Wire Feed", image: "/images/4in1-laser-feature-04-wirefeed.webp", badge: "Wire Feed",      subtitle: "Optional wire-feed attachment for gap-filling welds and overlay applications." },
     ],
@@ -143,8 +164,8 @@ const FABRICATION_ES: FabProduct[] = [
     key: "fourInOne",
     href: "/fabrication/4-in-1-laser-machine",
     models: [
-      { name: "Soldadura",          image: "/images/4in1-laser-feature-01-welding.webp",  badge: "Soldadura Láser",      subtitle: "Soldadura láser portátil de alta velocidad con distorsión mínima y sin alambre de relleno." },
-      { name: "Corte",              image: "/images/4in1-laser-feature-02-cutting.webp",  badge: "Corte Láser",          subtitle: "Cabezal de corte láser portátil para recortes en sitio y procesamiento de plancha." },
+      { name: "Soldadura",          image: "/images/4in1-laser-feature-01-welding.webp",  badge: "Soldadura Láser",      subtitle: "Soldadura láser de alta velocidad con distorsión mínima y sin alambre de relleno." },
+      { name: "Corte",              image: "/images/4in1-laser-feature-02-cutting.webp",  badge: "Corte Láser",          subtitle: "Cabezal de corte láser para recortes en sitio y procesamiento de plancha." },
       { name: "Limpieza",           image: "/images/4in1-laser-feature-03-cleaning.webp", badge: "Limpieza Láser",       subtitle: "Elimina óxido, pintura y capas de óxido sin abrasivos ni químicos." },
       { name: "Alimentación Hilo",  image: "/images/4in1-laser-feature-04-wirefeed.webp", badge: "Alimentación de Hilo", subtitle: "Accesorio de alimentación de hilo para soldaduras de relleno y aplicaciones de revestimiento." },
     ],
@@ -336,7 +357,7 @@ export function ProductShowcase() {
   const t = useTranslations("home");
   const locale = useLocale();
   const viewLabel = locale === "es" ? "Ver Máquina" : "View Machine";
-  const fabricationData = locale === "es" ? FABRICATION_ES : FABRICATION;
+  const fabricationData = orderProducts(locale === "es" ? FABRICATION_ES : FABRICATION);
 
   return (
     <section id="products">

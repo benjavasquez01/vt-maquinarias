@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Tag } from "@/components/ui/Tag";
 import { Link } from "@/lib/navigation";
+import { SHOW_VIDEO_SECTIONS } from "@/lib/flags";
 import { FaqAccordion } from "./FaqAccordion";
 import { StickyQuoteBar } from "./StickyQuoteBar";
 import { QuoteForm } from "./QuoteForm";
@@ -33,6 +34,7 @@ export default async function FiberLaserPage({
       <ModelBrowserWithSpecs locale={locale} />
 
       {/* ── Block 4: Video Embed ───────────────────────────────────── */}
+      {SHOW_VIDEO_SECTIONS && (
       <section className="bg-vtm-dark py-20 md:py-28" id="video">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <SectionLabel light className="mb-4">{c.video.sectionLabel}</SectionLabel>
@@ -51,6 +53,7 @@ export default async function FiberLaserPage({
           </div>
         </div>
       </section>
+      )}
 
       {/* ── Block 5: Comparison Table vs CO₂ ────────────────────── */}
       <section className="bg-vtm-gray-light py-20 md:py-28" id="compare">

@@ -16,7 +16,7 @@ const es: ProductPageData = {
       name: "Soldadura Láser",
       badge: "Soldadura",
       image: "/images/4in1-laser-feature-01-welding.webp",
-      description: "Soldadura autógena portátil en inoxidable, acero al carbono y aluminio — sin aporte en juntas ajustadas, 3–5× más rápida que TIG y con cordón cosmético que no requiere esmerilado. Incluye alimentador automático de aporte para juntas con espacio, metales disímiles y soldaduras de relleno.",
+      description: "Soldadura autógena en inoxidable, acero al carbono y aluminio — sin aporte en juntas ajustadas, 3–5× más rápida que TIG y con cordón cosmético que no requiere esmerilado. Incluye alimentador automático de aporte para juntas con espacio, metales disímiles y soldaduras de relleno.",
       bestFor: ["Fabricación en inoxidable", "Gabinetes de aluminio", "Juntas a tope y traslape ajustadas", "Alimentador automático de aporte"],
     },
     {
@@ -24,7 +24,7 @@ const es: ProductPageData = {
       name: "Corte Láser",
       badge: "Corte",
       image: "/images/4in1-laser-feature-02-cutting.webp",
-      description: "Cambie al cabezal de corte para cortes portátiles en láminas y perfiles usando nitrógeno o aire auxiliar. Sin programación CNC — ideal para trabajo en campo y piezas personalizadas.",
+      description: "Cambie al cabezal de corte para cortes en láminas y perfiles usando nitrógeno o aire auxiliar. Sin programación CNC — ideal para trabajo en campo y piezas personalizadas.",
       bestFor: ["Trabajo en campo y reparación", "Piezas personalizadas de corta tirada", "Lámina delgada a media", "Sin programación CNC"],
     },
     {
@@ -51,16 +51,16 @@ const es: ProductPageData = {
   features: [
     {
       number: "01",
-      headline: "Soldadura Láser — 5× Más Rápido que TIG, Sin Aporte en Juntas Ajustadas",
-      body: "El cabezal de soldadura portátil suelda de forma autógena — sin aporte ni electrodos — en juntas a tope, de traslape, en T y en filete con buen ajuste, sobre inoxidable, acero al carbono y aluminio. Cuando las juntas tienen espacio o la aplicación requiere material de aporte por normativa, el alimentador automático de aporte lo suministra directamente al baño. La velocidad es 3–5× más rápida que TIG y la función de oscilación produce un cordón cosmético que no requiere esmerilado.",
-      spec: { label: "Velocidad de Soldadura", value: "3–5× vs TIG" },
+      headline: "Soldadora Láser — Tecnología Avanzada, Rápida y Eficiente",
+      body: "Una de las tecnologías más avanzadas para unir metales: mayor velocidad, precisión y eficiencia que la soldadura tradicional. Su sistema de oscilación forma el cordón automáticamente, reduce la dependencia de un soldador calificado y entrega resultados uniformes y de excelente terminación. Con pantalla táctil en español para una configuración rápida e intuitiva, es ideal para inoxidable, acero al carbono y aluminio, con menor aporte de calor, baja deformación y mucho menos trabajo posterior de limpieza y terminación.",
+      spec: { label: "Control", value: "Pantalla táctil en español" },
       imageId: "/images/4in1-laser-feature-01-welding.webp",
     },
     {
       number: "02",
-      headline: "Cabezal de Corte Láser — Corte Portátil de Placas y Perfiles",
-      body: "Cambie al cabezal de corte para cortes de precisión portátiles en láminas planas, placas y perfiles. El modo de corte láser usa gas auxiliar (nitrógeno o aire) para soplar el metal fundido a través del corte. Adecuado para cortes rectos, curvas y recortes en láminas delgadas a medianas — útil para trabajo en campo, reparaciones y piezas personalizadas.",
-      spec: { label: "Modo de Corte", value: "Portátil sin CNC" },
+      headline: "Cabezal de Corte Láser — Corte de Placas y Perfiles",
+      body: "Cambie al cabezal de corte para cortes de precisión en láminas planas, placas y perfiles. El modo de corte láser usa gas auxiliar (nitrógeno o aire) para soplar el metal fundido a través del corte. Adecuado para cortes rectos, curvas y recortes en láminas delgadas a medianas — útil para trabajo en campo, reparaciones y piezas personalizadas.",
+      spec: { label: "Modo de Corte", value: "Sin CNC" },
       imageId: "/images/4in1-laser-feature-02-cutting.webp",
     },
     {
@@ -86,13 +86,13 @@ const es: ProductPageData = {
     },
   ],
   specs: [
-    { label: "Modelo", imperial: "VTM-4W (Láser de Fibra Portátil 4 en 1)", metric: "VTM-4W" },
+    { label: "Modelo", imperial: "VTM-4W (Láser de Fibra 4 en 1)", metric: "VTM-4W" },
     { label: "Modos de Operación", imperial: "Soldadura Láser / Corte Láser / Limpieza Láser / Limpieza de Cordón", metric: "Soldadura Láser / Corte Láser / Limpieza Láser / Limpieza de Cordón" },
     { label: "Potencia Láser", imperial: "1.5 kW (0.2–4 mm) / 2 kW (0.2–6 mm) / 3 kW (0.2–8 mm)", metric: "1.5 kW (0.2–4 mm) / 2 kW (0.2–6 mm) / 3 kW (0.2–8 mm)" },
     { label: "Rango de Ajuste de Potencia", imperial: "10% – 100%", metric: "10% – 100%" },
     { label: "Fuente Láser", imperial: "Láser de Fibra CW Raycus", metric: "Láser de Fibra CW Raycus" },
     { label: "Longitud de Onda de Salida", imperial: "1070 ± 20 nm", metric: "1070 ± 20 nm" },
-    { label: "Tipo de Cabezal de Soldadura", imperial: "Brazo portátil con función de oscilación", metric: "Brazo portátil con función de oscilación" },
+    { label: "Tipo de Cabezal de Soldadura", imperial: "Brazo con función de oscilación", metric: "Brazo con función de oscilación" },
     { label: "Ancho de Soldadura (ajustable)", imperial: "0–0.2\" (0–5 mm)", metric: "0–5 mm" },
     { label: "Ancho de Limpieza", imperial: "Máx. 3.1\" (80 mm)", metric: "Máx. 80 mm" },
     { label: "Diámetro de Aporte", imperial: "0.8 / 1.0 / 1.2 / 1.6 mm", metric: "0.8 / 1.0 / 1.2 / 1.6 mm" },
@@ -177,7 +177,7 @@ const es: ProductPageData = {
   faqs: [
     {
       question: "¿Necesito ser soldador certificado para usar el modo de soldadura láser?",
-      answer: "No. El cabezal de soldadura láser portátil es significativamente más fácil de operar que el TIG — el haz hace el trabajo y el operador guía el cabezal a lo largo de la junta. La mayoría de los operadores están listos para producción en un día de entrenamiento. VTM proporciona capacitación en sitio con cada máquina.",
+      answer: "No. El cabezal de soldadura láser es significativamente más fácil de operar que el TIG — el haz hace el trabajo y el operador guía el cabezal a lo largo de la junta. La mayoría de los operadores están listos para producción en un día de entrenamiento. VTM proporciona capacitación en sitio con cada máquina.",
     },
     {
       question: "¿Puede soldar aluminio e inoxidable sin aporte?",

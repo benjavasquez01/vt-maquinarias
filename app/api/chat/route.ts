@@ -6,7 +6,7 @@ VT Maquinarias vende e instala 9 máquinas:
 
 FABRICACIÓN:
 1. Cortadora Láser de Plancha — potencia de 3–20 kW, precisión de ±0.05mm, corta acero/inoxidable/aluminio/cobre. Mesa de intercambio disponible. Rango referencial USD 80.000–300.000.
-2. Máquina Soldadora Láser — 1.5–3 kW portátil/robótica, sin consumibles, 5× más rápida que TIG, mínima distorsión por calor.
+2. Máquina Soldadora Láser — 1.5–3 kW robótica, sin consumibles, 5× más rápida que TIG, mínima distorsión por calor.
 3. Máquina de Limpieza Láser — 100–3000W, elimina óxido/óxidos/pintura sin químicos. Sin residuos abrasivos.
 4. Plegadora CNC — 40–400 toneladas, repetibilidad de ±0.01mm, tope trasero automático, CNC multieje.
 5. Punzonadora Hidráulica VTM-IW — 60–120 toneladas, 5 estaciones para perforar, escantonar, cortar planchas, cortar ángulos y cortar macizos.

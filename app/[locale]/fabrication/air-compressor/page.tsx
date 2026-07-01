@@ -41,7 +41,7 @@ const SPEC_ROWS: { label: string; values: string[] }[] = [
   { label: "Caudal del compresor", values: ["1.2 m³/min", "2.2 m³/min", "3.3 m³/min"] },
   { label: "Presión de trabajo", values: ["1.58 MPa (16 bar)", "1.58 MPa (16 bar)", "1.58 MPa (16 bar)"] },
   { label: "Refrigeración", values: ["Aire", "Aire", "Aire"] },
-  { label: "Arranque / Control", values: ["—", "Variador de frecuencia", "Variador de frecuencia"] },
+  { label: "Arranque / Control", values: ["Variador de frecuencia", "Variador de frecuencia", "Variador de frecuencia"] },
   { label: "Caudal del secador", values: ["2.0 m³/min", "2.6 m³/min", "3.8 m³/min"] },
   { label: "Punto de rocío / condensación", values: ["2–10 °C", "2–10 °C", "2–10 °C"] },
   { label: "Filtro fino", values: ["0.01 μm", "0.01 μm", "0.01 μm"] },

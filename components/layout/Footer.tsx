@@ -34,7 +34,6 @@ export function Footer() {
               <li><Link href="/fabrication/laser-welding-machine" className="hover:text-white transition-colors">{t("laserWelding")}</Link></li>
               <li><Link href="/fabrication/laser-cleaning-machine" className="hover:text-white transition-colors">{t("laserCleaning")}</Link></li>
               <li><Link href="/fabrication/cnc-press-brake" className="hover:text-white transition-colors">{t("pressBreak")}</Link></li>
-              <li><Link href="/fabrication/shearing-machine/guillotine" className="hover:text-white transition-colors">{t("shearing")}</Link></li>
               <li><Link href="/fabrication/ironworker" className="hover:text-white transition-colors">{t("ironworker")}</Link></li>
             </ul>
           </div>

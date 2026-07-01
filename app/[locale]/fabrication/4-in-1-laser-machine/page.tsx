@@ -5,9 +5,9 @@ import { WeldingModelBrowser } from "./WeldingModelBrowser";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Máquina Láser 4 en 1 — Láser de Fibra Portátil VTM-4W",
+  title: "Máquina Láser 4 en 1 — Láser de Fibra VTM-4W",
   description:
-    "Láser de fibra portátil VTM-4W: soldadura, corte, limpieza y soldadura con aporte de alambre en un solo equipo. 1.5–3 kW. Funciona en acero al carbono, inoxidable, aluminio, latón, cobre y galvanizado. Sin consumibles.",
+    "Láser de fibra VTM-4W: soldadura, corte, limpieza y soldadura con aporte de alambre en un solo equipo. 1.5–3 kW. Funciona en acero al carbono, inoxidable, aluminio, latón, cobre y galvanizado. Sin consumibles.",
 };
 
 export default async function FourInOneLaserPage({

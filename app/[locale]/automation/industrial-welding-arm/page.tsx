@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Tag } from "@/components/ui/Tag";
 import { Link } from "@/lib/navigation";
+import { SHOW_VIDEO_SECTIONS } from "@/lib/flags";
 import { GenericSpecsTable } from "@/components/product/GenericSpecsTable";
 import { GenericFaqAccordion } from "@/components/product/GenericFaqAccordion";
 import { GenericStickyBar } from "@/components/product/GenericStickyBar";
@@ -129,6 +130,7 @@ export default async function IndustrialWeldingArmPage({
       </section>
 
       {/* ── Block 4: Video ────────────────────────────────────────────── */}
+      {SHOW_VIDEO_SECTIONS && (
       <section className="bg-vtm-dark py-20 md:py-28" id="video">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <SectionLabel light className="mb-4">{c.video.sectionLabel}</SectionLabel>
@@ -147,6 +149,7 @@ export default async function IndustrialWeldingArmPage({
           </div>
         </div>
       </section>
+      )}
 
       {/* ── Block 5: Comparison Table ─────────────────────────────────── */}
       <section className="bg-vtm-gray-light py-20 md:py-28 border-t border-vtm-gray-border" id="compare">

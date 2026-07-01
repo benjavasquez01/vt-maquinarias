@@ -5,7 +5,7 @@ const es: ProductPageData = {
   slug: "laser-welding-machine",
   machineName: "Máquina Soldadora Láser",
   heroSubheadline:
-    "Soldadura láser portátil y robótica de 1.5 kW a 3 kW. Suelda acero, inoxidable, aluminio y cobre sin consumibles, con distorsión térmica mínima y una apariencia de cordón perfecta que casi no requiere post-procesamiento.",
+    "Soldadura láser robótica de 1.5 kW a 3 kW. Suelda acero, inoxidable, aluminio y cobre sin consumibles, con distorsión térmica mínima y una apariencia de cordón perfecta que casi no requiere post-procesamiento.",
   heroImageId: "1504328345606-18bbc8c9d7d1",
   features: [
     {
@@ -65,8 +65,8 @@ const es: ProductPageData = {
     },
     {
       label: "Modo de Entrega",
-      options: ["Cabezal de oscilación portátil", "Paquete de integración para brazo robótico", "Estación fija montada en pórtico"],
-      note: "El portátil es ideal para trabajo de prototipo y reparación. La integración robótica ofrece el mayor rendimiento para producción en serie.",
+      options: ["Cabezal de oscilación manual", "Paquete de integración para brazo robótico", "Estación fija montada en pórtico"],
+      note: "El cabezal manual es ideal para trabajo de prototipo y reparación. La integración robótica ofrece el mayor rendimiento para producción en serie.",
     },
     {
       label: "Alimentación de Alambre",
@@ -101,7 +101,7 @@ const es: ProductPageData = {
     },
     {
       question: "¿Es difícil aprender soldadura láser?",
-      answer: "El sistema de soldadura láser portátil está diseñado para una rápida adopción por parte del operador. Con el cabezal de oscilación oscilando el haz automáticamente, el operador se enfoca en la velocidad y dirección de avance en lugar de gestionar la longitud del arco y la alimentación de alambre por separado. VTM incluye 2 días de capacitación en sitio con cada máquina.",
+      answer: "El sistema de soldadura láser está diseñado para una rápida adopción por parte del operador. Con el cabezal de oscilación oscilando el haz automáticamente, el operador se enfoca en la velocidad y dirección de avance en lugar de gestionar la longitud del arco y la alimentación de alambre por separado. VTM incluye 2 días de capacitación en sitio con cada máquina.",
     },
     {
       question: "¿Qué metales puede unir la soldadora láser?",
@@ -109,7 +109,7 @@ const es: ProductPageData = {
     },
     {
       question: "¿Puedo usar la soldadora láser para trabajos de reparación además de producción?",
-      answer: "Sí. El modo portátil es particularmente adecuado para trabajos de reparación — reparación de moldes, restauración de componentes de pared delgada y retoques cosméticos en piezas terminadas. La baja entrada de calor significa que las reparaciones en piezas ensambladas o parcialmente mecanizadas tienen un riesgo de distorsión mínimo.",
+      answer: "Sí. El modo manual es particularmente adecuado para trabajos de reparación — reparación de moldes, restauración de componentes de pared delgada y retoques cosméticos en piezas terminadas. La baja entrada de calor significa que las reparaciones en piezas ensambladas o parcialmente mecanizadas tienen un riesgo de distorsión mínimo.",
     },
     {
       question: "¿Cuál es el plazo de retorno de la inversión?",

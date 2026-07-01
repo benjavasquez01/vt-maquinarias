@@ -9,7 +9,7 @@ import { content } from "./content";
 export const metadata: Metadata = {
   title: "Maquinaria de Fabricación",
   description:
-    "Maquinaria industrial de fabricación para talleres metálicos en Chile — corte láser de fibra (plancha, tubo, combo), láser portátil 4 en 1, soldadura láser, limpieza láser, plegadoras CNC, cizallas hidráulicas y punzonadoras. Instalación y soporte en Chile incluidos.",
+    "Maquinaria industrial de fabricación para talleres metálicos en Chile — corte láser de fibra (plancha, tubo, combo), láser 4 en 1, soldadura láser, limpieza láser, plegadoras CNC, cizallas hidráulicas y punzonadoras. Instalación y soporte en Chile incluidos.",
 };
 
 export default async function FabricationPage({
