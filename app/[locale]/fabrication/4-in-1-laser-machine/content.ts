@@ -68,7 +68,7 @@ const es: ProductPageData = {
       headline: "Limpieza Láser — Elimine Óxido, Pintura y Escoria al Instante",
       body: "El cabezal de limpieza dirige energía láser pulsada de alta frecuencia a la superficie, eliminando por ablación óxido, escamas de laminación, pintura, aceite y capas de óxido sin tocar el metal base. Sin productos químicos, sin abrasivos, sin residuos que desechar. Para preparación de superficies antes de soldar y eliminación de recubrimientos.",
       spec: { label: "Modo de Limpieza", value: "Pulsado, sin químicos" },
-      imageId: "/images/4in1-laser-feature-03-cleaning.webp",
+      imageId: "/images/4in1-laser-feature-03-cleaning-photo.webp",
     },
     {
       number: "04",

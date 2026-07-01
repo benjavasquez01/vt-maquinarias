@@ -37,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", priority: 0.6, freq: "monthly" as const },
     { path: "/contact", priority: 0.7, freq: "monthly" as const },
     { path: "/quote", priority: 0.8, freq: "monthly" as const },
-    { path: "/support", priority: 0.6, freq: "monthly" as const },
     { path: "/blog", priority: 0.7, freq: "weekly" as const },
     { path: "/blog/fiber-laser-vs-co2-laser-cutting", priority: 0.6, freq: "monthly" as const },
     { path: "/blog/cobot-welding-roi-real-numbers", priority: 0.6, freq: "monthly" as const },

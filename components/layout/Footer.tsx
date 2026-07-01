@@ -57,12 +57,9 @@ export function Footer() {
           </div>
           <div>
             <h3 className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">
-              {t("support")}
+              {t("contact")}
             </h3>
-            <ul className="space-y-3 text-sm text-white/70">
-              <li><Link href="/support" className="hover:text-white transition-colors">{t("supportPage")}</Link></li>
-            </ul>
-            <div className="mt-8 space-y-2 text-sm text-white/70">
+            <div className="space-y-2 text-sm text-white/70">
               <p><a href="tel:+56999171017" className="hover:text-white transition-colors">+56 9 9917 1017</a></p>
               <p><a href="mailto:contacto@vtmaquinarias.cl" className="hover:text-white transition-colors">contacto@vtmaquinarias.cl</a></p>
               <p>La Florida, Santiago, Chile</p>
