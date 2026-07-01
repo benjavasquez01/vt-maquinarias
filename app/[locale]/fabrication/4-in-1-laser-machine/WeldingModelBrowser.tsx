@@ -9,22 +9,22 @@ type Unit = "metric" | "imperial";
 type SpecRow = { label: string; metric: string; imperial: string };
 
 const SPECS: SpecRow[] = [
-  { label: "Laser Power Supply",        metric: "1000 W / 1500 W / 2000 W / 3000 W", imperial: "1000 W / 1500 W / 2000 W / 3000 W" },
-  { label: "Power Adjustment Range",    metric: "10% – 100%",                         imperial: "10% – 100%" },
-  { label: "Output Central Wavelength", metric: "1070 ± 20 nm",                       imperial: "1070 ± 20 nm" },
-  { label: "Cooling Method",            metric: "Water cooling",                      imperial: "Water cooling" },
-  { label: "Welding Width",             metric: "0 – 5 mm",                           imperial: "0 – 0.20\"" },
-  { label: "Cleaning Width",            metric: "Max. 80 mm",                         imperial: "Max. 3.15\"" },
-  { label: "Wire Diameter",             metric: "0.8 / 1.0 / 1.2 / 1.6 mm",          imperial: "0.031\" / 0.039\" / 0.047\" / 0.063\"" },
-  { label: "Max. Wire Feeding Speed",   metric: "100 mm/s",                           imperial: "236 in/min" },
+  { label: "Potencia Láser",        metric: "1000 W / 1500 W / 2000 W / 3000 W", imperial: "1000 W / 1500 W / 2000 W / 3000 W" },
+  { label: "Rango de Ajuste de Potencia",    metric: "10% – 100%",                         imperial: "10% – 100%" },
+  { label: "Longitud de Onda de Salida", metric: "1070 ± 20 nm",                       imperial: "1070 ± 20 nm" },
+  { label: "Método de Enfriamiento",            metric: "Enfriamiento por agua",                      imperial: "Enfriamiento por agua" },
+  { label: "Ancho de Soldadura",             metric: "0 – 5 mm",                           imperial: "0 – 0.20\"" },
+  { label: "Ancho de Limpieza",            metric: "Máx. 80 mm",                         imperial: "Máx. 3.15\"" },
+  { label: "Diámetro de Aporte",             metric: "0.8 / 1.0 / 1.2 / 1.6 mm",          imperial: "0.031\" / 0.039\" / 0.047\" / 0.063\"" },
+  { label: "Velocidad Máx. de Aporte",   metric: "100 mm/s",                           imperial: "236 pulg/min" },
 ];
 
-const UPGRADES = ["Smoke Purifier"];
+const UPGRADES = ["Extractor de Humo"];
 
 const LABELS = {
   en: {
     productLine: "Product Line",
-    series: "W Series",
+    series: "4W Series",
     badge: "Available",
     power: "1–3 kW",
     image: "/images/4in1-laser-hero-2.webp",
@@ -34,11 +34,11 @@ const LABELS = {
   },
   es: {
     productLine: "Línea de Productos",
-    series: "Serie W",
+    series: "Serie 4W",
     badge: "Disponible",
     power: "1–3 kW",
     image: "/images/4in1-laser-hero-2.webp",
-    description: "Una fuente láser de fibra — cuatro modos de operación: soldadura láser, corte láser, limpieza láser y soldadura con alimentación de alambre. Disponible en 1000 W, 1500 W, 2000 W y 3000 W.",
+    description: "Una fuente láser de fibra — cuatro modos de operación: soldadura láser, corte láser, limpieza láser y limpieza de cordón. Disponible en 1000 W, 1500 W, 2000 W y 3000 W.",
     quote: "Solicitar Cotización",
     upgrades: "Mejoras Disponibles",
   },
@@ -77,7 +77,7 @@ export function WeldingModelBrowser({ locale }: { locale: "en" | "es" }) {
             <div className="flex gap-1 mb-6 border border-vtm-gray-border p-1 w-fit">
               {(["metric", "imperial"] as Unit[]).map((u) => (
                 <button key={u} onClick={() => setUnit(u)} className={`px-4 py-1.5 text-xs font-semibold tracking-wider uppercase transition-colors ${unit === u ? "bg-vtm-dark text-white" : "text-vtm-gray-mid hover:text-vtm-dark"}`}>
-                  {u === "metric" ? "Metric" : "Imperial"}
+                  {u === "metric" ? "Métrico" : "Imperial"}
                 </button>
               ))}
             </div>

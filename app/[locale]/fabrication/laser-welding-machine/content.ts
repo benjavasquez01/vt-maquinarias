@@ -3,7 +3,7 @@ import type { ProductPageData } from "@/components/product/ProductPageTemplate";
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "laser-welding-machine",
-  machineName: "Máquina de Soldadura Láser",
+  machineName: "Máquina Soldadora Láser",
   heroSubheadline:
     "Soldadura láser portátil y robótica de 1.5 kW a 3 kW. Suelda acero, inoxidable, aluminio y cobre sin consumibles, con distorsión térmica mínima y una apariencia de cordón perfecta que casi no requiere post-procesamiento.",
   heroImageId: "1504328345606-18bbc8c9d7d1",
@@ -18,7 +18,7 @@ const es: ProductPageData = {
     {
       number: "02",
       headline: "Mínima Entrada de Calor — Cero Distorsión en Secciones Delgadas",
-      body: "El punto láser estrechamente enfocado entrega energía solo donde se necesita. La zona afectada por el calor es típicamente 50–80% más pequeña que en TIG. Tubos de pared delgada y chapa metálica de menos de 1.5 mm sueldan sin deformarse — un problema común con la soldadura de arco convencional.",
+      body: "El punto láser estrechamente enfocado entrega energía solo donde se necesita. La zona afectada por el calor es típicamente 50–80% más pequeña que en TIG. Tubos de pared delgada y plancha metálica de menos de 1.5 mm sueldan sin deformarse — un problema común con la soldadura de arco convencional.",
       spec: { label: "Reducción de ZAC", value: "Hasta 80%" },
       imageId: "1518770660439-4636190af475",
     },
@@ -60,7 +60,7 @@ const es: ProductPageData = {
   configOptions: [
     {
       label: "Nivel de Potencia",
-      options: ["1500W — chapa metálica y tubo de pared delgada", "2000W — fabricación general hasta 4 mm", "3000W — sección pesada y estructural"],
+      options: ["1500W — plancha metálica y tubo de pared delgada", "2000W — fabricación general hasta 4 mm", "3000W — sección pesada y estructural"],
       note: "Mayor potencia amplía el rango de espesor de material y aumenta la velocidad de soldadura en secciones más gruesas.",
     },
     {
@@ -89,7 +89,7 @@ const es: ProductPageData = {
     { feature: "Placa muy gruesa (>12 mm)", ours: "Limitado", theirs: "MIG/FCAW preferido" },
   ],
   relatedProducts: [
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Cortadora Láser de Plancha", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
     { name: "Máquina de Limpieza Láser", href: "/fabrication/laser-cleaning-machine", tag: "Limpieza", imageId: "/images/laser-cleaning-hero.webp" },
     { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
     { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.webp" },

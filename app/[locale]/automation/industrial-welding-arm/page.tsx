@@ -60,7 +60,10 @@ export default async function IndustrialWeldingArmPage({
                 {c.hero.cta1}
               </Button>
               <Button
-                href="#specs"
+                href="/catalogo-vt-maquinarias.pdf"
+                target="_blank"
+                rel="noopener"
+                download
                 variant="outline"
                 size="lg"
                 className="border-white/30 text-white hover:bg-white/10 hover:border-white/60"

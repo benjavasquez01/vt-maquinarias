@@ -9,7 +9,7 @@ import { content } from "./content";
 export const metadata: Metadata = {
   title: "Plegadora CNC",
   description:
-    "Plegadoras CNC — hidráulicas de 63–1600T en máquina individual y pares servo eléctricos en tándem de 160–800T. Controlador CNC gráfico con simulación de plegado 3D, tope trasero de 4 ejes y repetibilidad de ±0.01mm. Instalación y soporte en Chile incluidos.",
+    "Plegadoras CNC VTM-PB hidráulicas y VTM-EPB eléctricas full servo para fabricación metálica de alta precisión. Modelos hidráulicos de 63T a 1000T, eléctricos con ahorro energético de hasta 80%, control CNC gráfico y soporte técnico local en Chile.",
 };
 
 const HERO_CONTENT = {
@@ -17,7 +17,7 @@ const HERO_CONTENT = {
     sectionLabel: "Fabrication",
     headline: "CNC\nPress Brake",
     subheadline:
-      "Two drive platforms — hydraulic single machines from 63 to 1600 tons for heavy plate, and servo electric tandem pairs from 160 to 800 tons per machine for synchronized bending up to 16 m.",
+      "VTM-PB hydraulic and VTM-EPB full servo electric CNC press brakes for precise, repeatable, and efficient metal bending.",
     cta1: "Request a Quote",
     cta2: "View Models",
   },
@@ -25,7 +25,7 @@ const HERO_CONTENT = {
     sectionLabel: "Fabricación",
     headline: "Plegadora\nCNC",
     subheadline:
-      "Dos plataformas de accionamiento — máquinas hidráulicas de 63 a 1600 toneladas para placa pesada, y pares servo eléctricos en tándem de 160 a 800 toneladas por máquina para plegado sincronizado hasta 16 m.",
+      "Potencia, precisión y productividad para llevar tu fabricación al siguiente nivel. Nuestras plegadoras CNC están diseñadas para realizar plegados complejos, precisos y repetibles, optimizando los tiempos de producción y reduciendo errores.",
     cta1: "Solicitar Cotización",
     cta2: "Ver Modelos",
   },
@@ -41,15 +41,16 @@ export default async function CncPrakeePage({
     <>
       <HeroScroll
         c={HERO_CONTENT[locale]}
-        locale={locale}
         image="/images/cnc-press-brake-hero-2.webp"
         quoteHref="/quote?machine=cnc-press-brake"
+        initialOverlayOpacity={0.82}
       />
       <ProductPageTemplate
         data={content[locale]}
         featureSlots={{ 0: <ControllerComparison key="controller-comparison" locale={locale} /> }}
         hideHero
         hideSpecs
+        hideConfigure
       >
         <PressBrakeModelBrowser locale={locale} />
       </ProductPageTemplate>

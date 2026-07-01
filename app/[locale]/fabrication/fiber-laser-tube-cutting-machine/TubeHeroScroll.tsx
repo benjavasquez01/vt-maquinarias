@@ -33,7 +33,7 @@ export function TubeHeroScroll({
   }, []);
 
   const textOpacity = Math.max(0, 1 - progress / 0.45);
-  const overlayOpacity = Math.max(0, 0.72 * (1 - progress));
+  const overlayOpacity = Math.max(0, 0.82 * (1 - progress));
 
   return (
     <div ref={wrapperRef} style={{ height: "120vh" }}>

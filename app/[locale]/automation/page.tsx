@@ -9,7 +9,7 @@ import { content } from "./content";
 export const metadata: Metadata = {
   title: "Automatización — Robots de Soldadura Industria 4.0",
   description:
-    "VT Maquinarias lleva robots de soldadura inteligentes Industria 4.0 a los talleres de Chile. Cobots y brazos industriales conectados (IIoT). Implementación en 6 semanas. Retorno de inversión dentro de 18 meses.",
+    "VT Maquinarias lleva robots de soldadura inteligentes Industria 4.0 a los talleres de Chile. Cobots conectados para soldadura láser. Implementación en 6 semanas. Retorno de inversión dentro de 18 meses.",
 };
 
 export default async function AutomationPage({
@@ -97,7 +97,7 @@ export default async function AutomationPage({
             {c.products.headline}
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 gap-8">
             {c.products.items.map(({ slug, name, subtitle, description, imageId, badge, specs, cta }) => (
               <Link
                 key={slug}

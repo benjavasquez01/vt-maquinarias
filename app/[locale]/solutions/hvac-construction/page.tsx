@@ -6,8 +6,8 @@ import { Link } from "@/lib/navigation";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Soluciones para HVAC y Construcción",
-  description: "Cizallado, corte láser, plegadoras y soldadura con cobots para fabricantes de ductos HVAC y componentes para construcción.",
+  title: "Soluciones para Construcción y Estructuras Metálicas",
+  description: "Corte láser, plegado CNC, punzonado y soldadura para estructuras metálicas, perfilería y componentes de construcción. Soporte en Chile.",
 };
 
 export default async function HvacConstructionPage({

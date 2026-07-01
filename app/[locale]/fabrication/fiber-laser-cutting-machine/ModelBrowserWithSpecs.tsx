@@ -14,17 +14,6 @@ const EA_FRAMES = [
   "/images/SHEET/EA series/3015  (8).webp",
 ];
 
-const B_FRAMES = [
-  "/images/SHEET/B Series/0 main.webp",
-  "/images/SHEET/B Series/1.webp",
-  "/images/SHEET/B Series/2 (2).webp",
-  "/images/SHEET/B Series/3 (2).webp",
-  "/images/SHEET/B Series/4 (2).webp",
-  "/images/SHEET/B Series/5.webp",
-  "/images/SHEET/B Series/6.webp",
-  "/images/SHEET/B Series/7.webp",
-];
-
 const PE_FRAMES = [
   "/images/SHEET/PE Series/1.webp",
   "/images/SHEET/PE Series/2.webp",
@@ -69,7 +58,6 @@ const MI_FRAMES = [
 
 const SERIES_FRAMES: Record<string, string[]> = {
   ea: EA_FRAMES,
-  b: B_FRAMES,
   pe: PE_FRAMES,
   se: SE_FRAMES,
   l: L_FRAMES,
@@ -112,246 +100,215 @@ const SPECS: Record<string, ModelSpecs> = {
   tt: {
     headers: ["VTM-3015TT", "VTM-4020TT"],
     rows: [
-      { type: "spec", label: "Working Area",
+      { type: "spec", label: "Área de Trabajo",
         metric:   ["3000 × 1500 mm",  "4000 × 2000 mm"],
         imperial: ["5' × 10'",        "6.6' × 13.1'"] },
-      { type: "spec", label: "X / Y / Z Stroke",
+      { type: "spec", label: "Recorrido X / Y / Z",
         metric:   ["1520 × 3100 × 100 mm",  "2040 × 4050 × 100 mm"],
         imperial: ["60\" × 122\" × 4\"",    "80\" × 159\" × 4\""] },
-      { type: "spec", label: "Laser Power",
+      { type: "spec", label: "Potencia Láser",
         metric:   ["2–50 kW options","2–50 kW options"],
         imperial: ["2–50 kW options","2–50 kW options"] },
-      { type: "spec", label: "Max Acceleration",
+      { type: "spec", label: "Aceleración Máxima",
         metric:   ["2 G","2 G"],
         imperial: ["2 G","2 G"] },
-      { type: "spec", label: "Positioning Accuracy",
+      { type: "spec", label: "Precisión de Posicionamiento",
         metric:   ["±0.03 mm","±0.03 mm"],
         imperial: ["±0.001\"","±0.001\""] },
-      { type: "spec", label: "Voltage",
+      { type: "spec", label: "Voltaje",
         metric:   ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"],
         imperial: ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"] },
-      { type: "spec", label: "Carbon Steel",
+      { type: "spec", label: "Acero al Carbono",
         metric:   ["1 – 80 mm",        "1 – 80 mm"],
         imperial: ["0.04\" – 3-1/8\"", "0.04\" – 3-1/8\""] },
-      { type: "spec", label: "Stainless Steel",
+      { type: "spec", label: "Acero Inoxidable",
         metric:   ["1 – 70 mm",        "1 – 70 mm"],
         imperial: ["0.04\" – 2-3/4\"", "0.04\" – 2-3/4\""] },
-      { type: "spec", label: "Aluminum",
+      { type: "spec", label: "Aluminio",
         metric:   ["1 – 60 mm",        "1 – 60 mm"],
         imperial: ["0.04\" – 2-3/8\"", "0.04\" – 2-3/8\""] },
-      { type: "spec", label: "Brass",
+      { type: "spec", label: "Latón",
         metric:   ["1 – 20 mm",       "1 – 20 mm"],
         imperial: ["0.04\" – 0.79\"", "0.04\" – 0.79\""] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain", "Door Protection Switch"],
+    upgrades: ["Aire Acondicionado", "Extractor de Humo", "Compresor de Aire", "Estabilizador de Voltaje", "Cortina de Luz de Seguridad", "Interruptor de Protección de Puerta"],
   },
   mi: {
     headers: ["VTM-6060Mi"],
     rows: [
-      { type: "spec", label: "Working Area",
+      { type: "spec", label: "Área de Trabajo",
         metric:   ["600 × 600 mm"],
         imperial: ["2' × 2'"] },
-      { type: "spec", label: "X / Y / Z Stroke",
+      { type: "spec", label: "Recorrido X / Y / Z",
         metric:   ["600 × 600 × 100 mm"],
         imperial: ["24\" × 24\" × 4\""] },
-      { type: "spec", label: "Laser Power",
+      { type: "spec", label: "Potencia Láser",
         metric:   ["1 / 1.5 / 2 / 3 / 6 kW"],
         imperial: ["1 / 1.5 / 2 / 3 / 6 kW"] },
-      { type: "spec", label: "Max Acceleration",
+      { type: "spec", label: "Aceleración Máxima",
         metric:   ["1.5 G"],
         imperial: ["1.5 G"] },
-      { type: "spec", label: "Positioning Accuracy",
+      { type: "spec", label: "Precisión de Posicionamiento",
         metric:   ["±0.008 mm"],
         imperial: ["±0.0003\""] },
-      { type: "spec", label: "Machine Dimensions",
+      { type: "spec", label: "Dimensiones de la Máquina",
         metric:   ["1480 × 1480 × 2050 mm"],
         imperial: ["58.3\" × 58.3\" × 80.7\""] },
-      { type: "spec", label: "Voltage",
+      { type: "spec", label: "Voltaje",
         metric:   ["380V 3PH 50/60Hz"],
         imperial: ["380V 3PH 50/60Hz"] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
+    upgrades: ["Aire Acondicionado", "Extractor de Humo", "Compresor de Aire", "Estabilizador de Voltaje"],
   },
   ea: {
-    headers: ["VTM-1313A", "VTM-1325A", "VTM-3015A"],
+    headers: ["VTM-3015A", "VTM-3015Pro", "VTM-6015Pro", "VTM-4020Pro", "VTM-6025Pro", "VTM-12025Pro"],
     rows: [
-      { type: "spec", label: "Working Area",
-        metric:   ["1300 × 1300 mm",    "1300 × 2500 mm",    "3000 × 1500 mm"],
-        imperial: ["4.3' × 4.3'",       "4.3' × 8.2'",       "5' × 10'"] },
-      { type: "spec", label: "X / Y / Z Stroke",
-        metric:   ["1350 × 1320 × 50 mm",   "1310 × 2550 × 50 mm",    "3050 × 1500 × 50 mm"],
-        imperial: ["53\" × 52\" × 2\"",     "52\" × 100\" × 2\"",     "120\" × 59\" × 2\""] },
-      { type: "spec", label: "Laser Power",
-        metric:   ["1.5 / 2 / 3 kW",   "1.5 / 2 / 3 kW",   "1.5 / 2 / 3 kW"],
-        imperial: ["1.5 / 2 / 3 kW",   "1.5 / 2 / 3 kW",   "1.5 / 2 / 3 kW"] },
-      { type: "spec", label: "Max Acceleration",
-        metric:   ["0.8 G","0.8 G","0.8 G"],
-        imperial: ["0.8 G","0.8 G","0.8 G"] },
-      { type: "spec", label: "Positioning Accuracy",
-        metric:   ["±0.05 mm","±0.05 mm","±0.05 mm"],
-        imperial: ["±0.002\"", "±0.002\"", "±0.002\""] },
-      { type: "spec", label: "Voltage",
-        metric:   ["380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz"],
-        imperial: ["380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz"] },
-      { type: "spec", label: "Carbon Steel",
-        metric:   ["0.8 – 16 mm",      "0.8 – 16 mm",      "0.8 – 16 mm"],
-        imperial: ["1/32\" – 5/8\"",   "1/32\" – 5/8\"",   "1/32\" – 5/8\""] },
-      { type: "spec", label: "Stainless Steel",
-        metric:   ["0.8 – 6 mm",       "0.8 – 6 mm",       "0.8 – 6 mm"],
-        imperial: ["1/32\" – 0.24\"",  "1/32\" – 0.24\"",  "1/32\" – 0.24\""] },
+      { type: "spec", label: "Área de Trabajo",
+        metric:   ["3000 × 1500 mm", "3000 × 1500 mm", "6000 × 1500 mm", "4000 × 2000 mm", "6000 × 2000 mm", "6000 × 2500 mm"],
+        imperial: ["5' × 10'",       "5' × 10'",       "5' × 20'",       "6.6' × 13.1'",   "6.6' × 19.7'",   "8.2' × 19.7'"] },
+      { type: "spec", label: "Recorrido X / Y / Z",
+        metric:   ["1510 × 3050 × 100 mm", "1540 × 3050 × 50 mm", "1540 × 6050 × 50 mm", "2040 × 4050 × 50 mm", "2040 × 6050 × 50 mm", "2510 × 6150 × 50 mm"],
+        imperial: ["59\" × 120\" × 4\"",   "61\" × 120\" × 2\"",  "61\" × 238\" × 2\"",  "80\" × 159\" × 2\"",  "80\" × 238\" × 2\"",  "99\" × 242\" × 2\""] },
+      { type: "spec", label: "Potencia Láser",
+        metric:   ["1500 W", "3 / 6 / 12 kW", "3 / 6 / 12 kW", "3 / 6 / 12 kW", "3 / 6 / 12 kW", "3 / 6 / 12 kW"],
+        imperial: ["1500 W", "3 / 6 / 12 kW", "3 / 6 / 12 kW", "3 / 6 / 12 kW", "3 / 6 / 12 kW", "3 / 6 / 12 kW"] },
+      { type: "spec", label: "Aceleración Máxima",
+        metric:   ["1 G", "1.5 G", "1.5 G", "1.5 G", "1.5 G", "1.5 G"],
+        imperial: ["1 G", "1.5 G", "1.5 G", "1.5 G", "1.5 G", "1.5 G"] },
+      { type: "spec", label: "Precisión de Posicionamiento",
+        metric:   ["±0.03 mm", "±0.05 mm", "±0.05 mm", "±0.05 mm", "±0.05 mm", "±0.05 mm"],
+        imperial: ["±0.001\"", "±0.002\"", "±0.002\"", "±0.002\"", "±0.002\"", "±0.002\""] },
+      { type: "spec", label: "Voltaje",
+        metric:   ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz"],
+        imperial: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
+      { type: "spec", label: "Acero al Carbono",
+        metric:   ["0.8 – 12 mm",     "1 – 35 mm",        "1 – 35 mm",        "1 – 35 mm",        "1 – 35 mm",        "1 – 35 mm"],
+        imperial: ["1/32\" – 0.47\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\""] },
+      { type: "spec", label: "Acero Inoxidable",
+        metric:   ["0.8 – 5 mm",      "1 – 35 mm",        "1 – 35 mm",        "1 – 35 mm",        "1 – 35 mm",        "1 – 35 mm"],
+        imperial: ["1/32\" – 0.20\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\"", "0.04\" – 1-3/8\""] },
+      { type: "spec", label: "Aluminio",
+        metric:   ["—", "1 – 30 mm",          "1 – 30 mm",          "1 – 30 mm",          "1 – 30 mm",          "1 – 30 mm"],
+        imperial: ["—", "0.04\" – 1-3/16\"", "0.04\" – 1-3/16\"", "0.04\" – 1-3/16\"", "0.04\" – 1-3/16\"", "0.04\" – 1-3/16\""] },
+      { type: "spec", label: "Latón",
+        metric:   ["—", "1 – 16 mm",      "1 – 16 mm",      "1 – 16 mm",      "1 – 16 mm",      "1 – 16 mm"],
+        imperial: ["—", "0.04\" – 5/8\"", "0.04\" – 5/8\"", "0.04\" – 5/8\"", "0.04\" – 5/8\"", "0.04\" – 5/8\""] },
     ],
     features: [],
-    upgrades: ["Independent Control Cabinet", "Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
-  },
-  b: {
-    headers: ["VTM-3015Pro", "VTM-6015Pro", "VTM-4020Pro", "VTM-6020Pro", "VTM-6025Pro"],
-    rows: [
-      { type: "spec", label: "Working Area",
-        metric:   ["3000 × 1500 mm",  "6000 × 1500 mm",  "4000 × 2000 mm",    "6000 × 2000 mm",    "6000 × 2500 mm"],
-        imperial: ["5' × 10'",        "5' × 20'",        "6.6' × 13.1'",      "6.6' × 19.7'",      "8.2' × 19.7'"] },
-      { type: "spec", label: "X / Y / Z Stroke",
-        metric:   ["1540 × 3050 × 50 mm",    "1540 × 6050 × 50 mm",    "2040 × 4050 × 50 mm",    "2040 × 6050 × 50 mm",    "2510 × 6150 × 50 mm"],
-        imperial: ["61\" × 120\" × 2\"",     "61\" × 238\" × 2\"",     "80\" × 159\" × 2\"",     "80\" × 238\" × 2\"",     "99\" × 242\" × 2\""] },
-      { type: "spec", label: "Laser Power",
-        metric:   ["2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW"],
-        imperial: ["2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW","2 / 3 / 6 / 12 kW"] },
-      { type: "spec", label: "Max Acceleration",
-        metric:   ["1.5 G","1.5 G","1.5 G","1.5 G","1.5 G"],
-        imperial: ["1.5 G","1.5 G","1.5 G","1.5 G","1.5 G"] },
-      { type: "spec", label: "Positioning Accuracy",
-        metric:   ["±0.05 mm","±0.05 mm","±0.05 mm","±0.05 mm","±0.05 mm"],
-        imperial: ["±0.002\"", "±0.002\"", "±0.002\"", "±0.002\"", "±0.002\""] },
-      { type: "spec", label: "Voltage",
-        metric:   ["380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz"],
-        imperial: ["380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz"] },
-      { type: "spec", label: "Carbon Steel",
-        metric:   ["1 – 35 mm",         "1 – 35 mm",         "1 – 35 mm",         "1 – 35 mm",         "1 – 35 mm"],
-        imperial: ["0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\""] },
-      { type: "spec", label: "Stainless Steel",
-        metric:   ["1 – 35 mm",         "1 – 35 mm",         "1 – 35 mm",         "1 – 35 mm",         "1 – 35 mm"],
-        imperial: ["0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\"",  "0.04\" – 1-3/8\""] },
-      { type: "spec", label: "Aluminum",
-        metric:   ["1 – 30 mm",          "1 – 30 mm",          "1 – 30 mm",          "1 – 30 mm",          "1 – 30 mm"],
-        imperial: ["0.04\" – 1-3/16\"", "0.04\" – 1-3/16\"", "0.04\" – 1-3/16\"", "0.04\" – 1-3/16\"", "0.04\" – 1-3/16\""] },
-      { type: "spec", label: "Brass",
-        metric:   ["1 – 16 mm",        "1 – 16 mm",        "1 – 16 mm",        "1 – 16 mm",        "1 – 16 mm"],
-        imperial: ["0.04\" – 5/8\"",   "0.04\" – 5/8\"",   "0.04\" – 5/8\"",   "0.04\" – 5/8\"",   "0.04\" – 5/8\""] },
-    ],
-    features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
+    upgrades: ["Fuji motors", "Taiwan YYC rack", "Japan Shimpo reducer", "Auto-focus cutting head", "Auto-nesting", "Air conditioner", "Smoke extractor", "Voltage regulator", "16 bar screw compressor optional"],
   },
   l: {
     headers: ["VTM-12025L", "VTM-14035L"],
     rows: [
-      { type: "spec", label: "Working Area",
+      { type: "spec", label: "Área de Trabajo",
         metric:   ["12000 × 2500 mm",   "14000 × 3500 mm"],
         imperial: ["8.2' × 39.4'",      "11.5' × 45.9'"] },
-      { type: "spec", label: "X / Y / Z Stroke",
+      { type: "spec", label: "Recorrido X / Y / Z",
         metric:   ["2550 × 12250 × 260 mm",    "3550 × 14250 × 260 mm"],
         imperial: ["100\" × 482\" × 10\"",     "140\" × 561\" × 10\""] },
-      { type: "spec", label: "Laser Power",
+      { type: "spec", label: "Potencia Láser",
         metric:   ["12 / 20 / 30 / 40 / 50 kW+", "12 / 20 / 30 / 40 / 50 kW+"],
         imperial: ["12 / 20 / 30 / 40 / 50 kW+", "12 / 20 / 30 / 40 / 50 kW+"] },
-      { type: "spec", label: "Max Acceleration",
+      { type: "spec", label: "Aceleración Máxima",
         metric:   ["1 G","1 G"],
         imperial: ["1 G","1 G"] },
-      { type: "spec", label: "Positioning Accuracy",
+      { type: "spec", label: "Precisión de Posicionamiento",
         metric:   ["±0.03 mm","±0.03 mm"],
         imperial: ["±0.001\"", "±0.001\""] },
-      { type: "spec", label: "Voltage",
+      { type: "spec", label: "Voltaje",
         metric:   ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"],
         imperial: ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"] },
-      { type: "spec", label: "Carbon Steel",
+      { type: "spec", label: "Acero al Carbono",
         metric:   ["1 – 80 mm",         "1 – 80 mm"],
         imperial: ["0.04\" – 3-1/8\"",  "0.04\" – 3-1/8\""] },
-      { type: "spec", label: "Stainless Steel",
+      { type: "spec", label: "Acero Inoxidable",
         metric:   ["1 – 70 mm",         "1 – 70 mm"],
         imperial: ["0.04\" – 2-3/4\"",  "0.04\" – 2-3/4\""] },
-      { type: "spec", label: "Aluminum",
+      { type: "spec", label: "Aluminio",
         metric:   ["1 – 60 mm",         "1 – 60 mm"],
         imperial: ["0.04\" – 2-3/8\"",  "0.04\" – 2-3/8\""] },
-      { type: "spec", label: "Brass",
+      { type: "spec", label: "Latón",
         metric:   ["1 – 20 mm",       "1 – 20 mm"],
         imperial: ["0.04\" – 0.79\"", "0.04\" – 0.79\""] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain"],
+    upgrades: ["Air conditioner", "Smoke extractor", "Voltage regulator", "Laser safety sensor", "16 bar screw compressor optional", "UPS backup unit optional"],
   },
   pe: {
     headers: ["VTM-3015PE", "VTM-6015PE", "VTM-4020PE", "VTM-6025PE", "VTM-12025PE"],
     rows: [
-      { type: "spec", label: "Working Area",
+      { type: "spec", label: "Área de Trabajo",
         metric:   ["3000 × 1500 mm",  "6000 × 1500 mm",  "4000 × 2000 mm",    "6000 × 2500 mm",    "12000 × 2500 mm"],
         imperial: ["5' × 10'",        "5' × 20'",        "6.6' × 13.1'",      "8.2' × 19.7'",      "8.2' × 39.4'"] },
-      { type: "spec", label: "X / Y / Z Stroke",
+      { type: "spec", label: "Recorrido X / Y / Z",
         metric:   ["1520 × 3100 × 100 mm",  "1520 × 6050 × 100 mm",  "2040 × 4050 × 100 mm",  "2510 × 6100 × 260 mm",  "2510 × 12500 × 260 mm"],
         imperial: ["60\" × 122\" × 4\"",    "60\" × 238\" × 4\"",    "80\" × 159\" × 4\"",    "99\" × 240\" × 10\"",   "99\" × 492\" × 10\""] },
-      { type: "spec", label: "Laser Power",
-        metric:   ["2–50 kW options","2–50 kW options","2–50 kW options","2–50 kW options","2–50 kW options"],
-        imperial: ["2–50 kW options","2–50 kW options","2–50 kW options","2–50 kW options","2–50 kW options"] },
-      { type: "spec", label: "Max Acceleration",
+      { type: "spec", label: "Potencia Láser",
+        metric:   ["3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW"],
+        imperial: ["3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW", "3 / 6 / 12 / 20 / 30 / 40 / 50 kW"] },
+      { type: "spec", label: "Aceleración Máxima",
         metric:   ["2 G","2 G","2 G","2 G","2 G"],
         imperial: ["2 G","2 G","2 G","2 G","2 G"] },
-      { type: "spec", label: "Positioning Accuracy",
+      { type: "spec", label: "Precisión de Posicionamiento",
         metric:   ["±0.03 mm","±0.03 mm","±0.03 mm","±0.03 mm","±0.03 mm"],
         imperial: ["±0.001\"", "±0.001\"", "±0.001\"", "±0.001\"", "±0.001\""] },
-      { type: "spec", label: "Voltage",
+      { type: "spec", label: "Voltaje",
         metric:   ["380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz"],
         imperial: ["380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz","380V 3PH 50/60Hz"] },
-      { type: "spec", label: "Carbon Steel",
+      { type: "spec", label: "Acero al Carbono",
         metric:   ["1 – 80 mm",         "1 – 80 mm",         "1 – 80 mm",         "1 – 80 mm",         "1 – 80 mm"],
         imperial: ["0.04\" – 3-1/8\"",  "0.04\" – 3-1/8\"",  "0.04\" – 3-1/8\"",  "0.04\" – 3-1/8\"",  "0.04\" – 3-1/8\""] },
-      { type: "spec", label: "Stainless Steel",
+      { type: "spec", label: "Acero Inoxidable",
         metric:   ["1 – 70 mm",         "1 – 70 mm",         "1 – 70 mm",         "1 – 70 mm",         "1 – 70 mm"],
         imperial: ["0.04\" – 2-3/4\"",  "0.04\" – 2-3/4\"",  "0.04\" – 2-3/4\"",  "0.04\" – 2-3/4\"",  "0.04\" – 2-3/4\""] },
-      { type: "spec", label: "Aluminum",
+      { type: "spec", label: "Aluminio",
         metric:   ["1 – 60 mm",         "1 – 60 mm",         "1 – 60 mm",         "1 – 60 mm",         "1 – 60 mm"],
         imperial: ["0.04\" – 2-3/8\"",  "0.04\" – 2-3/8\"",  "0.04\" – 2-3/8\"",  "0.04\" – 2-3/8\"",  "0.04\" – 2-3/8\""] },
-      { type: "spec", label: "Brass",
+      { type: "spec", label: "Latón",
         metric:   ["1 – 20 mm",       "1 – 20 mm",       "1 – 20 mm",       "1 – 20 mm",       "1 – 20 mm"],
         imperial: ["0.04\" – 0.79\"", "0.04\" – 0.79\"", "0.04\" – 0.79\"", "0.04\" – 0.79\"", "0.04\" – 0.79\""] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain", "Door Protection Switch"],
+    upgrades: ["Fuji servo motor", "Dual-pallet exchange table", "Radiation-safe enclosed body", "Air conditioner", "Smoke extractor", "Voltage regulator", "16 bar screw compressor optional"],
   },
   se: {
     headers: ["VTM-3015SE", "VTM-1315SE"],
     rows: [
-      { type: "spec", label: "Working Area",
+      { type: "spec", label: "Área de Trabajo",
         metric:   ["3000 × 1500 mm",  "1300 × 1500 mm"],
         imperial: ["5' × 10'",        "4.3' × 4.9'"] },
-      { type: "spec", label: "X / Y / Z Stroke",
+      { type: "spec", label: "Recorrido X / Y / Z",
         metric:   ["1525 × 3050 × 260 mm",  "1325 × 1560 × 260 mm"],
         imperial: ["60\" × 120\" × 10\"",   "52\" × 61\" × 10\""] },
-      { type: "spec", label: "Laser Power",
-        metric:   ["1 / 1.5 / 2 / 3 kW",   "1 / 1.5 / 2 / 3 kW"],
-        imperial: ["1 / 1.5 / 2 / 3 kW",   "1 / 1.5 / 2 / 3 kW"] },
-      { type: "spec", label: "Max Acceleration",
+      { type: "spec", label: "Potencia Láser",
+        metric:   ["1.5 / 3 / 6 kW",   "1.5 / 3 / 6 kW"],
+        imperial: ["1.5 / 3 / 6 kW",   "1.5 / 3 / 6 kW"] },
+      { type: "spec", label: "Aceleración Máxima",
         metric:   ["1.5 G","1.5 G"],
         imperial: ["1.5 G","1.5 G"] },
-      { type: "spec", label: "Positioning Accuracy",
+      { type: "spec", label: "Precisión de Posicionamiento",
         metric:   ["±0.03 mm","±0.03 mm"],
         imperial: ["±0.001\"", "±0.001\""] },
-      { type: "spec", label: "Voltage",
+      { type: "spec", label: "Voltaje",
         metric:   ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"],
         imperial: ["380V 3PH 50/60Hz","380V 3PH 50/60Hz"] },
-      { type: "spec", label: "Carbon Steel",
+      { type: "spec", label: "Acero al Carbono",
         metric:   ["1 – 25 mm",  "1 – 25 mm"],
         imperial: ["0.04\" – 1\"", "0.04\" – 1\""] },
-      { type: "spec", label: "Stainless Steel",
+      { type: "spec", label: "Acero Inoxidable",
         metric:   ["1 – 12 mm",    "1 – 12 mm"],
         imperial: ["0.04\" – 0.47\"", "0.04\" – 0.47\""] },
-      { type: "spec", label: "Aluminum",
+      { type: "spec", label: "Aluminio",
         metric:   ["1 – 8 mm",      "1 – 8 mm"],
         imperial: ["0.04\" – 5/16\"", "0.04\" – 5/16\""] },
-      { type: "spec", label: "Brass",
+      { type: "spec", label: "Latón",
         metric:   ["1 – 8 mm",      "1 – 8 mm"],
         imperial: ["0.04\" – 5/16\"", "0.04\" – 5/16\""] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator"],
+    upgrades: ["360° full protection", "Wireless operation", "Friendly intuitive control", "Air conditioner", "Smoke extractor", "Voltage regulator", "16 bar screw compressor optional"],
   },
 };
 
@@ -360,38 +317,31 @@ const SPECS: Record<string, ModelSpecs> = {
 const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
-      id: "ea", series: "A Series", subtitle: "Economic Fiber Laser Sheet Cutting Machine", tagline: "Entry Production", power: "1.5–3 kW", badge: "Most Accessible",
+      id: "ea", series: "VTM-Pro Series", subtitle: "High Power Fiber Laser Cutting Machine", tagline: "High Power", power: "1.5–12 kW", badge: "High Power",
       image: "/images/SHEET/EA series/main 3015  (1).webp",
-      description: "The VTM-A is the right starting point for job shops and light-to-medium production environments. Single-pallet open frame, three standard bed sizes, and Raycus power from 1.5 to 3 kW.",
-      bestFor: ["Job shops entering fiber laser", "Light to medium sheet metal", "Stainless and aluminum under ¼\"", "First fiber laser investment"],
+      description: "The VTM-Pro is a high-power fiber laser platform with a modern open-frame design, Spanish-friendly operation, auto-nesting, auto-focus cutting head, Fuji motors, Taiwan YYC rack, Japan Shimpo reducer, and a high-rigidity monolithic welded body engineered to reduce vibration and deformation.",
+      bestFor: ["High-power sheet cutting from 3 to 12 kW", "Carbon steel and stainless steel up to 35 mm", "Aluminum up to 30 mm and brass/bronze up to 16 mm", "Workshops that need stable, repeatable production with auto-nesting"],
       specs: SPECS.ea,
     },
     {
-      id: "b", series: "Pro Series", tagline: "Production Workhorse", power: "2–12 kW", badge: "Most Popular",
-      image: "/images/SHEET/B Series/0 main.webp",
-      description: "The VTM-B is built for continuous production at the widest range of material thicknesses and sizes. From 3 kW for thin sheet to 12 kW for 1\"+ mild steel and ¾\" stainless, in beds up to 6′×20′.",
-      bestFor: ["High-throughput fabrication", "Broad thickness range", "Contract manufacturers", "Multi-shift operations"],
-      specs: SPECS.b,
-    },
-    {
-      id: "se", series: "SE Series", tagline: "Enclosed Industrial", power: "1–3 kW", badge: "Class 1 Industrial",
+      id: "se", series: "VTM-SE Series", subtitle: "Enclosed Single-Table Fiber Laser Cutting Machine", tagline: "Compact Safety", power: "1.5–6 kW", badge: "Radiation Safe",
       image: "/images/SHEET/SE Series/1.webp",
-      description: "The VTM-SE is the full industrial enclosed format — Laser Safety Class 1, integrated 6″ fume extraction port, and hardware-redundant door interlocks on a production-scale bed.",
-      bestFor: ["Class 1 required by facility code", "Medical device and aerospace", "ISO-certified production", "Strict safety regulations"],
+      description: "The VTM-SE is an enclosed single-table fiber laser cutting machine with compact design, high safety, and 360° protection. Its closed cabin isolates the cutting process, reducing exposure to laser radiation, fumes, and particles for cleaner, safer operation. Wireless operation and an intuitive control make day-to-day use more flexible and comfortable.",
+      bestFor: ["Enclosed single-table cutting", "Compact workshops that require high safety", "Lower exposure to laser radiation, fumes, and particles", "Flexible operation with wireless control support"],
       specs: SPECS.se,
     },
     {
-      id: "pe", series: "PE Series", tagline: "Enclosed Compact", power: "1.5–3 kW", badge: "Class 1 Safety",
+      id: "pe", series: "VTM-PE Series", subtitle: "Enclosed Dual-Pallet Fiber Laser Cutting Machine", tagline: "Fast Exchange", power: "3–50 kW", badge: "Radiation Safe",
       image: "/images/SHEET/PE Series/1.webp",
-      description: "The VTM-PE adds a full safety enclosure to the A-series platform — achieving Laser Safety Class 1 with hardware-interlocked doors. No laser eyewear required for operators or bystanders.",
-      bestFor: ["Mixed-use facilities and R&D labs", "Training and prototyping", "Adjacent office areas", "Strict visitor access policies"],
+      description: "The VTM-PE is an enclosed dual-pallet fiber laser cutting machine for high-power production. Its closed body helps protect operators from laser radiation, while the fast exchange table minimizes downtime between loading, unloading, and cutting. Fuji servo motors provide high power, precise machine movement, and stable cutting accuracy.",
+      bestFor: ["Radiation-safe enclosed cutting", "High-power production from 3 to 50 kW", "Fast table exchange to reduce downtime", "Carbon steel to 80 mm, stainless to 70 mm, aluminum to 60 mm"],
       specs: SPECS.pe,
     },
     {
-      id: "l", series: "L Series", tagline: "Heavy Plate", power: "12–50 kW+", badge: "Thickest Cuts",
+      id: "l", series: "VTM-L Series", subtitle: "Heavy Duty Fiber Laser Cutting Machine", tagline: "High Power", power: "12–50 kW+", badge: "Heavy Duty",
       image: "/images/SHEET/L Series/1.webp",
-      description: "The VTM-L is designed for structural fabricators and heavy plate shops. 20 and 30 kW Raycus sources cut mild steel to 2\"+, stainless to 1.5\", at speeds that make plasma cutting obsolete.",
-      bestFor: ["Structural steel fabrication", "Heavy plate over 1\"", "Replacing plasma cutting", "High-power copper and brass"],
+      description: "The VTM-L is a Heavy Duty fiber laser cutting machine for high-power production, large thicknesses, and special formats. Its large cutting area is designed to process oversized plate with maximum precision and stability, making it ideal for heavy fabrication. The bevel auto-focus cutting head enables bevel cuts with automatic focal-point adjustment.",
+      bestFor: ["Heavy fabrication and oversized plate formats", "High-power cutting from 12 to 50 kW+", "Carbon steel to 80 mm and stainless steel to 70 mm", "Efficient bevel cutting with auto-focus head"],
       specs: SPECS.l,
     },
     {
@@ -411,38 +361,31 @@ const MODELS: Record<"en" | "es", Model[]> = {
   ],
   es: [
     {
-      id: "ea", series: "Serie A", subtitle: "Cortadora Láser de Chapa Económica", tagline: "Producción de Entrada", power: "1.5–3 kW", badge: "Más Accesible",
+      id: "ea", series: "Serie VTM-Pro", subtitle: "Máquina Corte Láser Fibra High Power", tagline: "Alto Poder", power: "1.5–12 kW", badge: "High Power",
       image: "/images/SHEET/EA series/main 3015  (1).webp",
-      description: "La VTM-A es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW.",
-      bestFor: ["Talleres que inician con láser de fibra", "Chapa ligera a media", "Inoxidable y aluminio bajo 6 mm", "Primera inversión en láser de fibra"],
+      description: "La VTM-Pro es una máquina de corte láser fibra High Power con diseño moderno, operación intuitiva en español, auto-nesting, cabezal auto-foco, motores Fuji Japón, cremallera YYC Taiwán, reductor Shimpo Japón y cuerpo monolítico electrosoldado de alta rigidez para minimizar vibraciones y deformaciones.",
+      bestFor: ["Corte láser de alto poder de 3 a 12 kW", "Acero carbono e inoxidable hasta 35 mm", "Aluminio hasta 30 mm y bronce hasta 16 mm", "Talleres que necesitan producción estable, precisa y repetible con auto-nesting"],
       specs: SPECS.ea,
     },
     {
-      id: "b", series: "Serie Pro", tagline: "Caballo de Batalla", power: "2–12 kW", badge: "Más Popular",
-      image: "/images/SHEET/B Series/0 main.webp",
-      description: "La VTM-B está diseñada para producción continua en la mayor gama de espesores y tamaños. De 3 kW para chapa fina a 12 kW para acero dulce de 25 mm+ e inoxidable de 20 mm, en mesas de hasta 6′×20′.",
-      bestFor: ["Fabricación de alto rendimiento", "Amplio rango de espesores", "Fabricantes por contrato", "Operaciones de múltiples turnos"],
-      specs: SPECS.b,
-    },
-    {
-      id: "se", series: "Serie SE", tagline: "Encapsulado Industrial", power: "1–3 kW", badge: "Industrial Clase 1",
+      id: "se", series: "Serie VTM-SE", subtitle: "Máquina Corte Láser Fibra Mesa Simple Cerrada", tagline: "Alta Seguridad", power: "1.5–6 kW", badge: "Libre de Radiación",
       image: "/images/SHEET/SE Series/1.webp",
-      description: "La VTM-SE es el formato encapsulado industrial completo — Clase 1, puerto de extracción de 6″ integrado y enclavamientos de puerta con redundancia hardware en mesa de escala productiva.",
-      bestFor: ["Clase 1 exigida por código o seguro", "Dispositivos médicos y aeroespacial", "Producción con certificación ISO", "Normativa de seguridad estricta"],
+      description: "La VTM-SE es una máquina de corte láser fibra de mesa simple cerrada, con alta seguridad, flexibilidad y diseño compacto. Su cabina cerrada entrega protección total 360°, aislando el proceso de corte para reducir la exposición a radiación láser, humos y partículas. La operación inalámbrica y el control amigable e intuitivo entregan mayor comodidad y flexibilidad al operador.",
+      bestFor: ["Corte cerrado de mesa simple", "Talleres que buscan alta seguridad en formato compacto", "Menor exposición a radiación láser, humos y partículas", "Operación flexible con control inalámbrico e intuitivo"],
       specs: SPECS.se,
     },
     {
-      id: "pe", series: "Serie PE", tagline: "Encapsulado Compacto", power: "1.5–3 kW", badge: "Seguridad Clase 1",
+      id: "pe", series: "Serie VTM-PE", subtitle: "Máquina Corte Láser Fibra Doble Mesa Cerrada", tagline: "Ahorra Tiempo", power: "3–50 kW", badge: "Libre de Radiación",
       image: "/images/SHEET/PE Series/1.webp",
-      description: "La VTM-PE añade un encapsulado de seguridad completo a la plataforma A — alcanzando Clase 1 con puertas de enclavamiento de hardware. No se requieren gafas láser para operadores.",
-      bestFor: ["Instalaciones de uso mixto y I+D", "Capacitación y prototipado", "Áreas de oficina adyacentes", "Políticas estrictas de acceso"],
+      description: "La VTM-PE es una máquina de corte láser fibra de doble mesa cerrada para producción de alta potencia. Su estructura cerrada ayuda a proteger al operador de la radiación láser, mientras el intercambio rápido de mesa minimiza tiempos muertos entre carga, descarga y corte. Incorpora servo motor japonés para movimiento preciso, alta potencia y excelente precisión de corte.",
+      bestFor: ["Corte cerrado libre de radiación para el operador", "Producción de alta potencia de 3 a 50 kW", "Intercambio rápido para ahorrar tiempo y reducir inactividad", "Acero carbono hasta 80 mm, inoxidable hasta 70 mm, aluminio hasta 60 mm"],
       specs: SPECS.pe,
     },
     {
-      id: "l", series: "Serie L", tagline: "Placa Gruesa", power: "12–50 kW+", badge: "Cortes más Gruesos",
+      id: "l", series: "Serie VTM-L", subtitle: "Máquina Corte Láser Fibra Heavy Duty", tagline: "Alta Potencia", power: "12–50 kW+", badge: "Formatos Especiales",
       image: "/images/SHEET/L Series/1.webp",
-      description: "La VTM-L está diseñada para fabricantes de acero estructural y talleres de placa gruesa. Fuentes Raycus de 20 y 30 kW cortan acero dulce a 50 mm+ e inoxidable a 40 mm.",
-      bestFor: ["Fabricación de acero estructural", "Placa gruesa superior a 25 mm", "Sustitución del corte por plasma", "Cobre y latón de alta potencia"],
+      description: "La VTM-L es una máquina de corte láser fibra Heavy Duty para alta potencia, corte eficiente, grandes espesores y formatos especiales. Su gran área de corte está diseñada para procesar planchas de gran formato con máxima precisión y estabilidad, convirtiéndose en una solución ideal para fabricación pesada. El cabezal de autofoco biselado permite realizar cortes multi-ángulo con ajuste automático del punto focal.",
+      bestFor: ["Fabricación pesada y planchas de gran formato", "Corte de alta potencia de 12 a 50 kW+", "Acero carbono hasta 80 mm e inoxidable hasta 70 mm", "Corte biselado eficiente con cabezal de autofoco"],
       specs: SPECS.l,
     },
     {
@@ -453,7 +396,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       specs: SPECS.tt,
     },
     {
-      id: "mi", series: "Serie Mi", subtitle: "Cortadora Láser de Chapa Mini de Alta Precisión", tagline: "Precisión Compacta", power: "1–6 kW", badge: "Alta Precisión",
+      id: "mi", series: "Serie Mi", subtitle: "Cortadora Láser de Plancha Mini de Alta Precisión", tagline: "Precisión Compacta", power: "1–6 kW", badge: "Alta Precisión",
       image: "/images/SHEET/Mi Series/8.webp",
       description: "La VTM-Mi es una cortadora láser de fibra compacta y de alta precisión diseñada para piezas intrincadas y tolerancias ajustadas. Huella pequeña, bastidor rígido y control de movimiento fino para resultados donde las máquinas de tamaño completo no pueden llegar.",
       bestFor: ["Piezas pequeñas e intrincadas", "Prototipado de alta tolerancia", "Espacio limitado en planta", "I+D y fabricación especializada"],
@@ -472,7 +415,7 @@ const LABELS = {
     viewSpecs: "View Specs",
     specsSection: "Technical Specifications",
     specsHeadline: "Full Specs",
-    upgrades: "Available Upgrades",
+    upgrades: "Included / Components",
   },
   es: {
     productLine: "Línea de Productos",
@@ -483,13 +426,42 @@ const LABELS = {
     viewSpecs: "Ver Especificaciones",
     specsSection: "Especificaciones Técnicas",
     specsHeadline: "Especificaciones Completas",
-    upgrades: "Mejoras Disponibles",
+    upgrades: "Incluye / Componentes",
   },
 };
 
 // ─── Specs card renderer ───────────────────────────────────────────────────
 
 const VISIBLE = 3;
+
+const UPGRADE_TRANSLATIONS_ES: Record<string, string> = {
+  "Fuji motors": "Motores Fuji",
+  "Taiwan YYC rack": "Cremallera YYC Taiwán",
+  "Japan Shimpo reducer": "Reductor Shimpo Japón",
+  "Auto-focus cutting head": "Cabezal de autofoco",
+  "Auto-nesting": "Auto-nesting",
+  "Air conditioner": "Aire acondicionado",
+  "Smoke extractor": "Extractor de humos",
+  "Voltage regulator": "Estabilizador de voltaje",
+  "16 bar screw compressor optional": "Compresor de tornillo 16 bar (opcional)",
+  "Fuji servo motor": "Servo motor Fuji",
+  "Dual-pallet exchange table": "Doble mesa de intercambio",
+  "Radiation-safe enclosed body": "Cabina cerrada libre de radiación",
+  "360° full protection": "Protección total 360°",
+  "Wireless operation": "Operación inalámbrica",
+  "Friendly intuitive control": "Control amigable e intuitivo",
+  "Laser safety sensor": "Sensor de seguridad láser",
+  "UPS backup unit optional": "Unidad de respaldo UPS (opcional)",
+};
+
+function formatUpgradeLabel(upgrade: string, locale: "en" | "es") {
+  if (locale !== "es") return upgrade;
+  return UPGRADE_TRANSLATIONS_ES[upgrade] ?? upgrade;
+}
+
+function isOptionalUpgrade(label: string) {
+  return /optional|opcional/i.test(label);
+}
 
 function AppleSpecs({
   specs,
@@ -530,7 +502,6 @@ function AppleSpecs({
 
   const [pos, setPos] = useState(0);
   const posRef = useRef(0);
-  const [animating, setAnimating] = useState(false);
   const animatingRef = useRef(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -555,7 +526,6 @@ function AppleSpecs({
     const track = trackRef.current;
     if (!track) return;
     animatingRef.current = true;
-    setAnimating(true);
     const cur = posRef.current;
     const rawNext = direction === "right" ? clonesBefore + cur + 1 : clonesBefore + cur - 1;
     const nextPos = mod(direction === "right" ? cur + 1 : cur - 1);
@@ -567,7 +537,6 @@ function AppleSpecs({
       posRef.current = nextPos;
       setPos(nextPos);
       animatingRef.current = false;
-      setAnimating(false);
     };
     track.addEventListener("transitionend", onEnd, { once: true });
   };
@@ -604,7 +573,7 @@ function AppleSpecs({
                   : "bg-white text-vtm-gray-mid hover:bg-vtm-gray-light"
               }`}
             >
-              {u === "metric" ? "Metric" : "Imperial"}
+              {u === "metric" ? "Métrico" : "Imperial"}
             </button>
           ))}
         </div>
@@ -706,7 +675,7 @@ function AppleSpecs({
       {/* Nominal disclaimer */}
       {unit === "imperial" && (
         <p className="text-[11px] text-vtm-gray-mid text-center mt-5 italic">
-          * Nominal standard dimensions. Refer to metric values for exact specifications.
+          * Dimensiones nominales estándar. Consulte los valores métricos para especificaciones exactas.
         </p>
       )}
 
@@ -731,11 +700,23 @@ function AppleSpecs({
             {labels.upgrades}
           </p>
           <div className="flex flex-wrap gap-2 justify-center">
-            {specs.upgrades.map((u) => (
-              <span key={u} className="text-xs border border-vtm-gray-border px-3 py-1.5 text-vtm-dark">
-                {u}
+            {specs.upgrades.map((u) => {
+              const label = formatUpgradeLabel(u, locale);
+              const optional = isOptionalUpgrade(label);
+
+              return (
+              <span
+                key={u}
+                className={`text-xs border px-3 py-1.5 ${
+                  optional
+                    ? "border-vtm-red/50 bg-vtm-red/5 text-vtm-red"
+                    : "border-vtm-gray-border text-vtm-dark"
+                }`}
+              >
+                {label}
               </span>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
@@ -748,7 +729,7 @@ function AppleSpecs({
 export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
   const models = MODELS[locale];
   const labels = LABELS[locale];
-  const [selectedId, setSelectedId] = useState("b");
+  const [selectedId, setSelectedId] = useState("ea");
   const [unit, setUnit] = useState<Unit>("metric");
   const selected = models.find((m) => m.id === selectedId)!;
   const detailRef = useRef<HTMLDivElement>(null);

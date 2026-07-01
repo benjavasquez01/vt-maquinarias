@@ -1,6 +1,6 @@
 {
   "nav": {
-    "fabrication": "Fabricación",
+    "fabrication": "Productos",
     "automation": "Automatización",
     "solutions": "Soluciones",
     "about": "Nosotros",
@@ -10,7 +10,7 @@
     "closeMenu": "Cerrar menú"
   },
   "footer": {
-    "fabrication": "Fabricación",
+    "fabrication": "Productos",
     "automation": "Automatización",
     "company": "Empresa",
     "support": "Soporte",
@@ -21,7 +21,6 @@
     "shearing": "Cizalla",
     "ironworker": "Punzonadora",
     "cobotWelding": "Brazo de Soldadura Colaborativo",
-    "industrialWelding": "Brazo de Soldadura Industrial",
     "aboutUs": "Quiénes Somos",
     "blog": "Blog",
     "careers": "Empleos",
@@ -30,11 +29,11 @@
     "privacyPolicy": "Política de Privacidad",
     "termsOfService": "Términos de Servicio",
     "copyright": "© {year} VT Maquinarias. Todos los derechos reservados.",
-    "tagline": "Donde la fabricación de precisión se une a la automatización inteligente."
+    "tagline": "Alta tecnología a tu alcance."
   },
   "common": {
     "requestQuote": "Solicitar Cotización",
-    "downloadSpec": "Descargar Ficha Técnica",
+    "downloadSpec": "Descargar Catálogo",
     "requestDemo": "Solicitar Demo",
     "learnMore": "Saber Más",
     "viewAll": "Ver Todo",
@@ -74,8 +73,8 @@
   "home": {
     "hero": {
       "eyebrow": "VT Maquinarias — Maquinaria Industrial para Chile",
-      "headline": "Máquinas de precisión láser. Resultados comprobados.",
-      "subheadline": "Maquinaria de fabricación de precisión y automatización robótica inteligente — diseñadas para talleres en Chile que no aceptan lo mediocre.",
+      "headline": "Líderes en maquinarias de corte láser y plegado CNC",
+      "subheadline": "Tecnología de alto rendimiento, entrega inmediata y respaldo de un servicio técnico especializado.",
       "scroll": "Desplazar",
       "cta1": "Explorar Nuestras Máquinas",
       "cta2": "Hablar con un Especialista"
@@ -85,14 +84,16 @@
       "heading": "Maquinas de corte y conformado de metales",
       "viewAll": "Ver Toda la Maquinaria de Fabricación",
       "products": {
-        "fiberLaser": { "name": "Cortadora Láser de Chapa", "description": "1.5–30 kW. ±0.05mm. Mesas de 4′×4′ a 8′×20′." },
+        "fiberLaser": { "name": "Cortadora Láser de Plancha", "description": "1.5–30 kW. ±0.05mm. Mesas para planchas de 3000×1500 a 6000×2500 mm." },
         "fiberLaserTube": { "name": "Corte Láser de Tubos", "description": "Perfiles redondos, cuadrados y estructurales. Longitudes hasta 9 m." },
-        "sheetTubeCombo": { "name": "Láser Combinado Chapa y Tubo", "description": "Corte de chapa plana y tubo en una sola máquina. 3–6 kW." },
-        "fourInOne": { "name": "Máquina de Soldadura Láser", "description": "Soldadura, corte, limpieza y alimentación de hilo. 1.5–3 kW." },
+        "sheetTubeCombo": { "name": "Láser Combinado Plancha y Tubo", "description": "Corte de plancha plana y tubo en una sola máquina. 3–6 kW." },
+        "fourInOne": { "name": "Máquina Soldadora Láser 4 en 1", "description": "Soldadura, corte, limpieza y limpieza de cordón. 1.5–3 kW." },
         "laserCleaning": { "name": "Máquina de Limpieza Láser", "description": "Eliminación de óxido y recubrimientos sin químicos." },
         "pressBreake": { "name": "Prensa Plegadora CNC", "description": "Repetibilidad ±0.01mm. 40–400 toneladas." },
         "shearing": { "name": "Guillotinas y Viga Oscilante", "description": "Guillotina hasta 16 mm. Viga oscilante hasta 12 mm." },
-        "ironworker": { "name": "Punzonadora Hidráulica", "description": "Punzonar, entallar, cizallar y doblar en una máquina." }
+        "ironworker": { "name": "Punzonadora Hidráulica VTM-IW", "description": "60–120 ton, 5 estaciones para perforar, escantonar y cortar en una máquina." },
+        "panelBender": { "name": "Paneladora CNC", "description": "Plegado de panel por succión, sin rayaduras. Hasta 23 ejes, 0,2 s/plegado." },
+        "airCompressor": { "name": "Compresor de Aire", "description": "Compresor de tornillo integrado 16 bar con variador de frecuencia, secador y doble acumulador." }
       }
     },
     "automation": {
@@ -101,30 +102,29 @@
       "explore": "Explorar Soluciones de Automatización",
       "badge": "Nuevo en el Mercado",
       "products": {
-        "cobot": { "name": "Brazo de Soldadura Colaborativo", "description": "Implementación en 6 semanas. Trabaja junto a personas de forma segura." },
-        "industrial": { "name": "Brazo de Soldadura Industrial", "description": "Soldadura de producción de alta velocidad. 20 kg de carga útil." }
+        "cobot": { "name": "Brazo de Soldadura Colaborativo", "description": "Implementación en 6 semanas. Trabaja junto a personas de forma segura." }
       }
     },
     "features": {
       "precision": {
         "label": "Precisión",
-        "title": "Precisión Sin Compromisos",
-        "body": "Tolerancias de hasta ±0.05mm en cada corte, doblez y soldadura. Nuestras máquinas se calibran antes del envío y se reconfiguran en sitio durante la instalación. El rendimiento de su taller depende directamente de las máquinas que lo respaldan — nos aseguramos de que nunca le fallen."
+        "title": "Precisión en cada corte",
+        "body": "Tecnología que garantiza bordes limpios, evitando reprocesos de pulido y resultados PERFECTOS."
       },
       "partnership": {
-        "label": "Asociación",
-        "title": "De la Fabricación a la Automatización — Un Solo Socio",
-        "body": "Ya sea que esté cortando su primera plancha de metal o implementando su quinta celda de soldadura colaborativa, VT Maquinarias gestiona toda la evolución de su producción. No necesita coordinar cinco proveedores. Suministramos, instalamos, capacitamos y damos soporte — todo bajo un mismo techo."
+        "label": "PLEGADO CNC",
+        "title": "Más Productividad en Cada Plegado",
+        "body": "Nuestras plegadoras CNC combinan fuerza, rapidez y repetibilidad para optimizar cada trabajo. Sus controles intuitivos y múltiples ejes reducen los tiempos de preparación, minimizan errores y permiten fabricar más piezas en menos tiempo."
       },
       "support": {
         "label": "Soporte",
-        "title": "Soporte Que No Desaparece Después de la Entrega",
-        "body": "Instalación, calibración, capacitación de operadores y diagnóstico remoto — todo incluido. Nuestro equipo de soporte local en Chile está disponible por teléfono, correo electrónico y videollamada. Las piezas de repuesto se envían el mismo día. Medimos nuestro éxito por su tiempo de actividad, no por su orden de compra."
+        "title": "Continuidad operativa garantizada y servicio técnico local",
+        "body": "Cada máquina es calibrada antes de su entrega y ajustada durante la instalación para garantizar rendimiento, calidad y confiabilidad desde el primer día."
       },
       "consultation": {
-        "label": "Consultoría",
-        "title": "Soporte Que Comienza Antes de Comprar",
-        "body": "Desde su primera pregunta hasta la instalación final, nuestros especialistas trabajan junto a usted para especificar la máquina adecuada para su volumen de producción, tipos de materiales y espacio disponible. No hacemos ventas exageradas — ajustamos el tamaño correcto. Porque la máquina que se adapta perfectamente a su taller es la única que vale la pena comprar."
+        "label": "DISPONIBILIDAD INMEDIATA",
+        "title": "El Mayor Stock de Maquinarias y Repuestos en Chile",
+        "body": "Máquinas y repuestos críticos disponibles localmente para responder con rapidez, reducir los tiempos de espera y mantener su producción siempre en marcha."
       }
     },
     "industries": {
@@ -136,49 +136,49 @@
       "label": "Historias de Clientes",
       "heading": "Talleres en Chile ya operando con VTM.",
       "t1": {
-        "quote": "Reemplazamos tres máquinas distintas con un solo láser de fibra VTM. El retorno de inversión fue en menos de 18 meses.",
-        "author": "Mike Castellano",
-        "company": "Castellano Metalworks",
-        "location": "Texas"
+        "quote": "VTM es una empresa seria, responsable y cumplidora. Llevamos más de 10 años trabajando con ellos. La experiencia con cada una de sus máquinas ha sido extraordinaria. Los recomiendo absolutamente.",
+        "author": "Paul Dulovits",
+        "company": "",
+        "location": "Santiago"
       },
       "t2": {
-        "quote": "El equipo de instalación se quedó 3 días para asegurarse de que estuviéramos cortando piezas perfectas. Eso es muy poco común.",
-        "author": "Sarah Okonkwo",
-        "company": "Precision Fab LLC",
-        "location": "Florida"
+      "quote": "VTM es nuestro aliado estratégico por más de 8 años; nos han ayudado a mantener nuestra operación ininterrumpida gracias a sus tecnologías y gran apoyo técnico.",
+        "author": "Claudio Velásquez",
+        "company": "",
+        "location": "Antofagasta"
       },
       "t3": {
-        "quote": "Nuestra producción de soldadura se duplicó en el primer mes con el brazo colaborativo.",
-        "author": "Carlos Restrepo",
-        "company": "CR Metal Solutions",
-        "location": "California"
+        "quote": "Con VTM hemos sido pioneros en innovación y tecnología en la isla. Una excelente experiencia, hemos adquirido varias máquinas. Los recomiendo por el excelente servicio y orientación técnica.",
+        "author": "Carlos Velizar",
+        "company": "",
+        "location": "Castro, Chiloé"
       }
     },
     "blog": {
-      "label": "Del Blog",
-      "heading": "Conocimiento para dueños de talleres y gerentes de producción.",
-      "allArticles": "Todos los Artículos",
-      "readMore": "Leer Más",
+      "label": "Guías Técnicas",
+      "heading": "Criterios claros para comprar y operar maquinaria industrial.",
+      "allArticles": "Todas las Guías",
+      "readMore": "Leer Guía",
       "p1": {
-        "title": "Láser de Fibra vs CO₂: ¿Cuál es el Indicado para Su Taller en 2026?",
-        "excerpt": "Potencia, velocidad y costo — una comparación práctica para talleres de fabricación metálica en Chile que hacen su primera inversión láser.",
+        "title": "Láser de Fibra vs. CO₂: Qué Conviene en una Maestranza Chilena",
+        "excerpt": "Consumo eléctrico, velocidad en plancha delgada, mantención y costo por hora para talleres que cortan acero carbono, inoxidable y aluminio.",
         "date": "15 de marzo de 2026"
       },
       "p2": {
-        "title": "ROI de Soldadura con Cobot: Lista de Verificación para Dueños de Talleres",
-        "excerpt": "Antes de comprar un brazo de soldadura colaborativo, revise esta lista para calcular con precisión su retorno de inversión.",
+        "title": "ROI de Soldadura con Cobot: Checklist Antes de Comprar",
+        "excerpt": "Revise piezas repetitivas, horas-hombre, dispositivos de fijación y disponibilidad de soldadores antes de invertir en una celda colaborativa.",
         "date": "28 de febrero de 2026"
       },
       "p3": {
-        "title": "5 Señales de que Su Prensa Plegadora Está Limitando la Producción de Su Taller",
-        "excerpt": "Si su departamento de doblez es el cuello de botella, el problema puede no ser sus operadores — puede ser su equipo.",
+        "title": "5 Señales de que la Plegadora Está Frenando Su Producción",
+        "excerpt": "Piezas acumuladas, cambios lentos, retrabajo y horas extra: señales concretas de que el plegado es el cuello de botella.",
         "date": "10 de febrero de 2026"
       }
     },
     "cta": {
       "label": "Comenzar",
-      "heading": "¿Listo para ver en qué puede convertirse su taller?",
-      "body": "Obtenga una consulta gratuita. Sin compromiso. Respuesta en 1 día hábil."
+      "heading": "¿Necesita asesoría técnica?",
+      "body": "Déjenos sus datos y uno de nuestros especialistas lo contactará en menos de 24 horas para orientarlo y resolver sus consultas."
     }
   }
 }

@@ -15,14 +15,14 @@ type HeroContent = {
 
 export function HeroScroll({
   c,
-  locale,
   image = "/images/fiber-laser-hero-2.webp",
   quoteHref = "/quote?machine=fiber-laser-cutting-machine",
+  initialOverlayOpacity = 0.72,
 }: {
   c: HeroContent;
-  locale: string;
   image?: string;
   quoteHref?: string;
+  initialOverlayOpacity?: number;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -42,8 +42,8 @@ export function HeroScroll({
 
   // Text fades out in the first 45% of scroll
   const textOpacity = Math.max(0, 1 - progress / 0.45);
-  // Overlay goes from 0.72 (dark) to 0 (clear image)
-  const overlayOpacity = Math.max(0, 0.72 * (1 - progress));
+  // Overlay goes from the configured initial darkness to 0 (clear image)
+  const overlayOpacity = Math.max(0, initialOverlayOpacity * (1 - progress));
 
   return (
     <div ref={wrapperRef} style={{ height: "120vh" }}>
@@ -93,7 +93,10 @@ export function HeroScroll({
               {c.cta1}
             </Button>
             <Button
-              href="#"
+              href="/catalogo-vt-maquinarias.pdf"
+              target="_blank"
+              rel="noopener"
+              download
               variant="outline"
               size="lg"
               className="border-white/30 text-white hover:bg-white/10 hover:border-white/60"

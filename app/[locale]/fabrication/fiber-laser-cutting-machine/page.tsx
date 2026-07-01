@@ -11,9 +11,9 @@ import { HeroScroll } from "./HeroScroll";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Máquina de Corte Láser de Fibra para Chapa — Serie VTM-A / VTM-Pro",
+  title: "Máquina de Corte Láser de Fibra para Plancha — Serie VTM-A / VTM-Pro",
   description:
-    "Máquinas industriales de corte láser de fibra, 1.5–30 kW. Fuente Raycus, guías HIWIN, CNC CypCut. Mesas de 4'×4' a 8'×20'. Precisión de ±0.05mm. Instalación en Chile incluida.",
+    "Máquinas industriales de corte láser de fibra, 1.5–30 kW. Fuente Raycus, guías HIWIN, CNC CypCut. Mesas para planchas de 3000×1500 a 6000×2500 mm. Precisión de ±0.05mm. Instalación en Chile incluida.",
 };
 
 export default async function FiberLaserPage({
@@ -27,7 +27,7 @@ export default async function FiberLaserPage({
   return (
     <>
       {/* ── Block 1: Hero (scroll-animated) ──────────────────────── */}
-      <HeroScroll c={c.hero} locale={locale} />
+      <HeroScroll c={c.hero} initialOverlayOpacity={0.82} />
 
       {/* ── Block 2+3: Model Browser + Apple Specs ───────────────── */}
       <ModelBrowserWithSpecs locale={locale} />

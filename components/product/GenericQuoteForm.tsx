@@ -17,6 +17,7 @@ export function GenericQuoteForm({ machineName }: { machineName: string }) {
         body: JSON.stringify({
           name: fd.get("name") ?? "",
           company: fd.get("company") ?? "",
+          rut: fd.get("rut") ?? "",
           email: fd.get("email") ?? "",
           phone: fd.get("phone") ?? "",
           metalworkingType: "",
@@ -67,6 +68,10 @@ export function GenericQuoteForm({ machineName }: { machineName: string }) {
           <label className="block text-xs text-white/50 mb-1 font-medium tracking-wider uppercase">Empresa</label>
           <input type="text" name="company" className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" placeholder="Su Empresa SpA" />
         </div>
+      </div>
+      <div>
+        <label className="block text-xs text-white/50 mb-1 font-medium tracking-wider uppercase">RUT de la Empresa</label>
+        <input type="text" name="rut" className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" placeholder="76.123.456-7" />
       </div>
       <div>
         <label className="block text-xs text-white/50 mb-1 font-medium tracking-wider uppercase">Cuéntenos sobre su trabajo</label>

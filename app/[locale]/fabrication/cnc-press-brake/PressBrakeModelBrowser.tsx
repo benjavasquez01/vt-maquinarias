@@ -10,8 +10,8 @@ import { ImageGallery } from "@/components/ui/ImageGallery";
 const SERIES_FRAMES: Record<string, string[]> = {
   hydraulic: [
     "/images/press-brake-hydraulic-1.webp",
-    "/images/press-brake-hydraulic-2.webp",
     "/images/press-brake-hydraulic-3.webp",
+    "/images/press-brake-hydraulic-2.webp",
   ],
   electric: [
     "/images/press-brake-electric-1.webp",
@@ -48,124 +48,81 @@ type Model = {
 const SPECS: Record<string, ModelSpecs> = {
   hydraulic: {
     headers: [
-      "63T / 2500",  "80T / 3200",  "100T / 3200", "160T / 3200", "200T / 3200", "250T / 3200", "320T / 3200",
-      "400T / 4000",
-      "500T / 5000", "500T / 6000", "500T / 7000",
-      "600T / 5000", "600T / 6000", "600T / 7000",
-      "800T / 6000", "800T / 7000", "800T / 8000",
-      "1000T / 6000","1000T / 7000","1000T / 8000",
-      "1200T / 6000","1200T / 7000","1200T / 8000",
-      "1600T / 6000","1600T / 7000","1600T / 8000",
+      "63T/2500", "80T/3200", "100T/3200", "160T/3200", "200T/3200", "250T/3200", "320T/3200", "400T/3200",
+      "500T/5000", "500T/6000", "500T/7000", "600T/5000", "600T/6000", "600T/7000", "800T/6000", "800T/7000",
+      "800T/8000", "1000T/6000",
     ],
     rows: [
-      { label: "Nominal Force (kN)",
-        metric:   ["630","800","1000","1600","2000","2500","3200","4000","5000","5000","5000","6000","6000","6000","8000","8000","8000","10000","10000","10000","12000","12000","12000","16000","16000","16000"],
-        imperial: ["630","800","1000","1600","2000","2500","3200","4000","5000","5000","5000","6000","6000","6000","8000","8000","8000","10000","10000","10000","12000","12000","12000","16000","16000","16000"] },
-      { label: "Bending Length",
-        metric:   ["2500 mm","3200 mm","3200 mm","3200 mm","3200 mm","3200 mm","3200 mm","4000 mm","5000 mm","6000 mm","7000 mm","5000 mm","6000 mm","7000 mm","6000 mm","7000 mm","8000 mm","6000 mm","7000 mm","8000 mm","6000 mm","7000 mm","8000 mm","6000 mm","7000 mm","8000 mm"],
-        imperial: ["98\"","126\"","126\"","126\"","126\"","126\"","126\"","157\"","197\"","236\"","276\"","197\"","236\"","276\"","236\"","276\"","315\"","236\"","276\"","315\"","236\"","276\"","315\"","236\"","276\"","315\""] },
-      { label: "Pole Distance",
-        metric:   ["1900 mm","2600 mm","2600 mm","2600 mm","2600 mm","2600 mm","1600 mm","3100 mm","4000 mm","4800 mm","5400 mm","4000 mm","4800 mm","5400 mm","5000 mm","5400 mm","6400 mm","4800 mm","5400 mm","6400 mm","5000 mm","5400 mm","6400 mm","4800 mm","5400 mm","6400 mm"],
-        imperial: ["75\"","102\"","102\"","102\"","102\"","102\"","63\"","122\"","157\"","189\"","213\"","157\"","189\"","213\"","197\"","213\"","252\"","189\"","213\"","252\"","197\"","213\"","252\"","189\"","213\"","252\""] },
-      { label: "Throat Depth",
-        metric:   ["350 mm","350 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","500 mm","500 mm","500 mm","500 mm","500 mm","500 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","500 mm","500 mm","500 mm"],
-        imperial: ["13.8\"","13.8\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","19.7\"","19.7\"","19.7\"","19.7\"","19.7\"","19.7\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","19.7\"","19.7\"","19.7\""] },
-      { label: "Slider Travel",
-        metric:   ["150 mm","200 mm","200 mm","200 mm","200 mm","200 mm","200 mm","200 mm","300 mm","300 mm","300 mm","300 mm","300 mm","300 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm"],
-        imperial: ["5.9\"","7.9\"","7.9\"","7.9\"","7.9\"","7.9\"","7.9\"","7.9\"","11.8\"","11.8\"","11.8\"","11.8\"","11.8\"","11.8\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\""] },
-      { label: "Worktable Height",
-        metric:   ["800 mm","800 mm","850 mm","920 mm","920 mm","920 mm","950 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm"],
-        imperial: ["31.5\"","31.5\"","33.5\"","36.2\"","36.2\"","36.2\"","37.4\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\""] },
-      { label: "Die Loading Height",
-        metric:   ["380 mm","380 mm","420 mm","420 mm","420 mm","420 mm","420 mm","420 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm"],
-        imperial: ["15\"","15\"","16.5\"","16.5\"","16.5\"","16.5\"","16.5\"","16.5\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\""] },
-      { label: "Main Motor",
-        metric:   ["7.5 kW","7.5 kW","7.5 kW","11 kW","11 kW","18.5 kW","18.5 kW","30 kW","37 kW","37 kW","91 kW","45 kW","45 kW","45 kW","2×30 kW","2×30 kW","2×30 kW","2×37 kW","2×37 kW","2×37 kW","2×45 kW","2×45 kW","2×45 kW","2×55 kW","2×55 kW","2×55 kW"],
-        imperial: ["7.5 kW","7.5 kW","7.5 kW","11 kW","11 kW","18.5 kW","18.5 kW","30 kW","37 kW","37 kW","91 kW","45 kW","45 kW","45 kW","2×30 kW","2×30 kW","2×30 kW","2×37 kW","2×37 kW","2×37 kW","2×45 kW","2×45 kW","2×45 kW","2×55 kW","2×55 kW","2×55 kW"] },
-      { label: "Back Gauge X Travel",
-        metric:   ["600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm"],
-        imperial: ["23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\""] },
-      { label: "Back Gauge X Speed",
-        metric:   ["100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s"],
-        imperial: ["236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min"] },
-      { label: "Dimensions (L × W × H)",
-        metric: [
-          "3100 × 1450 × 2050 mm","3500 × 1550 × 2100 mm","3500 × 1580 × 2400 mm","3500 × 1650 × 2500 mm","3500 × 1680 × 2550 mm","3500 × 1700 × 2600 mm","3500 × 1800 × 2730 mm","4300 × 2080 × 2730 mm","5400 × 2525 × 4600 mm","6500 × 2525 × 4200 mm","7500 × 2525 × 4900 mm","5500 × 2450 × 4500 mm","6500 × 2450 × 5100 mm","7500 × 2450 × 5200 mm","6500 × 2750 × 5300 mm","7500 × 2750 × 5500 mm","8600 × 2750 × 5900 mm","6500 × 2800 × 5600 mm","7500 × 2800 × 5800 mm","8500 × 2900 × 6100 mm","6500 × 3100 × 5850 mm","7500 × 3100 × 6550 mm","8500 × 3100 × 7150 mm","6500 × 3300 × 6500 mm","7500 × 3300 × 7000 mm","8500 × 3300 × 8000 mm",
-        ],
-        imperial: [
-          "122\" × 57\" × 81\"","138\" × 61\" × 83\"","138\" × 62\" × 94\"","138\" × 65\" × 98\"","138\" × 66\" × 100\"","138\" × 67\" × 102\"","138\" × 71\" × 107\"","169\" × 82\" × 107\"","213\" × 99\" × 181\"","256\" × 99\" × 165\"","295\" × 99\" × 193\"","217\" × 96\" × 177\"","256\" × 96\" × 201\"","295\" × 96\" × 205\"","256\" × 108\" × 209\"","295\" × 108\" × 217\"","339\" × 108\" × 232\"","256\" × 110\" × 220\"","295\" × 110\" × 228\"","335\" × 114\" × 240\"","256\" × 122\" × 230\"","295\" × 122\" × 258\"","335\" × 122\" × 281\"","256\" × 130\" × 256\"","295\" × 130\" × 276\"","335\" × 130\" × 315\"",
-        ] },
+      { label: "Fuerza nominal",
+        metric:   ["630 kN","800 kN","1000 kN","1600 kN","2000 kN","2500 kN","3200 kN","4000 kN","5000 kN","5000 kN","5000 kN","6000 kN","6000 kN","6000 kN","8000 kN","8000 kN","8000 kN","10000 kN"],
+        imperial: ["63 T","80 T","100 T","160 T","200 T","250 T","320 T","400 T","500 T","500 T","500 T","600 T","600 T","600 T","800 T","800 T","800 T","1000 T"] },
+      { label: "Longitud de flexión",
+        metric:   ["2500 mm","3200 mm","3200 mm","3200 mm","3200 mm","3200 mm","3200 mm","4000 mm","5000 mm","6000 mm","7000 mm","5000 mm","6000 mm","7000 mm","6000 mm","7000 mm","8000 mm","6000 mm"],
+        imperial: ["98\"","126\"","126\"","126\"","126\"","126\"","126\"","157\"","197\"","236\"","276\"","197\"","236\"","276\"","236\"","276\"","315\"","236\""] },
+      { label: "Distancia entre postes",
+        metric:   ["1900 mm","2600 mm","2600 mm","2600 mm","2600 mm","2600 mm","1600 mm","3100 mm","4000 mm","4800 mm","5400 mm","4000 mm","4800 mm","5400 mm","5000 mm","5400 mm","6400 mm","4800 mm"],
+        imperial: ["75\"","102\"","102\"","102\"","102\"","102\"","63\"","122\"","157\"","189\"","213\"","157\"","189\"","213\"","197\"","213\"","252\"","189\""] },
+      { label: "Profundidad de garganta",
+        metric:   ["350 mm","350 mm","400 mm","400 mm","400 mm","400 mm","400 mm","400 mm","500 mm","500 mm","500 mm","500 mm","500 mm","500 mm","600 mm","600 mm","600 mm","600 mm"],
+        imperial: ["13.8\"","13.8\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","15.7\"","19.7\"","19.7\"","19.7\"","19.7\"","19.7\"","19.7\"","23.6\"","23.6\"","23.6\"","23.6\""] },
+      { label: "Recorrido del carro",
+        metric:   ["150 mm","200 mm","200 mm","200 mm","200 mm","200 mm","200 mm","200 mm","300 mm","300 mm","300 mm","300 mm","300 mm","300 mm","400 mm","400 mm","400 mm","400 mm"],
+        imperial: ["5.9\"","7.9\"","7.9\"","7.9\"","7.9\"","7.9\"","7.9\"","7.9\"","11.8\"","11.8\"","11.8\"","11.8\"","11.8\"","11.8\"","15.7\"","15.7\"","15.7\"","15.7\""] },
+      { label: "Altura de trabajo",
+        metric:   ["800 mm","800 mm","850 mm","920 mm","920 mm","920 mm","950 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm"],
+        imperial: ["31.5\"","31.5\"","33.5\"","36.2\"","36.2\"","36.2\"","37.4\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\""] },
+      { label: "Altura de carga del dado",
+        metric:   ["380 mm","380 mm","420 mm","420 mm","420 mm","420 mm","420 mm","420 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","800 mm","800 mm","800 mm","800 mm"],
+        imperial: ["15\"","15\"","16.5\"","16.5\"","16.5\"","16.5\"","16.5\"","16.5\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","31.5\"","31.5\"","31.5\"","31.5\""] },
+      { label: "Motor principal",
+        metric:   ["7.5 kW","7.5 kW","7.5 kW","11 kW","11 kW","18.5 kW","18.5 kW","30 kW","37 kW","37 kW","91 kW","45 kW","45 kW","45 kW","2×30 kW","2×30 kW","2×30 kW","2×37 kW"],
+        imperial: ["7.5 kW","7.5 kW","7.5 kW","11 kW","11 kW","18.5 kW","18.5 kW","30 kW","37 kW","37 kW","91 kW","45 kW","45 kW","45 kW","2×30 kW","2×30 kW","2×30 kW","2×37 kW"] },
+      { label: "Recorrido tope trasero eje X",
+        metric:   ["600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","600 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm","800 mm"],
+        imperial: ["23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","23.6\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\"","31.5\""] },
+      { label: "Velocidad tope trasero eje X",
+        metric:   ["100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s","100 mm/s"],
+        imperial: ["236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min","236 in/min"] },
     ],
-    upgrades: ["Auto Tool Change", "Wila Precision Tooling", "Front Sheet Support Arms", "Laser Safety Guard", "Angle Measurement System"],
+    upgrades: ["Soporte con seguimiento de pieza", "Herramienta con posicionamiento ultra preciso", "Laser Safe"],
   },
   electric: {
     headers: [
-      "2–160T / 6000",
-      "2–200T / 6000",
-      "2–300T / 6000",
-      "2–400T / 6000",
-      "2–500T / 6000",
-      "2–600T / 6000",
-      "2–600T / 8000",
-      "2–800T / 6000",
-      "2–800T / 8000",
+      "EP03-02", "EP06-04", "EP12-06", "EP18-08", "EP12-06R", "EP20-10", "EP30-12", "EP35-12", "EP40-13", "EP50-20", "EP60-25",
     ],
     rows: [
-      { label: "Nominal Pressure (kN)",
-        metric:   ["2–1600", "2–2000", "2–3000", "2–4000", "2–5000", "2–6000", "2–6000", "2–8000", "2–8000"],
-        imperial: ["2–1600", "2–2000", "2–3000", "2–4000", "2–5000", "2–6000", "2–6000", "2–8000", "2–8000"] },
-      { label: "Bench Length",
-        metric:   ["2–6000 mm", "2–6000 mm", "2–6000 mm", "2–6000 mm", "2–6000 mm", "2–6000 mm", "2–8000 mm", "2–6000 mm", "2–8000 mm"],
-        imperial: ["2–236\"",   "2–236\"",   "2–236\"",   "2–236\"",   "2–236\"",   "2–236\"",   "2–315\"",   "2–236\"",   "2–315\""] },
-      { label: "Workbench Width",
-        metric:   ["200 mm", "220 mm", "280 mm", "320 mm", "360 mm", "400 mm", "400 mm", "500 mm", "500 mm"],
-        imperial: ["7.9\"",  "8.7\"",  "11\"",   "12.6\"", "14.2\"", "15.7\"", "15.7\"", "19.7\"", "19.7\""] },
-      { label: "Pole Distance",
-        metric:   ["4800 mm", "4800 mm", "4600 mm", "4600 mm", "4800 mm", "4800 mm", "6200 mm", "4800 mm", "6200 mm"],
-        imperial: ["189\"",   "189\"",   "181\"",   "181\"",   "189\"",   "189\"",   "244\"",   "189\"",   "244\""] },
-      { label: "Throat Depth",
-        metric:   ["400 mm", "400 mm", "400 mm", "400 mm", "400 mm", "500 mm", "500 mm", "500 mm", "500 mm"],
-        imperial: ["15.7\"", "15.7\"", "15.7\"", "15.7\"", "15.7\"", "19.7\"", "19.7\"", "19.7\"", "19.7\""] },
-      { label: "Slider Stroke",
-        metric:   ["200 mm", "250 mm", "250 mm", "250 mm", "300 mm", "300 mm", "300 mm", "350 mm", "350 mm"],
-        imperial: ["7.9\"",  "9.8\"",  "9.8\"",  "9.8\"",  "11.8\"", "11.8\"", "11.8\"", "13.8\"", "13.8\""] },
-      { label: "Max Opening Height",
-        metric:   ["450 mm", "500 mm", "520 mm", "540 mm", "620 mm", "620 mm", "620 mm", "680 mm", "680 mm"],
-        imperial: ["17.7\"", "19.7\"", "20.5\"", "21.3\"", "24.4\"", "24.4\"", "24.4\"", "26.8\"", "26.8\""] },
-      { label: "Slider Stroke Adjust",
-        metric:   ["180 mm", "180 mm", "200 mm", "200 mm", "200 mm", "200 mm", "250 mm", "250 mm", "250 mm"],
-        imperial: ["7.1\"",  "7.1\"",  "7.9\"",  "7.9\"",  "7.9\"",  "7.9\"",  "9.8\"",  "9.8\"",  "9.8\""] },
-      { label: "Oil Cylinder Dia",
-        metric:   ["Φ210 mm", "Φ240 mm", "Φ300 mm", "Φ350 mm", "Φ380 mm", "Φ420 mm", "Φ420 mm", "Φ460 mm", "Φ460 mm"],
-        imperial: ["Φ8.3\"",  "Φ9.4\"",  "Φ11.8\"", "Φ13.8\"", "Φ15\"",   "Φ16.5\"", "Φ16.5\"", "Φ18.1\"", "Φ18.1\""] },
-      { label: "Main Motor",
-        metric:   ["2–11 kW", "2–11 kW", "2–18.5 kW", "2–30 kW", "2–37 kW", "2–45 kW", "2–45 kW", "2–55 kW", "2–55 kW"],
-        imperial: ["2–11 kW", "2–11 kW", "2–18.5 kW", "2–30 kW", "2–37 kW", "2–45 kW", "2–45 kW", "2–55 kW", "2–55 kW"] },
-      { label: "Dimensions (L × W × H)",
-        metric: [
-          "(2×6100) × 2000 × 3200 mm",
-          "(2×6100) × 2150 × 3350 mm",
-          "(2×6100) × 2300 × 3800 mm",
-          "(2×6200) × 2700 × 4100 mm",
-          "(2×6200) × 2900 × 4300 mm",
-          "(2×6200) × 3100 × 4900 mm",
-          "(2×8400) × 3300 × 5600 mm",
-          "(2×6400) × 3600 × 5400 mm",
-          "(2×8400) × 3600 × 5600 mm",
-        ],
-        imperial: [
-          "(2×240\") × 79\" × 126\"",
-          "(2×240\") × 85\" × 132\"",
-          "(2×240\") × 91\" × 150\"",
-          "(2×244\") × 106\" × 161\"",
-          "(2×244\") × 114\" × 169\"",
-          "(2×244\") × 122\" × 193\"",
-          "(2×331\") × 130\" × 220\"",
-          "(2×252\") × 142\" × 213\"",
-          "(2×331\") × 142\" × 220\"",
-        ] },
+      { label: "Capacidad de prensa",
+        metric:   ["30 kN","60 kN","120 kN","180 kN","120 kN","200 kN","300 kN","350 kN","400 kN","500 kN","600 kN"],
+        imperial: ["3 T","6 T","12 T","18 T","12 T","20 T","30 T","35 T","40 T","50 T","60 T"] },
+      { label: "Longitud de plegado",
+        metric:   ["200 mm","400 mm","600 mm","800 mm","600 mm","1050 mm","1250 mm","1250 mm","1300 mm","1600 mm","2500 mm"],
+        imperial: ["8\"","16\"","24\"","31\"","24\"","41\"","49\"","49\"","51\"","63\"","98\""] },
+      { label: "Carrera de plegado",
+        metric:   ["120 mm","120 mm","120 mm","120 mm","120 mm","120 mm","150 mm","150 mm","150 mm","150 mm","150 mm"],
+        imperial: ["4.7\"","4.7\"","4.7\"","4.7\"","4.7\"","4.7\"","5.9\"","5.9\"","5.9\"","5.9\"","5.9\""] },
+      { label: "Carrera del tope trasero",
+        metric:   ["150 mm","150 mm","150 mm","300 mm","150 mm","300 mm","500 mm","500 mm","500 mm","500 mm","500 mm"],
+        imperial: ["5.9\"","5.9\"","5.9\"","11.8\"","5.9\"","11.8\"","19.7\"","19.7\"","19.7\"","19.7\"","19.7\""] },
+      { label: "Potencia del husillo",
+        metric:   ["2 kW","3 kW","5.6 kW","7.5 kW","2×3 kW","11 kW","13 kW","13 kW","15 kW","30 kW","30 kW"],
+        imperial: ["2 kW","3 kW","5.6 kW","7.5 kW","2×3 kW","11 kW","13 kW","13 kW","15 kW","30 kW","30 kW"] },
+      { label: "Velocidad de bajada rápida",
+        metric:   ["300 mm/s","300 mm/s","300 mm/s","300 mm/s","300 mm/s","300 mm/s","300 mm/s","300 mm/s","300 mm/s","300 mm/s","300 mm/s"],
+        imperial: ["709 in/min","709 in/min","709 in/min","709 in/min","709 in/min","709 in/min","709 in/min","709 in/min","709 in/min","709 in/min","709 in/min"] },
+      { label: "Velocidad de alimentación",
+        metric:   ["<30 mm/s","<30 mm/s","<30 mm/s","<30 mm/s","<30 mm/s","<30 mm/s","<30 mm/s","<20 mm/s","<20 mm/s","<20 mm/s","<20 mm/s"],
+        imperial: ["<71 in/min","<71 in/min","<71 in/min","<71 in/min","<71 in/min","<71 in/min","<71 in/min","<47 in/min","<47 in/min","<47 in/min","<47 in/min"] },
+      { label: "Altura de apertura",
+        metric:   ["420 mm","420 mm","420 mm","420 mm","420 mm","430 mm","470 mm","470 mm","470 mm","530 mm","530 mm"],
+        imperial: ["16.5\"","16.5\"","16.5\"","16.5\"","16.5\"","16.9\"","18.5\"","18.5\"","18.5\"","20.9\"","20.9\""] },
+      { label: "Profundidad de garganta",
+        metric:   ["—","150 mm","150 mm","150 mm","150 mm","250 mm","250 mm","250 mm","300 mm","350 mm","350 mm"],
+        imperial: ["—","5.9\"","5.9\"","5.9\"","5.9\"","9.8\"","9.8\"","9.8\"","11.8\"","13.8\"","13.8\""] },
+      { label: "Distancia entre columnas",
+        metric:   ["250 mm","370 mm","520 mm","770 mm","520 mm","930 mm","1150 mm","1150 mm","1200 mm","1400 mm","2300 mm"],
+        imperial: ["9.8\"","14.6\"","20.5\"","30.3\"","20.5\"","36.6\"","45.3\"","45.3\"","47.2\"","55.1\"","90.6\""] },
     ],
-    upgrades: ["Auto Tool Change", "Wila Precision Tooling", "Front Sheet Support Arms", "Laser Safety Guard", "Tandem Synchronization System"],
+    upgrades: ["Sin aceite hidráulico", "-80% ahorro de energía", "Operación de alta velocidad", "Bajo costo de mantención"],
   },
 };
 
@@ -175,35 +132,35 @@ const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
       id: "hydraulic",
-      series: "Hydraulic Series",
-      tagline: "Heavy-Duty Bending",
-      power: "63 – 1600 T",
+      series: "VTM-PB Hydraulic CNC Press Brake",
+      tagline: "High-Precision Hydraulic Bending",
+      power: "63 – 1000 T",
       badge: "Available",
       image: "/images/press-brake-hydraulic-1.webp",
       description:
-        "26 hydraulic press brake configurations from 63 T up to 1600 T, with bending lengths from 2.5 m to 8 m. Dual-cylinder electrohydraulic synchronization, dual-motor drive on heavy frames (≥ 800 T), and hydraulic auto-crowning compensate for ram deflection in real time.",
+        "VTM-PB hydraulic CNC press brake for high-precision, multi-angle bending. Its welded steel frame with stress-relief heat treatment is built for long-term structural stability, reliable operation, and repeatable bending quality in demanding metal fabrication.",
       bestFor: [
-        "Tonnage from 63 T up to 1600 T",
-        "Bed lengths from 2.5 m to 8 m",
+        "Tonnage from 63 T up to 1000 T",
+        "Bending lengths from 2.5 m to 8 m",
         "Throat depth up to 600 mm",
-        "Heavy plate and structural fabrication",
+        "Robust structure, graphical touch control, and Laser Safe option",
       ],
       specs: SPECS.hydraulic,
     },
     {
       id: "electric",
-      series: "Servo Electric Series",
-      tagline: "Tandem High-Tonnage Bending",
-      power: "160 – 800 T (tandem)",
+      series: "VTM-EPB Electric CNC Press Brake",
+      tagline: "Full Servo Electric Bending",
+      power: "30 – 600 kN",
       badge: "Available",
       image: "/images/press-brake-electric-1.webp",
       description:
-        "Tandem servo-controlled press brakes pairing two synchronized machines for combined bending lengths up to 16 m and per-machine tonnage from 160 T to 800 T. Servo-driven precision and synchronization between both rams holds angle consistency across long, heavy parts that exceed the capacity of a single machine.",
+        "VTM-EPB full servo electric press brake with up to 80% energy savings, quiet operation, no hydraulic oil, and fast response. Its CNC compensation table helps maintain precision across the full bending length while reducing maintenance and environmental risk.",
       bestFor: [
-        "Per-machine tonnage 160 T – 800 T",
-        "Combined bending length up to 16 m (2×8000 mm)",
-        "Long, heavy structural parts",
-        "Tandem or independent operation",
+        "Energy-efficient electric bending",
+        "No hydraulic oil, no hydraulic pump",
+        "Approach and return speeds up to 300 mm/s",
+        "Lower maintenance and clean operation",
       ],
       specs: SPECS.electric,
     },
@@ -211,35 +168,35 @@ const MODELS: Record<"en" | "es", Model[]> = {
   es: [
     {
       id: "hydraulic",
-      series: "Serie Hidráulica",
-      tagline: "Plegado de Alto Rendimiento",
-      power: "63 – 1600 T",
+      series: "VTM-PB Plegadora CNC Hidráulica",
+      tagline: "Plegado Hidráulico de Alta Precisión",
+      power: "63 – 1000 T",
       badge: "Disponible",
       image: "/images/press-brake-hydraulic-1.webp",
       description:
-        "26 configuraciones de prensa plegadora hidráulica de 63 T hasta 1600 T, con longitudes de plegado de 2.5 m a 8 m. Sincronización electrohidráulica de doble cilindro, accionamiento de doble motor en bastidores pesados (≥ 800 T) y arqueado automático hidráulico compensan la deflexión del carnero en tiempo real.",
+        "Contamos con una amplia variedad de plegadoras CNC en distintos tonelajes, largos de trabajo y configuraciones de ejes, diseñadas para adaptarse a diferentes espesores, materiales y niveles de complejidad.",
       bestFor: [
-        "Tonelaje de 63 T hasta 1600 T",
-        "Longitudes de cama de 2.5 m a 8 m",
-        "Profundidad de garganta hasta 600 mm",
-        "Placa pesada y fabricación estructural",
+        "Tonelajes disponibles desde 40 T hasta 1000 T",
+        "Largos de trabajo desde 1.6 m hasta 6 m",
+        "Configuraciones de ejes según el nivel de automatización requerido",
+        "Soluciones para distintos espesores, materiales y complejidades de plegado",
       ],
       specs: SPECS.hydraulic,
     },
     {
       id: "electric",
-      series: "Serie Servo Eléctrica",
-      tagline: "Plegado en Tándem de Alto Tonelaje",
-      power: "160 – 800 T (tándem)",
+      series: "VTM-EPB Plegadora CNC Eléctrica",
+      tagline: "Operación Full Servo Eléctrica",
+      power: "30 – 600 kN",
       badge: "Disponible",
       image: "/images/press-brake-electric-1.webp",
       description:
-        "Prensas plegadoras servo-controladas en tándem que combinan dos máquinas sincronizadas para longitudes de plegado combinadas de hasta 16 m y tonelaje por máquina de 160 T a 800 T. Precisión servo-controlada y sincronización entre ambos carneros mantienen la consistencia angular en piezas largas y pesadas que superan la capacidad de una sola máquina.",
+        "Plegadora CNC eléctrica VTM-EPB con accionamiento totalmente eléctrico, ahorro de energía de hasta 80%, operación silenciosa y alta precisión de plegado. Al no utilizar aceite ni bomba hidráulica, reduce mantenciones, evita fugas y mantiene una operación limpia y eficiente.",
       bestFor: [
-        "Tonelaje por máquina 160 T – 800 T",
-        "Longitud de plegado combinada hasta 16 m (2×8000 mm)",
-        "Piezas estructurales largas y pesadas",
-        "Operación en tándem o independiente",
+        "Ahorro energético de hasta 80%",
+        "Sin aceite hidráulico ni bomba hidráulica",
+        "Velocidades de aproximación y retorno hasta 300 mm/s",
+        "Bajo costo de mantención y operación silenciosa",
       ],
       specs: SPECS.electric,
     },
@@ -250,7 +207,7 @@ const LABELS = {
   en: {
     productLine: "Product Line",
     chooseYourSeries: "Choose Your Drive Type",
-    subheadline: "Two press brake platforms — hydraulic for single-machine high tonnage and heavy plate, and servo electric tandem pairs for synchronized bending of long, heavy parts beyond single-machine capacity.",
+    subheadline: "Choose between the VTM-PB hydraulic CNC press brake for robust high-precision bending and the VTM-EPB full servo electric press brake for clean, quiet, energy-efficient production.",
     bestFor: "Best for",
     quote: "Request a Quote",
     viewSpecs: "View Specs",
@@ -260,9 +217,9 @@ const LABELS = {
     specCol: "Specification",
   },
   es: {
-    productLine: "Línea de Productos",
-    chooseYourSeries: "Elija su Tipo de Accionamiento",
-    subheadline: "Dos plataformas de prensa plegadora — hidráulica de máquina simple para alto tonelaje y placa pesada, y pares servo eléctricos en tándem para plegado sincronizado de piezas largas y pesadas que superan la capacidad de una sola máquina.",
+    productLine: "Línea de Plegadoras CNC",
+    chooseYourSeries: "La plegadora ideal para tu producción",
+    subheadline: "Esta tecnología permite estandarizar la calidad y el proceso de plegado, aumentando la capacidad para abordar proyectos de mayor volumen, complejidad y exigencia. Gracias a su control intuitivo y operación sencilla, optimiza los procesos productivos y mejora la eficiencia de su producción.\n\nCon tecnología avanzada y respaldo técnico local, nuestras plegadoras CNC son la solución ideal para ampliar tus capacidades productivas y acceder a nuevos proyectos.",
     bestFor: "Ideal para",
     quote: "Solicitar Cotización",
     viewSpecs: "Ver Especificaciones",
@@ -308,7 +265,6 @@ function PressBrakeSpecs({
 
   const [pos, setPos] = useState(0);
   const posRef = useRef(0);
-  const [animating, setAnimating] = useState(false);
   const animatingRef = useRef(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -332,7 +288,6 @@ function PressBrakeSpecs({
     const track = trackRef.current;
     if (!track) return;
     animatingRef.current = true;
-    setAnimating(true);
     const cur = posRef.current;
     const rawNext = direction === "right" ? clonesBefore + cur + 1 : clonesBefore + cur - 1;
     const nextPos = mod(direction === "right" ? cur + 1 : cur - 1);
@@ -344,7 +299,6 @@ function PressBrakeSpecs({
       posRef.current = nextPos;
       setPos(nextPos);
       animatingRef.current = false;
-      setAnimating(false);
     };
     track.addEventListener("transitionend", onEnd, { once: true });
   };
@@ -537,7 +491,7 @@ export function PressBrakeModelBrowser({ locale }: { locale: "en" | "es" }) {
               <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-3">
                 {labels.chooseYourSeries}
               </h2>
-              <p className="text-vtm-gray-mid max-w-xl leading-relaxed">{labels.subheadline}</p>
+              <p className="text-vtm-gray-mid w-full md:max-w-[75%] whitespace-pre-line leading-relaxed">{labels.subheadline}</p>
             </div>
           </div>
 

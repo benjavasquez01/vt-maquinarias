@@ -3,6 +3,7 @@ import { NextRequest } from "next/server";
 interface LeadData {
   name: string;
   company: string;
+  rut?: string;
   email: string;
   phone: string;
   metalworkingType: string;
@@ -28,6 +29,7 @@ async function createHubSpotContact(lead: LeadData) {
     company: lead.company,
     email: lead.email,
     phone: lead.phone,
+    vtm_rut: lead.rut ?? "",
     hs_lead_status: "NEW",
     lead_source: "AI Agent",
     // Custom properties — create these in HubSpot first
@@ -143,7 +145,8 @@ async function sendEmailNotification(lead: LeadData) {
     <table style="border-collapse:collapse;width:100%;max-width:600px">
       <tr><td style="padding:8px;font-weight:bold;width:180px">Nombre</td><td style="padding:8px">${lead.name || "—"}</td></tr>
       <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Empresa</td><td style="padding:8px">${lead.company || "—"}</td></tr>
-      <tr><td style="padding:8px;font-weight:bold">Correo</td><td style="padding:8px">${lead.email ? `<a href="mailto:${lead.email}">${lead.email}</a>` : "—"}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold">RUT Empresa</td><td style="padding:8px">${lead.rut || "—"}</td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Correo</td><td style="padding:8px">${lead.email ? `<a href="mailto:${lead.email}">${lead.email}</a>` : "—"}</td></tr>
       <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Teléfono / WhatsApp</td><td style="padding:8px">${lead.phone || "—"}</td></tr>
       <tr><td style="padding:8px;font-weight:bold">Máquinas de Interés</td><td style="padding:8px">${lead.machinesOfInterest || "—"}</td></tr>
       <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Materiales</td><td style="padding:8px">${lead.materials || "—"}</td></tr>
@@ -165,7 +168,7 @@ async function sendEmailNotification(lead: LeadData) {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "VT Maquinarias <leads@vtmaquinarias.cl>",
+        from: "VT Maquinarias <onboarding@resend.dev>",
         to: [process.env.NOTIFY_EMAIL],
         subject,
         html,
@@ -181,7 +184,7 @@ async function sendWhatsAppNotification(lead: LeadData) {
   if (!process.env.WHATSAPP_NOTIFY_NUMBER || !process.env.TWILIO_ACCOUNT_SID) return;
 
   const prefix = lead.partial ? "⚠ [PARCIAL] " : "🔔 ";
-  const message = `${prefix}Nuevo prospecto de vtmaquinarias.cl:\n\n👤 ${lead.name || "(sin nombre)"} — ${lead.company || "(sin empresa)"}\n📧 ${lead.email || "—"}\n📞 ${lead.phone || "—"}\n🔧 Interesado en: ${lead.machinesOfInterest || "—"}\n📦 Material: ${lead.materials || "—"}\n⏱ Plazo: ${lead.timeline || "—"}`;
+  const message = `${prefix}Nuevo prospecto de vtmaquinarias.cl:\n\n👤 ${lead.name || "(sin nombre)"} — ${lead.company || "(sin empresa)"}\n🪪 RUT: ${lead.rut || "—"}\n📧 ${lead.email || "—"}\n📞 ${lead.phone || "—"}\n🔧 Interesado en: ${lead.machinesOfInterest || "—"}\n📦 Material: ${lead.materials || "—"}\n⏱ Plazo: ${lead.timeline || "—"}`;
 
   try {
     const res = await fetch(

@@ -20,7 +20,7 @@ const es: AutomationPageContent = {
   hero: {
     badge: "Industria 4.0 — Ya Disponible para Talleres en Chile",
     headline: "VTM\nAutomatización",
-    subtitle: "Robots de soldadura inteligentes para la fábrica conectada — sistemas colaborativos e industriales implementados en seis semanas.",
+    subtitle: "Robots de soldadura inteligentes para la fábrica conectada — sistemas colaborativos implementados en seis semanas.",
     body: "La Industria 4.0 prometió un piso de manufactura más inteligente y conectado, pero la automatización de soldadura solo estaba al alcance de proveedores Tier 1 con presupuestos de integración de seis cifras. VTM cambia eso: dimensionamos el robot correcto para su combinación real de trabajos, gestionamos toda la integración y programación, y tenemos su primera celda inteligente funcionando en 42 días.",
     cta1: "Solicitar una Consulta de Automatización",
     cta2: "Ver Sistemas",
@@ -39,7 +39,7 @@ const es: AutomationPageContent = {
   },
   products: {
     sectionLabel: "Sistemas de Automatización Industria 4.0",
-    headline: "Dos Caminos hacia un Taller más Inteligente",
+    headline: "Automatice la Soldadura Láser con Cobot",
     items: [
       {
         slug: "collaborative-welding-arm",
@@ -49,16 +49,6 @@ const es: AutomationPageContent = {
         imageId: "/images/cobot-welding-hero-2.webp",
         badge: "NUEVO EN EL MERCADO",
         specs: ["Carga útil 7 kg", "Alcance 900 mm", "Precisión ±0.02 mm", "Salida de datos IIoT", "Implementación en 6 semanas"],
-        cta: "Explorar sistema",
-      },
-      {
-        slug: "industrial-welding-arm",
-        name: "Brazo de Soldadura Industrial",
-        subtitle: "Robot de 6 ejes, carga útil 20 kg, ±0.04 mm, alcance 1440 mm — celda inteligente lista",
-        description: "Robot de soldadura industrial de alto rendimiento diseñado para entornos de producción de Industria 4.0. Monitoreo continuo del ciclo, alertas de mantenimiento predictivo y análisis de calidad de soldadura en una celda vallada optimizada para familias de piezas definidas.",
-        imageId: "/images/industrial-welding-arm-hero.webp",
-        badge: "NUEVO EN EL MERCADO",
-        specs: ["Carga útil 20 kg", "Alcance 1440 mm", "Precisión ±0.04 mm", "Mantenimiento predictivo", "Celda vallada"],
         cta: "Explorar sistema",
       },
     ],

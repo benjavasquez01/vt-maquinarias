@@ -12,10 +12,10 @@ const es: SolutionsPageContent = {
     subheadline: "Las mismas máquinas. Configuradas y aplicadas de forma diferente según los requisitos específicos de cada industria.",
   },
   solutions: [
-    { title: "Fabricación Metálica", href: "/solutions/metal-fabrication", description: "Corte láser de fibra, prensas plegadoras, cizallas, soldadura y limpieza — la línea completa de fabricación.", imageId: "/images/solution-metal-fabrication.webp" },
-    { title: "Automotriz", href: "/solutions/automotive", description: "Corte y soldadura de precisión para fabricantes de componentes automotrices Tier 1–3.", imageId: "/images/solution-automotive.webp" },
-    { title: "Aeroespacial", href: "/solutions/aerospace", description: "Procesamiento de titanio, aleaciones de aluminio e inoxidable con tolerancias aeroespaciales.", imageId: "/images/solution-aerospace.webp" },
-    { title: "HVAC y Construcción", href: "/solutions/hvac-construction", description: "Procesamiento de chapa metálica de alto rendimiento para fabricantes de ductos y talleres de componentes para construcción.", imageId: "/images/solution-hvac-construction.webp" },
+    { title: "Maestranzas", href: "/solutions/metal-fabrication", description: "Corte láser de fibra, plegado CNC, cizallas, soldadura y limpieza — la línea completa para maestranzas y talleres metalmecánicos.", imageId: "/images/solution-metal-fabrication.webp" },
+    { title: "Minería", href: "/solutions/mineria", description: "Estructuras, piezas de desgaste y componentes en plancha de alta resistencia para la gran y mediana minería.", imageId: "/images/solution-mineria.webp" },
+    { title: "Equipo Gastronómico", href: "/solutions/equipo-gastronomico", description: "Mesones, campanas, cocinas y equipamiento en acero inoxidable con corte láser limpio y plegado preciso.", imageId: "/images/solution-equipo-gastronomico.webp" },
+    { title: "Construcción y Estructuras", href: "/solutions/hvac-construction", description: "Estructuras metálicas, perfilería, ductos y componentes para la construcción con procesamiento de plancha de alto rendimiento.", imageId: "/images/solution-hvac-construction.webp" },
   ],
   explore: "Explorar",
   cta: {

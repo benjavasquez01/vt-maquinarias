@@ -4,9 +4,9 @@ import { ProductPageTemplate } from "@/components/product/ProductPageTemplate";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Punzonadora Hidráulica",
+  title: "Punzonadora Hidráulica VTM-IW",
   description:
-    "Punzonadoras hidráulicas de 55–110 toneladas. Cinco estaciones de trabajo: punzonado, muescado, corte de barra plana, corte de ángulo y muescado de tubo — todo en una sola máquina.",
+    "Punzonadora hidráulica VTM-IW de 60–120 toneladas. Cinco estaciones para perforar, escantonar, cortar planchas, cortar ángulos y cortar macizos en una sola máquina.",
 };
 
 export default async function IronworkerPage({

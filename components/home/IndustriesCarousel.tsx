@@ -8,61 +8,61 @@ import { useLocale } from "next-intl";
 const industries = {
   en: [
     {
-      name: "Metal Fabrication",
+      name: "Metalworking Shops",
       slug: "metal-fabrication",
       description:
-        "From job shops to contract manufacturers — laser cutting, press brakes, and welding automation that scale with your workload.",
+        "Laser cutting, CNC bending, welding, and cleaning for metalworking shops (maestranzas) running tight tolerances and high throughput.",
       image: "/images/solution-metal-fabrication.webp",
     },
     {
-      name: "Automotive",
-      slug: "automotive",
+      name: "Mining",
+      slug: "mineria",
       description:
-        "High-repeatability stamping supports, precision laser cutting of brackets and structural components, and cobot welding for high-volume production lines.",
-      image: "/images/solution-automotive.webp",
+        "Structures, wear parts, and components for large and mid-scale mining — cutting and bending high-strength plate with industrial repeatability.",
+      image: "/images/solution-mineria.webp",
     },
     {
-      name: "Aerospace",
-      slug: "aerospace",
+      name: "Foodservice Equipment",
+      slug: "equipo-gastronomico",
       description:
-        "Tight-tolerance fabrication for aerospace-grade aluminum, titanium, and stainless steel. Our machines meet the precision demands of the industry.",
-      image: "/images/solution-aerospace.webp",
+        "Counters, hoods, and stainless-steel kitchen equipment — clean laser cutting and precise bending for foodservice equipment manufacturers.",
+      image: "/images/solution-equipo-gastronomico.webp",
     },
     {
-      name: "HVAC & Construction",
+      name: "Construction & Steel Structures",
       slug: "hvac-construction",
       description:
-        "Sheet metal ductwork, structural components, and framing fabricated faster and more accurately with our laser and press brake solutions.",
+        "Steel structures, profiles, ductwork, and construction components — high-throughput sheet and profile processing.",
       image: "/images/solution-hvac-construction.webp",
     },
   ],
   es: [
     {
-      name: "Fabricación Metálica",
+      name: "Maestranzas",
       slug: "metal-fabrication",
       description:
-        "Desde talleres de trabajo hasta fabricantes por contrato — corte láser, prensas plegadoras y automatización de soldadura que escalan con su carga de trabajo.",
+        "Corte láser, plegado CNC, soldadura y limpieza para maestranzas y talleres metalmecánicos que trabajan con tolerancias ajustadas y alto rendimiento.",
       image: "/images/solution-metal-fabrication.webp",
     },
     {
-      name: "Automotriz",
-      slug: "automotive",
+      name: "Minería",
+      slug: "mineria",
       description:
-        "Soportes de estampado de alta repetibilidad, corte láser de precisión de soportes y componentes estructurales, y soldadura con cobot para líneas de producción de alto volumen.",
-      image: "/images/solution-automotive.webp",
+        "Estructuras, piezas de desgaste y componentes para la gran y mediana minería — corte y plegado de planchas de alta resistencia con repetibilidad industrial.",
+      image: "/images/solution-mineria.webp",
     },
     {
-      name: "Aeroespacial",
-      slug: "aerospace",
+      name: "Equipo Gastronómico",
+      slug: "equipo-gastronomico",
       description:
-        "Fabricación de tolerancias precisas para aluminio, titanio e inoxidable grado aeroespacial. Nuestras máquinas cumplen las exigencias de precisión de la industria.",
-      image: "/images/solution-aerospace.webp",
+        "Mesones, campanas, cocinas y equipamiento en acero inoxidable — corte láser limpio y plegado preciso para fabricantes de equipo gastronómico.",
+      image: "/images/solution-equipo-gastronomico.webp",
     },
     {
-      name: "HVAC y Construcción",
+      name: "Construcción y Estructuras",
       slug: "hvac-construction",
       description:
-        "Conductos de chapa metálica, componentes estructurales y marcos fabricados más rápido y con mayor precisión con nuestras soluciones láser y de prensas plegadoras.",
+        "Estructuras metálicas, perfilería, ductos y componentes para la construcción — procesamiento de plancha y perfil de alto rendimiento.",
       image: "/images/solution-hvac-construction.webp",
     },
   ],

@@ -28,7 +28,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
       id: "ea",
-      series: "A Series",
+      series: "Pro Series",
       tagline: "Entry Production",
       power: "1.5–3 kW",
       badge: "Most Accessible",
@@ -152,7 +152,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
   es: [
     {
       id: "ea",
-      series: "Serie A",
+      series: "Serie Pro",
       tagline: "Producción de Entrada",
       power: "1.5–3 kW",
       badge: "Más Accesible",
@@ -161,7 +161,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
         "La VTM-A es el punto de partida ideal para talleres y entornos de producción ligera a media. Bastidor abierto de paleta individual, tres tamaños de mesa estándar y potencia Raycus de 1.5 a 3 kW. Corta acero dulce hasta 12 mm, inoxidable hasta 6 mm y aluminio hasta 8 mm a velocidades de producción.",
       bestFor: [
         "Talleres que inician con láser de fibra",
-        "Chapa ligera a media",
+        "Plancha ligera a media",
         "Inoxidable y aluminio bajo 6 mm",
         "Primera inversión en láser de fibra",
       ],
@@ -190,7 +190,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       badge: "Más Popular",
       image: "/images/fiber-laser-feature-03-power.webp",
       description:
-        "La VTM-B está diseñada para producción continua en la mayor gama de espesores y tamaños de material. De 3 kW para chapa fina a 12 kW para acero dulce de 25 mm+ e inoxidable de 20 mm, en mesas de hasta 6′×20′. La opción estándar para fabricantes por contrato y talleres de alta producción.",
+        "La VTM-B está diseñada para producción continua en la mayor gama de espesores y tamaños de material. De 3 kW para plancha fina a 12 kW para acero dulce de 25 mm+ e inoxidable de 20 mm, en mesas de hasta 6′×20′. La opción estándar para fabricantes por contrato y talleres de alta producción.",
       bestFor: [
         "Fabricación de alto rendimiento",
         "Acero dulce, inoxidable y aluminio en amplio rango de espesores",
@@ -208,7 +208,7 @@ const MODELS: Record<"en" | "es", Model[]> = {
       badge: "Mayor Rendimiento",
       image: "/images/fiber-laser-feature-04-exchange-table.webp",
       description:
-        "La VTM-FE combina la plataforma de corte de la serie B con una mesa de intercambio de doble paleta incluida de serie — no como accesorio. Cargue la siguiente chapa mientras la máquina corta la actual. Cambio de paleta en menos de 15 segundos, eliminando la mayor fuente de tiempo muerto en producción.",
+        "La VTM-FE combina la plataforma de corte de la serie B con una mesa de intercambio de doble paleta incluida de serie — no como accesorio. Cargue la siguiente plancha mientras la máquina corta la actual. Cambio de paleta en menos de 15 segundos, eliminando la mayor fuente de tiempo muerto en producción.",
       bestFor: [
         "Producciones de alto volumen",
         "Operación desatendida / luces apagadas",

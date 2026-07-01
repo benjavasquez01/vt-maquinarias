@@ -6,8 +6,8 @@ import { HeroHeadline } from "./HeroHeadline";
 import { HomepageHeroCTA } from "./HomepageHeroCTA";
 
 const HERO_IMAGES = [
-  { src: "/images/homepage-hero-2.jpg.webp", alt: "Laser cutting machine with bright sparks on metal" },
-  { src: "/images/home-hero-2.webp", alt: "VTM CNC press brake in factory" },
+  { src: "/images/homepage-hero-gantry.webp", alt: "Máquina de corte láser de fibra VTM cortando plancha con chispas" },
+  { src: "/images/home-hero-2.webp", alt: "Prensa plegadora CNC VTM en planta industrial" },
 ];
 
 type Props = {
@@ -38,15 +38,15 @@ export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: P
   useEffect(() => {
     const id = setInterval(() => {
       setActiveIndex((i) => (i + 1) % HERO_IMAGES.length);
-    }, 3000);
+    }, 1500);
     return () => clearInterval(id);
   }, []);
 
-  const textOpacity = Math.max(0, 1 - progress / 0.45);
-  const overlayOpacity = Math.max(0, 0.72 * (1 - progress));
+  const textOpacity = Math.min(1, progress / 0.45);
+  const overlayOpacity = Math.min(1, progress);
 
   return (
-    <div ref={wrapperRef} style={{ height: "120vh" }}>
+    <div ref={wrapperRef} style={{ height: "220vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
         {HERO_IMAGES.map((img, i) => (
           <Image
@@ -55,7 +55,7 @@ export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: P
             alt={img.alt}
             fill
             priority={i === 0}
-            className="object-cover transition-opacity duration-1000"
+            className="object-cover transition-opacity duration-500"
             style={{ opacity: i === activeIndex ? 1 : 0 }}
             sizes="100vw"
           />

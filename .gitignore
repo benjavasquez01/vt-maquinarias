@@ -42,3 +42,10 @@ next-env.d.ts
 docs/*.xlsx
 
 .vercel
+
+# dev logs
+*.stdout.log
+*.stderr.log
+
+# local tooling
+.claude/

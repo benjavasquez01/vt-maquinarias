@@ -17,7 +17,7 @@ export default async function FourInOneLaserPage({
 }) {
   const { locale } = (await params) as { locale: "en" | "es" };
   return (
-    <ProductPageTemplate data={content[locale]} hideHero hideModes hideSpecs hideConfigure>
+    <ProductPageTemplate data={content[locale]} hideModes hideSpecs hideConfigure>
       <WeldingModelBrowser locale={locale} />
     </ProductPageTemplate>
   );

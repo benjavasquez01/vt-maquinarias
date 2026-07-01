@@ -42,7 +42,7 @@ const OPENING_MESSAGES: Record<"en" | "es", Record<string, string>> = {
     demo: "Hi! I'm Benjamin, your VT Maquinarias sales representative. I see you're interested in our welding automation systems. What are you currently welding, and what's driving your interest in automation?",
   },
   es: {
-    quote: "¡Hola! Soy Benjamin, tu representante de ventas de VT Maquinarias. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, doblado, soldadura u otra cosa?",
+    quote: "¡Hola! Soy Benjamin, tu representante de ventas de VT Maquinarias. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, plegado, soldadura u otra cosa?",
     demo: "¡Hola! Soy Benjamin, tu representante de ventas de VT Maquinarias. Veo que te interesa nuestros sistemas de automatización de soldadura. ¿Qué estás soldando actualmente y qué te llevó a considerar la automatización?",
   },
 };
@@ -198,9 +198,11 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     }
   }, []);
 
-  // Fallback: when the chat closes without a lead being sent, salvage any
-  // contact info from the user's messages and send a partial lead so the
-  // team can still follow up. Only fires if no lead (partial or complete) was sent.
+  // Fallback: when the chat closes without a lead being sent, salvage the
+  // conversation as a partial lead so the team can still follow up — but only
+  // if the customer left at least one usable form of contact (email or phone).
+  // If there's no way to reach them, the chat is discarded. Only fires if no
+  // lead (partial or complete) was already sent.
   useEffect(() => {
     if (isOpen) return;
     if (leadSentRef.current !== "none") return;
@@ -224,6 +226,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     const salvaged = {
       name: "",
       company: "",
+      rut: "",
       email: emailMatch ? emailMatch[0] : "",
       phone: phoneMatch ? phoneMatch[0].trim() : "",
       metalworkingType: "",

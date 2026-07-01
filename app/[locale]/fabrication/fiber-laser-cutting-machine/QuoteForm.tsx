@@ -39,6 +39,7 @@ export function QuoteForm({
         body: JSON.stringify({
           name: fd.get("name") ?? "",
           company: fd.get("company") ?? "",
+          rut: fd.get("rut") ?? "",
           email: fd.get("email") ?? "",
           phone: fd.get("phone") ?? "",
           metalworkingType: "",
@@ -141,6 +142,21 @@ export function QuoteForm({
       </div>
       <div>
         <label
+          htmlFor="quote-rut"
+          className="block text-xs text-white/50 mb-1 font-medium tracking-wider uppercase"
+        >
+          RUT de la Empresa
+        </label>
+        <input
+          id="quote-rut"
+          type="text"
+          name="rut"
+          className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors"
+          placeholder="76.123.456-7"
+        />
+      </div>
+      <div>
+        <label
           htmlFor="quote-message"
           className="block text-xs text-white/50 mb-1 font-medium tracking-wider uppercase"
         >
@@ -152,7 +168,7 @@ export function QuoteForm({
           rows={4}
           className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors resize-none"
           placeholder={messagePlaceholder}
-          defaultValue="Máquina de interés: Cortadora Láser de Chapa"
+          defaultValue="Máquina de interés: Cortadora Láser de Plancha"
         />
       </div>
       <Button type="submit" variant="primary" size="lg" className="w-full justify-center" disabled={loading}>

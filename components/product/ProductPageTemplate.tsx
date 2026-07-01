@@ -205,7 +205,7 @@ export function ProductPageTemplate({ data, children, afterSpecs, featureSlots, 
                 <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark tracking-tight mb-4">
                   {feature.headline}
                 </h2>
-                <p className="text-vtm-gray-mid leading-relaxed mb-6">{feature.body}</p>
+                <p className="text-vtm-gray-mid leading-relaxed mb-6 whitespace-pre-line">{feature.body}</p>
                 <div className="inline-flex items-baseline gap-2 bg-vtm-gray-light px-4 py-2">
                   <span className="text-xs font-semibold tracking-widest uppercase text-vtm-gray-mid">
                     {feature.spec.label}

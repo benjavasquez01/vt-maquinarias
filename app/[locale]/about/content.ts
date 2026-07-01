@@ -21,27 +21,27 @@ export type AboutContent = {
 
 const es: AboutContent = {
   hero: {
-    sectionLabel: "Nuestra Historia",
-    headline: "Donde la Precisión Se Encuentra con el Propósito.",
-    subheadline: "15 años de experiencia en maquinaria industrial al servicio de talleres de fabricación metálica en Chile que exigen más que una compra — exigen un socio.",
+    sectionLabel: "Nosotros",
+    headline: "Más que máquinas, brindamos soporte para crecer.",
+    subheadline: "",
   },
   story: {
     sectionLabel: "Quiénes Somos",
-    headline: "Maquinaria de precisión, forjada durante 15 años. Al servicio de los talleres de Chile.",
+    headline: "15 años entregando tecnología, respaldo y continuidad operativa.",
     paragraphs: [
-      "VT Maquinarias es una empresa chilena de maquinaria industrial fundada en Santiago en 2009. A lo largo de 15 años hemos construido una reputación en Chile y América Latina por nuestros equipos de fabricación de precisión, estándares de servicio rigurosos y un compromiso genuino con los talleres que confían en nosotros.",
-      "Conocemos el mercado chileno porque trabajamos en él todos los días: talleres lidiando con equipos obsoletos, proveedores extranjeros que desaparecen tras la entrega y precios elevados por un soporte de maquinaria que simplemente no existe.",
-      "Por eso construimos VT Maquinarias de otra manera. No vendemos solo máquinas — somos el tipo de socio que los fabricantes metálicos chilenos merecen: uno que aparece antes de que compre, se queda durante la instalación y permanece disponible durante toda la vida útil del equipo.",
+      "En VT Maquinarias Chile somos líderes nacionales en soluciones para la industria metalmecánica, especializados en máquinas de corte láser, plegado CNC y soldadura láser.",
+      "Con más de 1.000 máquinas vendidas en 15 años, contamos con un amplio stock de equipos disponibles para entrega inmediata y un showroom donde nuestros clientes pueden conocer y ver las máquinas operando en demostraciones en vivo.",
+      "Nuestra principal fortaleza es una postventa rápida, cercana y especializada, respaldada por servicio técnico propio, capacitación y repuestos disponibles en Chile.",
     ],
   },
   values: {
     sectionLabel: "Nuestros Valores",
     headline: "Cuatro pilares que guían todo lo que hacemos.",
     items: [
-      { title: "Precisión", description: "Cada máquina que vendemos se calibra con tolerancias exactas antes de salir de fábrica. No enviamos equipos que no puedan mantener las especificaciones — porque su reputación depende de piezas correctas en todo momento." },
-      { title: "Asociación", description: "No desaparecemos después de la entrega. Nuestro equipo permanece involucrado durante la instalación, capacitación y toda la vida productiva de su máquina. Cuando llama, llega a alguien que conoce su taller." },
-      { title: "Confiabilidad", description: "El tiempo de inactividad cuesta dinero. Nuestras máquinas están diseñadas para funcionar, y cuando necesitan servicio, las piezas se envían el mismo día y el soporte está a una llamada de distancia. Diseñamos toda nuestra operación en torno a su tiempo de actividad." },
-      { title: "Innovación", description: "Desde la tecnología láser de fibra hasta la automatización de soldadura colaborativa, llevamos los mejores avances del mundo manufacturero a los talleres de Chile — sin la complejidad ni el precio empresarial." },
+      { title: "Precisión", description: "Cada máquina se calibra y verifica antes de su entrega para asegurar resultados confiables desde el primer día." },
+      { title: "Respaldo", description: "Lo acompañamos en la instalación, capacitación y puesta en marcha. La entrega de su máquina es solo el comienzo de nuestro compromiso con usted." },
+      { title: "Confiabilidad", description: "Servicio técnico propio, repuestos disponibles y respuesta rápida para mantener su producción estable." },
+      { title: "Innovación", description: "Tecnología de clase mundial, adaptada a las necesidades reales de la industria chilena." },
     ],
   },
   timeline: {
@@ -49,9 +49,9 @@ const es: AboutContent = {
     headline: "Desde Santiago hacia cada región de Chile.",
     items: [
       { year: "2009", event: "VT Maquinarias fundada en Santiago, Chile. Primeras instalaciones de láser de fibra en Sudamérica." },
-      { year: "2022", event: "Ampliación de nuestra línea de fabricación láser y apertura de nuevas instalaciones de demostración." },
-      { year: "2024", event: "Cobertura de servicio ampliada a todo Chile. Equipo de soporte técnico plenamente operativo." },
-      { year: "2026", event: "Brazos de soldadura colaborativos incorporados a nuestro catálogo para el mercado chileno." },
+      { year: "2012", event: "Ampliación de nuestra línea de fabricación láser y apertura de nuevas instalaciones de demostración." },
+      { year: "2016", event: "Cobertura de servicio ampliada a todo Chile. Equipo de soporte técnico plenamente operativo." },
+      { year: "2026", event: "Apertura de oficinas en Estados Unidos, ampliando nuestra presencia más allá de Chile." },
     ],
   },
   certifications: {

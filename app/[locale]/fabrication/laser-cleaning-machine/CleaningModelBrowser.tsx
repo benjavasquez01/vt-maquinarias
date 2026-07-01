@@ -6,31 +6,30 @@ import { ImageGallery } from "@/components/ui/ImageGallery";
 
 const GALLERY = ["/images/laser-cleaning-c-1.webp", "/images/laser-cleaning-c-2.webp"];
 
-type SpecRow = { label: string; continuous: string; pulsed: string };
+type SpecRow = { label: string; value: string };
 
 const SPECS: SpecRow[] = [
-  { label: "Laser Power Supply", continuous: "1000 W / 1500 W / 2000 W / 3000 W", pulsed: "100 W / 120 W / 200 W / 300 W / 500 W" },
-  { label: "Advantage",          continuous: "High power, fast cleaning speed",    pulsed: "Works on various kinds of materials" },
+  { label: "Tipo de Láser",  value: "Continuo" },
+  { label: "Potencia Láser", value: "1500 W / 2000 W / 3000 W" },
+  { label: "Ventajas",       value: "Alta potencia, rápida — uso industrial" },
 ];
 
 const LABELS = {
   en: {
     productLine: "Product Line",
     headline: "C Series",
-    subheadline: "Two laser technologies — continuous for high-speed industrial cleaning, pulsed for precision surface treatment across a wide range of materials.",
+    subheadline: "Continuous-wave fiber laser cleaning for high-speed, high-power industrial use — removes rust, paint and oxide layers with no chemicals, no abrasives and no damage to the base material.",
     badge: "Available",
     continuous: "Continuous Laser Model",
-    pulsed: "Pulsed Laser Model",
     specCol: "Specification",
     quote: "Request a Quote",
   },
   es: {
     productLine: "Línea de Productos",
     headline: "Serie C",
-    subheadline: "Dos tecnologías láser — continua para limpieza industrial de alta velocidad, pulsada para tratamiento de superficie de precisión en una amplia gama de materiales.",
+    subheadline: "Limpieza láser de fibra de onda continua para uso industrial de alta velocidad y alta potencia — elimina óxido, pintura y capas de óxido sin químicos, sin abrasivos y sin dañar el material base.",
     badge: "Disponible",
     continuous: "Modelo Láser Continuo",
-    pulsed: "Modelo Láser Pulsado",
     specCol: "Especificación",
     quote: "Solicitar Cotización",
   },
@@ -62,15 +61,13 @@ export function CleaningModelBrowser({ locale }: { locale: "en" | "es" }) {
                   <tr className="bg-vtm-gray-light border-b border-vtm-gray-border">
                     <th className="text-left px-4 py-3 font-semibold text-vtm-dark text-xs tracking-wider uppercase">{l.specCol}</th>
                     <th className="text-left px-4 py-3 font-semibold text-vtm-dark text-xs tracking-wider uppercase">{l.continuous}</th>
-                    <th className="text-left px-4 py-3 font-semibold text-vtm-dark text-xs tracking-wider uppercase">{l.pulsed}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {SPECS.map((row, i) => (
                     <tr key={row.label} className={`border-b border-vtm-gray-border last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-vtm-gray-light/40"}`}>
                       <td className="px-4 py-3 text-vtm-gray-mid font-medium">{row.label}</td>
-                      <td className="px-4 py-3 text-vtm-dark font-medium">{row.continuous}</td>
-                      <td className="px-4 py-3 text-vtm-dark font-medium">{row.pulsed}</td>
+                      <td className="px-4 py-3 text-vtm-dark font-medium">{row.value}</td>
                     </tr>
                   ))}
                 </tbody>

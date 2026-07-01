@@ -29,22 +29,22 @@ const SERIES_FRAMES: string[] = [
 
 // ─── Specs ───────────────────────────────────────────────────────────────────
 
-const SHARED_UPGRADES = ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain"];
+const SHARED_UPGRADES = ["Aire Acondicionado", "Extractor de Humo", "Compresor de Aire", "Estabilizador de Voltaje", "Cortina de Luz de Seguridad"];
 
 const SPECS: ModelSpecs = {
   headers: ["VTM-3015ST", "VTM-6015ST", "VTM-4020ST", "VTM-6025ST"],
   rows: [
-    { type: "spec", label: "Working Area", metric: ["3000 × 1500 mm", "6000 × 1500 mm", "4000 × 2000 mm", "6000 × 2500 mm"], imperial: ["10′ × 5′", "20′ × 5′", "13′ × 6.6′", "20′ × 8.2′"] },
-    { type: "spec", label: "X Y Z Axis Stroke", metric: ["1520 × 3100 × 100 mm", "1520 × 6050 × 100 mm", "2040 × 4050 × 100 mm", "2510 × 6100 × 260 mm"], imperial: ["59.8\" × 122\" × 3.9\"", "59.8\" × 238\" × 3.9\"", "80.3\" × 159\" × 3.9\"", "98.8\" × 240\" × 10.2\""] },
-    { type: "spec", label: "Laser Power", metric: ["2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W"], imperial: ["2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W"] },
-    { type: "spec", label: "Tube Cutting Diameter", metric: ["Φ20–230 mm  □20–230 mm", "Φ20–230 mm  □20–230 mm", "Φ20–230 mm  □20–230 mm", "Φ20–230 mm  □20–230 mm"], imperial: ["Φ0.8\"–9.1\"  □0.8\"–9.1\"", "Φ0.8\"–9.1\"  □0.8\"–9.1\"", "Φ0.8\"–9.1\"  □0.8\"–9.1\"", "Φ0.8\"–9.1\"  □0.8\"–9.1\""] },
-    { type: "spec", label: "Positioning Accuracy", metric: ["±0.03 mm", "±0.03 mm", "±0.03 mm", "±0.03 mm"], imperial: ["±0.001\"", "±0.001\"", "±0.001\"", "±0.001\""] },
-    { type: "spec", label: "Voltage", metric: ["380V 50Hz", "380V 50Hz", "380V 50Hz", "380V 50Hz"], imperial: ["380V 50Hz", "380V 50Hz", "380V 50Hz", "380V 50Hz"] },
-    { type: "group", label: "Cutting Ability" },
-    { type: "spec", label: "Carbon Steel", metric: ["1–80 mm", "1–80 mm", "1–80 mm", "1–80 mm"], imperial: ["0.04\"–3.1\"", "0.04\"–3.1\"", "0.04\"–3.1\"", "0.04\"–3.1\""] },
-    { type: "spec", label: "Stainless Steel", metric: ["1–70 mm", "1–70 mm", "1–70 mm", "1–70 mm"], imperial: ["0.04\"–2.8\"", "0.04\"–2.8\"", "0.04\"–2.8\"", "0.04\"–2.8\""] },
-    { type: "spec", label: "Aluminum", metric: ["1–60 mm", "1–60 mm", "1–60 mm", "1–60 mm"], imperial: ["0.04\"–2.4\"", "0.04\"–2.4\"", "0.04\"–2.4\"", "0.04\"–2.4\""] },
-    { type: "spec", label: "Brass", metric: ["1–20 mm", "1–20 mm", "1–20 mm", "1–20 mm"], imperial: ["0.04\"–0.8\"", "0.04\"–0.8\"", "0.04\"–0.8\"", "0.04\"–0.8\""] },
+    { type: "spec", label: "Área de Trabajo", metric: ["3000 × 1500 mm", "6000 × 1500 mm", "4000 × 2000 mm", "6000 × 2500 mm"], imperial: ["10′ × 5′", "20′ × 5′", "13′ × 6.6′", "20′ × 8.2′"] },
+    { type: "spec", label: "Recorrido Ejes X Y Z", metric: ["1520 × 3100 × 100 mm", "1520 × 6050 × 100 mm", "2040 × 4050 × 100 mm", "2510 × 6100 × 260 mm"], imperial: ["59.8\" × 122\" × 3.9\"", "59.8\" × 238\" × 3.9\"", "80.3\" × 159\" × 3.9\"", "98.8\" × 240\" × 10.2\""] },
+    { type: "spec", label: "Potencia Láser", metric: ["2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W"], imperial: ["2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W", "2000 W, 3000 W, 6000 W"] },
+    { type: "spec", label: "Diámetro de Corte de Tubo", metric: ["Φ20–230 mm  □20–230 mm", "Φ20–230 mm  □20–230 mm", "Φ20–230 mm  □20–230 mm", "Φ20–230 mm  □20–230 mm"], imperial: ["Φ0.8\"–9.1\"  □0.8\"–9.1\"", "Φ0.8\"–9.1\"  □0.8\"–9.1\"", "Φ0.8\"–9.1\"  □0.8\"–9.1\"", "Φ0.8\"–9.1\"  □0.8\"–9.1\""] },
+    { type: "spec", label: "Precisión de Posicionamiento", metric: ["±0.03 mm", "±0.03 mm", "±0.03 mm", "±0.03 mm"], imperial: ["±0.001\"", "±0.001\"", "±0.001\"", "±0.001\""] },
+    { type: "spec", label: "Voltaje", metric: ["380V 50Hz", "380V 50Hz", "380V 50Hz", "380V 50Hz"], imperial: ["380V 50Hz", "380V 50Hz", "380V 50Hz", "380V 50Hz"] },
+    { type: "group", label: "Capacidad de Corte" },
+    { type: "spec", label: "Acero al Carbono", metric: ["1–80 mm", "1–80 mm", "1–80 mm", "1–80 mm"], imperial: ["0.04\"–3.1\"", "0.04\"–3.1\"", "0.04\"–3.1\"", "0.04\"–3.1\""] },
+    { type: "spec", label: "Acero Inoxidable", metric: ["1–70 mm", "1–70 mm", "1–70 mm", "1–70 mm"], imperial: ["0.04\"–2.8\"", "0.04\"–2.8\"", "0.04\"–2.8\"", "0.04\"–2.8\""] },
+    { type: "spec", label: "Aluminio", metric: ["1–60 mm", "1–60 mm", "1–60 mm", "1–60 mm"], imperial: ["0.04\"–2.4\"", "0.04\"–2.4\"", "0.04\"–2.4\"", "0.04\"–2.4\""] },
+    { type: "spec", label: "Latón", metric: ["1–20 mm", "1–20 mm", "1–20 mm", "1–20 mm"], imperial: ["0.04\"–0.8\"", "0.04\"–0.8\"", "0.04\"–0.8\"", "0.04\"–0.8\""] },
   ],
   upgrades: SHARED_UPGRADES,
 };
@@ -63,18 +63,18 @@ const SERIES_CONTENT = {
   },
   es: {
     name: "Serie ST",
-    tagline: "Chapa y Tubo",
+    tagline: "Plancha y Tubo",
     power: "2–6 kW",
     badge: "Disponible",
     image: "/images/sheet-tube-combo-hero.webp",
-    description: "Una máquina, dos capacidades. La VTM-ST corta chapa plana hasta 6000 × 2500 mm y perfiles de tubo redondos/cuadrados hasta Φ230 mm — cuatro tamaños de mesa para adaptarse a su volumen de producción.",
-    bestFor: ["Producción mixta de chapa y tubo", "Mesas desde 3015 hasta 6025", "Tubo redondo y cuadrado hasta Φ230 mm", "Potencia láser de 2 kW a 6 kW"],
+    description: "Una máquina, dos capacidades. La VTM-ST corta plancha plana hasta 6000 × 2500 mm y perfiles de tubo redondos/cuadrados hasta Φ230 mm — cuatro tamaños de mesa para adaptarse a su volumen de producción.",
+    bestFor: ["Producción mixta de plancha y tubo", "Mesas desde 3015 hasta 6025", "Tubo redondo y cuadrado hasta Φ230 mm", "Potencia láser de 2 kW a 6 kW"],
   },
 };
 
 const LABELS = {
   en: { productLine: "Product Line", browseSeries: "ST Series", subheadline: "Four bed sizes — flat sheet up to 6000 × 2500 mm and tube up to Φ230 mm on the same machine.", bestFor: "Highlights", quote: "Request a Quote", viewSpecs: "View Specs", specsSection: "Technical Specifications", specsHeadline: "Full Specs", upgrades: "Available Upgrades" },
-  es: { productLine: "Línea de Productos", browseSeries: "Serie ST", subheadline: "Cuatro tamaños de mesa — chapa plana hasta 6000 × 2500 mm y tubo hasta Φ230 mm en la misma máquina.", bestFor: "Aspectos Destacados", quote: "Solicitar Cotización", viewSpecs: "Ver Especificaciones", specsSection: "Especificaciones Técnicas", specsHeadline: "Especificaciones Completas", upgrades: "Mejoras Disponibles" },
+  es: { productLine: "Línea de Productos", browseSeries: "Serie ST", subheadline: "Cuatro tamaños de mesa — plancha plana hasta 6000 × 2500 mm y tubo hasta Φ230 mm en la misma máquina.", bestFor: "Aspectos Destacados", quote: "Solicitar Cotización", viewSpecs: "Ver Especificaciones", specsSection: "Especificaciones Técnicas", specsHeadline: "Especificaciones Completas", upgrades: "Mejoras Disponibles" },
 };
 
 // ─── Specs renderer ───────────────────────────────────────────────────────────
@@ -163,7 +163,7 @@ function STSpecs({ specs, locale, unit, setUnit }: { specs: ModelSpecs; locale: 
         <div className="flex border border-vtm-gray-border overflow-hidden">
           {(["metric", "imperial"] as Unit[]).map((u) => (
             <button key={u} onClick={() => setUnit(u)} className={`px-5 py-2 text-xs font-semibold tracking-wider uppercase transition-colors ${unit === u ? "bg-vtm-dark text-white" : "bg-white text-vtm-gray-mid hover:bg-vtm-gray-light"}`}>
-              {u === "metric" ? "Metric" : "Imperial"}
+              {u === "metric" ? "Métrico" : "Imperial"}
             </button>
           ))}
         </div>
@@ -234,7 +234,7 @@ function STSpecs({ specs, locale, unit, setUnit }: { specs: ModelSpecs; locale: 
       )}
 
       {unit === "imperial" && specRows.length > 0 && (
-        <p className="text-[11px] text-vtm-gray-mid text-center mt-5 italic">* Nominal standard dimensions. Refer to metric values for exact specifications.</p>
+        <p className="text-[11px] text-vtm-gray-mid text-center mt-5 italic">* Dimensiones nominales estándar. Consulte los valores métricos para especificaciones exactas.</p>
       )}
 
       {specs.upgrades.length > 0 && (

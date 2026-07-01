@@ -9,18 +9,17 @@ import { GenericSpecsTable } from "@/components/product/GenericSpecsTable";
 import { GenericFaqAccordion } from "@/components/product/GenericFaqAccordion";
 import { GenericStickyBar } from "@/components/product/GenericStickyBar";
 import { ROICalculator } from "@/components/product/ROICalculator";
-import { AnimatedComparisonTable } from "@/components/product/AnimatedComparisonTable";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { StaggerChildren } from "@/components/ui/StaggerChildren";
 import { content } from "./content";
 
 export const metadata: Metadata = {
-  title: "Brazo Soldador Colaborativo (Cobot)",
+  title: "Brazo Soldador Láser Colaborativo (Cobot)",
   description:
-    "Implemente un robot de soldadura colaborativo guiado por IA en 6 semanas. Seguro para trabajar junto a personas, sin jaulas. Instalación y capacitación en Chile incluidas.",
+    "Robot colaborativo de soldadura láser de 6 ejes con repetibilidad ±0.03 mm, alcance 1,350 mm y velocidad de soldadura 0–120 mm/s. Instalación y capacitación en Chile incluidas.",
   openGraph: {
-    title: "Brazo Soldador Colaborativo — VT Maquinarias",
-    description: "Implementación en 6 semanas. Trabaja junto a personas de forma segura. Sin jaulas.",
+    title: "Brazo Soldador Láser Colaborativo — VT Maquinarias",
+    description: "Cobot de soldadura láser de 6 ejes para cordones repetibles, menor distorsión y acabado limpio.",
     images: [{ url: "/images/cobot-welding-hero.webp" }],
   },
 };
@@ -66,7 +65,10 @@ export default async function CollaborativeWeldingArmPage({
                 {c.hero.cta1}
               </Button>
               <Button
-                href="#specs"
+                href="/catalogo-vt-maquinarias.pdf"
+                target="_blank"
+                rel="noopener"
+                download
                 variant="outline"
                 size="lg"
                 className="border-white/30 text-white hover:bg-white/10 hover:border-white/60"
@@ -164,27 +166,6 @@ export default async function CollaborativeWeldingArmPage({
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Block 5: Cobot vs Industrial Comparison ───────────────────── */}
-      <section className="bg-vtm-gray-light py-20 md:py-28 border-t border-vtm-gray-border" id="compare">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <SectionLabel className="mb-4">{c.compare.sectionLabel}</SectionLabel>
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-10">
-            {c.compare.headline}
-          </h2>
-          <AnimatedComparisonTable
-            rows={c.compare.rows.map((r) => ({ feature: r.feature, left: r.cobot, right: r.industrial }))}
-            leftLabel={c.compare.leftLabel}
-            rightLabel={c.compare.rightLabel}
-          />
-          <p className="text-vtm-gray-mid text-sm mt-6">
-            {c.compare.note}{" "}
-            <Link href="/contact" className="text-vtm-red hover:underline">
-              {c.compare.noteLink}
-            </Link>
-          </p>
         </div>
       </section>
 
@@ -309,8 +290,8 @@ export default async function CollaborativeWeldingArmPage({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            name: "Collaborative Welding Arm",
-            description: "Robot de soldadura colaborativo guiado por IA. Implementación en 6 semanas. Conforme a ISO/TS 15066.",
+            name: "Brazo Soldador Láser Colaborativo",
+            description: "Robot colaborativo de soldadura láser de 6 ejes para cordones repetibles, menor distorsión y acabado limpio.",
             brand: { "@type": "Brand", name: "VT Maquinarias" },
             offers: { "@type": "Offer", availability: "https://schema.org/InStock", priceCurrency: "USD" },
           }),

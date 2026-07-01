@@ -9,29 +9,95 @@ import { useAgent } from "@/components/ai/AgentProvider";
 
 // ─── Dropdown content ────────────────────────────────────────────────────────
 
-const DROPDOWN: Record<string, { label: string; href: string }[]> = {
+type DropdownLink = { label: string; href: string };
+type DropdownGroup = { label: string; children: DropdownLink[] };
+type DropdownEntry = DropdownLink | DropdownGroup;
+
+const isGroup = (entry: DropdownEntry): entry is DropdownGroup => "children" in entry;
+
+const DROPDOWN: Record<string, DropdownEntry[]> = {
   fabrication: [
-    { label: "Cortadora Láser de Chapa",      href: "/fabrication/fiber-laser-cutting-machine" },
-    { label: "Corte Láser de Tubo",           href: "/fabrication/fiber-laser-tube-cutting-machine" },
-    { label: "Combo Chapa y Tubo",            href: "/fabrication/sheet-tube-laser-cutting-machine" },
-    { label: "Máquina de Soldadura Láser",    href: "/fabrication/4-in-1-laser-machine" },
-    { label: "Máquina de Limpieza Láser",     href: "/fabrication/laser-cleaning-machine" },
     { label: "Plegadora CNC",                 href: "/fabrication/cnc-press-brake" },
+    {
+      label: "Máquinas de Corte Láser",
+      children: [
+        { label: "Máquina de Corte Láser de Plancha",       href: "/fabrication/fiber-laser-cutting-machine" },
+        { label: "Máquina de Corte Láser de Tubo",        href: "/fabrication/fiber-laser-tube-cutting-machine" },
+        { label: "Máquina de Corte Láser de Plancha y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine" },
+      ],
+    },
+    { label: "Máquina Soldadora Láser",    href: "/fabrication/4-in-1-laser-machine" },
+    { label: "Máquina de Limpieza Láser",     href: "/fabrication/laser-cleaning-machine" },
     { label: "Punzonadora / Cizalla",         href: "/fabrication/ironworker" },
-  ],
-  automation: [
-    { label: "Brazo Soldador Colaborativo",   href: "/automation/collaborative-welding-arm" },
-    { label: "Brazo Soldador Industrial",     href: "/automation/industrial-welding-arm" },
+    { label: "Paneladora CNC",                href: "/fabrication/panel-bender" },
+    { label: "Compresor de Aire",             href: "/fabrication/air-compressor" },
+    {
+      label: "Automatización",
+      children: [
+        { label: "Brazo Soldador Colaborativo",   href: "/automation/collaborative-welding-arm" },
+      ],
+    },
   ],
 };
 
 const NAV_ITEMS = [
-  { key: "fabrication" as const, href: "/fabrication" },
-  { key: "automation" as const, href: "/automation" },
+  { key: "fabrication" as const, href: "/productos" },
   { key: "solutions" as const, href: "/solutions" },
   { key: "about" as const, href: "/about" },
   { key: "contact" as const, href: "/contact" },
 ];
+
+// ─── Desktop nested group (flyout sub-drawer) ─────────────────────────────────
+
+function DesktopGroup({ group, onSelect }: { group: DropdownGroup; onSelect: () => void }) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const scheduleClose = () => { closeTimer.current = setTimeout(() => setOpen(false), 120); };
+  const cancelClose = () => { if (closeTimer.current) clearTimeout(closeTimer.current); };
+
+  return (
+    <li
+      className="relative"
+      onMouseEnter={() => { cancelClose(); setOpen(true); }}
+      onMouseLeave={scheduleClose}
+    >
+      <div className="flex items-center justify-between px-5 py-2.5 text-sm text-vtm-dark hover:bg-vtm-gray-light hover:text-vtm-red transition-colors cursor-default select-none">
+        {group.label}
+        <svg
+          width="10" height="10" viewBox="0 0 10 10" fill="none"
+          stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+          aria-hidden="true" className="-rotate-90 flex-shrink-0"
+        >
+          <path d="M2 3.5l3 3 3-3" />
+        </svg>
+      </div>
+
+      {/* Flyout panel */}
+      <div
+        onMouseEnter={cancelClose}
+        onMouseLeave={scheduleClose}
+        className={`absolute top-0 left-full -ml-px w-64 bg-white border border-vtm-gray-border shadow-lg transition-all duration-150 origin-top-left ${
+          open ? "opacity-100 scale-95 pointer-events-auto" : "opacity-0 scale-90 pointer-events-none"
+        }`}
+      >
+        <ul className="py-2">
+          {group.children.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="block px-5 py-2.5 text-sm text-vtm-dark hover:bg-vtm-gray-light hover:text-vtm-red transition-colors"
+                onClick={() => { setOpen(false); onSelect(); }}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </li>
+  );
+}
 
 // ─── Desktop dropdown ─────────────────────────────────────────────────────────
 
@@ -106,20 +172,64 @@ function NavDropdown({
         <div className="absolute -top-[5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white border-l border-t border-vtm-gray-border rotate-45" />
 
         <ul className="py-2">
-          {items.map((item) => (
+          {items.map((item) =>
+            isGroup(item) ? (
+              <DesktopGroup key={item.label} group={item} onSelect={() => setOpen(false)} />
+            ) : (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="block px-5 py-2.5 text-sm text-vtm-dark hover:bg-vtm-gray-light hover:text-vtm-red transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// ─── Mobile nested group (accordion inside accordion) ─────────────────────────
+
+function MobileGroup({ group, onNavigate }: { group: DropdownGroup; onNavigate: () => void }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <li>
+      <button
+        onClick={() => setExpanded((e) => !e)}
+        className="w-full flex items-center justify-between py-2 text-base font-medium text-vtm-dark hover:text-vtm-red transition-colors"
+      >
+        {group.label}
+        <svg
+          width="12" height="12" viewBox="0 0 10 10" fill="none"
+          stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+          aria-hidden="true"
+          className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+        >
+          <path d="M2 3.5l3 3 3-3" />
+        </svg>
+      </button>
+      {expanded && (
+        <ul className="pl-3 pb-1 flex flex-col gap-1">
+          {group.children.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="block px-5 py-2.5 text-sm text-vtm-dark hover:bg-vtm-gray-light hover:text-vtm-red transition-colors"
-                onClick={() => setOpen(false)}
+                onClick={onNavigate}
+                className="block py-2 text-sm text-vtm-gray-mid hover:text-vtm-red transition-colors"
               >
                 {item.label}
               </Link>
             </li>
           ))}
         </ul>
-      </div>
-    </div>
+      )}
+    </li>
   );
 }
 
@@ -169,17 +279,21 @@ function MobileNavItem({
       </button>
       {expanded && (
         <ul className="pb-3 pl-2 flex flex-col gap-1">
-          {items.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                onClick={onNavigate}
-                className="block py-2 text-base text-vtm-gray-mid hover:text-vtm-red transition-colors"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          {items.map((item) =>
+            isGroup(item) ? (
+              <MobileGroup key={item.label} group={item} onNavigate={onNavigate} />
+            ) : (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={onNavigate}
+                  className="block py-2 text-base text-vtm-gray-mid hover:text-vtm-red transition-colors"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
       )}
     </div>
@@ -193,10 +307,6 @@ export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { openAgent } = useAgent();
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";

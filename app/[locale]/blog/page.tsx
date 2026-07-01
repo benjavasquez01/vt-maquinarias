@@ -6,17 +6,17 @@ import { Tag } from "@/components/ui/Tag";
 import { NewsletterForm } from "@/components/blog/NewsletterForm";
 
 export const metadata: Metadata = {
-  title: "Blog — Conocimiento sobre Fabricación Metálica y Automatización",
+  title: "Blog — Guías Técnicas para Maestranzas y Talleres Metalmecánicos",
   description:
-    "Artículos técnicos, guías de compra e información del sector para talleres de fabricación metálica en Chile. Láser de fibra, plegadora CNC, soldadura con cobots y más.",
+    "Artículos técnicos, guías de compra y criterios de selección para maestranzas, talleres metalmecánicos y fabricantes industriales en Chile.",
 };
 
 const POSTS = [
   {
     slug: "fiber-laser-vs-co2-laser-cutting",
-    title: "Láser de Fibra vs. Láser CO₂: ¿Cuál Conviene a Su Taller en 2026?",
+    title: "Láser de Fibra vs. CO₂: Qué Conviene en una Maestranza Chilena",
     excerpt:
-      "Eficiencia energética, velocidad de corte en chapa delgada y costo operativo — desglosamos cada diferencia relevante para que elija correctamente según su mezcla de materiales.",
+      "Comparamos consumo eléctrico, velocidad en plancha delgada, mantención, gases y costo por hora para talleres que cortan acero carbono, inoxidable y aluminio todos los días.",
     category: "Guía de Compra",
     date: "28 de marzo de 2026",
     readTime: "8 min de lectura",
@@ -24,9 +24,9 @@ const POSTS = [
   },
   {
     slug: "cobot-welding-roi-real-numbers",
-    title: "ROI de Soldadura con Cobots: Números Reales de 3 Talleres",
+    title: "ROI de Soldadura con Cobots: Números Reales de Taller",
     excerpt:
-      "Medimos el período de recuperación, las tasas de rechazo por calidad y la retención de soldadores en tres talleres que implementaron brazos de soldadura colaborativos en los últimos 18 meses. Esto fue lo que realmente pasó.",
+      "Cómo estimar recuperación de inversión mirando horas-hombre, piezas repetitivas, rechazo por soldadura y disponibilidad real de soldadores calificados.",
     category: "Caso de Estudio",
     date: "14 de marzo de 2026",
     readTime: "11 min de lectura",
@@ -34,9 +34,9 @@ const POSTS = [
   },
   {
     slug: "press-brake-tonnage-calculator",
-    title: "Cálculo de Tonelaje de Plegadora: Cómo Dimensionar Su Máquina Sin Adivinar",
+    title: "Tonelaje de Plegadora CNC: Cómo Dimensionar Sin Comprar de Más",
     excerpt:
-      "La fórmula, los factores de seguridad y las variables de material que importan. Además, una tabla de tonelaje descargable gratis para los 20 espesores más comunes de acero al carbono e inoxidable.",
+      "Espesor, largo de plegado, apertura de matriz, tipo de acero y margen de seguridad: los criterios que una maestranza debe revisar antes de cotizar una plegadora.",
     category: "Guía Técnica",
     date: "26 de febrero de 2026",
     readTime: "6 min de lectura",
@@ -44,9 +44,9 @@ const POSTS = [
   },
   {
     slug: "laser-cleaning-vs-sandblasting",
-    title: "Limpieza Láser vs. Arenado: La Comparación Completa de Costos",
+    title: "Limpieza Láser vs. Arenado: Costos, Residuos y Terminación",
     excerpt:
-      "Costo del abrasivo, disposición de residuos, daño superficial y tiempo de preparación. Realizamos ambos procesos lado a lado sobre el mismo lote de acero al carbono oxidado y documentamos cada variable.",
+      "Abrasivo, disposición de residuos, preparación de superficie, seguridad del operador y costo operativo en trabajos reales de acero oxidado.",
     category: "Guía Técnica",
     date: "12 de febrero de 2026",
     readTime: "7 min de lectura",
@@ -54,9 +54,9 @@ const POSTS = [
   },
   {
     slug: "laser-welding-vs-tig-welding-comparison",
-    title: "Soldadura Láser vs. Soldadura TIG: Cuándo Cambiar y Cuándo Quedarse",
+    title: "Soldadura Láser vs. TIG: Dónde Gana Cada Proceso en Taller",
     excerpt:
-      "Velocidad, apariencia del cordón, distorsión por calor y rango de aplicación. El TIG no va a desaparecer — pero para ciertos trabajos, la soldadura láser es dramáticamente mejor. Explicamos exactamente cuáles.",
+      "Velocidad, deformación, terminación del cordón, capacitación del operador y cuándo sigue siendo mejor mantener TIG para trabajos especiales.",
     category: "Guía Técnica",
     date: "15 de enero de 2026",
     readTime: "9 min de lectura",
@@ -72,9 +72,9 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="bg-vtm-dark pt-32 pb-20 px-6 lg:px-10">
         <div className="max-w-screen-xl mx-auto">
-          <SectionLabel light className="mb-4">Conocimiento</SectionLabel>
+          <SectionLabel light className="mb-4">Guías Técnicas</SectionLabel>
           <h1 className="font-headline text-5xl md:text-6xl font-bold text-white tracking-tight max-w-3xl">
-            Conocimiento sobre fabricación metálica, sin el discurso de venta.
+            Información clara para comprar y operar maquinaria industrial en Chile.
           </h1>
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function BlogPage() {
                 {POSTS[0].title}
               </h2>
               <p className="text-vtm-gray-mid leading-relaxed mb-6">{POSTS[0].excerpt}</p>
-              <span className="text-vtm-red text-sm font-semibold">Leer artículo →</span>
+              <span className="text-vtm-red text-sm font-semibold">Leer guía técnica →</span>
             </div>
           </Link>
 
@@ -172,10 +172,10 @@ export default function BlogPage() {
           <div className="max-w-xl">
             <SectionLabel className="mb-4">Manténgase al Día</SectionLabel>
             <h2 className="font-headline text-3xl font-bold text-vtm-dark tracking-tight mb-4">
-              Nuevos artículos, cada dos semanas.
+              Nuevas guías para taller, cada dos semanas.
             </h2>
             <p className="text-vtm-gray-mid mb-6">
-              Guías técnicas, comparaciones de máquinas y noticias del sector para fabricantes metálicos en Chile. Sin correos de venta — solo contenido útil.
+              Comparaciones de máquinas, criterios de compra y datos de operación para maestranzas y fabricantes metalmecánicos en Chile. Sin humo comercial — solo información útil.
             </p>
             <NewsletterForm />
           </div>

@@ -1,17 +1,16 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const machines = [
-  "Cortadora Láser de Chapa",
-  "Máquina de Soldadura Láser",
+  "Cortadora Láser de Plancha",
+  "Máquina Soldadora Láser",
   "Máquina de Limpieza Láser",
   "Plegadora CNC",
   "Cizalla",
   "Punzonadora",
   "Brazo Soldador Colaborativo",
-  "Brazo Soldador Industrial",
   "No estoy seguro — necesito asesoría",
 ];
 
@@ -32,6 +31,7 @@ const contactTimes = [
 interface FormData {
   machines: string[];
   companyName: string;
+  rut: string;
   state: string;
   employees: string;
   currentEquipment: string;
@@ -46,6 +46,7 @@ interface FormData {
 const initialData: FormData = {
   machines: [],
   companyName: "",
+  rut: "",
   state: "",
   employees: "",
   currentEquipment: "",
@@ -106,6 +107,7 @@ export function QuoteForm() {
         body: JSON.stringify({
           name: data.name,
           company: data.companyName,
+          rut: data.rut,
           email: data.email,
           phone: data.phone,
           metalworkingType: "fabrication/manufacturing",
@@ -237,6 +239,10 @@ export function QuoteForm() {
             <div>
               <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Nombre de la Empresa *</label>
               <input type="text" required value={data.companyName} onChange={(e) => updateField("companyName", e.target.value)} placeholder="Nombre de su empresa" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
+            </div>
+            <div>
+              <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">RUT de la Empresa *</label>
+              <input type="text" required value={data.rut} onChange={(e) => updateField("rut", e.target.value)} placeholder="76.123.456-7" className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors" />
             </div>
             <div>
               <label className="block text-white/60 text-xs font-semibold tracking-wide uppercase mb-1.5">Región *</label>

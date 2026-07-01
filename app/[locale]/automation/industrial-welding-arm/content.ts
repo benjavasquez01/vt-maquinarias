@@ -67,7 +67,7 @@ const es: IndustrialArmContent = {
     headline: "Brazo de Soldadura\nIndustrial",
     subheadline: "Cuando el volumen es alto y sus piezas se repiten, el brazo industrial funciona a 4–5× la velocidad de soldadura manual, 20 horas al día, con cero fatiga y calidad de soldadura consistente en cada pieza.",
     cta1: "Solicitar una Demo",
-    cta2: "Descargar Ficha Técnica",
+    cta2: "Descargar Catálogo",
     stats: [
       { value: "4–5×", label: "Velocidad vs. manual" },
       { value: "20 kg", label: "Capacidad de carga" },
@@ -183,7 +183,7 @@ const es: IndustrialArmContent = {
     headline: "Máquinas Relacionadas",
     items: [
       { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.webp" },
-      { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabricación", imageId: "/images/fiber-laser-hero.webp" },
+      { name: "Cortadora Láser de Plancha", href: "/fabrication/fiber-laser-cutting-machine", tag: "Fabricación", imageId: "/images/fiber-laser-hero.webp" },
       { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
     ],
   },

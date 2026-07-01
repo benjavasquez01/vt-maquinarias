@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
@@ -14,7 +14,6 @@ const copy = {
       "Shearing Machine",
       "Ironworker",
       "Collaborative Welding Arm",
-      "Industrial Welding Arm",
       "Not sure yet",
     ],
     name: "Name *",
@@ -33,14 +32,13 @@ const copy = {
   },
   es: {
     machines: [
-      "Cortadora Láser de Chapa",
-      "Máquina de Soldadura Láser",
+      "Cortadora Láser de Plancha",
+      "Máquina Soldadora Láser",
       "Máquina de Limpieza Láser",
       "Plegadora CNC",
       "Guillotina",
       "Punzonadora Hidráulica",
       "Brazo de Soldadura Colaborativo",
-      "Brazo de Soldadura Industrial",
       "Aún no lo sé",
     ],
     name: "Nombre *",

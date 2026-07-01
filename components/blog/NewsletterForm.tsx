@@ -14,7 +14,7 @@ export function NewsletterForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: "Newsletter Subscriber",
+          name: "Suscriptor del boletín técnico",
           company: "",
           email,
           phone: "",
@@ -42,7 +42,7 @@ export function NewsletterForm() {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="your@email.com"
+        placeholder="correo@empresa.cl"
         className="flex-1 border border-vtm-gray-border px-4 py-3 text-sm focus:outline-none focus:border-vtm-dark"
         aria-label="Correo electrónico"
         required

@@ -2,62 +2,33 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/navigation";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { StaggerChildren } from "@/components/ui/StaggerChildren";
 import { IndustriesCarousel } from "@/components/home/IndustriesCarousel";
 import { ContactMiniForm } from "@/components/home/ContactMiniForm";
 import { TrustBarStats } from "@/components/home/TrustBarStats";
-import { AnimatedDivider } from "@/components/home/AnimatedDivider";
 import { PinnedFeatureSection } from "@/components/home/PinnedFeatureSection";
 import { HomepageHeroScroll } from "@/components/home/HomepageHeroScroll";
 import { ProductShowcase } from "@/components/home/ProductShowcase";
 
-const FABRICATION_HREFS = [
-  "/fabrication/fiber-laser-cutting-machine",
-  "/fabrication/fiber-laser-tube-cutting-machine",
-  "/fabrication/sheet-tube-laser-cutting-machine",
-  "/fabrication/4-in-1-laser-machine",
-  "/fabrication/laser-cleaning-machine",
-  "/fabrication/cnc-press-brake",
-  "/fabrication/ironworker",
-] as const;
-
-const FABRICATION_KEYS = [
-  "fiberLaser",
-  "fiberLaserTube",
-  "sheetTubeCombo",
-  "fourInOne",
-  "laserCleaning",
-  "pressBreake",
-  "ironworker",
-] as const;
-
-const AUTOMATION_PRODUCTS = [
-  {
-    key: "cobot" as const,
-    href: "/automation/collaborative-welding-arm",
-    image: "/images/cobot-welding-hero-2.webp",
-  },
-  {
-    key: "industrial" as const,
-    href: "/automation/industrial-welding-arm",
-    image: "/images/industrial-welding-arm-hero.webp",
-  },
-];
-
 const FEATURE_IMAGES = [
   { key: "precision" as const, image: "/images/homepage-feature-precision.jpg.webp", imageAlt: "Laser cutting machine creating precise sparks on metal" },
-  { key: "partnership" as const, image: "/images/homepage-feature-partnership.jpg.webp", imageAlt: "Modern CNC factory floor with machinery", reverse: true },
-  { key: "support" as const, image: "/images/homepage-feature-support.jpg.webp", imageAlt: "Industrial worker operating machinery" },
-  { key: "consultation" as const, image: "/images/homepage-feature-consultation.jpg.webp", imageAlt: "Industrial lighting and laser technology", reverse: true },
+  { key: "partnership" as const, image: "/images/homepage-feature-partnership.jpg.webp", imageAlt: "Detalle de plegado CNC en matriz en V", reverse: true },
+  { key: "support" as const, image: "/images/homepage-feature-support-local-service.png", imageAlt: "Servicio técnico local y soporte especializado VT Maquinarias" },
+  { key: "consultation" as const, image: "/images/homepage-feature-consultation.jpg.webp", imageAlt: "Bodega VTM con stock de máquinas y repuestos en Chile", reverse: true },
 ];
 
 const BLOG_SLUGS = [
   "fiber-laser-vs-co2-2026",
   "cobot-welding-roi-checklist",
   "press-brake-throughput-signs",
+] as const;
+
+const BLOG_IMAGES = [
+  "/images/blog-fiber-vs-co2.webp",
+  "/images/blog-cobot-roi.webp",
+  "/images/blog-press-brake-tonnage.webp",
 ] as const;
 
 const BLOG_KEYS = ["p1", "p2", "p3"] as const;
@@ -123,7 +94,10 @@ export default function HomePage() {
             </h2>
           </FadeIn>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIAL_KEYS.map((key) => (
+            {TESTIMONIAL_KEYS.map((key) => {
+              const company = t(`testimonials.${key}.company`);
+              const location = t(`testimonials.${key}.location`);
+              return (
               <div key={key} className="bg-white border border-vtm-gray-border p-8 flex flex-col">
                 <svg width="28" height="22" viewBox="0 0 28 22" fill="none" className="mb-6 flex-shrink-0" aria-hidden="true">
                   <path d="M0 22V12.5C0 5.167 3.833 1.167 11.5 0l1.5 2.5C9.5 3.5 7.5 5.5 7 9h5V22H0zm15.5 0V12.5C15.5 5.167 19.333 1.167 27 0l1 2.5c-3.5 1-5.5 3-6 6.5h5V22h-11.5z" fill="#CB1C1D" opacity="0.15"/>
@@ -133,10 +107,11 @@ export default function HomePage() {
                 </p>
                 <div className="border-t border-vtm-gray-border pt-5">
                   <p className="font-headline font-semibold text-vtm-dark text-sm">{t(`testimonials.${key}.author`)}</p>
-                  <p className="text-vtm-gray-mid text-xs mt-0.5">{t(`testimonials.${key}.company`)} — {t(`testimonials.${key}.location`)}</p>
+                  <p className="text-vtm-gray-mid text-xs mt-0.5">{company ? `${company} — ${location}` : location}</p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </StaggerChildren>
         </div>
       </section>
@@ -162,23 +137,34 @@ export default function HomePage() {
               <Link
                 key={BLOG_SLUGS[i]}
                 href={`/blog/${BLOG_SLUGS[i]}`}
-                className="group border border-vtm-gray-border hover:border-vtm-red/50 transition-colors p-6 flex flex-col"
+                className="group border border-vtm-gray-border hover:border-vtm-red/50 transition-colors overflow-hidden flex flex-col bg-white"
               >
-                <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-4 font-body">
-                  {t(`blog.${key}.date`)}
-                </p>
-                <h3 className="font-headline font-bold text-vtm-dark group-hover:text-vtm-red transition-colors text-lg leading-snug mb-3 flex-1">
-                  {t(`blog.${key}.title`)}
-                </h3>
-                <p className="text-vtm-gray-mid text-sm font-body leading-relaxed mb-6">
-                  {t(`blog.${key}.excerpt`)}
-                </p>
-                <span className="text-vtm-red text-sm font-semibold group-hover:underline inline-flex items-center gap-1">
-                  {t("blog.readMore")}
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </span>
+                <div className="relative aspect-[16/9] overflow-hidden bg-vtm-gray-light">
+                  <Image
+                    src={BLOG_IMAGES[i]}
+                    alt={t(`blog.${key}.title`)}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-4 font-body">
+                    {t(`blog.${key}.date`)}
+                  </p>
+                  <h3 className="font-headline font-bold text-vtm-dark group-hover:text-vtm-red transition-colors text-lg leading-snug mb-3 flex-1">
+                    {t(`blog.${key}.title`)}
+                  </h3>
+                  <p className="text-vtm-gray-mid text-sm font-body leading-relaxed mb-6">
+                    {t(`blog.${key}.excerpt`)}
+                  </p>
+                  <span className="text-vtm-red text-sm font-semibold group-hover:underline inline-flex items-center gap-1">
+                    {t("blog.readMore")}
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
               </Link>
             ))}
           </StaggerChildren>

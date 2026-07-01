@@ -7,7 +7,7 @@ import { content } from "./content";
 export const metadata: Metadata = {
   title: "Máquina de Limpieza Láser",
   description:
-    "Sistemas de limpieza láser de fibra pulsada, 50W–500W. Elimina óxido, recubrimientos y óxidos sin químicos, sin chorro abrasivo y sin daño al sustrato. Soporte en Chile incluido.",
+    "Sistemas de limpieza láser de fibra de onda continua, 1,5–3 kW. Elimina óxido, recubrimientos y óxidos sin químicos, sin chorro abrasivo y sin daño al sustrato. Soporte en Chile incluido.",
 };
 
 export default async function LaserCleaningPage({

@@ -5,7 +5,7 @@ const es: ProductPageData = {
   slug: "laser-cleaning-machine",
   machineName: "Máquina de Limpieza Láser",
   heroSubheadline:
-    "Limpieza láser de fibra pulsada de 50W a 500W. Elimine óxido, pintura, escamas de laminación y capas de óxido sin productos químicos, sin medios abrasivos y sin daño a la superficie del material base. Opción portátil disponible.",
+    "Limpieza láser de fibra de onda continua de 1,5 a 3 kW. Elimine óxido, pintura, escamas de laminación y capas de óxido sin productos químicos, sin medios abrasivos y sin daño a la superficie del material base. Alta potencia y velocidad para uso industrial 24/7.",
   heroImageId: "/images/laser-cleaning-hero.webp",
   features: [
     {
@@ -25,7 +25,7 @@ const es: ProductPageData = {
     {
       number: "03",
       headline: "Precisamente Dirigida — Limpia Solo la Contaminación",
-      body: "Los parámetros de pulso se ajustan para eliminar por ablación la capa contaminante mientras refleja el sustrato subyacente. Elimine el óxido de un tubo de cromo-molibdeno sin grabar el metal base. Limpie salpicaduras de soldadura de una superficie mecanizada sin cambiar el acabado superficial. No se requiere enmascaramiento.",
+      body: "Los parámetros del láser se ajustan para eliminar por ablación la capa contaminante mientras refleja el sustrato subyacente. Elimine el óxido de un tubo de cromo-molibdeno sin grabar el metal base. Limpie salpicaduras de soldadura de una superficie mecanizada sin cambiar el acabado superficial. No se requiere enmascaramiento.",
       spec: { label: "Selectividad", value: "Precisión por capas" },
       imageId: "/images/laser-cleaning-feature-03-precision.webp",
     },
@@ -38,18 +38,17 @@ const es: ProductPageData = {
     },
   ],
   specs: [
-    { label: "Opciones de Potencia Láser", imperial: "50W / 100W / 200W / 500W", metric: "50W / 100W / 200W / 500W" },
-    { label: "Tipo de Láser", imperial: "Láser de fibra pulsado (MOPA)", metric: "Láser de fibra pulsado (MOPA)" },
-    { label: "Longitud de Onda", imperial: "1064 nm", metric: "1064 nm" },
-    { label: "Frecuencia de Pulso", imperial: "1–4000 kHz", metric: "1–4000 kHz" },
-    { label: "Ancho de Pulso", imperial: "2–500 ns", metric: "2–500 ns" },
+    { label: "Tipo de Láser", imperial: "Láser de fibra de onda continua (CW)", metric: "Láser de fibra de onda continua (CW)" },
+    { label: "Opciones de Potencia Láser", imperial: "1500 W / 2000 W / 3000 W", metric: "1500 W / 2000 W / 3000 W" },
+    { label: "Ventaja Principal", imperial: "Alta potencia, alta velocidad — uso industrial", metric: "Alta potencia, alta velocidad — uso industrial" },
+    { label: "Operación", imperial: "Continua 24/7 — disipación de calor eficiente", metric: "Continua 24/7 — disipación de calor eficiente" },
+    { label: "Longitud de Onda", imperial: "1080 nm", metric: "1080 nm" },
     { label: "Velocidad Máxima de Escaneo", imperial: "0–275 pulg/s", metric: "0–7 m/s" },
     { label: "Ancho de Escaneo (ajustable)", imperial: "0.4\"–6\"", metric: "10–150 mm" },
     { label: "Longitud del Cable de Fibra", imperial: "33 ft (estándar) / 66 ft (opcional)", metric: "10 m / 20 m" },
-    { label: "Peso del Cabezal Portátil (100W)", imperial: "3.1 lbs", metric: "1.4 kg" },
-    { label: "Refrigeración", imperial: "Aire (50W–100W) / Agua (200W–500W)", metric: "Aire / Agua" },
-    { label: "Alimentación Eléctrica", imperial: "110–240V, monofásico", metric: "110–240V, monofásico" },
+    { label: "Refrigeración", imperial: "Enfriamiento por agua", metric: "Enfriamiento por agua" },
     { label: "Interfaz de Control", imperial: "Pantalla táctil con preajustes de material", metric: "Pantalla táctil con preajustes de material" },
+    { label: "Aplicaciones", imperial: "Fabricación, electrónica, médica", metric: "Fabricación, electrónica, médica" },
     { label: "Certificaciones", imperial: "CE, FDA Clase IV", metric: "CE, FDA Clase IV" },
   ],
   videoSectionLabel: "Véalo Limpiar",
@@ -57,12 +56,12 @@ const es: ProductPageData = {
   configOptions: [
     {
       label: "Nivel de Potencia",
-      options: ["50W — óxido leve, capas de recubrimiento en material delgado", "100W — eliminación general de óxido y pintura, uso portátil", "200W — escamas de laminación pesadas, recubrimientos gruesos, línea de producción", "500W — descascarado industrial de alta velocidad"],
-      note: "Mayor potencia significa mayor velocidad de limpieza sobre áreas más grandes — ideal para entornos de producción.",
+      options: ["1.5 kW — óxido y recubrimientos, limpieza general", "2 kW — escamas de laminación, recubrimientos gruesos, línea de producción", "3 kW — descascarado industrial de alta velocidad"],
+      note: "Mayor potencia significa mayor velocidad de limpieza sobre áreas más grandes — ideal para entornos de producción 24/7.",
     },
     {
       label: "Modo de Entrega",
-      options: ["Cabezal de escaneo portátil (50W–200W)", "Cabezal de escaneo automatizado fijo", "Integración para brazo robótico"],
+      options: ["Cabezal de escaneo manual", "Cabezal de escaneo automatizado fijo", "Integración para brazo robótico"],
       note: "El portátil es mejor para reparación en campo y formas personalizadas. Los cabezales de escaneo automatizados se integran en líneas de producción.",
     },
     {
@@ -86,15 +85,15 @@ const es: ProductPageData = {
     { feature: "Costo inicial del equipo", ours: "Mayor", theirs: "Menor" },
   ],
   relatedProducts: [
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Máquina Soldadora Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Cortadora Láser de Plancha", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte", imageId: "/images/fiber-laser-hero.webp" },
     { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
     { name: "Brazo de Soldadura Colaborativo", href: "/automation/collaborative-welding-arm", tag: "Automatización", imageId: "/images/cobot-welding-hero-2.webp" },
   ],
   faqs: [
     {
       question: "¿Puede la limpieza láser eliminar completamente el óxido pesado?",
-      answer: "Sí. Los sistemas de 200W y 500W eliminan el óxido pesado y las escamas de laminación en una sola pasada en la mayoría de las secciones de acero al carbono. Para capas de corrosión extremadamente gruesas (>2 mm), pueden requerirse múltiples pasadas. El láser pulsado vaporiza el óxido de hierro mientras el acero subyacente refleja la energía.",
+      answer: "Sí. Los sistemas de 2 kW y 3 kW eliminan el óxido pesado y las escamas de laminación en una sola pasada en la mayoría de las secciones de acero al carbono. Para capas de corrosión extremadamente gruesas (>2 mm), pueden requerirse múltiples pasadas. El láser de fibra vaporiza el óxido de hierro mientras el acero subyacente refleja la energía.",
     },
     {
       question: "¿Es efectiva la limpieza láser como preparación previa a la soldadura?",
@@ -102,11 +101,11 @@ const es: ProductPageData = {
     },
     {
       question: "¿Puede eliminar pintura en polvo y pintura de forma selectiva?",
-      answer: "Sí. Ajustando la frecuencia de pulso y la densidad de energía, el láser puede eliminar por ablación una capa de recubrimiento sin marcar el sustrato. Esto es útil para eliminar pintura de extrusiones de aluminio para re-anodización, quitar recubrimiento en polvo para soldadura de reparación o limpiar selectivamente una superficie pintada sin enmascarar áreas adyacentes.",
+      answer: "Sí. Ajustando los parámetros del láser y la densidad de energía, el láser puede eliminar por ablación una capa de recubrimiento sin marcar el sustrato. Esto es útil para eliminar pintura de extrusiones de aluminio para re-anodización, quitar recubrimiento en polvo para soldadura de reparación o limpiar selectivamente una superficie pintada sin enmascarar áreas adyacentes.",
     },
     {
       question: "¿Qué precauciones de seguridad se requieren?",
-      answer: "Los sistemas de limpieza láser son FDA Clase IV. Los requisitos obligatorios incluyen gafas de seguridad láser apropiadas (OD 5+ a 1064 nm) para el operador y cualquier persona en la línea de visión, un extractor de humos funcionando en todo momento, y señalización apropiada. VTM proporciona un paquete completo de inicio de seguridad con cada sistema.",
+      answer: "Los sistemas de limpieza láser son FDA Clase IV. Los requisitos obligatorios incluyen gafas de seguridad láser apropiadas (OD 5+ a 1080 nm) para el operador y cualquier persona en la línea de visión, un extractor de humos funcionando en todo momento, y señalización apropiada. VTM proporciona un paquete completo de inicio de seguridad con cada sistema.",
     },
     {
       question: "¿Cómo se compara el costo operativo con el granallado?",
@@ -114,7 +113,7 @@ const es: ProductPageData = {
     },
     {
       question: "¿Puede el sistema integrarse en una línea de producción automatizada?",
-      answer: "Sí. Los sistemas de 200W y 500W están disponibles con un paquete de integración de automatización que incluye soportes de montaje, control Ethernet industrial y patrones de escaneo configurables. El láser puede ser activado por señales PLC para limpiar zonas específicas a medida que las piezas avanzan por una línea de transportador.",
+      answer: "Sí. Los sistemas de 2 kW y 3 kW están disponibles con un paquete de integración de automatización que incluye soportes de montaje, control Ethernet industrial y patrones de escaneo configurables. El láser puede ser activado por señales PLC para limpiar zonas específicas a medida que las piezas avanzan por una línea de transportador.",
     },
   ],
 };

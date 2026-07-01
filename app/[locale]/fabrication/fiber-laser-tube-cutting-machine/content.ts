@@ -4,7 +4,7 @@ const es: ProductPageData = {
   category: "Fabricación",
   slug: "fiber-laser-tube-cutting-machine",
   machineName: "Máquina de Corte Láser de Tubos",
-  heroSubheadline: "Series VTM-T y VTM-MT. 1.5–6 kW, longitudes de tubo hasta 9 m, perfiles redondos hasta 220 mm. Corta tubos redondos, cuadrados, rectangulares, ángulo, canal, viga H — con precisión de ±0.05 mm en cada corte.",
+  heroSubheadline: "Potencias de 1,5 a 12 kW y configuraciones de 6 a 24 m de largo. Con cabezales autofoco, corte biselado y sistemas automáticos de carga y descarga. Diseñadas para cortar perfiles abiertos, cerrados y vigas, con alta velocidad y sin desperdicio de material.",
   heroImageId: "/images/fiber-laser-tube-hero.webp",
   features: [
     { number: "01", headline: "Redondo, Cuadrado, Rectangular, Estructural — Una Sola Máquina", body: "Los láseres de tubo VTM manejan toda la gama de perfiles estructurales: tubo redondo hasta 220 mm de diámetro, cuadrado hasta 160×160 mm, rectangular, ángulo, canal C, viga I y viga H. Una sola configuración cubre la variedad geométrica de un trabajo típico sin cambios de herramienta entre perfiles.", spec: { label: "Máx. Redondo", value: "220 mm (8.7\")" }, imageId: "/images/fiber-laser-tube-feature-01-profiles.webp" },
@@ -58,9 +58,9 @@ const es: ProductPageData = {
     { feature: "Mano de obra por pieza (producción estructural)", ours: "Baja — la máquina funciona desatendida", theirs: "Alta — operador presente en cada pieza" },
   ],
   relatedProducts: [
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Chapa", imageId: "/images/fiber-laser-hero.webp" },
-    { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.webp" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Cortadora Láser de Plancha", href: "/fabrication/fiber-laser-cutting-machine", tag: "Corte de Plancha", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Láser Combinado Plancha y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.webp" },
+    { name: "Máquina Soldadora Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
     { name: "Plegadora CNC", href: "/fabrication/cnc-press-brake", tag: "Plegado", imageId: "/images/cnc-press-brake-hero.webp" },
   ],
   faqs: [
@@ -69,7 +69,7 @@ const es: ProductPageData = {
     { question: "¿Cuál es el espesor mínimo de pared que puede cortar?", answer: "El láser de tubos corta tubería de pared delgada hasta aproximadamente 1 mm (0.04\") de pared. Para ductos HVAC y estructura liviana, la versión de 1.5 kW maneja pared delgada a alta velocidad con calidad de borde limpio." },
     { question: "¿Puede manejar barras estructurales completas de 20 o 24 pies?", answer: "La plataforma extendida VTM-MT maneja hasta 9 m (aproximadamente 30 ft) sin reposicionamiento. Para stock estructural estándar de 20 ft (6 m), el VTM-T es la opción adecuada." },
     { question: "¿Necesito cambiar mordazas al cambiar entre tubo redondo y cuadrado?", answer: "No. Las mordazas neumáticas autocentrantes se adaptan a perfiles redondos, cuadrados y rectangulares dentro de su rango de tamaño nominal. El cambio de redondo a cuadrado toma segundos — simplemente cargue la siguiente pieza." },
-    { question: "¿Se puede combinar con la máquina de chapa plana?", answer: "Sí — VTM también ofrece el VTM-ST Láser Combinado Chapa y Tubo, que corta tanto chapa plana como tubo en una sola máquina. Ideal para talleres que necesitan ambas capacidades pero no pueden justificar el espacio o la inversión para dos máquinas separadas." },
+    { question: "¿Se puede combinar con la máquina de plancha plana?", answer: "Sí — VTM también ofrece el VTM-ST Láser Combinado Plancha y Tubo, que corta tanto plancha plana como tubo en una sola máquina. Ideal para talleres que necesitan ambas capacidades pero no pueden justificar el espacio o la inversión para dos máquinas separadas." },
   ],
 };
 

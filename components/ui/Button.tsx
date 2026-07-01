@@ -19,6 +19,7 @@ type ButtonAsLink = ButtonBaseProps & {
   href: string;
   target?: string;
   rel?: string;
+  download?: boolean | string;
   className?: string;
   children?: React.ReactNode;
 };
@@ -67,12 +68,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     } = props as ButtonAsButton & { arrow?: boolean };
 
     if ((props as ButtonAsLink).href !== undefined) {
-      const { href, target, rel } = props as ButtonAsLink;
+      const { href, target, rel, download } = props as ButtonAsLink;
       return (
         <Link
           href={href}
           target={target}
           rel={rel}
+          download={download}
           className={buildClassName(variant, size, arrow, className)}
         >
           {children}

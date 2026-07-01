@@ -44,7 +44,6 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-white/70">
               <li><Link href="/automation/collaborative-welding-arm" className="hover:text-white transition-colors">{t("cobotWelding")}</Link></li>
-              <li><Link href="/automation/industrial-welding-arm" className="hover:text-white transition-colors">{t("industrialWelding")}</Link></li>
             </ul>
           </div>
           <div>
@@ -65,9 +64,9 @@ export function Footer() {
               <li><Link href="/support" className="hover:text-white transition-colors">{t("supportPage")}</Link></li>
             </ul>
             <div className="mt-8 space-y-2 text-sm text-white/70">
-              <p>+56 9 0000 0000</p>
-              <p>info@vtmaquinarias.cl</p>
-              <p>Chile</p>
+              <p><a href="tel:+56999171017" className="hover:text-white transition-colors">+56 9 9917 1017</a></p>
+              <p><a href="mailto:contacto@vtmaquinarias.cl" className="hover:text-white transition-colors">contacto@vtmaquinarias.cl</a></p>
+              <p>La Florida, Santiago, Chile</p>
             </div>
           </div>
         </div>
@@ -75,13 +74,15 @@ export function Footer() {
         {/* Social */}
         <div className="flex gap-4 mb-8">
           {[
-            { label: "LinkedIn", href: "#" },
-            { label: "YouTube", href: "#" },
-            { label: "Instagram", href: "#" },
+            { label: "LinkedIn", href: "https://cl.linkedin.com/company/vt-maquinarias" },
+            { label: "YouTube", href: "https://www.youtube.com/@VTMaquinariascl" },
+            { label: "Instagram", href: "https://www.instagram.com/vtmaquinariascl/" },
           ].map(({ label, href }) => (
             <a
               key={label}
               href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={label}
               className="text-xs font-semibold tracking-widest text-white/40 hover:text-white uppercase transition-colors"
             >

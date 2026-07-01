@@ -52,7 +52,7 @@ export function GenericSpecsTable({ specs }: { specs: Spec[] }) {
               unit === u ? "bg-vtm-dark text-white" : "text-vtm-gray-mid hover:text-vtm-dark"
             }`}
           >
-            {u}
+            {u === "metric" ? "Métrico" : "Imperial"}
           </button>
         ))}
       </div>
@@ -61,10 +61,10 @@ export function GenericSpecsTable({ specs }: { specs: Spec[] }) {
           <thead>
             <tr className="bg-vtm-gray-light border-b border-vtm-gray-border">
               <th className="text-left px-4 py-3 font-semibold text-vtm-dark text-xs tracking-wider uppercase">
-                Specification
+                Especificación
               </th>
               <th className="text-left px-4 py-3 font-semibold text-vtm-dark text-xs tracking-wider uppercase">
-                Value
+                Valor
               </th>
             </tr>
           </thead>

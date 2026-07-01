@@ -3,7 +3,7 @@ import type { ProductPageData } from "@/components/product/ProductPageTemplate";
 const es: ProductPageData = {
   category: "Fabricación",
   slug: "enclosed-fiber-laser-cutting-machine",
-  machineName: "Cortadora Láser de Chapa Encapsulada",
+  machineName: "Cortadora Láser de Plancha Encapsulada",
   heroSubheadline: "VTM-PE y VTM-SE. Clase de Seguridad Láser 1 — el encapsulado completo elimina la exposición al peligro láser para todos los que están fuera de la máquina. Misma fuente Raycus, guías HIWIN y CNC CypCut que la línea de bastidor abierto, en una carcasa con clasificación de seguridad.",
   heroImageId: "1518770660439-4636190af475",
   features: [
@@ -24,7 +24,7 @@ const es: ProductPageData = {
     { label: "Servomotor", imperial: "Servo Fuji Bus", metric: "Servo Fuji Bus" },
     { label: "Guías Lineales", imperial: "Series HIWIN 20–30", metric: "Series HIWIN 20–30" },
     { label: "Precisión de Posicionamiento", imperial: "±0.002\"", metric: "±0.05 mm" },
-    { label: "Velocidad Máxima de Corte", imperial: "hasta 787 in/min (chapa delgada)", metric: "hasta 20 m/min (chapa delgada)" },
+    { label: "Velocidad Máxima de Corte", imperial: "hasta 787 in/min (plancha delgada)", metric: "hasta 20 m/min (plancha delgada)" },
     { label: "Espesor Máx. — Acero Carbono (3 kW)", imperial: "0.5\"", metric: "12 mm" },
     { label: "Espesor Máx. — Acero Carbono (6 kW)", imperial: "0.75\"", metric: "20 mm" },
     { label: "Espesor Máx. — Acero Inoxidable (3 kW)", imperial: "0.25\"", metric: "6 mm" },
@@ -37,7 +37,7 @@ const es: ProductPageData = {
   videoHeadline: "En Acción",
   configOptions: [
     { label: "Modelo de Encapsulado", options: ["VTM-PE — Encapsulado Protector", "VTM-SE — Encapsulado de Seguridad Industrial"], note: "VTM-PE para formatos más pequeños y menor potencia. VTM-SE para escala de producción completa con mesas más grandes y mayor potencia." },
-    { label: "Potencia Láser", options: ["1.5 kW", "3 kW", "6 kW"], note: "1.5–3 kW cubre chapa delgada y estructura liviana. 6 kW amplía el rango de materiales y aumenta el rendimiento." },
+    { label: "Potencia Láser", options: ["1.5 kW", "3 kW", "6 kW"], note: "1.5–3 kW cubre plancha delgada y estructura liviana. 6 kW amplía el rango de materiales y aumenta el rendimiento." },
     { label: "Tamaño de Mesa", options: ["4′×4′ (1313)", "5′×10′ (3015)", "4′×20′ (4020)"], note: "1313 es el formato pequeño estándar para piezas de precisión. 3015 es el tamaño de producción más común." },
     { label: "Extracción de Humos", options: ["Puerto de ducto 6\" (estándar — conecte extracción del taller)", "Unidad de filtro de cartucho integrada (opcional)"], note: "Si su instalación no tiene extracción centralizada de humos, la unidad de filtro de cartucho integrada lo gestiona localmente." },
   ],
@@ -56,10 +56,10 @@ const es: ProductPageData = {
     { feature: "Ideal para", ours: "Uso mixto, oficinas cercanas, capacitación, I+D", theirs: "Taller de fabricación dedicado, producción de alto volumen" },
   ],
   relatedProducts: [
-    { name: "Cortadora Láser de Chapa", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.webp" },
-    { name: "Láser Combinado Chapa y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.webp" },
+    { name: "Cortadora Láser de Plancha", href: "/fabrication/fiber-laser-cutting-machine", tag: "Bastidor Abierto", imageId: "/images/fiber-laser-hero.webp" },
+    { name: "Láser Combinado Plancha y Tubo", href: "/fabrication/sheet-tube-laser-cutting-machine", tag: "Combinada", imageId: "/images/sheet-tube-combo-hero.webp" },
     { name: "Máquina Láser 4 en 1", href: "/fabrication/4-in-1-laser-machine", tag: "Manual", imageId: "/images/4in1-laser-hero-2.webp" },
-    { name: "Máquina de Soldadura Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
+    { name: "Máquina Soldadora Láser", href: "/fabrication/4-in-1-laser-machine", tag: "Soldadura", imageId: "/images/4in1-laser-hero-2.webp" },
   ],
   faqs: [
     { question: "¿Qué significa realmente la Clase de Seguridad Láser 1?", answer: "La Clase 1 significa que el nivel de emisión accesible es seguro en todas las condiciones razonablemente previsibles — cuando la máquina opera normalmente con el encapsulado cerrado, nadie fuera de la máquina está expuesto a radiación láser peligrosa. No se requieren gafas de seguridad láser para operadores ni personas cercanas. Es la misma clase que un reproductor de CD o una impresora láser." },

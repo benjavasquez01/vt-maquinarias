@@ -1,3 +1,4 @@
+import { AfterHoursNote } from "@/components/contact/AfterHoursNote";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import type { Metadata } from "next";
@@ -47,8 +48,11 @@ export default async function ContactPage({
                   </div>
                   <div>
                     <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1">{c.info.email.label}</p>
-                    <a href="mailto:info@vtmaquinarias.cl" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
-                      info@vtmaquinarias.cl
+                    <a href="mailto:dvasquez@vtmaquinarias.cl" className="block font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                      dvasquez@vtmaquinarias.cl
+                    </a>
+                    <a href="mailto:contacto@vtmaquinarias.cl" className="block font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                      contacto@vtmaquinarias.cl
                     </a>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">{c.info.email.responseTime}</p>
                   </div>
@@ -61,10 +65,11 @@ export default async function ContactPage({
                   </div>
                   <div>
                     <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1">{c.info.phone.label}</p>
-                    <a href="tel:+56900000000" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
-                      +56 9 0000 0000
+                    <a href="tel:+56999171017" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                      +56 9 9917 1017
                     </a>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">{c.info.phone.hours}</p>
+                    <AfterHoursNote text={c.info.afterHoursNote} />
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -80,8 +85,9 @@ export default async function ContactPage({
                       VT Maquinarias SpA
                     </p>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">
-                      Av. Industrial 1200<br/>
-                      Santiago, Chile
+                      Los Cerezos 5890<br/>
+                      8270199 La Florida<br/>
+                      Región Metropolitana, Chile
                     </p>
                   </div>
                 </div>
@@ -106,16 +112,17 @@ export default async function ContactPage({
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="mt-10 bg-vtm-gray-light border border-vtm-gray-border h-56 flex items-center justify-center">
-                <div className="text-center">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="mx-auto mb-3 text-vtm-gray-mid" aria-hidden="true">
-                    <path d="M16 3a9 9 0 00-9 9c0 6 9 17 9 17s9-11 9-17a9 9 0 00-9-9z" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="16" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                  </svg>
-                  <p className="text-vtm-gray-mid text-sm font-body">{c.info.mapPlaceholder}</p>
-                  <p className="text-vtm-gray-mid text-xs mt-1">Santiago, Chile</p>
-                </div>
+              {/* Map */}
+              <div className="mt-10 border border-vtm-gray-border h-56 overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11694.802461953605!2d-70.5766812!3d-33.5138221!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cfb5c3f29a7b%3A0x550d6d2d6db4c6fe!2sVT%20Maquinarias%20Chile!5e1!3m2!1ses-419!2scl!4v1782852348141!5m2!1ses-419!2scl"
+                  title="Ubicación VT Maquinarias"
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
               </div>
             </div>
 

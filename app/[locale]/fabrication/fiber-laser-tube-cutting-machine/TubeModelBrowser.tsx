@@ -10,7 +10,8 @@ import { ImageGallery } from "@/components/ui/ImageGallery";
 const SERIES_FRAMES: Record<string, string[]> = {
   mt: ["/images/tube-mt-1.webp", "/images/tube-mt-2.webp", "/images/tube-mt-3.webp", "/images/tube-mt-4.webp"],
   t: ["/images/tube-t-1.webp", "/images/tube-t-2.webp", "/images/tube-t-3.webp", "/images/tube-t-4.webp", "/images/tube-t-5.webp", "/images/tube-t-6.webp", "/images/tube-t-7.webp"],
-  at: ["/images/tube-at-1.webp", "/images/tube-at-2.webp", "/images/tube-at-3.webp", "/images/tube-at-4.webp"],
+  at3: ["/images/tube-at3-1.webp", "/images/tube-at3-2.webp", "/images/tube-at3-3.webp"],
+  at4: ["/images/tube-at4-1.webp", "/images/tube-at4-2.webp", "/images/tube-at4-3.webp"],
 };
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -45,46 +46,102 @@ type Model = {
 
 const SPECS: Record<string, ModelSpecs> = {
   mt: {
-    headers: ["VTM-6011MT", "VTM-6016MT"],
+    headers: ["VTM-6012MT"],
     rows: [
-      { type: "spec", label: "Min Diameter", metric: ["Φ10 mm", "Φ20 mm"], imperial: ["Φ0.4\"", "Φ0.8\""] },
-      { type: "spec", label: "Max Diameter", metric: ["Φ110 mm", "Φ160 mm"], imperial: ["Φ4.3\"", "Φ6.3\""] },
-      { type: "spec", label: "Laser Power", metric: ["1500 W, 2000 W", "1500 W, 2000 W"], imperial: ["1500 W, 2000 W", "1500 W, 2000 W"] },
-      { type: "spec", label: "Max Acceleration", metric: ["1 G", "1 G"], imperial: ["1 G", "1 G"] },
-      { type: "spec", label: "Positioning Accuracy", metric: ["±0.03 mm", "±0.03 mm"], imperial: ["±0.001\"", "±0.001\""] },
-      { type: "spec", label: "Chuck Speed", metric: ["80 r/min", "80 r/min"], imperial: ["80 r/min", "80 r/min"] },
-      { type: "spec", label: "Voltage", metric: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz"], imperial: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
+      { type: "spec", label: "Diámetro mínimo", metric: ["Φ10 mm / □10 mm"], imperial: ["Φ0.4\" / □0.4\""] },
+      { type: "spec", label: "Diámetro máximo", metric: ["Φ120 mm / □120 mm"], imperial: ["Φ4.7\" / □4.7\""] },
+      { type: "spec", label: "Potencia", metric: ["1.5 / 3 kW"], imperial: ["1.5 / 3 kW"] },
+      { type: "spec", label: "Aceleración máxima", metric: ["1 G"], imperial: ["1 G"] },
+      { type: "spec", label: "Precisión", metric: ["±0.03 mm"], imperial: ["±0.001\""] },
+      { type: "spec", label: "Velocidad del mandril", metric: ["80 r/min"], imperial: ["80 r/min"] },
+      { type: "spec", label: "Voltaje", metric: ["380 V, 3 PH, 50/60 Hz"], imperial: ["380 V, 3 PH, 50/60 Hz"] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain"],
+    upgrades: ["Extractor de humo", "Estabilizador de voltaje", "Ventana de luz de seguridad", "Compresor de tornillo 16 bar con secado (opcional)"],
   },
   t: {
-    headers: ["VTM-6024T", "VTM-6035T"],
+    headers: ["VTM-6024T", "VTM-6036T"],
     rows: [
-      { type: "spec", label: "Min Diameter", metric: ["Φ20 mm", "Φ20 mm"], imperial: ["Φ0.8\"", "Φ0.8\""] },
-      { type: "spec", label: "Max Diameter", metric: ["Φ240 mm", "Φ350 mm"], imperial: ["Φ9.4\"", "Φ13.8\""] },
-      { type: "spec", label: "Laser Power", metric: ["1500 W, 2000 W, 3000 W, 6000 W", "1500 W, 2000 W, 3000 W, 6000 W"], imperial: ["1500 W, 2000 W, 3000 W, 6000 W", "1500 W, 2000 W, 3000 W, 6000 W"] },
-      { type: "spec", label: "Max Acceleration", metric: ["1.5 G", "1.5 G"], imperial: ["1.5 G", "1.5 G"] },
-      { type: "spec", label: "Positioning Accuracy", metric: ["±0.03 mm", "±0.03 mm"], imperial: ["±0.001\"", "±0.001\""] },
-      { type: "spec", label: "Chuck Speed", metric: ["60 r/min", "60 r/min"], imperial: ["60 r/min", "60 r/min"] },
-      { type: "spec", label: "Voltage", metric: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz"], imperial: ["380V 3PH 50/60Hz", "380V 3PH 50/60Hz"] },
+      { type: "spec", label: "Diámetro mínimo",
+        metric:   ["Ø20 mm / □20 mm", "Ø20 mm / □20 mm"],
+        imperial: ["Ø0.8\" / □0.8\"", "Ø0.8\" / □0.8\""] },
+      { type: "spec", label: "Diámetro máximo",
+        metric:   ["Ø240 mm / □240 mm", "Ø360 mm / □360 mm"],
+        imperial: ["Ø9.4\" / □9.4\"",   "Ø14.2\" / □14.2\""] },
+      { type: "spec", label: "Potencia",
+        metric:   ["1.5 / 3 kW", "1.5 / 3 kW"],
+        imperial: ["1.5 / 3 kW", "1.5 / 3 kW"] },
+      { type: "spec", label: "Aceleración máxima",
+        metric:   ["1.5 G", "1.5 G"],
+        imperial: ["1.5 G", "1.5 G"] },
+      { type: "spec", label: "Precisión",
+        metric:   ["±0.03 mm", "±0.03 mm"],
+        imperial: ["±0.001\"", "±0.001\""] },
+      { type: "spec", label: "Velocidad del mandril",
+        metric:   ["60 r/min", "60 r/min"],
+        imperial: ["60 r/min", "60 r/min"] },
+      { type: "spec", label: "Voltaje",
+        metric:   ["380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz"],
+        imperial: ["380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz"] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain"],
+    upgrades: ["Extractor de humo", "Estabilizador de voltaje", "Ventana de luz de seguridad", "Compresor de tornillo 16 bar con secado (opcional)"],
   },
-  at: {
-    headers: ["VTM-6024AT"],
+  at3: {
+    headers: ["AT3-7036", "AT3-12036", "AT3-12052"],
     rows: [
-      { type: "spec", label: "Laser Power", metric: ["1500 W, 2000 W, 3000 W, 6000 W"], imperial: ["1500 W, 2000 W, 3000 W, 6000 W"] },
-      { type: "spec", label: "Total Load Capacity", metric: ["4 t"], imperial: ["8,800 lb"] },
-      { type: "spec", label: "Tube Support", metric: ["Auto Following Type"], imperial: ["Auto Following Type"] },
-      { type: "spec", label: "Max Feed Tube Diameter", metric: ["200 mm"], imperial: ["7.9\""] },
-      { type: "spec", label: "Feeding Tube Length", metric: ["6,000 mm"], imperial: ["19.7 ft"] },
-      { type: "spec", label: "First Feeding Time", metric: ["35 s"], imperial: ["35 s"] },
-      { type: "spec", label: "Cycle Loading Time", metric: ["15 s"], imperial: ["15 s"] },
+      { type: "spec", label: "Diámetro mínimo",
+        metric:   ["Ø25 mm / □25 mm", "Ø25 mm / □25 mm", "Ø40 mm / □40 mm"],
+        imperial: ["Ø1\" / □1\"",      "Ø1\" / □1\"",      "Ø1.6\" / □1.6\""] },
+      { type: "spec", label: "Diámetro máximo",
+        metric:   ["Ø360 mm / □360 mm", "Ø360 mm / □360 mm", "Ø550 mm / □550 mm"],
+        imperial: ["Ø14.2\" / □14.2\"", "Ø14.2\" / □14.2\"", "Ø21.7\" / □21.7\""] },
+      { type: "spec", label: "Velocidad del mandril",
+        metric:   ["75 r/min", "75 r/min", "30 r/min"],
+        imperial: ["75 r/min", "75 r/min", "30 r/min"] },
+      { type: "spec", label: "Aceleración máxima",
+        metric:   ["0.6 G", "0.6 G", "0.6 G"],
+        imperial: ["0.6 G", "0.6 G", "0.6 G"] },
+      { type: "spec", label: "Precisión",
+        metric:   ["±0.05 mm", "±0.05 mm", "±0.05 mm"],
+        imperial: ["±0.002\"", "±0.002\"", "±0.002\""] },
+      { type: "spec", label: "Voltaje",
+        metric:   ["380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz"],
+        imperial: ["380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz"] },
+      { type: "spec", label: "Potencia",
+        metric:   ["6 / 12 / 20 kW", "6 / 12 / 20 kW", "6 / 12 / 20 kW"],
+        imperial: ["6 / 12 / 20 kW", "6 / 12 / 20 kW", "6 / 12 / 20 kW"] },
     ],
     features: [],
-    upgrades: ["Air Conditioner", "Smoke Purifier", "Air Compressor", "Voltage Regulator", "Safety Light Curtain"],
+    upgrades: ["Aire acondicionado", "Estabilizador de voltaje", "Extractor de humo", "Compresor de tornillo 16 bar con secado (opcional)"],
+  },
+  at4: {
+    headers: ["AT4-12036", "AT4-12052"],
+    rows: [
+      { type: "spec", label: "Diámetro mínimo",
+        metric:   ["Ø25 mm / □25 mm", "Ø40 mm / □40 mm"],
+        imperial: ["Ø1\" / □1\"",      "Ø1.6\" / □1.6\""] },
+      { type: "spec", label: "Diámetro máximo",
+        metric:   ["Ø360 mm / □360 mm", "Ø550 mm / □550 mm"],
+        imperial: ["Ø14.2\" / □14.2\"", "Ø21.7\" / □21.7\""] },
+      { type: "spec", label: "Velocidad del mandril",
+        metric:   ["75 r/min", "30 r/min"],
+        imperial: ["75 r/min", "30 r/min"] },
+      { type: "spec", label: "Aceleración máxima",
+        metric:   ["0.6 G", "0.6 G"],
+        imperial: ["0.6 G", "0.6 G"] },
+      { type: "spec", label: "Precisión",
+        metric:   ["±0.05 mm", "±0.05 mm"],
+        imperial: ["±0.002\"", "±0.002\""] },
+      { type: "spec", label: "Voltaje",
+        metric:   ["380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz"],
+        imperial: ["380 V, 3 PH, 50/60 Hz", "380 V, 3 PH, 50/60 Hz"] },
+      { type: "spec", label: "Potencia",
+        metric:   ["6 / 12 / 20 kW", "6 / 12 / 20 kW"],
+        imperial: ["6 / 12 / 20 kW", "6 / 12 / 20 kW"] },
+    ],
+    features: [],
+    upgrades: ["Aire acondicionado", "Estabilizador de voltaje", "Extractor de humo", "Compresor de tornillo 16 bar con secado (opcional)"],
   },
 };
 
@@ -93,48 +150,62 @@ const SPECS: Record<string, ModelSpecs> = {
 const MODELS: Record<"en" | "es", Model[]> = {
   en: [
     {
-      id: "mt", series: "MT Series", tagline: "Tube Cutting", power: "1.5 – 2 kW", badge: "Available",
+      id: "mt", series: "MT Series", tagline: "Mini Tube", power: "1.5 – 3 kW", badge: "Available",
       image: "/images/tube-mt-1.webp",
-      description: "The MT series handles round and square tube profiles up to 160 mm diameter. Two models — VTM-6011MT and VTM-6016MT — cover light structural to medium-duty tube with 4-chuck pneumatic clamping and CypTube CNC control.",
-      bestFor: ["Round & square tube up to 160 mm", "Structural profiles and angle iron", "High-accuracy miter and cope cuts", "Light to medium wall thickness"],
+      description: "The MT series (VTM-6012MT) is VTM's mini tube fiber laser. A pneumatic chuck delivers precision and consistency, with improved mobility and cutting speed. Handles round and square tube from Φ10 to Φ120 mm.",
+      bestFor: ["High precision", "Flexible", "Efficient cutting", "Easy operation"],
       specs: SPECS.mt,
     },
     {
-      id: "t", series: "T Series", tagline: "Tube Cutting", power: "1.5 – 6 kW", badge: "Available",
+      id: "t", series: "T Series", tagline: "Standard Tube", power: "1.5 – 3 kW", badge: "Available",
       image: "/images/tube-t-1.webp",
-      description: "The T series handles round tube up to 350 mm diameter. Two models — VTM-6024T and VTM-6035T — cover medium to heavy structural tube with higher acceleration and a full power range from 1.5 to 6 kW.",
-      bestFor: ["Round tube up to 350 mm diameter", "Heavy structural sections", "High-speed production runs", "Full power range 1.5–6 kW"],
+      description: "The T series is VTM's standard tube fiber laser. Two models — VTM-6024T and VTM-6036T — handle round and square tube up to Ø360 mm, with a high-grade YYC Taiwan helical rack-and-pinion drive for maximum cut quality and a 150,000-hour source life.",
+      bestFor: ["Versatility", "Durability", "Precision", "High speed"],
       specs: SPECS.t,
     },
     {
-      id: "at", series: "AT Series", tagline: "Auto Bundle Loading", power: "1.5 – 6 kW", badge: "Available",
-      image: "/images/tube-at-1.webp",
-      description: "The AT series adds automated bundle loading to the VTM-6024AT platform. Handles up to 4 t of tube stock with auto-following support and a 15-second cycle load time — designed for unattended production runs.",
-      bestFor: ["Automated bundle infeed up to 4 t", "Unattended production runs", "Round tube up to 200 mm diameter", "High-volume repetitive jobs"],
-      specs: SPECS.at,
+      id: "at3", series: "AT3 Series", tagline: "Auto Load/Unload · 3 Chucks", power: "6 – 20 kW", badge: "Available",
+      image: "/images/tube-at3-1.webp",
+      description: "The AT3 is a tube fiber laser with automatic loading/unloading and three chucks. Heavy-duty side frame, a bevel cutting head with high-precision auto-focus, and a servo-driven movable front chuck that cuts tail-end scrap to as little as 50 mm.",
+      bestFor: ["Smart nesting", "Efficient", "Automatic loading", "Zero-waste cutting"],
+      specs: SPECS.at3,
+    },
+    {
+      id: "at4", series: "AT4 Series", tagline: "Simultaneous Load/Unload · 4 Chucks", power: "6 – 20 kW", badge: "Available",
+      image: "/images/tube-at4-1.webp",
+      description: "The AT4 is a tube fiber laser with automatic loading/unloading and four chucks. Heavy-duty build with a maintenance-free world-brand high-efficiency laser source, a high-speed cutting head with 45° bevel cutting, and cryogenically-treated precision gears.",
+      bestFor: ["Heavy-duty", "Maximum speed", "Simultaneous load & unload", "No tail-end scrap"],
+      specs: SPECS.at4,
     },
   ],
   es: [
     {
-      id: "mt", series: "Serie MT", tagline: "Corte de Tubo", power: "1.5 – 2 kW", badge: "Disponible",
+      id: "mt", series: "Serie MT", tagline: "Tubo Mini", power: "1.5 – 3 kW", badge: "Disponible",
       image: "/images/tube-mt-1.webp",
-      description: "La serie MT maneja perfiles de tubo redondo y cuadrado hasta 160 mm de diámetro. Dos modelos — VTM-6011MT y VTM-6016MT — cubren desde estructura liviana hasta tubo de uso mediano con sujeción neumática de 4 mordazas y control CNC CypTube.",
-      bestFor: ["Tubo redondo y cuadrado hasta 160 mm", "Perfiles estructurales y ángulo", "Cortes en inglete y entalle de alta precisión", "Pared delgada a espesor medio"],
+      description: "La Serie MT (VTM-6012MT) es la máquina de corte láser de tubo mini de VTM. Mandril neumático para precisión y consistencia, con movilidad y velocidad de corte mejoradas. Procesa tubo redondo y cuadrado de Φ10 a Φ120 mm.",
+      bestFor: ["Alta precisión", "Flexible", "Corte eficiente", "Fácil operación"],
       specs: SPECS.mt,
     },
     {
-      id: "t", series: "Serie T", tagline: "Corte de Tubo", power: "1.5 – 6 kW", badge: "Disponible",
+      id: "t", series: "Serie T", tagline: "Tubo Standard", power: "1.5 – 3 kW", badge: "Disponible",
       image: "/images/tube-t-1.webp",
-      description: "La serie T maneja tubo redondo hasta 350 mm de diámetro. Dos modelos — VTM-6024T y VTM-6035T — cubren tubo estructural mediano a pesado con mayor aceleración y una gama de potencia completa de 1.5 a 6 kW.",
-      bestFor: ["Tubo redondo hasta 350 mm de diámetro", "Secciones estructurales pesadas", "Producción de alta velocidad", "Gama completa de potencia 1.5–6 kW"],
+      description: "La Serie T es la máquina de corte láser de tubo standard de VTM. Dos modelos — VTM-6024T y VTM-6036T — procesan tubo redondo y cuadrado hasta Ø360 mm, con transmisión helicoidal de alta gama YYC Taiwan para máxima calidad de corte y una fuente láser de 150.000 horas de vida útil.",
+      bestFor: ["Versatilidad", "Durabilidad", "Precisión", "Alta velocidad"],
       specs: SPECS.t,
     },
     {
-      id: "at", series: "Serie AT", tagline: "Carga Automática", power: "1.5 – 6 kW", badge: "Disponible",
-      image: "/images/tube-at-1.webp",
-      description: "La serie AT agrega carga automática de paquetes a la plataforma VTM-6024AT. Maneja hasta 4 t de stock de tubos con soporte de seguimiento automático y un tiempo de ciclo de carga de 15 segundos — diseñada para producción desatendida.",
-      bestFor: ["Alimentación automática de paquetes hasta 4 t", "Producción desatendida", "Tubo redondo hasta 200 mm de diámetro", "Trabajos repetitivos de alto volumen"],
-      specs: SPECS.at,
+      id: "at3", series: "Serie AT3", tagline: "Carga/Descarga Automática · 3 Mandriles", power: "6 – 20 kW", badge: "Disponible",
+      image: "/images/tube-at3-1.webp",
+      description: "La AT3 es una máquina de corte láser de tubo con carga y descarga automática y 3 mandriles. Estructura lateral robusta para servicio pesado, cabezal biselado con auto-foco de máxima precisión y mandril frontal móvil servo-accionado que reduce la cola de material hasta 50 mm.",
+      bestFor: ["Nesting inteligente", "Eficiente", "Carga automática", "Corte sin desperdicio"],
+      specs: SPECS.at3,
+    },
+    {
+      id: "at4", series: "Serie AT4", tagline: "Carga/Descarga Simultánea · 4 Mandriles", power: "6 – 20 kW", badge: "Disponible",
+      image: "/images/tube-at4-1.webp",
+      description: "La AT4 es una máquina de corte láser de tubo con carga y descarga automática y 4 mandriles. Servicio pesado, con fuente láser de alta eficiencia de marca mundial libre de mantenimiento, cabezal de corte de máxima velocidad con biselado a 45° y engranajes de precisión tratados criogénicamente.",
+      bestFor: ["Servicio pesado", "Máxima velocidad", "Carga y descarga simultánea", "Sin cola de material"],
+      specs: SPECS.at4,
     },
   ],
 };
@@ -143,24 +214,24 @@ const LABELS = {
   en: {
     productLine: "Product Line",
     chooseYourSeries: "Choose Your Series",
-    subheadline: "Three tube laser series. CypTube CNC, HIWIN rails, and Raycus source — configured for different tube sizes and production requirements.",
+    subheadline: "Four tube laser series. CypTube CNC, HIWIN rails, and Raycus source — configured for different tube sizes and production requirements.",
     bestFor: "Best for",
     quote: "Request a Quote",
     viewSpecs: "View Specs",
     specsSection: "Technical Specifications",
     specsHeadline: "Full Specs",
-    upgrades: "Available Upgrades",
+    upgrades: "Includes",
   },
   es: {
     productLine: "Línea de Productos",
     chooseYourSeries: "Elija su Serie",
-    subheadline: "Tres series de láseres de tubo. CNC CypTube, guías HIWIN y fuente Raycus — configurados para diferentes tamaños de tubo y requisitos de producción.",
+    subheadline: "Cuatro series de láseres de tubo. CNC CypTube, guías HIWIN y fuente Raycus — configurados para diferentes tamaños de tubo y requisitos de producción.",
     bestFor: "Ideal para",
     quote: "Solicitar Cotización",
     viewSpecs: "Ver Especificaciones",
     specsSection: "Especificaciones Técnicas",
     specsHeadline: "Especificaciones Completas",
-    upgrades: "Mejoras Disponibles",
+    upgrades: "Incluye",
   },
 };
 
@@ -391,11 +462,17 @@ function TubeSpecs({
             {labels.upgrades}
           </p>
           <div className="flex flex-wrap gap-2 justify-center">
-            {specs.upgrades.map((u) => (
-              <span key={u} className="text-xs border border-vtm-gray-border px-3 py-1.5 text-vtm-dark">
-                {u}
-              </span>
-            ))}
+            {specs.upgrades.map((u) => {
+              const optional = /opcional|optional/i.test(u);
+              return (
+                <span
+                  key={u}
+                  className={`text-xs border px-3 py-1.5 ${optional ? "border-vtm-red text-vtm-red" : "border-vtm-gray-border text-vtm-dark"}`}
+                >
+                  {u}
+                </span>
+              );
+            })}
           </div>
         </div>
       )}
