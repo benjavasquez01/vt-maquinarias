@@ -434,6 +434,20 @@ const LABELS = {
 
 const VISIBLE = 3;
 
+// Columns visible at once in the spec carousel: 1 on phones, VISIBLE on md+.
+// Anything narrower than ~250px per column wraps spec values mid-word.
+function useVisibleCols() {
+  const [visible, setVisible] = useState(VISIBLE);
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const apply = () => setVisible(mq.matches ? 1 : VISIBLE);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+  return visible;
+}
+
 const UPGRADE_TRANSLATIONS_ES: Record<string, string> = {
   "Fuji motors": "Motores Fuji",
   "Taiwan YYC rack": "Cremallera YYC Taiwán",
@@ -475,14 +489,15 @@ function AppleSpecs({
   setUnit: (u: Unit) => void;
 }) {
   const labels = LABELS[locale];
+  const visible = useVisibleCols();
   const colCount = specs.headers.length;
-  const hasCarousel = colCount > VISIBLE;
+  const hasCarousel = colCount > visible;
 
   // Infinite-loop carousel using clone-tape technique.
-  // Track layout: [VISIBLE clones from end] [actual cols] [VISIBLE clones from start]
+  // Track layout: [visible clones from end] [actual cols] [visible clones from start]
   // This means every transition is a smooth slide — the snap happens invisibly at loop boundaries.
-  const clonesBefore = VISIBLE; // how many clone cols prepended
-  const totalTrackCols = colCount + clonesBefore + VISIBLE;
+  const clonesBefore = visible; // how many clone cols prepended
+  const totalTrackCols = colCount + clonesBefore + visible;
 
   const mod = (n: number) => ((n % colCount) + colCount) % colCount;
 
@@ -490,12 +505,12 @@ function AppleSpecs({
   const trackData: number[] = [
     ...Array.from({ length: clonesBefore }, (_, i) => mod(colCount - clonesBefore + i)),
     ...Array.from({ length: colCount }, (_, i) => i),
-    ...Array.from({ length: VISIBLE }, (_, i) => i),
+    ...Array.from({ length: visible }, (_, i) => i),
   ];
 
-  // Each col = 1/totalTrackCols of track width = 1/VISIBLE of container width
+  // Each col = 1/totalTrackCols of track width = 1/visible of container width
   const colWidthPct = 100 / totalTrackCols; // % of track
-  const trackWidthPct = (totalTrackCols / VISIBLE) * 100; // % of container
+  const trackWidthPct = (totalTrackCols / visible) * 100; // % of container
 
   // translateX to show actual col `p` at leftmost visible position (% of track itself)
   const trackXForPos = (p: number) => -((clonesBefore + p) * colWidthPct);
@@ -519,7 +534,7 @@ function AppleSpecs({
       trackRef.current.style.transform = `translateX(${trackXForPos(0)}%)`;
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [specs]);
+  }, [specs, visible]);
 
   const navigate = (direction: "left" | "right") => {
     if (animatingRef.current || !hasCarousel) return;

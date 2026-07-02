@@ -316,7 +316,7 @@ export function Navbar() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-vtm-gray-border">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-8">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-3 sm:gap-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -324,7 +324,7 @@ export function Navbar() {
               alt="VT Maquinarias"
               width={1591}
               height={511}
-              className="h-14 w-auto"
+              className="h-10 sm:h-14 w-auto"
               priority
             />
           </Link>
@@ -343,19 +343,18 @@ export function Navbar() {
           </nav>
 
           {/* Right controls */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1 sm:gap-4 flex-shrink-0">
             <Button
               onClick={() => openAgent("quote")}
               variant="primary"
               size="sm"
-              className="hidden sm:inline-flex"
             >
               {t("requestQuote")}
             </Button>
 
             {/* Hamburger */}
             <button
-              className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
+              className="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-1.5 flex-shrink-0 -mr-2"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
               aria-expanded={menuOpen}

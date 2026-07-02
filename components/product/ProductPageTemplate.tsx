@@ -136,13 +136,13 @@ export function ProductPageTemplate({ data, children, afterSpecs, featureSlots, 
     <>
       {/* ── Block 1: Hero ─────────────────────────────────────────── */}
       {!hideHero && (
-        <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-24 overflow-hidden">
+        <section className="relative bg-vtm-dark min-h-screen flex items-end pb-12 pt-[42vh] md:pb-16 md:pt-24 overflow-hidden">
           <div className="absolute inset-0" aria-hidden="true">
             <Image
               src={heroImageId.startsWith("/") ? heroImageId : `https://images.unsplash.com/photo-${heroImageId}?w=1600&q=80&fit=crop`}
               alt=""
               fill
-              className={`${heroImageFit === "contain" ? "object-contain" : "object-cover"} opacity-70`}
+              className={`${heroImageFit === "contain" ? "object-contain" : "vtm-hero-machine-image"} opacity-70`}
               priority
               sizes="100vw"
             />
@@ -155,10 +155,10 @@ export function ProductPageTemplate({ data, children, afterSpecs, featureSlots, 
             )}
           </div>
 
-          <div className={`relative z-10 w-full px-6 lg:px-10 ${heroAlign === "right" ? "flex justify-end" : "max-w-screen-xl mx-auto"}`}>
-            <div className={heroAlign === "right" ? "max-w-2xl text-right mr-8 lg:mr-24" : ""}>
+          <div className={`relative z-10 w-full px-6 lg:px-10 ${heroAlign === "right" ? "md:flex md:justify-end" : "max-w-screen-xl mx-auto"}`}>
+            <div className={heroAlign === "right" ? "max-w-2xl md:text-right md:mr-8 lg:mr-24" : ""}>
               <SectionLabel light className="mb-4">{category}</SectionLabel>
-              <h1 className={`font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-3 ${heroAlign === "right" ? "" : "max-w-4xl"}`}>
+              <h1 className={`font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-3 ${heroAlign === "right" ? "" : "max-w-4xl"}`}>
                 {machineName}
               </h1>
               {heroSubtitle && (
@@ -178,11 +178,11 @@ export function ProductPageTemplate({ data, children, afterSpecs, featureSlots, 
         <ProductModesBrowser
           modes={modes}
           slug={slug}
-          sectionLabel={modesBrowserLabel ?? "Operating Modes"}
-          headline={modesBrowserHeadline ?? "Choose Your Mode"}
-          quoteLabel={modesBrowserQuoteLabel ?? "Request a Quote"}
-          viewSpecsLabel={modesBrowserSpecsLabel ?? "View Specs"}
-          bestForLabel={modesBrowserBestForLabel ?? "Best for"}
+          sectionLabel={modesBrowserLabel ?? "Modos de Operación"}
+          headline={modesBrowserHeadline ?? "Elija su Modo"}
+          quoteLabel={modesBrowserQuoteLabel ?? "Solicitar Cotización"}
+          viewSpecsLabel={modesBrowserSpecsLabel ?? "Ver Especificaciones"}
+          bestForLabel={modesBrowserBestForLabel ?? "Ideal para"}
         />
       )}
 

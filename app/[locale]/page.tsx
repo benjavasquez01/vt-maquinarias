@@ -75,9 +75,11 @@ export default function HomePage() {
               <h2 className="font-headline text-3xl md:text-4xl font-bold text-vtm-dark max-w-xl leading-tight">
                 {t("industries.heading")}
               </h2>
-              <Button href="/solutions" variant="ghost" size="md" arrow className="hidden md:inline-flex flex-shrink-0">
-                {t("industries.allSolutions")}
-              </Button>
+              <div className="hidden md:block flex-shrink-0">
+                <Button href="/solutions" variant="ghost" size="md" arrow>
+                  {t("industries.allSolutions")}
+                </Button>
+              </div>
             </div>
           </FadeIn>
         </div>
@@ -127,9 +129,11 @@ export default function HomePage() {
                   {t("blog.heading")}
                 </h2>
               </div>
-              <Button href="/blog" variant="ghost" size="md" arrow className="hidden md:inline-flex flex-shrink-0">
-                {t("blog.allArticles")}
-              </Button>
+              <div className="hidden md:block flex-shrink-0">
+                <Button href="/blog" variant="ghost" size="md" arrow>
+                  {t("blog.allArticles")}
+                </Button>
+              </div>
             </div>
           </FadeIn>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">

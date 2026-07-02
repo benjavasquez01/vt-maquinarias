@@ -132,7 +132,7 @@ export function ContactMiniForm() {
             name="email"
             type="email"
             required
-            placeholder="your@email.com"
+            placeholder="su@correo.com"
             className="w-full bg-white/5 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-vtm-red transition-colors"
           />
         </div>

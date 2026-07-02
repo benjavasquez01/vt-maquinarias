@@ -77,7 +77,7 @@ export function ContactForm() {
             name="email"
             type="email"
             required
-            placeholder="your@email.com"
+            placeholder="su@correo.com"
             className="w-full border border-vtm-gray-border px-4 py-3 text-sm text-vtm-dark placeholder-vtm-gray-mid focus:outline-none focus:border-vtm-dark transition-colors"
           />
         </div>

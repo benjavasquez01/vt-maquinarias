@@ -234,6 +234,20 @@ const LABELS = {
 
 const VISIBLE = 3;
 
+// Columns visible at once in the spec carousel: 1 on phones, VISIBLE on md+.
+// Anything narrower than ~250px per column wraps spec values mid-word.
+function useVisibleCols() {
+  const [visible, setVisible] = useState(VISIBLE);
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const apply = () => setVisible(mq.matches ? 1 : VISIBLE);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+  return visible;
+}
+
 function PressBrakeSpecs({
   specs,
   locale,
@@ -247,20 +261,21 @@ function PressBrakeSpecs({
 }) {
   const labels = LABELS[locale];
   const colCount = specs.headers.length;
-  const hasCarousel = colCount > VISIBLE;
+  const visible = useVisibleCols();
+  const hasCarousel = colCount > visible;
 
-  const clonesBefore = VISIBLE;
-  const totalTrackCols = colCount + clonesBefore + VISIBLE;
+  const clonesBefore = visible;
+  const totalTrackCols = colCount + clonesBefore + visible;
   const mod = (n: number) => ((n % colCount) + colCount) % colCount;
 
   const trackData: number[] = [
     ...Array.from({ length: clonesBefore }, (_, i) => mod(colCount - clonesBefore + i)),
     ...Array.from({ length: colCount }, (_, i) => i),
-    ...Array.from({ length: VISIBLE }, (_, i) => i),
+    ...Array.from({ length: visible }, (_, i) => i),
   ];
 
   const colWidthPct = 100 / totalTrackCols;
-  const trackWidthPct = (totalTrackCols / VISIBLE) * 100;
+  const trackWidthPct = (totalTrackCols / visible) * 100;
   const trackXForPos = (p: number) => -((clonesBefore + p) * colWidthPct);
 
   const [pos, setPos] = useState(0);
@@ -281,7 +296,7 @@ function PressBrakeSpecs({
       trackRef.current.style.transform = `translateX(${trackXForPos(0)}%)`;
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [specs]);
+  }, [specs, visible]);
 
   const navigate = (direction: "left" | "right") => {
     if (animatingRef.current || !hasCarousel) return;

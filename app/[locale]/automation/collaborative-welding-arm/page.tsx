@@ -35,32 +35,32 @@ export default async function CollaborativeWeldingArmPage({
   return (
     <>
       {/* ── Block 1: Dark Cinematic Hero ────────────────────────────── */}
-      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-24 overflow-hidden">
+      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-12 pt-[42vh] md:pb-16 md:pt-24 overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
           <Image
             src="/images/cobot-welding-hero-2.webp"
             alt=""
             fill
-            className="object-cover opacity-70"
+            className="vtm-hero-machine-image opacity-70"
             priority
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent from-40% to-vtm-dark/85" />
         </div>
 
-        <div className="relative z-10 w-full px-6 lg:px-10 flex justify-end">
-          <div className="max-w-2xl text-right mr-8 lg:mr-24">
-            <div className="flex items-center justify-end gap-4 mb-6">
+        <div className="relative z-10 w-full px-6 lg:px-10 md:flex md:justify-end">
+          <div className="max-w-2xl md:text-right md:mr-8 lg:mr-24">
+            <div className="flex flex-wrap items-center gap-4 mb-6 md:justify-end">
               <SectionLabel light>{c.hero.categoryLabel}</SectionLabel>
               <Badge>{c.hero.badge}</Badge>
             </div>
-            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6 whitespace-pre-line">
+            <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6 whitespace-pre-line">
               {c.hero.headline}
             </h1>
             <p className="text-white/60 text-lg md:text-xl mb-10 leading-relaxed">
               {c.hero.subheadline}
             </p>
-            <div className="flex flex-col sm:flex-row justify-end gap-4">
+            <div className="flex flex-col sm:flex-row md:justify-end gap-4">
               <Button href="/quote?machine=collaborative-welding-arm" variant="primary" size="lg">
                 {c.hero.cta1}
               </Button>

@@ -23,19 +23,19 @@ export default async function FabricationPage({
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-vtm-dark pt-32 pb-20 px-6 lg:px-10 overflow-hidden">
+      <section className="relative bg-vtm-dark pt-[42vh] pb-16 px-6 md:pt-32 md:pb-20 lg:px-10 overflow-hidden">
         <Image
           src="/images/fabrication-category-hero.webp"
           alt=""
           fill
           priority
-          className="object-cover opacity-65"
+          className="vtm-hero-machine-image vtm-hero-machine-image--compact opacity-65"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-vtm-dark/20 via-vtm-dark/45 to-vtm-dark/80" aria-hidden="true" />
         <div className="relative z-10 max-w-screen-xl mx-auto">
           <SectionLabel light className="mb-4">{c.hero.sectionLabel}</SectionLabel>
-          <h1 className="font-headline text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 max-w-3xl leading-tight">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 max-w-3xl leading-tight">
             {c.hero.headline.split("\n").map((line, i) => (
               <span key={i}>{line}{i === 0 && <br />}</span>
             ))}

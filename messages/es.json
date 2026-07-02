@@ -81,7 +81,7 @@
     },
     "fabrication": {
       "label": "Maquinaria de Fabricación",
-      "heading": "Maquinas de corte y conformado de metales",
+      "heading": "Máquinas de corte y conformado de metales",
       "viewAll": "Ver Toda la Maquinaria de Fabricación",
       "products": {
         "fiberLaser": { "name": "Cortadora Láser de Plancha", "description": "1.5–30 kW. ±0.05mm. Mesas para planchas de 3000×1500 a 6000×2500 mm." },

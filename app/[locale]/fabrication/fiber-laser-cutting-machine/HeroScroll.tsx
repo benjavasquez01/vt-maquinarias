@@ -32,7 +32,7 @@ export function HeroScroll({
       if (!wrapperRef.current) return;
       const { top, height } = wrapperRef.current.getBoundingClientRect();
       const scrollable = height - window.innerHeight;
-      const p = Math.max(0, Math.min(1, -top / scrollable));
+      const p = scrollable > 0 ? Math.max(0, Math.min(1, -top / scrollable)) : 0;
       setProgress(p);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -46,34 +46,36 @@ export function HeroScroll({
   const overlayOpacity = Math.max(0, initialOverlayOpacity * (1 - progress));
 
   return (
-    <div ref={wrapperRef} style={{ height: "120vh" }}>
-      <div className="sticky top-0 h-screen overflow-hidden">
+    <div ref={wrapperRef} className="vtm-hero-scroll-wrapper h-auto md:h-[120vh]">
+      <div className="vtm-hero-scroll-panel relative h-auto overflow-visible bg-vtm-dark md:sticky md:top-0 md:h-screen md:overflow-hidden">
+        <div className="vtm-hero-scroll-media relative h-[clamp(220px,58vw,292px)] overflow-hidden md:absolute md:inset-0 md:h-auto">
         {/* Background image */}
         <Image
           src={image}
           alt={c.headline.replace("\n", " ")}
           fill
           priority
-          className="object-cover"
+          className="vtm-hero-machine-image !p-0 object-contain !object-center md:object-cover"
           sizes="100vw"
         />
 
         {/* Darkening overlay — fades away on scroll */}
         <div
-          className="absolute inset-0 bg-vtm-dark"
+          className="vtm-hero-scroll-overlay absolute inset-0 bg-gradient-to-b from-transparent via-vtm-dark/10 to-vtm-dark/60 md:bg-vtm-dark md:bg-none"
           style={{ opacity: overlayOpacity, transition: "none" }}
           aria-hidden="true"
         />
+        </div>
 
         {/* Text — fades out on scroll */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
+          className="vtm-hero-scroll-content relative flex flex-col items-center px-6 pb-10 pt-8 text-center md:absolute md:inset-0 md:justify-center md:pb-0 md:pt-0"
           style={{ opacity: textOpacity, transition: "none" }}
         >
           <SectionLabel light className="mb-4">
             {c.sectionLabel}
           </SectionLabel>
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6 max-w-4xl">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6 max-w-4xl">
             {c.headline.split("\n").map((line, i) => (
               <span key={i}>
                 {line}
@@ -81,7 +83,7 @@ export function HeroScroll({
               </span>
             ))}
           </h1>
-          <p className="text-white/60 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl">
+          <p className="mb-10 hidden max-w-2xl text-lg leading-relaxed text-white/60 md:block md:text-xl">
             {c.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -108,7 +110,7 @@ export function HeroScroll({
 
         {/* Scroll hint — visible only at start */}
         <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
           style={{ opacity: Math.max(0, 1 - progress * 4), transition: "none" }}
           aria-hidden="true"
         >

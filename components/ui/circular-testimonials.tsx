@@ -131,7 +131,7 @@ export function CircularTestimonials({
         {items.map((item, i) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            key={item.src}
+            key={`${item.src}-${i}`}
             src={item.src}
             alt={item.name}
             className="absolute inset-0 w-full h-full object-contain rounded-xl shadow-2xl bg-white"

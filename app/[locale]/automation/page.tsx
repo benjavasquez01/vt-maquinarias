@@ -23,13 +23,13 @@ export default async function AutomationPage({
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-20 pt-32 overflow-hidden">
+      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-[42vh] md:pb-20 md:pt-32 overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
           <Image
             src="/images/automation-category-hero.webp"
             alt=""
             fill
-            className="object-cover opacity-70"
+            className="vtm-hero-machine-image vtm-hero-machine-image--compact opacity-70"
             priority
             sizes="100vw"
           />
@@ -38,7 +38,7 @@ export default async function AutomationPage({
 
         <div className="relative z-10 w-full px-6 lg:px-10 flex flex-col items-center text-center">
           <Badge className="mb-6">{c.hero.badge}</Badge>
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6 max-w-3xl">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.02] tracking-tight mb-6 max-w-3xl">
             {c.hero.headline.split("\n").map((line, i) => (
               <span key={i}>{line}{i === 0 && <br />}</span>
             ))}

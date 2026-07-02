@@ -169,9 +169,9 @@ const es: ProductPageData = {
     },
     {
       name: "Láser de Fibra Cerrado",
-      href: "/fabrication/fiber-laser-cutting-machine",
+      href: "/fabrication/enclosed-fiber-laser-cutting-machine",
       tag: "Cerrado",
-      imageId: "/images/fiber-laser-hero.webp",
+      imageId: "/images/SHEET/SE Series/1.webp",
     },
   ],
   faqs: [

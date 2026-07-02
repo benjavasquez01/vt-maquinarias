@@ -61,7 +61,7 @@ export function Footer() {
             </h3>
             <div className="space-y-2 text-sm text-white/70">
               <p><a href="tel:+56999171017" className="hover:text-white transition-colors">+56 9 9917 1017</a></p>
-              <p><a href="mailto:contacto@vtmaquinarias.cl" className="hover:text-white transition-colors">contacto@vtmaquinarias.cl</a></p>
+              <p><a href="mailto:contacto@vtmaquinarias.cl" className="hover:text-white transition-colors break-all">contacto@vtmaquinarias.cl</a></p>
               <p>La Florida, Santiago, Chile</p>
             </div>
           </div>

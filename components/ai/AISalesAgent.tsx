@@ -62,7 +62,8 @@ function renderHighlighted(text: string): React.ReactNode {
   return sentences.map((sentence, i) => (
     <span key={i}>
       {i > 0 ? " " : ""}
-      <span className={sentence.trimEnd().endsWith("?") ? "text-vtm-red font-medium" : ""}>
+      {/* Lighter red than brand vtm-red: questions sit on a dark bubble and need AA contrast */}
+      <span className={sentence.trimEnd().endsWith("?") ? "text-[#ff8a8b] font-medium" : ""}>
         {sentence}
       </span>
     </span>
@@ -604,7 +605,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
             </button>
           </form>
           <p className="text-white/20 text-xs mt-2 text-center">
-            AI assistant · Responses may vary · For specs, request a formal quote
+            Asistente con IA · Las respuestas pueden variar · Para especificaciones, solicite una cotización formal
           </p>
         </div>
       </div>

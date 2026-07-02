@@ -48,18 +48,21 @@ export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: P
   return (
     <div ref={wrapperRef} style={{ height: "220vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        {HERO_IMAGES.map((img, i) => (
-          <Image
-            key={img.src}
-            src={img.src}
-            alt={img.alt}
-            fill
-            priority={i === 0}
-            className="object-cover transition-opacity duration-500"
-            style={{ opacity: i === activeIndex ? 1 : 0 }}
-            sizes="100vw"
-          />
-        ))}
+        {/* next/image fill requires a non-sticky positioned parent */}
+        <div className="absolute inset-0">
+          {HERO_IMAGES.map((img, i) => (
+            <Image
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              fill
+              priority={i === 0}
+              className="vtm-hero-machine-image transition-opacity duration-500"
+              style={{ opacity: i === activeIndex ? 1 : 0 }}
+              sizes="100vw"
+            />
+          ))}
+        </div>
 
         <div
           className="absolute inset-0 bg-vtm-dark"
