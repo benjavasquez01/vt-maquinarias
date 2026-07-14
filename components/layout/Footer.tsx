@@ -30,11 +30,11 @@ export function Footer() {
               {t("fabrication")}
             </h3>
             <ul className="space-y-3 text-sm text-white/70">
-              <li><Link href="/fabrication/fiber-laser-cutting-machine" className="hover:text-white transition-colors">{t("fiberLaser")}</Link></li>
-              <li><Link href="/fabrication/laser-welding-machine" className="hover:text-white transition-colors">{t("laserWelding")}</Link></li>
-              <li><Link href="/fabrication/laser-cleaning-machine" className="hover:text-white transition-colors">{t("laserCleaning")}</Link></li>
-              <li><Link href="/fabrication/cnc-press-brake" className="hover:text-white transition-colors">{t("pressBreak")}</Link></li>
-              <li><Link href="/fabrication/ironworker" className="hover:text-white transition-colors">{t("ironworker")}</Link></li>
+              <li><Link href="/fabrication/fiber-laser-cutting-machine" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("fiberLaser")}</Link></li>
+              <li><Link href="/fabrication/laser-welding-machine" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("laserWelding")}</Link></li>
+              <li><Link href="/fabrication/laser-cleaning-machine" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("laserCleaning")}</Link></li>
+              <li><Link href="/fabrication/cnc-press-brake" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("pressBreak")}</Link></li>
+              <li><Link href="/fabrication/ironworker" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("ironworker")}</Link></li>
             </ul>
           </div>
           <div>
@@ -42,7 +42,7 @@ export function Footer() {
               {t("automation")}
             </h3>
             <ul className="space-y-3 text-sm text-white/70">
-              <li><Link href="/automation/collaborative-welding-arm" className="hover:text-white transition-colors">{t("cobotWelding")}</Link></li>
+              <li><Link href="/automation/collaborative-welding-arm" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("cobotWelding")}</Link></li>
             </ul>
           </div>
           <div>
@@ -50,9 +50,9 @@ export function Footer() {
               {t("company")}
             </h3>
             <ul className="space-y-3 text-sm text-white/70">
-              <li><Link href="/about" className="hover:text-white transition-colors">{t("aboutUs")}</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors">{t("blog")}</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">{t("contact")}</Link></li>
+              <li><Link href="/about" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("aboutUs")}</Link></li>
+              <li><Link href="/blog" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("blog")}</Link></li>
+              <li><Link href="/contact" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">{t("contact")}</Link></li>
             </ul>
           </div>
           <div>
@@ -60,8 +60,8 @@ export function Footer() {
               {t("contact")}
             </h3>
             <div className="space-y-2 text-sm text-white/70">
-              <p><a href="tel:+56999171017" className="hover:text-white transition-colors">+56 9 9917 1017</a></p>
-              <p><a href="mailto:contacto@vtmaquinarias.cl" className="hover:text-white transition-colors break-all">contacto@vtmaquinarias.cl</a></p>
+              <p><a href="tel:+56999171017" className="inline-flex min-h-11 items-center hover:text-white transition-colors md:min-h-0">+56 9 9917 1017</a></p>
+              <p><a href="mailto:contacto@vtmaquinarias.cl" className="inline-flex min-h-11 items-center hover:text-white transition-colors break-all md:min-h-0">contacto@vtmaquinarias.cl</a></p>
               <p>La Florida, Santiago, Chile</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-xs font-semibold tracking-widest text-white/40 hover:text-white uppercase transition-colors"
+              className="inline-flex min-h-11 items-center text-xs font-semibold tracking-widest text-white/40 hover:text-white uppercase transition-colors md:min-h-0"
             >
               {label}
             </a>
@@ -91,8 +91,8 @@ export function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/30">
           <p>{t("copyright", { year })}</p>
           <div className="flex gap-6">
-            <Link href="/privacy-policy" className="hover:text-white/60 transition-colors">{t("privacyPolicy")}</Link>
-            <Link href="/terms-of-service" className="hover:text-white/60 transition-colors">{t("termsOfService")}</Link>
+            <Link href="/privacy-policy" className="inline-flex min-h-11 items-center hover:text-white/60 transition-colors md:min-h-0">{t("privacyPolicy")}</Link>
+            <Link href="/terms-of-service" className="inline-flex min-h-11 items-center hover:text-white/60 transition-colors md:min-h-0">{t("termsOfService")}</Link>
           </div>
         </div>
       </div>

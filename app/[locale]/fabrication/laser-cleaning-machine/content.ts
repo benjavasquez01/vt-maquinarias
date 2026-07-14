@@ -24,13 +24,6 @@ const es: ProductPageData = {
     },
     {
       number: "03",
-      headline: "Precisamente Dirigida — Limpia Solo la Contaminación",
-      body: "Los parámetros del láser se ajustan para eliminar por ablación la capa contaminante mientras refleja el sustrato subyacente. Elimine el óxido de un tubo de cromo-molibdeno sin grabar el metal base. Limpie salpicaduras de soldadura de una superficie mecanizada sin cambiar el acabado superficial. No se requiere enmascaramiento.",
-      spec: { label: "Selectividad", value: "Precisión por capas" },
-      imageId: "/images/laser-cleaning-feature-03-precision.webp",
-    },
-    {
-      number: "04",
       headline: "Sin Daño al Sustrato — Seguro para Componentes de Precisión",
       body: "A diferencia del granallado (que deforma la superficie) o el decapado químico (que puede causar fragilización por hidrógeno), la limpieza láser correctamente ajustada deja el sustrato metalúrgicamente sin cambios. Adecuado para componentes aeroespaciales, sujetadores de alta resistencia y tubería de precisión de pared delgada.",
       spec: { label: "Daño a la Superficie", value: "Cero" },

@@ -1,6 +1,6 @@
 export function HeroHeadline({ text }: { text: string }) {
   return (
-    <h1 className="font-headline text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto">
+    <h1 className="mx-auto mb-5 max-w-[22rem] font-headline text-[clamp(2.35rem,10vw,3.4rem)] font-bold leading-[1.02] tracking-normal text-white md:mb-6 md:max-w-4xl md:text-7xl">
       {text.split(" ").map((word, i) => (
         <span
           key={i}

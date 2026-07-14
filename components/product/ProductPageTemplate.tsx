@@ -136,8 +136,11 @@ export function ProductPageTemplate({ data, children, afterSpecs, featureSlots, 
     <>
       {/* ── Block 1: Hero ─────────────────────────────────────────── */}
       {!hideHero && (
-        <section className="relative bg-vtm-dark min-h-screen flex items-end pb-12 pt-[42vh] md:pb-16 md:pt-24 overflow-hidden">
-          <div className="absolute inset-0" aria-hidden="true">
+        <section className="vtm-product-hero-section relative bg-vtm-dark min-h-screen flex items-end pb-12 pt-[42vh] md:pb-16 md:pt-24 overflow-hidden">
+          {/* Mobile: confine the machine image to the free band above the text
+              (matches the section's pt-[42vh]) so it neither hugs the navbar
+              nor slides underneath the headline. Desktop: full-bleed. */}
+          <div className="absolute inset-x-0 top-0 h-[42vh] md:inset-0 md:h-auto" aria-hidden="true">
             <Image
               src={heroImageId.startsWith("/") ? heroImageId : `https://images.unsplash.com/photo-${heroImageId}?w=1600&q=80&fit=crop`}
               alt=""

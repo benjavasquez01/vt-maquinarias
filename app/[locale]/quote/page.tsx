@@ -30,13 +30,13 @@ export default async function QuotePage({
               width={1591}
               height={511}
               className="h-8 w-auto"
-              priority
+              preload
             />
           </span>
         </Link>
         <Link
           href="/"
-          className="text-white/50 hover:text-white text-sm transition-colors inline-flex items-center gap-1"
+          className="min-h-11 text-white/50 hover:text-white text-sm transition-colors inline-flex items-center gap-1"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M10 7H2M5 3L1 7l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

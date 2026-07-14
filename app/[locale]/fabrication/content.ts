@@ -9,6 +9,27 @@ export type FabricationPageContent = {
   cta: { sectionLabel: string; headline: string; body: string; cta: string };
 };
 
+const PRODUCT_ORDER = [
+  "cnc-press-brake",
+  "fiber-laser-cutting-machine",
+  "fiber-laser-tube-cutting-machine",
+  "4-in-1-laser-machine",
+  "laser-cleaning-machine",
+  "panel-bender",
+  "ironworker",
+  "sheet-tube-laser-cutting-machine",
+] as const;
+
+function orderProducts(products: FabricationPageContent["products"]) {
+  return [...products].sort((a, b) => {
+    const aIndex = PRODUCT_ORDER.indexOf(a.slug as (typeof PRODUCT_ORDER)[number]);
+    const bIndex = PRODUCT_ORDER.indexOf(b.slug as (typeof PRODUCT_ORDER)[number]);
+    const aOrder = aIndex === -1 ? PRODUCT_ORDER.length : aIndex;
+    const bOrder = bIndex === -1 ? PRODUCT_ORDER.length : bIndex;
+    return aOrder - bOrder;
+  });
+}
+
 const es: FabricationPageContent = {
   hero: {
     sectionLabel: "Línea de Productos",
@@ -24,7 +45,7 @@ const es: FabricationPageContent = {
     { slug: "sheet-tube-laser-cutting-machine", name: "Láser Combinado Plancha y Tubo", tag: "Combinado", description: "VTM-ST. Plancha plana y tubo en una sola máquina. 3–6 kW, mesa hasta 4020, tubo hasta 180 mm.", imageId: "/images/sheet-tube-combo-hero.webp" },
     { slug: "4-in-1-laser-machine", name: "Máquina Soldadora Láser", tag: "Soldadura", description: "VTM-4W. Soldadura, corte, limpieza y alimentación de hilo. 1.5–3 kW, todos los metales comunes.", imageId: "/images/4in1-laser-hero-2.webp" },
     { slug: "laser-cleaning-machine", name: "Máquina de Limpieza Láser", tag: "Limpieza", description: "50–500W fibra pulsada. Elimina óxido, recubrimientos y capas de óxido sin químicos.", imageId: "/images/laser-cleaning-hero.webp" },
-    { slug: "cnc-press-brake", name: "CNC Press Brake", tag: "Bending", description: "40–400 ton, graphic CNC controller, ±0.01 mm repeatability.", imageId: "/images/cnc-press-brake-hero-2.webp" },
+    { slug: "cnc-press-brake", name: "Plegadora CNC", tag: "Plegado", description: "40–400 toneladas, controlador CNC gráfico y repetibilidad de ±0,01 mm.", imageId: "/images/cnc-press-brake-hero-2.webp" },
     { slug: "ironworker", name: "Punzonadora Hidráulica VTM-IW", tag: "Multiproceso", description: "60–120 ton, 5 estaciones para perforar, escantonar, cortar planchas, ángulos y macizos.", imageId: "/images/ironworker-hero.webp" },
     { slug: "panel-bender", name: "Paneladora CNC", tag: "Plegado de Panel", description: "Plegado de panel por succión, sin rayaduras. Hasta 23 ejes, ciclo de 0,2 s por plegado. Ideal para paneles, gabinetes y piezas de chapa.", imageId: "/images/vtm-p-1.webp" },
     { slug: "air-compressor", name: "Compresor de Aire VTM-AIR", tag: "Aire Comprimido", description: "Compresor de tornillo integrado de 16 bar con variador de frecuencia, secador, filtros finos y doble acumulador. 15, 22 y 37 kW. Aire seco y estable para máquinas láser.", imageId: "/images/vtm-air-1.webp" },
@@ -46,4 +67,6 @@ const es: FabricationPageContent = {
   },
 };
 
-export const content: Record<string, FabricationPageContent> = { es };
+export const content: Record<string, FabricationPageContent> = {
+  es: { ...es, products: orderProducts(es.products) },
+};

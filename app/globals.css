@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   color: #171717;
   font-family: var(--font-body, Arial, sans-serif);
   font-weight: 300;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,16 +59,23 @@ h1, h2, h3, h4, h5, h6 {
   height: 120vh;
 }
 
+.vtm-home-hero-scroll-wrapper {
+  height: 220vh;
+}
+
 @media (max-width: 767px) {
   .vtm-hero-machine-image {
     object-fit: contain !important;
-    object-position: center top !important;
-    padding: 76px 12px 42vh;
+    /* The wrapper is confined to the band above the headline (h-[42vh]),
+       so the machine centers in that band: no navbar-hugging, no dead gap,
+       no sliding underneath the text. */
+    object-position: center center !important;
+    padding: 24px 12px 16px;
     background: #171717;
   }
 
   .vtm-hero-machine-image--compact {
-    padding-bottom: 34vh;
+    padding-bottom: 16px;
   }
 
   .vtm-hero-scroll-overlay {
@@ -80,6 +89,16 @@ h1, h2, h3, h4, h5, h6 {
 
   .vtm-hero-scroll-wrapper {
     height: auto;
+    margin-top: 5rem;
+  }
+
+  .vtm-home-hero-scroll-wrapper {
+    height: auto;
+  }
+
+  .vtm-home-hero-scroll-wrapper .vtm-hero-scroll-content {
+    padding-top: 1.75rem;
+    padding-bottom: 2rem;
   }
 
   .vtm-hero-scroll-panel {
@@ -93,6 +112,15 @@ h1, h2, h3, h4, h5, h6 {
     position: relative !important;
     inset: auto !important;
     height: clamp(220px, 58vw, 292px);
+  }
+
+  .vtm-home-hero-scroll-wrapper .vtm-hero-scroll-media {
+    height: auto;
+    aspect-ratio: 1672 / 941;
+  }
+
+  .vtm-home-hero-scroll-wrapper .vtm-hero-machine-image {
+    object-fit: cover !important;
   }
 
   .vtm-hero-scroll-media .vtm-hero-machine-image {
@@ -114,6 +142,11 @@ h1, h2, h3, h4, h5, h6 {
     inset: auto !important;
     opacity: 1 !important;
     padding: 2rem 1.5rem 2.5rem;
+  }
+
+  .vtm-product-hero-section {
+    margin-top: 5rem;
+    min-height: calc(100svh - 5rem);
   }
 }
 

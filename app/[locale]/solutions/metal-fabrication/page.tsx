@@ -46,7 +46,7 @@ export default async function MetalFabricationPage({
             {c.machines.map(({ name, href, spec, tag, imageId }) => (
               <Link key={href} href={href} className="group border border-vtm-gray-border hover:border-vtm-dark transition-colors">
                 <div className="relative aspect-[4/3] bg-vtm-gray-light overflow-hidden">
-                  <Image src={`https://images.unsplash.com/photo-${imageId}?w=600&q=80&fit=crop`} alt={name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src={imageId.startsWith("/") ? imageId : `https://images.unsplash.com/photo-${imageId}?w=600&q=80&fit=crop`} alt={name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
                 <div className="p-6">
                   <Tag className="mb-3">{tag}</Tag>

@@ -11,6 +11,20 @@ type Props = {
   hideThumbnails?: boolean;
 };
 
+function GalleryArrowButton({ dir, onClick }: { dir: "left" | "right"; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={dir === "left" ? "Previous image" : "Next image"}
+      className="flex h-9 w-9 flex-shrink-0 items-center justify-center bg-vtm-red text-white transition-colors hover:bg-[#a81718]"
+    >
+      <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        {dir === "left" ? <path d="M9 2L4 7l5 5" /> : <path d="M5 2l5 5-5 5" />}
+      </svg>
+    </button>
+  );
+}
+
 export function ImageGallery({ images, alt, className = "", activeIndex, onActiveChange, hideThumbnails = false }: Props) {
   const [internalActive, setInternalActive] = useState(0);
   const active = activeIndex !== undefined ? activeIndex : internalActive;
@@ -42,23 +56,11 @@ export function ImageGallery({ images, alt, className = "", activeIndex, onActiv
     return () => { document.body.style.overflow = ""; };
   }, [fullscreen]);
 
-  const ArrowBtn = ({ dir, onClick }: { dir: "left" | "right"; onClick: () => void }) => (
-    <button
-      onClick={onClick}
-      aria-label={dir === "left" ? "Previous image" : "Next image"}
-      className="w-9 h-9 flex items-center justify-center bg-vtm-red text-white hover:bg-[#a81718] transition-colors flex-shrink-0"
-    >
-      <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        {dir === "left" ? <path d="M9 2L4 7l5 5" /> : <path d="M5 2l5 5-5 5" />}
-      </svg>
-    </button>
-  );
-
   return (
     <>
-      <div className={`flex flex-col gap-3 ${className}`}>
+      <div className={`flex w-full max-w-full min-w-0 flex-col gap-3 overflow-hidden ${className}`}>
         {/* Main image with arrows overlay */}
-        <div className="relative bg-vtm-gray-light overflow-hidden group">
+        <div className="group relative w-full max-w-full overflow-hidden bg-vtm-gray-light">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={images[active]}
@@ -70,10 +72,10 @@ export function ImageGallery({ images, alt, className = "", activeIndex, onActiv
           {images.length > 1 && (
             <>
               <div className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowBtn dir="left" onClick={prev} />
+                <GalleryArrowButton dir="left" onClick={prev} />
               </div>
               <div className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowBtn dir="right" onClick={next} />
+                <GalleryArrowButton dir="right" onClick={next} />
               </div>
             </>
           )}
@@ -99,7 +101,7 @@ export function ImageGallery({ images, alt, className = "", activeIndex, onActiv
 
         {/* Thumbnails */}
         {images.length > 1 && !hideThumbnails && (
-          <div className="flex gap-2 overflow-x-auto pb-1">
+          <div className="flex w-full max-w-full min-w-0 gap-2 overflow-x-auto overscroll-x-contain pb-1 pr-1">
             {images.map((src, i) => (
               <button
                 key={src}

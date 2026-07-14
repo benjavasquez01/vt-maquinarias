@@ -541,7 +541,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       <section className="bg-vtm-dark pt-32 pb-0 overflow-hidden">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 pb-12">
           <div className="flex items-center gap-3 mb-6">
-            <Link href="/blog" className="text-white/40 text-sm hover:text-white/70 transition-colors">
+            <Link href="/blog" className="inline-flex min-h-11 items-center text-white/40 text-sm hover:text-white/70 transition-colors">
               ← Blog
             </Link>
             <span className="text-white/20">/</span>
@@ -550,12 +550,12 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
           <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight max-w-4xl mb-6 leading-tight">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-white/40 text-sm mb-10">
-            <span>{post.author}</span>
-            <span>·</span>
-            <span>{post.date}</span>
-            <span>·</span>
-            <span>{post.readTime}</span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/40 text-sm mb-10">
+            <span className="whitespace-nowrap">{post.author}</span>
+            <span aria-hidden="true">·</span>
+            <span className="whitespace-nowrap">{post.date}</span>
+            <span aria-hidden="true">·</span>
+            <span className="whitespace-nowrap">{post.readTime}</span>
           </div>
         </div>
         <div className="relative aspect-[21/9] max-h-[500px] overflow-hidden">

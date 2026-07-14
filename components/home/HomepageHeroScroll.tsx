@@ -46,10 +46,10 @@ export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: P
   const overlayOpacity = Math.min(1, progress);
 
   return (
-    <div ref={wrapperRef} style={{ height: "220vh" }}>
-      <div className="sticky top-0 h-screen overflow-hidden">
+    <div ref={wrapperRef} className="vtm-home-hero-scroll-wrapper vtm-hero-scroll-wrapper">
+      <div className="vtm-hero-scroll-panel relative h-auto overflow-visible bg-vtm-dark md:sticky md:top-0 md:h-screen md:overflow-hidden">
         {/* next/image fill requires a non-sticky positioned parent */}
-        <div className="absolute inset-0">
+        <div className="vtm-hero-scroll-media relative aspect-[1672/941] w-full overflow-hidden md:absolute md:inset-0 md:aspect-auto md:h-auto">
           {HERO_IMAGES.map((img, i) => (
             <Image
               key={img.src}
@@ -57,7 +57,7 @@ export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: P
               alt={img.alt}
               fill
               priority={i === 0}
-              className="vtm-hero-machine-image transition-opacity duration-500"
+              className="vtm-hero-machine-image !p-0 object-cover !object-center transition-opacity duration-500"
               style={{ opacity: i === activeIndex ? 1 : 0 }}
               sizes="100vw"
             />
@@ -65,27 +65,27 @@ export function HomepageHeroScroll({ eyebrow, headline, subheadline, scroll }: P
         </div>
 
         <div
-          className="absolute inset-0 bg-vtm-dark"
+          className="vtm-hero-scroll-overlay absolute inset-0 bg-gradient-to-b from-transparent via-vtm-dark/10 to-vtm-dark/65 md:bg-vtm-dark md:bg-none"
           style={{ opacity: overlayOpacity, transition: "none" }}
           aria-hidden="true"
         />
 
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
+          className="vtm-hero-scroll-content relative flex flex-col items-center px-6 pb-10 pt-8 text-center md:absolute md:inset-0 md:justify-center md:pb-0 md:pt-0"
           style={{ opacity: textOpacity, transition: "none" }}
         >
-          <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-white/50 mb-6">
+          <p className="mb-4 max-w-[18rem] text-[11px] font-semibold uppercase leading-relaxed tracking-[0.16em] text-white/55 md:mb-6 md:max-w-none md:tracking-[0.25em]">
             {eyebrow}
           </p>
           <HeroHeadline text={headline} />
-          <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body">
+          <p className="mx-auto mb-8 max-w-[21rem] text-base leading-relaxed text-white/70 md:mb-10 md:max-w-2xl md:text-xl">
             {subheadline}
           </p>
           <HomepageHeroCTA />
         </div>
 
         <div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
           style={{ opacity: Math.max(0, 1 - progress * 4), transition: "none" }}
           aria-hidden="true"
         >

@@ -140,6 +140,10 @@ export default async function AirCompressorPage({ params }: { params: Promise<{ 
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <SectionLabel className="mb-4">Especificaciones Técnicas</SectionLabel>
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-vtm-dark tracking-tight mb-12">Tres modelos disponibles</h2>
+          <p className="md:hidden text-xs text-vtm-gray-mid mb-2 flex items-center gap-1.5">
+            Deslice horizontalmente para comparar modelos
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </p>
           <div className="border border-vtm-gray-border overflow-x-auto">
             <table className="w-full text-sm min-w-[640px]">
               <thead>

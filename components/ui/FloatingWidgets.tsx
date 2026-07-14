@@ -90,7 +90,7 @@ export function FloatingWidgets() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackEvent("whatsapp_click")}
-        className={`fixed bottom-24 right-6 z-40 h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition-transform hover:scale-105 md:flex md:h-14 md:w-14 ${
+        className={`fixed bottom-3 right-4 z-40 h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition-transform hover:scale-105 md:bottom-24 md:right-6 md:flex md:h-14 md:w-14 ${
           hasMobileProductStickyBar ? "hidden" : "flex"
         }`}
         aria-label="Chatear por WhatsApp"

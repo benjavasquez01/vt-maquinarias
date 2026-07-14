@@ -23,7 +23,7 @@ export default async function AutomationPage({
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-[42vh] md:pb-20 md:pt-32 overflow-hidden">
+      <section className="vtm-product-hero-section relative bg-vtm-dark min-h-screen flex items-end pb-16 pt-[42vh] md:pb-20 md:pt-32 overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
           <Image
             src="/images/automation-category-hero.webp"

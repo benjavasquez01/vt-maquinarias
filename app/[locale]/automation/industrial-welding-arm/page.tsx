@@ -34,8 +34,9 @@ export default async function IndustrialWeldingArmPage({
   return (
     <>
       {/* ── Block 1: Hero ────────────────────────────────────────────── */}
-      <section className="relative bg-vtm-dark min-h-screen flex items-end pb-12 pt-[42vh] md:pb-16 md:pt-24 overflow-hidden">
-        <div className="absolute inset-0" aria-hidden="true">
+      <section className="vtm-product-hero-section relative bg-vtm-dark min-h-screen flex items-end pb-12 pt-[42vh] md:pb-16 md:pt-24 overflow-hidden">
+        {/* Mobile: image confined to the band above the text; desktop full-bleed */}
+        <div className="absolute inset-x-0 top-0 h-[42vh] md:inset-0 md:h-auto" aria-hidden="true">
           <Image
             src="/images/industrial-welding-arm-hero.webp"
             alt=""

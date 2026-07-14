@@ -158,35 +158,49 @@ export function IndustriesCarousel() {
 
       {/* Navigation controls */}
       <div className="flex items-center gap-4 px-6 lg:px-10 mt-6">
-        <button
-          onClick={() => scrollTo(Math.max(0, activeIndex - 1))}
-          disabled={activeIndex === 0}
-          className="w-10 h-10 border border-vtm-gray-border flex items-center justify-center hover:border-vtm-dark transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-          aria-label="Previous industry"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M10 12L6 8l4-4" stroke="#171717" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        <button
-          onClick={() => scrollTo(Math.min(items.length - 1, activeIndex + 1))}
-          disabled={activeIndex === items.length - 1}
-          className="w-10 h-10 border border-vtm-gray-border flex items-center justify-center hover:border-vtm-dark transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-          aria-label="Next industry"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M6 4l4 4-4 4" stroke="#171717" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        <div className="flex gap-2 ml-2">
-          {items.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => scrollTo(i)}
-              className={`w-2 h-2 rounded-full transition-colors ${i === activeIndex ? "bg-vtm-red" : "bg-vtm-gray-border"}`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
+        <div className="flex gap-4 md:hidden" aria-hidden="true">
+          <span className="flex h-10 w-10 items-center justify-center border border-vtm-gray-border text-vtm-dark/50">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+          <span className="flex h-10 w-10 items-center justify-center border border-vtm-gray-border text-vtm-dark/50">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div className="hidden items-center gap-4 md:flex">
+          <button
+            onClick={() => scrollTo(Math.max(0, activeIndex - 1))}
+            disabled={activeIndex === 0}
+            className="w-10 h-10 border border-vtm-gray-border flex items-center justify-center hover:border-vtm-dark transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Previous industry"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 12L6 8l4-4" stroke="#171717" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button
+            onClick={() => scrollTo(Math.min(items.length - 1, activeIndex + 1))}
+            disabled={activeIndex === items.length - 1}
+            className="w-10 h-10 border border-vtm-gray-border flex items-center justify-center hover:border-vtm-dark transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Next industry"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 4l4 4-4 4" stroke="#171717" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <div className="ml-2 flex gap-2">
+            {items.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollTo(i)}
+                className={`w-2 h-2 rounded-full transition-colors ${i === activeIndex ? "bg-vtm-red" : "bg-vtm-gray-border"}`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

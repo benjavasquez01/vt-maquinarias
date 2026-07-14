@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MobileScrollRail } from "@/components/ui/MobileScrollRail";
 
 export interface CircularItem {
   src: string;
@@ -121,7 +122,38 @@ export function CircularTestimonials({
   };
 
   return (
-    <div className="w-full grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <>
+      <div className="md:hidden">
+        <MobileScrollRail
+          itemCount={items.length}
+          ariaLabel="Modelos de máquinas"
+          variant="dark"
+          indicator="dots"
+          className="-mr-6"
+          trackClassName="gap-4 pb-2 pr-6"
+        >
+          {items.map((item, i) => (
+            <article key={`${item.src}-${i}`} className="w-[88%] flex-shrink-0 snap-start">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.src}
+                alt={item.name}
+                className="mb-6 h-64 w-full bg-white object-contain"
+              />
+              <p className="mb-1 text-xs font-bold uppercase tracking-widest text-vtm-red">
+                {item.designation}
+              </p>
+              <h3 className="mb-2 font-headline text-2xl font-bold leading-tight text-white">
+                {item.name}
+              </h3>
+              <p className="text-base leading-relaxed text-white/60">{item.quote}</p>
+            </article>
+          ))}
+        </MobileScrollRail>
+        {cta && <div className="mt-6">{cta}</div>}
+      </div>
+
+      <div className="hidden w-full items-center gap-10 md:grid md:grid-cols-2 md:gap-16">
       {/* Image stack */}
       <div
         ref={imageContainerRef}
@@ -207,6 +239,7 @@ export function CircularTestimonials({
           {cta && <div className="ml-auto">{cta}</div>}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

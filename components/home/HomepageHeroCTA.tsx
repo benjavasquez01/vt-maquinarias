@@ -24,15 +24,19 @@ export function HomepageHeroCTA() {
   }, []);
 
   return (
-    <div ref={ref} style={{ opacity: 0 }} className="flex flex-col sm:flex-row gap-4 justify-center">
-      <Button href="#products" variant="primary" size="lg">
+    <div
+      ref={ref}
+      style={{ opacity: 0 }}
+      className="flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4"
+    >
+      <Button href="#products" variant="primary" size="lg" className="justify-center text-center">
         {t("cta1")}
       </Button>
       <Button
         onClick={() => openAgent("quote")}
         variant="outline"
         size="lg"
-        className="border-white/40 text-white hover:bg-white/10 hover:border-white/70"
+        className="justify-center border-white/40 text-center text-white hover:bg-white/10 hover:border-white/70"
       >
         {t("cta2")}
       </Button>

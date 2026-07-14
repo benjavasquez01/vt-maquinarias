@@ -23,31 +23,37 @@ export default async function FabricationPage({
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-vtm-dark pt-[42vh] pb-16 px-6 md:pt-32 md:pb-20 lg:px-10 overflow-hidden">
-        <Image
-          src="/images/fabrication-category-hero.webp"
-          alt=""
-          fill
-          priority
-          className="vtm-hero-machine-image vtm-hero-machine-image--compact opacity-65"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-vtm-dark/20 via-vtm-dark/45 to-vtm-dark/80" aria-hidden="true" />
-        <div className="relative z-10 max-w-screen-xl mx-auto">
-          <SectionLabel light className="mb-4">{c.hero.sectionLabel}</SectionLabel>
-          <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 max-w-3xl leading-tight">
+      <section className="relative mt-20 overflow-hidden bg-vtm-dark md:flex md:min-h-[min(760px,calc(100svh-5rem))] md:items-center md:px-6 md:py-20 lg:px-10">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#202020] min-[420px]:aspect-[2/1] md:absolute md:inset-0 md:aspect-auto">
+          <Image
+            src="/images/fabrication-category-hero.webp"
+            alt="Máquinas de fabricación VTM instaladas en una planta industrial"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-vtm-dark/55 via-transparent to-transparent md:bg-gradient-to-r md:from-vtm-dark/95 md:via-vtm-dark/70 md:to-vtm-dark/20"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto w-full max-w-screen-xl px-6 py-7 md:px-0 md:py-0">
+          <SectionLabel light className="mb-3 md:mb-4">{c.hero.sectionLabel}</SectionLabel>
+          <h1 className="mb-5 max-w-3xl font-headline text-4xl font-bold leading-[1.08] tracking-normal text-white sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl">
             {c.hero.headline.split("\n").map((line, i) => (
               <span key={i}>{line}{i === 0 && <br />}</span>
             ))}
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl leading-relaxed mb-10">
+          <p className="mb-7 max-w-2xl text-base leading-relaxed text-white/70 md:mb-9 md:text-lg">
             {c.hero.subheadline}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button href="/quote" variant="primary" size="lg">
+          <div className="flex flex-col gap-3 min-[420px]:flex-row sm:gap-4">
+            <Button href="/quote" variant="primary" size="lg" className="w-full justify-center min-[420px]:w-1/2 min-[420px]:px-4 min-[420px]:text-sm sm:w-auto sm:px-8 sm:text-base">
               {c.hero.cta1}
             </Button>
-            <Button href="/automation" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:border-white/60">
+            <Button href="/automation" variant="outline" size="lg" className="w-full justify-center border-white/40 text-white hover:border-white/70 hover:bg-white/10 min-[420px]:w-1/2 min-[420px]:px-4 min-[420px]:text-sm sm:w-auto sm:px-8 sm:text-base">
               {c.hero.cta2}
             </Button>
           </div>

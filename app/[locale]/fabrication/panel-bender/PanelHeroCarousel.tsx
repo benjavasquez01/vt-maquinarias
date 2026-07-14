@@ -42,7 +42,7 @@ export function PanelHeroCarousel() {
       <button
         onClick={() => go(active - 1)}
         aria-label="Imagen anterior"
-        className="absolute top-1/2 left-3 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-vtm-dark shadow flex items-center justify-center transition-colors"
+        className="absolute top-1/2 left-3 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/80 hover:bg-white text-vtm-dark shadow flex items-center justify-center transition-colors"
       >
         <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,7 +51,7 @@ export function PanelHeroCarousel() {
       <button
         onClick={() => go(active + 1)}
         aria-label="Imagen siguiente"
-        className="absolute top-1/2 right-3 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-vtm-dark shadow flex items-center justify-center transition-colors"
+        className="absolute top-1/2 right-3 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/80 hover:bg-white text-vtm-dark shadow flex items-center justify-center transition-colors"
       >
         <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />

@@ -17,7 +17,13 @@ const isGroup = (entry: DropdownEntry): entry is DropdownGroup => "children" in 
 
 const DROPDOWN: Record<string, DropdownEntry[]> = {
   fabrication: [
-    { label: "Plegadora CNC",                 href: "/fabrication/cnc-press-brake" },
+    {
+      label: "Plegadora CNC",
+      children: [
+        { label: "Plegadora CNC",             href: "/fabrication/cnc-press-brake" },
+        { label: "Herramientas — Punzones y Matrices", href: "/fabrication/herramientas" },
+      ],
+    },
     {
       label: "Máquinas de Corte Láser",
       children: [
@@ -263,11 +269,20 @@ function MobileNavItem({
 
   return (
     <div className="border-b border-vtm-gray-border">
-      <button
-        onClick={() => setExpanded((e) => !e)}
-        className="w-full flex items-center justify-between text-2xl font-headline font-medium text-vtm-dark py-3 hover:text-vtm-red transition-colors"
-      >
-        {label}
+      <div className="flex items-center">
+        <Link
+          href={href}
+          onClick={onNavigate}
+          className="flex min-h-14 flex-1 items-center py-3 font-headline text-2xl font-medium text-vtm-dark transition-colors hover:text-vtm-red"
+        >
+          {label}
+        </Link>
+        <button
+          onClick={() => setExpanded((e) => !e)}
+          className="flex h-11 w-11 flex-shrink-0 items-center justify-center text-vtm-dark transition-colors hover:text-vtm-red"
+          aria-label={`${expanded ? "Cerrar" : "Abrir"} submenú de ${label}`}
+          aria-expanded={expanded}
+        >
         <svg
           width="14" height="14" viewBox="0 0 10 10" fill="none"
           stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
@@ -276,7 +291,8 @@ function MobileNavItem({
         >
           <path d="M2 3.5l3 3 3-3" />
         </svg>
-      </button>
+        </button>
+      </div>
       {expanded && (
         <ul className="pb-3 pl-2 flex flex-col gap-1">
           {items.map((item) =>
@@ -316,7 +332,7 @@ export function Navbar() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-vtm-gray-border">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-3 sm:gap-8">
+        <div className="max-w-screen-xl mx-auto px-3 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-2 sm:gap-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -324,8 +340,8 @@ export function Navbar() {
               alt="VT Maquinarias"
               width={1591}
               height={511}
-              className="h-10 sm:h-14 w-auto"
-              priority
+              className="h-9 min-[390px]:h-10 sm:h-14 w-auto"
+              preload
             />
           </Link>
 
@@ -348,8 +364,10 @@ export function Navbar() {
               onClick={() => openAgent("quote")}
               variant="primary"
               size="sm"
+              className="justify-center max-[389px]:px-3"
             >
-              {t("requestQuote")}
+              <span className="min-[390px]:hidden">{t("requestQuoteShort")}</span>
+              <span className="hidden min-[390px]:inline">{t("requestQuote")}</span>
             </Button>
 
             {/* Hamburger */}
@@ -369,7 +387,7 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-white flex flex-col pt-20 transition-transform duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 overflow-x-clip bg-white flex flex-col pt-20 transition-transform duration-300 lg:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!menuOpen}

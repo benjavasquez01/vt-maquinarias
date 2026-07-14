@@ -9,7 +9,7 @@ import { CircularTestimonials } from "@/components/ui/circular-testimonials";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-type ModelCard = { name: string; image: string; badge?: string; subtitle?: string };
+type ModelCard = { name: string; image: string; images?: string[]; badge?: string; subtitle?: string };
 
 type FabProduct = {
   key: string;
@@ -58,7 +58,7 @@ const FABRICATION: FabProduct[] = [
     href: "/fabrication/fiber-laser-tube-cutting-machine",
     models: [
       { name: "MT Series",  image: "/images/tube-mt-1.webp",  badge: "Multi-Profile", subtitle: "Round and square tube profiles up to 160 mm diameter for light to medium-duty structural work." },
-      { name: "T Series",   image: "/images/tube-t-1.webp",   badge: "Heavy Tube",    subtitle: "Round tube cutting up to 350 mm diameter with 1.5–6 kW power options." },
+      { name: "T Series", image: "/images/tube-t-1.webp", images: ["/images/tube-t-1.webp", "/images/tube-t-2.webp", "/images/tube-t-4.webp"], badge: "Heavy Tube", subtitle: "Round tube cutting up to 350 mm diameter with 1.5–6 kW power options." },
       { name: "AT3 Series", image: "/images/tube-at3-1.webp", badge: "3 Chucks",      subtitle: "Automatic loading and unloading with three chucks for efficient, low-waste tube production." },
       { name: "AT4 Series", image: "/images/tube-at4-1.webp", badge: "4 Chucks",      subtitle: "Simultaneous loading and unloading with four chucks for heavy-duty high-speed tube cutting." },
     ],
@@ -87,7 +87,6 @@ const FABRICATION: FabProduct[] = [
     models: [
       { name: "No Chemicals",   image: "/images/laser-cleaning-feature-01-no-chemicals.webp", badge: "Chemical-Free", subtitle: "Zero solvents or chemical media — safe for operators and the environment." },
       { name: "No Media Blast", image: "/images/laser-cleaning-feature-02-no-media.webp",     badge: "No Abrasive",   subtitle: "Non-contact process preserves the base material surface." },
-      { name: "Precision",      image: "/images/laser-cleaning-feature-03-precision.webp",    badge: "Selective",     subtitle: "Selectively ablate rust or coating without touching the substrate below." },
     ],
   },
   {
@@ -147,7 +146,7 @@ const FABRICATION_ES: FabProduct[] = [
     href: "/fabrication/fiber-laser-tube-cutting-machine",
     models: [
       { name: "Serie MT",  image: "/images/tube-mt-1.webp",  badge: "Multi-Perfil", subtitle: "Perfiles de tubo redondo y cuadrado hasta 160 mm de diámetro para trabajos estructurales livianos y medianos." },
-      { name: "Serie T",   image: "/images/tube-t-1.webp",   badge: "Tubo Pesado",  subtitle: "Corte de tubo redondo hasta 350 mm de diámetro con opciones de potencia de 1.5–6 kW." },
+      { name: "Serie T", image: "/images/tube-t-1.webp", images: ["/images/tube-t-1.webp", "/images/tube-t-2.webp", "/images/tube-t-4.webp"], badge: "Tubo Pesado", subtitle: "Corte de tubo redondo hasta 350 mm de diámetro con opciones de potencia de 1.5–6 kW." },
       { name: "Serie AT3", image: "/images/tube-at3-1.webp", badge: "3 Mandriles",  subtitle: "Carga y descarga automática con tres mandriles para producción eficiente y bajo desperdicio." },
       { name: "Serie AT4", image: "/images/tube-at4-1.webp", badge: "4 Mandriles",  subtitle: "Carga y descarga simultánea con cuatro mandriles para corte de tubos pesado y de alta velocidad." },
     ],
@@ -176,7 +175,6 @@ const FABRICATION_ES: FabProduct[] = [
     models: [
       { name: "Sin Químicos", image: "/images/laser-cleaning-feature-01-no-chemicals.webp", badge: "Sin Químicos", subtitle: "Sin solventes ni medios químicos — seguro para operadores y el medio ambiente." },
       { name: "Sin Abrasivo", image: "/images/laser-cleaning-feature-02-no-media.webp",     badge: "Sin Abrasivo", subtitle: "Proceso sin contacto que preserva la superficie del material base." },
-      { name: "Precisión",    image: "/images/laser-cleaning-feature-03-precision.webp",    badge: "Selectivo",    subtitle: "Ablación selectiva de óxido o recubrimiento sin afectar el sustrato inferior." },
     ],
   },
   {
@@ -279,11 +277,17 @@ function FabricationGroup({ label, heading, viewAllLabel, viewLabel, data }: {
       <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
         <div className="relative flex items-stretch border-b border-white/10">
           {/* Left arrow */}
+          <span
+            aria-hidden="true"
+            className={`flex w-8 flex-shrink-0 items-center justify-center text-white/40 md:hidden ${canScrollLeft ? "opacity-100" : "opacity-0"}`}
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </span>
           <button
             onMouseEnter={() => startScroll("left")}
             onMouseLeave={stopScroll}
             aria-label="Scroll left"
-            className={`flex-shrink-0 flex items-center justify-center w-8 text-white/40 hover:text-white transition-colors duration-150 ${canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+            className={`hidden w-8 flex-shrink-0 items-center justify-center text-white/40 transition-colors duration-150 hover:text-white md:flex ${canScrollLeft ? "opacity-100" : "pointer-events-none opacity-0"}`}
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </button>
@@ -308,11 +312,17 @@ function FabricationGroup({ label, heading, viewAllLabel, viewLabel, data }: {
           </div>
 
           {/* Right arrow */}
+          <span
+            aria-hidden="true"
+            className={`flex w-8 flex-shrink-0 items-center justify-center text-white/40 md:hidden ${canScrollRight ? "opacity-100" : "opacity-0"}`}
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </span>
           <button
             onMouseEnter={() => startScroll("right")}
             onMouseLeave={stopScroll}
             aria-label="Scroll right"
-            className={`flex-shrink-0 flex items-center justify-center w-8 text-white/40 hover:text-white transition-colors duration-150 ${canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+            className={`hidden w-8 flex-shrink-0 items-center justify-center text-white/40 transition-colors duration-150 hover:text-white md:flex ${canScrollRight ? "opacity-100" : "pointer-events-none opacity-0"}`}
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </button>
@@ -330,12 +340,14 @@ function FabricationGroup({ label, heading, viewAllLabel, viewLabel, data }: {
           >
             <div className="max-w-screen-xl mx-auto px-6 lg:px-10 py-10 lg:py-14">
               <CircularTestimonials
-                items={data[i].models.map((m) => ({
-                  src: m.image,
-                  name: m.name,
-                  designation: m.badge ?? "",
-                  quote: m.subtitle ?? "",
-                }))}
+                items={data[i].models.flatMap((m) =>
+                  (m.images ?? [m.image]).map((src) => ({
+                    src,
+                    name: m.name,
+                    designation: m.badge ?? "",
+                    quote: m.subtitle ?? "",
+                  }))
+                )}
                 autoplay={false}
                 cta={
                   <Button href={p.href} variant="primary" size="sm" arrow>

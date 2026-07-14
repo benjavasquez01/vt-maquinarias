@@ -4,6 +4,7 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ImageGallery } from "@/components/ui/ImageGallery";
+import { MobileScrollRail } from "@/components/ui/MobileScrollRail";
 
 // ─── Image frames ───────────────────────────────────────────────────────────
 
@@ -355,9 +356,36 @@ function PressBrakeSpecs({
       </div>
 
       {/* Static grid for ≤ VISIBLE columns */}
+      <div className="md:hidden">
+        <MobileScrollRail
+          itemCount={colCount}
+          ariaLabel="Especificaciones por modelo"
+          indicator="bar"
+          trackClassName="gap-2 pr-4"
+        >
+          {specs.headers.map((header, colIdx) => (
+            <div key={header} className="w-[84%] flex-shrink-0 snap-start border-r border-vtm-gray-border px-3 pr-5">
+              <div className="mb-6 border-b border-vtm-gray-border pb-6 text-left">
+                <p className="font-headline text-xl font-bold tracking-normal text-vtm-dark">{header}</p>
+              </div>
+              <div className="flex flex-col gap-14">
+                {specs.rows.map((row) => (
+                  <div key={row.label} className="text-left">
+                    <p className="mb-1 break-words font-headline text-lg font-bold leading-tight text-vtm-dark">
+                      {row[unit][colIdx]}
+                    </p>
+                    <p className="text-xs tracking-wide text-vtm-gray-mid">{row.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </MobileScrollRail>
+      </div>
+
       {!hasCarousel && (
         <div
-          className="grid gap-6"
+          className="hidden gap-6 md:grid"
           style={{ gridTemplateColumns: `repeat(${colCount}, minmax(0, 1fr))` }}
         >
           {specs.headers.map((header, colIdx) => (
@@ -382,7 +410,7 @@ function PressBrakeSpecs({
 
       {/* Carousel row */}
       {hasCarousel && (
-        <div className="flex gap-4">
+        <div className="hidden gap-4 md:flex">
           <div className="flex-shrink-0 self-stretch">
             <button
               onClick={() => navigate("left")}
@@ -443,7 +471,7 @@ function PressBrakeSpecs({
 
       {/* Position dots */}
       {hasCarousel && (
-        <div className="flex justify-center gap-1.5 mt-6">
+        <div className="mt-6 hidden justify-center gap-1.5 md:flex">
           {specs.headers.map((_, i) => (
             <div
               key={i}

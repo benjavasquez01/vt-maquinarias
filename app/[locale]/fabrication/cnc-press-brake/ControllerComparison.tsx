@@ -61,7 +61,37 @@ export function ControllerComparison({ locale }: { locale: "en" | "es" }) {
         </h2>
         <p className="text-vtm-gray-mid text-lg max-w-3xl mb-12 leading-relaxed">{t.subheadline}</p>
 
-        <div className="border border-vtm-gray-border overflow-x-auto">
+        {/* Mobile: stacked cards — a hidden horizontal scroll gave no hint that
+            the second controller existed, so each controller gets its own card. */}
+        <div className="md:hidden space-y-6">
+          {[
+            { name: t.col1, sub: t.col1sub, img: "/images/cnc-controller-e310p.png", alt: "E310P CNC Controller", accent: false, get: (r: (typeof t.rows)[number]) => r.c1 },
+            { name: t.col2, sub: t.col2sub, img: "/images/cnc-controller-el15t.webp", alt: "EL15T CNC Controller", accent: true, get: (r: (typeof t.rows)[number]) => r.c2 },
+          ].map((c) => (
+            <div key={c.name} className={`border ${c.accent ? "border-vtm-red/40" : "border-vtm-gray-border"}`}>
+              <div className="p-5 border-b border-vtm-gray-border bg-vtm-gray-light/40">
+                <div className="relative w-full aspect-[4/3] mb-4 bg-white">
+                  <Image src={c.img} alt={c.alt} fill className="object-contain" sizes="90vw" />
+                </div>
+                <span className={`inline-flex text-[10px] font-bold tracking-widest uppercase px-2 py-1 mb-2 ${c.accent ? "bg-vtm-red text-white" : "bg-vtm-gray-border/70 text-vtm-dark"}`}>
+                  {c.sub}
+                </span>
+                <span className="block font-headline font-bold text-vtm-dark text-2xl">{c.name}</span>
+              </div>
+              <dl>
+                {t.rows.map((row, i) => (
+                  <div key={row.feature} className={`px-5 py-3 ${i % 2 === 0 ? "bg-white" : "bg-vtm-gray-light/40"}`}>
+                    <dt className="text-[11px] font-semibold tracking-wide uppercase text-vtm-gray-mid mb-0.5">{row.feature}</dt>
+                    <dd className="text-sm text-vtm-dark">{c.get(row)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: side-by-side comparison table */}
+        <div className="hidden md:block border border-vtm-gray-border overflow-x-auto">
           <table className="w-full text-sm min-w-[600px]">
             <thead>
               <tr className="border-b border-vtm-gray-border bg-vtm-gray-light">

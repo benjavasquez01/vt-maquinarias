@@ -86,7 +86,7 @@ export default function BlogPage() {
             {CATEGORIES.map((cat, i) => (
               <button
                 key={cat}
-                className={`flex-shrink-0 px-4 py-1.5 text-sm font-medium transition-colors rounded-full ${
+                className={`min-h-11 flex-shrink-0 px-4 py-2 text-sm font-medium transition-colors rounded-full ${
                   i === 0
                     ? "bg-vtm-dark text-white"
                     : "text-vtm-gray-mid hover:text-vtm-dark"

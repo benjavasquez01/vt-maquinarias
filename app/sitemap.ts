@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/fabrication/laser-welding-machine", priority: 0.9, freq: "monthly" as const },
     { path: "/fabrication/laser-cleaning-machine", priority: 0.9, freq: "monthly" as const },
     { path: "/fabrication/cnc-press-brake", priority: 0.9, freq: "monthly" as const },
+    { path: "/fabrication/herramientas", priority: 0.7, freq: "monthly" as const },
     { path: "/fabrication/ironworker", priority: 0.9, freq: "monthly" as const },
     { path: "/fabrication/panel-bender", priority: 0.8, freq: "monthly" as const },
     { path: "/fabrication/air-compressor", priority: 0.8, freq: "monthly" as const },

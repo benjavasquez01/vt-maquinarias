@@ -4,6 +4,7 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ImageGallery } from "@/components/ui/ImageGallery";
+import { MobileScrollRail } from "@/components/ui/MobileScrollRail";
 
 const EA_FRAMES = [
   "/images/SHEET/EA series/main 3015  (1).webp",
@@ -595,9 +596,36 @@ function AppleSpecs({
       </div>
 
       {/* Static grid for series with ≤ VISIBLE columns */}
+      <div className="md:hidden">
+        <MobileScrollRail
+          itemCount={colCount}
+          ariaLabel="Especificaciones por modelo"
+          indicator="bar"
+          trackClassName="gap-2 pr-4"
+        >
+          {specs.headers.map((header, colIdx) => (
+            <div key={header} className="w-[84%] flex-shrink-0 snap-start border-r border-vtm-gray-border px-3 pr-5">
+              <div className="mb-6 border-b border-vtm-gray-border pb-6 text-left">
+                <p className="font-headline text-xl font-bold tracking-normal text-vtm-dark">{header}</p>
+              </div>
+              <div className="flex flex-col gap-14">
+                {specRows.map((row) => (
+                  <div key={row.label} className="text-left">
+                    <p className="mb-1 break-words font-headline text-lg font-bold leading-tight text-vtm-dark">
+                      {row[unit][colIdx]}
+                    </p>
+                    <p className="text-xs tracking-wide text-vtm-gray-mid">{row.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </MobileScrollRail>
+      </div>
+
       {!hasCarousel && (
         <div
-          className="grid gap-6"
+          className="hidden gap-6 md:grid"
           style={{ gridTemplateColumns: `repeat(${colCount}, minmax(0, 1fr))` }}
         >
           {specs.headers.map((header, colIdx) => (
@@ -621,7 +649,7 @@ function AppleSpecs({
       )}
 
       {/* Carousel row: left arrow | viewport | right arrow */}
-      {hasCarousel && <div className="flex gap-4">
+      {hasCarousel && <div className="hidden w-full max-w-full gap-4 overflow-visible md:flex">
         {/* Left arrow wrapper — stretches full track height so sticky works */}
         <div className="flex-shrink-0 self-stretch">
           <button
@@ -638,7 +666,7 @@ function AppleSpecs({
         </div>
 
         {/* Viewport — clips the sliding tape */}
-        <div className="flex-1 overflow-hidden">
+        <div className="min-w-0 flex-1 overflow-hidden">
           <div
             ref={trackRef}
             style={{ width: `${trackWidthPct}%`, display: "flex", willChange: "transform" }}
@@ -696,7 +724,7 @@ function AppleSpecs({
 
       {/* Position dots */}
       {hasCarousel && (
-        <div className="flex justify-center gap-1.5 mt-6">
+        <div className="mt-6 hidden justify-center gap-1.5 md:flex">
           {specs.headers.map((_, i) => (
             <div
               key={i}
@@ -761,7 +789,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
   return (
     <>
       {/* ── Card Browser ─────────────────────────────────────────── */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="overflow-x-clip bg-white py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <p className="text-xs font-semibold tracking-widest uppercase text-vtm-red mb-4">
             {labels.productLine}
@@ -776,7 +804,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
           </div>
 
           {/* Model cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          <div className="grid min-w-0 grid-cols-2 gap-4 mb-10 md:grid-cols-4">
             {models.map((model) => {
               const isSelected = model.id === selectedId;
               return (
@@ -821,7 +849,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
           </div>
 
           {/* Detail strip */}
-          <div ref={detailRef} key={selected.id} className="border-t border-vtm-gray-border pt-8 grid md:grid-cols-2 gap-8 items-start">
+          <div ref={detailRef} key={selected.id} className="grid min-w-0 items-start gap-8 border-t border-vtm-gray-border pt-8 md:grid-cols-2">
             {/* Left: gallery if images exist for this series, else description */}
             {SERIES_FRAMES[selected.id] ? (
               <ImageGallery
@@ -845,7 +873,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
             )}
 
             {/* Right: for EA show text + bestFor, for others just bestFor */}
-            <div>
+            <div className="min-w-0">
               {SERIES_FRAMES[selected.id] && (
                 <div className="mb-6">
                   <p className="font-headline text-2xl font-bold text-vtm-dark mb-0.5">{selected.series}</p>
@@ -878,7 +906,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
       </section>
 
       {/* ── Apple-style Specs Section ────────────────────────────── */}
-      <section className="bg-vtm-gray-light py-20 md:py-28" id="specs">
+      <section className="overflow-x-clip bg-vtm-gray-light py-20 md:py-28" id="specs">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <p className="text-xs font-semibold tracking-widest uppercase text-vtm-red mb-4">
             {labels.specsSection}
@@ -888,7 +916,7 @@ export function ModelBrowserWithSpecs({ locale }: { locale: "en" | "es" }) {
               {selected.series} — {labels.specsHeadline}
             </h2>
           </div>
-          <div className="bg-white p-6 md:p-10">
+          <div className="min-w-0 overflow-hidden bg-white p-6 md:p-10">
             <AppleSpecs specs={selected.specs} locale={locale} unit={unit} setUnit={setUnit} />
           </div>
         </div>

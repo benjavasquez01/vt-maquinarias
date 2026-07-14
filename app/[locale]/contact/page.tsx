@@ -48,10 +48,10 @@ export default async function ContactPage({
                   </div>
                   <div>
                     <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1">{c.info.email.label}</p>
-                    <a href="mailto:dvasquez@vtmaquinarias.cl" className="block font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                    <a href="mailto:dvasquez@vtmaquinarias.cl" className="flex min-h-11 items-center font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
                       dvasquez@vtmaquinarias.cl
                     </a>
-                    <a href="mailto:contacto@vtmaquinarias.cl" className="block font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                    <a href="mailto:contacto@vtmaquinarias.cl" className="flex min-h-11 items-center font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
                       contacto@vtmaquinarias.cl
                     </a>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">{c.info.email.responseTime}</p>
@@ -65,7 +65,7 @@ export default async function ContactPage({
                   </div>
                   <div>
                     <p className="text-vtm-gray-mid text-xs font-semibold tracking-wide uppercase mb-1">{c.info.phone.label}</p>
-                    <a href="tel:+56999171017" className="font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
+                    <a href="tel:+56999171017" className="inline-flex min-h-11 items-center font-headline font-semibold text-vtm-dark hover:text-vtm-red transition-colors">
                       +56 9 9917 1017
                     </a>
                     <p className="text-vtm-gray-mid font-body text-sm mt-0.5">{c.info.phone.hours}</p>
