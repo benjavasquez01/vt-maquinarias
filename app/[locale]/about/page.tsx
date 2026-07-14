@@ -56,10 +56,10 @@ export default async function AboutPage({
                 ))}
               </div>
             </div>
-            <div className="relative h-96 lg:h-auto lg:min-h-[480px]">
+            <div className="relative aspect-[3/4] overflow-hidden bg-vtm-gray-light">
               <Image
-                src="/images/about-company-story-2.webp"
-                alt="Dark factory interior with industrial machinery"
+                src="/images/about-team-showroom.webp"
+                alt="Equipo de VT Maquinarias en showroom con máquinas industriales"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
