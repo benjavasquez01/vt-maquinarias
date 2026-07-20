@@ -30,21 +30,17 @@ interface Message {
   content: string;
 }
 
+type AgentMode = "quote" | "demo";
+
 interface AISalesAgentProps {
   isOpen: boolean;
   onClose: () => void;
-  mode?: "quote" | "demo";
+  mode?: AgentMode;
 }
 
-const OPENING_MESSAGES: Record<"en" | "es", Record<string, string>> = {
-  en: {
-    quote: "Hi! I'm Benjamin, your VT Maquinarias sales representative. I'm here to help you find the right machine for your shop and get you accurate pricing. What kind of metalworking are you doing — cutting, bending, welding, or something else?",
-    demo: "Hi! I'm Benjamin, your VT Maquinarias sales representative. I see you're interested in our welding automation systems. What are you currently welding, and what's driving your interest in automation?",
-  },
-  es: {
-    quote: "¡Hola! Soy Benjamin, tu representante de ventas de VT Maquinarias. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, plegado, soldadura u otra cosa?",
-    demo: "¡Hola! Soy Benjamin, tu representante de ventas de VT Maquinarias. Veo que te interesa nuestros sistemas de automatización de soldadura. ¿Qué estás soldando actualmente y qué te llevó a considerar la automatización?",
-  },
+const OPENING_MESSAGES: Record<AgentMode, string> = {
+  quote: "¡Hola! Soy Benjamín, tu representante de ventas de VT Maquinarias. Estoy aquí para ayudarte a encontrar la máquina adecuada para tu taller y darte precios precisos. ¿Qué tipo de trabajo en metal realizas — corte, plegado, soldadura u otra cosa?",
+  demo: "¡Hola! Soy Benjamín, tu representante de ventas de VT Maquinarias. Veo que te interesan nuestros sistemas de automatización de soldadura. ¿Qué estás soldando actualmente y qué te llevó a considerar la automatización?",
 };
 
 const LEAD_COMPLETE_MARKER = "LEAD_COMPLETE:";
@@ -90,11 +86,11 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
   const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
-  const [language] = useState<"en" | "es">("es");
+  const [language] = useState<"es">("es");
   const [leadComplete, setLeadComplete] = useState(false);
   const leadSentRef = useRef<"none" | "partial" | "complete">("none");
   const messagesRef = useRef<Message[]>([]);
-  const languageRef = useRef<"en" | "es">("es");
+  const languageRef = useRef<"es">("es");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
@@ -107,7 +103,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
   // Initialize on open
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      const opening = OPENING_MESSAGES[language][mode];
+      const opening = OPENING_MESSAGES[mode];
       setMessages([{ role: "assistant", content: opening }]);
       leadSentRef.current = "none";
       if (voiceEnabled) speakText(opening, language);
@@ -119,7 +115,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     if (messages.length > 0) {
       setLeadComplete(false);
       leadSentRef.current = "none";
-      const opening = OPENING_MESSAGES[language][mode];
+      const opening = OPENING_MESSAGES[mode];
       setMessages([{ role: "assistant", content: opening }]);
     }
   }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -155,7 +151,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  const speakText = async (text: string, lang: "en" | "es") => {
+  const speakText = async (text: string, lang: "es") => {
     if (!voiceEnabled) return;
     // Strip JSON marker before speaking
     const cleanText = text.replace(/LEAD_COMPLETE:\{.*\}/s, "").trim();
@@ -222,7 +218,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
 
     const lang = languageRef.current;
     const transcript = msgs
-      .map((m) => `${m.role === "user" ? "Customer" : "VTM AI"}: ${m.content}`)
+      .map((m) => `${m.role === "user" ? "Cliente" : "IA VTM"}: ${m.content}`)
       .join("\n\n");
     const salvaged = {
       name: "",
@@ -329,6 +325,10 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
         }
       }
 
+      if (!assistantText.trim()) {
+        throw new Error("El asistente no devolvió contenido");
+      }
+
       // Extract and strip both markers from the visible bubble
       const partialJson = extractMarkerJson(assistantText, LEAD_PARTIAL_MARKER);
       const completeJson = extractMarkerJson(assistantText, LEAD_COMPLETE_MARKER);
@@ -363,7 +363,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
       }
 
       const transcript = newMessages
-        .map((m) => `${m.role === "user" ? "Customer" : "VTM AI"}: ${m.content}`)
+        .map((m) => `${m.role === "user" ? "Cliente" : "IA VTM"}: ${m.content}`)
         .join("\n\n");
 
       if (completeJson) {
@@ -381,7 +381,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
         {
           role: "assistant",
           content:
-            "Something went wrong on my end — sorry about that. You can also reach us directly by WhatsApp or phone if you'd like to continue.",
+            "Perdón, tuve un problema para responder en este momento. Puedes continuar por WhatsApp o teléfono y nuestro equipo comercial te ayudará con tu solicitud.",
         },
       ]);
     } finally {
@@ -398,7 +398,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     }
     const SpeechRecognitionCtor = window.SpeechRecognition ?? window.webkitSpeechRecognition;
     if (!SpeechRecognitionCtor) {
-      alert("Speech recognition is not supported in your browser. Please use Chrome or Edge.");
+      alert("El reconocimiento de voz no está disponible en este navegador. Por favor usa Chrome o Edge.");
       return;
     }
     const recognition = new SpeechRecognitionCtor();
@@ -440,7 +440,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
       className="fixed inset-0 z-50 flex flex-col"
       role="dialog"
       aria-modal="true"
-      aria-label="VTM AI Sales Assistant"
+      aria-label="Asistente de ventas con IA de VT Maquinarias"
     >
       {/* Backdrop */}
       <div
@@ -460,7 +460,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
               </svg>
             </div>
             <div>
-              <p className="text-white font-semibold text-sm">Benjamin</p>
+              <p className="text-white font-semibold text-sm">Benjamín</p>
               <p className="text-white/40 text-xs">VT Maquinarias — Representante de Ventas</p>
             </div>
           </div>
@@ -470,8 +470,8 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
             <button
               onClick={() => setVoiceEnabled((v) => !v)}
               className={`p-2 rounded-full transition-colors ${voiceEnabled ? "text-vtm-red" : "text-white/30 hover:text-white/60"}`}
-              title={voiceEnabled ? "Disable voice output" : "Enable voice output"}
-              aria-label={voiceEnabled ? "Disable voice output" : "Enable voice output"}
+              title={voiceEnabled ? "Desactivar voz" : "Activar voz"}
+              aria-label={voiceEnabled ? "Desactivar voz" : "Activar voz"}
               aria-pressed={voiceEnabled}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -483,7 +483,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
             <button
               onClick={onClose}
               className="p-2 text-white/30 hover:text-white transition-colors"
-              aria-label="Close assistant"
+              aria-label="Cerrar asistente"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
@@ -550,7 +550,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
           {/* Lead complete message */}
           {leadComplete && (
             <div className="bg-vtm-red/10 border border-vtm-red/30 px-4 py-3 text-vtm-red text-sm rounded">
-              ✓ Your information has been sent to our team. You&apos;ll hear from us within one business day.
+              ✓ Tu información fue enviada a nuestro equipo. Te contactaremos dentro de un día hábil.
             </div>
           )}
 
@@ -572,10 +572,10 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder={language === "es" ? "Escribe tu respuesta..." : "Type your reply..."}
+                placeholder="Escribe tu respuesta..."
                 className="flex-1 bg-transparent text-white text-sm placeholder-white/30 focus:outline-none"
                 disabled={isLoading}
-                aria-label="Message input"
+                aria-label="Campo de mensaje"
               />
               {/* Voice input button */}
               <button
@@ -584,7 +584,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
                 className={`ml-2 flex-shrink-0 transition-colors ${
                   isListening ? "text-vtm-red animate-pulse" : "text-white/30 hover:text-white/60"
                 }`}
-                aria-label={isListening ? "Stop listening" : "Start voice input"}
+                aria-label={isListening ? "Detener escucha" : "Iniciar dictado por voz"}
                 aria-pressed={isListening}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -597,7 +597,7 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
               type="submit"
               disabled={!input.trim() || isLoading}
               className="flex-shrink-0 bg-vtm-red text-white px-4 py-2.5 rounded-lg disabled:opacity-40 hover:bg-vtm-red/90 transition-colors"
-              aria-label="Send message"
+              aria-label="Enviar mensaje"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />

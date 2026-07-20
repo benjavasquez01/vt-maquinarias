@@ -52,22 +52,42 @@ const SYSTEM_PROMPT_DEMO = `${SYSTEM_PROMPT}
 
 CONTEXTO: Este usuario hizo clic en "Solicitar Demo" en la página de automatización. Enfócate en el brazo soldador colaborativo. Pregunta por su volumen de soldadura, su configuración de soldadura actual y qué impulsa su interés en la automatización.`;
 
+const FALLBACK_MESSAGE =
+  "Perdón, tuve un problema para responder en este momento. Puedes continuar por WhatsApp o teléfono y nuestro equipo comercial te ayudará con tu solicitud.";
+
+function streamAssistantText(text: string) {
+  const encoder = new TextEncoder();
+
+  return new Response(
+    new ReadableStream({
+      start(controller) {
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ delta: { text } })}\n\n`));
+        controller.close();
+      },
+    }),
+    {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+      },
+    }
+  );
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { messages, mode, language } = await req.json();
+    const { messages, mode } = await req.json();
 
     if (!process.env.GROQ_API_KEY) {
-      return new Response(
-        JSON.stringify({ error: "API key not configured" }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
+      return streamAssistantText(
+        "Perdón, ahora mismo no puedo conectar con el asistente de IA. Puedes escribirnos por WhatsApp o teléfono y un representante de VT Maquinarias te ayudará directamente."
       );
     }
 
     const base = mode === "demo" ? SYSTEM_PROMPT_DEMO : SYSTEM_PROMPT;
     const langInstruction =
-      language === "es"
-        ? "\n\nIMPORTANTE: El usuario ha seleccionado español. Responde SIEMPRE en español, sin excepción, independientemente del idioma en que escriba el usuario."
-        : "\n\nIMPORTANT: The user has selected English. Always respond in English.";
+      "\n\nIMPORTANTE: El sitio de VT Maquinarias está en español. Responde SIEMPRE en español, sin excepción, independientemente del idioma en que escriba el usuario.";
     const systemPrompt = base + langInstruction;
 
     const groqResponse = await fetch(
@@ -95,10 +115,7 @@ export async function POST(req: NextRequest) {
     if (!groqResponse.ok) {
       const error = await groqResponse.text();
       console.error("Groq API error:", error);
-      return new Response(
-        JSON.stringify({ error: "AI service unavailable" }),
-        { status: 502, headers: { "Content-Type": "application/json" } }
-      );
+      return streamAssistantText(FALLBACK_MESSAGE);
     }
 
     // Transform Groq SSE (OpenAI format) → Anthropic-compatible SSE
@@ -110,6 +127,8 @@ export async function POST(req: NextRequest) {
     const decoder = new TextDecoder();
 
     (async () => {
+      let wroteText = false;
+
       try {
         const reader = groqResponse.body!.getReader();
         let buffer = "";
@@ -133,13 +152,20 @@ export async function POST(req: NextRequest) {
               if (text) {
                 const chunk = `data: ${JSON.stringify({ delta: { text } })}\n\n`;
                 await writer.write(encoder.encode(chunk));
+                wroteText = true;
               }
             } catch {
               // skip malformed chunks
             }
           }
         }
+      } catch (error) {
+        console.error("Groq stream error:", error);
       } finally {
+        if (!wroteText) {
+          const chunk = `data: ${JSON.stringify({ delta: { text: FALLBACK_MESSAGE } })}\n\n`;
+          await writer.write(encoder.encode(chunk));
+        }
         await writer.close();
       }
     })();
@@ -154,7 +180,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("Chat route error:", err);
     return new Response(
-      JSON.stringify({ error: "Internal server error" }),
+      JSON.stringify({ error: "Error interno del asistente" }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
