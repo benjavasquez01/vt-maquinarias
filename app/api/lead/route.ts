@@ -1,5 +1,12 @@
 import { NextRequest } from "next/server";
 
+/** Qué pasó con cada destino: sirve para responder y para el log. */
+type SinkResult = { ok: boolean; detail: string };
+
+const skipped = (why: string): SinkResult => ({ ok: false, detail: `skipped: ${why}` });
+const failed = (why: string): SinkResult => ({ ok: false, detail: `failed: ${why}` });
+const done = (detail = "ok"): SinkResult => ({ ok: true, detail });
+
 interface LeadData {
   name: string;
   company: string;
@@ -19,15 +26,23 @@ interface LeadData {
   partial?: boolean;
 }
 
-async function createHubSpotContact(lead: LeadData) {
-  if (!process.env.HUBSPOT_API_KEY) return null;
-  if (!lead.email) return null; // HubSpot requires email to create a contact
+async function createHubSpotContact(
+  lead: LeadData
+): Promise<{ contactId: string | null; result: SinkResult }> {
+  if (!process.env.HUBSPOT_API_KEY) {
+    return { contactId: null, result: skipped("HUBSPOT_API_KEY not set") };
+  }
+  // Un prospecto sin ninguna forma de contacto no se puede responder, pero
+  // basta con el teléfono: exigir correo dejaba fuera a quien solo deja su
+  // número, que en Chile es la mitad de las conversaciones por WhatsApp.
+  if (!lead.email && !lead.phone) {
+    return { contactId: null, result: skipped("lead has no email and no phone") };
+  }
 
   const properties: Record<string, string> = {
     firstname: lead.name.split(" ")[0] ?? lead.name,
     lastname: lead.name.split(" ").slice(1).join(" ") || "",
     company: lead.company,
-    email: lead.email,
     phone: lead.phone,
     vtm_rut: lead.rut ?? "",
     hs_lead_status: "NEW",
@@ -43,6 +58,12 @@ async function createHubSpotContact(lead: LeadData) {
     vtm_machines_of_interest: lead.machinesOfInterest,
     vtm_language: lead.language,
   };
+  if (lead.email) properties.email = lead.email;
+
+  // HubSpot deduplica por correo; sin correo, buscamos por teléfono
+  const dedupe = lead.email
+    ? { propertyName: "email", value: lead.email }
+    : { propertyName: "phone", value: lead.phone };
 
   try {
     // Create or update contact
@@ -56,6 +77,11 @@ async function createHubSpotContact(lead: LeadData) {
     });
 
     if (!res.ok) {
+      // Sin esto, una propiedad personalizada inexistente o un token revocado
+      // hacían fallar el contacto entero sin dejar rastro en ninguna parte.
+      const reason = await res.text();
+      console.error("HubSpot contact creation failed:", res.status, reason);
+
       // Try to find and update existing contact
       const searchRes = await fetch(
         "https://api.hubapi.com/crm/v3/objects/contacts/search",
@@ -67,7 +93,7 @@ async function createHubSpotContact(lead: LeadData) {
           },
           body: JSON.stringify({
             filterGroups: [
-              { filters: [{ propertyName: "email", operator: "EQ", value: lead.email }] },
+              { filters: [{ propertyName: dedupe.propertyName, operator: "EQ", value: dedupe.value }] },
             ],
           }),
         }
@@ -85,16 +111,16 @@ async function createHubSpotContact(lead: LeadData) {
             body: JSON.stringify({ properties }),
           }
         );
-        return searchData.results[0].id;
+        return { contactId: searchData.results[0].id, result: done("updated existing contact") };
       }
-      return null;
+      return { contactId: null, result: failed(`${res.status} ${reason.slice(0, 200)}`) };
     }
 
     const data = await res.json();
-    return data.id;
+    return { contactId: data.id, result: done("created contact") };
   } catch (err) {
     console.error("HubSpot contact creation failed:", err);
-    return null;
+    return { contactId: null, result: failed(String(err)) };
   }
 }
 
@@ -131,8 +157,9 @@ async function addHubSpotNote(contactId: string, transcript: string) {
   }
 }
 
-async function sendEmailNotification(lead: LeadData) {
-  if (!process.env.RESEND_API_KEY || !process.env.NOTIFY_EMAIL) return;
+async function sendEmailNotification(lead: LeadData): Promise<SinkResult> {
+  if (!process.env.RESEND_API_KEY) return skipped("RESEND_API_KEY not set");
+  if (!process.env.NOTIFY_EMAIL) return skipped("NOTIFY_EMAIL not set");
 
   const prefix = lead.partial ? "[PARCIAL] " : "";
   const subject = `${prefix}Nuevo prospecto: ${lead.name || "(sin nombre)"} — ${lead.company || "(sin empresa)"}`;
@@ -150,7 +177,8 @@ async function sendEmailNotification(lead: LeadData) {
       <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Teléfono / WhatsApp</td><td style="padding:8px">${lead.phone || "—"}</td></tr>
       <tr><td style="padding:8px;font-weight:bold">Máquinas de Interés</td><td style="padding:8px">${lead.machinesOfInterest || "—"}</td></tr>
       <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Materiales</td><td style="padding:8px">${lead.materials || "—"}</td></tr>
-      <tr><td style="padding:8px;font-weight:bold">Espesor</td><td style="padding:8px">${lead.thickness || "—"}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold">Largo / Dimensiones</td><td style="padding:8px">${lead.dimensions || "—"}</td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Espesor</td><td style="padding:8px">${lead.thickness || "—"}</td></tr>
       <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Volumen</td><td style="padding:8px">${lead.volume || "—"}</td></tr>
       <tr><td style="padding:8px;font-weight:bold">Plazo</td><td style="padding:8px">${lead.timeline || "—"}</td></tr>
       <tr style="background:#f5f5f5"><td style="padding:8px;font-weight:bold">Equipos Actuales</td><td style="padding:8px">${lead.currentEquipment || "—"}</td></tr>
@@ -174,14 +202,21 @@ async function sendEmailNotification(lead: LeadData) {
         html,
       }),
     });
-    if (!res.ok) console.error("Resend email failed:", await res.text());
+    if (!res.ok) {
+      const reason = await res.text();
+      console.error("Resend email failed:", res.status, reason);
+      return failed(`${res.status} ${reason.slice(0, 200)}`);
+    }
+    return done();
   } catch (err) {
     console.error("Email notification error:", err);
+    return failed(String(err));
   }
 }
 
-async function sendWhatsAppNotification(lead: LeadData) {
-  if (!process.env.WHATSAPP_NOTIFY_NUMBER || !process.env.TWILIO_ACCOUNT_SID) return;
+async function sendWhatsAppNotification(lead: LeadData): Promise<SinkResult> {
+  if (!process.env.TWILIO_ACCOUNT_SID) return skipped("TWILIO_ACCOUNT_SID not set");
+  if (!process.env.WHATSAPP_NOTIFY_NUMBER) return skipped("WHATSAPP_NOTIFY_NUMBER not set");
 
   const prefix = lead.partial ? "⚠ [PARCIAL] " : "🔔 ";
   const message = `${prefix}Nuevo prospecto de vtmaquinarias.cl:\n\n👤 ${lead.name || "(sin nombre)"} — ${lead.company || "(sin empresa)"}\n🪪 RUT: ${lead.rut || "—"}\n📧 ${lead.email || "—"}\n📞 ${lead.phone || "—"}\n🔧 Interesado en: ${lead.machinesOfInterest || "—"}\n📦 Material: ${lead.materials || "—"}\n⏱ Plazo: ${lead.timeline || "—"}`;
@@ -204,9 +239,15 @@ async function sendWhatsAppNotification(lead: LeadData) {
         }),
       }
     );
-    if (!res.ok) console.error("WhatsApp notification failed:", await res.text());
+    if (!res.ok) {
+      const reason = await res.text();
+      console.error("WhatsApp notification failed:", res.status, reason);
+      return failed(`${res.status} ${reason.slice(0, 200)}`);
+    }
+    return done();
   } catch (err) {
     console.error("WhatsApp notification error:", err);
+    return failed(String(err));
   }
 }
 
@@ -214,16 +255,28 @@ export async function POST(req: NextRequest) {
   try {
     const lead: LeadData = await req.json();
 
-    // Fire all side effects concurrently
-    const contactId = await createHubSpotContact(lead);
+    const { contactId, result: hubspot } = await createHubSpotContact(lead);
 
-    await Promise.allSettled([
-      contactId ? addHubSpotNote(contactId, lead.transcript) : Promise.resolve(),
+    const [whatsapp, email] = await Promise.all([
       sendWhatsAppNotification(lead),
       sendEmailNotification(lead),
     ]);
+    if (contactId) await addHubSpotNote(contactId, lead.transcript);
 
-    return new Response(JSON.stringify({ success: true, contactId }), {
+    const sinks = { hubspot, whatsapp, email };
+    const delivered = Object.values(sinks).some((s) => s.ok);
+
+    // Un prospecto que no llegó a ningún destino está perdido. Antes esto
+    // devolvía success:true igual y no quedaba ni una línea en el log.
+    if (!delivered) {
+      console.error(
+        `LEAD NOT DELIVERED — ${lead.name || "(sin nombre)"} <${lead.email || lead.phone || "sin contacto"}>`,
+        sinks
+      );
+    }
+
+    return new Response(JSON.stringify({ success: delivered, contactId, sinks }), {
+      status: delivered ? 200 : 502,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {

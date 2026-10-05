@@ -183,6 +183,9 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
     if (leadSentRef.current === "partial" && partial) return;
     try {
       const lead = JSON.parse(leadJson);
+      // Un parcial sin correo ni teléfono no es un prospecto: nadie puede
+      // responderlo, y gastaría el único envío parcial, descartando el bueno.
+      if (partial && !lead.email && !lead.phone) return;
       await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -341,7 +344,14 @@ export function AISalesAgent({ isOpen, onClose, mode = "quote" }: AISalesAgentPr
       if (cleanText !== assistantText.trim()) {
         setMessages((prev) => {
           const updated = [...prev];
-          updated[updated.length - 1] = { role: "assistant", content: cleanText };
+          const last = updated[updated.length - 1];
+          if (cleanText) {
+            updated[updated.length - 1] = { role: "assistant", content: cleanText };
+          } else if (last?.role === "assistant") {
+            // El modelo respondió solo con el JSON del prospecto: sin esto, el
+            // visitante se queda mirando una burbuja en blanco.
+            updated.pop();
+          }
           return updated;
         });
       }
