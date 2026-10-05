@@ -133,6 +133,61 @@ async function callGroq(payload: string): Promise<Response> {
   return enviar();
 }
 
+// Memoria del último aviso, para no repetirlo cada minuto. Vive en la
+// instancia de la función, así que una ráfaga repartida entre varias
+// instancias puede mandar más de uno: es el precio de no guardar estado.
+let ultimoAvisoDeCuota = 0;
+const ESPERA_ENTRE_AVISOS_MS = 60 * 60 * 1000;
+
+/**
+ * Avisa por correo cuando un visitante se quedó sin respuesta por el límite de
+ * Groq. Solo se llama cuando el reintento ya no alcanzó: los 429 que el
+ * reintento absorbe no los nota nadie y no merecen un correo.
+ */
+async function avisarCuotaAgotada(mensajeDeGroq: string) {
+  const destino = process.env.ALERT_EMAIL || process.env.NOTIFY_EMAIL;
+  if (!process.env.RESEND_API_KEY || !destino) return;
+
+  const ahora = Date.now();
+  if (ahora - ultimoAvisoDeCuota < ESPERA_ENTRE_AVISOS_MS) return;
+  ultimoAvisoDeCuota = ahora;
+
+  const cuando = new Date().toLocaleString("es-CL", { timeZone: "America/Santiago" });
+  const html = `
+    <h2 style="color:#c0392b">El chat de vtmaquinarias.cl se quedó sin cuota</h2>
+    <p>Un visitante escribió al asistente y no recibió respuesta: vio el mensaje
+    de disculpa y probablemente abandonó la conversación.</p>
+    <p><strong>Cuándo:</strong> ${cuando} (hora de Chile)</p>
+    <p><strong>Qué dijo Groq:</strong></p>
+    <pre style="background:#f5f5f5;padding:12px;white-space:pre-wrap;font-size:13px">${mensajeDeGroq.slice(0, 600)}</pre>
+    <p>El reintento automático ya lo intentó y no alcanzó. Si esto llega seguido,
+    el plan gratuito de Groq (8.000 tokens por minuto) ya no da abasto para el
+    tráfico del chat y conviene subir al plan Developer.</p>
+    <p style="color:#666;font-size:12px">Para no llenar la bandeja, este aviso se
+    manda como máximo una vez por hora.</p>
+  `;
+
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "VT Maquinarias <onboarding@resend.dev>",
+        to: [destino],
+        subject: "⚠ El chat se quedó sin cuota de Groq",
+        html,
+      }),
+    });
+    if (!res.ok) console.error("Aviso de cuota no se pudo enviar:", res.status, await res.text());
+  } catch (err) {
+    // Que falle el aviso no debe romper la respuesta al visitante
+    console.error("Aviso de cuota no se pudo enviar:", err);
+  }
+}
+
 function streamAssistantText(text: string) {
   const encoder = new TextEncoder();
 
@@ -185,6 +240,9 @@ export async function POST(req: NextRequest) {
     if (!groqResponse.ok) {
       const error = await groqResponse.text();
       console.error("Groq API error:", error);
+      // Aquí es donde el visitante recibe la disculpa en vez de una respuesta.
+      // Si fue por cuota, es justo lo que hay que saber.
+      if (groqResponse.status === 429) await avisarCuotaAgotada(error);
       return streamAssistantText(FALLBACK_MESSAGE);
     }
 
