@@ -19,19 +19,21 @@ const FEATURE_IMAGES = [
   { key: "consultation" as const, image: "/images/homepage-feature-consultation.jpg.webp", imageAlt: "Bodega VTM con stock de máquinas y repuestos en Chile", reverse: true },
 ];
 
+// The three newest posts, newest first (grid is 3 columns). The three arrays are
+// parallel: BLOG_KEYS index → messages `home.blog.<key>`, slug and cover image.
 const BLOG_SLUGS = [
+  "vt-maquinarias-en-fabtech-2026",
   "fiber-laser-vs-co2-2026",
   "cobot-welding-roi-checklist",
-  "press-brake-throughput-signs",
 ] as const;
 
 const BLOG_IMAGES = [
+  "/images/blog-fabtech-2026.webp",
   "/images/blog-fiber-vs-co2.webp",
   "/images/blog-cobot-roi.webp",
-  "/images/blog-press-brake-tonnage.webp",
 ] as const;
 
-const BLOG_KEYS = ["p1", "p2", "p3"] as const;
+const BLOG_KEYS = ["fabtech", "p1", "p2"] as const;
 
 const TESTIMONIAL_KEYS = ["t1", "t2", "t3"] as const;
 

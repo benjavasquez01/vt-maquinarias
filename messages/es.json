@@ -159,7 +159,12 @@
       "label": "Guías Técnicas",
       "heading": "Criterios claros para comprar y operar maquinaria industrial.",
       "allArticles": "Todas las Guías",
-      "readMore": "Leer Guía",
+      "readMore": "Leer Artículo",
+      "fabtech": {
+        "title": "VT Maquinarias en FABTECH 2026: Conectando la Industria Chilena con la Innovación Mundial",
+        "excerpt": "Estuvimos en FABTECH Expo 2026, en Las Vegas, para ver hacia dónde avanzan el corte láser, el plegado CNC y la soldadura — y qué significa para las maestranzas chilenas.",
+        "date": "27 de octubre de 2026"
+      },
       "p1": {
         "title": "Láser de Fibra vs. CO₂: Qué Conviene en una Maestranza Chilena",
         "excerpt": "Consumo eléctrico, velocidad en plancha delgada, mantención y costo por hora para talleres que cortan acero carbono, inoxidable y aluminio.",
