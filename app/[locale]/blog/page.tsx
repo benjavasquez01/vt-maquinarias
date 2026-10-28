@@ -13,6 +13,17 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "vt-maquinarias-en-fabtech-2026",
+    title: "VT Maquinarias en FABTECH 2026: Conectando la Industria Chilena con la Innovación Mundial",
+    excerpt:
+      "Estuvimos en FABTECH Expo 2026, en Las Vegas, para ver hacia dónde avanzan el corte láser, el plegado CNC y la soldadura — y qué significa para las maestranzas chilenas.",
+    category: "Noticias del Sector",
+    date: "27 de octubre de 2026",
+    readTime: "4 min de lectura",
+    imageId: "/images/blog-fabtech-2026.webp",
+    imagePosition: "center 25%",
+  },
+  {
     slug: "fiber-laser-vs-co2-laser-cutting",
     title: "Láser de Fibra vs. CO₂: Qué Conviene en una Maestranza Chilena",
     excerpt:
@@ -113,6 +124,7 @@ export default function BlogPage() {
                 alt={POSTS[0].title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                style={POSTS[0].imagePosition ? { objectPosition: POSTS[0].imagePosition } : undefined}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
@@ -128,7 +140,7 @@ export default function BlogPage() {
                 {POSTS[0].title}
               </h2>
               <p className="text-vtm-gray-mid leading-relaxed mb-6">{POSTS[0].excerpt}</p>
-              <span className="text-vtm-red text-sm font-semibold">Leer guía técnica →</span>
+              <span className="text-vtm-red text-sm font-semibold">Leer artículo →</span>
             </div>
           </Link>
 

@@ -13,10 +13,67 @@ const POSTS: Record<string, {
   date: string;
   readTime: string;
   imageId: string;
+  // Optional CSS object-position for the hero crop (e.g. keep a face in frame)
+  imagePosition?: string;
   author: string;
   body: { type: "h2" | "p" | "ul"; content: string | string[] }[];
   related: { title: string; slug: string; imageId: string; category: string }[];
 }> = {
+  "vt-maquinarias-en-fabtech-2026": {
+    title: "VT Maquinarias en FABTECH 2026: Conectando la Industria Chilena con la Innovación Mundial",
+    excerpt: "Estuvimos en FABTECH Expo 2026, en Las Vegas, para ver hacia dónde avanzan el corte láser, el plegado CNC y la soldadura — y qué significa para las maestranzas chilenas.",
+    category: "Noticias del Sector",
+    date: "27 de octubre de 2026",
+    readTime: "4 min de lectura",
+    imageId: "/images/blog-fabtech-2026.webp",
+    imagePosition: "center 25%",
+    author: "VT Maquinarias",
+    body: [
+      { type: "p", content: "¿Qué significa para una empresa metalmecánica chilena que su proveedor de maquinaria industrial esté presente en uno de los encuentros tecnológicos más importantes del mundo?" },
+      { type: "p", content: "Significa mirar más allá de las máquinas que existen hoy. Significa conocer hacia dónde avanzan los procesos de fabricación, qué tecnologías están transformando la industria y cómo esa evolución puede abrir nuevas oportunidades para nuestros clientes." },
+      { type: "p", content: "Con esa mirada, VT Maquinarias estuvo presente en FABTECH Expo 2026, realizado del 21 al 23 de octubre en Las Vegas, Estados Unidos." },
+      { type: "p", content: "Una experiencia que queremos compartir porque creemos que la tecnología industrial debe estar cada vez más cerca de quienes producen, emprenden y hacen crecer la industria chilena." },
+      { type: "h2", content: "¿Qué es FABTECH y por qué es tan importante para la industria metalmecánica?" },
+      { type: "p", content: "FABTECH es el encuentro de fabricación de metales, conformado, soldadura y acabado industrial más grande de Norteamérica." },
+      { type: "p", content: "Durante más de cuatro décadas, ha reunido a fabricantes, proveedores, especialistas y líderes de la industria para presentar tecnologías, intercambiar conocimientos y explorar soluciones que buscan mejorar la productividad." },
+      { type: "p", content: "Su edición 2026 contempló más de 1.400 expositores y una superficie de exhibición superior a 65.000 metros cuadrados." },
+      { type: "p", content: "Entre sus principales áreas estuvieron el corte láser, las plegadoras CNC, la automatización industrial, la robótica, la soldadura, el procesamiento de tubos y la inteligencia artificial aplicada a la fabricación." },
+      { type: "p", content: "Pero su importancia va mucho más allá del tamaño de la exposición." },
+      { type: "p", content: "FABTECH permite conocer equipos en funcionamiento, comparar tecnologías y comprender cómo los avances industriales están respondiendo a los desafíos de productividad, costos, precisión y competitividad." },
+      { type: "h2", content: "¿Por qué es relevante que VT Maquinarias esté presente?" },
+      { type: "p", content: "Porque una empresa que comercializa maquinaria industrial también necesita comprender cómo evoluciona la tecnología que ofrece." },
+      { type: "p", content: "Para nosotros, estar en FABTECH 2026 representa una oportunidad de observar de cerca las innovaciones y tendencias de un sector que cambia constantemente." },
+      { type: "p", content: "Y esto tiene una conexión directa con nuestros clientes en Chile." },
+      { type: "p", content: "Pensemos en el dueño de una maestranza que necesita aumentar su producción, pero no sabe qué potencia de corte láser requiere." },
+      { type: "p", content: "O en una empresa que busca incorporar una plegadora CNC para mejorar la precisión de sus piezas." },
+      { type: "p", content: "O en un taller que evalúa modernizar sus procesos de soldadura para responder a nuevos proyectos." },
+      { type: "p", content: "En todos esos casos, la decisión de compra requiere mucho más que revisar una ficha técnica." },
+      { type: "p", content: "Necesita conocimiento de las alternativas disponibles, comprensión del proceso productivo y orientación para evaluar la inversión." },
+      { type: "p", content: "Por eso creemos que conocer lo que ocurre en la industria mundial es una forma de fortalecer nuestra capacidad de acompañar las decisiones de nuestros clientes." },
+      { type: "h2", content: "La innovación mundial también debe tener sentido para una maestranza chilena" },
+      { type: "p", content: "Una de las grandes conversaciones de FABTECH 2026 estuvo relacionada con la automatización, la inteligencia artificial y las nuevas tecnologías para la fabricación industrial." },
+      { type: "p", content: "Sin embargo, incorporar innovación no significa necesariamente comprar el equipo más grande, potente o costoso." },
+      { type: "p", content: "Para una empresa chilena, innovar puede significar reducir los tiempos de corte, mejorar la repetibilidad del plegado, disminuir los reprocesos o incorporar nuevas capacidades de fabricación." },
+      { type: "p", content: "La tecnología tiene sentido cuando responde a una necesidad concreta." },
+      { type: "p", content: "Por eso, antes de invertir en una máquina de corte láser de fibra, una plegadora CNC o un equipo de soldadura láser, es importante evaluar los materiales, los espesores, el volumen de trabajo y los objetivos productivos." },
+      { type: "p", content: "No se trata solamente de adquirir maquinaria. Se trata de tomar decisiones que permitan desarrollar un negocio más competitivo." },
+      { type: "h2", content: "De Las Vegas a Chile: nuestro compromiso con quienes producen" },
+      { type: "p", content: "En VT Maquinarias sabemos que detrás de cada inversión industrial hay una historia: una empresa que quiere crecer, una maestranza que necesita responder a nuevos pedidos o un emprendedor que busca dar el siguiente paso." },
+      { type: "p", content: "Por eso, nuestra participación en FABTECH 2026 tiene un significado especial." },
+      { type: "p", content: "Queremos mantenernos conectados con la evolución de la industria, ampliar nuestra mirada sobre las tecnologías disponibles y seguir acercando soluciones industriales a nuestros clientes." },
+      { type: "p", content: "Ese compromiso también se expresa en nuestra sala de ventas, donde invitamos a conocer nuestros equipos, conversar con especialistas y resolver inquietudes antes de tomar una decisión." },
+      { type: "p", content: "Porque el futuro de la industria no depende solamente de tener acceso a nuevas tecnologías, sino de saber cómo utilizarlas para crecer." },
+      { type: "p", content: "Y queremos que más empresas chilenas tengan la oportunidad de hacerlo." },
+      { type: "h2", content: "¿Estás pensando en modernizar tu maestranza o mejorar tus procesos de fabricación?" },
+      { type: "p", content: "En VT Maquinarias podemos ayudarte a evaluar soluciones de corte láser de fibra, plegado CNC y soldadura industrial según las necesidades de tu operación." },
+      { type: "p", content: "Visítanos en www.vtmaquinarias.cl o conversa con nuestros especialistas al WhatsApp +56 9 9917 1017." },
+      { type: "p", content: "VT Maquinarias. Conectados con la innovación, comprometidos con la industria chilena." },
+    ],
+    related: [
+      { title: "Tonelaje de Plegadora CNC", slug: "press-brake-tonnage-calculator", imageId: "/images/blog-press-brake-tonnage.webp", category: "Guía Técnica" },
+      { title: "Láser de Fibra vs. CO₂", slug: "fiber-laser-vs-co2-laser-cutting", imageId: "/images/blog-fiber-vs-co2.webp", category: "Guía de Compra" },
+    ],
+  },
   "cobot-welding-roi-checklist": {
     title: "Checklist de ROI de Soldadura con Cobots: 8 Preguntas Antes de Comprar",
     excerpt: "No todos los talleres están listos para un cobot. Y no todos los que están listos compran el correcto. Este checklist lo guía por las preguntas que determinan si una celda de soldadura con cobot será rentable — y qué tan rápido.",
@@ -517,6 +574,16 @@ const DEFAULT_POST = {
   related: [],
 };
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vtmaquinarias.cl";
+
+// Local images ("/images/...") resolve against the site; legacy Unsplash ids keep
+// their CDN URL. Always returns an absolute URL (needed for OG tags and JSON-LD).
+function absoluteImageUrl(imageId: string, width: number): string {
+  return imageId.startsWith("/")
+    ? new URL(imageId, SITE_URL).toString()
+    : `https://images.unsplash.com/photo-${imageId}?w=${width}&q=80`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = POSTS_ES_CL[slug] ?? DEFAULT_POST;
@@ -526,7 +593,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: `${post.title} | Blog VT Maquinarias`,
       description: post.excerpt,
-      images: [{ url: `https://images.unsplash.com/photo-${post.imageId}?w=1200&q=80` }],
+      images: [{ url: absoluteImageUrl(post.imageId, 1200) }],
     },
   };
 }
@@ -558,12 +625,15 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
             <span className="whitespace-nowrap">{post.readTime}</span>
           </div>
         </div>
-        <div className="relative aspect-[21/9] max-h-[500px] overflow-hidden">
+        {/* w-full: without it, aspect-ratio + max-h transfers into a max-width and the
+            hero image stops short of the right edge on screens wider than ~1167px */}
+        <div className="relative w-full aspect-[21/9] max-h-[500px] overflow-hidden">
           <Image
             src={post.imageId.startsWith("/") ? post.imageId : `https://images.unsplash.com/photo-${post.imageId}?w=1600&q=80&fit=crop`}
             alt={post.title}
             fill
             className="object-cover opacity-60"
+            style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
             priority
             sizes="100vw"
           />
@@ -715,7 +785,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
             author: { "@type": "Organization", name: "VT Maquinarias" },
             publisher: { "@type": "Organization", name: "VT Maquinarias" },
             datePublished: post.date,
-            image: `https://images.unsplash.com/photo-${post.imageId}?w=1200&q=80`,
+            image: absoluteImageUrl(post.imageId, 1200),
           }),
         }}
       />
